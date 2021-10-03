@@ -17,13 +17,12 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-
+        move();
     }
 
     void Update()
     {
         camera.transform.position = new Vector3(transform.position.x, transform.position.y, camera.transform.position.z);
-        move();
     }
 
     private void dogeRole()
@@ -52,6 +51,11 @@ public class PlayerController : MonoBehaviour
     }
 
     private void openInventory()
+    {
+
+    }
+
+    private void openOptions()
     {
 
     }

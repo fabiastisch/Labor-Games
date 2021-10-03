@@ -17,6 +17,12 @@ TextureImporter:
   - first:
       213: 8581507129590277390
     second: ui_upscaled_4
+  - first:
+      213: -4877287397589720956
+    second: ui_upscaled_5
+  - first:
+      213: -3438437271454642440
+    second: ui_upscaled_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -114,7 +120,7 @@ TextureImporter:
         width: 200
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -135,7 +141,7 @@ TextureImporter:
         width: 102
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -156,7 +162,7 @@ TextureImporter:
         width: 102
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -177,7 +183,7 @@ TextureImporter:
         width: 102
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -194,11 +200,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 16
-        width: 180
-        height: 48
+        y: 11
+        width: 63
+        height: 56
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -206,6 +212,48 @@ TextureImporter:
       bones: []
       spriteID: e05e5b08443a71770800000000000000
       internalID: 8581507129590277390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_upscaled_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 11
+        width: 52
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 480ec2fe3f4605cb0800000000000000
+      internalID: -4877287397589720956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ui_upscaled_6
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 11
+        width: 64
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fe8b7ce4873840d0800000000000000
+      internalID: -3438437271454642440
       vertices: []
       indices: 
       edges: []
