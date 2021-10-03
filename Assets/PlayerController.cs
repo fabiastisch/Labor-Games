@@ -35,7 +35,20 @@ public class PlayerController : MonoBehaviour
     {
         float axesX = Input.GetAxis("Horizontal");
         float axesY = Input.GetAxis("Vertical");
+        ChangeSpriteDirection(axesX);
         rg.velocity = new Vector2(movementspeed * axesX, movementspeed * axesY);
+    }
+
+    private void ChangeSpriteDirection(float direction)
+    {
+        if (direction < 0)
+        {
+            playSprite.flipX = true;
+        }
+        if (direction > 0)
+        {
+            playSprite.flipX = false;
+        }
     }
 
     private void openInventory()
