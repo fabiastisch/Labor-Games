@@ -3,11 +3,16 @@ using UnityEngine;
 
 namespace Combat {
     public class Dummy : MonoBehaviour, IAttackable {
-        [SerializeField] private float hp = 100;
+        [SerializeField] private float maxHealth = 100;
+        private float currentHealth;
 
-        public void Attack(float damage) {
-            hp -= damage;
-            if (hp <= 0) {
+        private void Start() {
+            currentHealth = maxHealth;
+        }
+
+        public void TakeDamage(float damage) {
+            maxHealth -= damage;
+            if (maxHealth <= 0) {
                 throw new NotImplementedException("HP is less than 0");
             }
         }

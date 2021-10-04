@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Utils;
 
@@ -23,7 +24,7 @@ namespace Character {
 
             if (Input.GetKey(KeyCode.P)) { // Test Dungeon Switch
                 if (_coroutine == null) {
-                    _coroutine = StartCoroutine(CustomSceneManager.LoadYourAsyncScene("Dungeon", gameObject));
+                   // _coroutine = StartCoroutine(SceneLoader.LoadAsyncScene("Dungeon", gameObject));
                 }
 
             }
