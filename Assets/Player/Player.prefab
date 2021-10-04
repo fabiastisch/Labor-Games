@@ -203,9 +203,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c6f31aeea1484649bd8885429edf177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 8548802802857417855}
-  movementspeed: 9
+  cam: {fileID: 8548802802857417855}
   playSprite: {fileID: 8548802804282458403}
+  movementSpeed: 9
   stamina: 100
   staminaReg: 0.02
   dodgeCost: 44
