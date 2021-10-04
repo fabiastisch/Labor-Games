@@ -10,15 +10,21 @@ namespace Player {
 
         private Rigidbody2D rb;
 
-        private Vector2 mousePosition;
+        private Vector2 MousePosition {
+            get {
+                Vector2 mouseOnScreen = cam.ScreenToWorldPoint(Input.mousePosition);
+                return (mouseOnScreen - (Vector2)transform.position).normalized;
+            }
+        }
 
         //Dodging, stamina used as Cost
         [Header("Dodging")] [SerializeField] private float stamina = 100f;
-        [SerializeField] private float staminaReg = 0.01f;
+        [SerializeField] private float staminaReg = 5;
         [SerializeField] private float dodgeCost = 44f;
         [SerializeField] private float dodgeSpeed;
         private float dodgeSpeedMax;
         private float maxStamina;
+        private Vector2 currentDodgeDirection = Vector2.zero;
 
         float axesX;
         float axesY;
@@ -56,26 +62,30 @@ namespace Player {
         private void PerformDodgeStep() {
             dodgeSpeed -= 1.7f; // Todo: Whats that?
             if (dodgeSpeed <= 0) {
+                currentDodgeDirection = Vector2.zero;
                 state = State.Normal;
                 rb.velocity = Vector2.zero;
             }
 
-            rb.velocity = mousePosition * dodgeSpeed;
+            rb.velocity = currentDodgeDirection * dodgeSpeed;
         }
 
         void Update() {
             movement.x = Input.GetAxis("Horizontal");
             movement.y = Input.GetAxis("Vertical");
-            cam.transform.position = new Vector3(transform.position.x, transform.position.y, cam.transform.position.z);
+            
+            // Not needed if Cam is a child object
+            // cam.transform.position = new Vector3(transform.position.x, transform.position.y, cam.transform.position.z);
 
             if (stamina < maxStamina) {
-                stamina += staminaReg;
+                stamina += staminaReg * Time.deltaTime;
+                Debug.Log(stamina);
             }
 
-            getMousePosition();
-
             if (Input.GetKeyDown(KeyCode.Space) && stamina >= dodgeCost && state == State.Normal) {
+                stamina -= dodgeCost;
                 dodgeSpeed = dodgeSpeedMax;
+                currentDodgeDirection = MousePosition;
                 state = State.Dodging;
             }
         }
@@ -104,13 +114,6 @@ namespace Player {
             else if (direction > 0) {
                 playSprite.flipX = false;
             }
-        }
-
-        //Gets the mousposition for dodging
-        private void getMousePosition() {
-            Vector2 mouseOnScreen = Input.mousePosition;
-            mouseOnScreen = Camera.main.ScreenToWorldPoint(mouseOnScreen);
-            mousePosition = (mouseOnScreen - (Vector2)transform.position).normalized;
         }
     }
 }
