@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
                 move();
                 break;
             case State.Dodging:
-                dodgeSpeed = dodgeSpeed - 1.5f;
+                dodgeSpeed = dodgeSpeed - 1.7f;
 
                 if (dodgeSpeed <= 0)
                 {
