@@ -1,4 +1,3 @@
-
 # Created by https://www.toptal.com/developers/gitignore/api/unity,csharp,visualstudio,jetbrains+all,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=unity,csharp,visualstudio,jetbrains+all,visualstudiocode
 
@@ -730,3 +729,6 @@ sysinfo.txt
 # Additional files built by Visual Studio
 
 # End of https://www.toptal.com/developers/gitignore/api/unity,csharp,visualstudio,jetbrains+all,visualstudiocode
+
+Assets/_DevAssets.meta
+Assets/_DevAssets/

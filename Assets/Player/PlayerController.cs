@@ -51,7 +51,7 @@ namespace Player {
         private void FixedUpdate() {
             switch (state) {
                 case State.Normal:
-                    move();
+                    Move();
                     break;
                 case State.Dodging:
                     PerformDodgeStep();
@@ -60,25 +60,22 @@ namespace Player {
         }
 
         private void PerformDodgeStep() {
-            dodgeSpeed -= 1.7f; // Todo: Whats that?
+            dodgeSpeed -= 1.7f;
             if (dodgeSpeed <= 0) {
                 currentDodgeDirection = Vector2.zero;
                 state = State.Normal;
+                return;
                 //rb.velocity = Vector2.zero;
             }
 
             //rb.velocity = currentDodgeDirection * dodgeSpeed;
             rb.MovePosition((Vector2)transform.position + currentDodgeDirection * dodgeSpeed * Time.fixedDeltaTime);
-
         }
 
         void Update() {
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
-
-            // Not needed if Cam is a child object
-            // cam.transform.position = new Vector3(transform.position.x, transform.position.y, cam.transform.position.z);
-
+            
             if (stamina < maxStamina) {
                 stamina += staminaReg * Time.deltaTime;
             }
@@ -92,20 +89,17 @@ namespace Player {
         }
 
         //Movement
-        private void move() {
+        private void Move() {
             ChangeSpriteDirection(movement.x);
             //rb.velocity = movement * movementSpeed;
             rb.MovePosition((Vector2)transform.position + movement.normalized * (movementSpeed * Time.fixedDeltaTime));
         }
 
         //UI
-        private void openInventory() {
+        private void OpenInventory() {
         }
 
-        private void openOptions() {
-        }
-
-        private void interact() {
+        private void OpenOptions() {
         }
 
         //Swaps the sprite to the moving direction.
