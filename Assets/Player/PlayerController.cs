@@ -48,11 +48,6 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void attack()
-    {
-
-    }
-
     private void move()
     {
         float axesX = Input.GetAxis("Horizontal");

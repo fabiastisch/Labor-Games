@@ -4407,18 +4407,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6149547860923571567, guid: 5b200b5938c353445998557fb82e7309, type: 3}
-      propertyPath: m_Name
-      value: playerStatus
-      objectReference: {fileID: 0}
-    - target: {fileID: 6149547861378056111, guid: 5b200b5938c353445998557fb82e7309, type: 3}
-      propertyPath: m_Name
-      value: playerUI
-      objectReference: {fileID: 0}
-    - target: {fileID: 6149547862429499145, guid: 5b200b5938c353445998557fb82e7309, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 203
-      objectReference: {fileID: 0}
     - target: {fileID: 8548802804282458401, guid: 5b200b5938c353445998557fb82e7309, type: 3}
       propertyPath: m_Name
       value: Player
@@ -4466,10 +4454,6 @@ PrefabInstance:
     - target: {fileID: 8548802804282458402, guid: 5b200b5938c353445998557fb82e7309, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8548802804282458405, guid: 5b200b5938c353445998557fb82e7309, type: 3}
-      propertyPath: staminaReg
-      value: 0.01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b200b5938c353445998557fb82e7309, type: 3}

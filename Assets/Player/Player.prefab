@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 8548802804282458404}
   - component: {fileID: 8548802804282458403}
   - component: {fileID: 8548802804282458405}
+  - component: {fileID: 8368588488147939673}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -206,9 +207,25 @@ MonoBehaviour:
   movementspeed: 7.5
   playSprite: {fileID: 8548802804282458403}
   stamina: 100
-  staminaReg: 0.05
+  staminaReg: 0.01
   dogeCost: 40
   dogeSpeed: 50
+--- !u!70 &8368588488147939673
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8548802804282458401}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.010462701, y: -0.12293646}
+  m_Size: {x: 0.42455292, y: 0.54487365}
+  m_Direction: 0
 --- !u!1001 &8452627475732964709
 PrefabInstance:
   m_ObjectHideFlags: 0
