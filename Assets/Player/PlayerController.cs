@@ -64,22 +64,23 @@ namespace Player {
             if (dodgeSpeed <= 0) {
                 currentDodgeDirection = Vector2.zero;
                 state = State.Normal;
-                rb.velocity = Vector2.zero;
+                //rb.velocity = Vector2.zero;
             }
 
-            rb.velocity = currentDodgeDirection * dodgeSpeed;
+            //rb.velocity = currentDodgeDirection * dodgeSpeed;
+            rb.MovePosition((Vector2)transform.position + currentDodgeDirection * dodgeSpeed * Time.fixedDeltaTime);
+
         }
 
         void Update() {
-            movement.x = Input.GetAxis("Horizontal");
-            movement.y = Input.GetAxis("Vertical");
-            
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
+
             // Not needed if Cam is a child object
             // cam.transform.position = new Vector3(transform.position.x, transform.position.y, cam.transform.position.z);
 
             if (stamina < maxStamina) {
                 stamina += staminaReg * Time.deltaTime;
-                Debug.Log(stamina);
             }
 
             if (Input.GetKeyDown(KeyCode.Space) && stamina >= dodgeCost && state == State.Normal) {
@@ -93,7 +94,8 @@ namespace Player {
         //Movement
         private void move() {
             ChangeSpriteDirection(movement.x);
-            rb.velocity = movement * movementSpeed;
+            //rb.velocity = movement * movementSpeed;
+            rb.MovePosition((Vector2)transform.position + movement.normalized * (movementSpeed * Time.fixedDeltaTime));
         }
 
         //UI
