@@ -31,12 +31,6 @@ public class UI_RadarChart : MonoBehaviour
 
   private void UpdateStatsVisual()
   {
-    //transform.Find("VitallityBar").localScale = new Vector3(1, statistics.GetPersentageAmount(Statistics.Type.Vitallity));
-    //transform.Find("StrengthBar").localScale = new Vector3(1, statistics.GetPersentageAmount(Statistics.Type.Strength));
-    //transform.Find("CharismaBar").localScale = new Vector3(1, statistics.GetPersentageAmount(Statistics.Type.Charisma));
-    //transform.Find("AbillityBar").localScale = new Vector3(1, statistics.GetPersentageAmount(Statistics.Type.Abillity));
-    //transform.Find("AgillityBar").localScale = new Vector3(1, statistics.GetPersentageAmount(Statistics.Type.Agillity));
-
     Mesh mesh = new Mesh();
 
     Vector3[] vertices = new Vector3[6];
@@ -44,7 +38,7 @@ public class UI_RadarChart : MonoBehaviour
     int[] triangles = new int[3 * 5];
 
     float angleIncrement = 360f / 5;
-    float RadarChartSize = 215f;
+    float RadarChartSize = 149f;
     Vector3 vitallityVertex = Quaternion.Euler(0, 0, -angleIncrement * 0) * Vector3.up * RadarChartSize * statistics.GetPersentageAmount(Statistics.Type.Vitallity);
     int vitallityVertexIndex = 1;
     Vector3 abillityVertex = Quaternion.Euler(0, 0, -angleIncrement * 1) * Vector3.up * RadarChartSize * statistics.GetPersentageAmount(Statistics.Type.Abillity);
