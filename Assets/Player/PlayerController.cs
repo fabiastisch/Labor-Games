@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 mousePosition;
 
-    //Doging
+    //Doging only for stamian
     public float stamina = 100f;
     public float staminaReg = 0.01f;
     public float dodgeCost = 44f;
@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     float axesX;
     float axesY;
 
+    //State which the player is currently in
     private enum State
     {
         Normal,
@@ -48,7 +49,6 @@ public class PlayerController : MonoBehaviour
                 break;
             case State.Dodging:
                 dodgeSpeed = dodgeSpeed - 1.7f;
-
                 if (dodgeSpeed <= 0)
                 {
                     state = State.Normal;
@@ -104,7 +104,12 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    //Saves the direction the player has been looking to.
+    private void interact()
+    {
+
+    }
+
+    //Swaps the sprite to the moving direction.
     private void ChangeSpriteDirection(float direction)
     {
 
