@@ -5,11 +5,15 @@ using UnityEngine.UI;
 
 namespace Utils.SceneLoader {
     public class SceneLoader : MonoBehaviour {
-        public GameObject loadingScreen;
-        public Slider slider;
+        [SerializeField] private GameObject loadingScreen;
+        [SerializeField] private Slider slider;
+        [SerializeField] private bool isLoading = false;
 
         public void LoadScene(string sceneName) {
-            StartCoroutine(LoadAsyncScene(sceneName));
+            if (!isLoading) {
+                StartCoroutine(LoadAsyncScene(sceneName));
+                isLoading = true;
+            }
         }
 
         public void LoadSceneWithGameObject(string sceneName, GameObject gameObject) {
@@ -27,16 +31,24 @@ namespace Utils.SceneLoader {
 
             // Wait until the last operation fully loads to return anything
             while (!operation.isDone) {
-                float progress = Mathf.Clamp01(operation.progress / .9f);
+                float progress = Mathf.Clamp01(operation.progress / .9f) * 0.5f;
                 slider.value = progress;
                 yield return null;
             }
 
+            // some delay
+            for (int i = 0; i <= 5; i++) {
+                slider.value = 0.5f + i*0.1f;
+                yield return new WaitForSeconds(.03f);
+            }
+            
             // Move the GameObject (you attach this in the Inspector) to the newly loaded Scene
             if (myGameObject) {
                 SceneManager.MoveGameObjectToScene(myGameObject, SceneManager.GetSceneByName(scene));
             }
+            
 
+            isLoading = false;
             // Unload the previous Scene
             SceneManager.UnloadSceneAsync(currentScene);
         }
