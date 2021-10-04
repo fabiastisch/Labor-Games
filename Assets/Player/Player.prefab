@@ -136,7 +136,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -204,12 +204,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 8548802802857417855}
-  movementspeed: 7.5
+  movementspeed: 9
   playSprite: {fileID: 8548802804282458403}
   stamina: 100
-  staminaReg: 0.01
-  dogeCost: 40
-  dogeSpeed: 50
+  staminaReg: 0.02
+  dodgeCost: 44
+  dodgeSpeed: 30
 --- !u!70 &8368588488147939673
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

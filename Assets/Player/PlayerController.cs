@@ -9,49 +9,86 @@ public class PlayerController : MonoBehaviour
     public SpriteRenderer playSprite;
     private Rigidbody2D rg;
 
+    private Vector2 mousePosition;
+
     //Doging
     public float stamina = 100f;
     public float staminaReg = 0.01f;
-    public float dogeCost = 44f;
-    public float dogeSpeed = 50f;
+    public float dodgeCost = 44f;
+    public float dodgeSpeed;
+    private float dodgeSpeedMax;
     private float maxStamina;
+
+    float axesX;
+    float axesY;
+
+    private enum State
+    {
+        Normal,
+        Dodging
+    }
+
+    private State state;
+
 
     void Start()
     {
+        state = State.Normal;
         rg = gameObject.GetComponent<Rigidbody2D>();
         maxStamina = stamina;
+        dodgeSpeedMax = dodgeSpeed;
     }
 
     private void FixedUpdate()
     {
-        move();
+        switch (state)
+        {
+            case State.Normal:
+                move();
+                break;
+            case State.Dodging:
+                dodgeSpeed = dodgeSpeed - 1.5f;
+
+                if (dodgeSpeed <= 0)
+                {
+                    state = State.Normal;
+                    rg.velocity = Vector2.zero;
+                }
+                rg.velocity = new Vector2(dodgeSpeed * mousePosition.x, dodgeSpeed * mousePosition.y);
+                break;
+        }
     }
 
     void Update()
     {
+        axesX = Input.GetAxis("Horizontal");
+        axesY = Input.GetAxis("Vertical");
         camera.transform.position = new Vector3(transform.position.x, transform.position.y, camera.transform.position.z);
+
         if (stamina < maxStamina)
         {
             stamina = stamina + staminaReg;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && stamina >= dogeCost)
+        getMousePosition();
+
+        if (Input.GetKeyDown(KeyCode.Space) && stamina >= dodgeCost && state == State.Normal)
         {
-            doge();
+            state = State.Dodging;
+            dodgeSpeed = dodgeSpeedMax;
+            dodge();
         }
     }
 
     //Movement
-    private void doge()
+    private void dodge()
     {
-        stamina = stamina - dogeCost;
-
+        stamina = stamina - dodgeCost;
+        rg.velocity = new Vector2(mousePosition.x * dodgeSpeed, mousePosition.y * dodgeSpeed);
     }
 
     private void move()
     {
-        float axesX = Input.GetAxis("Horizontal");
-        float axesY = Input.GetAxis("Vertical");
         ChangeSpriteDirection(axesX);
         rg.velocity = new Vector2(movementspeed * axesX, movementspeed * axesY);
     }
@@ -67,8 +104,10 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    //Saves the direction the player has been looking to.
     private void ChangeSpriteDirection(float direction)
     {
+
         if (direction < 0)
         {
             playSprite.flipX = true;
@@ -77,5 +116,13 @@ public class PlayerController : MonoBehaviour
         {
             playSprite.flipX = false;
         }
+    }
+
+    //Gets the mousposition for dodging
+    private void getMousePosition()
+    {
+        Vector3 mouseOnScreen = Input.mousePosition;
+        mouseOnScreen = Camera.main.ScreenToWorldPoint(mouseOnScreen);
+        mousePosition = new Vector2(mouseOnScreen.x - transform.position.x, mouseOnScreen.y - transform.position.y).normalized;
     }
 }
