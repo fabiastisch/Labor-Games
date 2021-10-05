@@ -1,13 +1,12 @@
-using System;
-using DungeonGeneration;
 using DungeonGeneration.Scripts;
 using UnityEngine;
 
 namespace Dungeon {
     public class DungeonGenerator : MonoBehaviour {
+        public TilemapVisualizer tilemapVisualizer;
+        [Header("Select Generator")]
         public DungeonGeneratorType generatorType;
         [HideInInspector] public DungeonGeneratorType currentGeneratorType;
-
     }
 
     public enum DungeonGeneratorType {

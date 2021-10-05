@@ -1151,7 +1151,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1579529766783541479}
   - component: {fileID: 4913192055357900835}
-  - component: {fileID: 8984401797675424149}
+  - component: {fileID: 4030797184104500084}
   m_Layer: 0
   m_Name: Dungeon
   m_TagString: Untagged
@@ -1187,9 +1187,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3e6f91e44c25c247a6d43fe9f25ad64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  generatorType: 0
-  currentGeneratorType: 0
---- !u!114 &8984401797675424149
+  tilemapVisualizer: {fileID: 561387266}
+  generatorType: 1
+  currentGeneratorType: 1
+--- !u!114 &4030797184104500084
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1198,19 +1199,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1579529766783541476}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf2d4c43b4c440f48730a11544c7cdea, type: 3}
+  m_Script: {fileID: 11500000, guid: 5865805358c04e548b5c3fd9499372c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilemapVisualizer: {fileID: 0}
+  tilemapVisualizer: {fileID: 561387266}
   startPosition: {x: 0, y: 0}
   clearDungeonOnGenerate: 1
-  generateOnPlay: 1
-  iterations: 10
-  walkLength: 10
-  startRandomlyEachIteration: 1
-  corridorLength: 14
-  corridorCount: 5
-  roomPercent: 0.8
+  generateOnPlay: 0
+  createRectangularRoom: 0
+  with: 14
+  height: 14
+  createRoundRoom: 0
+  radius: 10
 --- !u!1 &1579529767564740570
 GameObject:
   m_ObjectHideFlags: 0

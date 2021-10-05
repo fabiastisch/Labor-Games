@@ -24,8 +24,9 @@ namespace Editor {
             if (component) {
                 DestroyImmediate(component, false);
             }
-            
-            _generator.gameObject.AddComponent(getClass(_generator.generatorType));
+
+            Component newComponent = _generator.gameObject.AddComponent(getClass(_generator.generatorType));
+            ((AbstractDungeonGenerator)newComponent).tilemapVisualizer = _generator.tilemapVisualizer;
             _generator.currentGeneratorType = _generator.generatorType;
         }
 
