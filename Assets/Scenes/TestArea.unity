@@ -363,7 +363,7 @@ MonoBehaviour:
   tilemapVisualizer: {fileID: 0}
   startPosition: {x: 0, y: 0}
   clearDungeonOnGenerate: 1
-  generateOnPlay: 1
+  generateOnPlay: 0
   iterations: 10
   walkLength: 10
   startRandomlyEachIteration: 1
