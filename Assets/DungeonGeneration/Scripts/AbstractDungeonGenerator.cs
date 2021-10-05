@@ -1,12 +1,20 @@
 ﻿using UnityEngine;
 
-namespace DungeonGeneration {
+namespace DungeonGeneration.Scripts {
     public abstract class AbstractDungeonGenerator : MonoBehaviour {
         [SerializeField] protected TilemapVisualizer tilemapVisualizer = null;
         [SerializeField] protected Vector2Int startPosition = Vector2Int.zero;
+        [SerializeField] protected bool clearDungeonOnGenerate = true;
+        [SerializeField] private bool generateOnPlay = true;
+
+        private void Awake() {
+            if (generateOnPlay) {
+                GenerateDungeon();
+            }
+        }
 
         public void GenerateDungeon() {
-            if (tilemapVisualizer) tilemapVisualizer.Clear();
+            if (tilemapVisualizer && clearDungeonOnGenerate) tilemapVisualizer.Clear();
             RunProceduralGeneration();
         }
 

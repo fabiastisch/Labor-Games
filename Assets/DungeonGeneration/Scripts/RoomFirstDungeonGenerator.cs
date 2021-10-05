@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace DungeonGeneration {
+namespace DungeonGeneration.Scripts {
     public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator {
         [SerializeField] private int minRoomWidth = 4, minRoomHeight = 4;
         [SerializeField] private int dungeonWidth = 20, dungeonHeight = 20;

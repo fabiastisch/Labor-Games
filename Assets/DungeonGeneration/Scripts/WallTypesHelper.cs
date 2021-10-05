@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DungeonGeneration {
+namespace DungeonGeneration.Scripts {
     public static class WallTypesHelper {
         public static HashSet<int> wallTop = new HashSet<int> {
             0b1111,

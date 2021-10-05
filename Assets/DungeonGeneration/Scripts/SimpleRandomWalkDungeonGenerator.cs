@@ -2,7 +2,7 @@
 using System.Linq;
 using UnityEngine;
 
-namespace DungeonGeneration {
+namespace DungeonGeneration.Scripts {
     public class SimpleRandomWalkDungeonGenerator : AbstractDungeonGenerator {
         [SerializeField] protected int iterations = 10;
         [SerializeField] protected  int walkLength = 10;

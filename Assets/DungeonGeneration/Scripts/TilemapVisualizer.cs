@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-namespace DungeonGeneration {
+namespace DungeonGeneration.Scripts {
     public class TilemapVisualizer : MonoBehaviour {
         [SerializeField] private Tilemap floorTilemap, wallTileMap;
 

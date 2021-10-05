@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace DungeonGeneration {
+namespace DungeonGeneration.Scripts {
     public static class WallGenerator {
         public static void CreateWalls(HashSet<Vector2Int> floorPositions, TilemapVisualizer tilemapVisualizer)
         {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace DungeonGeneration {
+namespace DungeonGeneration.Scripts {
     public static class ProceduralGenerationAlgorithms {
         public static HashSet<Vector2Int> SimpleRandomWalk(Vector2Int startPos, int walkLength) {
             HashSet<Vector2Int> path = new HashSet<Vector2Int> { startPos };

@@ -343,6 +343,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1742736300 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1579529766783541476, guid: 3f085b9a3c85f8044812a47d0e426cae, type: 3}
+  m_PrefabInstance: {fileID: 1579529767487486193}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1742736301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742736300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf2d4c43b4c440f48730a11544c7cdea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemapVisualizer: {fileID: 0}
+  startPosition: {x: 0, y: 0}
+  clearDungeonOnGenerate: 1
+  generateOnPlay: 1
+  iterations: 10
+  walkLength: 10
+  startRandomlyEachIteration: 1
+  corridorLength: 14
+  corridorCount: 5
+  roomPercent: 0.8
 --- !u!1 &1849555902
 GameObject:
   m_ObjectHideFlags: 0
@@ -1491,10 +1518,28 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1579529767633931439, guid: 3f085b9a3c85f8044812a47d0e426cae, type: 3}
+      propertyPath: generatorType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1579529767633931439, guid: 3f085b9a3c85f8044812a47d0e426cae, type: 3}
       propertyPath: generateOnPlay
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1579529767633931439, guid: 3f085b9a3c85f8044812a47d0e426cae, type: 3}
+      propertyPath: currentGeneratorType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913192055357900835, guid: 3f085b9a3c85f8044812a47d0e426cae, type: 3}
+      propertyPath: generatorType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913192055357900835, guid: 3f085b9a3c85f8044812a47d0e426cae, type: 3}
+      propertyPath: currentGeneratorType
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1579529767633931439, guid: 3f085b9a3c85f8044812a47d0e426cae, type: 3}
+    - {fileID: 8984401797675424149, guid: 3f085b9a3c85f8044812a47d0e426cae, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3f085b9a3c85f8044812a47d0e426cae, type: 3}
 --- !u!1001 &3460867214455876485
 PrefabInstance:
