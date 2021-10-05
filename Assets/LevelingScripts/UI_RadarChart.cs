@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
 using UnityEngine;
+using UnityEngine.UI;
 using Quaternion = UnityEngine.Quaternion;
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
@@ -10,6 +11,7 @@ using Vector3 = UnityEngine.Vector3;
 public class UI_RadarChart : MonoBehaviour
 {
   [SerializeField] private Material radarMaterial;
+  [SerializeField] private Texture2D radarTexture2D;
   private Statistics statistics;
   private CanvasRenderer radarMeshCanvasRenderer;
 
@@ -23,10 +25,12 @@ public class UI_RadarChart : MonoBehaviour
     this.statistics = statistics;
     statistics.OnStatisticChange += Statistics_OnStatisticChange;
     UpdateStatsVisual();
+    UpdateStatsText();
   }
   private void Statistics_OnStatisticChange(object sender, System.EventArgs e)
   {
-    
+    UpdateStatsVisual();
+    UpdateStatsText();
   }
 
   private void UpdateStatsVisual()
@@ -56,6 +60,13 @@ public class UI_RadarChart : MonoBehaviour
     vertices[charismaVertexIndex] = charismaVertex;
     vertices[agillityVertexIndex] = agillityVertex;
     vertices[strengthVertexIndex] = strengthVertex;
+    
+    uv[0] = Vector2.zero;
+    uv[vitallityVertexIndex] = Vector2.one;
+    uv[abillityVertexIndex] = Vector2.one;
+    uv[charismaVertexIndex] = Vector2.one;
+    uv[agillityVertexIndex] = Vector2.one;
+    uv[strengthVertexIndex] = Vector2.one;
 
     triangles[0] = 0;
     triangles[1] = vitallityVertexIndex;
@@ -81,7 +92,20 @@ public class UI_RadarChart : MonoBehaviour
     mesh.uv = uv;
     mesh.triangles = triangles;
     radarMeshCanvasRenderer.SetMesh(mesh);
-    radarMeshCanvasRenderer.SetMaterial(radarMaterial, null);
+    radarMeshCanvasRenderer.SetMaterial(radarMaterial, radarTexture2D);
   }
-  
+
+  private void UpdateStatsText()
+  {
+    transform.Find("vitallityButton").Find("vitallity").GetComponent<Text>().text =
+      "" + statistics.GetValue(Statistics.Type.Vitallity);
+    transform.Find("abillityButton").Find("abillity").GetComponent<Text>().text =
+      "" + statistics.GetValue(Statistics.Type.Abillity);
+    transform.Find("agillityButton").Find("agillity").GetComponent<Text>().text =
+      "" + statistics.GetValue(Statistics.Type.Agillity);
+    transform.Find("charismaButton").Find("charisma").GetComponent<Text>().text =
+      "" + statistics.GetValue(Statistics.Type.Charisma);
+    transform.Find("strengthButton").Find("strength").GetComponent<Text>().text =
+      "" + statistics.GetValue(Statistics.Type.Strength);
+  }
 }

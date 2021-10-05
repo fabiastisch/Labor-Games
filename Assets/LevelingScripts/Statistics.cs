@@ -32,24 +32,27 @@ public class Statistics
     {
         switch (statType)
         {
-            default:
                 case Type.Strength: return strengthStat;
                 case Type.Vitallity: return vitallityStat;
                 case Type.Charisma: return charismaStat;
                 case Type.Abillity: return abillityStat;
                 case Type.Agillity: return agillityStat;
+            default: 
+                 return strengthStat;
         }
     }
     
-    public void SetStatisticAmount(Type statType, int StaticValue)
+    public void SetStatisticAmount(Type statType, int staticValue)
     {
-       GetOneStat(statType).SetStatisticAmount(StaticValue);
+        Debug.Log("SetStatisticAmount stat : " + statType + " and Value : " + staticValue);
+       GetOneStat(statType).SetStatisticAmount(staticValue);
         if (OnStatisticChange != null) OnStatisticChange(this, EventArgs.Empty);
     }
 
     public void IncreaseStatAmount(Type statType)
     {
         SetStatisticAmount(statType, GetValue(statType) +1 );
+        Debug.Log("Increased : " + statType);
     }
         
     public void DecreaseStatAmount(Type statType)
@@ -76,9 +79,9 @@ public class Statistics
             SetStatisticAmount(statAmount);
         }
         
-        public void SetStatisticAmount(int StaticValue)
+        public void SetStatisticAmount(int staticValue)
         {
-            stat = Mathf.Clamp(StaticValue, STAT_MIN, STAT_MAX);
+            stat = Mathf.Clamp(staticValue, STAT_MIN, STAT_MAX);
         }
 
         public int GetValue()
