@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SpellCollection>
+    <Spells>
+        <Spell spellId="1">
+            <SpellName> Something </SpellName>
+            <SpellIcon>  </SpellIcon>
+            <SpellDiscription> Something </SpellDiscription>
+            <SpellRequirements>  </SpellRequirements>
+        </Spell>
+    </Spells>
+</SpellCollection>
+
