@@ -1,14 +1,13 @@
 using UnityEngine;
 
 namespace Player {
-    public class PlayerController : MonoBehaviour {
+    public abstract class PlayerBase : MonoBehaviour {
         [SerializeField] private Camera cam;
         [SerializeField] private SpriteRenderer playSprite;
+        [SerializeField] private Rigidbody2D rb;
 
-        [Header("Movement")] [SerializeField] private float movementSpeed;
+        [Header("Movement")] [SerializeField] private float movementSpeed = 9f;
         private Vector2 movement;
-
-        private Rigidbody2D rb;
 
         private Vector2 MousePosition {
             get {
@@ -19,9 +18,9 @@ namespace Player {
 
         //Dodging, stamina used as Cost
         [Header("Dodging")] [SerializeField] private float stamina = 100f;
-        [SerializeField] private float staminaReg = 5;
+        [SerializeField] private float staminaReg = 10f;
         [SerializeField] private float dodgeCost = 44f;
-        [SerializeField] private float dodgeSpeed;
+        [SerializeField] private float dodgeSpeed = 30f;
         private float dodgeSpeedMax;
         private float maxStamina;
         private Vector2 currentDodgeDirection = Vector2.zero;
@@ -43,12 +42,13 @@ namespace Player {
 
         void Start() {
             state = State.Normal;
-            rb = gameObject.GetComponent<Rigidbody2D>();
             maxStamina = stamina;
             dodgeSpeedMax = dodgeSpeed;
         }
 
-        private void FixedUpdate() {
+        //FiixedUpdate method of the PlayerBase
+        //Needs to be called in FixedUpdate of the child class
+        public void PlayerBaseStateHandler() {
             switch (state) {
                 case State.Normal:
                     Move();
@@ -59,23 +59,12 @@ namespace Player {
             }
         }
 
-        private void PerformDodgeStep() {
-            dodgeSpeed -= 1.7f;
-            if (dodgeSpeed <= 0) {
-                currentDodgeDirection = Vector2.zero;
-                state = State.Normal;
-                return;
-                //rb.velocity = Vector2.zero;
-            }
-
-            //rb.velocity = currentDodgeDirection * dodgeSpeed;
-            rb.MovePosition((Vector2)transform.position + currentDodgeDirection * dodgeSpeed * Time.fixedDeltaTime);
-        }
-
-        void Update() {
+        //Update method of the PlayerBase
+        //Needs to be called in Update of the child class
+        public void PlayerBaseMovementHandler() {
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
-            
+
             if (stamina < maxStamina) {
                 stamina += staminaReg * Time.deltaTime;
             }
@@ -95,12 +84,45 @@ namespace Player {
             rb.MovePosition((Vector2)transform.position + movement.normalized * (movementSpeed * Time.fixedDeltaTime));
         }
 
+        private void PerformDodgeStep()
+        {
+            dodgeSpeed -= 1.7f;
+            if (dodgeSpeed <= 0)
+            {
+                currentDodgeDirection = Vector2.zero;
+                state = State.Normal;
+                return;
+                //rb.velocity = Vector2.zero;
+            }
+
+            //rb.velocity = currentDodgeDirection * dodgeSpeed;
+            rb.MovePosition((Vector2)transform.position + currentDodgeDirection * dodgeSpeed * Time.fixedDeltaTime);
+        }
+
         //UI
         private void OpenInventory() {
         }
 
         private void OpenOptions() {
         }
+
+        #region Spellcast
+        public abstract void CastAbillity1();
+
+
+        public abstract void CastAbillity2();
+
+
+        public abstract void CastAbillity3();
+
+
+        public abstract void CastAbillity4();
+
+
+        public abstract void CastAbillity5();
+
+
+        #endregion
 
         //Swaps the sprite to the moving direction.
         private void ChangeSpriteDirection(float direction) {
