@@ -6,7 +6,7 @@ public class SkillLevelClass : MonoBehaviour
 {
     
 
-    void unlockSkill(Spell spell, Statistics stats, Player player)
+    void unlockSkill(Spell spell, Statistics stats, PlayerEnum player)
     {
         if (spell.requirement.vitallityScore <= stats.GetValue(Statistics.Type.Vitallity))
         {
