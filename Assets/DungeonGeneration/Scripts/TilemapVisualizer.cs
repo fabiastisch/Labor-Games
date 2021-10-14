@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -20,8 +21,13 @@ namespace DungeonGeneration.Scripts {
             wallDiagonalCornerUpRight,
             wallDiagonalCornerUpLeft;
 
+        public IEnumerable<Vector2Int> FloorTiles { get; private set; }
+        public IEnumerable<Vector2Int> WallTiles { get; private set; }
+
         public void PaintFloorTiles(IEnumerable<Vector2Int> floorPositions) {
             PaintTiles(floorPositions, floorTilemap, floorTile);
+            FloorTiles = floorPositions;
+            WallTiles = new List<Vector2Int>();
         }
 
         private void PaintTiles(IEnumerable<Vector2Int> positions, Tilemap tilemap, TileBase tile) {
@@ -30,32 +36,28 @@ namespace DungeonGeneration.Scripts {
             }
         }
 
-        internal void PaintSingleBasicWall(Vector2Int position, string binaryType)
-        {
+        internal void PaintSingleBasicWall(Vector2Int position, string binaryType) {
             int typeAsInt = Convert.ToInt32(binaryType, 2);
             TileBase tile = null;
-            if (WallTypesHelper.wallTop.Contains(typeAsInt))
-            {
+            if (WallTypesHelper.wallTop.Contains(typeAsInt)) {
                 tile = wallTop;
-            }else if (WallTypesHelper.wallSideRight.Contains(typeAsInt))
-            {
+            }
+            else if (WallTypesHelper.wallSideRight.Contains(typeAsInt)) {
                 tile = wallSideRight;
             }
-            else if (WallTypesHelper.wallSideLeft.Contains(typeAsInt))
-            {
+            else if (WallTypesHelper.wallSideLeft.Contains(typeAsInt)) {
                 tile = wallSideLeft;
             }
-            else if (WallTypesHelper.wallBottom.Contains(typeAsInt))
-            {
+            else if (WallTypesHelper.wallBottom.Contains(typeAsInt)) {
                 tile = wallBottom;
             }
-            else if (WallTypesHelper.wallFull.Contains(typeAsInt))
-            {
+            else if (WallTypesHelper.wallFull.Contains(typeAsInt)) {
                 tile = wallFull;
             }
 
-            if (tile!=null)
+            if (tile != null)
                 PaintSingleTile(wallTileMap, tile, position);
+            WallTiles = WallTiles.Append(position);
         }
 
         private void PaintSingleTile(Tilemap tilemap, TileBase tile, Vector2Int position) {
@@ -68,46 +70,38 @@ namespace DungeonGeneration.Scripts {
             wallTileMap.ClearAllTiles();
         }
 
-        internal void PaintSingleCornerWall(Vector2Int position, string binaryType)
-        {
+        internal void PaintSingleCornerWall(Vector2Int position, string binaryType) {
             int typeAsInt = Convert.ToInt32(binaryType, 2);
             TileBase tile = null;
 
-            if (WallTypesHelper.wallInnerCornerDownLeft.Contains(typeAsInt))
-            {
+            if (WallTypesHelper.wallInnerCornerDownLeft.Contains(typeAsInt)) {
                 tile = wallInnerCornerDownLeft;
             }
-            else if (WallTypesHelper.wallInnerCornerDownRight.Contains(typeAsInt))
-            {
+            else if (WallTypesHelper.wallInnerCornerDownRight.Contains(typeAsInt)) {
                 tile = wallInnerCornerDownRight;
             }
-            else if (WallTypesHelper.wallDiagonalCornerDownLeft.Contains(typeAsInt))
-            {
+            else if (WallTypesHelper.wallDiagonalCornerDownLeft.Contains(typeAsInt)) {
                 tile = wallDiagonalCornerDownLeft;
             }
-            else if (WallTypesHelper.wallDiagonalCornerDownRight.Contains(typeAsInt))
-            {
+            else if (WallTypesHelper.wallDiagonalCornerDownRight.Contains(typeAsInt)) {
                 tile = wallDiagonalCornerDownRight;
             }
-            else if (WallTypesHelper.wallDiagonalCornerUpRight.Contains(typeAsInt))
-            {
+            else if (WallTypesHelper.wallDiagonalCornerUpRight.Contains(typeAsInt)) {
                 tile = wallDiagonalCornerUpRight;
             }
-            else if (WallTypesHelper.wallDiagonalCornerUpLeft.Contains(typeAsInt))
-            {
+            else if (WallTypesHelper.wallDiagonalCornerUpLeft.Contains(typeAsInt)) {
                 tile = wallDiagonalCornerUpLeft;
             }
-            else if (WallTypesHelper.wallFullEightDirections.Contains(typeAsInt))
-            {
+            else if (WallTypesHelper.wallFullEightDirections.Contains(typeAsInt)) {
                 tile = wallFull;
             }
-            else if (WallTypesHelper.wallBottmEightDirections.Contains(typeAsInt))
-            {
+            else if (WallTypesHelper.wallBottmEightDirections.Contains(typeAsInt)) {
                 tile = wallBottom;
             }
 
             if (tile != null)
                 PaintSingleTile(wallTileMap, tile, position);
+            WallTiles = WallTiles.Append(position);
         }
     }
 }

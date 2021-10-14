@@ -16,6 +16,7 @@ namespace DungeonGeneration.Scripts {
         public void GenerateDungeon() {
             if (tilemapVisualizer && clearDungeonOnGenerate) tilemapVisualizer.Clear();
             RunProceduralGeneration();
+            TabMap.OnSingletonStarted += () => TabMap.Instance.UpdateMap();
         }
 
         protected abstract void RunProceduralGeneration();
