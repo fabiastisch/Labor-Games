@@ -6,14 +6,14 @@ namespace Player
 {
     public class PlayerMage : PlayerBase
     {
-        private void Update()
+        protected override void Update()
         {
-            PlayerBaseMovementHandler();
+            base.Update();
         }
 
-        private void FixedUpdate()
+        protected override void FixedUpdate()
         {
-            PlayerBaseStateHandler();
+            base.FixedUpdate();
         }
         #region Spellcast
         public override void CastAbillity1()

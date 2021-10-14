@@ -40,15 +40,13 @@ namespace Player {
 
         #endregion
 
-        void Start() {
+        protected virtual void Start() {
             state = State.Normal;
             maxStamina = stamina;
             dodgeSpeedMax = dodgeSpeed;
         }
 
-        //FiixedUpdate method of the PlayerBase
-        //Needs to be called in FixedUpdate of the child class
-        public void PlayerBaseStateHandler() {
+        protected virtual void FixedUpdate() {
             switch (state) {
                 case State.Normal:
                     Move();
@@ -59,9 +57,7 @@ namespace Player {
             }
         }
 
-        //Update method of the PlayerBase
-        //Needs to be called in Update of the child class
-        public void PlayerBaseMovementHandler() {
+        protected virtual void Update() {
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
 

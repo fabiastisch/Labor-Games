@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 8548802804282458405}
   - component: {fileID: 8368588488147939673}
   m_Layer: 0
-  m_Name: Player
+  m_Name: PlayerTank
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -205,8 +205,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 8548802802857417855}
   playSprite: {fileID: 8548802804282458403}
-  movementSpeed: 9
   rb: {fileID: 8548802804282458404}
+  movementSpeed: 9
   stamina: 100
   staminaReg: 5
   dodgeCost: 44
