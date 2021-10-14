@@ -9,11 +9,11 @@ public class SpellLoader : MonoBehaviour
 
     private void Start()
     {
-        SpellContainer sc = SpellContainer.Load(path);
-
-        foreach (Spell spell in sc.spells)
-        {
-            print(spell.name);
-        }
+        // SpellContainer sc = SpellContainer.Load(path);
+        //
+        // foreach (Spell spell in sc.spells)
+        // {
+        //     print(spell.name);
+        // }
     }
 }

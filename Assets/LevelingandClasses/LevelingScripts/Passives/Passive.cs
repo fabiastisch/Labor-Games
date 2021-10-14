@@ -7,7 +7,7 @@ public class Passive : ScriptableObject
    public new string name;
    public float cooldown;
    public float activeTime;
-   public new string description;
+   public string description;
 
    public virtual void Activation(GameObject parent)
    {
