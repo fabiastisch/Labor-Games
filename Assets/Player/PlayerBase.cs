@@ -5,6 +5,7 @@ namespace Player {
         [SerializeField] private Camera cam;
         [SerializeField] private SpriteRenderer playSprite;
         [SerializeField] private Rigidbody2D rb;
+        [SerializeField] private GameObject menu;
 
         [Header("Movement")] [SerializeField] private float movementSpeed = 9f;
         private Vector2 movement;
@@ -71,6 +72,11 @@ namespace Player {
                 currentDodgeDirection = MousePosition;
                 state = State.Dodging;
             }
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                OpenMenu();
+            }
         }
 
         //Movement
@@ -99,7 +105,9 @@ namespace Player {
         private void OpenInventory() {
         }
 
-        private void OpenOptions() {
+        private void OpenMenu() {
+            menu.SetActive(true);
+            Time.timeScale = 0;
         }
 
         #region Spellcast
