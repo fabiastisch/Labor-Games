@@ -27,6 +27,8 @@ namespace Editor {
 
             Component newComponent = _generator.gameObject.AddComponent(getClass(_generator.generatorType));
             ((AbstractDungeonGenerator)newComponent).tilemapVisualizer = _generator.tilemapVisualizer;
+            ((AbstractDungeonGenerator)newComponent).portal = _generator.portal;
+            ((AbstractDungeonGenerator)newComponent).spawn = _generator.spawn;
             _generator.currentGeneratorType = _generator.generatorType;
         }
 

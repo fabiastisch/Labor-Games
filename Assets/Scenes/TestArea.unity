@@ -295,7 +295,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &512961124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -346,25 +346,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &674052111 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8548802804282458401, guid: 5b200b5938c353445998557fb82e7309, type: 3}
-  m_PrefabInstance: {fileID: 801980971}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &674052112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 674052111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90dd711a58b849c393e1d7fbc71fcf3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  sliderPrefab: {fileID: 3460867215131968574, guid: be6768ef19bc665478b7013e3259df20, type: 3}
 --- !u!4 &674052113 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8548802804282458402, guid: 5b200b5938c353445998557fb82e7309, type: 3}
@@ -377,22 +358,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8548802802857417840, guid: 5b200b5938c353445998557fb82e7309, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8548802802857417840, guid: 5b200b5938c353445998557fb82e7309, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8548802802857417840, guid: 5b200b5938c353445998557fb82e7309, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8548802802857417853, guid: 5b200b5938c353445998557fb82e7309, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8548802804282458401, guid: 5b200b5938c353445998557fb82e7309, type: 3}
       propertyPath: m_Name
       value: Player
@@ -441,51 +406,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8548802804282458404, guid: 5b200b5938c353445998557fb82e7309, type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b200b5938c353445998557fb82e7309, type: 3}
---- !u!1 &1032655591 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8548802802857417853, guid: 5b200b5938c353445998557fb82e7309, type: 3}
-  m_PrefabInstance: {fileID: 801980971}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1032655592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1032655591}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShowDebugText: 0
-  m_ShowCameraFrustum: 1
-  m_IgnoreTimeScale: 0
-  m_WorldUpOverride: {fileID: 0}
-  m_UpdateMethod: 2
-  m_BlendUpdateMethod: 1
-  m_DefaultBlend:
-    m_Style: 1
-    m_Time: 2
-    m_CustomCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  m_CustomBlends: {fileID: 0}
-  m_CameraCutEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_CameraActivatedEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!20 &1412762987 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 8548802802857417855, guid: 5b200b5938c353445998557fb82e7309, type: 3}

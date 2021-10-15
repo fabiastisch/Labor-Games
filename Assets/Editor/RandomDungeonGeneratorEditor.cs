@@ -1,4 +1,3 @@
-using DungeonGeneration;
 using DungeonGeneration.Scripts;
 using UnityEditor;
 using UnityEngine;
@@ -20,6 +19,7 @@ namespace Editor {
 
             if (GUILayout.Button("Clear Dungeon")) {
                 _generator.ClearDungeon();
+                //_generator.ClearObjectsImmediate();
             }
         }
     }

@@ -1,11 +1,41 @@
 ﻿using System;
 using System.Collections;
+using Dungeon;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Utils.SceneLoader {
     public class SceneLoader : MonoBehaviour {
+        #region SingletonPattern
+
+        private static SceneLoader instance;
+
+        public static SceneLoader Instance {
+            get {
+                if (!instance) {
+                    throw new Exception("SceneLoader Instance does not Exist");
+                }
+
+                return instance;
+            }
+        }
+
+        private void Awake() {
+            if (instance == null) {
+                instance = this;
+            }
+            else if (instance != this) {
+                Debug.LogWarning("Instance already exist.");
+                Destroy(gameObject);
+            }
+
+            DontDestroyOnLoad(gameObject);
+        }
+
+        #endregion
+
+        public static event Action onReady;
         [SerializeField] private GameObject loadingScreen;
         [SerializeField] private Slider slider;
         private bool isLoading = false;
@@ -20,8 +50,19 @@ namespace Utils.SceneLoader {
             }
         }
 
-        public void LoadSceneWithGameObject(string sceneName, GameObject gameObject) {
-            StartCoroutine(LoadAsyncScene(sceneName, gameObject));
+        public void LoadSceneWithGameObject(string sceneName, GameObject gObject) {
+            if (!isLoading) {
+                StartCoroutine(LoadAsyncScene(sceneName, gObject));
+                isLoading = true;
+            }
+        }
+
+        public bool LoadSceneWithPlayer(string sceneName) {
+            if (isLoading) return false;
+            GameObject player = GameObject.FindWithTag("Player");
+            //Debug.Log("Player: " + player);
+            LoadSceneWithGameObject(sceneName, player);
+            return true;
         }
 
         private IEnumerator LoadAsyncScene(string scene, GameObject myGameObject = null) {
@@ -49,14 +90,19 @@ namespace Utils.SceneLoader {
             }
 
             // Move the GameObject (you attach this in the Inspector) to the newly loaded Scene
+            //Debug.Log("SceneSwitching object: " + myGameObject);
             if (myGameObject) {
                 SceneManager.MoveGameObjectToScene(myGameObject, SceneManager.GetSceneByName(scene));
+                myGameObject.transform.position = Spawn.Instance.transform.position;
             }
 
-
-            isLoading = false;
+            loadingScreen.SetActive(false);
+            
+            
             // Unload the previous Scene
             SceneManager.UnloadSceneAsync(currentScene);
+            isLoading = false;
+            onReady?.Invoke();
         }
 
         private void ChangeText() {
