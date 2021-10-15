@@ -5,15 +5,20 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-namespace Utils.SceneLoader {
-    public class SceneLoader : MonoBehaviour {
+namespace Utils.SceneLoader
+{
+    public class SceneLoader : MonoBehaviour
+    {
         #region SingletonPattern
 
         private static SceneLoader instance;
 
-        public static SceneLoader Instance {
-            get {
-                if (!instance) {
+        public static SceneLoader Instance
+        {
+            get
+            {
+                if (!instance)
+                {
                     throw new Exception("SceneLoader Instance does not Exist");
                 }
 
@@ -21,11 +26,14 @@ namespace Utils.SceneLoader {
             }
         }
 
-        private void Awake() {
-            if (instance == null) {
+        private void Awake()
+        {
+            if (instance == null)
+            {
                 instance = this;
             }
-            else if (instance != this) {
+            else if (instance != this)
+            {
                 Debug.LogWarning("Instance already exist.");
                 Destroy(gameObject);
             }
@@ -43,21 +51,26 @@ namespace Utils.SceneLoader {
         private string loadingText = "Loading";
         private int textState = 0;
 
-        public void LoadScene(string sceneName) {
-            if (!isLoading) {
+        public void LoadScene(string sceneName)
+        {
+            if (!isLoading)
+            {
                 StartCoroutine(LoadAsyncScene(sceneName));
                 isLoading = true;
             }
         }
 
-        public void LoadSceneWithGameObject(string sceneName, GameObject gObject) {
-            if (!isLoading) {
+        public void LoadSceneWithGameObject(string sceneName, GameObject gObject)
+        {
+            if (!isLoading)
+            {
                 StartCoroutine(LoadAsyncScene(sceneName, gObject));
                 isLoading = true;
             }
         }
 
-        public bool LoadSceneWithPlayer(string sceneName) {
+        public bool LoadSceneWithPlayer(string sceneName)
+        {
             if (isLoading) return false;
             GameObject player = GameObject.FindWithTag("Player");
             //Debug.Log("Player: " + player);
@@ -65,7 +78,8 @@ namespace Utils.SceneLoader {
             return true;
         }
 
-        private IEnumerator LoadAsyncScene(string scene, GameObject myGameObject = null) {
+        private IEnumerator LoadAsyncScene(string scene, GameObject myGameObject = null)
+        {
             // Set the current Scene to be able to unload it later
             Scene currentScene = SceneManager.GetActiveScene();
 
@@ -75,7 +89,8 @@ namespace Utils.SceneLoader {
             AsyncOperation operation = SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive);
 
             // Wait until the last operation fully loads to return anything
-            while (!operation.isDone) {
+            while (!operation.isDone)
+            {
                 float progress = Mathf.Clamp01(operation.progress / .9f) * 0.5f;
                 ChangeText();
                 slider.value = progress;
@@ -83,7 +98,8 @@ namespace Utils.SceneLoader {
             }
 
             // some delay
-            for (int i = 0; i <= 5; i++) {
+            for (int i = 0; i <= 5; i++)
+            {
                 slider.value = 0.5f + i * 0.1f;
                 ChangeText();
                 yield return new WaitForSeconds(.03f);
@@ -91,25 +107,28 @@ namespace Utils.SceneLoader {
 
             // Move the GameObject (you attach this in the Inspector) to the newly loaded Scene
             //Debug.Log("SceneSwitching object: " + myGameObject);
-            if (myGameObject) {
+            if (myGameObject)
+            {
                 SceneManager.MoveGameObjectToScene(myGameObject, SceneManager.GetSceneByName(scene));
                 myGameObject.transform.position = Spawn.Instance.transform.position;
             }
 
             loadingScreen.SetActive(false);
-            
-            
+
+
             // Unload the previous Scene
             SceneManager.UnloadSceneAsync(currentScene);
             isLoading = false;
             onReady?.Invoke();
         }
 
-        private void ChangeText() {
+        private void ChangeText()
+        {
             textState++;
             textState = textState % 4;
             String text = loadingText;
-            for (int i = 0; i < textState; i++) {
+            for (int i = 0; i < textState; i++)
+            {
                 text += ".";
             }
 

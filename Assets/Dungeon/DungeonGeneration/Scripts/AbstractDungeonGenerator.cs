@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 
-namespace DungeonGeneration.Scripts {
-    public abstract class AbstractDungeonGenerator : MonoBehaviour {
+namespace DungeonGeneration.Scripts
+{
+    public abstract class AbstractDungeonGenerator : MonoBehaviour
+    {
         [HideInInspector] public GameObject portal;
         [HideInInspector] public GameObject spawn;
         [HideInInspector] public TilemapVisualizer tilemapVisualizer = null;
@@ -11,24 +13,29 @@ namespace DungeonGeneration.Scripts {
         protected GameObject _portal;
         protected GameObject _spawn;
 
-        private void Awake() {
-            if (generateOnPlay) {
+        private void Awake()
+        {
+            if (generateOnPlay)
+            {
                 GenerateDungeon();
             }
         }
 
-        public void GenerateDungeon() {
+        public void GenerateDungeon()
+        {
             if (tilemapVisualizer && clearDungeonOnGenerate) ClearDungeon();
             RunProceduralGeneration();
         }
 
         protected abstract void RunProceduralGeneration();
 
-        public void ClearDungeon() {
+        public void ClearDungeon()
+        {
             if (tilemapVisualizer) tilemapVisualizer.Clear();
         }
 
-        public void ClearObjectsImmediate() {
+        public void ClearObjectsImmediate()
+        {
             Debug.Log("ClearObjectsImmediate");
             if (_portal) DestroyImmediate(_portal);
             _portal = null;

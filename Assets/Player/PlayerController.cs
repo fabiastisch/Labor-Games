@@ -1,7 +1,9 @@
 using UnityEngine;
 
-namespace Player {
-    public class PlayerController : MonoBehaviour {
+namespace Player
+{
+    public class PlayerController : MonoBehaviour
+    {
         [SerializeField] private Camera cam;
         [SerializeField] private SpriteRenderer playSprite;
 
@@ -10,10 +12,12 @@ namespace Player {
 
         private Rigidbody2D rb;
 
-        private Vector2 MousePosition {
-            get {
+        private Vector2 MousePosition
+        {
+            get
+            {
                 Vector2 mouseOnScreen = cam.ScreenToWorldPoint(Input.mousePosition);
-                return (mouseOnScreen - (Vector2)transform.position).normalized;
+                return (mouseOnScreen - (Vector2) transform.position).normalized;
             }
         }
 
@@ -34,22 +38,26 @@ namespace Player {
         private State state;
 
         //State which the player is currently in
-        private enum State {
+        private enum State
+        {
             Normal,
             Dodging
         }
 
         #endregion
 
-        void Start() {
+        void Start()
+        {
             state = State.Normal;
             rb = gameObject.GetComponent<Rigidbody2D>();
             maxStamina = stamina;
             dodgeSpeedMax = dodgeSpeed;
         }
 
-        private void FixedUpdate() {
-            switch (state) {
+        private void FixedUpdate()
+        {
+            switch (state)
+            {
                 case State.Normal:
                     Move();
                     break;
@@ -59,9 +67,11 @@ namespace Player {
             }
         }
 
-        private void PerformDodgeStep() {
+        private void PerformDodgeStep()
+        {
             dodgeSpeed -= 1.7f;
-            if (dodgeSpeed <= 0) {
+            if (dodgeSpeed <= 0)
+            {
                 currentDodgeDirection = Vector2.zero;
                 state = State.Normal;
                 return;
@@ -69,18 +79,21 @@ namespace Player {
             }
 
             //rb.velocity = currentDodgeDirection * dodgeSpeed;
-            rb.MovePosition((Vector2)transform.position + currentDodgeDirection * dodgeSpeed * Time.fixedDeltaTime);
+            rb.MovePosition((Vector2) transform.position + currentDodgeDirection * dodgeSpeed * Time.fixedDeltaTime);
         }
 
-        void Update() {
+        void Update()
+        {
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
-            
-            if (stamina < maxStamina) {
+
+            if (stamina < maxStamina)
+            {
                 stamina += staminaReg * Time.deltaTime;
             }
 
-            if (Input.GetKeyDown(KeyCode.Space) && stamina >= dodgeCost && state == State.Normal) {
+            if (Input.GetKeyDown(KeyCode.Space) && stamina >= dodgeCost && state == State.Normal)
+            {
                 stamina -= dodgeCost;
                 dodgeSpeed = dodgeSpeedMax;
                 currentDodgeDirection = MousePosition;
@@ -89,25 +102,31 @@ namespace Player {
         }
 
         //Movement
-        private void Move() {
+        private void Move()
+        {
             ChangeSpriteDirection(movement.x);
             //rb.velocity = movement * movementSpeed;
-            rb.MovePosition((Vector2)transform.position + movement.normalized * (movementSpeed * Time.fixedDeltaTime));
+            rb.MovePosition((Vector2) transform.position + movement.normalized * (movementSpeed * Time.fixedDeltaTime));
         }
 
         //UI
-        private void OpenInventory() {
+        private void OpenInventory()
+        {
         }
 
-        private void OpenOptions() {
+        private void OpenOptions()
+        {
         }
 
         //Swaps the sprite to the moving direction.
-        private void ChangeSpriteDirection(float direction) {
-            if (direction < 0) {
+        private void ChangeSpriteDirection(float direction)
+        {
+            if (direction < 0)
+            {
                 playSprite.flipX = true;
             }
-            else if (direction > 0) {
+            else if (direction > 0)
+            {
                 playSprite.flipX = false;
             }
         }

@@ -4,53 +4,65 @@ using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace DungeonGeneration.Scripts {
-    public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator {
+namespace DungeonGeneration.Scripts
+{
+    public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
+    {
         [SerializeField] private int minRoomWidth = 4, minRoomHeight = 4;
         [SerializeField] private int dungeonWidth = 20, dungeonHeight = 20;
         [SerializeField] [Range(0, 10)] private int offset = 1;
         [SerializeField] private bool randomWalkRooms = false;
         [SerializeField] private int corridorWidth = 2;
 
-        protected override void RunProceduralGeneration() {
+        protected override void RunProceduralGeneration()
+        {
             CreateRooms();
         }
 
-        private void CreateRooms() {
-            var roomsList = ProceduralGenerationAlgorithms.BinarySpacePartitioning(new BoundsInt((Vector3Int)startPosition,
+        private void CreateRooms()
+        {
+            var roomsList = ProceduralGenerationAlgorithms.BinarySpacePartitioning(new BoundsInt(
+                (Vector3Int) startPosition,
                 new Vector3Int(dungeonWidth, dungeonHeight, 0)), minRoomWidth, minRoomHeight);
             HashSet<Vector2Int> floor;
 
-            if (randomWalkRooms) {
+            if (randomWalkRooms)
+            {
                 floor = CreateRoomsRandomly(roomsList);
             }
-            else {
+            else
+            {
                 floor = CreateSimpleRooms(roomsList);
             }
 
             var last = roomsList.Last();
-            if (_portal) {
+            if (_portal)
+            {
                 _portal.transform.position = last.center;
             }
-            else {
+            else
+            {
                 //_portal = Instantiate(portal, last.center, Quaternion.identity, gameObject.transform);
                 _portal = portal;
                 _portal.transform.position = last.center;
             }
 
             var first = roomsList.First();
-            if (_spawn) {
+            if (_spawn)
+            {
                 _spawn.transform.position = first.center;
             }
-            else {
+            else
+            {
                 //_spawn = Instantiate(spawn, first.center, Quaternion.identity, gameObject.transform);
                 _spawn = spawn;
                 _spawn.transform.position = first.center;
             }
 
             List<Vector2Int> roomCenters = new List<Vector2Int>();
-            foreach (var room in roomsList) {
-                roomCenters.Add((Vector2Int)Vector3Int.RoundToInt(room.center));
+            foreach (var room in roomsList)
+            {
+                roomCenters.Add((Vector2Int) Vector3Int.RoundToInt(room.center));
             }
 
             HashSet<Vector2Int> corridors = ConnectRooms(roomCenters);
@@ -60,14 +72,19 @@ namespace DungeonGeneration.Scripts {
             WallGenerator.CreateWalls(floor, tilemapVisualizer);
         }
 
-        private HashSet<Vector2Int> CreateRoomsRandomly(List<BoundsInt> roomsList) {
+        private HashSet<Vector2Int> CreateRoomsRandomly(List<BoundsInt> roomsList)
+        {
             HashSet<Vector2Int> floor = new HashSet<Vector2Int>();
-            foreach (var roomBounds in roomsList) {
-                var roomCenter = new Vector2Int(Mathf.RoundToInt(roomBounds.center.x), Mathf.RoundToInt(roomBounds.center.y));
+            foreach (var roomBounds in roomsList)
+            {
+                var roomCenter = new Vector2Int(Mathf.RoundToInt(roomBounds.center.x),
+                    Mathf.RoundToInt(roomBounds.center.y));
                 var roomFloor = RunRandomWalk(roomCenter);
-                foreach (var position in roomFloor) {
+                foreach (var position in roomFloor)
+                {
                     if (position.x >= (roomBounds.xMin + offset) && position.x <= (roomBounds.xMax - offset) &&
-                        position.y >= (roomBounds.yMin - offset) && position.y <= (roomBounds.yMax - offset)) {
+                        position.y >= (roomBounds.yMin - offset) && position.y <= (roomBounds.yMax - offset))
+                    {
                         floor.Add(position);
                     }
                 }
@@ -76,12 +93,14 @@ namespace DungeonGeneration.Scripts {
             return floor;
         }
 
-        private HashSet<Vector2Int> ConnectRooms(List<Vector2Int> roomCenters) {
+        private HashSet<Vector2Int> ConnectRooms(List<Vector2Int> roomCenters)
+        {
             HashSet<Vector2Int> corridors = new HashSet<Vector2Int>();
             var currentRoomCenter = roomCenters[Random.Range(0, roomCenters.Count)];
             roomCenters.Remove(currentRoomCenter);
 
-            while (roomCenters.Count > 0) {
+            while (roomCenters.Count > 0)
+            {
                 Vector2Int closest = FindClosestPointTo(currentRoomCenter, roomCenters);
                 roomCenters.Remove(closest);
                 HashSet<Vector2Int> newCorridor = CreateCorridor(currentRoomCenter, closest);
@@ -92,12 +111,15 @@ namespace DungeonGeneration.Scripts {
             return corridors;
         }
 
-        private Vector2Int FindClosestPointTo(Vector2Int currentRoomCenter, List<Vector2Int> roomCenters) {
+        private Vector2Int FindClosestPointTo(Vector2Int currentRoomCenter, List<Vector2Int> roomCenters)
+        {
             Vector2Int closest = Vector2Int.zero;
             float length = float.MaxValue;
-            foreach (var position in roomCenters) {
+            foreach (var position in roomCenters)
+            {
                 float currentDist = Vector2.Distance(position, currentRoomCenter);
-                if (currentDist < length) {
+                if (currentDist < length)
+                {
                     length = currentDist;
                     closest = position;
                 }
@@ -106,47 +128,63 @@ namespace DungeonGeneration.Scripts {
             return closest;
         }
 
-        private HashSet<Vector2Int> CreateCorridor(Vector2Int currentRoomCenter, Vector2Int destination) {
+        private HashSet<Vector2Int> CreateCorridor(Vector2Int currentRoomCenter, Vector2Int destination)
+        {
             HashSet<Vector2Int> corridor = new HashSet<Vector2Int>();
             var position = currentRoomCenter;
             corridor.Add(position);
-            
-            while (position.y != destination.y) {
-                if (destination.y > position.y) {
+
+            while (position.y != destination.y)
+            {
+                if (destination.y > position.y)
+                {
                     position += Vector2Int.up;
                 }
-                else if (destination.y < position.y) {
+                else if (destination.y < position.y)
+                {
                     position += Vector2Int.down;
                 }
-                
-                for (int i = -(corridorWidth%2 == 0? corridorWidth:corridorWidth+1)/2; i < corridorWidth/2; i++) {
+
+                for (int i = -(corridorWidth % 2 == 0 ? corridorWidth : corridorWidth + 1) / 2;
+                    i < corridorWidth / 2;
+                    i++)
+                {
                     corridor.Add(position + Vector2Int.right * i);
                 }
             }
 
-            while (position.x != destination.x) {
-                if (destination.x > position.x) {
+            while (position.x != destination.x)
+            {
+                if (destination.x > position.x)
+                {
                     position += Vector2Int.right;
                 }
-                else if (destination.x < position.x) {
+                else if (destination.x < position.x)
+                {
                     position += Vector2Int.left;
                 }
-                
-                for (int i = -(corridorWidth%2 == 0? corridorWidth:corridorWidth+1)/2; i < corridorWidth/2; i++) {
+
+                for (int i = -(corridorWidth % 2 == 0 ? corridorWidth : corridorWidth + 1) / 2;
+                    i < corridorWidth / 2;
+                    i++)
+                {
                     corridor.Add(position + Vector2Int.down * i);
                 }
-                
             }
 
             return corridor;
         }
 
-        private HashSet<Vector2Int> CreateSimpleRooms(List<BoundsInt> roomsList) {
+        private HashSet<Vector2Int> CreateSimpleRooms(List<BoundsInt> roomsList)
+        {
             HashSet<Vector2Int> floor = new HashSet<Vector2Int>();
-            foreach (var room in roomsList) {
-                for (int col = offset; col < room.size.x - offset; col++) {
-                    for (int row = offset; row < room.size.y - offset; row++) {
-                        Vector2Int position = (Vector2Int)room.min + new Vector2Int(col, row);
+            foreach (var room in roomsList)
+            {
+                for (int col = offset; col < room.size.x - offset; col++)
+                {
+                    for (int row = offset; row < room.size.y - offset; row++)
+                    {
+                        Vector2Int position = (Vector2Int) room.min + new Vector2Int(col, row);
                         floor.Add(position);
                     }
                 }

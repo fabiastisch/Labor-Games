@@ -1,8 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace DungeonGeneration.Scripts {
-    public static class WallGenerator {
+namespace DungeonGeneration.Scripts
+{
+    public static class WallGenerator
+    {
         public static void CreateWalls(HashSet<Vector2Int> floorPositions, TilemapVisualizer tilemapVisualizer)
         {
             var basicWallPositions = FindWallsInDirections(floorPositions, Direction2D.cardinalDirectionList);
@@ -11,7 +13,8 @@ namespace DungeonGeneration.Scripts {
             CreateCornerWalls(tilemapVisualizer, cornerWallPositions, floorPositions);
         }
 
-        private static void CreateCornerWalls(TilemapVisualizer tilemapVisualizer, HashSet<Vector2Int> cornerWallPositions, HashSet<Vector2Int> floorPositions)
+        private static void CreateCornerWalls(TilemapVisualizer tilemapVisualizer,
+            HashSet<Vector2Int> cornerWallPositions, HashSet<Vector2Int> floorPositions)
         {
             foreach (var position in cornerWallPositions)
             {
@@ -28,11 +31,13 @@ namespace DungeonGeneration.Scripts {
                         neighboursBinaryType += "0";
                     }
                 }
+
                 tilemapVisualizer.PaintSingleCornerWall(position, neighboursBinaryType);
             }
         }
 
-        private static void CreateBasicWall(TilemapVisualizer tilemapVisualizer, HashSet<Vector2Int> basicWallPositions, HashSet<Vector2Int> floorPositions)
+        private static void CreateBasicWall(TilemapVisualizer tilemapVisualizer, HashSet<Vector2Int> basicWallPositions,
+            HashSet<Vector2Int> floorPositions)
         {
             foreach (var position in basicWallPositions)
             {
@@ -49,11 +54,13 @@ namespace DungeonGeneration.Scripts {
                         neighboursBinaryType += "0";
                     }
                 }
+
                 tilemapVisualizer.PaintSingleBasicWall(position, neighboursBinaryType);
             }
         }
 
-        private static HashSet<Vector2Int> FindWallsInDirections(HashSet<Vector2Int> floorPositions, List<Vector2Int> directionList)
+        private static HashSet<Vector2Int> FindWallsInDirections(HashSet<Vector2Int> floorPositions,
+            List<Vector2Int> directionList)
         {
             HashSet<Vector2Int> wallPositions = new HashSet<Vector2Int>();
             foreach (var position in floorPositions)
@@ -65,6 +72,7 @@ namespace DungeonGeneration.Scripts {
                         wallPositions.Add(neighbourPosition);
                 }
             }
+
             return wallPositions;
         }
     }
