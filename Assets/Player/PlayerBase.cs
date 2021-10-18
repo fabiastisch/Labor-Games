@@ -48,11 +48,12 @@ namespace Player {
         private void Awake()
         {
 
-            //Mapp playerInputs with the functions
+            //Mapping playerInputs with the functions
             playerInput = new PlayerInputs();
 
             playerInput.Player.OpenMenu.performed += _ => OpenMenu();
             playerInput.Player.OpenInventory.performed += _ => OpenInventory();
+            playerInput.Player.Map.performed += _ => OpenMinimap();
 
             playerInput.Player.Primary.performed += _ => CastPrimaryAttack();
             playerInput.Player.Skill1.performed += _ => CastAbillity1();
@@ -131,6 +132,10 @@ namespace Player {
 
         //UI
         private void OpenInventory() {
+        }
+
+        private void OpenMinimap() {
+
         }
 
         private void OpenMenu() {
