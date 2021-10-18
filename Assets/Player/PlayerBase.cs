@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Player {
     public abstract class PlayerBase : MonoBehaviour {
@@ -6,6 +7,8 @@ namespace Player {
         [SerializeField] private SpriteRenderer playSprite;
         [SerializeField] private Rigidbody2D rb;
         [SerializeField] private GameObject menu;
+        private PlayerInputs playerInput;
+
 
         [Header("Movement")] [SerializeField] private float movementSpeed = 9f;
         private Vector2 movement;
@@ -25,6 +28,7 @@ namespace Player {
         private float dodgeSpeedMax;
         private float maxStamina;
         private Vector2 currentDodgeDirection = Vector2.zero;
+        private bool isMenuOpen = false;
 
         float axesX;
         float axesY;
@@ -40,6 +44,22 @@ namespace Player {
         }
 
         #endregion
+
+        private void Awake()
+        {
+            playerInput = new PlayerInputs();
+            playerInput.Player.OpenMenu.performed += _ => OpenMenu();
+        }
+
+        private void OnDisable()
+        {
+            playerInput.Disable();
+        }
+
+        private void OnEnable()
+        {
+            playerInput.Enable();
+        }
 
         protected virtual void Start() {
             state = State.Normal;
@@ -59,24 +79,21 @@ namespace Player {
         }
 
         protected virtual void Update() {
-            movement.x = Input.GetAxisRaw("Horizontal");
-            movement.y = Input.GetAxisRaw("Vertical");
+            Vector2 moveInput = playerInput.Player.Move.ReadValue<Vector2>();
+            movement.x = moveInput.x;
+            movement.y = moveInput.y;
 
             if (stamina < maxStamina) {
                 stamina += staminaReg * Time.deltaTime;
             }
 
-            if (Input.GetKeyDown(KeyCode.Space) && stamina >= dodgeCost && state == State.Normal) {
+            if (playerInput.Player.Dodge.triggered && stamina >= dodgeCost && state == State.Normal) {
                 stamina -= dodgeCost;
                 dodgeSpeed = dodgeSpeedMax;
                 currentDodgeDirection = MousePosition;
                 state = State.Dodging;
             }
-
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                OpenMenu();
-            }
+            
         }
 
         //Movement
@@ -106,8 +123,19 @@ namespace Player {
         }
 
         private void OpenMenu() {
-            menu.SetActive(true);
-            Time.timeScale = 0;
+            if (!isMenuOpen)
+            {
+                isMenuOpen = true;
+                menu.SetActive(true);
+                Time.timeScale = 0;
+            }
+            else
+            {
+                isMenuOpen = false;
+                menu.SetActive(false);
+                Time.timeScale = 1;
+            }
+            
         }
 
         #region Spellcast
