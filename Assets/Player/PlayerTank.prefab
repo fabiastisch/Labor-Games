@@ -406,6 +406,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 91fd9c42-a70d-4b21-9d37-abad6d1760f4
     m_ActionName: Player/OpenInventory[/Keyboard/i]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8548802804282458405}
+        m_TargetAssemblyTypeName: Player.PlayerBase, Assembly-CSharp
+        m_MethodName: OpenMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b7a8ad4a-3bc6-4c13-9dac-8bbc001cc58c
+    m_ActionName: Menu/Open Menu[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
