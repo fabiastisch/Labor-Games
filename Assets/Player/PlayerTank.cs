@@ -40,6 +40,11 @@ namespace Player
         {
             throw new System.NotImplementedException();
         }
+
+        public override void CastPrimaryAttack()
+        {
+            throw new System.NotImplementedException();
+        }
         #endregion
     }
 }

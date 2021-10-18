@@ -86,17 +86,17 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Skill 6",
+                    "name": "Map",
                     "type": "Button",
-                    "id": "c2fee698-0acb-47e5-9eff-9eaf3164f7af",
+                    "id": "c45a4e9f-bdf8-408b-9680-16fd11d6f84d",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 },
                 {
-                    "name": "Map",
+                    "name": "OpenInventory",
                     "type": "Button",
-                    "id": "c45a4e9f-bdf8-408b-9680-16fd11d6f84d",
+                    "id": "91fd9c42-a70d-4b21-9d37-abad6d1760f4",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -204,17 +204,6 @@
                 },
                 {
                     "name": "",
-                    "id": "3aba608d-5022-4100-9213-e6aafd1a756e",
-                    "path": "<Keyboard>/r",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Skill 6",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "144ad2c6-59ba-4bf7-8f8d-ac9a24c3a43e",
                     "path": "<Keyboard>/tab",
                     "interactions": "",
@@ -278,6 +267,17 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "2e02abaf-9cec-420d-a42b-4650117ed4de",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "OpenInventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

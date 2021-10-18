@@ -99,17 +99,17 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Skill 6"",
+                    ""name"": ""Map"",
                     ""type"": ""Button"",
-                    ""id"": ""c2fee698-0acb-47e5-9eff-9eaf3164f7af"",
+                    ""id"": ""c45a4e9f-bdf8-408b-9680-16fd11d6f84d"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Map"",
+                    ""name"": ""OpenInventory"",
                     ""type"": ""Button"",
-                    ""id"": ""c45a4e9f-bdf8-408b-9680-16fd11d6f84d"",
+                    ""id"": ""91fd9c42-a70d-4b21-9d37-abad6d1760f4"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -217,17 +217,6 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""3aba608d-5022-4100-9213-e6aafd1a756e"",
-                    ""path"": ""<Keyboard>/r"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Skill 6"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""144ad2c6-59ba-4bf7-8f8d-ac9a24c3a43e"",
                     ""path"": ""<Keyboard>/tab"",
                     ""interactions"": """",
@@ -291,6 +280,17 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2e02abaf-9cec-420d-a42b-4650117ed4de"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""OpenInventory"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -326,8 +326,8 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         m_Player_Skill3 = m_Player.FindAction("Skill 3", throwIfNotFound: true);
         m_Player_Skill4 = m_Player.FindAction("Skill 4", throwIfNotFound: true);
         m_Player_Skill5 = m_Player.FindAction("Skill 5", throwIfNotFound: true);
-        m_Player_Skill6 = m_Player.FindAction("Skill 6", throwIfNotFound: true);
         m_Player_Map = m_Player.FindAction("Map", throwIfNotFound: true);
+        m_Player_OpenInventory = m_Player.FindAction("OpenInventory", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -387,8 +387,8 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Skill3;
     private readonly InputAction m_Player_Skill4;
     private readonly InputAction m_Player_Skill5;
-    private readonly InputAction m_Player_Skill6;
     private readonly InputAction m_Player_Map;
+    private readonly InputAction m_Player_OpenInventory;
     public struct PlayerActions
     {
         private @PlayerInputs m_Wrapper;
@@ -403,8 +403,8 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         public InputAction @Skill3 => m_Wrapper.m_Player_Skill3;
         public InputAction @Skill4 => m_Wrapper.m_Player_Skill4;
         public InputAction @Skill5 => m_Wrapper.m_Player_Skill5;
-        public InputAction @Skill6 => m_Wrapper.m_Player_Skill6;
         public InputAction @Map => m_Wrapper.m_Player_Map;
+        public InputAction @OpenInventory => m_Wrapper.m_Player_OpenInventory;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -444,12 +444,12 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @Skill5.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSkill5;
                 @Skill5.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSkill5;
                 @Skill5.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSkill5;
-                @Skill6.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSkill6;
-                @Skill6.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSkill6;
-                @Skill6.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSkill6;
                 @Map.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMap;
                 @Map.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMap;
                 @Map.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMap;
+                @OpenInventory.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOpenInventory;
+                @OpenInventory.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOpenInventory;
+                @OpenInventory.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOpenInventory;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -484,12 +484,12 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @Skill5.started += instance.OnSkill5;
                 @Skill5.performed += instance.OnSkill5;
                 @Skill5.canceled += instance.OnSkill5;
-                @Skill6.started += instance.OnSkill6;
-                @Skill6.performed += instance.OnSkill6;
-                @Skill6.canceled += instance.OnSkill6;
                 @Map.started += instance.OnMap;
                 @Map.performed += instance.OnMap;
                 @Map.canceled += instance.OnMap;
+                @OpenInventory.started += instance.OnOpenInventory;
+                @OpenInventory.performed += instance.OnOpenInventory;
+                @OpenInventory.canceled += instance.OnOpenInventory;
             }
         }
     }
@@ -515,7 +515,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         void OnSkill3(InputAction.CallbackContext context);
         void OnSkill4(InputAction.CallbackContext context);
         void OnSkill5(InputAction.CallbackContext context);
-        void OnSkill6(InputAction.CallbackContext context);
         void OnMap(InputAction.CallbackContext context);
+        void OnOpenInventory(InputAction.CallbackContext context);
     }
 }
