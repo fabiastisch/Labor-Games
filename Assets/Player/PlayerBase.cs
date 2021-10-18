@@ -8,6 +8,7 @@ namespace Player {
         [SerializeField] private Rigidbody2D rb;
         [SerializeField] private GameObject menu;
         private PlayerInputs playerInput;
+        private PlayerInput inputClass;
 
 
         [Header("Movement")] [SerializeField] private float movementSpeed = 9f;
@@ -28,7 +29,7 @@ namespace Player {
         private float dodgeSpeedMax;
         private float maxStamina;
         private Vector2 currentDodgeDirection = Vector2.zero;
-        private bool isMenuOpen = false;
+        private bool isMenuOpen;
 
         float axesX;
         float axesY;
@@ -48,6 +49,7 @@ namespace Player {
         private void Awake()
         {
             playerInput = new PlayerInputs();
+            inputClass = GetComponent<PlayerInput>();
         }
 
         private void OnDisable()
@@ -126,15 +128,14 @@ namespace Player {
         }
 
         public void OpenMenu() {
+            isMenuOpen = menu.gameObject.activeSelf;
             if (!isMenuOpen)
             {
-                isMenuOpen = true;
                 menu.SetActive(true);
                 Time.timeScale = 0;
             }
             else
             {
-                isMenuOpen = false;
                 menu.SetActive(false);
                 Time.timeScale = 1;
             }
