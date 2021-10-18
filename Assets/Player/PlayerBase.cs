@@ -47,20 +47,7 @@ namespace Player {
 
         private void Awake()
         {
-
-            //Mapping playerInputs with the functions
             playerInput = new PlayerInputs();
-
-            playerInput.Player.OpenMenu.performed += _ => OpenMenu();
-            playerInput.Player.OpenInventory.performed += _ => OpenInventory();
-            playerInput.Player.Map.performed += _ => OpenMinimap();
-
-            playerInput.Player.Primary.performed += _ => CastPrimaryAttack();
-            playerInput.Player.Skill1.performed += _ => CastAbillity1();
-            playerInput.Player.Skill2.performed += _ => CastAbillity2();
-            playerInput.Player.Skill3.performed += _ => CastAbillity3();
-            playerInput.Player.Skill4.performed += _ => CastAbillity4();
-            playerInput.Player.Skill5.performed += _ => CastAbillity5();
         }
 
         private void OnDisable()
@@ -131,14 +118,14 @@ namespace Player {
         }
 
         //UI
-        private void OpenInventory() {
+        public void OpenInventory() {
         }
 
-        private void OpenMinimap() {
+        public void OpenMinimap() {
 
         }
 
-        private void OpenMenu() {
+        public void OpenMenu() {
             if (!isMenuOpen)
             {
                 isMenuOpen = true;

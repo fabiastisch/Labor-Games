@@ -38,14 +38,6 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Interact",
-                    "type": "Button",
-                    "id": "0125559d-03c2-464b-83f9-f5ecfb131a98",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
                     "name": "Skill 1",
                     "type": "Button",
                     "id": "4c05eb46-fb96-43b4-a57b-5f343e4becf8",
@@ -133,17 +125,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Primary",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c7bf6c05-3ec7-4cda-ac0e-faf1cb04bf67",
-                    "path": "<Keyboard>/f",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

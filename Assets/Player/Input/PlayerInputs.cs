@@ -51,14 +51,6 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Interact"",
-                    ""type"": ""Button"",
-                    ""id"": ""0125559d-03c2-464b-83f9-f5ecfb131a98"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
                     ""name"": ""Skill 1"",
                     ""type"": ""Button"",
                     ""id"": ""4c05eb46-fb96-43b4-a57b-5f343e4becf8"",
@@ -146,17 +138,6 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Primary"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""c7bf6c05-3ec7-4cda-ac0e-faf1cb04bf67"",
-                    ""path"": ""<Keyboard>/f"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -320,7 +301,6 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         m_Player_Dodge = m_Player.FindAction("Dodge", throwIfNotFound: true);
         m_Player_OpenMenu = m_Player.FindAction("Open Menu", throwIfNotFound: true);
         m_Player_Primary = m_Player.FindAction("Primary", throwIfNotFound: true);
-        m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_Skill1 = m_Player.FindAction("Skill 1", throwIfNotFound: true);
         m_Player_Skill2 = m_Player.FindAction("Skill 2", throwIfNotFound: true);
         m_Player_Skill3 = m_Player.FindAction("Skill 3", throwIfNotFound: true);
@@ -381,7 +361,6 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Dodge;
     private readonly InputAction m_Player_OpenMenu;
     private readonly InputAction m_Player_Primary;
-    private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_Skill1;
     private readonly InputAction m_Player_Skill2;
     private readonly InputAction m_Player_Skill3;
@@ -397,7 +376,6 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         public InputAction @Dodge => m_Wrapper.m_Player_Dodge;
         public InputAction @OpenMenu => m_Wrapper.m_Player_OpenMenu;
         public InputAction @Primary => m_Wrapper.m_Player_Primary;
-        public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @Skill1 => m_Wrapper.m_Player_Skill1;
         public InputAction @Skill2 => m_Wrapper.m_Player_Skill2;
         public InputAction @Skill3 => m_Wrapper.m_Player_Skill3;
@@ -426,9 +404,6 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @Primary.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPrimary;
                 @Primary.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPrimary;
                 @Primary.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPrimary;
-                @Interact.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
-                @Interact.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
-                @Interact.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
                 @Skill1.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSkill1;
                 @Skill1.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSkill1;
                 @Skill1.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSkill1;
@@ -466,9 +441,6 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @Primary.started += instance.OnPrimary;
                 @Primary.performed += instance.OnPrimary;
                 @Primary.canceled += instance.OnPrimary;
-                @Interact.started += instance.OnInteract;
-                @Interact.performed += instance.OnInteract;
-                @Interact.canceled += instance.OnInteract;
                 @Skill1.started += instance.OnSkill1;
                 @Skill1.performed += instance.OnSkill1;
                 @Skill1.canceled += instance.OnSkill1;
@@ -509,7 +481,6 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         void OnDodge(InputAction.CallbackContext context);
         void OnOpenMenu(InputAction.CallbackContext context);
         void OnPrimary(InputAction.CallbackContext context);
-        void OnInteract(InputAction.CallbackContext context);
         void OnSkill1(InputAction.CallbackContext context);
         void OnSkill2(InputAction.CallbackContext context);
         void OnSkill3(InputAction.CallbackContext context);
