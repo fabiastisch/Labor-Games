@@ -7,6 +7,7 @@ namespace Player {
         [SerializeField] private SpriteRenderer playSprite;
         [SerializeField] private Rigidbody2D rb;
         [SerializeField] private GameObject menu;
+        [SerializeField] private Texture2D cursor;
         private PlayerInputs playerInput;
 
 
@@ -65,6 +66,7 @@ namespace Player {
             state = State.Normal;
             maxStamina = stamina;
             dodgeSpeedMax = dodgeSpeed;
+            Cursor.SetCursor(cursor, Vector2.zero, CursorMode.ForceSoftware);
         }
 
         protected virtual void FixedUpdate() {
