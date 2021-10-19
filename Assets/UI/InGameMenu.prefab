@@ -296,7 +296,7 @@ RectTransform:
   m_GameObject: {fileID: 2211734216774668863}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 2211734215895875565}
   m_Father: {fileID: 2211734217015938614}
@@ -399,9 +399,9 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2211734217015938610}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -411,7 +411,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!1 &2211734216925742724
 GameObject:
@@ -441,7 +441,7 @@ RectTransform:
   m_GameObject: {fileID: 2211734216925742724}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 2211734216390243770}
   m_Father: {fileID: 2211734217015938614}
@@ -534,10 +534,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1017463667}
-        m_TargetAssemblyTypeName: InGameMenu, Assembly-CSharp
-        m_MethodName: GetBackToGame
-        m_Mode: 1
+      - m_Target: {fileID: 2211734217015938610}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -574,7 +574,7 @@ RectTransform:
   m_GameObject: {fileID: 2211734216939317549}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 2211734217384084712}
   m_Father: {fileID: 2211734217015938614}
@@ -679,7 +679,7 @@ GameObject:
   - component: {fileID: 2211734217015938613}
   - component: {fileID: 2211734217015938612}
   - component: {fileID: 2211734217015938611}
-  - component: {fileID: 1017463667}
+  - component: {fileID: 8860064732913836439}
   m_Layer: 5
   m_Name: InGameMenu
   m_TagString: Untagged
@@ -771,7 +771,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &1017463667
+--- !u!114 &8860064732913836439
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -929,7 +929,7 @@ GameObject:
   - component: {fileID: 2211734217406634223}
   - component: {fileID: 2211734217406634222}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -951,7 +951,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.5401, y: 2.4093}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 87.8143, y: 84.0759}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2211734217406634223

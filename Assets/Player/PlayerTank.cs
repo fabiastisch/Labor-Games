@@ -18,27 +18,27 @@ namespace Player
         #region Spellcast
         public override void CastAbillity1()
         {
-            throw new System.NotImplementedException();
+            Debug.Log("Heyya");
         }
 
         public override void CastAbillity2()
         {
-            throw new System.NotImplementedException();
+            Debug.Log("Heyya");
         }
 
         public override void CastAbillity3()
         {
-            throw new System.NotImplementedException();
+            Debug.Log("Heyya");
         }
 
         public override void CastAbillity4()
         {
-            throw new System.NotImplementedException();
+            Debug.Log("Heyya");
         }
 
         public override void CastAbillity5()
         {
-            throw new System.NotImplementedException();
+            Debug.Log("Heyya");
         }
 
         public override void CastPrimaryAttack()

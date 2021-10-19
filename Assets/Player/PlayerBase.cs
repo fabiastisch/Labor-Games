@@ -8,7 +8,7 @@ namespace Player {
         [SerializeField] private Rigidbody2D rb;
         [SerializeField] private GameObject menu;
         [SerializeField] private Texture2D cursor;
-        private PlayerInputs playerInput;
+        private PlayerInput playerInput;
 
 
         [Header("Movement")] [SerializeField] private float movementSpeed = 9f;
@@ -48,18 +48,8 @@ namespace Player {
 
         private void Awake()
         {
-            playerInput = new PlayerInputs();
+            playerInput = GetComponent<PlayerInput>();
             
-        }
-
-        private void OnDisable()
-        {
-            playerInput.Disable();
-        }
-
-        private void OnEnable()
-        {
-            playerInput.Enable();
         }
 
         protected virtual void Start() {
@@ -81,7 +71,7 @@ namespace Player {
         }
 
         protected virtual void Update() {
-            Vector2 moveInput = playerInput.Player.Move.ReadValue<Vector2>();
+            Vector2 moveInput = playerInput.actions["Move"].ReadValue<Vector2>();
             movement.x = moveInput.x;
             movement.y = moveInput.y;
 
@@ -89,7 +79,9 @@ namespace Player {
                 stamina += staminaReg * Time.deltaTime;
             }
 
-            if (playerInput.Player.Dodge.triggered && stamina >= dodgeCost && state == State.Normal && !menu.gameObject.activeSelf) {
+            bool isIngameMenuOpen = menu.gameObject.activeSelf;
+
+            if (playerInput.actions["Dodge"].triggered && stamina >= dodgeCost && state == State.Normal && isIngameMenuOpen) {
                 stamina -= dodgeCost;
                 dodgeSpeed = dodgeSpeedMax;
                 currentDodgeDirection = MousePosition;
