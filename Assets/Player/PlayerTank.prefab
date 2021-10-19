@@ -256,28 +256,12 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 3ef81e92-f423-49e3-99a1-03576334983f
+    m_ActionId: f89569f4-9eb1-46b9-9700-cf6dcaf5694f
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 07759903-f5b0-4e52-bb93-d108e2d5be4e
+    m_ActionId: 38b69448-3031-4153-bfaf-43721cef0747
     m_ActionName: Player/Dodge[/Keyboard/space]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8548802804282458405}
-        m_TargetAssemblyTypeName: Player.PlayerBase, Assembly-CSharp
-        m_MethodName: OpenMenu
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 11e22ac7-47c0-4d15-826e-5b3e8aff4bf2
-    m_ActionName: Player/Open Menu[/Keyboard/escape]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8548802804282458405}
@@ -292,7 +276,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 68fcfba6-d30e-4d54-a223-98ac38e85e95
+    m_ActionId: b1e74785-7d4c-499a-8627-31b1ae841364
     m_ActionName: Player/Primary[/Mouse/leftButton]
   - m_PersistentCalls:
       m_Calls:
@@ -308,8 +292,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 4c05eb46-fb96-43b4-a57b-5f343e4becf8
-    m_ActionName: Player/Skill 1[/Keyboard/1]
+    m_ActionId: 28d4b84f-a854-4697-b133-9d7fd267b43c
+    m_ActionName: Player/Skill1[/Keyboard/1]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8548802804282458405}
@@ -324,8 +308,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 7dfb7337-90fc-48f7-8b2c-beffcdfc6029
-    m_ActionName: Player/Skill 2[/Keyboard/2]
+    m_ActionId: 8e5151dc-ec6d-4216-97e2-8d63d5400015
+    m_ActionName: Player/Skill2[/Keyboard/2]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8548802804282458405}
@@ -340,8 +324,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 32068b8d-7b27-4277-9a99-232dcc86da81
-    m_ActionName: Player/Skill 3[/Keyboard/3]
+    m_ActionId: 8772b8ad-47e6-4e62-8c4c-177426cfc980
+    m_ActionName: Player/Skill3[/Keyboard/3]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8548802804282458405}
@@ -356,8 +340,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 0f7e3b90-0cc6-488b-820a-bac559435ad0
-    m_ActionName: Player/Skill 4[/Keyboard/q]
+    m_ActionId: d96bb40f-1b33-47fb-b32e-a08cf233ba7b
+    m_ActionName: Player/Skill4[/Keyboard/q]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8548802804282458405}
@@ -372,40 +356,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 71645840-1074-4a35-946e-9b26281f91ca
-    m_ActionName: Player/Skill 5[/Keyboard/e]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8548802804282458405}
-        m_TargetAssemblyTypeName: Player.PlayerBase, Assembly-CSharp
-        m_MethodName: OpenMinimap
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: c45a4e9f-bdf8-408b-9680-16fd11d6f84d
-    m_ActionName: Player/Map[/Keyboard/tab]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8548802804282458405}
-        m_TargetAssemblyTypeName: Player.PlayerBase, Assembly-CSharp
-        m_MethodName: OpenInventory
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 91fd9c42-a70d-4b21-9d37-abad6d1760f4
-    m_ActionName: Player/OpenInventory[/Keyboard/i]
+    m_ActionId: 8040426f-3c32-416d-9170-5593bafc4141
+    m_ActionName: Player/Skill5[/Keyboard/e]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8548802804282458405}
@@ -420,8 +372,40 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: b7a8ad4a-3bc6-4c13-9dac-8bbc001cc58c
-    m_ActionName: Menu/Open Menu[/Keyboard/escape]
+    m_ActionId: a79114c0-4bb1-4af1-9cb0-7345b3088767
+    m_ActionName: Player/Menu[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8548802804282458405}
+        m_TargetAssemblyTypeName: Player.PlayerBase, Assembly-CSharp
+        m_MethodName: OpenInventory
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 2aec3698-0a1d-45b2-8e21-c0c20e9e78b7
+    m_ActionName: Player/Inventory[/Keyboard/i]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8548802804282458405}
+        m_TargetAssemblyTypeName: Player.PlayerBase, Assembly-CSharp
+        m_MethodName: OpenMinimap
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 20c99742-9819-4860-9aca-0b3547219ac1
+    m_ActionName: Player/Map[/Keyboard/tab]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

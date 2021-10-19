@@ -268,21 +268,14 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
 
             // Configure the rebind.
             m_RebindOperation = action.PerformInteractiveRebinding(bindingIndex)
+                .WithControlsExcluding("<Pointer>/position")
+                .WithCancelingThrough("<keyboard>/delete")
                 .OnCancel(
                     operation =>
                     {
                         action.Enable();
                         m_RebindStopEvent?.Invoke(this, operation);
                         m_RebindOverlay?.SetActive(false);
-
-                        if (CheckDuplicateBindings(action, bindingIndex, allCompositeParts))
-                        {
-                            action.RemoveBindingOverride(bindingIndex);
-                            CleanUp();
-                            PerformInteractiveRebind(action, bindingIndex, allCompositeParts);
-                            return;
-                        }
-
                         UpdateBindingDisplay();
                         CleanUp();
                     })
@@ -292,6 +285,16 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
                         action.Enable();
                         m_RebindOverlay?.SetActive(false);
                         m_RebindStopEvent?.Invoke(this, operation);
+
+
+                        if (CheckDuplicateBindings(action, bindingIndex, allCompositeParts))
+                        {
+                            action.RemoveBindingOverride(bindingIndex);
+                            CleanUp();
+                            PerformInteractiveRebind(action, bindingIndex, allCompositeParts);
+                            return;
+                        }
+
                         UpdateBindingDisplay();
                         CleanUp();
 
@@ -349,9 +352,9 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
 
             if (allCompositeParts)
             {
-                for (int i = 1; i < bindingIndex; i++)
+                for (int i = 1; i < bindingIndex; ++i)
                 {
-                    if (action.bindings[bindingIndex].effectivePath == newBinding.effectivePath)
+                    if (action.bindings[i].effectivePath == newBinding.effectivePath)
                     {
                         return true;
                     }
