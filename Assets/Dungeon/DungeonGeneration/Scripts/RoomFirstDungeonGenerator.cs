@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Utils;
 using Random = UnityEngine.Random;
 
@@ -11,7 +12,7 @@ namespace DungeonGeneration.Scripts
     {
         [SerializeField] private int minRoomWidth = 8, minRoomHeight = 8;
         [SerializeField] private int dungeonWidth = 25, dungeonHeight = 25;
-        [SerializeField] [Range(0, 10)] private int offset = 1;
+        [SerializeField] [Range(0, 10)] private int dungeonOffset = 1;
         [SerializeField] private bool randomWalkRooms = false;
         [SerializeField] private int corridorWidth = 3;
 
@@ -78,7 +79,7 @@ namespace DungeonGeneration.Scripts
             }
             else
             {
-                floor = CreateSimpleRooms(roomsList);
+                floor = CreateSimpleRooms(roomsList, dungeonOffset);
             }
 
             HashSet<Vector2Int> corridors = ConnectRooms(roomsList);
@@ -129,7 +130,7 @@ namespace DungeonGeneration.Scripts
 
 
                     //index = Random.Range(0, counter + 1);
-                    closestRoom = new Vector2Int(roomsList[index].xMin, (int) roomsList[index].center.y);
+                    closestRoom = new Vector2Int((int)roomsList[index].center.x, (int) roomsList[index].center.y);
                     pos = new Vector2Int(roomsList[index].xMin - (bonusRoomOffset + bonusRoomWidth),
                         (int) roomsList[index].y);
 
@@ -146,7 +147,7 @@ namespace DungeonGeneration.Scripts
                     }
 
                     //index = Random.Range(0, counter + 1);
-                    closestRoom = new Vector2Int(roomsList[index].xMax, (int) roomsList[index].center.y);
+                    closestRoom = new Vector2Int((int)roomsList[index].center.x, (int) roomsList[index].center.y);
 
                     pos = new Vector2Int(roomsList[index].xMax + (bonusRoomOffset), (int) roomsList[index].yMin);
 
@@ -164,7 +165,7 @@ namespace DungeonGeneration.Scripts
                     }
 
                     //index = Random.Range(0, counter + 1);
-                    closestRoom = new Vector2Int((int) roomsList[index].center.x, roomsList[index].yMin);
+                    closestRoom = new Vector2Int((int) roomsList[index].center.x, (int)roomsList[index].center.y);
 
                     pos = new Vector2Int((int) roomsList[index].center.x - bonusRoomWidth / 2,
                         roomsList[index].yMin - (bonusRoomOffset + bonusRoomHeight));
@@ -182,7 +183,7 @@ namespace DungeonGeneration.Scripts
                     }
 
                     //index = Random.Range(0, counter + 1);
-                    closestRoom = new Vector2Int((int) roomsList[index].center.x, roomsList[index].yMax - 1);
+                    closestRoom = new Vector2Int((int) roomsList[index].center.x, (int)roomsList[index].center.y);
                     pos = new Vector2Int((int) roomsList[index].center.x - bonusRoomWidth / 2,
                         roomsList[index].yMax + (bonusRoomOffset));
 
@@ -233,8 +234,8 @@ namespace DungeonGeneration.Scripts
                 var roomFloor = RunRandomWalk(roomCenter);
                 foreach (var position in roomFloor)
                 {
-                    if (position.x >= (roomBounds.xMin + offset) && position.x <= (roomBounds.xMax - offset) &&
-                        position.y >= (roomBounds.yMin - offset) && position.y <= (roomBounds.yMax - offset))
+                    if (position.x >= (roomBounds.xMin + dungeonOffset) && position.x <= (roomBounds.xMax - dungeonOffset) &&
+                        position.y >= (roomBounds.yMin - dungeonOffset) && position.y <= (roomBounds.yMax - dungeonOffset))
                     {
                         floor.Add(position);
                     }
@@ -464,7 +465,7 @@ namespace DungeonGeneration.Scripts
             }
         }
 
-        private HashSet<Vector2Int> CreateSimpleRooms(List<BoundsInt> roomsList)
+        private HashSet<Vector2Int> CreateSimpleRooms(List<BoundsInt> roomsList, int offset  = 0)
         {
             HashSet<Vector2Int> floor = new HashSet<Vector2Int>();
             foreach (var room in roomsList)
