@@ -16,9 +16,9 @@ public class InGameMenu : CasualButtons
         
     }
 
-    public void GetBackToGame()
+    public void GetBackToGame(GameObject parentMenu)
     {
-        gameObject.SetActive(false);
+        parentMenu.SetActive(false);
         Time.timeScale = 1;
     }
 }
