@@ -168,17 +168,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &521243283 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 607610795986062406, guid: 3b6c6c67d525123409c768f3653877df, type: 3}
-  m_PrefabInstance: {fileID: 2367785509614357461}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48550db52252f8d4ab17f6c8178359ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &547582481
 GameObject:
   m_ObjectHideFlags: 0
@@ -4423,58 +4412,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2367785508960794506, guid: 3b6c6c67d525123409c768f3653877df, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2367785508960794506, guid: 3b6c6c67d525123409c768f3653877df, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 521243283}
-    - target: {fileID: 2367785508960794506, guid: 3b6c6c67d525123409c768f3653877df, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GetBackToGame
-      objectReference: {fileID: 0}
-    - target: {fileID: 2367785508960794506, guid: 3b6c6c67d525123409c768f3653877df, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 1217352828}
-    - target: {fileID: 2367785508960794506, guid: 3b6c6c67d525123409c768f3653877df, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 2367785508992449929, guid: 3b6c6c67d525123409c768f3653877df, type: 3}
-      propertyPath: m_RebindOverlay
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2367785509354137018, guid: 3b6c6c67d525123409c768f3653877df, type: 3}
-      propertyPath: m_RebindOverlay
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2367785509737390790, guid: 3b6c6c67d525123409c768f3653877df, type: 3}
-      propertyPath: m_RebindOverlay
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2367785509889700586, guid: 3b6c6c67d525123409c768f3653877df, type: 3}
-      propertyPath: m_RebindOverlay
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2367785510227434629, guid: 3b6c6c67d525123409c768f3653877df, type: 3}
-      propertyPath: m_RebindOverlay
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2367785510271170164, guid: 3b6c6c67d525123409c768f3653877df, type: 3}
-      propertyPath: m_RebindOverlay
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2367785510428782297, guid: 3b6c6c67d525123409c768f3653877df, type: 3}
-      propertyPath: m_RebindOverlay
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2367785510537813626, guid: 3b6c6c67d525123409c768f3653877df, type: 3}
-      propertyPath: m_RebindOverlay
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2367785510546366293, guid: 3b6c6c67d525123409c768f3653877df, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -4562,18 +4499,6 @@ PrefabInstance:
     - target: {fileID: 2367785510546366377, guid: 3b6c6c67d525123409c768f3653877df, type: 3}
       propertyPath: m_Name
       value: IGMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 2367785510604581649, guid: 3b6c6c67d525123409c768f3653877df, type: 3}
-      propertyPath: m_RebindOverlay
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2367785510649186629, guid: 3b6c6c67d525123409c768f3653877df, type: 3}
-      propertyPath: m_RebindOverlay
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2367785510667112380, guid: 3b6c6c67d525123409c768f3653877df, type: 3}
-      propertyPath: m_RebindOverlay
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b6c6c67d525123409c768f3653877df, type: 3}
