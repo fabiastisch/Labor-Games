@@ -18,32 +18,32 @@ namespace Player
         #region Spellcast
         public override void CastAbillity1()
         {
-            Debug.Log("Heyya");
+            Debug.Log("Erruption");
         }
 
         public override void CastAbillity2()
         {
-            Debug.Log("Heyya");
+            Debug.Log("Ignite");
         }
 
         public override void CastAbillity3()
         {
-            Debug.Log("Heyya");
+            Debug.Log("Thunder");
         }
 
         public override void CastAbillity4()
         {
-            Debug.Log("Heyya");
+            Debug.Log("Iceball");
         }
 
         public override void CastAbillity5()
         {
-            Debug.Log("Heyya");
+            Debug.Log("Fireball");
         }
 
         public override void CastPrimaryAttack()
         {
-            Debug.Log("Heyya");
+            Debug.Log("Sword attack!!!!");
         }
         #endregion
     }
