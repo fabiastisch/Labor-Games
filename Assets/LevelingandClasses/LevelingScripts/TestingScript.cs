@@ -17,11 +17,11 @@ public class TestingScript : MonoBehaviour
     public Button charismaButton = GameObject.Find("charismaButton").GetComponent<Button>();
     public Button strengthButton = GameObject.Find("strengthButton").GetComponent<Button>();
     */
-    public int vitallity = 10;
-    public int agillity = 10;
-    public int abillity = 20;
-    public int charisma = 30;
-    public int strength = 20;
+    [Range(0,100)]public int vitallity = 10;
+    [Range(0,100)]public int agillity = 10;
+    [Range(0,100)]public int abillity = 20;
+    [Range(0,100)]public int charisma = 30;
+    [Range(0,100)]public int strength = 20;
     
     private Statistics stats;
     private void Start()
