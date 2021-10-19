@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 9205607025651567550}
   - component: {fileID: 9205607025651567551}
   - component: {fileID: 9205607025651567544}
-  - component: {fileID: 9205607025651567545}
+  - component: {fileID: 7109426775777714065}
+  - component: {fileID: 1716880693}
   m_Layer: 5
   m_Name: OptionsCanvas
   m_TagString: Untagged
@@ -106,7 +107,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &9205607025651567545
+--- !u!114 &7109426775777714065
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,11 +116,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 9205607025651567546}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62e8ec6042f04e34f9aceba25bdcd4b8, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b6c2da2db9374dada6761b5e35121c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openMenu: {fileID: 0}
-  playerInput: {fileID: 0}
+  actions: {fileID: -944628639613478452, guid: d7e431e08d44c3b42bdaa9e94152acc6, type: 3}
+--- !u!114 &1716880693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9205607025651567546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b6c2da2db9374dada6761b5e35121c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actions: {fileID: -944628639613478452, guid: d7e431e08d44c3b42bdaa9e94152acc6, type: 3}
 --- !u!1 &9205607025678551090
 GameObject:
   m_ObjectHideFlags: 0

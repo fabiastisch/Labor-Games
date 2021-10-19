@@ -81,7 +81,7 @@ namespace Player {
 
             bool isIngameMenuOpen = menu.gameObject.activeSelf;
 
-            if (playerInput.actions["Dodge"].triggered && stamina >= dodgeCost && state == State.Normal && isIngameMenuOpen) {
+            if (playerInput.actions["Dodge"].triggered && stamina >= dodgeCost && state == State.Normal && !isIngameMenuOpen) {
                 stamina -= dodgeCost;
                 dodgeSpeed = dodgeSpeedMax;
                 currentDodgeDirection = MousePosition;
