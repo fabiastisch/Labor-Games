@@ -43,7 +43,7 @@ namespace Player
 
         public override void CastPrimaryAttack()
         {
-            throw new System.NotImplementedException();
+            Debug.Log("Heyya");
         }
         #endregion
     }
