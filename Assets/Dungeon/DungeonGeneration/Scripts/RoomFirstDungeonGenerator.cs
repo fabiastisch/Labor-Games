@@ -15,7 +15,8 @@ namespace DungeonGeneration.Scripts
         [SerializeField] private bool randomWalkRooms = false;
         [SerializeField] private int corridorWidth = 3;
 
-        [SerializeField] [Range(0, 4)] private float trapRoomChance;
+        [Header("Trap Room")] [SerializeField] [Range(0, 4)]
+        private float trapRoomChance;
 
         [Header("Bonus Room / Secret Room")] [SerializeField] [Range(0, 1)]
         private float bonusRoomChance;
@@ -23,6 +24,11 @@ namespace DungeonGeneration.Scripts
         [SerializeField] private Dir direction = Dir.Random;
         [SerializeField] private int bonusRoomWidth = 10, bonusRoomHeight = 10;
         [SerializeField] private int bonusRoomOffset = 5;
+
+        [Header("Corridor Traps")] [SerializeField]
+        private Direction corridorTrapSpawnDirection;
+
+        [SerializeField] [Range(0, 2)] private float corridorTrapChance;
 
         protected override void RunProceduralGeneration()
         {
@@ -77,11 +83,12 @@ namespace DungeonGeneration.Scripts
 
             HashSet<Vector2Int> corridors = ConnectRooms(roomsList);
             floor.UnionWith(corridors);
+            CreateCorridorTraps(corridors, floor);
 
             tilemapVisualizer.PaintFloorTiles(floor);
             WallGenerator.CreateWalls(floor, tilemapVisualizer);
 
-            floor.UnionWith(bonusRoom);
+            if (bonusRoom != null) floor.UnionWith(bonusRoom);
 
             WallGenerator.CreateWalls(floor, bonusRoomTileMapVis);
         }
@@ -316,12 +323,14 @@ namespace DungeonGeneration.Scripts
                     corridor.Add(position + Vector2Int.right * i);
                 }
             }
+
             for (int i = -(corridorWidth % 2 == 0 ? corridorWidth : corridorWidth + 1) / 2;
                 i < corridorWidth / 2;
                 i++)
             {
                 corridor.Add(position + Vector2Int.down * i);
             }
+
             while (position.x != destination.x)
             {
                 if (destination.x > position.x)
@@ -342,6 +351,117 @@ namespace DungeonGeneration.Scripts
             }
 
             return corridor;
+        }
+
+        private void CreateCorridorTraps(HashSet<Vector2Int> corridor, HashSet<Vector2Int> floorsWithCorridor)
+        {
+            int countOfCorridorTraps = Util.GetChance(corridorTrapChance);
+            if (countOfCorridorTraps == 0) return;
+
+            List<Wall> wallPositions = new List<Wall>();
+            foreach (var position in corridor)
+            {
+                for (int i = 0; i < Direction2D.cardinalDirectionList.Count; i++)
+                {
+                    var neighbourPosition = position + Direction2D.cardinalDirectionList[i];
+                    if (floorsWithCorridor.Contains(neighbourPosition) == false)
+                    {
+                        wallPositions.Add(new Wall(position,
+                            (Direction) Enum.GetValues(typeof(Direction)).GetValue(i)));
+                    }
+                }
+            }
+
+            var selectedCorridorPositions = wallPositions.FindAll(x => x.facingTowards == corridorTrapSpawnDirection);
+            if (corridorTrapSpawnDirection == Direction.UP || corridorTrapSpawnDirection == Direction.DOWN)
+            {
+                // Reverse sorting, first x, then y
+                selectedCorridorPositions.Sort((first, second) => first.position.x.CompareTo(second.position.x));
+                selectedCorridorPositions = new List<Wall>(selectedCorridorPositions.OrderBy(wall => wall.position.y));
+           }
+            else
+            {
+                // Sort first by y then by x. make sure that the Second sort is stalbe
+                selectedCorridorPositions.Sort((first, second) => first.position.y.CompareTo(second.position.y));
+                // Order By is Stable Sort
+                selectedCorridorPositions = new List<Wall>(selectedCorridorPositions.OrderBy(wall => wall.position.x));
+            }
+
+            if (selectedCorridorPositions.Count <= 3) return;
+
+            //int doneTraps = 0;
+            //int index = 0;
+
+            var start = selectedCorridorPositions[0];
+
+            if (corridorTrapSpawnDirection == Direction.UP || corridorTrapSpawnDirection == Direction.DOWN)
+            {
+                //var findAll = selectedCorridorPositions.FindAll(x => x.position.y == start.position.y);
+                var findAll = selectedCorridorPositions;
+                /*foreach (var wall in findAll)
+                {
+                    Debug.Log(wall.position);
+                }*/
+
+                for (var i = 0; i < findAll.Count; i++)
+                {
+                    var wall = findAll[i];
+                    var countOffset = 0;
+
+                    do
+                    {
+                        countOffset++;
+                    } while ((i + countOffset < findAll.Count) &&
+                             wall.position.x == findAll[i + countOffset].position.x - countOffset
+                    );
+
+                    //Debug.Log(i + " | " + countOffset + " size: " + findAll.Count);
+
+                    for (int j = 0; j < countOffset; j++)
+                    {
+                        //Debug.Log(findAll[i + j] + " " + i + " | " + j + " size: " + findAll.Count);
+                        var position = new Vector3(findAll[i + j].position.x, findAll[i + j].position.y);
+                        traps.Add(Instantiate(trapRoom.transform.GetChild(0).gameObject, position,
+                            Quaternion.identity, gameObject.transform));
+                    }
+
+                    i += (countOffset - 1);
+                }
+            }
+            else
+            {
+                //var findAll = selectedCorridorPositions.FindAll(x => x.position.x == start.position.x);
+                var findAll = selectedCorridorPositions;
+                /*foreach (var wall in findAll)
+                {
+                    Debug.Log(wall.position);
+                }*/
+
+                for (var i = 0; i < findAll.Count; i++)
+                {
+                    var wall = findAll[i];
+                    var countOffset = 0;
+
+                    do
+                    {
+                        countOffset++;
+                    } while ((i + countOffset < findAll.Count) &&
+                             wall.position.y == findAll[i + countOffset].position.y - countOffset
+                    );
+
+                    //Debug.Log(i + " | " + countOffset + " size: " + findAll.Count);
+
+                    for (int j = 0; j < countOffset; j++)
+                    {
+                        //Debug.Log(findAll[i + j] + " " + i + " | " + j + " size: " + findAll.Count);
+                        var position = new Vector3(findAll[i + j].position.x, findAll[i + j].position.y);
+                        traps.Add(Instantiate(trapRoom.transform.GetChild(0).gameObject, position,
+                            Quaternion.identity, gameObject.transform));
+                    }
+
+                    i += (countOffset - 1);
+                }
+            }
         }
 
         private HashSet<Vector2Int> CreateSimpleRooms(List<BoundsInt> roomsList)
