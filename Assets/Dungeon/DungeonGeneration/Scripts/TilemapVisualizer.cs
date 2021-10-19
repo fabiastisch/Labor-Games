@@ -7,7 +7,7 @@ namespace DungeonGeneration.Scripts
 {
     public class TilemapVisualizer : MonoBehaviour
     {
-        [SerializeField] private Tilemap floorTilemap, wallTileMap;
+        [SerializeField] public Tilemap floorTilemap, wallTileMap;
 
         [SerializeField] private TileBase floorTile,
             wallTop,

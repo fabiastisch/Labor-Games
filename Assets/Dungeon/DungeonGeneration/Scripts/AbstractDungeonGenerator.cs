@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace DungeonGeneration.Scripts
 {
@@ -12,11 +13,16 @@ namespace DungeonGeneration.Scripts
         [SerializeField] private bool generateOnPlay = false;
         protected GameObject _portal;
         protected GameObject _spawn;
+        [HideInInspector] public GameObject trapRoom;
+        protected List<GameObject> traps = new List<GameObject>();
+        [HideInInspector] public TilemapVisualizer bonusRoomTileMapVis;
 
-        private void Awake()
+
+        public virtual void Awake()
         {
             if (generateOnPlay)
             {
+                ActivateBonusRoom(false);
                 GenerateDungeon();
             }
         }
@@ -24,7 +30,15 @@ namespace DungeonGeneration.Scripts
         public void GenerateDungeon()
         {
             if (tilemapVisualizer && clearDungeonOnGenerate) ClearDungeon();
+            ActivateBonusRoom(false);
             RunProceduralGeneration();
+        }
+
+        public void ActivateBonusRoom(bool active = true)
+        {
+            tilemapVisualizer.wallTileMap.gameObject.SetActive(!active);
+            bonusRoomTileMapVis.floorTilemap.gameObject.SetActive(active);
+            bonusRoomTileMapVis.wallTileMap.gameObject.SetActive(active);
         }
 
         protected abstract void RunProceduralGeneration();
@@ -32,6 +46,16 @@ namespace DungeonGeneration.Scripts
         public void ClearDungeon()
         {
             if (tilemapVisualizer) tilemapVisualizer.Clear();
+            if (bonusRoomTileMapVis) bonusRoomTileMapVis.Clear();
+            for (int i = 0; i < traps.Count; i++)
+            {
+                if (traps[i])
+                {
+                    DestroyImmediate(traps[i]);
+                }
+            }
+
+            traps = new List<GameObject>();
         }
 
         public void ClearObjectsImmediate()

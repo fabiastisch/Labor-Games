@@ -21,6 +21,15 @@ namespace Editor {
                 _generator.ClearDungeon();
                 //_generator.ClearObjectsImmediate();
             }
+            
+            if (GUILayout.Button("Activate BonusLevel")) {
+                _generator.ActivateBonusRoom();
+                //_generator.ClearObjectsImmediate();
+            }
+            if (GUILayout.Button("Deactivate BonusLevel")) {
+                _generator.ActivateBonusRoom(false);
+                //_generator.ClearObjectsImmediate();
+            }
         }
     }
 }
