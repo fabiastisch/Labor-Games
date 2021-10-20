@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/TestArea.unity
     guid: 424112b33a752674c9a23cd5054fbbc7
   - enabled: 1
+    path: Assets/Scenes/Hub.unity
+    guid: 698eda2582eb81048a2df5348f220030
+  - enabled: 1
     path: Assets/Scenes/Dungeon.unity
     guid: 86abf4ae67f56074a93772064f80d021
+  - enabled: 1
+    path: Assets/Scenes/TempDungeon.unity
+    guid: 60c1ad8e48951704181e0c4f138d3c4c
   m_configObjects: {}
