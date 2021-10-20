@@ -153,9 +153,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiStatsRadarChart: {fileID: 571591491}
-  vitallity: 60
+  vitallity: 78
   agillity: 0
-  abillity: 0
+  abillity: 60
   charisma: 0
   strength: 20
 --- !u!4 &182703462
