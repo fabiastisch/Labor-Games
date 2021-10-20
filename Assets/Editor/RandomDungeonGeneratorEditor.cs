@@ -1,4 +1,3 @@
-using DungeonGeneration;
 using DungeonGeneration.Scripts;
 using UnityEditor;
 using UnityEngine;
@@ -20,6 +19,16 @@ namespace Editor {
 
             if (GUILayout.Button("Clear Dungeon")) {
                 _generator.ClearDungeon();
+                //_generator.ClearObjectsImmediate();
+            }
+            
+            if (GUILayout.Button("Activate BonusLevel")) {
+                _generator.ActivateBonusRoom();
+                //_generator.ClearObjectsImmediate();
+            }
+            if (GUILayout.Button("Deactivate BonusLevel")) {
+                _generator.ActivateBonusRoom(false);
+                //_generator.ClearObjectsImmediate();
             }
         }
     }

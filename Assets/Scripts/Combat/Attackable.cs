@@ -1,5 +1,7 @@
-﻿namespace Combat {
-    public interface IAttackable {
+﻿namespace Combat
+{
+    public interface IAttackable
+    {
         public void TakeDamage(float damage);
     }
 }
