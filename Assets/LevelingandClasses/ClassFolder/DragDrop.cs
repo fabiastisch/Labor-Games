@@ -11,12 +11,20 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
     private SkillsAndPassives skillsAndPassives;
+    private Vector3 defaultPos;
+    public bool droppedOnSlot;
+
+    void Start()
+    {
+        defaultPos = transform.position;
+    }
 
     private void Awake()
     {
         Instance = this;
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
+        defaultPos = transform.position;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -24,6 +32,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         Debug.Log("OnBeginDrag");
         canvasGroup.alpha = .6f;
         canvasGroup.blocksRaycasts = false;
+        eventData.pointerDrag.GetComponent<DragDrop>().droppedOnSlot = false;
     }
     
     public void OnPointerDown(PointerEventData eventData)
@@ -52,6 +61,11 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         Debug.Log("OnEndDrag");
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
+        
+        if (droppedOnSlot == false)
+        {
+            transform.position = defaultPos;
+        }
     }
 
     public void OnDrop(PointerEventData eventData)

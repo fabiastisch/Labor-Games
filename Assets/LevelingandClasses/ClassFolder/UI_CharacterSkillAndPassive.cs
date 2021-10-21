@@ -32,16 +32,24 @@ public class UI_CharacterSkillAndPassive: MonoBehaviour
 
     private void Awake()
     {
-        classAbillity1 = transform.Find("classAbillitySlot1").GetComponent<ClassSlot>();
-        classAbillity2 = transform.Find("classAbillitySlot2").GetComponent<ClassSlot>();
-        classAbillity3 = transform.Find("classAbillitySlot3").GetComponent<ClassSlot>();
-        classAbillity4 = transform.Find("classAbillitySlot4").GetComponent<ClassSlot>();
+        classAbillity1 = transform.Find("ClassAbillitySlot1").GetComponent<ClassSlot>();
+        classAbillity2 = transform.Find("ClassAbillitySlot2").GetComponent<ClassSlot>();
+        classAbillity3 = transform.Find("ClassAbillitySlot3").GetComponent<ClassSlot>();
+        classAbillity4 = transform.Find("ClassAbillitySlot4").GetComponent<ClassSlot>();
+
+        classAbillity1.OnItemDropped += ClassAbillitySlot1_OnItemDropped;
     }
 
     private void ClassAbillitySlot1_OnItemDropped(object sender, ClassSlot.OnItemDroppedEventArgs e)
     {
         //Item dropped on first Abillity;
         Debug.Log("Dropped item" + e.skillsAndPassives.GetType());
+        if(e.skillsAndPassives.skillsAndPassivesType == SkillsAndPassives.SkillsAndPassivesType.ClassActive)
+        {
+            e.returnData.pointerDrag.GetComponent<DragDrop>().droppedOnSlot = true;
+             e.returnData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = classAbillity1.GetComponent<RectTransform>().anchoredPosition;
+           
+        }
     }
 
 }

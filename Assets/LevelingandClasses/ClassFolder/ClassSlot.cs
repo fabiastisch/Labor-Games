@@ -11,18 +11,16 @@ public class ClassSlot : MonoBehaviour, IDropHandler
     public class OnItemDroppedEventArgs : EventArgs
     {
         public SkillsAndPassives skillsAndPassives;
+        public PointerEventData returnData;
     }
     public void OnDrop(PointerEventData eventData)
     {
         //Debug.Log("skillsAndPassives.GetType()");
-        SkillsAndPassives skillsAndPassives = DragDrop.Instance.GetSkillsAndPassives();
-        Debug.Log(skillsAndPassives);
-        // OnItemDropped?.Invoke(this, new OnItemDroppedEventArgs {skillsAndPassives = skillsAndPassives});
-        if(eventData.pointerDrag != null)
-        {
-            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition =
-                    GetComponent<RectTransform>().anchoredPosition;
-        }
+        SkillsAndPassives skillsAndPassives = eventData.pointerDrag.GetComponent<SkillAndPassiveList>()
+            .GetSkillsAndPassives();
+        //Debug.Log(skillsAndPassives);
+        Debug.Log(skillsAndPassives.skillsAndPassivesType);
+        OnItemDropped?.Invoke(this, new OnItemDroppedEventArgs {skillsAndPassives = skillsAndPassives, returnData = eventData} );
     }
     
 }
