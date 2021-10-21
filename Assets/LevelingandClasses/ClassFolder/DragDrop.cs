@@ -42,7 +42,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         {
             Debug.Log("item " + rectTransform.GetComponent<SkillAndPassiveList>().GetSkillsAndPassives().skillsAndPassivesType);
             SetSkillsAndPassives(rectTransform.GetComponent<SkillAndPassiveList>().GetSkillsAndPassives());
-            Debug.Log("Skill or Passive aquired");
+            Debug.Log("Skill or Passive acquired");
             
         }
         else

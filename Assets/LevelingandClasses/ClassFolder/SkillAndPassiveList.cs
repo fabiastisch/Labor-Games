@@ -20,6 +20,7 @@ public class SkillAndPassiveList : MonoBehaviour
 
     public SkillsAndPassives GetSkillsAndPassives()
     {
+        Debug.Log("GetSkillsAndPassives");
         return skillsAndPassives;
     }
 }
