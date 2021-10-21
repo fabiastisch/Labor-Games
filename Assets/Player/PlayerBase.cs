@@ -8,6 +8,7 @@ namespace Player {
         [SerializeField] private Rigidbody2D rb;
         [SerializeField] private GameObject menu;
         [SerializeField] private Texture2D cursor;
+
         private PlayerInput playerInput;
 
 

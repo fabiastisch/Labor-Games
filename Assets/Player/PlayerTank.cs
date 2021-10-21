@@ -6,6 +6,15 @@ namespace Player
 {
     public class PlayerTank : PlayerBase
     {
+        [Header("Weapon")]
+        [SerializeField] private GameObject equiptWeapon;
+
+
+        protected override void Start()
+        {
+            base.Start();
+        }
+
         protected override void Update()
         {
             base.Update();
@@ -43,7 +52,8 @@ namespace Player
 
         public override void CastPrimaryAttack()
         {
-            Debug.Log("Sword attack!!!!");
+            MeeleWeapon currentWeapon = equiptWeapon.GetComponent<MeeleWeapon>();
+            equiptWeapon.GetComponent<ISwingable>().SwingWeapon(currentWeapon.damage, currentWeapon.attackspeed);
         }
         #endregion
     }
