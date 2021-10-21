@@ -25,7 +25,7 @@ namespace Combat
         {
             if (other.gameObject.CompareTag("Player"))
             {
-                isAtTarget = true;
+                IsAtTarget = true;
             }
         }
 
@@ -33,7 +33,7 @@ namespace Combat
         {
             if (other.gameObject.CompareTag("Player"))
             {
-                isAtTarget = false;
+                IsAtTarget = false;
             }
         }
 
@@ -41,7 +41,7 @@ namespace Combat
         {
             if (target != null)
             {
-                if (!isAtTarget)
+                if (!IsAtTarget)
                 {
                     float step = movementSpeed * Time.deltaTime;
                     transform.position = Vector2.MoveTowards(transform.position, target.position, step);
