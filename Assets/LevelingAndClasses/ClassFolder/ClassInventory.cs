@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using LevelingAndClasses.ClassFolder;
 using UnityEngine;
 
 public class ClassInventory
