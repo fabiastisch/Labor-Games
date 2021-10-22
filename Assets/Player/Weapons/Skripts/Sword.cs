@@ -1,8 +1,9 @@
+using Combat;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Weapon
+namespace EquipableWeapon
 {
     public class Sword : Weapon
     {
@@ -19,11 +20,10 @@ namespace Weapon
 
         }
 
-        public override void Attack()
+        public override void Attack(CombatStats combatStats)
         {
-            throw new System.NotImplementedException();
+            Debug.Log("Wuush Wuuush");
         }
-
     }
 }
 

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 namespace Player {
     public abstract class PlayerBase : MonoBehaviour {
         [SerializeField] private Camera cam;

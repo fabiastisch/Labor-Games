@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Combat;
 
-namespace Weapon
+namespace EquipableWeapon
 {
     public abstract class Weapon : MonoBehaviour
     {
@@ -22,7 +23,7 @@ namespace Weapon
 
         }
 
-        public abstract void Attack();
+        public abstract void Attack(CombatStats combatStats);
     }
 
 }
