@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace Combat
 {
-    public class Health : MonoBehaviour
+    public class OldHealthWithSlider : MonoBehaviour
     {
         [SerializeField] private float maxHealth = 100f;
         private float currentHealth;
