@@ -611,7 +611,7 @@ GameObject:
   - component: {fileID: 8548802804282458405}
   - component: {fileID: 8368588488147939673}
   - component: {fileID: 1697252049}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlayerTank
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -696,7 +696,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 2911526725232025570, guid: 17996401dca5a1f458075badede46782, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -724,7 +724,7 @@ MonoBehaviour:
   playSprite: {fileID: 8548802804282458403}
   rb: {fileID: 8548802804282458404}
   menu: {fileID: 2367785510546366377, guid: 3b6c6c67d525123409c768f3653877df, type: 3}
-  cursor: {fileID: 2800000, guid: 2e71a8202d3b4a3448ec85ced5a40265, type: 3}
+  cursor: {fileID: 2800000, guid: 5c94703ad47cef245b5e9cfb57466291, type: 3}
   movementSpeed: 11
   stamina: 100
   staminaReg: 10
