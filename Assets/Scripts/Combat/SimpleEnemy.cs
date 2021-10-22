@@ -50,7 +50,8 @@ namespace Combat
                 {
                     if (attackSpeed <= canAttack)
                     {
-                        target.gameObject.GetComponent<Health>().UpdateHealth(-attackDamage);
+                        // TODO: implement health reduction
+                        //target.gameObject.GetComponent<Health>().UpdateHealth(-attackDamage);
                         canAttack = 0f;
                     }
                     else canAttack += Time.deltaTime;

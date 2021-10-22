@@ -380,12 +380,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectorOrigin: {fileID: 601871962}
-  detectorSize: 4.4
+  detectorSize: 5.22
   detectorOriginOffset: {x: 0, y: 0}
   detectionDelay: 0.3
   detectorLayerMask:
     serializedVersion: 2
     m_Bits: 128
+  leaveDistanceSize: 7.93
+  enableLeaveDistance: 1
+  leaveGizmosColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.8}
   gizmoIdleColor: {r: 0, g: 1, b: 0, a: 0.29803923}
   gizmoDetectedColor: {r: 1, g: 0, b: 0, a: 0.39607844}
   showGizmos: 1
@@ -411,7 +414,7 @@ MonoBehaviour:
   rb: {fileID: 601871960}
   movementSpeed: 4
   maxHealth: 100
-  attackRange: 1.4
+  attackRange: 2.31
   gizmosColor: {r: 0.84089124, g: 0.990566, b: 0.1541919, a: 0.5803922}
   showGizmos: 1
 --- !u!60 &601871959

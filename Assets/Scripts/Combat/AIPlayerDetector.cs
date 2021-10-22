@@ -20,6 +20,13 @@ namespace Combat
 
         public LayerMask detectorLayerMask;
 
+        [Header("LeaveDistance Parameters")] [SerializeField]
+        private float leaveDistanceSize = 7f;
+
+        [SerializeField] private bool enableLeaveDistance = true;
+        [SerializeField] private Color leaveGizmosColor = Color.gray;
+        
+
         [Header("Gizmo Parameters")] public Color gizmoIdleColor = Color.green;
         public Color gizmoDetectedColor = Color.red;
         public bool showGizmos = true;
@@ -47,8 +54,27 @@ namespace Combat
         IEnumerator DetectionCoroutine()
         {
             yield return new WaitForSeconds(detectionDelay);
+            if (enableLeaveDistance) PerformDetectionWithLeaveSize();
             PerformDetection();
             StartCoroutine(DetectionCoroutine());
+        }
+
+        private void PerformDetectionWithLeaveSize()
+        {
+            if (PlayerDetected)
+            {
+                Collider2D overLapColliderLeave =
+                    Physics2D.OverlapCircle((Vector2) detectorOrigin.position + detectorOriginOffset, leaveDistanceSize,
+                        detectorLayerMask);
+                if (overLapColliderLeave == null)
+                {
+                    Target = null;
+                }
+            }
+            else
+            {
+                PerformDetection();
+            }
         }
 
         private void PerformDetection()
@@ -56,7 +82,8 @@ namespace Combat
             /*Collider2D overLapCollider = Physics2D.OverlapBox((Vector2) detectorOrigin.position + detectorOriginOffset,
                 detectorSize, 0, detectorLayerMask);*/
             Collider2D overLapCollider =
-                Physics2D.OverlapCircle((Vector2) detectorOrigin.position + detectorOriginOffset, detectorSize, detectorLayerMask);
+                Physics2D.OverlapCircle((Vector2) detectorOrigin.position + detectorOriginOffset, detectorSize,
+                    detectorLayerMask);
 
             if (overLapCollider != null)
             {
@@ -65,6 +92,7 @@ namespace Combat
             }
             else
             {
+                if (enableLeaveDistance) return;
                 if (PlayerDetected) OnPlayerExitEvent?.Invoke();
                 Target = null;
             }
@@ -74,10 +102,17 @@ namespace Combat
         {
             if (showGizmos && detectorOrigin != null)
             {
+                if (enableLeaveDistance)
+                {
+                    Gizmos.color = leaveGizmosColor;
+                    Gizmos.DrawSphere(transform.position, leaveDistanceSize);
+                }
                 Gizmos.color = PlayerDetected ? gizmoDetectedColor : gizmoIdleColor;
                 //Gizmos.DrawCube((Vector2) detectorOrigin.position + detectorOriginOffset, detectorSize);
 
                 Gizmos.DrawSphere(transform.position, detectorSize);
+
+                
             }
         }
     }
