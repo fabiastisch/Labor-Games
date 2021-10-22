@@ -2,16 +2,16 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Player {
-    public abstract class PlayerBase : MonoBehaviour {
+    public abstract class PlayerBase : Combat.Character {
         [SerializeField] private Camera cam;
-        [SerializeField] private SpriteRenderer playSprite;
-        [SerializeField] private Rigidbody2D rb;
+        //[SerializeField] private SpriteRenderer playSprite;
+        //[SerializeField] private Rigidbody2D rb;
         [SerializeField] private GameObject menu;
         [SerializeField] private Texture2D cursor;
         private PlayerInput playerInput;
 
 
-        [Header("Movement")] [SerializeField] private float movementSpeed = 9f;
+        //[Header("Movement")] [SerializeField] private float movementSpeed = 9f;
         private Vector2 movement;
 
         private Vector2 MousePosition {

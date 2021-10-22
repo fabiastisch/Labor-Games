@@ -59,9 +59,9 @@ namespace Combat
             }
         }
 
-        protected override void Move()
+        protected void Move()
         {
-            throw new System.NotImplementedException();
+            
         }
     }
 }
