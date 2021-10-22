@@ -1,7 +1,7 @@
 ﻿using System;
+using Combat;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Utils;
 
 namespace UI.CombatText
@@ -13,8 +13,17 @@ namespace UI.CombatText
         [Header("FontSize")] [SerializeField] private float normalFontSize = 36;
         [SerializeField] private float criticalFontSize = 44;
 
-        [Header("Colors")] [SerializeField] private Color normalColor;
-        [SerializeField] private Color criticalColor;
+        [Header("DamageTypes")] [SerializeField]
+        private Color criticalOutlineColor;
+
+        [SerializeField] private Color physicalDamageColor;
+        [SerializeField] private Color magicDamageColor;
+        [SerializeField] private Color poisonDamageColor;
+        [SerializeField] private Color lightningDamageColor;
+        [SerializeField] private Color frostDamageColor;
+        [SerializeField] private Color fireDamageColor;
+        [SerializeField] private Color shadowDamageColor;
+
 
         [Header("FadeOut")] [SerializeField] private Vector2 moveVector = new Vector2(.7f, 2f) * 25f;
         [SerializeField] private float disappearSpeed = 3f;
@@ -23,20 +32,21 @@ namespace UI.CombatText
         [Header("HighlightSize")] [SerializeField]
         private float increaseScaleAmount = 1f;
 
-        [SerializeField]private float decreaseScaleAmount = 1f;
+        [SerializeField] private float decreaseScaleAmount = 1f;
 
         private TextMeshPro textMesh;
         private Color textColor;
         private float disappearTimerMax;
 
-        public static DamagePopup Create(Vector2 position, float damageValue, bool isCriticalHit = false)
+        public static DamagePopup Create(Vector2 position, float damageValue,
+            DamageType damageType = DamageType.Physical, bool isCriticalHit = false)
         {
             var pos = Camera.main.WorldToScreenPoint(position);
             Transform damagePopup = Instantiate(GameAssets.Instance.damagePopupPrefab, position, Quaternion.identity);
 
             DamagePopup popup = damagePopup.GetComponent<DamagePopup>();
 
-            popup.Setup((int) damageValue, isCriticalHit);
+            popup.Setup((int) damageValue, damageType, isCriticalHit);
 
             return popup;
         }
@@ -51,19 +61,54 @@ namespace UI.CombatText
             disappearTimerMax = startDisappearTimer;
         }
 
-        public void Setup(int damageAmount, bool isCriticalHit)
+        private void SetDamageTypColor(DamageType damageType)
+        {
+            switch (damageType)
+            {
+                case DamageType.Physical:
+                    textColor = physicalDamageColor;
+                    break;
+                case DamageType.Magical:
+                    textColor = magicDamageColor;
+                    break;
+                case DamageType.Fire:
+                    textColor = fireDamageColor;
+                    break;
+                case DamageType.Frost:
+                    textColor = frostDamageColor;
+                    break;
+                case DamageType.Lightning:
+                    textColor = lightningDamageColor;
+                    break;
+                case DamageType.Poison:
+                    textColor = poisonDamageColor;
+                    break;
+                case DamageType.Shadow:
+                    textColor = shadowDamageColor;
+                    break;
+                default:
+                    Debug.Log("Color not found for DamageType: " + damageType);
+                    textColor = physicalDamageColor;
+                    break;
+            }
+
+            textMesh.color = textColor;
+        }
+
+        public void Setup(int damageAmount, DamageType damageType, bool isCriticalHit)
         {
             textMesh.SetText(damageAmount.ToString());
+
+            SetDamageTypColor(damageType);
 
             if (isCriticalHit)
             {
                 textMesh.fontSize = criticalFontSize;
-                textColor = criticalColor;
+                textMesh.outlineColor = criticalOutlineColor;
             }
             else
             {
                 textMesh.fontSize = normalFontSize;
-                textColor = normalColor;
             }
 
             sortingOrder++;

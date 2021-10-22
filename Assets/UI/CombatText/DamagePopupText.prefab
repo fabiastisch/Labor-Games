@@ -50,7 +50,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cba2bdb9ce6f453ebefebac5def0d476, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  worldPosition: {x: 0, y: 0}
+  normalFontSize: 36
+  criticalFontSize: 44
+  criticalOutlineColor: {r: 1, g: 0.5813668, b: 0, a: 0}
+  physicalDamageColor: {r: 0.3679245, g: 0.3679245, b: 0.3679245, a: 0}
+  magicDamageColor: {r: 0, g: 0.025779247, b: 1, a: 0}
+  poisonDamageColor: {r: 0.2265538, g: 1, b: 0, a: 0}
+  lightningDamageColor: {r: 1, g: 0.8874891, b: 0, a: 0}
+  frostDamageColor: {r: 0, g: 0.93309736, b: 1, a: 0}
+  fireDamageColor: {r: 1, g: 0.058691293, b: 0, a: 0}
+  shadowDamageColor: {r: 0, g: 0, b: 0, a: 0}
+  moveVector: {x: 17.5, y: 50}
+  disappearSpeed: 3
+  startDisappearTimer: 1
+  increaseScaleAmount: 1
+  decreaseScaleAmount: 1
 --- !u!23 &4861711879921826869
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -112,7 +126,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: asd
+  m_text: 42
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
