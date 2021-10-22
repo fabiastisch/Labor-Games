@@ -52,8 +52,7 @@ namespace Player
 
         public override void CastPrimaryAttack()
         {
-            MeeleWeapon currentWeapon = equiptWeapon.GetComponent<MeeleWeapon>();
-            equiptWeapon.GetComponent<ISwingable>().SwingWeapon(currentWeapon.damage, currentWeapon.attackspeed);
+
         }
         #endregion
     }
