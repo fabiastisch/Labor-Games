@@ -350,7 +350,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5907097909329946085}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.312, z: -5}
+  m_LocalPosition: {x: 0, y: -0.322, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 1875579107668819392}
@@ -696,7 +696,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 2911526725232025570, guid: 17996401dca5a1f458075badede46782, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -723,14 +723,14 @@ MonoBehaviour:
   cam: {fileID: 9112581534973777237}
   playSprite: {fileID: 8548802804282458403}
   rb: {fileID: 8548802804282458404}
-  menu: {fileID: 2367785510546366377, guid: 3b6c6c67d525123409c768f3653877df, type: 3}
+  menu: {fileID: 0}
   cursor: {fileID: 2800000, guid: 5c94703ad47cef245b5e9cfb57466291, type: 3}
   movementSpeed: 11
   stamina: 100
   staminaReg: 10
   dodgeCost: 44
   dodgeSpeed: 30
-  equiptWeapon: {fileID: 0}
+  equiptWeapon: {fileID: 3131432749323392679}
 --- !u!70 &8368588488147939673
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -989,5 +989,10 @@ PrefabInstance:
 --- !u!4 &1875579107668819392 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3002192472317755500, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
+  m_PrefabInstance: {fileID: 3724067218248727980}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3131432749323392679 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1791199111217048331, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
   m_PrefabInstance: {fileID: 3724067218248727980}
   m_PrefabAsset: {fileID: 0}

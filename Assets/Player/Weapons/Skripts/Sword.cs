@@ -2,32 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sword : Weapon
+namespace Weapon
 {
-
-    [SerializeField] private float swordDamage = 5f;
-    [SerializeField] private float swordAttackspeed = 10f;
-    [SerializeField] private float swordRange= 1f;
-    [SerializeField] private float swordAOERange = 10f;
-
-    // Start is called before the first frame update
-    void Start()
+    public class Sword : Weapon
     {
-        baseDamage = swordDamage;
-        baseAttackspeed = swordAttackspeed;
-        baseRange = swordRange;
-        baseAOERange = swordAOERange;
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+        // Start is called before the first frame update
+        void Start()
+        {
 
-    public override void Attack()
-    {
-        throw new System.NotImplementedException();
-    }
+        }
 
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
+
+        public override void Attack()
+        {
+            throw new System.NotImplementedException();
+        }
+
+    }
 }
+
