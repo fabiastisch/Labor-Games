@@ -22,6 +22,12 @@ namespace DungeonGeneration.Scripts
             wallDiagonalCornerUpRight,
             wallDiagonalCornerUpLeft;
 
+        public void SetColor(Color? floorColor, Color? wallColor)
+        {
+            if (floorColor != null) floorTilemap.color = (Color) floorColor;
+            if (wallColor != null) wallTileMap.color = (Color) wallColor;
+            
+        }
         public void PaintFloorTiles(IEnumerable<Vector2Int> floorPositions)
         {
             PaintTiles(floorPositions, floorTilemap, floorTile);

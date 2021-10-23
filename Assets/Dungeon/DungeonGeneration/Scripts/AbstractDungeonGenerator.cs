@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace DungeonGeneration.Scripts
 {
@@ -17,6 +18,10 @@ namespace DungeonGeneration.Scripts
         protected List<GameObject> traps = new List<GameObject>();
         [HideInInspector] public TilemapVisualizer bonusRoomTileMapVis;
 
+        [Header("Color")] [SerializeField] protected Color floorColor;
+        [SerializeField] protected Color wallColor;
+        [SerializeField] protected bool overrideDefaultColor = false;
+
 
         public virtual void Awake()
         {
@@ -30,8 +35,15 @@ namespace DungeonGeneration.Scripts
         public void GenerateDungeon()
         {
             if (tilemapVisualizer && clearDungeonOnGenerate) ClearDungeon();
+            if (overrideDefaultColor) ChangeColor();
             ActivateBonusRoom(false);
             RunProceduralGeneration();
+        }
+
+        private void ChangeColor()
+        {
+            tilemapVisualizer.SetColor(floorColor, wallColor);
+            bonusRoomTileMapVis.SetColor(floorColor, wallColor);
         }
 
         public void ActivateBonusRoom(bool active = true)
