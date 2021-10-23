@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UI.CombatText;
+using UnityEngine;
 
 namespace Combat
 {
@@ -53,10 +54,12 @@ namespace Combat
             }
         }
 
-        protected virtual void TakeDamage(float amountHp)
+        protected virtual void TakeDamage(float amountHp, DamageType damageType = DamageType.Magical)
         {
             _currentHealth -= amountHp;
             _currentHealth = _currentHealth < 0 ? 0 : _currentHealth;
+
+            DamagePopup.Create(transform.position, amountHp, damageType);
             if (_currentHealth == 0)
             {
                 Debug.Log(gameObject.name + " died...");

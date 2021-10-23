@@ -41,7 +41,6 @@ namespace UI.CombatText
         public static DamagePopup Create(Vector2 position, float damageValue,
             DamageType damageType = DamageType.Physical, bool isCriticalHit = false)
         {
-            var pos = Camera.main.WorldToScreenPoint(position);
             Transform damagePopup = Instantiate(GameAssets.Instance.damagePopupPrefab, position, Quaternion.identity);
 
             DamagePopup popup = damagePopup.GetComponent<DamagePopup>();
@@ -92,7 +91,8 @@ namespace UI.CombatText
                     break;
             }
 
-            textMesh.color = textColor;
+            textMesh.faceColor = textColor;
+            //textMesh.color = textColor;
         }
 
         public void Setup(int damageAmount, DamageType damageType, bool isCriticalHit)
@@ -135,7 +135,7 @@ namespace UI.CombatText
             {
                 // Start disappearing
                 textColor.a -= disappearSpeed * Time.deltaTime;
-                textMesh.color = textColor;
+                textMesh.faceColor = textColor;
                 if (textColor.a < 0)
                 {
                     Destroy(gameObject);

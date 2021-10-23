@@ -50,19 +50,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cba2bdb9ce6f453ebefebac5def0d476, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalFontSize: 36
-  criticalFontSize: 44
-  criticalOutlineColor: {r: 1, g: 0.5813668, b: 0, a: 0}
-  physicalDamageColor: {r: 0.3679245, g: 0.3679245, b: 0.3679245, a: 0}
-  magicDamageColor: {r: 0, g: 0.025779247, b: 1, a: 0}
-  poisonDamageColor: {r: 0.2265538, g: 1, b: 0, a: 0}
-  lightningDamageColor: {r: 1, g: 0.8874891, b: 0, a: 0}
-  frostDamageColor: {r: 0, g: 0.93309736, b: 1, a: 0}
-  fireDamageColor: {r: 1, g: 0.058691293, b: 0, a: 0}
-  shadowDamageColor: {r: 0, g: 0, b: 0, a: 0}
-  moveVector: {x: 17.5, y: 50}
+  normalFontSize: 12
+  criticalFontSize: 16
+  criticalOutlineColor: {r: 1, g: 0.5813668, b: 0, a: 1}
+  physicalDamageColor: {r: 0.3679245, g: 0.3679245, b: 0.3679245, a: 1}
+  magicDamageColor: {r: 0, g: 0.025779247, b: 1, a: 1}
+  poisonDamageColor: {r: 0.2265538, g: 1, b: 0, a: 1}
+  lightningDamageColor: {r: 1, g: 0.8874891, b: 0, a: 1}
+  frostDamageColor: {r: 0, g: 0.93309736, b: 1, a: 1}
+  fireDamageColor: {r: 1, g: 0.058691293, b: 0, a: 1}
+  shadowDamageColor: {r: 0, g: 0, b: 0, a: 1}
+  moveVector: {x: 0.8, y: 2}
   disappearSpeed: 3
-  startDisappearTimer: 1
+  startDisappearTimer: 0.8
   increaseScaleAmount: 1
   decreaseScaleAmount: 1
 --- !u!23 &4861711879921826869
@@ -104,7 +104,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &6159983806605226720
 MonoBehaviour:
