@@ -52,7 +52,8 @@ namespace Player {
             
         }
 
-        protected virtual void Start() {
+        protected override void Start() {
+            base.Start();
             state = State.Normal;
             maxStamina = stamina;
             dodgeSpeedMax = dodgeSpeed;
@@ -152,15 +153,5 @@ namespace Player {
 
         public abstract void CastPrimaryAttack();
         #endregion
-
-        //Swaps the sprite to the moving direction.
-        private void ChangeSpriteDirection(float direction) {
-            if (direction < 0) {
-                playSprite.flipX = true;
-            }
-            else if (direction > 0) {
-                playSprite.flipX = false;
-            }
-        }
     }
 }
