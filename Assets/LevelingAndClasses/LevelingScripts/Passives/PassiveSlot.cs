@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Timeline.Actions;
 using UnityEngine;
 
 public class PassiveSlot : MonoBehaviour
@@ -7,17 +9,36 @@ public class PassiveSlot : MonoBehaviour
     public Passive passive;
     private float cooldownTime;
     private float activeTime;
-
-    enum PassiveState
-    {
-        ready,
-        active,
-        cooldown
-    }
+    private bool alltheTimeActive;
+    private float repeatingNumber;
+    private float firstActivationForRepeat;
+    private bool invokerStarted = false;
 
     private PassiveState state = PassiveState.ready;
     public KeyCode key;
     
+   public enum PassiveState
+    {
+        ready,
+        active,
+        cooldown,
+        repeatingEffect,
+    }
+
+    private void Start()
+    {
+        state = passive.passiveState;
+        activeTime = passive.activeTime;
+        alltheTimeActive = passive.allTheTimeActive;
+        cooldownTime = passive.cooldown;
+        repeatingNumber = passive.repeatingNumber;
+        firstActivationForRepeat = passive.firstActivationForRepeat;
+        if (state == PassiveState.repeatingEffect)
+        {
+            InvokeRepeating(nameof(Repeater), firstActivationForRepeat, repeatingNumber);
+            invokerStarted = true;
+        }
+    }
 
     void Update()
     {
@@ -30,9 +51,18 @@ public class PassiveSlot : MonoBehaviour
                     state = PassiveState.active;
                     activeTime = passive.activeTime;
                 }
+                else if (alltheTimeActive)
+                {
+                    passive.Activation(gameObject);
+                    state = PassiveState.active;
+                }
                 break;
             case PassiveState.active:
-                if (activeTime > 0)
+                if (alltheTimeActive)
+                {
+                    //will stay here its all the time active
+                }
+                else if (activeTime > 0)
                 {
                     activeTime -= Time.deltaTime;
                 }
@@ -53,6 +83,14 @@ public class PassiveSlot : MonoBehaviour
                     state = PassiveState.ready;
                 }
                 break;
+            case PassiveState.repeatingEffect:
+                break;
+                
         }
+    }
+
+    private void Repeater()
+    {
+        passive.Activation(gameObject);
     }
 }

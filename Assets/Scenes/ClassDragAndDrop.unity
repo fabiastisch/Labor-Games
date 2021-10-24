@@ -978,6 +978,78 @@ Transform:
   m_Father: {fileID: 1355730584}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &279637145
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 279637148}
+  - component: {fileID: 279637147}
+  - component: {fileID: 279637146}
+  m_Layer: 0
+  m_Name: TestingObject2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &279637146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279637145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3021bf5bc09913a4c877056846527019, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  passive: {fileID: 11400000, guid: 0e0209ea37faed54ca5116ed6e9e0fc1, type: 2}
+  key: 32
+--- !u!114 &279637147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279637145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c63aaca88316e84fbbd85ce0ae41d7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strength: 10
+  MaxHp: 10
+  magicPower: 10
+  agillity: 10
+  charisma: 10
+  armor: 10
+  magicresist: 10
+  totalDamageReduction: 10
+  poisenresist: 10
+  thunderresist: 10
+  frostresist: 10
+  fireresist: 10
+  shadowresist: 10
+  ActualHP: 5
+--- !u!4 &279637148
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279637145}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1242.6763, y: 910.15765, z: -392.1422}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &294456673
 GameObject:
   m_ObjectHideFlags: 0
