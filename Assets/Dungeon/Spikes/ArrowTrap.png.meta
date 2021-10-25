@@ -1,0 +1,438 @@
+fileFormatVersion: 2
+guid: f26a4865c2bfeaa4aa10630dd07e60c6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8026653759328321198
+    second: ArrowTrap_0
+  - first:
+      213: -7726254460716848030
+    second: ArrowTrap_1
+  - first:
+      213: -7555039257856374418
+    second: ArrowTrap_2
+  - first:
+      213: 4530074557489158485
+    second: ArrowTrap_3
+  - first:
+      213: 281334162845779052
+    second: ArrowTrap_4
+  - first:
+      213: 2175177057509411906
+    second: ArrowTrap_5
+  - first:
+      213: 2487908454556296720
+    second: ArrowTrap_6
+  - first:
+      213: -9213235618134107648
+    second: ArrowTrap_7
+  - first:
+      213: 3854336473284955009
+    second: ArrowTrap_8
+  - first:
+      213: 6601333765488071605
+    second: ArrowTrap_9
+  - first:
+      213: -3647933654949561146
+    second: ArrowTrap_10
+  - first:
+      213: 6292334397885547793
+    second: ArrowTrap_11
+  - first:
+      213: 6898244650616009530
+    second: ArrowTrap_12
+  - first:
+      213: 2794488570663046240
+    second: ArrowTrap_13
+  - first:
+      213: -8397962012887747063
+    second: ArrowTrap_14
+  - first:
+      213: -5286912844335636966
+    second: ArrowTrap_15
+  - first:
+      213: 2312983947562069562
+    second: ArrowTrap_16
+  - first:
+      213: 8724304376252827743
+    second: ArrowTrap_17
+  - first:
+      213: -5015212510580112073
+    second: ArrowTrap_18
+  - first:
+      213: 8449844328974765880
+    second: ArrowTrap_19
+  - first:
+      213: -8402886868759378520
+    second: ArrowTrap_20
+  - first:
+      213: 2298372841814314512
+    second: ArrowTrap_21
+  - first:
+      213: 6413223016532545059
+    second: ArrowTrap_22
+  - first:
+      213: -6945752580092419940
+    second: ArrowTrap_23
+  - first:
+      213: 362276567144116473
+    second: ArrowTrap_24
+  - first:
+      213: 6128199459170180219
+    second: ArrowTrap_25
+  - first:
+      213: -5693926730254227643
+    second: ArrowTrap_26
+  - first:
+      213: 1021650160416226147
+    second: ArrowTrap_27
+  - first:
+      213: 6001534218193333995
+    second: ArrowTrap_28
+  - first:
+      213: -4095844655700638239
+    second: ArrowTrap_29
+  - first:
+      213: 8246517280033198991
+    second: ArrowTrap_30
+  - first:
+      213: -6206543584410841195
+    second: ArrowTrap_31
+  - first:
+      213: -7482314160187198986
+    second: ArrowTrap_32
+  - first:
+      213: -7013484800529711098
+    second: ArrowTrap_33
+  - first:
+      213: 1955489985616581684
+    second: ArrowTrap_34
+  - first:
+      213: -5728257343409456609
+    second: ArrowTrap_35
+  - first:
+      213: -7814840903001594822
+    second: ArrowTrap_36
+  - first:
+      213: 5011206183589254432
+    second: ArrowTrap_37
+  - first:
+      213: -6744240792225997127
+    second: ArrowTrap_38
+  - first:
+      213: -5902058941478559488
+    second: ArrowTrap_39
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ArrowTrap_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2518e24dee89b9090800000000000000
+      internalID: -8026653759328321198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArrowTrap_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26ce1b0e084d6c490800000000000000
+      internalID: -7726254460716848030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArrowTrap_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e690753c2db172790800000000000000
+      internalID: -7555039257856374418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArrowTrap_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5591d250fce0ede30800000000000000
+      internalID: 4530074557489158485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArrowTrap_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c64ca973eef77e300800000000000000
+      internalID: 281334162845779052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArrowTrap_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24c8d6c5208cf2e10800000000000000
+      internalID: 2175177057509411906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArrowTrap_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 016e483de83d68220800000000000000
+      internalID: 2487908454556296720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArrowTrap_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 32
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00ad325e403042080800000000000000
+      internalID: -9213235618134107648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArrowTrap_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 32
+        height: 32
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18b4bfee99a5d7530800000000000000
+      internalID: 3854336473284955009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArrowTrap_9
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 32
+        height: 32
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b355b79516ac9b50800000000000000
+      internalID: 6601333765488071605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
