@@ -30,10 +30,7 @@ namespace Player
         {
             RotateHand();
             childSprite = gameObject.GetComponentInChildren<SpriteRenderer>();
-            if (childSprite != null)
-            {
-                ChangeChildSpriteOrder(childSprite);
-            }
+            ChangeChildSpriteOrder(childSprite);
         }
 
         private void RotateHand()
@@ -43,7 +40,7 @@ namespace Player
 
         private void ChangeChildSpriteOrder(SpriteRenderer spriteRenderer)
         {
-            if (MousePosition.y > 0)
+            if (MousePosition.y > 0.5)
             {
                 spriteRenderer.sortingOrder = 1;
             }

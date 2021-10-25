@@ -9,6 +9,7 @@ namespace Player {
         [SerializeField] private Rigidbody2D rb;
         [SerializeField] private GameObject menu;
         [SerializeField] private Texture2D cursor;
+        [SerializeField] private Sprite[] eightWaysSprites;
 
         private PlayerInput playerInput;
 
@@ -77,6 +78,8 @@ namespace Player {
             movement.x = moveInput.x;
             movement.y = moveInput.y;
 
+            ChangeSpriteDirection();
+
             if (stamina < maxStamina) {
                 stamina += staminaReg * Time.deltaTime;
             }
@@ -93,7 +96,6 @@ namespace Player {
 
         //Movement
         private void Move() {
-            ChangeSpriteDirection(movement.x);
             //rb.velocity = movement * movementSpeed;
             rb.MovePosition((Vector2)transform.position + movement.normalized * (movementSpeed * Time.fixedDeltaTime));
         }
@@ -156,12 +158,27 @@ namespace Player {
         #endregion
 
         //Swaps the sprite to the moving direction.
-        private void ChangeSpriteDirection(float direction) {
-            if (direction < 0) {
-                playSprite.flipX = true;
+        private void ChangeSpriteDirection() {
+
+            Vector2 direction = MousePosition;
+            float x = direction.x;
+            float y = direction.y;
+            Debug.Log("x: "+x+" y:"+y);
+            if (x == 0 && y == -1 )
+            {
+                playSprite.sprite = eightWaysSprites[0];
             }
-            else if (direction > 0) {
-                playSprite.flipX = false;
+            else if (x == 1 && y == 0)
+            {
+                playSprite.sprite = eightWaysSprites[2];
+            }
+            else if (x == 0 && y == 1)
+            {
+                playSprite.sprite = eightWaysSprites[4];
+            }
+            else if (x == -1 && y == 0)
+            {
+                playSprite.sprite = eightWaysSprites[6];
             }
         }
     }

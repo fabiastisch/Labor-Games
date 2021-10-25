@@ -13,13 +13,7 @@ namespace EquipableWeapon
         public float baseAttackspeed;
         public float baseAOERange;
 
-        public void PickMeUp()
-        {
-
-        }
-
-        public void ThrowMeAway()
-        {
+        public void ChangeCurrentWeapon() {
 
         }
 

@@ -58,7 +58,7 @@ namespace Player
 
         public override void CastPrimaryAttack()
         {
-            equiptWeapon.Attack(combatStats);
+            equiptWeapon.Attack(combatStats); 
         }
         #endregion
     }
