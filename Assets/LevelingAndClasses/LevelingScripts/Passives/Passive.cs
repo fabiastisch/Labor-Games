@@ -8,7 +8,7 @@ public class Passive : ScriptableObject
    public float activeTime;
    public string description;
    public bool allTheTimeActive;
-   public float repeatingNumber;
+   public float repeatingSeconds;
    public float firstActivationForRepeat;
    public PassiveSlot.PassiveState passiveState;
 

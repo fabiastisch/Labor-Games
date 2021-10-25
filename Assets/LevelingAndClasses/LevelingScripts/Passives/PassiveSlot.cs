@@ -10,7 +10,7 @@ public class PassiveSlot : MonoBehaviour
     private float cooldownTime;
     private float activeTime;
     private bool alltheTimeActive;
-    private float repeatingNumber;
+    private float repeatingSeconds;
     private float firstActivationForRepeat;
     private bool invokerStarted = false;
 
@@ -31,12 +31,13 @@ public class PassiveSlot : MonoBehaviour
         activeTime = passive.activeTime;
         alltheTimeActive = passive.allTheTimeActive;
         cooldownTime = passive.cooldown;
-        repeatingNumber = passive.repeatingNumber;
+        repeatingSeconds = passive.repeatingSeconds;
         firstActivationForRepeat = passive.firstActivationForRepeat;
         if (state == PassiveState.repeatingEffect)
         {
-            InvokeRepeating(nameof(Repeater), firstActivationForRepeat, repeatingNumber);
+            InvokeRepeating(nameof(Repeater), firstActivationForRepeat, repeatingSeconds);
             invokerStarted = true;
+            // CancelInvoke(nameof(Repeater));
         }
     }
 
@@ -74,19 +75,25 @@ public class PassiveSlot : MonoBehaviour
                 }
                 break;
             case PassiveState.cooldown:
-                if (cooldownTime > 0)
+                Invoke(nameof(SetStateReady), cooldownTime);
+                /*if (cooldownTime > 0)
                 {
                     cooldownTime -= Time.deltaTime;
                 }
                 else
                 {
                     state = PassiveState.ready;
-                }
+                }*/
                 break;
             case PassiveState.repeatingEffect:
                 break;
                 
         }
+    }
+
+    private void SetStateReady()
+    {
+        state = PassiveState.ready;
     }
 
     private void Repeater()
