@@ -12,7 +12,7 @@ namespace Dungeon.DungeonGeneration
         public GameObject trapRoom;
 
         //[Header("Select Generator")] public DungeonGeneratorType generatorType;
-        public DungeonGeneratorParameterSo parameterSo;
+        public AbstractDungeonGeneratorParameterSo parameterSo;
 
         [SerializeField] protected bool clearDungeonOnGenerate = true;
         [SerializeField] private bool generateOnPlay = false;
@@ -29,19 +29,24 @@ namespace Dungeon.DungeonGeneration
 
         private void RunProceduralGeneration()
         {
+            Debug.Log("Start Procedural Dungeon Generation: " + parameterSo.generatorType);
             switch (parameterSo.generatorType)
             {
                 case DungeonGeneratorType.RoomDungeon:
-                    _generatorNew = new RoomDungeonGenerator(parameterSo, this);
+                    _generatorNew = new RoomDungeonGenerator(parameterSo as RoomDungeonGeneratorSo, this);
                     break;
                 case DungeonGeneratorType.CorridorFirst:
-                    _generatorNew = new CorridorFirstDungeonGenerator(parameterSo, this);
+                    //TODO: bugfixes and spawn & portal
+                    _generatorNew =
+                        new CorridorFirstDungeonGenerator(parameterSo as CorridorFirstDungeonGeneratorSo, this);
                     break;
                 case DungeonGeneratorType.RoomFirst:
-                    _generatorNew = new RoomFirstDungeonGenerator(parameterSo, this);
+                    _generatorNew = new RoomFirstDungeonGenerator(parameterSo as RoomFirstDungeonGeneratorSo, this);
                     break;
                 case DungeonGeneratorType.SimpleRandomWalk:
-                    _generatorNew = new SimpleRandomWalkDungeonGenerator(parameterSo, this);
+                    //TODO: bugfixes and spawn & portal
+                    _generatorNew =
+                        new SimpleRandomWalkDungeonGenerator(parameterSo as SimpleRandomWalkDungeonGeneratorSo, this);
                     break;
             }
 

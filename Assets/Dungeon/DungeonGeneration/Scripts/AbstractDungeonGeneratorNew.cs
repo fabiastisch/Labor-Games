@@ -2,13 +2,13 @@
 {
     public abstract class AbstractDungeonGeneratorNew
     {
-        protected DungeonGeneratorParameterSo parameters;
+        //protected AbstractDungeonGeneratorParameterSo parameters;
         protected DungeonGenerator generator;
 
-        public AbstractDungeonGeneratorNew(DungeonGeneratorParameterSo parameter,
+        public AbstractDungeonGeneratorNew(AbstractDungeonGeneratorParameterSo parameter,
             DungeonGenerator generator)
         {
-            parameters = parameter;
+            //parameters = parameter;
             this.generator = generator;
         }
 

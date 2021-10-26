@@ -6,9 +6,10 @@ namespace Dungeon.DungeonGeneration
 {
     public class SimpleRandomWalkDungeonGenerator : AbstractDungeonGeneratorNew
     {
-        
-        public SimpleRandomWalkDungeonGenerator(DungeonGeneratorParameterSo parameter, DungeonGenerator generator) : base(parameter, generator)
+        private SimpleRandomWalkDungeonGeneratorSo parameters;
+        public SimpleRandomWalkDungeonGenerator(SimpleRandomWalkDungeonGeneratorSo parameter, DungeonGenerator generator) : base(parameter, generator)
         {
+            this.parameters = parameter;
         }
 
         public override void RunProceduralGeneration()

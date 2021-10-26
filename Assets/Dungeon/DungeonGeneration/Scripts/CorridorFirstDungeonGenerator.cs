@@ -7,8 +7,12 @@ namespace Dungeon.DungeonGeneration
 {
     public class CorridorFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
     {
-        public CorridorFirstDungeonGenerator(DungeonGeneratorParameterSo parameter, DungeonGenerator generator) : base(parameter, generator)
+        private CorridorFirstDungeonGeneratorSo parameters;
+
+        public CorridorFirstDungeonGenerator(CorridorFirstDungeonGeneratorSo parameter, DungeonGenerator generator) : base(
+            parameter, generator)
         {
+            this.parameters = parameter;
         }
 
         public override void RunProceduralGeneration()
@@ -89,7 +93,8 @@ namespace Dungeon.DungeonGeneration
             potentialRoomPositions.Add(currentPosition);
             for (int i = 0; i < parameters.corridorCount; i++)
             {
-                var corridor = ProceduralGenerationAlgorithms.RandomWalkCorridor(currentPosition, parameters.corridorLength);
+                var corridor =
+                    ProceduralGenerationAlgorithms.RandomWalkCorridor(currentPosition, parameters.corridorLength);
                 currentPosition = corridor[corridor.Count - 1];
                 potentialRoomPositions.Add(currentPosition);
                 floorPositions.UnionWith(corridor);

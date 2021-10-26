@@ -5,9 +5,12 @@ namespace Dungeon.DungeonGeneration
 {
     public class RoomDungeonGenerator : AbstractDungeonGeneratorNew
     {
-        public RoomDungeonGenerator(DungeonGeneratorParameterSo parameter,
-            DungeonGenerator generator): base(parameter, generator)
+        private RoomDungeonGeneratorSo parameters;
+
+        public RoomDungeonGenerator(RoomDungeonGeneratorSo parameters,
+            DungeonGenerator generator) : base(parameters, generator)
         {
+            this.parameters = parameters;
         }
 
         public override void RunProceduralGeneration()
@@ -23,6 +26,20 @@ namespace Dungeon.DungeonGeneration
             {
                 floors.UnionWith(CreateRoundRoom());
             }
+
+            if (!generator.currentPortal)
+            {
+                generator.currentPortal = generator.portal;
+            }
+
+            generator.currentPortal.transform.position = Vector2.one;
+
+            if (!generator.currentSpawn)
+            {
+                generator.currentSpawn = generator.spawn;
+            }
+
+            generator.currentSpawn.transform.position = Vector2.zero;
 
             generator.tilemapVisualizer.PaintFloorTiles(floors);
             WallGenerator.CreateWalls(floors, generator.tilemapVisualizer);
