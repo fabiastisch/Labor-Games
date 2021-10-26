@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -35,7 +34,22 @@ namespace Dungeon.DungeonGeneration
                 case DungeonGeneratorType.RoomDungeon:
                     _generatorNew = new RoomDungeonGenerator(parameterSo, this);
                     break;
+                case DungeonGeneratorType.CorridorFirst:
+                    _generatorNew = new CorridorFirstDungeonGenerator(parameterSo, this);
+                    break;
+                case DungeonGeneratorType.RoomFirst:
+                    _generatorNew = new RoomFirstDungeonGenerator(parameterSo, this);
+                    break;
+                case DungeonGeneratorType.SimpleRandomWalk:
+                    _generatorNew = new SimpleRandomWalkDungeonGenerator(parameterSo, this);
+                    break;
             }
+
+            if (_generatorNew != null)
+            {
+                _generatorNew.RunProceduralGeneration();
+            }
+            else Debug.LogError("Generator is null, type: " + parameterSo.generatorType);
         }
 
         private void Awake()

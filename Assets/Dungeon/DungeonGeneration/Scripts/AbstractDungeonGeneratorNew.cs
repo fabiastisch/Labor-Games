@@ -12,6 +12,6 @@
             this.generator = generator;
         }
 
-        protected abstract void RunProceduralGeneration();
+        public abstract void RunProceduralGeneration();
     }
 }

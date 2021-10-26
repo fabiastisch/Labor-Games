@@ -10,7 +10,7 @@ namespace Dungeon.DungeonGeneration
         {
         }
 
-        protected override void RunProceduralGeneration()
+        public override void RunProceduralGeneration()
         {
             HashSet<Vector2Int> floors = new HashSet<Vector2Int>();
 

@@ -11,7 +11,7 @@ namespace Dungeon.DungeonGeneration
         {
         }
 
-        protected override void RunProceduralGeneration()
+        public override void RunProceduralGeneration()
         {
             HashSet<Vector2Int> floorPos = RunRandomWalk(parameters.startPosition);
             generator.tilemapVisualizer.PaintFloorTiles(floorPos);

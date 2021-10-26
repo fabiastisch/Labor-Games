@@ -9122,7 +9122,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1579529766783541479}
   - component: {fileID: 4913192055357900835}
-  - component: {fileID: 3992207805381122688}
   - component: {fileID: 2675106097815163113}
   m_Layer: 0
   m_Name: Dungeon
@@ -9165,33 +9164,17 @@ MonoBehaviour:
   spawn: {fileID: 3356143981451601788}
   portal: {fileID: 8846697081365940790}
   tilemapVisualizer: {fileID: 561387266}
-  generatorType: 1
-  currentGeneratorType: 1
---- !u!114 &3992207805381122688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1579529766783541476}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5865805358c04e548b5c3fd9499372c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  portal: {fileID: 0}
-  spawn: {fileID: 0}
-  tilemapVisualizer: {fileID: 561387266}
-  startPosition: {x: 0, y: 0}
+  bonusRoomTileMapVis: {fileID: 54321752972799868}
+  trapRoom: {fileID: 5671169807591830320, guid: 7732c8f6cd10e8043abfa25e5ed73952, type: 3}
+  parameterSo: {fileID: 11400000, guid: c6f7b53703acacf41bf017678d136b03, type: 2}
   clearDungeonOnGenerate: 1
   generateOnPlay: 0
-  trapRoom: {fileID: 0}
-  bonusRoomTileMapVis: {fileID: 0}
-  createRectangularRoom: 0
-  with: 14
-  height: 14
-  createRoundRoom: 1
-  radius: 13.06
+  currentPortal: {fileID: 0}
+  currentSpawn: {fileID: 0}
+  traps: []
+  floorColor: {r: 0, g: 0, b: 0, a: 0}
+  wallColor: {r: 0, g: 0, b: 0, a: 0}
+  overrideDefaultColor: 0
 --- !u!114 &2675106097815163113
 MonoBehaviour:
   m_ObjectHideFlags: 0

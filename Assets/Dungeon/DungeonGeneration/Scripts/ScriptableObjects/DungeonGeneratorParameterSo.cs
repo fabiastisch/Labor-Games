@@ -2,6 +2,7 @@
 
 namespace Dungeon.DungeonGeneration
 {
+    [CreateAssetMenu(fileName = "DungeonGeneratorParameters_", menuName = "PCG/DungeonParameter")]
     public class DungeonGeneratorParameterSo : ScriptableObject
     {
         public DungeonGeneratorType generatorType;
@@ -10,25 +11,24 @@ namespace Dungeon.DungeonGeneration
 
         #region RoomDungeon
 
-        [Header("Room Dungeon")] [SerializeField]
-        public bool isRoomDungeon;
+        [Header("Room Dungeon")] public bool isRoomDungeon;
 
-        [Header("Rectangular Room")] [SerializeField]
-        public bool createRectangularRoom;
+        [Header("Rectangular Room")] public bool createRectangularRoom;
 
-        [SerializeField] public int with = 14;
-        [SerializeField] public int height = 14;
+        public int with = 14;
+        public int height = 14;
 
-        [Header("Round Room")] [SerializeField]
+        [Header("Round Room")]
         public bool createRoundRoom;
 
-        [SerializeField] public float radius = 10;
+        public float radius = 10;
 
         #endregion
 
         #region RoomFirstDungeonGen
 
-        public int minRoomWidth = 8, minRoomHeight = 8;
+        [Header("RoomFirstDungeonGen")] public int minRoomWidth = 8;
+        public int minRoomHeight = 8;
         public int dungeonWidth = 25, dungeonHeight = 25;
         [Range(0, 10)] public int dungeonOffset = 1;
         public bool randomWalkRooms = false;
@@ -50,6 +50,7 @@ namespace Dungeon.DungeonGeneration
         #endregion
 
         #region SimpleWalkDungeonGen
+        [Header("SimpleWalkDungeonGen")]
 
         public int iterations = 10;
         public int walkLength = 10;
@@ -60,7 +61,7 @@ namespace Dungeon.DungeonGeneration
         #endregion
 
         #region CorridorFirstDungeonGen
-
+        [Header("CorridorFirstDungeonGen")]
         public int corridorLength = 14, corridorCount = 5;
         [Range(0.1f, 1)] public float roomPercent = 0.8f;
 
