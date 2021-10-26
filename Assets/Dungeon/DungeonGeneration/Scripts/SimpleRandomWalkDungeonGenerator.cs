@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Dungeon.DungeonGeneration
 {
-    public class SimpleRandomWalkDungeonGenerator : AbstractDungeonGeneratorNew
+    public class SimpleRandomWalkDungeonGenerator : AbstractDungeonGenerator
     {
         private SimpleRandomWalkDungeonGeneratorSo parameters;
         public SimpleRandomWalkDungeonGenerator(SimpleRandomWalkDungeonGeneratorSo parameter, DungeonGenerator generator) : base(parameter, generator)

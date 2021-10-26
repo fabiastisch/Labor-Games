@@ -9,19 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a41c7a81e424692a5501dc2e5b7813f, type: 3}
-  m_Name: DungeonLevel
+  m_Script: {fileID: 11500000, guid: b613f4337f6140a7937238a22d85bb18, type: 3}
+  m_Name: RoomFirstParameters_
   m_EditorClassIdentifier: 
   generatorType: 2
   startPosition: {x: 0, y: 0}
-  isRoomDungeon: 0
-  createRectangularRoom: 0
-  with: 14
-  height: 14
-  createRoundRoom: 0
-  radius: 10
-  minRoomWidth: 11
-  minRoomHeight: 11
+  iterations: 10
+  walkLength: 10
+  startRandomlyEachIteration: 1
+  minRoomWidth: 8
+  minRoomHeight: 8
   dungeonWidth: 60
   dungeonHeight: 60
   dungeonOffset: 1
@@ -35,9 +32,3 @@ MonoBehaviour:
   bonusRoomOffset: 5
   corridorTrapSpawnDirection: 0
   corridorTrapChance: 0
-  iterations: 10
-  walkLength: 10
-  startRandomlyEachIteration: 1
-  corridorLength: 14
-  corridorCount: 5
-  roomPercent: 0.8

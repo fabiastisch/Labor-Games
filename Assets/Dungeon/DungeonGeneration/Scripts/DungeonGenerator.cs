@@ -25,7 +25,7 @@ namespace Dungeon.DungeonGeneration
         [SerializeField] protected Color wallColor;
         [SerializeField] protected bool overrideDefaultColor = false;
 
-        private AbstractDungeonGeneratorNew _generatorNew;
+        private AbstractDungeonGenerator _generator;
 
         private void RunProceduralGeneration()
         {
@@ -33,26 +33,26 @@ namespace Dungeon.DungeonGeneration
             switch (parameterSo.generatorType)
             {
                 case DungeonGeneratorType.RoomDungeon:
-                    _generatorNew = new RoomDungeonGenerator(parameterSo as RoomDungeonGeneratorSo, this);
+                    _generator = new RoomDungeonGenerator(parameterSo as RoomDungeonGeneratorSo, this);
                     break;
                 case DungeonGeneratorType.CorridorFirst:
                     //TODO: bugfixes and spawn & portal
-                    _generatorNew =
+                    _generator =
                         new CorridorFirstDungeonGenerator(parameterSo as CorridorFirstDungeonGeneratorSo, this);
                     break;
                 case DungeonGeneratorType.RoomFirst:
-                    _generatorNew = new RoomFirstDungeonGenerator(parameterSo as RoomFirstDungeonGeneratorSo, this);
+                    _generator = new RoomFirstDungeonGenerator(parameterSo as RoomFirstDungeonGeneratorSo, this);
                     break;
                 case DungeonGeneratorType.SimpleRandomWalk:
                     //TODO: bugfixes and spawn & portal
-                    _generatorNew =
+                    _generator =
                         new SimpleRandomWalkDungeonGenerator(parameterSo as SimpleRandomWalkDungeonGeneratorSo, this);
                     break;
             }
 
-            if (_generatorNew != null)
+            if (_generator != null)
             {
-                _generatorNew.RunProceduralGeneration();
+                _generator.RunProceduralGeneration();
             }
             else Debug.LogError("Generator is null, type: " + parameterSo.generatorType);
         }
@@ -65,14 +65,14 @@ namespace Dungeon.DungeonGeneration
             }
         }
 
-        private void ActivateBonusRoom(bool active)
+        public void ActivateBonusRoom(bool active = true)
         {
             tilemapVisualizer.wallTileMap.gameObject.SetActive(!active);
             bonusRoomTileMapVis.floorTilemap.gameObject.SetActive(active);
             bonusRoomTileMapVis.wallTileMap.gameObject.SetActive(active);
         }
 
-        private void GenerateDungeon()
+        public void GenerateDungeon()
         {
             if (tilemapVisualizer && clearDungeonOnGenerate) ClearDungeon();
             if (overrideDefaultColor) ChangeColor();
@@ -80,7 +80,7 @@ namespace Dungeon.DungeonGeneration
             RunProceduralGeneration();
         }
 
-        private void ClearDungeon()
+        public void ClearDungeon()
         {
             if (tilemapVisualizer) tilemapVisualizer.Clear();
             if (bonusRoomTileMapVis) bonusRoomTileMapVis.Clear();

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Dungeon.DungeonGeneration
 {
-    public class RoomDungeonGenerator : AbstractDungeonGeneratorNew
+    public class RoomDungeonGenerator : AbstractDungeonGenerator
     {
         private RoomDungeonGeneratorSo parameters;
 
