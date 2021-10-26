@@ -815,7 +815,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.9375, y: 1.25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -847,6 +847,7 @@ MonoBehaviour:
   - {fileID: -4996073221168638981, guid: 14858349672bdff479cbb6e93938d1c5, type: 3}
   - {fileID: 4774430378361097297, guid: 14858349672bdff479cbb6e93938d1c5, type: 3}
   - {fileID: -8263216288522333626, guid: 14858349672bdff479cbb6e93938d1c5, type: 3}
+  hand: {fileID: 245163729418225517}
   movementSpeed: 11
   stamina: 100
   staminaReg: 10
@@ -866,8 +867,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0005428706, y: 0.00004889284}
-  m_Size: {x: 0.13357489, y: 0.1798669}
+  m_Offset: {x: -0.00071390474, y: -0.008546114}
+  m_Size: {x: 0.78929347, y: 1.0450768}
   m_Direction: 0
 --- !u!114 &1697252049
 MonoBehaviour:

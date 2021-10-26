@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Utils;
 
 
 namespace Player {
@@ -10,6 +11,7 @@ namespace Player {
         [SerializeField] private GameObject menu;
         [SerializeField] private Texture2D cursor;
         [SerializeField] private Sprite[] eightWaysSprites;
+        [SerializeField] private PlayerHand hand;
 
         private PlayerInput playerInput;
 
@@ -160,25 +162,55 @@ namespace Player {
         //Swaps the sprite to the moving direction.
         private void ChangeSpriteDirection() {
 
-            Vector2 direction = MousePosition;
-            float x = direction.x;
-            float y = direction.y;
-            Debug.Log("x: "+x+" y:"+y);
-            if (x == 0 && y == -1 )
+
+            int mouseAngle = Util.GetAngleFromVector(MousePosition);
+            if (mouseAngle >= -112 && mouseAngle <= -68)
             {
+                //Down
                 playSprite.sprite = eightWaysSprites[0];
+                hand.RotateHand(Rotations.Down);
             }
-            else if (x == 1 && y == 0)
+            else if (mouseAngle >= -157 && mouseAngle <= -113)
             {
-                playSprite.sprite = eightWaysSprites[2];
+                //DownLeft
+                playSprite.sprite = eightWaysSprites[7];
+                hand.RotateHand(Rotations.DownLeft);
             }
-            else if (x == 0 && y == 1)
+            else if (mouseAngle >= 158 || mouseAngle <= -158)
             {
-                playSprite.sprite = eightWaysSprites[4];
-            }
-            else if (x == -1 && y == 0)
-            {
+                //Left
                 playSprite.sprite = eightWaysSprites[6];
+                hand.RotateHand(Rotations.Left);
+            }
+            else if (mouseAngle <= 157 && mouseAngle >= 113)
+            {
+                //UpLeft
+                playSprite.sprite = eightWaysSprites[5];
+                hand.RotateHand(Rotations.UpLeft);
+            }
+            else if(mouseAngle <= 112 && mouseAngle >= 68)
+            {
+                //Up
+                playSprite.sprite = eightWaysSprites[4];
+                hand.RotateHand(Rotations.Up);
+            }
+            else if (mouseAngle <= 67 && mouseAngle >= 23)
+            {
+                //UpRight
+                playSprite.sprite = eightWaysSprites[3];
+                hand.RotateHand(Rotations.UpRight);
+            }
+            else if (mouseAngle <= 22 && mouseAngle >= -22)
+            {
+                //Right
+                playSprite.sprite = eightWaysSprites[2];
+                hand.RotateHand(Rotations.Right);
+            }
+            else if (mouseAngle <= -23 && mouseAngle >= -67)
+            {
+                //Down Right
+                playSprite.sprite = eightWaysSprites[1];
+                hand.RotateHand(Rotations.DownRight);
             }
         }
     }

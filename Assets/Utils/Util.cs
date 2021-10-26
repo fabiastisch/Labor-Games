@@ -20,5 +20,14 @@ namespace Utils
 
             return successes;
         }
+
+        public static int GetAngleFromVector(Vector3 dir)
+        {
+            dir = dir.normalized;
+            float n = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            int angle = Mathf.RoundToInt(n);
+
+            return angle;
+        }
     }
 }

@@ -4,11 +4,24 @@ using UnityEngine;
 
 namespace Player
 {
+    public enum Rotations
+    {
+        Down = -90,
+        Up = 90,
+        Left = -180,
+        Right = 0,
+        UpLeft = 45,
+        UpRight = 135,
+        DownLeft = -135,
+        DownRight = -45,
+    }
+
     public class PlayerHand : MonoBehaviour
     {
         [SerializeField] private Camera cam;
         private SpriteRenderer childSprite;
         private Vector2 rotateDirection;
+
 
         private Vector2 MousePosition
         {
@@ -28,14 +41,15 @@ namespace Player
         // Update is called once per frame
         void Update()
         {
-            RotateHand();
+
             childSprite = gameObject.GetComponentInChildren<SpriteRenderer>();
             ChangeChildSpriteOrder(childSprite);
         }
 
-        private void RotateHand()
+        public void RotateHand(Rotations rotations)
         {
-            transform.up = MousePosition;
+            int degree = (int)rotations;
+            transform.eulerAngles = Vector3.forward * degree;
         }
 
         private void ChangeChildSpriteOrder(SpriteRenderer spriteRenderer)

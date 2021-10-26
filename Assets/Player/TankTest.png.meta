@@ -4,28 +4,28 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -5467153780761423832
-    second: TankTest_0
+    second: Down
   - first:
       213: -3706455761911716670
-    second: TankTest_1
+    second: DownRight
   - first:
       213: -1799829002707541106
-    second: TankTest_2
+    second: Right
   - first:
       213: 2454622637321674781
-    second: TankTest_3
+    second: UpRight
   - first:
       213: 4973295241041175224
-    second: TankTest_4
+    second: Up
   - first:
       213: -4996073221168638981
-    second: TankTest_5
+    second: UpLeft
   - first:
       213: 4774430378361097297
-    second: TankTest_6
+    second: Left
   - first:
       213: -8263216288522333626
-    second: TankTest_7
+    second: DownLeft
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -115,7 +115,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TankTest_0
+      name: Down
       rect:
         serializedVersion: 2
         x: 0
@@ -123,7 +123,7 @@ TextureImporter:
         width: 15
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -136,7 +136,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TankTest_1
+      name: DownRight
       rect:
         serializedVersion: 2
         x: 17
@@ -144,7 +144,7 @@ TextureImporter:
         width: 15
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -157,7 +157,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TankTest_2
+      name: Right
       rect:
         serializedVersion: 2
         x: 33
@@ -165,7 +165,7 @@ TextureImporter:
         width: 15
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -178,7 +178,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TankTest_3
+      name: UpRight
       rect:
         serializedVersion: 2
         x: 49
@@ -186,7 +186,7 @@ TextureImporter:
         width: 15
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -199,7 +199,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TankTest_4
+      name: Up
       rect:
         serializedVersion: 2
         x: 65
@@ -207,7 +207,7 @@ TextureImporter:
         width: 15
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -220,7 +220,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TankTest_5
+      name: UpLeft
       rect:
         serializedVersion: 2
         x: 81
@@ -228,7 +228,7 @@ TextureImporter:
         width: 15
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -241,7 +241,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TankTest_6
+      name: Left
       rect:
         serializedVersion: 2
         x: 97
@@ -249,7 +249,7 @@ TextureImporter:
         width: 15
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -262,7 +262,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TankTest_7
+      name: DownLeft
       rect:
         serializedVersion: 2
         x: 113
@@ -270,7 +270,7 @@ TextureImporter:
         width: 15
         height: 20
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
