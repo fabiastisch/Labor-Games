@@ -63,16 +63,21 @@ public class PassiveSlot : MonoBehaviour
                 {
                     //will stay here its all the time active
                 }
-                else if (activeTime > 0)
-                {
-                    activeTime -= Time.deltaTime;
-                }
                 else
-                {
-                    passive.BeginCooldown(gameObject);
-                    state = PassiveState.cooldown;
-                    cooldownTime = passive.cooldown;
+                { 
+                    Invoke(nameof(SetStateCoodown), activeTime);
                 }
+                
+                // else if (activeTime > 0)
+                // {
+                //     activeTime -= Time.deltaTime;
+                // }
+                // else
+                // {
+                //     passive.BeginCooldown(gameObject);
+                //     state = PassiveState.cooldown;
+                //     cooldownTime = passive.cooldown;
+                // }
                 break;
             case PassiveState.cooldown:
                 Invoke(nameof(SetStateReady), cooldownTime);
@@ -94,6 +99,14 @@ public class PassiveSlot : MonoBehaviour
     private void SetStateReady()
     {
         state = PassiveState.ready;
+    }
+
+    private void SetStateCoodown()
+    {
+        
+        passive.BeginCooldown(gameObject);
+        state = PassiveState.cooldown;
+        cooldownTime = passive.cooldown;
     }
 
     private void Repeater()

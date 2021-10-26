@@ -8,19 +8,26 @@ public class PassiveTestPlayer : MonoBehaviour
     
     public static PassiveTestPlayer Instance { get; private set; }
     //BaseValues
-    [SerializeField] private float strength = 10;
+    [SerializeField] public float strength = 10;
     [SerializeField] public float MaxHp = 10;
-    [SerializeField] private float magicPower = 10;
-    [SerializeField] private float agillity = 10;
-    [SerializeField] private float charisma = 10;
-    [SerializeField] private float armor = 10;
-    [SerializeField] private float magicresist = 10;
-    [SerializeField] private float totalDamageReduction = 10;
-    [SerializeField] private float poisenresist = 10;
-    [SerializeField] private float thunderresist = 10;
-    [SerializeField] private float frostresist = 10;
-    [SerializeField] private float fireresist = 10;
-    [SerializeField] private float shadowresist  = 10;
+    [SerializeField] public float magicPower = 10;
+    [SerializeField] public float agillity = 10;
+    [SerializeField] public float charisma = 10;
+    [SerializeField] public float armor = 10;
+    [SerializeField] public float magicresist = 10;
+    [SerializeField] public float totalDamageReduction = 10;
+    [SerializeField] public float poisenresist = 10;
+    [SerializeField] public float thunderresist = 10;
+    [SerializeField] public float frostresist = 10;
+    [SerializeField] public float fireresist = 10;
+    [SerializeField] public float shadowresist  = 10;
+    
+    
+    
+    [SerializeField] public float criticalChance  = 0;
+    [SerializeField] public float attackspeed  = 1;
+    [SerializeField] public float spellCoolDownReduction  = 0;
+    
     
     //ActualStatus
     [SerializeField] public float ActualHP  = 5;
@@ -45,6 +52,9 @@ public class PassiveTestPlayer : MonoBehaviour
         Debug.Log("FireResist" + " = " +fireresist );
         Debug.Log("Shadowresist" + " = " +shadowresist );
         Debug.Log("ActualHP" + " = " +ActualHP );
+        Debug.Log("Attackspeed" + " = " +attackspeed );
+        Debug.Log("CriticalChance" + " = " +criticalChance );
+        Debug.Log("spellCoolDownReduction" + " = " +spellCoolDownReduction );
     }
     
     

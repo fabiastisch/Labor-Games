@@ -17,7 +17,7 @@ MonoBehaviour:
   activeTime: 1
   description: Gerade eher ein Healspell xD
   allTheTimeActive: 0
-  repeatingNumber: 3
+  repeatingSeconds: 2
   firstActivationForRepeat: 0.1
   passiveState: 3
   healthperTime: 3
