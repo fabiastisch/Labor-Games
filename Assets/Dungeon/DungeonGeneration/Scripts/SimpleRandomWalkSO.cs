@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace DungeonGeneration.Scripts
+namespace Dungeon.DungeonGeneration
 {
     [CreateAssetMenu(fileName = "SimpleRandomWalkParameters_", menuName = "PCG/SimpleRadnomWalkData")]
     public class SimpleRandomWalkSO : ScriptableObject

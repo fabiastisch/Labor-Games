@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace DungeonGeneration.Scripts
+namespace Dungeon.DungeonGeneration
 {
     public abstract class AbstractDungeonGenerator : MonoBehaviour
     {

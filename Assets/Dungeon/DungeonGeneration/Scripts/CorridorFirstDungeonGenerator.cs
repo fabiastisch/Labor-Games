@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace DungeonGeneration.Scripts
+namespace Dungeon.DungeonGeneration
 {
     public class CorridorFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-namespace DungeonGeneration.Scripts
+namespace Dungeon.DungeonGeneration
 {
     public class TilemapVisualizer : MonoBehaviour
     {

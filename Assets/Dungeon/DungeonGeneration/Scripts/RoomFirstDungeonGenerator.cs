@@ -2,11 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Utils;
 using Random = UnityEngine.Random;
 
-namespace DungeonGeneration.Scripts
+namespace Dungeon.DungeonGeneration
 {
     public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
     {

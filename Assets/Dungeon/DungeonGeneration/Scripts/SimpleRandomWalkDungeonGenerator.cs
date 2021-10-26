@@ -2,7 +2,7 @@
 using System.Linq;
 using UnityEngine;
 
-namespace DungeonGeneration.Scripts
+namespace Dungeon.DungeonGeneration
 {
     public class SimpleRandomWalkDungeonGenerator : AbstractDungeonGenerator
     {

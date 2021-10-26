@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DungeonGeneration.Scripts
+namespace Dungeon.DungeonGeneration
 {
     public static class WallTypesHelper
     {
