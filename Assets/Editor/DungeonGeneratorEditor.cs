@@ -1,8 +1,5 @@
 ﻿using System;
-using Dungeon;
-using Dungeon.DungeonGeneration.Scripts;
-using DungeonGeneration;
-using DungeonGeneration.Scripts;
+using Dungeon.DungeonGeneration;
 using UnityEditor;
 using UnityEngine;
 
