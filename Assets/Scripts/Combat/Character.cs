@@ -54,7 +54,7 @@ namespace Combat
             }
         }
 
-        protected virtual void TakeDamage(float amountHp, DamageType damageType = DamageType.Magical)
+        public virtual void TakeDamage(float amountHp, DamageType damageType = DamageType.Magical)
         {
             _currentHealth -= amountHp;
             _currentHealth = _currentHealth < 0 ? 0 : _currentHealth;
@@ -67,7 +67,7 @@ namespace Combat
             }
         }
 
-        protected virtual void Heal(float amountHp)
+        public virtual void Heal(float amountHp)
         {
             _currentHealth += amountHp;
             _currentHealth = _currentHealth > maxHealth ? maxHealth : _currentHealth;
