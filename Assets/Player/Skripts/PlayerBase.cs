@@ -1,23 +1,31 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Utils;
 
 namespace Player {
     public abstract class PlayerBase : Combat.Character {
+        [SerializeField] [Range(-180, 180)] private int tmpMouseAngle;
+        [SerializeField] private bool overrideMouseAngle = false;
         [SerializeField] private Camera cam;
         //[SerializeField] private SpriteRenderer playSprite;
         //[SerializeField] private Rigidbody2D rb;
         [SerializeField] private GameObject menu;
         [SerializeField] private Texture2D cursor;
+        [SerializeField] private Sprite[] eightWaysSprites;
+        [SerializeField] private PlayerHand hand;
+
         private PlayerInput playerInput;
 
 
         //[Header("Movement")] [SerializeField] private float movementSpeed = 9f;
         private Vector2 movement;
 
-        private Vector2 MousePosition {
-            get {
+        private Vector2 MousePosition
+        {
+            get
+            {
                 Vector2 mouseOnScreen = cam.ScreenToWorldPoint(Input.mousePosition);
-                return (mouseOnScreen - (Vector2)transform.position).normalized;
+                return (mouseOnScreen - (Vector2) transform.position).normalized;
             }
         }
 
@@ -39,7 +47,8 @@ namespace Player {
         private State state;
 
         //State which the player is currently in
-        private enum State {
+        private enum State
+        {
             Normal,
             Dodging
         }
@@ -49,7 +58,6 @@ namespace Player {
         private void Awake()
         {
             playerInput = GetComponent<PlayerInput>();
-            
         }
 
         protected override void Start() {
@@ -60,8 +68,10 @@ namespace Player {
             Cursor.SetCursor(cursor, Vector2.zero, CursorMode.ForceSoftware);
         }
 
-        protected virtual void FixedUpdate() {
-            switch (state) {
+        protected virtual void FixedUpdate()
+        {
+            switch (state)
+            {
                 case State.Normal:
                     Move();
                     break;
@@ -71,18 +81,24 @@ namespace Player {
             }
         }
 
-        protected virtual void Update() {
+        protected virtual void Update()
+        {
             Vector2 moveInput = playerInput.actions["Move"].ReadValue<Vector2>();
             movement.x = moveInput.x;
             movement.y = moveInput.y;
 
-            if (stamina < maxStamina) {
+            ChangeSpriteDirection();
+
+            if (stamina < maxStamina)
+            {
                 stamina += staminaReg * Time.deltaTime;
             }
 
             bool isIngameMenuOpen = menu.gameObject.activeSelf;
 
-            if (playerInput.actions["Dodge"].triggered && stamina >= dodgeCost && state == State.Normal && !isIngameMenuOpen) {
+            if (playerInput.actions["Dodge"].triggered && stamina >= dodgeCost && state == State.Normal &&
+                !isIngameMenuOpen)
+            {
                 stamina -= dodgeCost;
                 dodgeSpeed = dodgeSpeedMax;
                 currentDodgeDirection = MousePosition;
@@ -91,10 +107,10 @@ namespace Player {
         }
 
         //Movement
-        private void Move() {
-            ChangeSpriteDirection(movement.x);
+        private void Move()
+        {
             //rb.velocity = movement * movementSpeed;
-            rb.MovePosition((Vector2)transform.position + movement.normalized * (movementSpeed * Time.fixedDeltaTime));
+            rb.MovePosition((Vector2) transform.position + movement.normalized * (movementSpeed * Time.fixedDeltaTime));
         }
 
         private void PerformDodgeStep()
@@ -109,34 +125,35 @@ namespace Player {
             }
 
             //rb.velocity = currentDodgeDirection * dodgeSpeed;
-            rb.MovePosition((Vector2)transform.position + currentDodgeDirection * dodgeSpeed * Time.fixedDeltaTime);
+            rb.MovePosition((Vector2) transform.position + currentDodgeDirection * dodgeSpeed * Time.fixedDeltaTime);
         }
 
         //UI
-        public void OpenInventory() {
+        public void OpenInventory()
+        {
         }
 
-        public void OpenMinimap() {
-
+        public void OpenMinimap()
+        {
         }
 
-        public void OpenMenu() {
+        public void OpenMenu()
+        {
             isMenuOpen = menu.gameObject.activeSelf;
             if (!isMenuOpen)
             {
                 menu.SetActive(true);
                 Time.timeScale = 0;
-                
             }
             else
             {
                 menu.SetActive(false);
                 Time.timeScale = 1;
             }
-            
         }
 
         #region Spellcast
+
         public abstract void CastAbillity1();
 
 
@@ -152,6 +169,62 @@ namespace Player {
         public abstract void CastAbillity5();
 
         public abstract void CastPrimaryAttack();
+
         #endregion
+
+        //Swaps the sprite to the moving direction.
+        private void ChangeSpriteDirection()
+        {
+            int mouseAngle = Util.GetAngleFromVector(MousePosition);
+            if (overrideMouseAngle) mouseAngle = tmpMouseAngle;
+            if (mouseAngle >= -112 && mouseAngle <= -68)
+            {
+                //Down
+                playSprite.sprite = eightWaysSprites[0];
+                hand.RotateHand(Rotations.Down);
+            }
+            else if (mouseAngle >= -157 && mouseAngle <= -113)
+            {
+                //DownLeft
+                playSprite.sprite = eightWaysSprites[7];
+                hand.RotateHand(Rotations.DownLeft);
+            }
+            else if (mouseAngle >= 158 || mouseAngle <= -158)
+            {
+                //Left
+                playSprite.sprite = eightWaysSprites[6];
+                hand.RotateHand(Rotations.Left);
+            }
+            else if (mouseAngle <= 157 && mouseAngle >= 113)
+            {
+                //UpLeft
+                playSprite.sprite = eightWaysSprites[5];
+                hand.RotateHand(Rotations.UpLeft);
+            }
+            else if (mouseAngle <= 112 && mouseAngle >= 68)
+            {
+                //Up
+                playSprite.sprite = eightWaysSprites[4];
+                hand.RotateHand(Rotations.Up);
+            }
+            else if (mouseAngle <= 67 && mouseAngle >= 23)
+            {
+                //UpRight
+                playSprite.sprite = eightWaysSprites[3];
+                hand.RotateHand(Rotations.UpRight);
+            }
+            else if (mouseAngle <= 22 && mouseAngle >= -22)
+            {
+                //Right
+                playSprite.sprite = eightWaysSprites[2];
+                hand.RotateHand(Rotations.Right);
+            }
+            else if (mouseAngle <= -23 && mouseAngle >= -67)
+            {
+                //Down Right
+                playSprite.sprite = eightWaysSprites[1];
+                hand.RotateHand(Rotations.DownRight);
+            }
+        }
     }
 }

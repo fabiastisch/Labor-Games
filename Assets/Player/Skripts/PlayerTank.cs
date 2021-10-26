@@ -1,11 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EquipableWeapon;
+using Combat;
+
 
 namespace Player
 {
     public class PlayerTank : PlayerBase
     {
+        [Header("Weapon")]
+        [SerializeField] private Weapon equiptWeapon;
+
+        //
+        private CombatStats combatStats = new CombatStats();
+
+
+        protected override void Start()
+        {
+            base.Start();
+        }
+
         protected override void Update()
         {
             base.Update();
@@ -43,7 +58,7 @@ namespace Player
 
         public override void CastPrimaryAttack()
         {
-            Debug.Log("Sword attack!!!!");
+            equiptWeapon.Attack(combatStats); 
         }
         #endregion
     }

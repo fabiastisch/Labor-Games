@@ -1,5 +1,4 @@
-﻿using System;
-using Combat;
+﻿using Combat;
 using TMPro;
 using UnityEngine;
 using Utils;
