@@ -21,6 +21,7 @@ namespace Player
         [SerializeField] private Camera cam;
         private SpriteRenderer childSprite;
         private Vector2 rotateDirection;
+        private Vector3 startPos;
 
 
         private Vector2 MousePosition
@@ -28,28 +29,37 @@ namespace Player
             get
             {
                 Vector2 mouseOnScreen = cam.ScreenToWorldPoint(Input.mousePosition);
-                return (mouseOnScreen - (Vector2)transform.position).normalized;
+                return (mouseOnScreen - (Vector2) transform.position).normalized;
             }
         }
 
         // Start is called before the first frame update
         void Start()
         {
-
+            startPos = transform.localPosition;
         }
 
         // Update is called once per frame
         void Update()
         {
-
             childSprite = gameObject.GetComponentInChildren<SpriteRenderer>();
             ChangeChildSpriteOrder(childSprite);
         }
 
         public void RotateHand(Rotations rotations)
         {
-            int degree = (int)rotations;
-            transform.eulerAngles = Vector3.forward * degree;
+            int degree = (int) rotations;
+            childSprite.transform.eulerAngles = Vector3.forward * degree;
+
+            if (rotations == Rotations.Down)
+            {
+                childSprite.transform.eulerAngles = Vector3.forward * -135f;
+            }
+            else if (rotations == Rotations.DownLeft)
+            {
+                childSprite.transform.eulerAngles = Vector3.forward * 135f;
+                transform.localPosition = startPos + new Vector3(0.2f, 0, 0);
+            }
         }
 
         private void ChangeChildSpriteOrder(SpriteRenderer spriteRenderer)
@@ -63,6 +73,5 @@ namespace Player
                 spriteRenderer.sortingOrder = 5;
             }
         }
-
     }
 }

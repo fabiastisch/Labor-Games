@@ -3,8 +3,12 @@ using UnityEngine.InputSystem;
 using Utils;
 
 
-namespace Player {
-    public abstract class PlayerBase : MonoBehaviour {
+namespace Player
+{
+    public abstract class PlayerBase : MonoBehaviour
+    {
+        [SerializeField] [Range(-180, 180)] private int tmpMouseAngle;
+        [SerializeField] private bool overrideMouseAngle = false;
         [SerializeField] private Camera cam;
         [SerializeField] private SpriteRenderer playSprite;
         [SerializeField] private Rigidbody2D rb;
@@ -19,10 +23,12 @@ namespace Player {
         [Header("Movement")] [SerializeField] private float movementSpeed = 9f;
         private Vector2 movement;
 
-        private Vector2 MousePosition {
-            get {
+        private Vector2 MousePosition
+        {
+            get
+            {
                 Vector2 mouseOnScreen = cam.ScreenToWorldPoint(Input.mousePosition);
-                return (mouseOnScreen - (Vector2)transform.position).normalized;
+                return (mouseOnScreen - (Vector2) transform.position).normalized;
             }
         }
 
@@ -44,7 +50,8 @@ namespace Player {
         private State state;
 
         //State which the player is currently in
-        private enum State {
+        private enum State
+        {
             Normal,
             Dodging
         }
@@ -54,18 +61,20 @@ namespace Player {
         private void Awake()
         {
             playerInput = GetComponent<PlayerInput>();
-            
         }
 
-        protected virtual void Start() {
+        protected virtual void Start()
+        {
             state = State.Normal;
             maxStamina = stamina;
             dodgeSpeedMax = dodgeSpeed;
             Cursor.SetCursor(cursor, Vector2.zero, CursorMode.ForceSoftware);
         }
 
-        protected virtual void FixedUpdate() {
-            switch (state) {
+        protected virtual void FixedUpdate()
+        {
+            switch (state)
+            {
                 case State.Normal:
                     Move();
                     break;
@@ -75,20 +84,24 @@ namespace Player {
             }
         }
 
-        protected virtual void Update() {
+        protected virtual void Update()
+        {
             Vector2 moveInput = playerInput.actions["Move"].ReadValue<Vector2>();
             movement.x = moveInput.x;
             movement.y = moveInput.y;
 
             ChangeSpriteDirection();
 
-            if (stamina < maxStamina) {
+            if (stamina < maxStamina)
+            {
                 stamina += staminaReg * Time.deltaTime;
             }
 
             bool isIngameMenuOpen = menu.gameObject.activeSelf;
 
-            if (playerInput.actions["Dodge"].triggered && stamina >= dodgeCost && state == State.Normal && !isIngameMenuOpen) {
+            if (playerInput.actions["Dodge"].triggered && stamina >= dodgeCost && state == State.Normal &&
+                !isIngameMenuOpen)
+            {
                 stamina -= dodgeCost;
                 dodgeSpeed = dodgeSpeedMax;
                 currentDodgeDirection = MousePosition;
@@ -97,9 +110,10 @@ namespace Player {
         }
 
         //Movement
-        private void Move() {
+        private void Move()
+        {
             //rb.velocity = movement * movementSpeed;
-            rb.MovePosition((Vector2)transform.position + movement.normalized * (movementSpeed * Time.fixedDeltaTime));
+            rb.MovePosition((Vector2) transform.position + movement.normalized * (movementSpeed * Time.fixedDeltaTime));
         }
 
         private void PerformDodgeStep()
@@ -114,34 +128,35 @@ namespace Player {
             }
 
             //rb.velocity = currentDodgeDirection * dodgeSpeed;
-            rb.MovePosition((Vector2)transform.position + currentDodgeDirection * dodgeSpeed * Time.fixedDeltaTime);
+            rb.MovePosition((Vector2) transform.position + currentDodgeDirection * dodgeSpeed * Time.fixedDeltaTime);
         }
 
         //UI
-        public void OpenInventory() {
+        public void OpenInventory()
+        {
         }
 
-        public void OpenMinimap() {
-
+        public void OpenMinimap()
+        {
         }
 
-        public void OpenMenu() {
+        public void OpenMenu()
+        {
             isMenuOpen = menu.gameObject.activeSelf;
             if (!isMenuOpen)
             {
                 menu.SetActive(true);
                 Time.timeScale = 0;
-                
             }
             else
             {
                 menu.SetActive(false);
                 Time.timeScale = 1;
             }
-            
         }
 
         #region Spellcast
+
         public abstract void CastAbillity1();
 
 
@@ -157,13 +172,14 @@ namespace Player {
         public abstract void CastAbillity5();
 
         public abstract void CastPrimaryAttack();
+
         #endregion
 
         //Swaps the sprite to the moving direction.
-        private void ChangeSpriteDirection() {
-
-
+        private void ChangeSpriteDirection()
+        {
             int mouseAngle = Util.GetAngleFromVector(MousePosition);
+            if (overrideMouseAngle) mouseAngle = tmpMouseAngle;
             if (mouseAngle >= -112 && mouseAngle <= -68)
             {
                 //Down
@@ -188,7 +204,7 @@ namespace Player {
                 playSprite.sprite = eightWaysSprites[5];
                 hand.RotateHand(Rotations.UpLeft);
             }
-            else if(mouseAngle <= 112 && mouseAngle >= 68)
+            else if (mouseAngle <= 112 && mouseAngle >= 68)
             {
                 //Up
                 playSprite.sprite = eightWaysSprites[4];
