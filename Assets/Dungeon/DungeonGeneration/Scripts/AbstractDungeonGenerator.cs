@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Dungeon.DungeonGeneration
 {
@@ -9,13 +8,13 @@ namespace Dungeon.DungeonGeneration
         [HideInInspector] public GameObject portal;
         [HideInInspector] public GameObject spawn;
         [HideInInspector] public TilemapVisualizer tilemapVisualizer = null;
-        [SerializeField] protected Vector2Int startPosition = Vector2Int.zero;
+        //[SerializeField] protected Vector2Int startPosition = Vector2Int.zero;
         [SerializeField] protected bool clearDungeonOnGenerate = true;
         [SerializeField] private bool generateOnPlay = false;
-        protected GameObject _portal;
-        protected GameObject _spawn;
+        public GameObject _portal;
+        public GameObject _spawn;
         [HideInInspector] public GameObject trapRoom;
-        protected List<GameObject> traps = new List<GameObject>();
+        public List<GameObject> traps = new List<GameObject>();
         [HideInInspector] public TilemapVisualizer bonusRoomTileMapVis;
 
         [Header("Color")] [SerializeField] protected Color floorColor;

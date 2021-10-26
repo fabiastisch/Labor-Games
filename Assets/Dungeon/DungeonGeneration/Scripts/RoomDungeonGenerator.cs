@@ -3,38 +3,40 @@ using UnityEngine;
 
 namespace Dungeon.DungeonGeneration
 {
-    public class RoomDungeonGenerator : AbstractDungeonGenerator
+    public class RoomDungeonGenerator : AbstractDungeonGeneratorNew
     {
-        [SerializeField] private RoomDungeonGeneratorSo _roomDungeonGeneratorSo;
-
+        public RoomDungeonGenerator(DungeonGeneratorParameterSo parameter,
+            DungeonGenerator generator): base(parameter, generator)
+        {
+        }
 
         protected override void RunProceduralGeneration()
         {
             HashSet<Vector2Int> floors = new HashSet<Vector2Int>();
 
-            if (_roomDungeonGeneratorSo.createRectangularRoom)
+            if (parameters.createRectangularRoom)
             {
                 floors = CreateRectangularRoom();
             }
 
-            if (_roomDungeonGeneratorSo.createRoundRoom)
+            if (parameters.createRoundRoom)
             {
                 floors.UnionWith(CreateRoundRoom());
             }
 
-            tilemapVisualizer.PaintFloorTiles(floors);
-            WallGenerator.CreateWalls(floors, tilemapVisualizer);
+            generator.tilemapVisualizer.PaintFloorTiles(floors);
+            WallGenerator.CreateWalls(floors, generator.tilemapVisualizer);
         }
 
         private HashSet<Vector2Int> CreateRoundRoom()
         {
             HashSet<Vector2Int> floor = new HashSet<Vector2Int>();
-            for (int i = (int) -_roomDungeonGeneratorSo.radius; i <= _roomDungeonGeneratorSo.radius; i++)
+            for (int i = (int) -parameters.radius; i <= parameters.radius; i++)
             {
-                for (int j = (int) -_roomDungeonGeneratorSo.radius; j <= _roomDungeonGeneratorSo.radius; j++)
+                for (int j = (int) -parameters.radius; j <= parameters.radius; j++)
                 {
                     var position = new Vector2Int(i, j);
-                    if (Vector2.Distance(position, startPosition) <= _roomDungeonGeneratorSo.radius)
+                    if (Vector2.Distance(position, parameters.startPosition) <= parameters.radius)
                     {
                         floor.Add(position);
                     }
@@ -47,11 +49,11 @@ namespace Dungeon.DungeonGeneration
         private HashSet<Vector2Int> CreateRectangularRoom()
         {
             HashSet<Vector2Int> floor = new HashSet<Vector2Int>();
-            for (int i = 0; i < _roomDungeonGeneratorSo.height; i++)
+            for (int i = 0; i < parameters.height; i++)
             {
-                for (int j = 0; j < _roomDungeonGeneratorSo.with; j++)
+                for (int j = 0; j < parameters.with; j++)
                 {
-                    Vector2Int position = startPosition + new Vector2Int(i, j);
+                    Vector2Int position = parameters.startPosition + new Vector2Int(i, j);
                     floor.Add(position);
                 }
             }

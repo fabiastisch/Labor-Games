@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine;
 
 namespace Editor {
-    [CustomEditor(typeof(DungeonGenerator), true)]
+    /*[CustomEditor(typeof(DungeonGenerator), true)]
     public class DungeonGeneratorEditor : UnityEditor.Editor {
         private DungeonGenerator _generator;
 
@@ -46,5 +46,5 @@ namespace Editor {
 
             return null;
         }
-    }
+    }*/
 }

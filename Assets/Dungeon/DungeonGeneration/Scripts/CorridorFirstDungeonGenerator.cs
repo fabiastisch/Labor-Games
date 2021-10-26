@@ -7,8 +7,9 @@ namespace Dungeon.DungeonGeneration
 {
     public class CorridorFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
     {
-        [SerializeField] private int corridorLength = 14, corridorCount = 5;
-        [SerializeField] [Range(0.1f, 1)] private float roomPercent = 0.8f;
+        public CorridorFirstDungeonGenerator(DungeonGeneratorParameterSo parameter, DungeonGenerator generator) : base(parameter, generator)
+        {
+        }
 
         protected override void RunProceduralGeneration()
         {
@@ -28,8 +29,8 @@ namespace Dungeon.DungeonGeneration
 
             floorPositions.UnionWith(roomPositions);
 
-            tilemapVisualizer.PaintFloorTiles(floorPositions);
-            WallGenerator.CreateWalls(floorPositions, tilemapVisualizer);
+            generator.tilemapVisualizer.PaintFloorTiles(floorPositions);
+            WallGenerator.CreateWalls(floorPositions, generator.tilemapVisualizer);
         }
 
         private void CreateRoomsAdDeadEnds(List<Vector2Int> deadEnds, HashSet<Vector2Int> roomFloors)
@@ -70,7 +71,7 @@ namespace Dungeon.DungeonGeneration
         private HashSet<Vector2Int> CreateRooms(HashSet<Vector2Int> potentialRoomPositions)
         {
             HashSet<Vector2Int> roomPositions = new HashSet<Vector2Int>();
-            int roomToCreateCount = Mathf.RoundToInt(potentialRoomPositions.Count * roomPercent);
+            int roomToCreateCount = Mathf.RoundToInt(potentialRoomPositions.Count * parameters.roomPercent);
             List<Vector2Int> roomsToCreate =
                 potentialRoomPositions.OrderBy(x => Guid.NewGuid()).Take(roomToCreateCount).ToList();
             foreach (var roomPos in roomsToCreate)
@@ -84,11 +85,11 @@ namespace Dungeon.DungeonGeneration
 
         private void CreateCorridors(HashSet<Vector2Int> floorPositions, HashSet<Vector2Int> potentialRoomPositions)
         {
-            var currentPosition = startPosition;
+            var currentPosition = parameters.startPosition;
             potentialRoomPositions.Add(currentPosition);
-            for (int i = 0; i < corridorCount; i++)
+            for (int i = 0; i < parameters.corridorCount; i++)
             {
-                var corridor = ProceduralGenerationAlgorithms.RandomWalkCorridor(currentPosition, corridorLength);
+                var corridor = ProceduralGenerationAlgorithms.RandomWalkCorridor(currentPosition, parameters.corridorLength);
                 currentPosition = corridor[corridor.Count - 1];
                 potentialRoomPositions.Add(currentPosition);
                 floorPositions.UnionWith(corridor);
