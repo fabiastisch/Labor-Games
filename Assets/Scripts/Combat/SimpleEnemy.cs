@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Player;
+using UnityEngine;
 
 namespace Combat
 {
@@ -51,7 +52,8 @@ namespace Combat
                     if (attackSpeed <= canAttack)
                     {
                         // TODO: implement health reduction
-                        //target.gameObject.GetComponent<Health>().UpdateHealth(-attackDamage);
+                        target.gameObject.GetComponent<PlayerBase>().UpdateHealth(-attackDamage);
+                        
                         canAttack = 0f;
                     }
                     else canAttack += Time.deltaTime;
@@ -59,9 +61,9 @@ namespace Combat
             }
         }
 
-        protected override void Move()
+        protected void Move()
         {
-            throw new System.NotImplementedException();
+            
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace DungeonGeneration.Scripts
+﻿namespace Dungeon.DungeonGeneration
 {
     public enum Direction
     {

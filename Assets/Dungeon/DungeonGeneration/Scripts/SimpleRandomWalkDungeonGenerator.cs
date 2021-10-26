@@ -2,34 +2,32 @@
 using System.Linq;
 using UnityEngine;
 
-namespace DungeonGeneration.Scripts
+namespace Dungeon.DungeonGeneration
 {
     public class SimpleRandomWalkDungeonGenerator : AbstractDungeonGenerator
     {
-        [SerializeField] protected int iterations = 10;
-        [SerializeField] protected int walkLength = 10;
-
-        [Tooltip("If True, the Dungeon Will more Expand, else the Starting Point will get more Covered")]
-        [SerializeField]
-        protected bool startRandomlyEachIteration = true;
-
-
-        protected override void RunProceduralGeneration()
+        private SimpleRandomWalkDungeonGeneratorSo parameters;
+        public SimpleRandomWalkDungeonGenerator(SimpleRandomWalkDungeonGeneratorSo parameter, DungeonGenerator generator) : base(parameter, generator)
         {
-            HashSet<Vector2Int> floorPos = RunRandomWalk(startPosition);
-            tilemapVisualizer.PaintFloorTiles(floorPos);
-            WallGenerator.CreateWalls(floorPos, tilemapVisualizer);
+            this.parameters = parameter;
+        }
+
+        public override void RunProceduralGeneration()
+        {
+            HashSet<Vector2Int> floorPos = RunRandomWalk(parameters.startPosition);
+            generator.tilemapVisualizer.PaintFloorTiles(floorPos);
+            WallGenerator.CreateWalls(floorPos, generator.tilemapVisualizer);
         }
 
         protected HashSet<Vector2Int> RunRandomWalk(Vector2Int position)
         {
             var currentPos = position;
             HashSet<Vector2Int> floorPos = new HashSet<Vector2Int>();
-            for (int i = 0; i < iterations; i++)
+            for (int i = 0; i < parameters.iterations; i++)
             {
-                var path = ProceduralGenerationAlgorithms.SimpleRandomWalk(currentPos, walkLength);
+                var path = ProceduralGenerationAlgorithms.SimpleRandomWalk(currentPos, parameters.walkLength);
                 floorPos.UnionWith(path);
-                if (startRandomlyEachIteration)
+                if (parameters.startRandomlyEachIteration)
                 {
                     currentPos = floorPos.ElementAt(Random.Range(0, floorPos.Count));
                 }

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace DungeonGeneration.Scripts
+namespace Dungeon.DungeonGeneration
 {
     public struct Wall
     {

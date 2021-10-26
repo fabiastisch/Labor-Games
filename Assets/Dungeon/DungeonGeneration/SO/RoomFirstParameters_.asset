@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b613f4337f6140a7937238a22d85bb18, type: 3}
+  m_Name: RoomFirstParameters_
+  m_EditorClassIdentifier: 
+  generatorType: 2
+  startPosition: {x: 0, y: 0}
+  iterations: 10
+  walkLength: 10
+  startRandomlyEachIteration: 1
+  minRoomWidth: 8
+  minRoomHeight: 8
+  dungeonWidth: 60
+  dungeonHeight: 60
+  dungeonOffset: 1
+  randomWalkRooms: 0
+  corridorWidth: 2
+  trapRoomChance: 0
+  bonusRoomChance: 0
+  direction: 4
+  bonusRoomWidth: 10
+  bonusRoomHeight: 10
+  bonusRoomOffset: 5
+  corridorTrapSpawnDirection: 0
+  corridorTrapChance: 0

@@ -11,7 +11,7 @@ namespace Combat
         protected float attackSpeed = 1f;
         protected float attackDamage = 10f;
 
-        protected override void Die()
+        protected void Die()
         {
             Destroy(gameObject);
         }

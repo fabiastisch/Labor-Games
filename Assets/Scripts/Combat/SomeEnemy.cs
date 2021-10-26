@@ -31,7 +31,7 @@ namespace Combat
             if (_playerDetector.PlayerDetected && !IsAtTarget) Move();
         }
 
-        protected override void Move()
+        protected void Move()
         {
             Debug.Log("Move");
             var directionToTarget = _playerDetector.DirectionToTarget;

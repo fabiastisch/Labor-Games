@@ -2,16 +2,13 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Utils;
 
-
-namespace Player
-{
-    public abstract class PlayerBase : MonoBehaviour
-    {
+namespace Player {
+    public abstract class PlayerBase : Combat.Character {
         [SerializeField] [Range(-180, 180)] private int tmpMouseAngle;
         [SerializeField] private bool overrideMouseAngle = false;
         [SerializeField] private Camera cam;
-        [SerializeField] private SpriteRenderer playSprite;
-        [SerializeField] private Rigidbody2D rb;
+        //[SerializeField] private SpriteRenderer playSprite;
+        //[SerializeField] private Rigidbody2D rb;
         [SerializeField] private GameObject menu;
         [SerializeField] private Texture2D cursor;
         [SerializeField] private Sprite[] eightWaysSprites;
@@ -20,7 +17,7 @@ namespace Player
         private PlayerInput playerInput;
 
 
-        [Header("Movement")] [SerializeField] private float movementSpeed = 9f;
+        //[Header("Movement")] [SerializeField] private float movementSpeed = 9f;
         private Vector2 movement;
 
         private Vector2 MousePosition
@@ -63,8 +60,8 @@ namespace Player
             playerInput = GetComponent<PlayerInput>();
         }
 
-        protected virtual void Start()
-        {
+        protected override void Start() {
+            base.Start();
             state = State.Normal;
             maxStamina = stamina;
             dodgeSpeedMax = dodgeSpeed;
