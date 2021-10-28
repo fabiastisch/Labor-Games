@@ -11,6 +11,8 @@ namespace Dungeon.Spikes
     {
         [SerializeField] private float damageInterval = .2f;
         [SerializeField] private float damage = 12f;
+        [SerializeField] private DamageType damageType;
+        [SerializeField] private bool isCrit;
 
         private Animator animator;
 
@@ -32,7 +34,7 @@ namespace Dungeon.Spikes
             foreach (Collider2D col in playersInTrap)
             {
                 //DamagePopup.Create(col.transform.position, damage);
-                col.GetComponent<PlayerBase>().TakeDamage(damage, DamageType.Physical);
+                col.GetComponent<PlayerBase>().TakeDamage(damage, damageType, isCrit);
             }
         }
 

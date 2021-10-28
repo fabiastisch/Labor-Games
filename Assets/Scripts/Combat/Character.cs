@@ -54,12 +54,12 @@ namespace Combat
             }
         }
 
-        public virtual void TakeDamage(float amountHp, DamageType damageType = DamageType.Magical)
+        public virtual void TakeDamage(float amountHp, DamageType damageType = DamageType.Magical, bool isCrit = false)
         {
             _currentHealth -= amountHp;
             _currentHealth = _currentHealth < 0 ? 0 : _currentHealth;
 
-            DamagePopup.Create(transform.position, amountHp, damageType);
+            DamagePopup.Create(transform.position, amountHp, damageType, isCrit);
             if (_currentHealth == 0)
             {
                 Debug.Log(gameObject.name + " died...");
