@@ -105,6 +105,13 @@ namespace Dungeon.DungeonGeneration
         {
             Instantiate(g, position, Quaternion.identity, transform);
         }
+
+        public AbstractDungeonLevel CreateSave()
+        {
+            var so = ScriptableObject.CreateInstance<AbstractDungeonLevel>();
+
+            return so;
+        }
     }
 
 
