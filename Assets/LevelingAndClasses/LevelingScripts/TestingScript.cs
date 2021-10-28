@@ -17,12 +17,16 @@ public class TestingScript : MonoBehaviour
     public Button charismaButton = GameObject.Find("charismaButton").GetComponent<Button>();
     public Button strengthButton = GameObject.Find("strengthButton").GetComponent<Button>();
     */
-    
+    [Range(0,100)]public int vitallity = 10;
+    [Range(0,100)]public int agillity = 10;
+    [Range(0,100)]public int abillity = 20;
+    [Range(0,100)]public int charisma = 30;
+    [Range(0,100)]public int strength = 20;
     
     private Statistics stats;
     private void Start()
     {
-       stats = new Statistics(10, 10, 10,0,10);
+       stats = new Statistics(strength, vitallity, charisma,abillity,agillity);
        uiStatsRadarChart.SetStatistic(stats);
     }
    public void IncreaseStat(string name){
