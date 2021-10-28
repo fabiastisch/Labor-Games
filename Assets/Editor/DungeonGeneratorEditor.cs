@@ -1,48 +1,35 @@
-﻿using System;
-using Dungeon;
-using DungeonGeneration;
-using DungeonGeneration.Scripts;
+using Dungeon.DungeonGeneration;
 using UnityEditor;
 using UnityEngine;
 
 namespace Editor {
     [CustomEditor(typeof(DungeonGenerator), true)]
-    public class DungeonGeneratorEditor : UnityEditor.Editor {
+    public class RandomDungeonGeneratorEditor : UnityEditor.Editor {
         private DungeonGenerator _generator;
 
-
-        private void OnEnable() {
+        private void Awake() {
             _generator = (DungeonGenerator)target;
         }
 
         public override void OnInspectorGUI() {
             base.OnInspectorGUI();
-
-            if (_generator.currentGeneratorType.Equals(_generator.generatorType)) return;
-            Type type = getClass(_generator.currentGeneratorType);
-            Component component = _generator.gameObject.GetComponent(type);
-            if (component) {
-                DestroyImmediate(component, false);
+            if (GUILayout.Button("Create Dungeon")) {
+                _generator.GenerateDungeon();
             }
 
-            Component newComponent = _generator.gameObject.AddComponent(getClass(_generator.generatorType));
-            ((AbstractDungeonGenerator)newComponent).tilemapVisualizer = _generator.tilemapVisualizer;
-            _generator.currentGeneratorType = _generator.generatorType;
-        }
-
-        private Type getClass(DungeonGeneratorType type) {
-            switch (type) {
-                case DungeonGeneratorType.CorridorFirst:
-                    return typeof(CorridorFirstDungeonGenerator);
-                case DungeonGeneratorType.RoomDungeon:
-                    return typeof(RoomDungeonGenerator);
-                case DungeonGeneratorType.RoomFirst:
-                    return typeof(RoomFirstDungeonGenerator);
-                case DungeonGeneratorType.SimpleRandomWalk:
-                    return typeof(SimpleRandomWalkDungeonGenerator);
+            if (GUILayout.Button("Clear Dungeon")) {
+                _generator.ClearDungeon();
+                //_generator.ClearObjectsImmediate();
             }
-
-            return null;
+            
+            if (GUILayout.Button("Activate BonusLevel")) {
+                _generator.ActivateBonusRoom();
+                //_generator.ClearObjectsImmediate();
+            }
+            if (GUILayout.Button("Deactivate BonusLevel")) {
+                _generator.ActivateBonusRoom(false);
+                //_generator.ClearObjectsImmediate();
+            }
         }
     }
 }
