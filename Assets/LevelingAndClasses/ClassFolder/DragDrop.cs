@@ -9,9 +9,9 @@ namespace LevelingAndClasses.ClassFolder
         public static DragDrop Instance { get; private set; }
         private RectTransform rectTransform;
         private CanvasGroup canvasGroup;
-        //private SkillsAndPassives skillsAndPassives;
         private Vector3 defaultPos;
         public bool droppedOnSlot;
+        public ClassSlot classSlot;
 
         void Start()
         {
@@ -26,12 +26,16 @@ namespace LevelingAndClasses.ClassFolder
             defaultPos = transform.position;
         }
 
+        //Todo connect with Classslot / remove current passiveSlot
         public void OnBeginDrag(PointerEventData eventData)
         {
             Debug.Log("OnBeginDrag");
             canvasGroup.alpha = .6f;
             canvasGroup.blocksRaycasts = false;
             eventData.pointerDrag.GetComponent<DragDrop>().droppedOnSlot = false;
+            if(classSlot != null)
+             classSlot.RemovePassiveSlot();
+            classSlot = null;
         }
     
         public void OnPointerDown(PointerEventData eventData)
@@ -41,9 +45,7 @@ namespace LevelingAndClasses.ClassFolder
 
         public void OnDrag(PointerEventData eventData)
         {
-            //Debug.Log("OnDrag");
             rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
-        
         }
     
         public void OnEndDrag(PointerEventData eventData)
@@ -62,15 +64,5 @@ namespace LevelingAndClasses.ClassFolder
         {
             //throw new NotImplementedException();
         }
-
-        /*public SkillsAndPassives GetSkillsAndPassives()
-    {
-        return GetComponent<SkillAndPassiveList>().GetSkillsAndPassives();
-    }
-
-    public void SetSkillsAndPassives(SkillsAndPassives skillsAndPassives)
-    {
-        this.skillsAndPassives = skillsAndPassives;
-    }*/
     }
 }

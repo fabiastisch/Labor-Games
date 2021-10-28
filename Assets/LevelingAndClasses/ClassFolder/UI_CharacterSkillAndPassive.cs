@@ -3,6 +3,7 @@ using UnityEngine;
 namespace LevelingAndClasses.ClassFolder
 {
     // Not used
+    // Class to define the UI of the Character, this will have a connection to the Actual Character
     public class UI_CharacterSkillAndPassive: MonoBehaviour
     {
         private ClassSlot classPassive1;
@@ -47,8 +48,8 @@ namespace LevelingAndClasses.ClassFolder
         {
             Debug.Log("ClassAbillitySlot1_OnItemDropped");
             //Item dropped on first Abillity;
-            Debug.Log("Dropped item" + e.skillsAndPassives.GetType());
-            if(e.skillsAndPassives.skillsAndPassivesType == SkillsAndPassives.SkillsAndPassivesType.ClassActive)
+            Debug.Log("Dropped item" + e.skillsAndPassives);
+            if(e.skillsAndPassives == SkillsAndPassivesType.ClassActive)
             {
                 e.returnData.pointerDrag.GetComponent<DragDrop>().droppedOnSlot = true;
                 e.returnData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = classAbillity1.GetComponent<RectTransform>().anchoredPosition;
@@ -59,7 +60,7 @@ namespace LevelingAndClasses.ClassFolder
             Debug.Log("ClassAbillitySlot1_OnItemDropped");
             //Item dropped on first Abillity;
             Debug.Log("Dropped item" + e.skillsAndPassives.GetType());
-            if(e.skillsAndPassives.skillsAndPassivesType == SkillsAndPassives.SkillsAndPassivesType.ClassActive)
+            if(e.skillsAndPassives == SkillsAndPassivesType.ClassActive)
             {
                 e.returnData.pointerDrag.GetComponent<DragDrop>().droppedOnSlot = true;
                 e.returnData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = classAbillity2.GetComponent<RectTransform>().anchoredPosition;

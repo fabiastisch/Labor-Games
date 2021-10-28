@@ -13,6 +13,7 @@ public class PassiveSlot : MonoBehaviour
     private float repeatingSeconds;
     private float firstActivationForRepeat;
     private bool invokerStarted = false;
+    private bool equiped = false;
 
     private PassiveState state = PassiveState.ready;
     public KeyCode key;
@@ -43,56 +44,60 @@ public class PassiveSlot : MonoBehaviour
 
     void Update()
     {
-        switch (state)
+        if (equiped)
         {
-            case PassiveState.ready:
-                if (Input.GetKeyDown(key))
-                {
-                    passive.Activation(gameObject);
-                    state = PassiveState.active;
-                    activeTime = passive.activeTime;
-                }
-                else if (alltheTimeActive)
-                {
-                    passive.Activation(gameObject);
-                    state = PassiveState.active;
-                }
-                break;
-            case PassiveState.active:
-                if (alltheTimeActive)
-                {
-                    //will stay here its all the time active
-                }
-                else
-                { 
-                    Invoke(nameof(SetStateCoodown), activeTime);
-                }
-                
-                // else if (activeTime > 0)
-                // {
-                //     activeTime -= Time.deltaTime;
-                // }
-                // else
-                // {
-                //     passive.BeginCooldown(gameObject);
-                //     state = PassiveState.cooldown;
-                //     cooldownTime = passive.cooldown;
-                // }
-                break;
-            case PassiveState.cooldown:
-                Invoke(nameof(SetStateReady), cooldownTime);
-                /*if (cooldownTime > 0)
-                {
-                    cooldownTime -= Time.deltaTime;
-                }
-                else
-                {
-                    state = PassiveState.ready;
-                }*/
-                break;
-            case PassiveState.repeatingEffect:
-                break;
-                
+            switch (state)
+            {
+                case PassiveState.ready:
+                    if (Input.GetKeyDown(key))
+                    {
+                        passive.Activation(gameObject);
+                        state = PassiveState.active;
+                        activeTime = passive.activeTime;
+                    }
+                    else if (alltheTimeActive)
+                    {
+                        passive.Activation(gameObject);
+                        state = PassiveState.active;
+                    }
+
+                    break;
+                case PassiveState.active:
+                    if (alltheTimeActive)
+                    {
+                        //will stay here its all the time active
+                    }
+                    else
+                    {
+                        Invoke(nameof(SetStateCoodown), activeTime);
+                    }
+
+                    // else if (activeTime > 0)
+                    // {
+                    //     activeTime -= Time.deltaTime;
+                    // }
+                    // else
+                    // {
+                    //     passive.BeginCooldown(gameObject);
+                    //     state = PassiveState.cooldown;
+                    //     cooldownTime = passive.cooldown;
+                    // }
+                    break;
+                case PassiveState.cooldown:
+                    Invoke(nameof(SetStateReady), cooldownTime);
+                    /*if (cooldownTime > 0)
+                    {
+                        cooldownTime -= Time.deltaTime;
+                    }
+                    else
+                    {
+                        state = PassiveState.ready;
+                    }*/
+                    break;
+                case PassiveState.repeatingEffect:
+                    break;
+            }
+
         }
     }
 
@@ -113,4 +118,10 @@ public class PassiveSlot : MonoBehaviour
     {
         passive.Activation(gameObject);
     }
+
+    public void SetEquip(bool equiped = true)
+    {
+        this.equiped = equiped;
+    }
+    
 }
