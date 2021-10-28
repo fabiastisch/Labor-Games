@@ -614,6 +614,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 1979911364}
   droppedOnSlot: 0
+  classSlot: {fileID: 0}
 --- !u!114 &140530814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -661,10 +662,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 140530810}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0002d0cc3b67c1f42888a728bc620c7b, type: 3}
+  m_Script: {fileID: 11500000, guid: 3021bf5bc09913a4c877056846527019, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  passive: {fileID: 11400000, guid: d3a982c9cdf3f1741a2fd42e4492fa3e, type: 2}
+  key: 0
 --- !u!1 &145756359
 GameObject:
   m_ObjectHideFlags: 0
@@ -1916,6 +1918,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 1979911364}
   droppedOnSlot: 0
+  classSlot: {fileID: 0}
 --- !u!114 &969628450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1963,10 +1966,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 969628446}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0002d0cc3b67c1f42888a728bc620c7b, type: 3}
+  m_Script: {fileID: 11500000, guid: 3021bf5bc09913a4c877056846527019, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
+  passive: {fileID: 11400000, guid: eea2f4ea001306c46b0d49dd7fdb6c6e, type: 2}
+  key: 0
 --- !u!1 &987239951
 GameObject:
   m_ObjectHideFlags: 0
@@ -2021,6 +2025,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 1979911364}
   droppedOnSlot: 0
+  classSlot: {fileID: 0}
 --- !u!114 &987239954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2080,10 +2085,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 987239951}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0002d0cc3b67c1f42888a728bc620c7b, type: 3}
+  m_Script: {fileID: 11500000, guid: 3021bf5bc09913a4c877056846527019, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
+  passive: {fileID: 11400000, guid: eea2f4ea001306c46b0d49dd7fdb6c6e, type: 2}
+  key: 0
 --- !u!1 &1000549274
 GameObject:
   m_ObjectHideFlags: 0
@@ -2946,6 +2952,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 1979911364}
   droppedOnSlot: 0
+  classSlot: {fileID: 0}
 --- !u!114 &1346334878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2993,10 +3000,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1346334874}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0002d0cc3b67c1f42888a728bc620c7b, type: 3}
+  m_Script: {fileID: 11500000, guid: 3021bf5bc09913a4c877056846527019, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  passive: {fileID: 11400000, guid: d3a982c9cdf3f1741a2fd42e4492fa3e, type: 2}
+  key: 0
 --- !u!1 &1355730583
 GameObject:
   m_ObjectHideFlags: 0

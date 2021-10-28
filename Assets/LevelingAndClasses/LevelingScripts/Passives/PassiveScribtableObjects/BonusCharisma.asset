@@ -20,5 +20,6 @@ MonoBehaviour:
   repeatingSeconds: 0
   firstActivationForRepeat: 0
   passiveState: 0
+  skillsAndPassivesType: 0
   statBonusValue: 1.5
   statname: 4
