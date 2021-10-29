@@ -18,59 +18,76 @@ namespace Player
 
     public class PlayerHand : MonoBehaviour
     {
-        [SerializeField] private Camera cam;
         private SpriteRenderer childSprite;
-        private Vector2 rotateDirection;
         private Vector3 startPos;
 
-
-        private Vector2 MousePosition
-        {
-            get
-            {
-                Vector2 mouseOnScreen = cam.ScreenToWorldPoint(Input.mousePosition);
-                return (mouseOnScreen - (Vector2) transform.position).normalized;
-            }
-        }
 
         // Start is called before the first frame update
         void Start()
         {
             startPos = transform.localPosition;
+            childSprite = gameObject.GetComponentInChildren<SpriteRenderer>();
         }
 
         // Update is called once per frame
         void Update()
         {
-            childSprite = gameObject.GetComponentInChildren<SpriteRenderer>();
-            ChangeChildSpriteOrder(childSprite);
+
         }
 
         public void RotateHand(Rotations rotations)
         {
             int degree = (int) rotations;
-            childSprite.transform.eulerAngles = Vector3.forward * degree;
+
+            //Correct Swordorder
+            if (degree <= 158 && degree >= 22)
+            {
+                childSprite.sortingOrder = 1;
+            }
+            else
+            {
+                childSprite.sortingOrder = 5;
+            }
 
             if (rotations == Rotations.Down)
             {
                 childSprite.transform.eulerAngles = Vector3.forward * -135f;
+                transform.localPosition = startPos + new Vector3(0.1f, 0, 0);
             }
             else if (rotations == Rotations.DownLeft)
             {
                 childSprite.transform.eulerAngles = Vector3.forward * 135f;
                 transform.localPosition = startPos + new Vector3(0.2f, 0, 0);
             }
-        }
-
-        private void ChangeChildSpriteOrder(SpriteRenderer spriteRenderer)
-        {
-            if (MousePosition.y > 0.5)
+            else if (rotations == Rotations.Left)
             {
-                spriteRenderer.sortingOrder = 1;
+                childSprite.transform.eulerAngles = Vector3.forward * 135f;
+                transform.localPosition = startPos + new Vector3(0.4f, 0, 0);
             }
-            else
+            else if (rotations == Rotations.UpLeft)
             {
-                spriteRenderer.sortingOrder = 5;
+                childSprite.transform.eulerAngles = Vector3.forward * 135f;
+                transform.localPosition = startPos + new Vector3(0.4f, 0, 0);
+            }
+            else if (rotations == Rotations.Up)
+            {
+                childSprite.transform.eulerAngles = Vector3.forward * 45f;
+                transform.localPosition = startPos + new Vector3(0.8f, 0, 0);
+            }
+            else if (rotations == Rotations.UpRight)
+            {
+                childSprite.transform.eulerAngles = Vector3.forward * -45f;
+                transform.localPosition = startPos + new Vector3(0.3f, 0, 0);
+            }
+            else if (rotations == Rotations.Right)
+            {
+                childSprite.transform.eulerAngles = Vector3.forward * -45f;
+                transform.localPosition = startPos + new Vector3(0.3f, 0, 0);
+            }
+            else if (rotations == Rotations.DownRight)
+            {
+                childSprite.transform.eulerAngles = Vector3.forward * -45f;
+                transform.localPosition = startPos + new Vector3(0.1f, 0, 0);
             }
         }
     }

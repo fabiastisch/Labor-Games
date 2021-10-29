@@ -164,13 +164,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1285127244701738521}
-  m_LocalRotation: {x: -0, y: -0, z: 0.38268343, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 1.3, z: 10}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 9, y: 9, z: 9}
   m_Children: []
   m_Father: {fileID: 5341468655164470405}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4471141390424832465
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -450,7 +450,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5907097909329946085}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.356, z: 0}
+  m_LocalPosition: {x: -0.37066668, y: -0.367, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 1776296725898990008}
@@ -469,7 +469,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e8cb34fecebcf64e89c4e8c876fe969, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 9112581534973777237}
 --- !u!1 &6194135914601324225
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,10 +837,10 @@ MonoBehaviour:
   rb: {fileID: 8548802804282458404}
   movementSpeed: 11
   maxHealth: 100
-  tmpMouseAngle: 0
+  tmpMouseAngle: 42
   overrideMouseAngle: 0
   cam: {fileID: 9112581534973777237}
-  menu: {fileID: 134442834402360010}
+  menu: {fileID: 0}
   cursor: {fileID: 2800000, guid: 5c94703ad47cef245b5e9cfb57466291, type: 3}
   eightWaysSprites:
   - {fileID: -5467153780761423832, guid: 14858349672bdff479cbb6e93938d1c5, type: 3}
@@ -1153,11 +1152,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b6c6c67d525123409c768f3653877df, type: 3}
---- !u!1 &134442834402360010 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2367785510546366377, guid: 3b6c6c67d525123409c768f3653877df, type: 3}
-  m_PrefabInstance: {fileID: 2378379354117301603}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &134442834402359862 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2367785510546366293, guid: 3b6c6c67d525123409c768f3653877df, type: 3}
