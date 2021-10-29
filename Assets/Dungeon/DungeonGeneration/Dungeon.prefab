@@ -9171,9 +9171,9 @@ MonoBehaviour:
   currentPortal: {fileID: 0}
   currentSpawn: {fileID: 0}
   traps: []
-  floorColor: {r: 0, g: 0, b: 0, a: 0}
-  wallColor: {r: 0, g: 0, b: 0, a: 0}
-  overrideDefaultColor: 0
+  floorColor: {r: 1, g: 1, b: 1, a: 1}
+  wallColor: {r: 0, g: 0.83137256, b: 1, a: 0.8862745}
+  overrideDefaultColor: 1
 --- !u!1 &1579529767564740570
 GameObject:
   m_ObjectHideFlags: 0
