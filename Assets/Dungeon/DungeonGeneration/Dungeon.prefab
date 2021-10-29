@@ -9122,7 +9122,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1579529766783541479}
   - component: {fileID: 4913192055357900835}
-  - component: {fileID: 2675106097815163113}
   m_Layer: 0
   m_Name: Dungeon
   m_TagString: Untagged
@@ -9166,7 +9165,7 @@ MonoBehaviour:
   tilemapVisualizer: {fileID: 561387266}
   bonusRoomTileMapVis: {fileID: 54321752972799868}
   trapRoom: {fileID: 5671169807591830320, guid: 7732c8f6cd10e8043abfa25e5ed73952, type: 3}
-  parameterSo: {fileID: 11400000, guid: c6f7b53703acacf41bf017678d136b03, type: 2}
+  parameterSo: {fileID: 11400000, guid: 345977d3ca2427645acbe4b5bd7c23e3, type: 2}
   clearDungeonOnGenerate: 1
   generateOnPlay: 0
   currentPortal: {fileID: 0}
@@ -9175,20 +9174,6 @@ MonoBehaviour:
   floorColor: {r: 0, g: 0, b: 0, a: 0}
   wallColor: {r: 0, g: 0, b: 0, a: 0}
   overrideDefaultColor: 0
---- !u!114 &2675106097815163113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1579529766783541476}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 393b1ab97b7f4e84b34845c3ae78aed3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trapRoom: {fileID: 358418509596439510, guid: 517b42e7cd069dc478cbec0774bb6be4, type: 3}
-  bonusRoomTileMapVis: {fileID: 54321752972799868}
 --- !u!1 &1579529767564740570
 GameObject:
   m_ObjectHideFlags: 0

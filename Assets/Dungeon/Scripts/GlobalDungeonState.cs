@@ -1,4 +1,5 @@
 ﻿using System;
+using Dungeon.DungeonGeneration;
 using UnityEngine;
 
 namespace Dungeon.Scripts
@@ -40,6 +41,9 @@ namespace Dungeon.Scripts
         #endregion
 
         public DungeonState nextRoomState = DungeonState.Level1;
+        
+        public AbstractDungeonGeneratorParameterSo levelRoom;
+        public AbstractDungeonGeneratorParameterSo bossRoom;
 
         public void GoNext()
         {

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Dungeon.Scripts;
 using UnityEngine;
 
 namespace Dungeon.DungeonGeneration
@@ -61,6 +62,14 @@ namespace Dungeon.DungeonGeneration
         {
             if (generateOnPlay)
             {
+                var state = GlobalDungeonState.Instance;
+                if (state.nextRoomState == DungeonState.BossRoom)
+                {
+                    parameterSo = state.bossRoom;
+                }
+                else parameterSo = state.levelRoom;
+                state.GoNext();
+                
                 GenerateDungeon();
             }
         }

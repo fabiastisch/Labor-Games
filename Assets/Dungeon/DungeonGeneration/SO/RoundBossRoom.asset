@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d277ef15a394da490545e35b3955520, type: 3}
-  m_Name: RoomDungeonGeneratorParameters_
+  m_Name: RoundBossRoom
   m_EditorClassIdentifier: 
   generatorType: 1
   startPosition: {x: 0, y: 0}
