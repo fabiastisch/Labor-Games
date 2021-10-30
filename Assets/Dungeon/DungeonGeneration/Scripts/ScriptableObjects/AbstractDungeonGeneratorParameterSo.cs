@@ -6,6 +6,9 @@ namespace Dungeon.DungeonGeneration
     {
         public DungeonGeneratorType generatorType;
         public Vector2Int startPosition = Vector2Int.zero;
-        
+
+        [Header("Color")] public Color floorColor;
+        public Color wallColor;
+        public bool overrideDefaultColor = false;
     }
 }
