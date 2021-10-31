@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Dungeon.Scripts;
 using UnityEngine;
 
 namespace Dungeon.DungeonGeneration
@@ -14,16 +15,13 @@ namespace Dungeon.DungeonGeneration
         //[Header("Select Generator")] public DungeonGeneratorType generatorType;
         public AbstractDungeonGeneratorParameterSo parameterSo;
 
-        [SerializeField] protected bool clearDungeonOnGenerate = true;
+        [SerializeField] private bool clearDungeonOnGenerate = true;
         [SerializeField] private bool generateOnPlay = false;
 
         [HideInInspector] public GameObject currentPortal;
         [HideInInspector] public GameObject currentSpawn;
         public List<GameObject> traps = new List<GameObject>();
 
-        [Header("Color")] [SerializeField] protected Color floorColor;
-        [SerializeField] protected Color wallColor;
-        [SerializeField] protected bool overrideDefaultColor = false;
 
         private AbstractDungeonGenerator _generator;
 
@@ -61,6 +59,15 @@ namespace Dungeon.DungeonGeneration
         {
             if (generateOnPlay)
             {
+                var state = GlobalDungeonState.Instance;
+                if (state.nextRoomState == DungeonState.BossRoom)
+                {
+                    parameterSo = state.bossRoom;
+                }
+                else parameterSo = state.levelRoom;
+
+                state.GoNext();
+
                 GenerateDungeon();
             }
         }
@@ -75,7 +82,7 @@ namespace Dungeon.DungeonGeneration
         public void GenerateDungeon()
         {
             if (tilemapVisualizer && clearDungeonOnGenerate) ClearDungeon();
-            if (overrideDefaultColor) ChangeColor();
+            if (parameterSo.overrideDefaultColor) ChangeColor();
             ActivateBonusRoom(false);
             RunProceduralGeneration();
         }
@@ -97,13 +104,20 @@ namespace Dungeon.DungeonGeneration
 
         private void ChangeColor()
         {
-            tilemapVisualizer.SetColor(floorColor, wallColor);
-            bonusRoomTileMapVis.SetColor(floorColor, wallColor);
+            tilemapVisualizer.SetColor(parameterSo.floorColor, parameterSo.wallColor);
+            bonusRoomTileMapVis.SetColor(parameterSo.floorColor, parameterSo.wallColor);
         }
 
         public void Instantiate(GameObject g, Vector3 position)
         {
             Instantiate(g, position, Quaternion.identity, transform);
+        }
+
+        public AbstractDungeonLevel CreateSave()
+        {
+            var so = ScriptableObject.CreateInstance<AbstractDungeonLevel>();
+
+            return so;
         }
     }
 

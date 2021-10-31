@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Dungeon.Scripts;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -22,12 +23,29 @@ namespace Dungeon.DungeonGeneration
             wallDiagonalCornerUpRight,
             wallDiagonalCornerUpLeft;
 
+        private void Awake()
+        {
+            GlobalDungeonState state = GlobalDungeonState.Instance;
+            floorTile = state.floorTile;
+            wallTop = state.wallTop;
+            wallSideRight = state.wallSideRight;
+            wallSideLeft = state.wallSideLeft;
+            wallBottom = state.wallBottom;
+            wallFull = state.wallFull;
+            wallInnerCornerDownLeft = state.wallInnerCornerDownLeft;
+            wallInnerCornerDownRight = state.wallInnerCornerDownRight;
+            wallDiagonalCornerDownRight = state.wallDiagonalCornerDownRight;
+            wallDiagonalCornerDownLeft = state.wallDiagonalCornerDownLeft;
+            wallDiagonalCornerUpRight = state.wallDiagonalCornerUpRight;
+            wallDiagonalCornerUpLeft = state.wallDiagonalCornerUpLeft;
+        }
+
         public void SetColor(Color? floorColor, Color? wallColor)
         {
             if (floorColor != null) floorTilemap.color = (Color) floorColor;
             if (wallColor != null) wallTileMap.color = (Color) wallColor;
-            
         }
+
         public void PaintFloorTiles(IEnumerable<Vector2Int> floorPositions)
         {
             PaintTiles(floorPositions, floorTilemap, floorTile);

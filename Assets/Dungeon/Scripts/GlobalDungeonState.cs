@@ -1,5 +1,7 @@
 ﻿using System;
+using Dungeon.DungeonGeneration;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 namespace Dungeon.Scripts
 {
@@ -40,6 +42,24 @@ namespace Dungeon.Scripts
         #endregion
 
         public DungeonState nextRoomState = DungeonState.Level1;
+
+        public AbstractDungeonGeneratorParameterSo levelRoom;
+        public AbstractDungeonGeneratorParameterSo bossRoom;
+
+        [Header("Tiles")] public TileBase floorTile;
+
+        public TileBase
+            wallTop,
+            wallSideRight,
+            wallSideLeft,
+            wallBottom,
+            wallFull,
+            wallInnerCornerDownLeft,
+            wallInnerCornerDownRight,
+            wallDiagonalCornerDownRight,
+            wallDiagonalCornerDownLeft,
+            wallDiagonalCornerUpRight,
+            wallDiagonalCornerUpLeft;
 
         public void GoNext()
         {
