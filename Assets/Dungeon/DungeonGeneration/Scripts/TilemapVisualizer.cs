@@ -25,7 +25,12 @@ namespace Dungeon.DungeonGeneration
 
         private void Awake()
         {
+            if (!GlobalDungeonState.Instance)
+            {
+                return;
+            }
             GlobalDungeonState state = GlobalDungeonState.Instance;
+
             floorTile = state.floorTile;
             wallTop = state.wallTop;
             wallSideRight = state.wallSideRight;

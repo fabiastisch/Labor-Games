@@ -741,7 +741,7 @@ MonoBehaviour:
   tmpMouseAngle: 42
   overrideMouseAngle: 0
   cam: {fileID: 9112581534973777237}
-  menu: {fileID: 0}
+  menu: {fileID: 134442834402360010}
   cursor: {fileID: 2800000, guid: 5c94703ad47cef245b5e9cfb57466291, type: 3}
   eightWaysSprites:
   - {fileID: -5467153780761423832, guid: 14858349672bdff479cbb6e93938d1c5, type: 3}
@@ -757,7 +757,7 @@ MonoBehaviour:
   staminaReg: 10
   dodgeCost: 44
   dodgeSpeed: 30
-  equiptWeapon: {fileID: 0}
+  equiptWeapon: {fileID: 7610018542070514180}
 --- !u!70 &8368588488147939673
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1025,6 +1025,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
+--- !u!114 &7610018542070514180 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7063302911480858804, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
+  m_PrefabInstance: {fileID: 835931307731274416}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84a9d61a6dd145d4faf8430614d5100a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2463536332101208796 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3002192472317755500, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
@@ -1151,6 +1162,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b6c6c67d525123409c768f3653877df, type: 3}
+--- !u!1 &134442834402360010 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2367785510546366377, guid: 3b6c6c67d525123409c768f3653877df, type: 3}
+  m_PrefabInstance: {fileID: 2378379354117301603}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &134442834402359862 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2367785510546366293, guid: 3b6c6c67d525123409c768f3653877df, type: 3}
