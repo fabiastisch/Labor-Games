@@ -38,55 +38,58 @@ namespace Player
         public void RotateHand(Rotations rotations)
         {
             int degree = (int) rotations;
-
-            //Correct Swordorder
-            if (degree <= 158 && degree >= 22)
-            {
-                childSprite.sortingOrder = 1;
-            }
-            else
-            {
-                childSprite.sortingOrder = 5;
-            }
+            childSprite.sortingOrder = 5;
 
             if (rotations == Rotations.Down)
             {
-                childSprite.transform.eulerAngles = Vector3.forward * -135f;
+                childSprite.flipX = true;
+                childSprite.transform.eulerAngles = Vector3.forward * 90f;
                 transform.localPosition = startPos + new Vector3(0.1f, 0, 0);
             }
             else if (rotations == Rotations.DownLeft)
             {
-                childSprite.transform.eulerAngles = Vector3.forward * 135f;
+                childSprite.flipX = true;
+                childSprite.transform.eulerAngles = Vector3.forward * 20;
                 transform.localPosition = startPos + new Vector3(0.2f, 0, 0);
             }
             else if (rotations == Rotations.Left)
             {
-                childSprite.transform.eulerAngles = Vector3.forward * 135f;
+                childSprite.flipX = true;
+                childSprite.sortingOrder = 1;
+                childSprite.transform.eulerAngles = Vector3.forward * 0;
                 transform.localPosition = startPos + new Vector3(0.4f, 0, 0);
             }
             else if (rotations == Rotations.UpLeft)
             {
-                childSprite.transform.eulerAngles = Vector3.forward * 135f;
+                childSprite.flipX = true;
+                childSprite.sortingOrder = 1;
+                childSprite.transform.eulerAngles = Vector3.forward * -45f;
                 transform.localPosition = startPos + new Vector3(0.4f, 0, 0);
             }
             else if (rotations == Rotations.Up)
             {
-                childSprite.transform.eulerAngles = Vector3.forward * 45f;
+                childSprite.flipX = false;
+                childSprite.sortingOrder = 1;
+                childSprite.transform.eulerAngles = Vector3.forward * 90f;
                 transform.localPosition = startPos + new Vector3(0.8f, 0, 0);
             }
             else if (rotations == Rotations.UpRight)
             {
-                childSprite.transform.eulerAngles = Vector3.forward * -45f;
-                transform.localPosition = startPos + new Vector3(0.3f, 0, 0);
+                childSprite.flipX = false;
+                childSprite.sortingOrder = 1;
+                childSprite.transform.eulerAngles = Vector3.forward * 45f;
+                transform.localPosition = startPos + new Vector3(0.6f, 0, 0);
             }
             else if (rotations == Rotations.Right)
             {
-                childSprite.transform.eulerAngles = Vector3.forward * -45f;
+                childSprite.flipX = false;
+                childSprite.transform.eulerAngles = Vector3.forward * 0;
                 transform.localPosition = startPos + new Vector3(0.3f, 0, 0);
             }
             else if (rotations == Rotations.DownRight)
             {
-                childSprite.transform.eulerAngles = Vector3.forward * -45f;
+                childSprite.flipX = false;
+                childSprite.transform.eulerAngles = Vector3.forward * -20;
                 transform.localPosition = startPos + new Vector3(0.1f, 0, 0);
             }
         }

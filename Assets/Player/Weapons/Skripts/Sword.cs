@@ -7,11 +7,11 @@ namespace EquipableWeapon
 {
     public class Sword : Weapon
     {
-
+        private Animator animator;
         // Start is called before the first frame update
         void Start()
         {
-
+            animator = GetComponent<Animator>();
         }
 
         // Update is called once per frame
@@ -22,6 +22,7 @@ namespace EquipableWeapon
 
         public override void Attack(CombatStats combatStats)
         {
+            animator.Play("SwingSwordAnimation");
             Debug.Log("Wuush Wuuush");
         }
     }

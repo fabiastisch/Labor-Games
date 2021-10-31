@@ -4405,6 +4405,17 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!114 &1954221174 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7610018542070514180, guid: 5b200b5938c353445998557fb82e7309, type: 3}
+  m_PrefabInstance: {fileID: 8548802803066482136}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84a9d61a6dd145d4faf8430614d5100a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2367785509614357461
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4533,6 +4544,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8472295068775141931, guid: 5b200b5938c353445998557fb82e7309, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c6ab317270e66644bb4f047e1bd83398, type: 2}
     - target: {fileID: 8548802804282458401, guid: 5b200b5938c353445998557fb82e7309, type: 3}
       propertyPath: m_Name
       value: Player
@@ -4585,5 +4600,9 @@ PrefabInstance:
       propertyPath: menu
       value: 
       objectReference: {fileID: 1217352828}
+    - target: {fileID: 8548802804282458405, guid: 5b200b5938c353445998557fb82e7309, type: 3}
+      propertyPath: equiptWeapon
+      value: 
+      objectReference: {fileID: 1954221174}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b200b5938c353445998557fb82e7309, type: 3}
