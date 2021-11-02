@@ -172,7 +172,7 @@ namespace Player {
 
         #endregion
 
-        //Swaps the sprite to the moving direction.
+        //Swaps the sprite to the mouse direction.
         private void ChangeSpriteDirection()
         {
             int mouseAngle = Util.GetAngleFromVector(MousePosition);

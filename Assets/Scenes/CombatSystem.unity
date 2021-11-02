@@ -4544,6 +4544,62 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5310015195831315509, guid: 5b200b5938c353445998557fb82e7309, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5310015195831315509, guid: 5b200b5938c353445998557fb82e7309, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5310015195831315509, guid: 5b200b5938c353445998557fb82e7309, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5310015195831315509, guid: 5b200b5938c353445998557fb82e7309, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7610018542070514180, guid: 5b200b5938c353445998557fb82e7309, type: 3}
+      propertyPath: bad.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7610018542070514180, guid: 5b200b5938c353445998557fb82e7309, type: 3}
+      propertyPath: bad.b
+      value: 0.32156864
+      objectReference: {fileID: 0}
+    - target: {fileID: 7610018542070514180, guid: 5b200b5938c353445998557fb82e7309, type: 3}
+      propertyPath: bad.g
+      value: 0.45490196
+      objectReference: {fileID: 0}
+    - target: {fileID: 7610018542070514180, guid: 5b200b5938c353445998557fb82e7309, type: 3}
+      propertyPath: bad.r
+      value: 0.7490196
+      objectReference: {fileID: 0}
+    - target: {fileID: 7610018542070514180, guid: 5b200b5938c353445998557fb82e7309, type: 3}
+      propertyPath: asasas.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7610018542070514180, guid: 5b200b5938c353445998557fb82e7309, type: 3}
+      propertyPath: asasas.b
+      value: 0.28235295
+      objectReference: {fileID: 0}
+    - target: {fileID: 7610018542070514180, guid: 5b200b5938c353445998557fb82e7309, type: 3}
+      propertyPath: asasas.g
+      value: 0.7490196
+      objectReference: {fileID: 0}
+    - target: {fileID: 7610018542070514180, guid: 5b200b5938c353445998557fb82e7309, type: 3}
+      propertyPath: asasas.r
+      value: 0.63529414
+      objectReference: {fileID: 0}
+    - target: {fileID: 7610018542070514180, guid: 5b200b5938c353445998557fb82e7309, type: 3}
+      propertyPath: elementTyp
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7610018542070514180, guid: 5b200b5938c353445998557fb82e7309, type: 3}
+      propertyPath: weaponRarity
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8472295068775141931, guid: 5b200b5938c353445998557fb82e7309, type: 3}
       propertyPath: m_Controller
       value: 

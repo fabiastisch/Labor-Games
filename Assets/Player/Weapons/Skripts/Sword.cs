@@ -11,13 +11,14 @@ namespace EquipableWeapon
         // Start is called before the first frame update
         void Start()
         {
+            base.Start();
             animator = GetComponent<Animator>();
         }
 
         // Update is called once per frame
         void Update()
         {
-
+            //weaponEffeckt.DoEffekt();
         }
 
         public override void Attack(CombatStats combatStats)
