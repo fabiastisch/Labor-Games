@@ -10,6 +10,7 @@ namespace Dungeon.DungeonGeneration
         public GameObject portal;
         public TilemapVisualizer tilemapVisualizer;
         public TilemapVisualizer bonusRoomTileMapVis;
+        public DungeonTilesSo dungeonTiles;
         public GameObject trapRoom;
 
         //[Header("Select Generator")] public DungeonGeneratorType generatorType;
@@ -110,7 +111,7 @@ namespace Dungeon.DungeonGeneration
 
         public void Instantiate(GameObject g, Vector3 position)
         {
-            Instantiate(g, position, Quaternion.identity, transform);
+            traps.Add(Instantiate(g, position, Quaternion.identity, transform));
         }
 
         public AbstractDungeonLevel CreateSave()

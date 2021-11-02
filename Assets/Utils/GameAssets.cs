@@ -16,7 +16,12 @@ namespace Utils
         }
 
         public Transform damagePopupPrefab;
-        
-        
+        public Transform globalDungeonStatePrefab;
+
+
+        public Transform Instantiate(Transform t)
+        {
+            return Instantiate(t, transform);
+        }
     }
 }
