@@ -23,6 +23,8 @@ namespace EquipableWeapon
         public WeaponRarity weaponRarity;
         public DamageType damageType;
 
+        [Header("Debug")] [SerializeField] protected bool drawGizmos = false;
+
         private SpriteRenderer spriteRenderer;
 
 

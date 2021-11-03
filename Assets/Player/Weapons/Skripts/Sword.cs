@@ -36,6 +36,7 @@ namespace EquipableWeapon
 
         private void OnDrawGizmos()
         {
+            if (!drawGizmos) return;
             Gizmos.color = new Color(1, 0, 0, 0.3f);
             Gizmos.DrawSphere(transform.GetChild(0).position, baseAOERange);
         }
