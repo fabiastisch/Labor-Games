@@ -1,3 +1,4 @@
+using System;
 using Combat;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ namespace EquipableWeapon
     public class Sword : Weapon
     {
         private Animator animator;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -26,6 +28,11 @@ namespace EquipableWeapon
             animator.Play("SwingSwordAnimation");
             Debug.Log("Wuush Wuuush");
         }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = new Color(1, 0, 0, 0.3f);
+            Gizmos.DrawSphere(transform.GetChild(0).position, 1f);
+        }
     }
 }
-
