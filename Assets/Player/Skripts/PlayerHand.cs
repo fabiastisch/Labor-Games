@@ -38,13 +38,13 @@ namespace Player
         // Update is called once per frame
         void Update()
         {
-            
+
         }
 
         public void ChangeWeapon(GameObject weaponToEquip)
         {
             GameObject currentWeapon = childSprite.gameObject;
-            Debug.Log("Interact");
+
             //Detach
             currentWeapon.layer = 8;
             currentWeapon.transform.parent = null;

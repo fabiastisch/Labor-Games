@@ -16,7 +16,7 @@ namespace EquipableWeapon
     {
         [Header("Basestats")] public float baseDamage;
         public float baseRange;
-        public float baseAttackspeed;
+        public float baseAttackcooldown;
         public float baseAOERange;
 
         [Header("Bonustats")] public Effekts.Effekt weaponEffekt;
@@ -32,9 +32,8 @@ namespace EquipableWeapon
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
             baseAOERange *= ((float) weaponRarity / 2);
-            baseAttackspeed *= ((float) weaponRarity / 2);
+            baseAttackcooldown /= ((float) weaponRarity / 2);
             baseDamage *= ((float) weaponRarity / 2);
-            baseRange *= ((float) weaponRarity / 2);
             ChangeSpriteColor(weaponRarity);
         }
 

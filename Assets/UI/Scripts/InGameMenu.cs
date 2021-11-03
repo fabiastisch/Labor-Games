@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.InputSystem;
 using UnityEngine;
 
 public class InGameMenu : CasualButtons
 {
     // Start is called before the first frame update
+
+    public PlayerInput playerInput;
     void Start()
     {
         
@@ -18,6 +21,7 @@ public class InGameMenu : CasualButtons
 
     public void GetBackToGame(GameObject parentMenu)
     {
+        playerInput.SwitchCurrentActionMap("Player");
         parentMenu.SetActive(false);
         Time.timeScale = 1;
     }

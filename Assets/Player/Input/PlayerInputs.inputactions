@@ -284,8 +284,29 @@
         {
             "name": "Menu",
             "id": "97349459-2ded-49a2-aef3-987e6d0e6f63",
-            "actions": [],
-            "bindings": []
+            "actions": [
+                {
+                    "name": "Menu",
+                    "type": "Button",
+                    "id": "be774915-4485-4e82-b1f9-9d15392207ef",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c720252f-84cd-4b8a-8d42-05ecd7bcf37f",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

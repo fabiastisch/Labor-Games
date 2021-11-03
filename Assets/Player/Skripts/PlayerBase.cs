@@ -13,7 +13,7 @@ namespace Player {
         [SerializeField] private Texture2D cursor;
         [SerializeField] private Sprite[] eightWaysSprites;
         [SerializeField] protected PlayerHand hand;
-        [SerializeField] private LayerMask interactable;
+        [SerializeField] private LayerMask interactableLayer;
 
         private PlayerInput playerInput;
 
@@ -94,10 +94,10 @@ namespace Player {
                 stamina += staminaReg * Time.deltaTime;
             }
 
-            bool isIngameMenuOpen = menu.gameObject.activeSelf;
+            isMenuOpen = menu.gameObject.activeSelf;
 
             if (playerInput.actions["Dodge"].triggered && stamina >= dodgeCost && state == State.Normal &&
-                !isIngameMenuOpen)
+                !isMenuOpen)
             {
                 stamina -= dodgeCost;
                 dodgeSpeed = dodgeSpeedMax;
@@ -139,14 +139,14 @@ namespace Player {
         {
         }
 
-        public void PlayerInteract()
+        public void PlayerInteract(InputAction.CallbackContext context)
         {
+            if (!context.performed) return;
             if (isInteractableFound)
             {
                 GameObject interactableObject = interactColliders[0].gameObject;
                 if (interactableObject.CompareTag("Weapon"))
                 {
-                    Debug.Log("Drinnen");
                     hand.ChangeWeapon(interactableObject);
                 }
             }
@@ -154,7 +154,7 @@ namespace Player {
 
         private bool DetectInteractableObjekt()
         {
-            interactColliders = Physics2D.OverlapCircleAll(transform.position, 1, interactable);
+            interactColliders = Physics2D.OverlapCircleAll(transform.position, 1, interactableLayer);
             if (interactColliders.Length > 0)
             {
                 //InteractSymbol on
@@ -164,16 +164,19 @@ namespace Player {
             return false;
         }
 
-        public void OpenMenu()
+        public void OpenMenu(InputAction.CallbackContext context)
         {
+            if (!context.performed) return;
             isMenuOpen = menu.gameObject.activeSelf;
             if (!isMenuOpen)
             {
+                playerInput.SwitchCurrentActionMap("Menu");
                 menu.SetActive(true);
                 Time.timeScale = 0;
             }
             else
             {
+                playerInput.SwitchCurrentActionMap("Player");
                 menu.SetActive(false);
                 Time.timeScale = 1;
             }
@@ -191,6 +194,7 @@ namespace Player {
         //Swaps the sprite to the mouse direction.
         private void ChangeSpriteDirection()
         {
+            if (isMenuOpen) return;
             int mouseAngle = Util.GetAngleFromVector(MousePosition);
             if (overrideMouseAngle) mouseAngle = tmpMouseAngle;
             if (mouseAngle >= -112 && mouseAngle <= -68)
