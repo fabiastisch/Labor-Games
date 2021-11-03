@@ -396,8 +396,8 @@ namespace Dungeon.DungeonGeneration
             }
 
             if (selectedCorridorWalls.Count <= 3) return;
-            
-            
+
+
             if (parameters.corridorTrapSpawnDirection == Direction.UP ||
                 parameters.corridorTrapSpawnDirection == Direction.DOWN)
             {
@@ -425,9 +425,21 @@ namespace Dungeon.DungeonGeneration
                     for (int j = 0; j < countOffset; j++)
                     {
                         //Debug.Log(findAll[i + j] + " " + i + " | " + j + " size: " + findAll.Count);
-                        var position = new Vector3(selectedCorridorWalls[i + j].position.x, selectedCorridorWalls[i + j].position.y);
-                        generator.Instantiate(generator.trapRoom.transform.GetChild(0).gameObject, position);
-
+                        var position = new Vector3(selectedCorridorWalls[i + j].position.x,
+                            selectedCorridorWalls[i + j].position.y);
+                        if (parameters.corridorTrapSpawnDirection == Direction.UP)
+                        {
+                            position.y += 1;
+                            GameObject o = generator.Instantiate(generator.dungeonTraps.fireFlameThrower, position);
+                            //TODO write Sorting Orders down, so no one gets confused
+                            // if the trap shows to the bottom, make sure that the trap is in front of the walls
+                            o.GetComponent<SpriteRenderer>().sortingOrder = 3;
+                        }
+                        else
+                        {
+                            generator.Instantiate(generator.dungeonTraps.fireFlameThrower, position,
+                                Quaternion.Euler(0, 180, 180));
+                        }
                     }
 
                     i += (countOffset - 1);
@@ -459,7 +471,8 @@ namespace Dungeon.DungeonGeneration
                     for (int j = 0; j < countOffset; j++)
                     {
                         //Debug.Log(findAll[i + j] + " " + i + " | " + j + " size: " + findAll.Count);
-                        var position = new Vector3(selectedCorridorWalls[i + j].position.x, selectedCorridorWalls[i + j].position.y);
+                        var position = new Vector3(selectedCorridorWalls[i + j].position.x,
+                            selectedCorridorWalls[i + j].position.y);
                         generator.Instantiate(generator.trapRoom.transform.GetChild(0).gameObject, position);
                     }
 

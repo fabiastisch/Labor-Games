@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68c339c0994440cc990afd2fc538f442, type: 3}
+  m_Name: DungeonTraps_
+  m_EditorClassIdentifier: 
+  fireFlameThrower: {fileID: 5109905876623726941, guid: e19a0c9ec68ef844399742d41ec06612, type: 3}

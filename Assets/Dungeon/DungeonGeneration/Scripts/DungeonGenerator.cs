@@ -16,6 +16,8 @@ namespace Dungeon.DungeonGeneration
         //[Header("Select Generator")] public DungeonGeneratorType generatorType;
         public AbstractDungeonGeneratorParameterSo parameterSo;
 
+        public DungeonTrapsSo dungeonTraps;
+
         [SerializeField] private bool clearDungeonOnGenerate = true;
         [SerializeField] private bool generateOnPlay = false;
 
@@ -109,9 +111,12 @@ namespace Dungeon.DungeonGeneration
             bonusRoomTileMapVis.SetColor(parameterSo.floorColor, parameterSo.wallColor);
         }
 
-        public void Instantiate(GameObject g, Vector3 position)
+        public GameObject Instantiate(GameObject g, Vector3 position, Quaternion? rot = null)
         {
-            traps.Add(Instantiate(g, position, Quaternion.identity, transform));
+            Quaternion rotation = (rot ?? Quaternion.identity);
+            GameObject obj = Instantiate(g, position, rotation, transform);
+            traps.Add(obj);
+            return obj;
         }
 
         public AbstractDungeonLevel CreateSave()
