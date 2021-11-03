@@ -33,5 +33,5 @@ MonoBehaviour:
   bonusRoomWidth: 10
   bonusRoomHeight: 10
   bonusRoomOffset: 5
-  corridorTrapSpawnDirection: 0
+  corridorTrapSpawnDirection: 2
   corridorTrapChance: 1.351
