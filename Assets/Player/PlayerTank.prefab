@@ -753,7 +753,7 @@ MonoBehaviour:
   - {fileID: 4774430378361097297, guid: 14858349672bdff479cbb6e93938d1c5, type: 3}
   - {fileID: -8263216288522333626, guid: 14858349672bdff479cbb6e93938d1c5, type: 3}
   hand: {fileID: 245163729418225517}
-  interactable:
+  interactableLayer:
     serializedVersion: 2
     m_Bits: 256
   stamina: 100
