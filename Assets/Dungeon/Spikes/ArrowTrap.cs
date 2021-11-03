@@ -1,8 +1,6 @@
-using System;
 using System.Collections.Generic;
 using Combat;
 using Player;
-using UI.CombatText;
 using UnityEngine;
 
 namespace Dungeon.Spikes
@@ -40,7 +38,8 @@ namespace Dungeon.Spikes
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.CompareTag("Player"))
+            //Debug.Log("OnTriggerEnter2D: " + other.gameObject.name);
+            if (other.CompareTag("Player") || other.CompareTag("Vulnerable"))
             {
                 playersInTrap.Add(other);
             }
@@ -48,7 +47,8 @@ namespace Dungeon.Spikes
 
         private void OnTriggerExit2D(Collider2D other)
         {
-            if (other.CompareTag("Player"))
+            //Debug.Log("OnTriggerExit2D: " + other.gameObject.name);
+            if (other.CompareTag("Player") || other.CompareTag("Vulnerable"))
             {
                 playersInTrap.Remove(other);
             }
