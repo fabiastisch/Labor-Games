@@ -23,7 +23,8 @@ public class PassiveTestPlayer : MonoBehaviour
     [SerializeField] public float shadowresist  = 10;
     
     
-    
+    [SerializeField] public float stunChance  = 1;
+    [SerializeField] public float movementspeed  = 1;
     [SerializeField] public float criticalChance  = 0;
     [SerializeField] public float attackspeed  = 1;
     [SerializeField] public float spellCoolDownReduction  = 0;
@@ -53,8 +54,10 @@ public class PassiveTestPlayer : MonoBehaviour
         Debug.Log("Shadowresist" + " = " +shadowresist );
         Debug.Log("ActualHP" + " = " +ActualHP );
         Debug.Log("Attackspeed" + " = " +attackspeed );
+        Debug.Log("Movementspeed" + " = " +movementspeed );
         Debug.Log("CriticalChance" + " = " +criticalChance );
         Debug.Log("spellCoolDownReduction" + " = " +spellCoolDownReduction );
+        Debug.Log("stunChance" + " = " +stunChance );
     }
     
     
