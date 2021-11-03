@@ -20,7 +20,11 @@ namespace Player
     {
         private SpriteRenderer childSprite;
         private Vector3 startPos;
-        private Vector3 childPos;
+
+        public EquipableWeapon.Weapon currentWeapon
+        {
+            get => GetComponentInChildren<EquipableWeapon.Weapon>();
+        }
 
 
         // Start is called before the first frame update
@@ -29,7 +33,6 @@ namespace Player
             startPos = transform.localPosition;
             childSprite = GetComponentInChildren<SpriteRenderer>();
             childSprite.gameObject.layer = 9;
-            childPos = childSprite.transform.position;
         }
 
         // Update is called once per frame
@@ -52,64 +55,58 @@ namespace Player
             weaponToEquip.layer = 9;
             childSprite = weaponToEquip.GetComponent<SpriteRenderer>();
             weaponToEquip.transform.parent = transform;
-            weaponToEquip.transform.position = childPos;
-
+            weaponToEquip.transform.localPosition = Vector3.zero;
         }
 
         public void RotateHand(Rotations rotations)
         {
             int degree = (int) rotations;
             childSprite.sortingOrder = 5;
-
+            childSprite.flipY = false;
             if (rotations == Rotations.Down)
             {
-                childSprite.flipX = true;
-                childSprite.transform.eulerAngles = Vector3.forward * 90f;
+                childSprite.flipY = true;
+                childSprite.transform.eulerAngles = Vector3.forward * -90f;
                 transform.localPosition = startPos + new Vector3(0.1f, 0, 0);
             }
             else if (rotations == Rotations.DownLeft)
             {
-                childSprite.flipX = true;
-                childSprite.transform.eulerAngles = Vector3.forward * 20;
+                childSprite.flipY = true;
+                childSprite.transform.eulerAngles = Vector3.forward * -135;
                 transform.localPosition = startPos + new Vector3(0.2f, 0, 0);
             }
             else if (rotations == Rotations.Left)
             {
-                childSprite.flipX = true;
+                childSprite.flipY = true;
                 childSprite.sortingOrder = 1;
-                childSprite.transform.eulerAngles = Vector3.forward * 0;
+                childSprite.transform.eulerAngles = Vector3.forward * 180;
                 transform.localPosition = startPos + new Vector3(0.4f, 0, 0);
             }
             else if (rotations == Rotations.UpLeft)
             {
-                childSprite.flipX = true;
                 childSprite.sortingOrder = 1;
-                childSprite.transform.eulerAngles = Vector3.forward * -45f;
+                childSprite.transform.eulerAngles = Vector3.forward * 135f;
                 transform.localPosition = startPos + new Vector3(0.4f, 0, 0);
             }
             else if (rotations == Rotations.Up)
             {
-                childSprite.flipX = false;
                 childSprite.sortingOrder = 1;
                 childSprite.transform.eulerAngles = Vector3.forward * 90f;
                 transform.localPosition = startPos + new Vector3(0.8f, 0, 0);
             }
             else if (rotations == Rotations.UpRight)
             {
-                childSprite.flipX = false;
                 childSprite.sortingOrder = 1;
                 childSprite.transform.eulerAngles = Vector3.forward * 45f;
                 transform.localPosition = startPos + new Vector3(0.6f, 0, 0);
             }
             else if (rotations == Rotations.Right)
             {
-                childSprite.flipX = false;
                 childSprite.transform.eulerAngles = Vector3.forward * 0;
                 transform.localPosition = startPos + new Vector3(0.3f, 0, 0);
             }
             else if (rotations == Rotations.DownRight)
             {
-                childSprite.flipX = false;
                 childSprite.transform.eulerAngles = Vector3.forward * -20;
                 transform.localPosition = startPos + new Vector3(0.1f, 0, 0);
             }
