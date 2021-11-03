@@ -1,7 +1,4 @@
-using System;
 using Combat;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace EquipableWeapon
@@ -26,13 +23,21 @@ namespace EquipableWeapon
         public override void Attack(CombatStats combatStats)
         {
             animator.Play("SwingSwordAnimation");
-            Debug.Log("Wuush Wuuush");
+
+            Vector3 impactPos = transform.GetChild(0).position;
+            // Enemy Layer is 6, to get the mask we have to shift from 1
+            int enemyLayerMask = 1 << 6;
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(impactPos, baseAOERange, enemyLayerMask);
+            foreach (Collider2D enemyCollider in colliders)
+            {
+                enemyCollider.GetComponent<Enemy>()?.TakeDamage(baseDamage, damageType);
+            }
         }
 
         private void OnDrawGizmos()
         {
             Gizmos.color = new Color(1, 0, 0, 0.3f);
-            Gizmos.DrawSphere(transform.GetChild(0).position, 1f);
+            Gizmos.DrawSphere(transform.GetChild(0).position, baseAOERange);
         }
     }
 }

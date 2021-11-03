@@ -2468,6 +2468,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7610018542070514180, guid: 5b200b5938c353445998557fb82e7309, type: 3}
+      propertyPath: enemyLayerMask.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 8548802804282458401, guid: 5b200b5938c353445998557fb82e7309, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2562,7 +2566,7 @@ GameObject:
   - component: {fileID: 1109686317}
   - component: {fileID: 1109686319}
   - component: {fileID: 1109686320}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DummyBlue
   m_TagString: Vulnerable
   m_Icon: {fileID: 0}
