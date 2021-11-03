@@ -39,9 +39,6 @@ namespace EquipableWeapon
             baseRange *= ((float)weaponRarity / 2);
             ChangeSpriteColor(weaponRarity);
         }
-        public void ChangeCurrentWeapon() {
-
-        }
 
         private void ChangeSpriteColor(WeaponRarity rarity)
         {

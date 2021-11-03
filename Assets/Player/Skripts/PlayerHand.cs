@@ -20,18 +20,39 @@ namespace Player
     {
         private SpriteRenderer childSprite;
         private Vector3 startPos;
+        private Vector3 childPos;
 
 
         // Start is called before the first frame update
         void Start()
         {
             startPos = transform.localPosition;
-            childSprite = gameObject.GetComponentInChildren<SpriteRenderer>();
+            childSprite = GetComponentInChildren<SpriteRenderer>();
+            childSprite.gameObject.layer = 9;
+            childPos = childSprite.transform.position;
         }
 
         // Update is called once per frame
         void Update()
         {
+            
+        }
+
+        public void ChangeWeapon(GameObject weaponToEquip)
+        {
+            GameObject currentWeapon = childSprite.gameObject;
+            Debug.Log("Interact");
+            //Detach
+            currentWeapon.layer = 8;
+            currentWeapon.transform.parent = null;
+            currentWeapon.transform.position = weaponToEquip.transform.position;
+            childSprite.sortingOrder = 1;
+
+            //Attach
+            weaponToEquip.layer = 9;
+            childSprite = weaponToEquip.GetComponent<SpriteRenderer>();
+            weaponToEquip.transform.parent = transform;
+            weaponToEquip.transform.position = childPos;
 
         }
 
