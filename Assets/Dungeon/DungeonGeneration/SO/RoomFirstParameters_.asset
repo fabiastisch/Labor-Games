@@ -14,21 +14,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   generatorType: 2
   startPosition: {x: 0, y: 0}
+  floorColor: {r: 0.34109113, g: 0.68172747, b: 0.6886792, a: 1}
+  wallColor: {r: 0, g: 0.7648864, b: 1, a: 1}
+  overrideDefaultColor: 1
   iterations: 10
   walkLength: 10
   startRandomlyEachIteration: 1
-  minRoomWidth: 8
-  minRoomHeight: 8
+  minRoomWidth: 10
+  minRoomHeight: 10
   dungeonWidth: 60
   dungeonHeight: 60
   dungeonOffset: 1
   randomWalkRooms: 0
   corridorWidth: 2
   trapRoomChance: 0
-  bonusRoomChance: 0
+  bonusRoomChance: 1
   direction: 4
   bonusRoomWidth: 10
   bonusRoomHeight: 10
   bonusRoomOffset: 5
   corridorTrapSpawnDirection: 0
-  corridorTrapChance: 0
+  corridorTrapChance: 1.351

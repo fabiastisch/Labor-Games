@@ -15,9 +15,11 @@ namespace Dungeon.Scripts
         {
             get
             {
+
                 if (!instance)
                 {
-                    throw new Exception("GlobalDungeonState Instance does not Exist");
+                    Debug.LogWarning("GlobalDungeonState Instance does not Exist!");
+                    //throw new Exception("GlobalDungeonState Instance does not Exist");
                 }
 
                 return instance;

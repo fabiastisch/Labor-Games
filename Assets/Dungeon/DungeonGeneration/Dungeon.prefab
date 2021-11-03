@@ -45,18 +45,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorTilemap: {fileID: 1579529767564740575}
   wallTileMap: {fileID: 1579529766448871327}
-  floorTile: {fileID: 11400000, guid: 471853985ed4b5242ad12af71ace0cf6, type: 2}
-  wallTop: {fileID: 11400000, guid: 22c9f328675568942a63b2770a6a63dc, type: 2}
-  wallSideRight: {fileID: 11400000, guid: 56a025a4f1e8ec14ebfa0c2300d95b8e, type: 2}
-  wallSideLeft: {fileID: 11400000, guid: 0f895bfef3ebb4f4aacf3fac66196c1c, type: 2}
-  wallBottom: {fileID: 11400000, guid: 17de16fed6ed8cc4fa8aed5e072ee432, type: 2}
-  wallFull: {fileID: 11400000, guid: 9bd9b91a7e97483419306d5b0c9c37ec, type: 2}
-  wallInnerCornerDownLeft: {fileID: 11400000, guid: a4a8fd2caea494c45916e75fc21be5c2, type: 2}
-  wallInnerCornerDownRight: {fileID: 11400000, guid: 32fb4d0075b44bf43b045b03663afc2c, type: 2}
-  wallDiagonalCornerDownRight: {fileID: 11400000, guid: ece443381d8fc294f928c22650a87c24, type: 2}
-  wallDiagonalCornerDownLeft: {fileID: 11400000, guid: f0876383a0a9e9f4a8f543d8515e12c0, type: 2}
-  wallDiagonalCornerUpRight: {fileID: 11400000, guid: 809171e13e7908f40a916074c244f08c, type: 2}
-  wallDiagonalCornerUpLeft: {fileID: 11400000, guid: 990709a76d4f9124db8ca4026e79a932, type: 2}
 --- !u!1 &1038723342441194931
 GameObject:
   m_ObjectHideFlags: 0
@@ -9164,16 +9152,15 @@ MonoBehaviour:
   portal: {fileID: 8846697081365940790}
   tilemapVisualizer: {fileID: 561387266}
   bonusRoomTileMapVis: {fileID: 54321752972799868}
-  trapRoom: {fileID: 5671169807591830320, guid: 7732c8f6cd10e8043abfa25e5ed73952, type: 3}
+  dungeonTiles: {fileID: 11400000, guid: f37f16063a0e70e429290af5955420eb, type: 2}
+  trapRoom: {fileID: 358418509596439510, guid: 517b42e7cd069dc478cbec0774bb6be4, type: 3}
   parameterSo: {fileID: 11400000, guid: 345977d3ca2427645acbe4b5bd7c23e3, type: 2}
+  dungeonTraps: {fileID: 11400000, guid: 6032bd87a82190d45b4b4bda899c2b17, type: 2}
   clearDungeonOnGenerate: 1
   generateOnPlay: 0
   currentPortal: {fileID: 0}
   currentSpawn: {fileID: 0}
   traps: []
-  floorColor: {r: 1, g: 1, b: 1, a: 1}
-  wallColor: {r: 0, g: 0.83137256, b: 1, a: 0.8862745}
-  overrideDefaultColor: 1
 --- !u!1 &1579529767564740570
 GameObject:
   m_ObjectHideFlags: 0
@@ -26337,18 +26324,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorTilemap: {fileID: 8364993069179828292}
   wallTileMap: {fileID: 7112636122278836614}
-  floorTile: {fileID: 11400000, guid: 471853985ed4b5242ad12af71ace0cf6, type: 2}
-  wallTop: {fileID: 11400000, guid: 22c9f328675568942a63b2770a6a63dc, type: 2}
-  wallSideRight: {fileID: 11400000, guid: 56a025a4f1e8ec14ebfa0c2300d95b8e, type: 2}
-  wallSideLeft: {fileID: 11400000, guid: 0f895bfef3ebb4f4aacf3fac66196c1c, type: 2}
-  wallBottom: {fileID: 11400000, guid: 17de16fed6ed8cc4fa8aed5e072ee432, type: 2}
-  wallFull: {fileID: 11400000, guid: 9bd9b91a7e97483419306d5b0c9c37ec, type: 2}
-  wallInnerCornerDownLeft: {fileID: 11400000, guid: a4a8fd2caea494c45916e75fc21be5c2, type: 2}
-  wallInnerCornerDownRight: {fileID: 11400000, guid: 32fb4d0075b44bf43b045b03663afc2c, type: 2}
-  wallDiagonalCornerDownRight: {fileID: 11400000, guid: ece443381d8fc294f928c22650a87c24, type: 2}
-  wallDiagonalCornerDownLeft: {fileID: 11400000, guid: f0876383a0a9e9f4a8f543d8515e12c0, type: 2}
-  wallDiagonalCornerUpRight: {fileID: 11400000, guid: 809171e13e7908f40a916074c244f08c, type: 2}
-  wallDiagonalCornerUpLeft: {fileID: 11400000, guid: 990709a76d4f9124db8ca4026e79a932, type: 2}
 --- !u!1 &8846697081365940790
 GameObject:
   m_ObjectHideFlags: 0
