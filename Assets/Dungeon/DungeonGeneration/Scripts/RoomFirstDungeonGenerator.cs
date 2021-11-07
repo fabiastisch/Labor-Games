@@ -357,67 +357,67 @@ namespace Dungeon.DungeonGeneration
 
         private void CreateCorridorTraps(HashSet<Vector2Int> corridor, HashSet<Vector2Int> floorsWithCorridor)
         {
+            // TODO: Fix Corridor Traps -- Directions and add trap prefab 
             int countOfCorridorTraps = Util.GetChance(parameters.corridorTrapChance);
             if (countOfCorridorTraps == 0) return;
 
             List<Wall> wallPositions = new List<Wall>();
+            // loop through each corridor position
             foreach (var position in corridor)
             {
                 for (int i = 0; i < Direction2D.cardinalDirectionList.Count; i++)
                 {
                     var neighbourPosition = position + Direction2D.cardinalDirectionList[i];
+                    // check if the neighbour is at floor
                     if (floorsWithCorridor.Contains(neighbourPosition) == false)
                     {
+                        // if its not, then its a wall
                         wallPositions.Add(new Wall(position,
                             (Direction) Enum.GetValues(typeof(Direction)).GetValue(i)));
                     }
                 }
             }
 
-            var selectedCorridorPositions =
+            var selectedCorridorWalls =
                 wallPositions.FindAll(x => x.facingTowards == parameters.corridorTrapSpawnDirection);
             if (parameters.corridorTrapSpawnDirection == Direction.UP ||
                 parameters.corridorTrapSpawnDirection == Direction.DOWN)
             {
                 // Reverse sorting, first x, then y
-                selectedCorridorPositions.Sort((first, second) => first.position.x.CompareTo(second.position.x));
-                selectedCorridorPositions = new List<Wall>(selectedCorridorPositions.OrderBy(wall => wall.position.y));
+                selectedCorridorWalls.Sort((first, second) => first.position.x.CompareTo(second.position.x));
+                selectedCorridorWalls = new List<Wall>(selectedCorridorWalls.OrderBy(wall => wall.position.y));
             }
             else
             {
                 // Sort first by y then by x. make sure that the Second sort is stalbe
-                selectedCorridorPositions.Sort((first, second) => first.position.y.CompareTo(second.position.y));
+                selectedCorridorWalls.Sort((first, second) => first.position.y.CompareTo(second.position.y));
                 // Order By is Stable Sort
-                selectedCorridorPositions = new List<Wall>(selectedCorridorPositions.OrderBy(wall => wall.position.x));
+                selectedCorridorWalls = new List<Wall>(selectedCorridorWalls.OrderBy(wall => wall.position.x));
             }
 
-            if (selectedCorridorPositions.Count <= 3) return;
+            if (selectedCorridorWalls.Count <= 3) return;
 
-            //int doneTraps = 0;
-            //int index = 0;
-
-            var start = selectedCorridorPositions[0];
 
             if (parameters.corridorTrapSpawnDirection == Direction.UP ||
                 parameters.corridorTrapSpawnDirection == Direction.DOWN)
             {
                 //var findAll = selectedCorridorPositions.FindAll(x => x.position.y == start.position.y);
-                var findAll = selectedCorridorPositions;
+                //var findAll = selectedCorridorPositions;
                 /*foreach (var wall in findAll)
                 {
                     Debug.Log(wall.position);
                 }*/
 
-                for (var i = 0; i < findAll.Count; i++)
+                for (var i = 0; i < selectedCorridorWalls.Count; i++)
                 {
-                    var wall = findAll[i];
+                    var wall = selectedCorridorWalls[i];
                     var countOffset = 0;
 
                     do
                     {
                         countOffset++;
-                    } while ((i + countOffset < findAll.Count) &&
-                             wall.position.x == findAll[i + countOffset].position.x - countOffset
+                    } while ((i + countOffset < selectedCorridorWalls.Count) &&
+                             wall.position.x == selectedCorridorWalls[i + countOffset].position.x - countOffset
                     );
 
                     //Debug.Log(i + " | " + countOffset + " size: " + findAll.Count);
@@ -425,11 +425,21 @@ namespace Dungeon.DungeonGeneration
                     for (int j = 0; j < countOffset; j++)
                     {
                         //Debug.Log(findAll[i + j] + " " + i + " | " + j + " size: " + findAll.Count);
-                        var position = new Vector3(findAll[i + j].position.x, findAll[i + j].position.y);
-                        generator.Instantiate(generator.trapRoom.transform.GetChild(0).gameObject, position);
-
-                        // generator.traps.Add(Instantiate(generator.trapRoom.transform.GetChild(0).gameObject, position,
-                        //    Quaternion.identity, generator.gameObject.transform));
+                        var position = new Vector3(selectedCorridorWalls[i + j].position.x,
+                            selectedCorridorWalls[i + j].position.y);
+                        if (parameters.corridorTrapSpawnDirection == Direction.UP)
+                        {
+                            position.y += 1;
+                            GameObject o = generator.Instantiate(generator.dungeonTraps.fireFlameThrower, position);
+                            //TODO write Sorting Orders down, so no one gets confused
+                            // if the trap shows to the bottom, make sure that the trap is in front of the walls
+                            o.GetComponent<SpriteRenderer>().sortingOrder = 3;
+                        }
+                        else
+                        {
+                            generator.Instantiate(generator.dungeonTraps.fireFlameThrower, position,
+                                Quaternion.Euler(0, 180, 180));
+                        }
                     }
 
                     i += (countOffset - 1);
@@ -438,22 +448,22 @@ namespace Dungeon.DungeonGeneration
             else
             {
                 //var findAll = selectedCorridorPositions.FindAll(x => x.position.x == start.position.x);
-                var findAll = selectedCorridorPositions;
+                //var findAll = selectedCorridorPositions;
                 /*foreach (var wall in findAll)
                 {
                     Debug.Log(wall.position);
                 }*/
 
-                for (var i = 0; i < findAll.Count; i++)
+                for (var i = 0; i < selectedCorridorWalls.Count; i++)
                 {
-                    var wall = findAll[i];
+                    var wall = selectedCorridorWalls[i];
                     var countOffset = 0;
 
                     do
                     {
                         countOffset++;
-                    } while ((i + countOffset < findAll.Count) &&
-                             wall.position.y == findAll[i + countOffset].position.y - countOffset
+                    } while ((i + countOffset < selectedCorridorWalls.Count) &&
+                             wall.position.y == selectedCorridorWalls[i + countOffset].position.y - countOffset
                     );
 
                     //Debug.Log(i + " | " + countOffset + " size: " + findAll.Count);
@@ -461,10 +471,9 @@ namespace Dungeon.DungeonGeneration
                     for (int j = 0; j < countOffset; j++)
                     {
                         //Debug.Log(findAll[i + j] + " " + i + " | " + j + " size: " + findAll.Count);
-                        var position = new Vector3(findAll[i + j].position.x, findAll[i + j].position.y);
+                        var position = new Vector3(selectedCorridorWalls[i + j].position.x,
+                            selectedCorridorWalls[i + j].position.y);
                         generator.Instantiate(generator.trapRoom.transform.GetChild(0).gameObject, position);
-                        //generator.traps.Add(Instantiate(generator.trapRoom.transform.GetChild(0).gameObject, position,
-                        //  Quaternion.identity, generator.gameObject.transform));
                     }
 
                     i += (countOffset - 1);

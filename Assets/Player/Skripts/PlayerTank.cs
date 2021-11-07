@@ -9,8 +9,6 @@ namespace Player
 {
     public class PlayerTank : PlayerBase
     {
-        [Header("Weapon")]
-        [SerializeField] private Weapon equiptWeapon;
 
         //
         private CombatStats combatStats = new CombatStats();
@@ -58,7 +56,7 @@ namespace Player
 
         public override void CastPrimaryAttack()
         {
-            equiptWeapon.Attack(combatStats); 
+            base.hand.currentWeapon.Attack(combatStats); 
         }
         #endregion
     }

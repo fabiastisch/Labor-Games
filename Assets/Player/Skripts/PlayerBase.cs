@@ -12,7 +12,8 @@ namespace Player {
         [SerializeField] private GameObject menu;
         [SerializeField] private Texture2D cursor;
         [SerializeField] private Sprite[] eightWaysSprites;
-        [SerializeField] private PlayerHand hand;
+        [SerializeField] protected PlayerHand hand;
+        [SerializeField] private LayerMask interactableLayer;
 
         private PlayerInput playerInput;
 
@@ -38,9 +39,8 @@ namespace Player {
         private float maxStamina;
         private Vector2 currentDodgeDirection = Vector2.zero;
         private bool isMenuOpen = false;
-
-        float axesX;
-        float axesY;
+        private bool isInteractableFound = false;
+        private Collider2D[] interactColliders;
 
         #region PlayerState
 
@@ -94,16 +94,18 @@ namespace Player {
                 stamina += staminaReg * Time.deltaTime;
             }
 
-            bool isIngameMenuOpen = menu.gameObject.activeSelf;
+            isMenuOpen = menu.gameObject.activeSelf;
 
             if (playerInput.actions["Dodge"].triggered && stamina >= dodgeCost && state == State.Normal &&
-                !isIngameMenuOpen)
+                !isMenuOpen)
             {
                 stamina -= dodgeCost;
                 dodgeSpeed = dodgeSpeedMax;
                 currentDodgeDirection = MousePosition;
                 state = State.Dodging;
             }
+
+           isInteractableFound = DetectInteractableObjekt();
         }
 
         //Movement
@@ -137,44 +139,62 @@ namespace Player {
         {
         }
 
-        public void OpenMenu()
+        public void PlayerInteract(InputAction.CallbackContext context)
         {
+            if (!context.performed) return;
+            if (isInteractableFound)
+            {
+                GameObject interactableObject = interactColliders[0].gameObject;
+                if (interactableObject.CompareTag("Weapon"))
+                {
+                    hand.ChangeWeapon(interactableObject);
+                }
+            }
+        }
+
+        private bool DetectInteractableObjekt()
+        {
+            interactColliders = Physics2D.OverlapCircleAll(transform.position, 1, interactableLayer);
+            if (interactColliders.Length > 0)
+            {
+                //InteractSymbol on
+                return true;
+            }
+            //Falls InteractSymbol on --> off
+            return false;
+        }
+
+        public void OpenMenu(InputAction.CallbackContext context)
+        {
+            if (!context.performed) return;
             isMenuOpen = menu.gameObject.activeSelf;
             if (!isMenuOpen)
             {
+                playerInput.SwitchCurrentActionMap("Menu");
                 menu.SetActive(true);
                 Time.timeScale = 0;
             }
             else
             {
+                playerInput.SwitchCurrentActionMap("Player");
                 menu.SetActive(false);
                 Time.timeScale = 1;
             }
         }
 
         #region Spellcast
-
         public abstract void CastAbillity1();
-
-
         public abstract void CastAbillity2();
-
-
         public abstract void CastAbillity3();
-
-
         public abstract void CastAbillity4();
-
-
         public abstract void CastAbillity5();
-
         public abstract void CastPrimaryAttack();
-
         #endregion
 
-        //Swaps the sprite to the moving direction.
+        //Swaps the sprite to the mouse direction.
         private void ChangeSpriteDirection()
         {
+            if (isMenuOpen) return;
             int mouseAngle = Util.GetAngleFromVector(MousePosition);
             if (overrideMouseAngle) mouseAngle = tmpMouseAngle;
             if (mouseAngle >= -112 && mouseAngle <= -68)

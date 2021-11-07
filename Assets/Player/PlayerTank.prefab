@@ -710,7 +710,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -5467153780761423832, guid: 14858349672bdff479cbb6e93938d1c5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -753,11 +753,13 @@ MonoBehaviour:
   - {fileID: 4774430378361097297, guid: 14858349672bdff479cbb6e93938d1c5, type: 3}
   - {fileID: -8263216288522333626, guid: 14858349672bdff479cbb6e93938d1c5, type: 3}
   hand: {fileID: 245163729418225517}
+  interactableLayer:
+    serializedVersion: 2
+    m_Bits: 256
   stamina: 100
   staminaReg: 10
   dodgeCost: 44
   dodgeSpeed: 30
-  equiptWeapon: {fileID: 7610018542070514180}
 --- !u!70 &8368588488147939673
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -908,7 +910,7 @@ MonoBehaviour:
       - m_Target: {fileID: 8548802804282458405}
         m_TargetAssemblyTypeName: Player.PlayerBase, Assembly-CSharp
         m_MethodName: OpenMenu
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -951,6 +953,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 20c99742-9819-4860-9aca-0b3547219ac1
     m_ActionName: Player/Map[/Keyboard/tab]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8548802804282458405}
+        m_TargetAssemblyTypeName: Player.PlayerBase, Assembly-CSharp
+        m_MethodName: PlayerInteract
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8fb776fa-360e-47ba-93b1-3a777606dd21
+    m_ActionName: Player/Interact[/Keyboard/t]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8548802804282458405}
+        m_TargetAssemblyTypeName: Player.PlayerBase, Assembly-CSharp
+        m_MethodName: OpenMenu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: be774915-4485-4e82-b1f9-9d15392207ef
+    m_ActionName: Menu/Menu[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -966,6 +1000,10 @@ PrefabInstance:
     - target: {fileID: 1791199111217048331, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
       propertyPath: m_Name
       value: Sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 1791199111217048331, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3002192472317755500, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
       propertyPath: m_RootOrder
@@ -1023,19 +1061,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7063302911480858804, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
+      propertyPath: weaponRarity
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
---- !u!114 &7610018542070514180 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7063302911480858804, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
-  m_PrefabInstance: {fileID: 835931307731274416}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84a9d61a6dd145d4faf8430614d5100a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &2463536332101208796 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3002192472317755500, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
@@ -1052,6 +1083,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: TABULATOR
       objectReference: {fileID: 0}
+    - target: {fileID: 607610795986062406, guid: 3b6c6c67d525123409c768f3653877df, type: 3}
+      propertyPath: playerInput
+      value: 
+      objectReference: {fileID: 1697252049}
     - target: {fileID: 1925443307227127413, guid: 3b6c6c67d525123409c768f3653877df, type: 3}
       propertyPath: m_Text
       value: ESC
@@ -1059,6 +1094,18 @@ PrefabInstance:
     - target: {fileID: 2207762822612956183, guid: 3b6c6c67d525123409c768f3653877df, type: 3}
       propertyPath: m_Text
       value: q
+      objectReference: {fileID: 0}
+    - target: {fileID: 2367785509943034144, guid: 3b6c6c67d525123409c768f3653877df, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2367785509943034144, guid: 3b6c6c67d525123409c768f3653877df, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2367785509943034144, guid: 3b6c6c67d525123409c768f3653877df, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2367785510546366293, guid: 3b6c6c67d525123409c768f3653877df, type: 3}
       propertyPath: m_Pivot.x
@@ -1156,9 +1203,17 @@ PrefabInstance:
       propertyPath: m_Text
       value: e
       objectReference: {fileID: 0}
+    - target: {fileID: 3340117354949376905, guid: 3b6c6c67d525123409c768f3653877df, type: 3}
+      propertyPath: m_Text
+      value: Interact
+      objectReference: {fileID: 0}
     - target: {fileID: 4092126247800260071, guid: 3b6c6c67d525123409c768f3653877df, type: 3}
       propertyPath: m_Text
       value: i
+      objectReference: {fileID: 0}
+    - target: {fileID: 8897807994113358936, guid: 3b6c6c67d525123409c768f3653877df, type: 3}
+      propertyPath: m_Text
+      value: t
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b6c6c67d525123409c768f3653877df, type: 3}
