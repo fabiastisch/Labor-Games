@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenuAttribute(fileName = "CooldownReduction", menuName = "Passives/CooldownReduction")]
 public class CooldownReduction : Passive
 {
     public float cooldownReduction = 15f;

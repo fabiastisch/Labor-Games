@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenuAttribute(fileName = "Movementspeed", menuName = "Passives/Movementspeed")]
 public class Movementspeed : Passive
 {
     public float movementspeed = 1f;
