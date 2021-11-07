@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenuAttribute(fileName = "StunChance", menuName = "Passives/StunChance")]
 public class Stunchance : Passive
 {
     public float stunChance = 15f;

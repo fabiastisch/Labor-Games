@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenuAttribute(fileName = "ShieldAfterSeconds", menuName = "Passives/ShieldAfterSeconds")]
 public class ShieldAfterSeconds : Passive
 {
     public float cooldownReduction = 15f;

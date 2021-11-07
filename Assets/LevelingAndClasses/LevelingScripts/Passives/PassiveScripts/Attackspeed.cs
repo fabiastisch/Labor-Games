@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenuAttribute(fileName = "Attackspeed", menuName = "Passives/Attackspeed")]
 public class Attackspeed : Passive
 {
     public float attackspeedvalue = 1.2f;

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenuAttribute(fileName = "SingleBonus", menuName = "Passives/SingleBonus")]
 public class SingleBonus : Passive
 {
     [SerializeField] private float statBonusValue = 1.5f;
