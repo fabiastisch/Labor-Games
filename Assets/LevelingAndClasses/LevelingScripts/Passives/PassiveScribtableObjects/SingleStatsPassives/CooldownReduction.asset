@@ -9,16 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06f2e599fceee244ca6dd997168e6285, type: 3}
-  m_Name: BonusVitallity
+  m_Script: {fileID: 11500000, guid: 9f8988c8e14b52642b99d432fa9ea60d, type: 3}
+  m_Name: CooldownReduction
   m_EditorClassIdentifier: 
-  name: VitallityBonus
+  name: CooldownReduction
   cooldown: 0
   activeTime: 0
-  description: 
+  description: Increase Cooldown Reduction
   allTheTimeActive: 1
   repeatingSeconds: 0
   firstActivationForRepeat: 0
   passiveState: 0
-  statBonusValue: 1.5
-  statname: 0
+  skillsAndPassivesType: 0
+  cooldownReduction: 15

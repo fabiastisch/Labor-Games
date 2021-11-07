@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 06f2e599fceee244ca6dd997168e6285, type: 3}
-  m_Name: BonusStrength
+  m_Name: BonusVitallity
   m_EditorClassIdentifier: 
-  name: StrengthBonus
+  name: VitallityBonus
   cooldown: 0
   activeTime: 0
   description: 
@@ -20,5 +20,6 @@ MonoBehaviour:
   repeatingSeconds: 0
   firstActivationForRepeat: 0
   passiveState: 0
+  skillsAndPassivesType: 0
   statBonusValue: 1.5
-  statname: 1
+  statname: 0

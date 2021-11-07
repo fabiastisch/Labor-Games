@@ -15,9 +15,10 @@ MonoBehaviour:
   name: Regeneration
   cooldown: 3
   activeTime: 1
-  description: Gerade eher ein Healspell xD
+  description: Regen
   allTheTimeActive: 0
   repeatingSeconds: 2
   firstActivationForRepeat: 0.1
   passiveState: 3
+  skillsAndPassivesType: 0
   healthperTime: 3
