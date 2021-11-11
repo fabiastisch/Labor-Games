@@ -44,4 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damagePopupPrefab: {fileID: 7859283372679525657, guid: c66a5b004952f194bb9bfde1a1c0394b, type: 3}
+  textPopupPrefab: {fileID: 4192236772168774247, guid: d8599bcf052532946abd0d98e2f63669, type: 3}
   globalDungeonStatePrefab: {fileID: 7403842611888532808, guid: 499e1302f307acd42a4422d21d7660d1, type: 3}

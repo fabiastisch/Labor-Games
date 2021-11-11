@@ -1,12 +1,19 @@
+using System.Collections.Generic;
+using JetBrains.Annotations;
+using UI.Scripts;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Utils;
 
-namespace Player {
-    public abstract class PlayerBase : Combat.Character {
+namespace Player
+{
+    public abstract class PlayerBase : Combat.Character
+    {
         [SerializeField] [Range(-180, 180)] private int tmpMouseAngle;
         [SerializeField] private bool overrideMouseAngle = false;
+
         [SerializeField] private Camera cam;
+
         //[SerializeField] private SpriteRenderer playSprite;
         //[SerializeField] private Rigidbody2D rb;
         [SerializeField] private GameObject menu;
@@ -55,12 +62,19 @@ namespace Player {
 
         #endregion
 
+        #region Interactable Stuff
+
+        private Interactable activeInteractable = null;
+
+        #endregion
+
         private void Awake()
         {
             playerInput = GetComponent<PlayerInput>();
         }
 
-        protected override void Start() {
+        protected override void Start()
+        {
             base.Start();
             state = State.Normal;
             maxStamina = stamina;
@@ -105,7 +119,7 @@ namespace Player {
                 state = State.Dodging;
             }
 
-           isInteractableFound = DetectInteractableObjekt();
+            isInteractableFound = DetectInteractableObjekt();
         }
 
         //Movement
@@ -152,14 +166,34 @@ namespace Player {
             }
         }
 
+        // ReSharper disable Unity.PerformanceAnalysis
         private bool DetectInteractableObjekt()
         {
             interactColliders = Physics2D.OverlapCircleAll(transform.position, 1, interactableLayer);
             if (interactColliders.Length > 0)
             {
                 //InteractSymbol on
+                var newActiveInteractable = interactColliders[0].GetComponent<Interactable>();
+                if (newActiveInteractable == activeInteractable)
+                {
+                    return true;
+                }
+
+                if (newActiveInteractable)
+                {
+                    newActiveInteractable.SetInteractable(true);
+                    activeInteractable = newActiveInteractable;
+                }
+
                 return true;
             }
+
+            if (activeInteractable)
+            {
+                activeInteractable.SetInteractable(false);
+                activeInteractable = null;
+            }
+
             //Falls InteractSymbol on --> off
             return false;
         }
@@ -183,12 +217,14 @@ namespace Player {
         }
 
         #region Spellcast
+
         public abstract void CastAbillity1();
         public abstract void CastAbillity2();
         public abstract void CastAbillity3();
         public abstract void CastAbillity4();
         public abstract void CastAbillity5();
         public abstract void CastPrimaryAttack();
+
         #endregion
 
         //Swaps the sprite to the mouse direction.
