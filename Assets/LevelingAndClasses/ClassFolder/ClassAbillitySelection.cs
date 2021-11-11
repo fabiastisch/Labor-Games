@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using Image = UnityEngine.UI.Image;
 
 public class ClassAbillitySelection : MonoBehaviour
 {
@@ -35,6 +36,7 @@ public class ClassAbillitySelection : MonoBehaviour
     [SerializeField] private GameObject classPassiveSlot5;
     [SerializeField] private GameObject classPassiveSlot6;
     
+    //Objects that Hold the Sprite, Color and Passive
     [SerializeField] private GameObject classPassive1;
     [SerializeField] private GameObject classPassive2;
     [SerializeField] private GameObject classPassive3;
@@ -67,41 +69,73 @@ public class ClassAbillitySelection : MonoBehaviour
     }
 
 
+    //Todo Color Alpha auf max stellen
     private void UpdateClassSelection()
     {
-        classAbillity1 = classList[selectedClassIndex].classAbillity1;
-        classAbillity2 = classList[selectedClassIndex].classAbillity2;
-        classAbillity3 = classList[selectedClassIndex].classAbillity3;
-        classAbillity4 = classList[selectedClassIndex].classAbillity4;
-        classAbillity5 = classList[selectedClassIndex].classAbillity5;
+        classAbillity1.GetComponent<PassiveSlot>().passive = classList[selectedClassIndex].classAbillity1;
+        classAbillity1.GetComponent<Image>().sprite = classList[selectedClassIndex].classAbillity1.passiveImage;
+        classAbillity1.GetComponent<Image>().color = classList[selectedClassIndex].classAbillity1.color;
+
+        classAbillity2.GetComponent<PassiveSlot>().passive  = classList[selectedClassIndex].classAbillity2;
+        classAbillity2.GetComponent<Image>().sprite = classList[selectedClassIndex].classAbillity2.passiveImage;
+
+        classAbillity3.GetComponent<PassiveSlot>().passive  = classList[selectedClassIndex].classAbillity3;
+        classAbillity3.GetComponent<Image>().sprite = classList[selectedClassIndex].classAbillity3.passiveImage;
+        //classAbillity3.GetComponent<Image>().color = classList[selectedClassIndex].classAbillity3.color;
         
-        classPassive1 = classList[selectedClassIndex].classPassive1;
-        classPassive2 = classList[selectedClassIndex].classPassive2;
-        classPassive3 = classList[selectedClassIndex].classPassive3;
-        classPassive4 = classList[selectedClassIndex].classPassive4;
-        classPassive5 = classList[selectedClassIndex].classPassive5;
-        classPassive6 = classList[selectedClassIndex].classPassive6;
+        classAbillity4.GetComponent<PassiveSlot>().passive  = classList[selectedClassIndex].classAbillity4;
+        classAbillity4.GetComponent<Image>().sprite = classList[selectedClassIndex].classAbillity4.passiveImage;
+        //classAbillity4.GetComponent<Image>().color = classList[selectedClassIndex].classAbillity4.color;
+        
+        classAbillity5.GetComponent<PassiveSlot>().passive  = classList[selectedClassIndex].classAbillity5;
+        classAbillity5.GetComponent<Image>().sprite = classList[selectedClassIndex].classAbillity5.passiveImage;
+        //classAbillity5.GetComponent<Image>().color = classList[selectedClassIndex].classAbillity5.color;
+        
+        
+        classPassive1.GetComponent<PassiveSlot>().passive  = classList[selectedClassIndex].classPassive1;
+        classPassive1.GetComponent<Image>().sprite = classList[selectedClassIndex].classPassive1.passiveImage;
+        //classPassive1.GetComponent<Image>().color = classList[selectedClassIndex].classPassive1.color;
+        
+        classPassive2.GetComponent<PassiveSlot>().passive  = classList[selectedClassIndex].classPassive2;
+        classPassive2.GetComponent<Image>().sprite = classList[selectedClassIndex].classPassive2.passiveImage;
+        //classPassive2.GetComponent<Image>().color = classList[selectedClassIndex].classPassive2.color;
+        
+        classPassive3.GetComponent<PassiveSlot>().passive  = classList[selectedClassIndex].classPassive3;
+        classPassive3.GetComponent<Image>().sprite = classList[selectedClassIndex].classPassive3.passiveImage;
+        //classPassive3.GetComponent<Image>().color = classList[selectedClassIndex].classPassive3.color;
+        
+        classPassive4.GetComponent<PassiveSlot>().passive  = classList[selectedClassIndex].classPassive4;
+        classPassive4.GetComponent<Image>().sprite = classList[selectedClassIndex].classPassive4.passiveImage;
+        //classPassive4.GetComponent<Image>().color = classList[selectedClassIndex].classPassive4.color;
+        
+        classPassive5.GetComponent<PassiveSlot>().passive  = classList[selectedClassIndex].classPassive5;
+        classPassive5.GetComponent<Image>().sprite = classList[selectedClassIndex].classPassive5.passiveImage;
+        //classPassive5.GetComponent<Image>().color = classList[selectedClassIndex].classPassive5.color;
+        
+        classPassive6.GetComponent<PassiveSlot>().passive  = classList[selectedClassIndex].classPassive6;
+        classPassive6.GetComponent<Image>().sprite = classList[selectedClassIndex].classPassive6.passiveImage;
+        //classPassive6.GetComponent<Image>().color = classList[selectedClassIndex].classPassive6.color;
 
         className.text = classList[selectedClassIndex].className;
     }
-
-    //Todo change it to Passives instead of Gameobjects and add sprites to passives
+    
+    //Todo Make it to a ScriptableObject
     [System.Serializable]
     public class ClassAbillitySelectionObject
     {
         public string className;
-        public GameObject classAbillity1;
-        public GameObject classAbillity2;
-        public GameObject classAbillity3;
-        public GameObject classAbillity4;
-        public GameObject classAbillity5;
+        public Passive classAbillity1;
+        public Passive classAbillity2;
+        public Passive classAbillity3;
+        public Passive classAbillity4;
+        public Passive classAbillity5;
             
-        public GameObject classPassive1;
-        public GameObject classPassive2;
-        public GameObject classPassive3;
-        public GameObject classPassive4;
-        public GameObject classPassive5;
-        public GameObject classPassive6;
+        public Passive classPassive1;
+        public Passive classPassive2;
+        public Passive classPassive3;
+        public Passive classPassive4;
+        public Passive classPassive5;
+        public Passive classPassive6;
     }
     
 }

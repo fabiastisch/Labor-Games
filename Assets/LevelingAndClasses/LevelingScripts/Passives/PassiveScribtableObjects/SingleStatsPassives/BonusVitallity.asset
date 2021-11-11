@@ -21,5 +21,7 @@ MonoBehaviour:
   firstActivationForRepeat: 0
   passiveState: 0
   skillsAndPassivesType: 0
+  passiveImage: {fileID: 4028160660353277972, guid: d665fdc7f1dba634487064622e44ed34, type: 3}
+  color: {r: 0, g: 0, b: 0, a: 0}
   statBonusValue: 1.5
   statname: 0

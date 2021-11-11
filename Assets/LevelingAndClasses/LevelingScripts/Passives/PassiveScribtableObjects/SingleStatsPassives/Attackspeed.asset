@@ -20,5 +20,7 @@ MonoBehaviour:
   repeatingSeconds: 0
   firstActivationForRepeat: 0
   passiveState: 0
-  skillsAndPassivesType: 0
+  skillsAndPassivesType: 1
+  passiveImage: {fileID: 6505958660565071534, guid: a0d3fbbc155eb404a87f827b40a48dfe, type: 3}
+  color: {r: 0, g: 0, b: 0, a: 0}
   attackspeedvalue: 1.2
