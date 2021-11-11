@@ -21,4 +21,6 @@ MonoBehaviour:
   firstActivationForRepeat: 0
   passiveState: 0
   skillsAndPassivesType: 1
+  passiveImage: {fileID: 8578349992669868677, guid: 5c6f2fdc25f1b3e47888a500e3d4a83d, type: 3}
+  color: {r: 0, g: 0, b: 0, a: 0}
   movementspeed: 1.5
