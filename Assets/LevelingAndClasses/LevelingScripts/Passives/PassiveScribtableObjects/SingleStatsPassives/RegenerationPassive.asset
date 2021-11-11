@@ -22,5 +22,5 @@ MonoBehaviour:
   passiveState: 3
   skillsAndPassivesType: 0
   passiveImage: {fileID: 5550302956442217801, guid: a0d3fbbc155eb404a87f827b40a48dfe, type: 3}
-  color: {r: 0, g: 0, b: 0, a: 0}
+  color: {r: 0.26712802, g: 0.3679245, b: 0.050907753, a: 1}
   healthperTime: 3

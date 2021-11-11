@@ -22,5 +22,5 @@ MonoBehaviour:
   passiveState: 0
   skillsAndPassivesType: 0
   passiveImage: {fileID: 5860325458425312261, guid: a0d3fbbc155eb404a87f827b40a48dfe, type: 3}
-  color: {r: 0, g: 0, b: 0, a: 0}
+  color: {r: 0.9339623, g: 0.8605375, b: 0.8605375, a: 1}
   stunChance: 15
