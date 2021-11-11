@@ -22,6 +22,6 @@ MonoBehaviour:
   passiveState: 0
   skillsAndPassivesType: 1
   passiveImage: {fileID: 7325720009749220995, guid: a0d3fbbc155eb404a87f827b40a48dfe, type: 3}
-  color: {r: 0.6509434, g: 0.29271978, b: 0.5655692, a: 1}
+  color: {r: 0.4056604, g: 0.08674495, b: 0.32855994, a: 1}
   statBonusValue: 1.5
   statname: 4
