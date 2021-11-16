@@ -435,7 +435,7 @@ namespace Dungeon.DungeonGeneration
                             // if the trap shows to the bottom, make sure that the trap is in front of the walls
                             o.GetComponent<SpriteRenderer>().sortingOrder = 3;
                         }
-                        else
+                        else // Down
                         {
                             generator.Instantiate(generator.dungeonTraps.fireFlameThrower, position,
                                 Quaternion.Euler(0, 180, 180));
@@ -446,7 +446,7 @@ namespace Dungeon.DungeonGeneration
                 }
             }
             else
-            {
+            { // Left Right Traps
                 //var findAll = selectedCorridorPositions.FindAll(x => x.position.x == start.position.x);
                 //var findAll = selectedCorridorPositions;
                 /*foreach (var wall in findAll)
@@ -473,7 +473,17 @@ namespace Dungeon.DungeonGeneration
                         //Debug.Log(findAll[i + j] + " " + i + " | " + j + " size: " + findAll.Count);
                         var position = new Vector3(selectedCorridorWalls[i + j].position.x,
                             selectedCorridorWalls[i + j].position.y);
-                        generator.Instantiate(generator.trapRoom.transform.GetChild(0).gameObject, position);
+                        if (parameters.corridorTrapSpawnDirection == Direction.LEFT)
+                        {
+                            generator.Instantiate(generator.dungeonTraps.fireFlameThrower, position + Vector3.right * 1/4,
+                                Quaternion.Euler(0, 0, 90));
+                        }
+                        else
+                        {
+                            generator.Instantiate(generator.dungeonTraps.fireFlameThrower, position + Vector3.right * 3/4 + Vector3.up,
+                                Quaternion.Euler(0, 0, -90));
+                        }
+                            
                     }
 
                     i += (countOffset - 1);
