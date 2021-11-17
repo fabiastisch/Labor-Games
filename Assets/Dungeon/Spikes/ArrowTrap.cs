@@ -1,7 +1,9 @@
+using System.Collections;
 using System.Collections.Generic;
 using Combat;
 using Player;
 using UnityEngine;
+using Utils;
 
 namespace Dungeon.Spikes
 {
@@ -16,11 +18,22 @@ namespace Dungeon.Spikes
 
         private List<Collider2D> playersInTrap = new List<Collider2D>();
 
+        public float startDelay = 0f;
+
         // Start is called before the first frame update
         void Start()
         {
             animator = GetComponent<Animator>();
             InvokeRepeating(nameof(ApplyDamage), .5f, damageInterval);
+            StartCoroutine(nameof(DelayedAnimation));
+        }
+
+        // The delay coroutine
+        IEnumerator DelayedAnimation()
+        {
+            animator.Play("Idle");
+            yield return new WaitForSeconds(startDelay);
+            animator.Play("MoveUP");
         }
 
         private void ApplyDamage()
@@ -53,6 +66,5 @@ namespace Dungeon.Spikes
                 playersInTrap.Remove(other);
             }
         }
-
     }
 }
