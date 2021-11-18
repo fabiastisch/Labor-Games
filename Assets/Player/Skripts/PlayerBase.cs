@@ -162,6 +162,9 @@ namespace Player
                 if (interactableObject.CompareTag("Weapon"))
                 {
                     hand.ChangeWeapon(interactableObject);
+                }else if (activeInteractable)
+                {
+                    activeInteractable.Interact();
                 }
             }
         }

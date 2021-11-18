@@ -1,6 +1,7 @@
 ﻿using System;
 using UI.Text;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace UI.Scripts
 {
@@ -9,6 +10,7 @@ namespace UI.Scripts
         [SerializeField] private string text = "Interact";
         [SerializeField] public Vector3 position;
         private TextPopup currentTextPopup;
+        protected bool isInteractable = true;
 
         public void Reset()
         {
@@ -17,6 +19,11 @@ namespace UI.Scripts
 
         public void SetInteractable(bool active)
         {
+            if (!isInteractable)
+            {
+                return;
+            }
+
             if (!active)
             {
                 SetUnInteractable();
@@ -39,9 +46,15 @@ namespace UI.Scripts
             currentTextPopup = null;
         }
 
-        private void OnDrawGizmosSelected()
+        protected virtual void OnDrawGizmosSelected()
         {
+            Gizmos.color = Color.cyan;
             Gizmos.DrawSphere(transform.position + position, 0.2f);
         }
+
+        public virtual void Interact()
+        {
+        }
+
     }
 }
