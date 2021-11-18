@@ -1,4 +1,7 @@
-﻿using Dungeon.Spikes;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using Dungeon.Spikes;
 using UnityEngine;
 
 namespace Dungeon.Scripts
@@ -13,9 +16,36 @@ namespace Dungeon.Scripts
         [SerializeField] private float offsetYTop = 2f;
         [SerializeField] private float offsetYBot = 1f;
 
+        [SerializeField] private bool generate = false;
+
+        [SerializeField] private List<ArrowTrap> innerCircle = new List<ArrowTrap>();
+        [SerializeField] private List<ArrowTrap> outerCircle = new List<ArrowTrap>();
+
         private void Start()
         {
-            Generate();
+            if (generate)
+            {
+                //Generate();
+            }
+        }
+
+        private void Awake()
+        {
+            float startDelay = 0f;
+            for (var i = innerCircle.Count - 1; i >= 0; i--)
+            {
+                innerCircle[i].startDelay = startDelay;
+                startDelay += 0.2f;
+            }
+
+            startDelay = 0f;
+            for (var i = 0; i < outerCircle.Count; i++)
+            {
+                if (i == outerCircle.Count / 2) startDelay = 0f;
+
+                outerCircle[i].startDelay = startDelay;
+                startDelay += 0.2f;
+            }
         }
 
         private void Generate()
@@ -40,10 +70,9 @@ namespace Dungeon.Scripts
                     }
 
 
-                    GameObject gTrap = Instantiate(pTrap, new Vector3(j, i, position.z), Quaternion.identity, transform);
-                    gTrap.GetComponent<ArrowTrap>().startDelay = startDelay;
-                    Debug.Log(startDelay);
-                    startDelay += 0.2f;
+                    GameObject gTrap = Instantiate(pTrap, new Vector3(j, i, position.z), Quaternion.identity,
+                        transform);
+                    ArrowTrap arrowTrap = gTrap.GetComponent<ArrowTrap>();
                 }
             }
             /*
