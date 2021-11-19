@@ -15,7 +15,7 @@ MonoBehaviour:
   generatorType: 2
   startPosition: {x: 0, y: 0}
   floorColor: {r: 0.6745098, g: 1, b: 0.9585728, a: 1}
-  wallColor: {r: 0.9107318, g: 0, b: 1, a: 1}
+  wallColor: {r: 0.25035602, g: 0.2680987, b: 0.5471698, a: 1}
   overrideDefaultColor: 1
   iterations: 10
   walkLength: 10

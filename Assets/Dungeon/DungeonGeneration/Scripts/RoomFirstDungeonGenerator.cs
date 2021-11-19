@@ -408,6 +408,9 @@ namespace Dungeon.DungeonGeneration
                     Debug.Log(wall.position);
                 }*/
 
+                float corridorTrapChance = parameters.corridorTrapChance;
+                int corridorTrapsCount = 3;
+
                 for (var i = 0; i < selectedCorridorWalls.Count; i++)
                 {
                     var wall = selectedCorridorWalls[i];
@@ -422,8 +425,19 @@ namespace Dungeon.DungeonGeneration
 
                     //Debug.Log(i + " | " + countOffset + " size: " + findAll.Count);
 
-                    for (int j = 0; j < countOffset; j++)
+                    int max = countOffset;
+                    if (corridorTrapsCount == 0)
                     {
+                        max = 1;
+                    }
+                    else
+                    {
+                        max = countOffset - corridorTrapsCount + 1;
+                    }
+
+                    for (int j = Random.Range(0, max), k = 0; j < countOffset; j++, k++)
+                    {
+                        if (k >= corridorTrapsCount) break;
                         //Debug.Log(findAll[i + j] + " " + i + " | " + j + " size: " + findAll.Count);
                         var position = new Vector3(selectedCorridorWalls[i + j].position.x,
                             selectedCorridorWalls[i + j].position.y);
@@ -446,7 +460,9 @@ namespace Dungeon.DungeonGeneration
                 }
             }
             else
-            { // Left Right Traps
+            {
+                // Left or Right Traps
+
                 //var findAll = selectedCorridorPositions.FindAll(x => x.position.x == start.position.x);
                 //var findAll = selectedCorridorPositions;
                 /*foreach (var wall in findAll)
@@ -475,15 +491,16 @@ namespace Dungeon.DungeonGeneration
                             selectedCorridorWalls[i + j].position.y);
                         if (parameters.corridorTrapSpawnDirection == Direction.LEFT)
                         {
-                            generator.Instantiate(generator.dungeonTraps.fireFlameThrower, position + Vector3.right * 1/4,
+                            generator.Instantiate(generator.dungeonTraps.fireFlameThrower,
+                                position + Vector3.right * 1 / 4,
                                 Quaternion.Euler(0, 0, 90));
                         }
                         else
                         {
-                            generator.Instantiate(generator.dungeonTraps.fireFlameThrower, position + Vector3.right * 3/4 + Vector3.up,
+                            generator.Instantiate(generator.dungeonTraps.fireFlameThrower,
+                                position + Vector3.right * 3 / 4 + Vector3.up,
                                 Quaternion.Euler(0, 0, -90));
                         }
-                            
                     }
 
                     i += (countOffset - 1);
