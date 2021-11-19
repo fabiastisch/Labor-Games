@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using JetBrains.Annotations;
 using UI.Scripts;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -169,10 +167,10 @@ namespace Player
             }
         }
 
-        // ReSharper disable Unity.PerformanceAnalysis
         private bool DetectInteractableObjekt()
         {
             interactColliders = Physics2D.OverlapCircleAll(transform.position, 1, interactableLayer);
+            //Debug.Log("DetectInteractableObjekt: count: " + interactColliders.Length);
             if (interactColliders.Length > 0)
             {
                 //InteractSymbol on

@@ -30,5 +30,10 @@ namespace UI.Text
         {
             textMesh.SetText(text);
         }
+
+        public TextMeshPro GetTextMesh()
+        {
+            return textMesh;
+        }
     }
 }

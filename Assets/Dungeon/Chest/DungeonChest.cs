@@ -1,3 +1,4 @@
+using System;
 using UI.Scripts;
 using UnityEngine;
 
@@ -5,13 +6,24 @@ namespace Dungeon.Chest
 {
     public class DungeonChest : Interactable
     {
-        [SerializeField] public Vector3 dropPosition;
+        [SerializeField] private Vector3 dropPosition;
+
+        [SerializeField] private GameObject pItem;
+
+        private Animator _animator;
+
+        private void Start()
+        {
+            _animator = GetComponent<Animator>();
+            _animator.Play("Idle");
+        }
 
         public override void Interact()
         {
             // Can only be interacted once 
             isInteractable = false;
 
+            _animator.Play("Open");
             DropItems();
         }
 
@@ -19,6 +31,7 @@ namespace Dungeon.Chest
         {
             // TODO: Create Weapon or Item and drop it
             Debug.Log("Chest was opened...");
+            Instantiate(pItem, transform.position + dropPosition, Quaternion.identity);
         }
 
         protected override void OnDrawGizmosSelected()

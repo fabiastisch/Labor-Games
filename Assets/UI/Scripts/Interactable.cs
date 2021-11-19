@@ -1,7 +1,6 @@
 ﻿using System;
 using UI.Text;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace UI.Scripts
 {
@@ -19,7 +18,8 @@ namespace UI.Scripts
 
         public void SetInteractable(bool active)
         {
-            if (!isInteractable)
+            //Debug.Log(name + ": SetInteractable " + active);
+            if (!isInteractable && active)
             {
                 return;
             }
@@ -34,6 +34,8 @@ namespace UI.Scripts
 
             var transform1 = transform;
             currentTextPopup = TextPopup.Create(transform1.position + position, transform1, text);
+            // TODO: sorting order | layer
+            currentTextPopup.GetTextMesh().sortingOrder = 5;
         }
 
         private void SetUnInteractable()
@@ -55,6 +57,5 @@ namespace UI.Scripts
         public virtual void Interact()
         {
         }
-
     }
 }
