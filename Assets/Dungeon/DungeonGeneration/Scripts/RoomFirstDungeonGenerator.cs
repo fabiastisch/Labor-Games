@@ -469,6 +469,9 @@ namespace Dungeon.DungeonGeneration
                 {
                     Debug.Log(wall.position);
                 }*/
+                float corridorTrapChance = parameters.corridorTrapChance;
+                int corridorTrapsCount = parameters.corridorTrapsCount;
+
 
                 for (var i = 0; i < selectedCorridorWalls.Count; i++)
                 {
@@ -484,8 +487,21 @@ namespace Dungeon.DungeonGeneration
 
                     //Debug.Log(i + " | " + countOffset + " size: " + findAll.Count);
 
-                    for (int j = 0; j < countOffset; j++)
+                    
+                    int max = countOffset;
+                    if (corridorTrapsCount == 0)
                     {
+                        max = 1;
+                    }
+                    else
+                    {
+                        max = countOffset - corridorTrapsCount + 1;
+                    }
+
+                    for (int j = Random.Range(0, max), k = 0; j < countOffset; j++, k++)
+                    {
+                        if (k >= corridorTrapsCount) break;
+                        
                         //Debug.Log(findAll[i + j] + " " + i + " | " + j + " size: " + findAll.Count);
                         var position = new Vector3(selectedCorridorWalls[i + j].position.x,
                             selectedCorridorWalls[i + j].position.y);
