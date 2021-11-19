@@ -409,7 +409,7 @@ namespace Dungeon.DungeonGeneration
                 }*/
 
                 float corridorTrapChance = parameters.corridorTrapChance;
-                int corridorTrapsCount = 3;
+                int corridorTrapsCount = parameters.corridorTrapsCount;
 
                 for (var i = 0; i < selectedCorridorWalls.Count; i++)
                 {

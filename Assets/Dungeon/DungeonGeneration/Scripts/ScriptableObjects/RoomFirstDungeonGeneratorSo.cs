@@ -25,6 +25,7 @@ namespace Dungeon.DungeonGeneration
         [Header("Corridor Traps")] public Direction corridorTrapSpawnDirection;
 
         [Range(0, 2)] public float corridorTrapChance;
+        public int corridorTrapsCount = 3;
 
         protected override void OnValidate()
         {
