@@ -8,7 +8,6 @@ using UnityEngine.UI;
 public class TestingScript : MonoBehaviour
 {  
     [SerializeField] private UI_RadarChart uiStatsRadarChart;
-    
     //if we want to add the Buttons manually and not via Unity
     /*
     public Button vitallityButton = GameObject.Find("vitallityButton").GetComponent<Button>();
@@ -23,11 +22,15 @@ public class TestingScript : MonoBehaviour
     [Range(0,100)]public int charisma = 30;
     [Range(0,100)]public int strength = 20;
     
-    private Statistics stats;
+    public Statistics stats;
     private void Start()
     {
-       stats = new Statistics(strength, vitallity, charisma,abillity,agillity);
-       uiStatsRadarChart.SetStatistic(stats);
+        stats.SetStatisticAmount(Statistics.Type.Vitallity, vitallity);
+        stats.SetStatisticAmount(Statistics.Type.Agillity, agillity);
+        stats.SetStatisticAmount(Statistics.Type.Abillity, abillity);
+        stats.SetStatisticAmount(Statistics.Type.Charisma, charisma);
+        stats.SetStatisticAmount(Statistics.Type.Strength, strength);
+        uiStatsRadarChart.SetStatistic(stats);
     }
    public void IncreaseStat(string name){
        switch (name)
