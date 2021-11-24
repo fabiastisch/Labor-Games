@@ -12,7 +12,7 @@ public class UI_RadarChart : MonoBehaviour
 {
   [SerializeField] private Material radarMaterial;
   [SerializeField] private Texture2D radarTexture2D;
-  private Statistics statistics;
+  public Statistics statistics;
   private CanvasRenderer radarMeshCanvasRenderer;
 
   private void Awake()

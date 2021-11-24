@@ -6,13 +6,12 @@ using UnityEngine.Serialization;
 public class PassiveTestPlayer : MonoBehaviour
 {
     
+    public Statistics statistics;
     public static PassiveTestPlayer Instance { get; private set; }
     //BaseValues
-    [SerializeField] public float strength = 10;
     [SerializeField] public float MaxHp = 10;
     [SerializeField] public float magicPower = 10;
-    [SerializeField] public float agillity = 10;
-    [SerializeField] public float charisma = 10;
+    
     [SerializeField] public float armor = 10;
     [SerializeField] public float magicresist = 10;
     [SerializeField] public float totalDamageReduction = 10;
@@ -22,6 +21,11 @@ public class PassiveTestPlayer : MonoBehaviour
     [SerializeField] public float fireresist = 10;
     [SerializeField] public float shadowresist  = 10;
     
+    //[SerializeField] public float vitallity  = 10;
+    //[SerializeField] public float abillity  = 10;
+    [SerializeField] public float strength = 10;
+    [SerializeField] public float agillity = 10;
+    [SerializeField] public float charisma = 10;
     
     [SerializeField] public float stunChance  = 1;
     [SerializeField] public float movementspeed  = 1;
@@ -32,6 +36,7 @@ public class PassiveTestPlayer : MonoBehaviour
     
     //ActualStatus
     [SerializeField] public float ActualHP  = 5;
+    
 
     void Awake()
     {
@@ -58,6 +63,23 @@ public class PassiveTestPlayer : MonoBehaviour
         Debug.Log("CriticalChance" + " = " +criticalChance );
         Debug.Log("spellCoolDownReduction" + " = " +spellCoolDownReduction );
         Debug.Log("stunChance" + " = " +stunChance );
+    }
+    
+    public void IncreaseStat(string name){
+        switch (name)
+        {
+            case "vitallity":  statistics.IncreaseStatAmount(Statistics.Type.Vitallity);
+                break;
+            case "agillity":  statistics.IncreaseStatAmount(Statistics.Type.Agillity);
+                break;
+            case "abillity":  statistics.IncreaseStatAmount(Statistics.Type.Abillity);
+                break;
+            case "charisma":  statistics.IncreaseStatAmount(Statistics.Type.Charisma);
+                break;
+            case "strength":  statistics.IncreaseStatAmount(Statistics.Type.Strength);
+                break;
+        }
+       
     }
     
     

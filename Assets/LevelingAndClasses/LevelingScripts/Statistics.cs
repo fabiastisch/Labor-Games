@@ -3,12 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Statistics
+public class Statistics: MonoBehaviour
 {
     public event EventHandler OnStatisticChange;
     public static int STAT_MIN = 0;
     public static int STAT_MAX = 100;
+    [SerializeField] private UnlockControll unlockControll;
 
+    [SerializeField] [Range(0,100)]private int strengthStatAmount;
+    [SerializeField] [Range(0,100)]private int vitallityStatAmount;
+    [SerializeField] [Range(0,100)]private int charismaStatAmount;
+    [SerializeField] [Range(0,100)]private int abillityStatAmount;
+    [SerializeField] [Range(0,100)]private int agillityStatAmount;
     public enum Type
     {
         Strength,
@@ -19,13 +25,13 @@ public class Statistics
     }
     private OneStat strengthStat, vitallityStat, charismaStat, abillityStat, agillityStat;
 
-    public Statistics(int strengthStatAmount, int vitallityStatAmount,int charismaStatAmount, int abillityStatAmount, int agillityStatAmount)
+    private void Awake()
     {
         strengthStat = new OneStat(strengthStatAmount);
         vitallityStat = new OneStat(vitallityStatAmount);
         charismaStat = new OneStat(charismaStatAmount);
         abillityStat = new OneStat(abillityStatAmount);
-        agillityStat = new OneStat(agillityStatAmount);
+        agillityStat = new OneStat(agillityStatAmount); 
     }
 
     private OneStat GetOneStat(Type statType)
@@ -53,11 +59,13 @@ public class Statistics
     {
         SetStatisticAmount(statType, GetValue(statType) +1 );
         Debug.Log("Increased : " + statType);
+        unlockControll.CheckListForUnlocking();
     }
         
     public void DecreaseStatAmount(Type statType)
     {
         SetStatisticAmount(statType, GetValue(statType) -1 );
+        unlockControll.CheckListForUnlocking();
     }
         
     public int GetValue(Type statType)

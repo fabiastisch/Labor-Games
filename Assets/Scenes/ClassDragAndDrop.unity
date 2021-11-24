@@ -761,6 +761,7 @@ GameObject:
   - component: {fileID: 102527427}
   - component: {fileID: 102527429}
   - component: {fileID: 102527428}
+  - component: {fileID: 102527430}
   m_Layer: 0
   m_Name: SingleSkill3
   m_TagString: Untagged
@@ -825,6 +826,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 102527426}
   m_CullTransparentMesh: 1
+--- !u!114 &102527430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102527426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &104185959
 GameObject:
   m_ObjectHideFlags: 0
@@ -836,6 +856,7 @@ GameObject:
   - component: {fileID: 104185960}
   - component: {fileID: 104185962}
   - component: {fileID: 104185961}
+  - component: {fileID: 104185963}
   m_Layer: 0
   m_Name: SingleSkill4
   m_TagString: Untagged
@@ -900,6 +921,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 104185959}
   m_CullTransparentMesh: 1
+--- !u!114 &104185963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104185959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &105261849
 GameObject:
   m_ObjectHideFlags: 0
@@ -911,6 +951,7 @@ GameObject:
   - component: {fileID: 105261850}
   - component: {fileID: 105261852}
   - component: {fileID: 105261851}
+  - component: {fileID: 105261853}
   m_Layer: 0
   m_Name: TrippleSkill2
   m_TagString: Untagged
@@ -975,6 +1016,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 105261849}
   m_CullTransparentMesh: 1
+--- !u!114 &105261853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105261849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &108032406
 GameObject:
   m_ObjectHideFlags: 0
@@ -1052,6 +1112,7 @@ GameObject:
   - component: {fileID: 108789077}
   - component: {fileID: 108789079}
   - component: {fileID: 108789078}
+  - component: {fileID: 108789080}
   m_Layer: 0
   m_Name: DuoSkill1
   m_TagString: Untagged
@@ -1116,6 +1177,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 108789076}
   m_CullTransparentMesh: 1
+--- !u!114 &108789080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108789076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &123009556
 GameObject:
   m_ObjectHideFlags: 0
@@ -1127,6 +1207,7 @@ GameObject:
   - component: {fileID: 123009557}
   - component: {fileID: 123009559}
   - component: {fileID: 123009558}
+  - component: {fileID: 123009560}
   m_Layer: 0
   m_Name: TrippleSkill1
   m_TagString: Untagged
@@ -1191,6 +1272,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 123009556}
   m_CullTransparentMesh: 1
+--- !u!114 &123009560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123009556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &129146665
 GameObject:
   m_ObjectHideFlags: 0
@@ -1321,6 +1421,7 @@ GameObject:
   - component: {fileID: 136702008}
   - component: {fileID: 136702010}
   - component: {fileID: 136702009}
+  - component: {fileID: 136702011}
   m_Layer: 0
   m_Name: DuoSkill1
   m_TagString: Untagged
@@ -1385,6 +1486,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 136702007}
   m_CullTransparentMesh: 1
+--- !u!114 &136702011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136702007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &137264322
 GameObject:
   m_ObjectHideFlags: 0
@@ -1590,6 +1710,7 @@ GameObject:
   - component: {fileID: 143579670}
   - component: {fileID: 143579672}
   - component: {fileID: 143579671}
+  - component: {fileID: 143579673}
   m_Layer: 0
   m_Name: TrippleSkill2
   m_TagString: Untagged
@@ -1654,6 +1775,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 143579669}
   m_CullTransparentMesh: 1
+--- !u!114 &143579673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143579669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &145756359
 GameObject:
   m_ObjectHideFlags: 0
@@ -1784,6 +1924,7 @@ GameObject:
   - component: {fileID: 159589816}
   - component: {fileID: 159589818}
   - component: {fileID: 159589817}
+  - component: {fileID: 159589819}
   m_Layer: 0
   m_Name: SingleSkill5
   m_TagString: Untagged
@@ -1848,6 +1989,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 159589815}
   m_CullTransparentMesh: 1
+--- !u!114 &159589819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159589815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &164448089
 GameObject:
   m_ObjectHideFlags: 0
@@ -2026,6 +2186,7 @@ GameObject:
   - component: {fileID: 181677147}
   - component: {fileID: 181677149}
   - component: {fileID: 181677148}
+  - component: {fileID: 181677150}
   m_Layer: 0
   m_Name: TrippleSkill1
   m_TagString: Untagged
@@ -2090,6 +2251,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 181677146}
   m_CullTransparentMesh: 1
+--- !u!114 &181677150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181677146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &192887750
 GameObject:
   m_ObjectHideFlags: 0
@@ -2176,6 +2356,7 @@ GameObject:
   - component: {fileID: 204158038}
   - component: {fileID: 204158040}
   - component: {fileID: 204158039}
+  - component: {fileID: 204158041}
   m_Layer: 0
   m_Name: DuoSkill3
   m_TagString: Untagged
@@ -2240,6 +2421,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 204158037}
   m_CullTransparentMesh: 1
+--- !u!114 &204158041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204158037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &221990177
 GameObject:
   m_ObjectHideFlags: 0
@@ -2251,6 +2451,7 @@ GameObject:
   - component: {fileID: 221990178}
   - component: {fileID: 221990180}
   - component: {fileID: 221990179}
+  - component: {fileID: 221990181}
   m_Layer: 0
   m_Name: SingleSkill1
   m_TagString: Untagged
@@ -2315,6 +2516,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 221990177}
   m_CullTransparentMesh: 1
+--- !u!114 &221990181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221990177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &222257735
 GameObject:
   m_ObjectHideFlags: 0
@@ -2371,6 +2591,7 @@ GameObject:
   - component: {fileID: 224533844}
   - component: {fileID: 224533846}
   - component: {fileID: 224533845}
+  - component: {fileID: 224533847}
   m_Layer: 0
   m_Name: SingleSkill4
   m_TagString: Untagged
@@ -2435,6 +2656,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 224533843}
   m_CullTransparentMesh: 1
+--- !u!114 &224533847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224533843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &240927901
 GameObject:
   m_ObjectHideFlags: 0
@@ -2446,6 +2686,7 @@ GameObject:
   - component: {fileID: 240927902}
   - component: {fileID: 240927904}
   - component: {fileID: 240927903}
+  - component: {fileID: 240927905}
   m_Layer: 0
   m_Name: SingleSkill3
   m_TagString: Untagged
@@ -2510,6 +2751,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 240927901}
   m_CullTransparentMesh: 1
+--- !u!114 &240927905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240927901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &258652875
 GameObject:
   m_ObjectHideFlags: 0
@@ -2553,6 +2813,7 @@ GameObject:
   - component: {fileID: 275938063}
   - component: {fileID: 275938065}
   - component: {fileID: 275938064}
+  - component: {fileID: 275938066}
   m_Layer: 0
   m_Name: DuoSkill3
   m_TagString: Untagged
@@ -2617,6 +2878,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 275938062}
   m_CullTransparentMesh: 1
+--- !u!114 &275938066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275938062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &279637145
 GameObject:
   m_ObjectHideFlags: 0
@@ -2630,6 +2910,7 @@ GameObject:
   - component: {fileID: 279637146}
   - component: {fileID: 279637149}
   - component: {fileID: 279637150}
+  - component: {fileID: 279637151}
   m_Layer: 0
   m_Name: TestingObject2
   m_TagString: Untagged
@@ -2663,11 +2944,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c63aaca88316e84fbbd85ce0ae41d7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strength: 10
+  statistics: {fileID: 1130479711}
   MaxHp: 10
   magicPower: 10
-  agillity: 10
-  charisma: 10
   armor: 10
   magicresist: 10
   totalDamageReduction: 10
@@ -2676,6 +2955,9 @@ MonoBehaviour:
   frostresist: 10
   fireresist: 10
   shadowresist: 10
+  strength: 10
+  agillity: 10
+  charisma: 10
   stunChance: 1
   movementspeed: 1
   criticalChance: 0
@@ -2724,6 +3006,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   passive: {fileID: 11400000, guid: 1d07d42c6928c854881936f535ea62ad, type: 2}
   key: 0
+--- !u!114 &279637151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279637145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08e758107a962d644ab42583303f792a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelingSkillList:
+  - {fileID: 915836969}
+  player: {fileID: 279637147}
 --- !u!1 &294456673
 GameObject:
   m_ObjectHideFlags: 0
@@ -2772,6 +3069,7 @@ GameObject:
   - component: {fileID: 361402048}
   - component: {fileID: 361402050}
   - component: {fileID: 361402049}
+  - component: {fileID: 361402051}
   m_Layer: 0
   m_Name: DuoSkill2
   m_TagString: Untagged
@@ -2836,6 +3134,158 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 361402047}
   m_CullTransparentMesh: 1
+--- !u!114 &361402051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361402047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
+--- !u!1 &362483495
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 362483496}
+  - component: {fileID: 362483499}
+  - component: {fileID: 362483498}
+  - component: {fileID: 362483497}
+  m_Layer: 0
+  m_Name: Button
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &362483496
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362483495}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 818930690}
+  m_Father: {fileID: 515840004}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -80, y: -574}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &362483497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362483495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 362483498}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 279637147}
+        m_TargetAssemblyTypeName: PassiveTestPlayer, Assembly-CSharp
+        m_MethodName: IncreaseStat
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: vitallity
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &362483498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362483495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &362483499
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362483495}
+  m_CullTransparentMesh: 1
 --- !u!1 &375573500
 GameObject:
   m_ObjectHideFlags: 0
@@ -2847,6 +3297,7 @@ GameObject:
   - component: {fileID: 375573501}
   - component: {fileID: 375573503}
   - component: {fileID: 375573502}
+  - component: {fileID: 375573504}
   m_Layer: 0
   m_Name: SingleSkill2
   m_TagString: Untagged
@@ -2911,6 +3362,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 375573500}
   m_CullTransparentMesh: 1
+--- !u!114 &375573504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375573500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &379865849
 GameObject:
   m_ObjectHideFlags: 0
@@ -3011,6 +3481,7 @@ GameObject:
   - component: {fileID: 383887217}
   - component: {fileID: 383887219}
   - component: {fileID: 383887218}
+  - component: {fileID: 383887220}
   m_Layer: 0
   m_Name: TrippleSkill1
   m_TagString: Untagged
@@ -3075,6 +3546,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 383887216}
   m_CullTransparentMesh: 1
+--- !u!114 &383887220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383887216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &385377058
 GameObject:
   m_ObjectHideFlags: 0
@@ -3086,6 +3576,7 @@ GameObject:
   - component: {fileID: 385377059}
   - component: {fileID: 385377061}
   - component: {fileID: 385377060}
+  - component: {fileID: 385377062}
   m_Layer: 0
   m_Name: DuoSkill2
   m_TagString: Untagged
@@ -3150,6 +3641,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 385377058}
   m_CullTransparentMesh: 1
+--- !u!114 &385377062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385377058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &385657594
 GameObject:
   m_ObjectHideFlags: 0
@@ -3236,6 +3746,7 @@ GameObject:
   - component: {fileID: 397424905}
   - component: {fileID: 397424907}
   - component: {fileID: 397424906}
+  - component: {fileID: 397424908}
   m_Layer: 0
   m_Name: TrippleSkill1
   m_TagString: Untagged
@@ -3300,6 +3811,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 397424904}
   m_CullTransparentMesh: 1
+--- !u!114 &397424908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397424904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &417644872
 GameObject:
   m_ObjectHideFlags: 0
@@ -3674,6 +4204,7 @@ GameObject:
   - component: {fileID: 456050101}
   - component: {fileID: 456050103}
   - component: {fileID: 456050102}
+  - component: {fileID: 456050104}
   m_Layer: 0
   m_Name: DuoSkill1
   m_TagString: Untagged
@@ -3738,6 +4269,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 456050100}
   m_CullTransparentMesh: 1
+--- !u!114 &456050104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456050100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &460069082
 GameObject:
   m_ObjectHideFlags: 0
@@ -3749,6 +4299,7 @@ GameObject:
   - component: {fileID: 460069083}
   - component: {fileID: 460069085}
   - component: {fileID: 460069084}
+  - component: {fileID: 460069086}
   m_Layer: 0
   m_Name: DuoSkill3
   m_TagString: Untagged
@@ -3813,6 +4364,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 460069082}
   m_CullTransparentMesh: 1
+--- !u!114 &460069086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460069082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &477863091
 GameObject:
   m_ObjectHideFlags: 0
@@ -4050,6 +4620,7 @@ GameObject:
   - component: {fileID: 511847507}
   - component: {fileID: 511847509}
   - component: {fileID: 511847508}
+  - component: {fileID: 511847510}
   m_Layer: 0
   m_Name: DuoSkill1
   m_TagString: Untagged
@@ -4114,6 +4685,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 511847506}
   m_CullTransparentMesh: 1
+--- !u!114 &511847510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511847506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &515645332
 GameObject:
   m_ObjectHideFlags: 0
@@ -4194,6 +4784,7 @@ RectTransform:
   - {fileID: 222257736}
   - {fileID: 1740012578}
   - {fileID: 2114637829}
+  - {fileID: 362483496}
   m_Father: {fileID: 258652876}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4274,6 +4865,7 @@ GameObject:
   - component: {fileID: 520904193}
   - component: {fileID: 520904195}
   - component: {fileID: 520904194}
+  - component: {fileID: 520904196}
   m_Layer: 0
   m_Name: DuoSkill2
   m_TagString: Untagged
@@ -4338,6 +4930,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 520904192}
   m_CullTransparentMesh: 1
+--- !u!114 &520904196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520904192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &527467908
 GameObject:
   m_ObjectHideFlags: 0
@@ -4747,6 +5358,7 @@ GameObject:
   - component: {fileID: 563930616}
   - component: {fileID: 563930618}
   - component: {fileID: 563930617}
+  - component: {fileID: 563930619}
   m_Layer: 0
   m_Name: DuoSkill3
   m_TagString: Untagged
@@ -4811,6 +5423,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 563930615}
   m_CullTransparentMesh: 1
+--- !u!114 &563930619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563930615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &614743158
 GameObject:
   m_ObjectHideFlags: 0
@@ -5055,6 +5686,7 @@ GameObject:
   - component: {fileID: 683996927}
   - component: {fileID: 683996929}
   - component: {fileID: 683996928}
+  - component: {fileID: 683996930}
   m_Layer: 0
   m_Name: SingleSkill3
   m_TagString: Untagged
@@ -5119,6 +5751,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 683996926}
   m_CullTransparentMesh: 1
+--- !u!114 &683996930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683996926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &684999135
 GameObject:
   m_ObjectHideFlags: 0
@@ -5527,6 +6178,7 @@ GameObject:
   - component: {fileID: 735963874}
   - component: {fileID: 735963876}
   - component: {fileID: 735963875}
+  - component: {fileID: 735963877}
   m_Layer: 0
   m_Name: TrippleSkill1
   m_TagString: Untagged
@@ -5591,6 +6243,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 735963873}
   m_CullTransparentMesh: 1
+--- !u!114 &735963877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735963873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &741879130
 GameObject:
   m_ObjectHideFlags: 0
@@ -5602,6 +6273,7 @@ GameObject:
   - component: {fileID: 741879131}
   - component: {fileID: 741879133}
   - component: {fileID: 741879132}
+  - component: {fileID: 741879134}
   m_Layer: 0
   m_Name: TrippleSkill1
   m_TagString: Untagged
@@ -5666,6 +6338,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 741879130}
   m_CullTransparentMesh: 1
+--- !u!114 &741879134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741879130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &751592212
 GameObject:
   m_ObjectHideFlags: 0
@@ -5677,6 +6368,7 @@ GameObject:
   - component: {fileID: 751592213}
   - component: {fileID: 751592215}
   - component: {fileID: 751592214}
+  - component: {fileID: 751592216}
   m_Layer: 0
   m_Name: SingleSkill1
   m_TagString: Untagged
@@ -5741,6 +6433,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 751592212}
   m_CullTransparentMesh: 1
+--- !u!114 &751592216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751592212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &752353912
 GameObject:
   m_ObjectHideFlags: 0
@@ -5946,6 +6657,7 @@ GameObject:
   - component: {fileID: 756495403}
   - component: {fileID: 756495405}
   - component: {fileID: 756495404}
+  - component: {fileID: 756495406}
   m_Layer: 0
   m_Name: TrippleSkill2
   m_TagString: Untagged
@@ -6010,6 +6722,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 756495402}
   m_CullTransparentMesh: 1
+--- !u!114 &756495406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756495402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &782012998
 GameObject:
   m_ObjectHideFlags: 0
@@ -6021,6 +6752,7 @@ GameObject:
   - component: {fileID: 782012999}
   - component: {fileID: 782013001}
   - component: {fileID: 782013000}
+  - component: {fileID: 782013002}
   m_Layer: 0
   m_Name: DuoSkill2
   m_TagString: Untagged
@@ -6085,6 +6817,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 782012998}
   m_CullTransparentMesh: 1
+--- !u!114 &782013002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782012998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &782275038
 GameObject:
   m_ObjectHideFlags: 0
@@ -6096,6 +6847,7 @@ GameObject:
   - component: {fileID: 782275039}
   - component: {fileID: 782275041}
   - component: {fileID: 782275040}
+  - component: {fileID: 782275042}
   m_Layer: 0
   m_Name: TrippleSkill2
   m_TagString: Untagged
@@ -6160,6 +6912,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 782275038}
   m_CullTransparentMesh: 1
+--- !u!114 &782275042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782275038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &783350776
 GameObject:
   m_ObjectHideFlags: 0
@@ -6328,6 +7099,7 @@ GameObject:
   - component: {fileID: 805198236}
   - component: {fileID: 805198238}
   - component: {fileID: 805198237}
+  - component: {fileID: 805198239}
   m_Layer: 0
   m_Name: SingleSkill1
   m_TagString: Untagged
@@ -6391,6 +7163,104 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 805198235}
+  m_CullTransparentMesh: 1
+--- !u!114 &805198239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 805198235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
+--- !u!1 &818930689
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 818930690}
+  - component: {fileID: 818930692}
+  - component: {fileID: 818930691}
+  m_Layer: 0
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &818930690
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818930689}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 362483496}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &818930691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818930689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Button
+--- !u!222 &818930692
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818930689}
   m_CullTransparentMesh: 1
 --- !u!1 &819619775
 GameObject:
@@ -6522,6 +7392,7 @@ GameObject:
   - component: {fileID: 823726207}
   - component: {fileID: 823726209}
   - component: {fileID: 823726208}
+  - component: {fileID: 823726210}
   m_Layer: 0
   m_Name: TrippleSkill2
   m_TagString: Untagged
@@ -6586,6 +7457,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 823726206}
   m_CullTransparentMesh: 1
+--- !u!114 &823726210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823726206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &838395626
 GameObject:
   m_ObjectHideFlags: 0
@@ -6894,6 +7784,7 @@ GameObject:
   - component: {fileID: 868951934}
   - component: {fileID: 868951936}
   - component: {fileID: 868951935}
+  - component: {fileID: 868951937}
   m_Layer: 0
   m_Name: TrippleSkill2
   m_TagString: Untagged
@@ -6958,6 +7849,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 868951933}
   m_CullTransparentMesh: 1
+--- !u!114 &868951937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868951933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &872810217
 GameObject:
   m_ObjectHideFlags: 0
@@ -7044,6 +7954,7 @@ GameObject:
   - component: {fileID: 883415986}
   - component: {fileID: 883415988}
   - component: {fileID: 883415987}
+  - component: {fileID: 883415989}
   m_Layer: 0
   m_Name: TrippleSkill1
   m_TagString: Untagged
@@ -7108,6 +8019,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 883415985}
   m_CullTransparentMesh: 1
+--- !u!114 &883415989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883415985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &899186375
 GameObject:
   m_ObjectHideFlags: 0
@@ -7194,6 +8124,7 @@ GameObject:
   - component: {fileID: 915836970}
   - component: {fileID: 915836972}
   - component: {fileID: 915836971}
+  - component: {fileID: 915836973}
   m_Layer: 0
   m_Name: SingleSkill2
   m_TagString: Untagged
@@ -7258,6 +8189,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 915836969}
   m_CullTransparentMesh: 1
+--- !u!114 &915836973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915836969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 20
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &927214268
 GameObject:
   m_ObjectHideFlags: 0
@@ -7269,6 +8219,7 @@ GameObject:
   - component: {fileID: 927214269}
   - component: {fileID: 927214271}
   - component: {fileID: 927214270}
+  - component: {fileID: 927214272}
   m_Layer: 0
   m_Name: TrippleSkill1
   m_TagString: Untagged
@@ -7333,6 +8284,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 927214268}
   m_CullTransparentMesh: 1
+--- !u!114 &927214272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927214268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &932774879
 GameObject:
   m_ObjectHideFlags: 0
@@ -7497,6 +8467,7 @@ GameObject:
   - component: {fileID: 938109950}
   - component: {fileID: 938109952}
   - component: {fileID: 938109951}
+  - component: {fileID: 938109953}
   m_Layer: 0
   m_Name: DuoSkill1
   m_TagString: Untagged
@@ -7561,6 +8532,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 938109949}
   m_CullTransparentMesh: 1
+--- !u!114 &938109953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938109949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &942806851
 GameObject:
   m_ObjectHideFlags: 0
@@ -7649,6 +8639,7 @@ GameObject:
   - component: {fileID: 952875641}
   - component: {fileID: 952875643}
   - component: {fileID: 952875642}
+  - component: {fileID: 952875644}
   m_Layer: 0
   m_Name: DuoSkill2
   m_TagString: Untagged
@@ -7713,6 +8704,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 952875640}
   m_CullTransparentMesh: 1
+--- !u!114 &952875644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952875640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &959821670
 GameObject:
   m_ObjectHideFlags: 0
@@ -8158,6 +9168,7 @@ GameObject:
   - component: {fileID: 997410951}
   - component: {fileID: 997410953}
   - component: {fileID: 997410952}
+  - component: {fileID: 997410954}
   m_Layer: 0
   m_Name: DuoSkill2
   m_TagString: Untagged
@@ -8222,6 +9233,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 997410950}
   m_CullTransparentMesh: 1
+--- !u!114 &997410954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997410950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &1000549274
 GameObject:
   m_ObjectHideFlags: 0
@@ -8308,6 +9338,7 @@ GameObject:
   - component: {fileID: 1010686735}
   - component: {fileID: 1010686737}
   - component: {fileID: 1010686736}
+  - component: {fileID: 1010686738}
   m_Layer: 0
   m_Name: SingleSkill5
   m_TagString: Untagged
@@ -8372,6 +9403,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1010686734}
   m_CullTransparentMesh: 1
+--- !u!114 &1010686738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010686734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &1019486661
 GameObject:
   m_ObjectHideFlags: 0
@@ -8383,6 +9433,7 @@ GameObject:
   - component: {fileID: 1019486662}
   - component: {fileID: 1019486664}
   - component: {fileID: 1019486663}
+  - component: {fileID: 1019486665}
   m_Layer: 0
   m_Name: TrippleSkill2
   m_TagString: Untagged
@@ -8447,6 +9498,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1019486661}
   m_CullTransparentMesh: 1
+--- !u!114 &1019486665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019486661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &1028434600
 GameObject:
   m_ObjectHideFlags: 0
@@ -8624,6 +9694,7 @@ GameObject:
   - component: {fileID: 1069769770}
   - component: {fileID: 1069769772}
   - component: {fileID: 1069769771}
+  - component: {fileID: 1069769773}
   m_Layer: 0
   m_Name: TrippleSkill1
   m_TagString: Untagged
@@ -8688,6 +9759,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1069769769}
   m_CullTransparentMesh: 1
+--- !u!114 &1069769773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069769769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &1078532149
 GameObject:
   m_ObjectHideFlags: 0
@@ -9006,6 +10096,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1120563993}
   m_CullTransparentMesh: 1
+--- !u!1 &1130479710
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1130479712}
+  - component: {fileID: 1130479711}
+  m_Layer: 0
+  m_Name: Statistic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1130479711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130479710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af85995f27806ec479951c30a243ec63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unlockControll: {fileID: 279637151}
+  strengthStatAmount: 0
+  vitallityStatAmount: 19
+  charismaStatAmount: 0
+  abillityStatAmount: 0
+  agillityStatAmount: 0
+--- !u!4 &1130479712
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130479710}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1197.8793, y: 806.8829, z: -365.2961}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1132194959
 GameObject:
   m_ObjectHideFlags: 0
@@ -9055,6 +10194,7 @@ GameObject:
   - component: {fileID: 1153071286}
   - component: {fileID: 1153071288}
   - component: {fileID: 1153071287}
+  - component: {fileID: 1153071289}
   m_Layer: 0
   m_Name: SingleSkill2
   m_TagString: Untagged
@@ -9119,6 +10259,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1153071285}
   m_CullTransparentMesh: 1
+--- !u!114 &1153071289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153071285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &1180101977
 GameObject:
   m_ObjectHideFlags: 0
@@ -9130,6 +10289,7 @@ GameObject:
   - component: {fileID: 1180101978}
   - component: {fileID: 1180101980}
   - component: {fileID: 1180101979}
+  - component: {fileID: 1180101981}
   m_Layer: 0
   m_Name: SingleSkill5
   m_TagString: Untagged
@@ -9194,6 +10354,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1180101977}
   m_CullTransparentMesh: 1
+--- !u!114 &1180101981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180101977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &1183906519
 GameObject:
   m_ObjectHideFlags: 0
@@ -9205,6 +10384,7 @@ GameObject:
   - component: {fileID: 1183906520}
   - component: {fileID: 1183906522}
   - component: {fileID: 1183906521}
+  - component: {fileID: 1183906523}
   m_Layer: 0
   m_Name: SingleSkill5
   m_TagString: Untagged
@@ -9269,6 +10449,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1183906519}
   m_CullTransparentMesh: 1
+--- !u!114 &1183906523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183906519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &1190743179
 GameObject:
   m_ObjectHideFlags: 0
@@ -9433,6 +10632,7 @@ GameObject:
   - component: {fileID: 1221687746}
   - component: {fileID: 1221687748}
   - component: {fileID: 1221687747}
+  - component: {fileID: 1221687749}
   m_Layer: 0
   m_Name: DuoSkill2
   m_TagString: Untagged
@@ -9497,6 +10697,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1221687745}
   m_CullTransparentMesh: 1
+--- !u!114 &1221687749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221687745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &1233566660
 GameObject:
   m_ObjectHideFlags: 0
@@ -9508,6 +10727,7 @@ GameObject:
   - component: {fileID: 1233566661}
   - component: {fileID: 1233566663}
   - component: {fileID: 1233566662}
+  - component: {fileID: 1233566664}
   m_Layer: 0
   m_Name: DuoSkill3
   m_TagString: Untagged
@@ -9572,6 +10792,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1233566660}
   m_CullTransparentMesh: 1
+--- !u!114 &1233566664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233566660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &1234541859
 GameObject:
   m_ObjectHideFlags: 0
@@ -9966,6 +11205,7 @@ GameObject:
   - component: {fileID: 1286204899}
   - component: {fileID: 1286204901}
   - component: {fileID: 1286204900}
+  - component: {fileID: 1286204902}
   m_Layer: 0
   m_Name: TrippleSkill1
   m_TagString: Untagged
@@ -10030,6 +11270,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1286204898}
   m_CullTransparentMesh: 1
+--- !u!114 &1286204902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286204898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &1295050465
 GameObject:
   m_ObjectHideFlags: 0
@@ -10041,6 +11300,7 @@ GameObject:
   - component: {fileID: 1295050466}
   - component: {fileID: 1295050468}
   - component: {fileID: 1295050467}
+  - component: {fileID: 1295050469}
   m_Layer: 0
   m_Name: DuoSkill1
   m_TagString: Untagged
@@ -10105,6 +11365,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1295050465}
   m_CullTransparentMesh: 1
+--- !u!114 &1295050469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295050465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &1297460809
 GameObject:
   m_ObjectHideFlags: 0
@@ -10322,6 +11601,7 @@ GameObject:
   - component: {fileID: 1321547962}
   - component: {fileID: 1321547964}
   - component: {fileID: 1321547963}
+  - component: {fileID: 1321547965}
   m_Layer: 0
   m_Name: DuoSkill2
   m_TagString: Untagged
@@ -10386,6 +11666,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1321547961}
   m_CullTransparentMesh: 1
+--- !u!114 &1321547965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321547961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &1323071638
 GameObject:
   m_ObjectHideFlags: 0
@@ -10594,6 +11893,7 @@ GameObject:
   - component: {fileID: 1338537053}
   - component: {fileID: 1338537055}
   - component: {fileID: 1338537054}
+  - component: {fileID: 1338537056}
   m_Layer: 0
   m_Name: TrippleSkill2
   m_TagString: Untagged
@@ -10658,6 +11958,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1338537052}
   m_CullTransparentMesh: 1
+--- !u!114 &1338537056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1338537052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &1346334874
 GameObject:
   m_ObjectHideFlags: 0
@@ -10897,6 +12216,7 @@ GameObject:
   - component: {fileID: 1359864806}
   - component: {fileID: 1359864808}
   - component: {fileID: 1359864807}
+  - component: {fileID: 1359864809}
   m_Layer: 0
   m_Name: DuoSkill3
   m_TagString: Untagged
@@ -10961,6 +12281,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1359864805}
   m_CullTransparentMesh: 1
+--- !u!114 &1359864809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359864805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &1360349731
 GameObject:
   m_ObjectHideFlags: 0
@@ -11219,6 +12558,7 @@ GameObject:
   - component: {fileID: 1375283393}
   - component: {fileID: 1375283395}
   - component: {fileID: 1375283394}
+  - component: {fileID: 1375283396}
   m_Layer: 0
   m_Name: SingleSkill4
   m_TagString: Untagged
@@ -11283,6 +12623,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1375283392}
   m_CullTransparentMesh: 1
+--- !u!114 &1375283396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375283392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &1397882099
 GameObject:
   m_ObjectHideFlags: 0
@@ -11567,6 +12926,7 @@ GameObject:
   - component: {fileID: 1465315124}
   - component: {fileID: 1465315126}
   - component: {fileID: 1465315125}
+  - component: {fileID: 1465315127}
   m_Layer: 0
   m_Name: SingleSkill5
   m_TagString: Untagged
@@ -11631,6 +12991,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1465315123}
   m_CullTransparentMesh: 1
+--- !u!114 &1465315127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1465315123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &1478375922
 GameObject:
   m_ObjectHideFlags: 0
@@ -11642,6 +13021,7 @@ GameObject:
   - component: {fileID: 1478375923}
   - component: {fileID: 1478375925}
   - component: {fileID: 1478375924}
+  - component: {fileID: 1478375926}
   m_Layer: 0
   m_Name: DuoSkill1
   m_TagString: Untagged
@@ -11706,6 +13086,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1478375922}
   m_CullTransparentMesh: 1
+--- !u!114 &1478375926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478375922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &1498582889
 GameObject:
   m_ObjectHideFlags: 0
@@ -12013,6 +13412,7 @@ GameObject:
   - component: {fileID: 1568403896}
   - component: {fileID: 1568403898}
   - component: {fileID: 1568403897}
+  - component: {fileID: 1568403899}
   m_Layer: 0
   m_Name: DuoSkill2
   m_TagString: Untagged
@@ -12077,6 +13477,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1568403895}
   m_CullTransparentMesh: 1
+--- !u!114 &1568403899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568403895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &1588038095
 GameObject:
   m_ObjectHideFlags: 0
@@ -12607,6 +14026,7 @@ GameObject:
   - component: {fileID: 1687556819}
   - component: {fileID: 1687556821}
   - component: {fileID: 1687556820}
+  - component: {fileID: 1687556822}
   m_Layer: 0
   m_Name: SingleSkill2
   m_TagString: Untagged
@@ -12671,6 +14091,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687556818}
   m_CullTransparentMesh: 1
+--- !u!114 &1687556822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687556818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &1703267254
 GameObject:
   m_ObjectHideFlags: 0
@@ -12757,6 +14196,7 @@ GameObject:
   - component: {fileID: 1707394897}
   - component: {fileID: 1707394899}
   - component: {fileID: 1707394898}
+  - component: {fileID: 1707394900}
   m_Layer: 0
   m_Name: DuoSkill3
   m_TagString: Untagged
@@ -12821,6 +14261,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1707394896}
   m_CullTransparentMesh: 1
+--- !u!114 &1707394900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707394896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &1732970846
 GameObject:
   m_ObjectHideFlags: 0
@@ -12994,6 +14453,7 @@ GameObject:
   - component: {fileID: 1756954670}
   - component: {fileID: 1756954672}
   - component: {fileID: 1756954671}
+  - component: {fileID: 1756954673}
   m_Layer: 0
   m_Name: DuoSkill3
   m_TagString: Untagged
@@ -13058,6 +14518,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1756954669}
   m_CullTransparentMesh: 1
+--- !u!114 &1756954673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756954669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &1771480570
 GameObject:
   m_ObjectHideFlags: 0
@@ -13069,6 +14548,7 @@ GameObject:
   - component: {fileID: 1771480571}
   - component: {fileID: 1771480573}
   - component: {fileID: 1771480572}
+  - component: {fileID: 1771480574}
   m_Layer: 0
   m_Name: SingleSkill4
   m_TagString: Untagged
@@ -13133,6 +14613,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1771480570}
   m_CullTransparentMesh: 1
+--- !u!114 &1771480574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771480570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &1772528542
 GameObject:
   m_ObjectHideFlags: 0
@@ -13308,6 +14807,7 @@ GameObject:
   - component: {fileID: 1778782699}
   - component: {fileID: 1778782701}
   - component: {fileID: 1778782700}
+  - component: {fileID: 1778782702}
   m_Layer: 0
   m_Name: TrippleSkill2
   m_TagString: Untagged
@@ -13372,6 +14872,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1778782698}
   m_CullTransparentMesh: 1
+--- !u!114 &1778782702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778782698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &1785904494
 GameObject:
   m_ObjectHideFlags: 0
@@ -13383,6 +14902,7 @@ GameObject:
   - component: {fileID: 1785904495}
   - component: {fileID: 1785904497}
   - component: {fileID: 1785904496}
+  - component: {fileID: 1785904498}
   m_Layer: 0
   m_Name: DuoSkill1
   m_TagString: Untagged
@@ -13447,6 +14967,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1785904494}
   m_CullTransparentMesh: 1
+--- !u!114 &1785904498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785904494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &1798122851
 GameObject:
   m_ObjectHideFlags: 0
@@ -13458,6 +14997,7 @@ GameObject:
   - component: {fileID: 1798122852}
   - component: {fileID: 1798122854}
   - component: {fileID: 1798122853}
+  - component: {fileID: 1798122855}
   m_Layer: 0
   m_Name: SingleSkill3
   m_TagString: Untagged
@@ -13522,6 +15062,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1798122851}
   m_CullTransparentMesh: 1
+--- !u!114 &1798122855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798122851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &1803266328
 GameObject:
   m_ObjectHideFlags: 0
@@ -13608,6 +15167,7 @@ GameObject:
   - component: {fileID: 1803631601}
   - component: {fileID: 1803631603}
   - component: {fileID: 1803631602}
+  - component: {fileID: 1803631604}
   m_Layer: 0
   m_Name: DuoSkill1
   m_TagString: Untagged
@@ -13672,6 +15232,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1803631600}
   m_CullTransparentMesh: 1
+--- !u!114 &1803631604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803631600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &1824476874
 GameObject:
   m_ObjectHideFlags: 0
@@ -13958,6 +15537,7 @@ GameObject:
   - component: {fileID: 1874043925}
   - component: {fileID: 1874043927}
   - component: {fileID: 1874043926}
+  - component: {fileID: 1874043928}
   m_Layer: 0
   m_Name: DuoSkill3
   m_TagString: Untagged
@@ -14022,6 +15602,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1874043924}
   m_CullTransparentMesh: 1
+--- !u!114 &1874043928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1874043924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &1890863969
 GameObject:
   m_ObjectHideFlags: 0
@@ -14189,6 +15788,7 @@ GameObject:
   - component: {fileID: 1915554837}
   - component: {fileID: 1915554839}
   - component: {fileID: 1915554838}
+  - component: {fileID: 1915554840}
   m_Layer: 0
   m_Name: DuoSkill1
   m_TagString: Untagged
@@ -14253,6 +15853,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1915554836}
   m_CullTransparentMesh: 1
+--- !u!114 &1915554840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915554836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &1951124118
 GameObject:
   m_ObjectHideFlags: 0
@@ -14264,6 +15883,7 @@ GameObject:
   - component: {fileID: 1951124119}
   - component: {fileID: 1951124121}
   - component: {fileID: 1951124120}
+  - component: {fileID: 1951124122}
   m_Layer: 0
   m_Name: SingleSkill2
   m_TagString: Untagged
@@ -14328,6 +15948,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1951124118}
   m_CullTransparentMesh: 1
+--- !u!114 &1951124122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951124118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &1952260824
 GameObject:
   m_ObjectHideFlags: 0
@@ -14702,6 +16341,7 @@ GameObject:
   - component: {fileID: 1989447708}
   - component: {fileID: 1989447710}
   - component: {fileID: 1989447709}
+  - component: {fileID: 1989447711}
   m_Layer: 0
   m_Name: DuoSkill2
   m_TagString: Untagged
@@ -14766,6 +16406,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1989447707}
   m_CullTransparentMesh: 1
+--- !u!114 &1989447711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989447707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &1990030609
 GameObject:
   m_ObjectHideFlags: 0
@@ -14777,6 +16436,7 @@ GameObject:
   - component: {fileID: 1990030610}
   - component: {fileID: 1990030612}
   - component: {fileID: 1990030611}
+  - component: {fileID: 1990030613}
   m_Layer: 0
   m_Name: SingleSkill4
   m_TagString: Untagged
@@ -14841,6 +16501,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1990030609}
   m_CullTransparentMesh: 1
+--- !u!114 &1990030613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990030609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &1992325474
 GameObject:
   m_ObjectHideFlags: 0
@@ -14852,6 +16531,7 @@ GameObject:
   - component: {fileID: 1992325475}
   - component: {fileID: 1992325477}
   - component: {fileID: 1992325476}
+  - component: {fileID: 1992325478}
   m_Layer: 0
   m_Name: DuoSkill3
   m_TagString: Untagged
@@ -14916,6 +16596,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1992325474}
   m_CullTransparentMesh: 1
+--- !u!114 &1992325478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992325474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &2009621099
 GameObject:
   m_ObjectHideFlags: 0
@@ -14927,6 +16626,7 @@ GameObject:
   - component: {fileID: 2009621100}
   - component: {fileID: 2009621102}
   - component: {fileID: 2009621101}
+  - component: {fileID: 2009621103}
   m_Layer: 0
   m_Name: SingleSkill1
   m_TagString: Untagged
@@ -14991,6 +16691,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2009621099}
   m_CullTransparentMesh: 1
+--- !u!114 &2009621103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009621099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &2022146393
 GameObject:
   m_ObjectHideFlags: 0
@@ -15194,6 +16913,7 @@ GameObject:
   - component: {fileID: 2061780773}
   - component: {fileID: 2061780775}
   - component: {fileID: 2061780774}
+  - component: {fileID: 2061780776}
   m_Layer: 0
   m_Name: PentaSkill
   m_TagString: Untagged
@@ -15258,6 +16978,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2061780772}
   m_CullTransparentMesh: 1
+--- !u!114 &2061780776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061780772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &2070372693
 GameObject:
   m_ObjectHideFlags: 0
@@ -15421,6 +17160,7 @@ GameObject:
   - component: {fileID: 2075865076}
   - component: {fileID: 2075865078}
   - component: {fileID: 2075865077}
+  - component: {fileID: 2075865079}
   m_Layer: 0
   m_Name: TrippleSkill2
   m_TagString: Untagged
@@ -15485,6 +17225,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2075865075}
   m_CullTransparentMesh: 1
+--- !u!114 &2075865079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075865075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &2082955551
 GameObject:
   m_ObjectHideFlags: 0
@@ -15496,6 +17255,7 @@ GameObject:
   - component: {fileID: 2082955552}
   - component: {fileID: 2082955554}
   - component: {fileID: 2082955553}
+  - component: {fileID: 2082955555}
   m_Layer: 0
   m_Name: SingleSkill3
   m_TagString: Untagged
@@ -15560,6 +17320,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2082955551}
   m_CullTransparentMesh: 1
+--- !u!114 &2082955555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2082955551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &2088706484
 GameObject:
   m_ObjectHideFlags: 0
@@ -15932,6 +17711,7 @@ GameObject:
   - component: {fileID: 2127146203}
   - component: {fileID: 2127146205}
   - component: {fileID: 2127146204}
+  - component: {fileID: 2127146206}
   m_Layer: 0
   m_Name: SingleSkill1
   m_TagString: Untagged
@@ -15996,6 +17776,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2127146202}
   m_CullTransparentMesh: 1
+--- !u!114 &2127146206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127146202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vitallityScore: 0
+  abillityScore: 0
+  agillityScore: 0
+  charimsaScore: 0
+  strengthScore: 0
+  lockedSprite: {fileID: 0}
+  unlockedSprite: {fileID: 0}
 --- !u!1 &2134892488
 GameObject:
   m_ObjectHideFlags: 0
