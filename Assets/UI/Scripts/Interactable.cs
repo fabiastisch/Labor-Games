@@ -38,7 +38,7 @@ namespace UI.Scripts
             currentTextPopup.GetTextMesh().sortingOrder = 5;
         }
 
-        private void SetUnInteractable()
+        protected void SetUnInteractable()
         {
             if (currentTextPopup)
             {
@@ -46,6 +46,11 @@ namespace UI.Scripts
             }
 
             currentTextPopup = null;
+        }
+
+        public void SetLayerInteractable(bool active)
+        {
+            gameObject.layer = active ? 8 : 0;
         }
 
         protected virtual void OnDrawGizmosSelected()

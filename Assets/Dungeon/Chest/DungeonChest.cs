@@ -22,6 +22,8 @@ namespace Dungeon.Chest
         {
             // Can only be interacted once 
             isInteractable = false;
+            SetUnInteractable();
+            SetLayerInteractable(false);
 
             _animator.Play("Open");
             DropItems();
