@@ -36,6 +36,7 @@ namespace LevelingAndClasses.ClassFolder
             if(classSlot != null)
              classSlot.RemovePassiveSlot();
             classSlot = null;
+
         }
     
         public void OnPointerDown(PointerEventData eventData)

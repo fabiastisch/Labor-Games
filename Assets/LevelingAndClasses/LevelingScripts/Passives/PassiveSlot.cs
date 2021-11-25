@@ -13,7 +13,7 @@ public class PassiveSlot : MonoBehaviour
     private float repeatingSeconds;
     private float firstActivationForRepeat;
     private bool invokerStarted = false;
-    private bool equiped = false;
+    [SerializeField] private bool equiped = false;
 
     private PassiveState state = PassiveState.ready;
     public KeyCode key;
