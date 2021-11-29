@@ -2,10 +2,11 @@ using UI.Scripts;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Utils;
+using Utils.SaveSystem;
 
 namespace Player
 {
-    public abstract class PlayerBase : Combat.Character
+    public abstract class PlayerBase : Combat.Character, ISaveable
     {
         [SerializeField] [Range(-180, 180)] private int tmpMouseAngle;
         [SerializeField] private bool overrideMouseAngle = false;
@@ -160,7 +161,8 @@ namespace Player
                 if (interactableObject.CompareTag("Weapon"))
                 {
                     hand.ChangeWeapon(interactableObject);
-                }else if (activeInteractable)
+                }
+                else if (activeInteractable)
                 {
                     activeInteractable.Interact();
                 }
@@ -282,6 +284,27 @@ namespace Player
                 playSprite.sprite = eightWaysSprites[1];
                 hand.RotateHand(Rotations.DownRight);
             }
+        }
+
+        public object CaptureState()
+        {
+            return new PlayerData(this);
+        }
+
+        public void RestoreState(object state)
+        {
+            transform.position = ((PlayerData) state).position;
+        }
+    }
+
+    [System.Serializable]
+    public class PlayerData
+    {
+        public Vector3 position;
+
+        public PlayerData(PlayerBase playerBase)
+        {
+            position = playerBase.transform.position;
         }
     }
 }
