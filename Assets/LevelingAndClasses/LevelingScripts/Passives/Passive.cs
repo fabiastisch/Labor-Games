@@ -4,6 +4,7 @@ using LevelingAndClasses.ClassFolder;
 using UnityEngine;
 using UnityEngine.UI;
 
+[CreateAssetMenuAttribute(menuName = "ScriptableObject/Passive")]
 public class Passive : ScriptableObject
 {
    //Basic Class for Passives

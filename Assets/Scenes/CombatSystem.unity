@@ -4469,72 +4469,17 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
---- !u!1 &1888214836
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1888214837}
-  m_Layer: 0
-  m_Name: FirePoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1888214837
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1888214836}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.14814818, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2096574067}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1983655934 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1697252049, guid: 5b200b5938c353445998557fb82e7309, type: 3}
   m_PrefabInstance: {fileID: 8548802803066482136}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2039819060}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &2039819060 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8548802804282458401, guid: 5b200b5938c353445998557fb82e7309, type: 3}
-  m_PrefabInstance: {fileID: 8548802803066482136}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2039819061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2039819060}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3021bf5bc09913a4c877056846527019, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  passive: {fileID: 11400000, guid: a2857478d82355742a71c51fbbe3c0dd, type: 2}
-  equiped: 1
-  key: 32
---- !u!4 &2096574067 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2463536332101208796, guid: 5b200b5938c353445998557fb82e7309, type: 3}
-  m_PrefabInstance: {fileID: 8548802803066482136}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8548802803066482136
 PrefabInstance:
   m_ObjectHideFlags: 0

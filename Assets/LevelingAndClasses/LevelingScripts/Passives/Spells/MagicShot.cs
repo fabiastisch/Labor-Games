@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenuAttribute(fileName = "MagicFireball", menuName = "Abillitys/Fireball")]
+[CreateAssetMenuAttribute(menuName = "Abillitys/Fireball")]
 public class MagicShot : Passive
 
 {
@@ -21,7 +21,13 @@ public class MagicShot : Passive
     {
         
         //Todo find a way to define a other transform without get child
-        firePoint = parent.transform.GetChild(0).GetChild(0).GetChild(1).transform;
+        Transform findChildName = parent.transform.Find("Hand").Find("FirePoint");
+        if (findChildName != null)
+        {
+            firePoint = findChildName;
+        }
+        else 
+            firePoint = null;
         FireBall();
     }
 
