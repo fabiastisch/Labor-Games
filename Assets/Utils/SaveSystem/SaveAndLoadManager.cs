@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
@@ -41,19 +42,24 @@ namespace Utils.SaveSystem
         }
 
         #endregion
-        
+
+        /**
+         * TODO: Add multiple files for diff classes
+         */
         private string SavePath => $"{Application.persistentDataPath}/save.wtf";
 
+
         [ContextMenu("Save")]
-        private void Save()
+        public void Save()
         {
+            Debug.Log(SavePath);
             var state = LoadFile();
             CaptureState(state);
             SaveFile(state);
         }
 
         [ContextMenu("Load")]
-        private void Load()
+        public void Load()
         {
             var state = LoadFile();
             RestoreState(state);
@@ -61,9 +67,10 @@ namespace Utils.SaveSystem
 
         private void SaveFile(object state)
         {
+            Debug.Log("Save File");
             using (var stream = File.Open(SavePath, FileMode.Create))
             {
-                var formatter = new BinaryFormatter();
+                var formatter = GetBinaryFormatter();
                 formatter.Serialize(stream, state);
             }
         }
@@ -77,7 +84,7 @@ namespace Utils.SaveSystem
 
             using (FileStream stream = File.Open(SavePath, FileMode.Open))
             {
-                var formatter = new BinaryFormatter();
+                var formatter = GetBinaryFormatter();
                 return (Dictionary<string, object>) formatter.Deserialize(stream);
             }
         }
@@ -99,6 +106,20 @@ namespace Utils.SaveSystem
                     saveable.RestoreState(value);
                 }
             }
+        }
+
+        public BinaryFormatter GetBinaryFormatter()
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            SurrogateSelector selector = new SurrogateSelector();
+            Vector3SerializationSurrogate vector3SerializationSurrogate = new Vector3SerializationSurrogate();
+
+            selector.AddSurrogate(typeof(Vector3), new StreamingContext(StreamingContextStates.All),
+                vector3SerializationSurrogate);
+
+            formatter.SurrogateSelector = selector;
+
+            return formatter;
         }
     }
 }
