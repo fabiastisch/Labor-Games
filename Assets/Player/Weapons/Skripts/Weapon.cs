@@ -1,5 +1,6 @@
 using UnityEngine;
 using Combat;
+using Effects;
 
 namespace EquipableWeapon
 {
@@ -19,13 +20,20 @@ namespace EquipableWeapon
         public float baseAttackcooldown;
         public float baseAOERange;
 
-        [Header("Bonustats")] public Effekts.Effekt weaponEffekt;
+        [Header("Bonustats")] public Effect weaponEffekt;
+        public string effectDescription;
         public WeaponRarity weaponRarity;
         public DamageType damageType;
+
+        private EffectBonusStats weaponEffects;
+        private Effect effect;
+        public string bonusEffectStats;
 
         [Header("Debug")] [SerializeField] protected bool drawGizmos = false;
 
         private SpriteRenderer spriteRenderer;
+        private EffectGenerator effectGenerator;
+        private bool HasEffekt = false;
 
 
         public void Start()
@@ -35,6 +43,14 @@ namespace EquipableWeapon
             baseAttackcooldown /= ((float) weaponRarity / 2);
             baseDamage *= ((float) weaponRarity / 2);
             ChangeSpriteColor(weaponRarity);
+
+            weaponEffects = effectGenerator.GenerateEffect(weaponRarity, damageType);
+
+            //Return if you didnt got an effect on the weapon
+            if (weaponEffects == null) return;
+
+            weaponEffects.effect.effectDescription = weaponEffekt.effectDescription;
+
         }
 
         private void ChangeSpriteColor(WeaponRarity rarity)
