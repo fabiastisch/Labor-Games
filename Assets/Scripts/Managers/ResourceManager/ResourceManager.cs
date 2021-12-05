@@ -5,11 +5,15 @@ using UnityEngine;
 
 public class ResourceManager : MonoBehaviour
 {
+
+    public static ResourceManager Instance { get; private set; } 
+    
     private Dictionary<ResourceTypeSO, float> resourceAmountDictionary;
 
     //Initialisations without external dependancy on Awake / with external dependancy on Start
     private void Awake()
     {
+        Instance = this;
         //holds Type and Value of Resource
         resourceAmountDictionary = new Dictionary<ResourceTypeSO, float>();
 
