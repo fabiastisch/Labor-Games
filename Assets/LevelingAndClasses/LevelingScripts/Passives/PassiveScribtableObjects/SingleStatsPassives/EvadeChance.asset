@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16da1f5718f4ce6448f730f9285d1e66, type: 3}
-  m_Name: Movementspeed
+  m_Script: {fileID: 11500000, guid: 9361dd1ae018471c93ca852dd6cf4c90, type: 3}
+  m_Name: EvadeChance
   m_EditorClassIdentifier: 
-  name: Movementspeed
+  name: EvadeChance
   cooldown: 0
   activeTime: 0
   description: 
@@ -20,7 +20,7 @@ MonoBehaviour:
   repeatingSeconds: 0
   firstActivationForRepeat: 0
   passiveState: 0
-  skillsAndPassivesType: 1
-  passiveImage: {fileID: 8578349992669868677, guid: 5c6f2fdc25f1b3e47888a500e3d4a83d, type: 3}
-  color: {r: 0.9245283, g: 0.0232585, b: 0.18223836, a: 1}
-  movementspeed: 1.5
+  skillsAndPassivesType: 0
+  passiveImage: {fileID: 0}
+  color: {r: 0, g: 0, b: 0, a: 0}
+  evadeChance: 40
