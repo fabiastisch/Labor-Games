@@ -6,25 +6,32 @@ using UnityEngine;
 public class Movementspeed : Passive
 {
     public float movementspeed = 1f;
+    private StatTypeListSO statTypeList;
+     private void Awake()
+        { 
+            statTypeList = Resources.Load<StatTypeListSO>(typeof(StatTypeListSO).Name);
+        }
     public override void Activation(GameObject parent)
     {
-        Debug.Log("CooldownReduction Perk Activation");
-        PassiveTestPlayer player =  parent.GetComponent<PassiveTestPlayer>();
-
-        player.movementspeed += movementspeed;
+        Debug.Log("Movementspeed Perk Activation");
+        // PassiveTestPlayer player =  parent.GetComponent<PassiveTestPlayer>();
+        //
+        // player.movementspeed += movementspeed;
+        //
+        // player.GetStats();
+        StatManager.Instance.AddStat(statTypeList.list[9], movementspeed);
         
-        player.GetStats();
 
     }
 
     public override void BeginCooldown(GameObject parent)
     {
-        Debug.Log("CooldownReduction deactivated");
-        PassiveTestPlayer player =  parent.GetComponent<PassiveTestPlayer>();
-        
-        player.movementspeed -= movementspeed;
-        
-        player.GetStats();
-        
+        Debug.Log("Movementspeed deactivated");
+        // PassiveTestPlayer player =  parent.GetComponent<PassiveTestPlayer>();
+        //
+        // player.movementspeed -= movementspeed;
+        //
+        // player.GetStats();
+        StatManager.Instance.RemoveStat(statTypeList.list[9], movementspeed);
     }
 }
