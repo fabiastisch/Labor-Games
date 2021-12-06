@@ -55,7 +55,8 @@ namespace Dungeon.DungeonGeneration
                 generator.currentSpawn.transform.position = first.center;
             }
 
-            CreateTrapRooms(roomsList);
+            // should be index 1 to (last-1)
+            CreateTrapRooms(roomsList.GetRange(1, roomsList.Count - 1));
 
             HashSet<Vector2Int> bonusRoom = CreateBonusRoom(roomsList);
 
@@ -487,7 +488,7 @@ namespace Dungeon.DungeonGeneration
 
                     //Debug.Log(i + " | " + countOffset + " size: " + findAll.Count);
 
-                    
+
                     int max = countOffset;
                     if (corridorTrapsCount == 0)
                     {
@@ -501,7 +502,7 @@ namespace Dungeon.DungeonGeneration
                     for (int j = Random.Range(0, max), k = 0; j < countOffset; j++, k++)
                     {
                         if (k >= corridorTrapsCount) break;
-                        
+
                         //Debug.Log(findAll[i + j] + " " + i + " | " + j + " size: " + findAll.Count);
                         var position = new Vector3(selectedCorridorWalls[i + j].position.x,
                             selectedCorridorWalls[i + j].position.y);
