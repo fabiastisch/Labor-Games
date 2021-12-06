@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Statistics: MonoBehaviour
 {
+    public static Statistics Instance { get; private set; } 
+    
     public event EventHandler OnStatisticChange;
     public static int STAT_MIN = 0;
     public static int STAT_MAX = 100;
@@ -27,6 +29,7 @@ public class Statistics: MonoBehaviour
 
     private void Awake()
     {
+        Instance = this;
         strengthStat = new OneStat(strengthStatAmount);
         vitallityStat = new OneStat(vitallityStatAmount);
         charismaStat = new OneStat(charismaStatAmount);
@@ -52,7 +55,7 @@ public class Statistics: MonoBehaviour
     {
         Debug.Log("SetStatisticAmount stat : " + statType + " and Value : " + staticValue);
        GetOneStat(statType).SetStatisticAmount(staticValue);
-        if (OnStatisticChange != null) OnStatisticChange(this, EventArgs.Empty);
+       if (OnStatisticChange != null) OnStatisticChange(this, EventArgs.Empty);
     }
 
     public void IncreaseStatAmount(Type statType)

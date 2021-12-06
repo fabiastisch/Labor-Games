@@ -44,4 +44,14 @@ public class StatManager : MonoBehaviour
     {
         statAmountDictionary[statType] -= amount;
     }
+
+    public void MultiplyStat(StatTypeSO statType, float amount)
+    {
+        statAmountDictionary[statType] *= amount;
+    }
+    
+    public void DivideStat(StatTypeSO statType, float amount)
+    {
+        statAmountDictionary[statType] /= amount;
+    }
 }
