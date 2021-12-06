@@ -20,37 +20,49 @@ namespace EquipableWeapon
         public float baseAttackcooldown;
         public float baseAOERange;
 
-        [Header("Bonustats")] public Effect weaponEffekt;
-        public string effectDescription;
-        public WeaponRarity weaponRarity;
+        [Header("Rarity & DamageType")] public WeaponRarity weaponRarity;
         public DamageType damageType;
 
+
+        [Header("Effect & EffectStats")] public Effect effect; 
+        public float penetration;
+        public float bonusStat;
         private EffectBonusStats weaponEffects;
-        private Effect effect;
-        public string bonusEffectStats;
+
+        private string effectDescription;
+        public bool shouldOverideAndGenerateEffect = true;
+        public EffectHolder effectPool;
 
         [Header("Debug")] [SerializeField] protected bool drawGizmos = false;
 
         private SpriteRenderer spriteRenderer;
         private EffectGenerator effectGenerator;
-        private bool HasEffekt = false;
+        
 
 
         public void Start()
         {
+            effectGenerator = new EffectGenerator(effectPool);
+            //TODO Generate weaponrarity and dmgtype
+            if (shouldOverideAndGenerateEffect)
+            {
+                //TODO
+                weaponEffects = effectGenerator.GenerateEffect(weaponRarity, damageType);
+                effect = weaponEffects.effect;
+            }
+
             spriteRenderer = GetComponent<SpriteRenderer>();
             baseAOERange *= ((float) weaponRarity / 2);
             baseAttackcooldown /= ((float) weaponRarity / 2);
             baseDamage *= ((float) weaponRarity / 2);
             ChangeSpriteColor(weaponRarity);
 
-            weaponEffects = effectGenerator.GenerateEffect(weaponRarity, damageType);
+            if (effect != null) effectDescription = effect.effectDescription;
+            if (weaponEffects.penetration != null) penetration = weaponEffects.penetration;
+            if (weaponEffects.rareStat != null) bonusStat = weaponEffects.rareStat;
 
-            //Return if you didnt got an effect on the weapon
-            if (weaponEffects == null) return;
-
-            weaponEffects.effect.effectDescription = weaponEffekt.effectDescription;
-
+            penetration *= ((float)weaponRarity / 2);
+            bonusStat *= ((float)weaponRarity / 2);
         }
 
         private void ChangeSpriteColor(WeaponRarity rarity)

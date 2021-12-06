@@ -5,7 +5,8 @@ using UnityEngine;
 
 namespace Effects
 {
-    public class EffectBonusStats 
+    //This class is used to give alle available effects with one return to the weapon class by the EffectGenerator
+    public class EffectBonusStats : ScriptableObject
     {
         public float penetration { get; set; }
         public float rareStat { get; set; }
