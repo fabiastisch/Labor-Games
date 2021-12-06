@@ -13,9 +13,9 @@ namespace Effects
         private Dictionary<string, Effect[]> effects;
         private EffectHolder effectHolder;
 
-        public EffectGenerator(EffectHolder effects)
+        public EffectGenerator(EffectHolder effectHolder)
         {
-            effects = effectHolder;
+            this.effectHolder = effectHolder;
         }
 
         //Map damagetypes to stats and effects
@@ -54,7 +54,6 @@ namespace Effects
         
         private void FillPool()
         {
-            effectHolder = new EffectHolder();
             effects = effectHolder.GetEffectDictionary();
             Dictionary<DamageType, Tuple<float, float, Effect[]>> pool = new Dictionary<DamageType, Tuple<float, float, Effect[]>>
             {
