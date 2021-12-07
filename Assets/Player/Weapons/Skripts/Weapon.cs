@@ -51,7 +51,7 @@ namespace EquipableWeapon
             baseDamage *= ((float) weaponRarity / 2);
             ChangeSpriteColor(weaponRarity);
 
-            if (shouldOverideAndGenerateEffect)
+            if (shouldGenerateEffect)
             {
                 //TODO
                 weaponEffects = effectGenerator.GenerateEffect(weaponRarity, damageType);
