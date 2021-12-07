@@ -5,7 +5,7 @@ using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TestingScript : MonoBehaviour
+public class StatisticValue : MonoBehaviour
 {  
     [SerializeField] private UI_RadarChart uiStatsRadarChart;
     //if we want to add the Buttons manually and not via Unity
