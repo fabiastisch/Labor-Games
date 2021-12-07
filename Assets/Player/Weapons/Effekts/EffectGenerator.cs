@@ -89,7 +89,7 @@ namespace Effects
                 effects = value.Item3;
 
                 //TODO: Filter WeaponEffects to rarity
-                // effects = FilterEffectsByRarity(effects, weaponRarity);
+                //effects = FilterEffectsByRarity(effects, weaponRarity);
                 int rollSpecialEffect = UnityEngine.Random.Range(0, effects.Length-1);
 
                 switch (numberOfEffects)
@@ -109,6 +109,7 @@ namespace Effects
             return null;
         }
 
+        //Grober Ansatz, wird wahrscheinlich umgeschrieben --> keine prüfung auf die Arraygröße sondern string Keys?
         private Effect[] FilterEffectsByRarity (Effect[] allEffects, WeaponRarity weaponRarity)
         {
             int fromPosition = 0, toPosition;
