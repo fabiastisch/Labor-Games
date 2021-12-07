@@ -44,12 +44,6 @@ namespace EquipableWeapon
         {
             effectGenerator = new EffectGenerator(effectPool);
             //TODO Generate weaponrarity and dmgtype
-            if (shouldOverideAndGenerateEffect)
-            {
-                //TODO
-                weaponEffects = effectGenerator.GenerateEffect(weaponRarity, damageType);
-                effect = weaponEffects.effect;
-            }
 
             spriteRenderer = GetComponent<SpriteRenderer>();
             baseAOERange *= ((float) weaponRarity / 2);
@@ -57,10 +51,18 @@ namespace EquipableWeapon
             baseDamage *= ((float) weaponRarity / 2);
             ChangeSpriteColor(weaponRarity);
 
-            if (effect != null) effectDescription = effect.effectDescription;
-            if (weaponEffects.penetration != null) penetration = weaponEffects.penetration;
-            if (weaponEffects.rareStat != null) bonusStat = weaponEffects.rareStat;
+            if (shouldOverideAndGenerateEffect)
+            {
+                //TODO
+                weaponEffects = effectGenerator.GenerateEffect(weaponRarity, damageType);
+                if (weaponEffects == null) return;
 
+                effect = weaponEffects.effect;
+                if (weaponEffects.penetration != 0) penetration = weaponEffects.penetration;
+                if (weaponEffects.rareStat != 0) bonusStat = weaponEffects.rareStat;
+            }
+
+            if (effect != null) effectDescription = effect.effectDescription;
             penetration *= ((float)weaponRarity / 2);
             bonusStat *= ((float)weaponRarity / 2);
         }
