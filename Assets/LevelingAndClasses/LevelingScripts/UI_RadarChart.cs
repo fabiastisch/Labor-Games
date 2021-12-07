@@ -42,7 +42,7 @@ public class UI_RadarChart : MonoBehaviour
     int[] triangles = new int[3 * 5];
 
     float angleIncrement = 360f / 5;
-    float RadarChartSize = 149f;
+    float RadarChartSize = 90f;
     Vector3 vitallityVertex = Quaternion.Euler(0, 0, -angleIncrement * 0) * Vector3.up * RadarChartSize * statistics.GetPersentageAmount(Statistics.Type.Vitallity);
     int vitallityVertexIndex = 1;
     Vector3 abillityVertex = Quaternion.Euler(0, 0, -angleIncrement * 1) * Vector3.up * RadarChartSize * statistics.GetPersentageAmount(Statistics.Type.Abillity);
@@ -97,15 +97,21 @@ public class UI_RadarChart : MonoBehaviour
 
   private void UpdateStatsText()
   {
-    transform.Find("vitallityButton").Find("vitallity").GetComponent<Text>().text =
+    var parent = transform.parent;
+    
+    parent.Find("LevelVit").Find("Value").GetComponent<Text>().text =
       "" + statistics.GetValue(Statistics.Type.Vitallity);
-    transform.Find("abillityButton").Find("abillity").GetComponent<Text>().text =
+    
+    parent.Find("LevelAbi").Find("Value").GetComponent<Text>().text =
       "" + statistics.GetValue(Statistics.Type.Abillity);
-    transform.Find("agillityButton").Find("agillity").GetComponent<Text>().text =
+    
+    parent.Find("LevelAgi").Find("Value").GetComponent<Text>().text =
       "" + statistics.GetValue(Statistics.Type.Agillity);
-    transform.Find("charismaButton").Find("charisma").GetComponent<Text>().text =
+    
+    parent.Find("LevelCha").Find("Value").GetComponent<Text>().text =
       "" + statistics.GetValue(Statistics.Type.Charisma);
-    transform.Find("strengthButton").Find("strength").GetComponent<Text>().text =
+    
+    parent.Find("LevelStr").Find("Value").GetComponent<Text>().text =
       "" + statistics.GetValue(Statistics.Type.Strength);
   }
 }
