@@ -30,7 +30,7 @@ namespace EquipableWeapon
         private EffectBonusStats weaponEffects;
 
         private string effectDescription;
-        public bool shouldOverideAndGenerateEffect = true;
+        public bool shouldGenerateEffect = true;
         public EffectHolder effectPool;
 
         [Header("Debug")] [SerializeField] protected bool drawGizmos = false;

@@ -132,9 +132,13 @@ MonoBehaviour:
   baseRange: 2
   baseAttackcooldown: 0.8
   baseAOERange: 1.5
-  weaponEffekt: {fileID: 0}
   weaponRarity: 5
   damageType: 0
+  effect: {fileID: 0}
+  penetration: 0
+  bonusStat: 0
+  shouldOverideAndGenerateEffect: 1
+  effectPool: {fileID: 11400000, guid: 56f65b34b03d4f04783d18fb4995e17a, type: 2}
   drawGizmos: 0
 --- !u!95 &8991355072829359856
 Animator:
