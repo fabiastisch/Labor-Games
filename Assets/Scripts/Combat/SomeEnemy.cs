@@ -26,7 +26,7 @@ namespace Combat
 
         private void FixedUpdate()
         {
-            Debug.Log("Fixed: " + _playerDetector.PlayerDetected);
+            //Debug.Log("Fixed: " + _playerDetector.PlayerDetected);
 
             if (_playerDetector.PlayerDetected && !IsAtTarget) Move();
         }
