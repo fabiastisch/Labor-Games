@@ -4833,20 +4833,12 @@ PrefabInstance:
       value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 6215423693178918596, guid: 8348f1defab63424684080941cdcf482, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6215423693178918596, guid: 8348f1defab63424684080941cdcf482, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6215423693178918596, guid: 8348f1defab63424684080941cdcf482, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.087
       objectReference: {fileID: 0}
     - target: {fileID: 6215423693178918596, guid: 8348f1defab63424684080941cdcf482, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.17
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 6215423693178918596, guid: 8348f1defab63424684080941cdcf482, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4867,30 +4859,6 @@ PrefabInstance:
     - target: {fileID: 6215423693178918596, guid: 8348f1defab63424684080941cdcf482, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6215423693178918596, guid: 8348f1defab63424684080941cdcf482, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6215423693178918596, guid: 8348f1defab63424684080941cdcf482, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6215423693178918596, guid: 8348f1defab63424684080941cdcf482, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6215423693178918598, guid: 8348f1defab63424684080941cdcf482, type: 3}
-      propertyPath: pItem
-      value: 
-      objectReference: {fileID: 1791199111217048331, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
-    - target: {fileID: 6215423693178918598, guid: 8348f1defab63424684080941cdcf482, type: 3}
-      propertyPath: position.y
-      value: 1.88
-      objectReference: {fileID: 0}
-    - target: {fileID: 6215423693178918598, guid: 8348f1defab63424684080941cdcf482, type: 3}
-      propertyPath: dropPosition.y
-      value: -1.71
       objectReference: {fileID: 0}
     - target: {fileID: 6215423693178918603, guid: 8348f1defab63424684080941cdcf482, type: 3}
       propertyPath: m_Name

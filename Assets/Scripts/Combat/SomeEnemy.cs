@@ -33,7 +33,7 @@ namespace Combat
 
         protected void Move()
         {
-            Debug.Log("Move");
+            //Debug.Log("Move");
             var directionToTarget = _playerDetector.DirectionToTarget;
             ChangeSpriteDirection(directionToTarget.x);
             float step = movementSpeed * Time.deltaTime;

@@ -23,8 +23,7 @@ namespace Managers.Enemies {
         }
 
         public Enemy GETEnemy(string name) {
-            Enemy foundedEnemy;
-            if (_enemies.TryGetValue(name, out foundedEnemy)) {
+            if (_enemies.TryGetValue(name, out var foundedEnemy)) {
                 return foundedEnemy;
             }
 

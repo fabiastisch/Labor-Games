@@ -49,7 +49,7 @@ namespace Dungeon.DungeonGeneration {
             }
 
             // should be index 1 to (last-1)
-            var roomsWithoutStartAndPortal = roomsList.GetRange(1, roomsList.Count - 1);
+            var roomsWithoutStartAndPortal = roomsList.GetRange(1, roomsList.Count - 2);
             var trapRooms = CreateTrapRooms(roomsWithoutStartAndPortal);
             SpawnEnemies(roomsWithoutStartAndPortal.FindAll(i => !trapRooms.Contains(i)));
 
@@ -485,9 +485,13 @@ namespace Dungeon.DungeonGeneration {
             var roomsCount = rooms.Count;
             rooms.Sort((first, sec) => (int)(sec.size - first.size).magnitude);
             Enemy prefab = EnemyManager.Instance.GETEnemy("bat");
-            for (int i = 0; i < enemiesCount; i++) {
-                generator.Instantiate(prefab.gameObject, Util.GetRandomPosition(rooms[0]));
+            foreach (var room in rooms)
+            {
+                for (int i = 0; i < enemiesCount/roomsCount ; i++) {
+                    generator.Instantiate(prefab.gameObject, Util.GetRandomPosition(room));
+                }
             }
+            
 
             foreach (var room in rooms) {
             }
