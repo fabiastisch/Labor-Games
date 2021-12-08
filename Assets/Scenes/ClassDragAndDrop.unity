@@ -763,7 +763,7 @@ GameObject:
   - component: {fileID: 102527428}
   - component: {fileID: 102527430}
   m_Layer: 0
-  m_Name: SingleSkill3
+  m_Name: VitSkill3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -838,13 +838,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vitallityScore: 0
+  vitallityScore: 60
   abillityScore: 0
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
-  unlockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: d5d90507d877e924ab6afa8016b1528a, type: 3}
 --- !u!1 &104185959
 GameObject:
   m_ObjectHideFlags: 0
@@ -858,7 +858,7 @@ GameObject:
   - component: {fileID: 104185961}
   - component: {fileID: 104185963}
   m_Layer: 0
-  m_Name: SingleSkill4
+  m_Name: ChaSkill4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -936,10 +936,10 @@ MonoBehaviour:
   vitallityScore: 0
   abillityScore: 0
   agillityScore: 0
-  charimsaScore: 0
+  charimsaScore: 80
   strengthScore: 0
-  lockedSprite: {fileID: 0}
-  unlockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: d5d90507d877e924ab6afa8016b1528a, type: 3}
 --- !u!1 &105261849
 GameObject:
   m_ObjectHideFlags: 0
@@ -1033,7 +1033,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &108032406
 GameObject:
@@ -1194,7 +1194,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &123009556
 GameObject:
@@ -1289,7 +1289,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &129146665
 GameObject:
@@ -1504,7 +1504,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &137264322
 GameObject:
@@ -1794,7 +1794,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &145756359
 GameObject:
@@ -1928,7 +1928,7 @@ GameObject:
   - component: {fileID: 159589817}
   - component: {fileID: 159589819}
   m_Layer: 0
-  m_Name: SingleSkill5
+  m_Name: StrSkill5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2007,9 +2007,9 @@ MonoBehaviour:
   abillityScore: 0
   agillityScore: 0
   charimsaScore: 0
-  strengthScore: 0
-  lockedSprite: {fileID: 0}
-  unlockedSprite: {fileID: 0}
+  strengthScore: 100
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: d5d90507d877e924ab6afa8016b1528a, type: 3}
 --- !u!1 &164448089
 GameObject:
   m_ObjectHideFlags: 0
@@ -2270,7 +2270,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &192887750
 GameObject:
@@ -2440,7 +2440,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &221990177
 GameObject:
@@ -2455,7 +2455,7 @@ GameObject:
   - component: {fileID: 221990179}
   - component: {fileID: 221990181}
   m_Layer: 0
-  m_Name: SingleSkill1
+  m_Name: AbiSkill1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2531,12 +2531,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vitallityScore: 0
-  abillityScore: 0
+  abillityScore: 20
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
-  unlockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: d5d90507d877e924ab6afa8016b1528a, type: 3}
 --- !u!1 &222257735
 GameObject:
   m_ObjectHideFlags: 0
@@ -2595,7 +2595,7 @@ GameObject:
   - component: {fileID: 224533845}
   - component: {fileID: 224533847}
   m_Layer: 0
-  m_Name: SingleSkill4
+  m_Name: VitSkill4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2670,13 +2670,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vitallityScore: 0
+  vitallityScore: 80
   abillityScore: 0
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
-  unlockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: d5d90507d877e924ab6afa8016b1528a, type: 3}
 --- !u!1 &240927901
 GameObject:
   m_ObjectHideFlags: 0
@@ -2690,7 +2690,7 @@ GameObject:
   - component: {fileID: 240927903}
   - component: {fileID: 240927905}
   m_Layer: 0
-  m_Name: SingleSkill3
+  m_Name: AgiSkill3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2767,11 +2767,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitallityScore: 0
   abillityScore: 0
-  agillityScore: 0
+  agillityScore: 60
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
-  unlockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: d5d90507d877e924ab6afa8016b1528a, type: 3}
 --- !u!1 &258652875
 GameObject:
   m_ObjectHideFlags: 0
@@ -2897,7 +2897,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &279637145
 GameObject:
@@ -3024,8 +3024,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelingSkillList:
+  - {fileID: 805198235}
   - {fileID: 915836969}
+  - {fileID: 102527426}
+  - {fileID: 224533843}
+  - {fileID: 1180101977}
+  - {fileID: 2009621099}
+  - {fileID: 375573500}
+  - {fileID: 2082955551}
+  - {fileID: 1990030609}
+  - {fileID: 159589815}
+  - {fileID: 221990177}
+  - {fileID: 1951124118}
+  - {fileID: 1798122851}
+  - {fileID: 1375283392}
+  - {fileID: 1183906519}
+  - {fileID: 751592212}
+  - {fileID: 1153071285}
+  - {fileID: 240927901}
+  - {fileID: 1771480570}
+  - {fileID: 1010686734}
+  - {fileID: 2127146202}
+  - {fileID: 1687556818}
+  - {fileID: 683996926}
+  - {fileID: 104185959}
+  - {fileID: 1465315123}
   player: {fileID: 279637147}
+  statistics: {fileID: 1130479711}
 --- !u!1 &294456673
 GameObject:
   m_ObjectHideFlags: 0
@@ -3313,141 +3338,8 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
---- !u!1 &362483495
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 362483496}
-  - component: {fileID: 362483499}
-  - component: {fileID: 362483498}
-  - component: {fileID: 362483497}
-  m_Layer: 0
-  m_Name: Button
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &362483496
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 362483495}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 818930690}
-  m_Father: {fileID: 515840004}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -80, y: -574}
-  m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &362483497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 362483495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 362483498}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 279637147}
-        m_TargetAssemblyTypeName: PassiveTestPlayer, Assembly-CSharp
-        m_MethodName: IncreaseStat
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: vitallity
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &362483498
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 362483495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &362483499
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 362483495}
-  m_CullTransparentMesh: 1
 --- !u!1 &375573500
 GameObject:
   m_ObjectHideFlags: 0
@@ -3461,7 +3353,7 @@ GameObject:
   - component: {fileID: 375573502}
   - component: {fileID: 375573504}
   m_Layer: 0
-  m_Name: SingleSkill2
+  m_Name: StrSkill2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3540,9 +3432,9 @@ MonoBehaviour:
   abillityScore: 0
   agillityScore: 0
   charimsaScore: 0
-  strengthScore: 0
-  lockedSprite: {fileID: 0}
-  unlockedSprite: {fileID: 0}
+  strengthScore: 40
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: d5d90507d877e924ab6afa8016b1528a, type: 3}
 --- !u!1 &379865849
 GameObject:
   m_ObjectHideFlags: 0
@@ -3725,7 +3617,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &385377058
 GameObject:
@@ -3820,7 +3712,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &385657594
 GameObject:
@@ -3990,7 +3882,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &398679218
 GameObject:
@@ -4528,7 +4420,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &459972971
 GameObject:
@@ -4702,7 +4594,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &477863091
 GameObject:
@@ -5194,7 +5086,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &515645332
 GameObject:
@@ -5275,8 +5167,6 @@ RectTransform:
   - {fileID: 1398013788}
   - {fileID: 222257736}
   - {fileID: 1740012578}
-  - {fileID: 2114637829}
-  - {fileID: 362483496}
   m_Father: {fileID: 258652876}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5439,7 +5329,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &527467908
 GameObject:
@@ -5453,6 +5343,7 @@ GameObject:
   - component: {fileID: 527467912}
   - component: {fileID: 527467911}
   - component: {fileID: 527467910}
+  - component: {fileID: 527467913}
   m_Layer: 0
   m_Name: PentaPassiveButton
   m_TagString: Untagged
@@ -5523,7 +5414,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 527467911}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 527467913}
+        m_TargetAssemblyTypeName: UiSzeneController, Assembly-CSharp
+        m_MethodName: ChangeToPenta
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &527467911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5562,6 +5465,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 527467908}
   m_CullTransparentMesh: 1
+--- !u!114 &527467913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527467908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7f6e990055a6964b9fa65804e4a57c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  szeneKlass: {fileID: 1979911360}
+  szene8PassiveBackground: {fileID: 515840003}
+  szeneSinglePassive: {fileID: 1824476874}
+  szeneDuoPassive: {fileID: 1398013787}
+  szeneTripplePassive: {fileID: 222257735}
+  szenePentaPassive: {fileID: 1740012577}
 --- !u!1 &532568825
 GameObject:
   m_ObjectHideFlags: 0
@@ -6223,7 +6144,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &582754595
 GameObject:
@@ -6595,7 +6516,7 @@ GameObject:
   - component: {fileID: 683996928}
   - component: {fileID: 683996930}
   m_Layer: 0
-  m_Name: SingleSkill3
+  m_Name: ChaSkill3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6673,10 +6594,10 @@ MonoBehaviour:
   vitallityScore: 0
   abillityScore: 0
   agillityScore: 0
-  charimsaScore: 0
+  charimsaScore: 60
   strengthScore: 0
-  lockedSprite: {fileID: 0}
-  unlockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: d5d90507d877e924ab6afa8016b1528a, type: 3}
 --- !u!1 &684999135
 GameObject:
   m_ObjectHideFlags: 0
@@ -7207,7 +7128,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &741879130
 GameObject:
@@ -7302,7 +7223,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &751456012
 GameObject:
@@ -7392,7 +7313,7 @@ GameObject:
   - component: {fileID: 751592214}
   - component: {fileID: 751592216}
   m_Layer: 0
-  m_Name: SingleSkill1
+  m_Name: AgiSkill1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7469,11 +7390,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitallityScore: 0
   abillityScore: 0
-  agillityScore: 0
+  agillityScore: 20
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
-  unlockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: d5d90507d877e924ab6afa8016b1528a, type: 3}
 --- !u!1 &752353912
 GameObject:
   m_ObjectHideFlags: 0
@@ -7761,8 +7682,160 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
+--- !u!1 &780322552
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 780322553}
+  - component: {fileID: 780322557}
+  - component: {fileID: 780322556}
+  - component: {fileID: 780322555}
+  - component: {fileID: 780322554}
+  m_Layer: 0
+  m_Name: BackButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &780322553
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780322552}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 4, z: 1}
+  m_Children:
+  - {fileID: 1144171692}
+  m_Father: {fileID: 2034149217}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 371, y: 580}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &780322554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780322552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7f6e990055a6964b9fa65804e4a57c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  szeneKlass: {fileID: 1979911360}
+  szene8PassiveBackground: {fileID: 515840003}
+  szeneSinglePassive: {fileID: 1824476874}
+  szeneDuoPassive: {fileID: 1398013787}
+  szeneTripplePassive: {fileID: 222257735}
+  szenePentaPassive: {fileID: 1740012577}
+--- !u!114 &780322555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780322552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 780322556}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 780322554}
+        m_TargetAssemblyTypeName: UiSzeneController, Assembly-CSharp
+        m_MethodName: ChangeToClass
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &780322556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780322552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: f375a935d0c38f84d94844236012f26c, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &780322557
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780322552}
+  m_CullTransparentMesh: 1
 --- !u!1 &782012998
 GameObject:
   m_ObjectHideFlags: 0
@@ -7856,7 +7929,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &782275038
 GameObject:
@@ -7951,7 +8024,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &783350776
 GameObject:
@@ -8181,7 +8254,7 @@ GameObject:
   - component: {fileID: 805198237}
   - component: {fileID: 805198239}
   m_Layer: 0
-  m_Name: SingleSkill1
+  m_Name: VitSkill1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8226,7 +8299,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8256,92 +8329,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vitallityScore: 0
+  vitallityScore: 20
   abillityScore: 0
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
-  unlockedSprite: {fileID: 0}
---- !u!1 &818930689
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 818930690}
-  - component: {fileID: 818930692}
-  - component: {fileID: 818930691}
-  m_Layer: 0
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &818930690
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 818930689}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 362483496}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &818930691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 818930689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Button
---- !u!222 &818930692
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 818930689}
-  m_CullTransparentMesh: 1
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: d5d90507d877e924ab6afa8016b1528a, type: 3}
 --- !u!1 &819619775
 GameObject:
   m_ObjectHideFlags: 0
@@ -8554,7 +8548,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &838395626
 GameObject:
@@ -9025,7 +9019,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &872810217
 GameObject:
@@ -9195,8 +9189,160 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
+--- !u!1 &886210007
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 886210008}
+  - component: {fileID: 886210012}
+  - component: {fileID: 886210011}
+  - component: {fileID: 886210010}
+  - component: {fileID: 886210009}
+  m_Layer: 0
+  m_Name: ToSingleButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &886210008
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886210007}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3, y: 2, z: 1}
+  m_Children:
+  - {fileID: 1124061380}
+  m_Father: {fileID: 1488589427}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -45, y: -606}
+  m_SizeDelta: {x: 60, y: 60}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &886210009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886210007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7f6e990055a6964b9fa65804e4a57c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  szeneKlass: {fileID: 1979911360}
+  szene8PassiveBackground: {fileID: 515840003}
+  szeneSinglePassive: {fileID: 1824476874}
+  szeneDuoPassive: {fileID: 1398013787}
+  szeneTripplePassive: {fileID: 222257735}
+  szenePentaPassive: {fileID: 1740012577}
+--- !u!114 &886210010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886210007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 886210011}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 886210009}
+        m_TargetAssemblyTypeName: UiSzeneController, Assembly-CSharp
+        m_MethodName: ChangeToSingle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: vitallity
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &886210011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886210007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &886210012
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886210007}
+  m_CullTransparentMesh: 1
 --- !u!1 &899186375
 GameObject:
   m_ObjectHideFlags: 0
@@ -9285,7 +9431,7 @@ GameObject:
   - component: {fileID: 915836971}
   - component: {fileID: 915836973}
   m_Layer: 0
-  m_Name: SingleSkill2
+  m_Name: VitSkill2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9360,13 +9506,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vitallityScore: 20
+  vitallityScore: 40
   abillityScore: 0
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
-  unlockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: d5d90507d877e924ab6afa8016b1528a, type: 3}
 --- !u!1 &927214268
 GameObject:
   m_ObjectHideFlags: 0
@@ -9460,7 +9606,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &928553253
 GameObject:
@@ -9787,7 +9933,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &942806851
 GameObject:
@@ -9959,7 +10105,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &959821670
 GameObject:
@@ -10661,7 +10807,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &1000549274
 GameObject:
@@ -10751,7 +10897,7 @@ GameObject:
   - component: {fileID: 1010686736}
   - component: {fileID: 1010686738}
   m_Layer: 0
-  m_Name: SingleSkill5
+  m_Name: AgiSkill5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10828,11 +10974,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitallityScore: 0
   abillityScore: 0
-  agillityScore: 0
+  agillityScore: 100
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
-  unlockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: d5d90507d877e924ab6afa8016b1528a, type: 3}
 --- !u!1 &1019486661
 GameObject:
   m_ObjectHideFlags: 0
@@ -10926,7 +11072,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &1024045078
 GameObject:
@@ -11399,7 +11545,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &1078532149
 GameObject:
@@ -11719,6 +11865,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1120563993}
   m_CullTransparentMesh: 1
+--- !u!1 &1124061379
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1124061380}
+  - component: {fileID: 1124061382}
+  - component: {fileID: 1124061381}
+  m_Layer: 0
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1124061380
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124061379}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 886210008}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1124061381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124061379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 40
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 4
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: +
+--- !u!222 &1124061382
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124061379}
+  m_CullTransparentMesh: 1
 --- !u!1 &1130267699
 GameObject:
   m_ObjectHideFlags: 0
@@ -11829,11 +12054,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unlockControll: {fileID: 279637151}
-  strengthStatAmount: 0
-  vitallityStatAmount: 19
-  charismaStatAmount: 0
-  abillityStatAmount: 0
-  agillityStatAmount: 0
+  strengthStatAmount: 62
+  vitallityStatAmount: 76
+  charismaStatAmount: 88
+  abillityStatAmount: 47
+  agillityStatAmount: 48
 --- !u!4 &1130479712
 Transform:
   m_ObjectHideFlags: 0
@@ -11861,11 +12086,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiStatsRadarChart: {fileID: 800311255}
-  vitallity: 9
-  agillity: 18
-  abillity: 4
-  charisma: 14
-  strength: 24
   stats: {fileID: 1130479711}
 --- !u!1 &1132194959
 GameObject:
@@ -11905,6 +12125,85 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1144171691
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1144171692}
+  - component: {fileID: 1144171694}
+  - component: {fileID: 1144171693}
+  m_Layer: 0
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1144171692
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144171691}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 780322553}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1144171693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144171691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Button
+--- !u!222 &1144171694
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1144171691}
+  m_CullTransparentMesh: 1
 --- !u!1 &1153071285
 GameObject:
   m_ObjectHideFlags: 0
@@ -11918,7 +12217,7 @@ GameObject:
   - component: {fileID: 1153071287}
   - component: {fileID: 1153071289}
   m_Layer: 0
-  m_Name: SingleSkill2
+  m_Name: AgiSkill2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11995,11 +12294,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitallityScore: 0
   abillityScore: 0
-  agillityScore: 0
+  agillityScore: 40
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
-  unlockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: d5d90507d877e924ab6afa8016b1528a, type: 3}
 --- !u!1 &1180101977
 GameObject:
   m_ObjectHideFlags: 0
@@ -12013,7 +12312,7 @@ GameObject:
   - component: {fileID: 1180101979}
   - component: {fileID: 1180101981}
   m_Layer: 0
-  m_Name: SingleSkill5
+  m_Name: VitSkill5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12088,13 +12387,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21a450a5949fef14a87f3763b4861577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vitallityScore: 0
+  vitallityScore: 100
   abillityScore: 0
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
-  unlockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: d5d90507d877e924ab6afa8016b1528a, type: 3}
 --- !u!1 &1182680961
 GameObject:
   m_ObjectHideFlags: 0
@@ -12187,7 +12486,7 @@ GameObject:
   - component: {fileID: 1183906521}
   - component: {fileID: 1183906523}
   m_Layer: 0
-  m_Name: SingleSkill5
+  m_Name: AbiSkill5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12263,12 +12562,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vitallityScore: 0
-  abillityScore: 0
+  abillityScore: 100
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
-  unlockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: d5d90507d877e924ab6afa8016b1528a, type: 3}
 --- !u!1 &1190743179
 GameObject:
   m_ObjectHideFlags: 0
@@ -12515,7 +12814,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &1233566660
 GameObject:
@@ -12610,7 +12909,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &1234541859
 GameObject:
@@ -13126,7 +13425,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &1287314730
 GameObject:
@@ -13300,7 +13599,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &1297460809
 GameObject:
@@ -13680,7 +13979,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &1323071638
 GameObject:
@@ -14052,7 +14351,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &1343298744
 GameObject:
@@ -14414,7 +14713,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &1360349731
 GameObject:
@@ -14676,7 +14975,7 @@ GameObject:
   - component: {fileID: 1375283394}
   - component: {fileID: 1375283396}
   m_Layer: 0
-  m_Name: SingleSkill4
+  m_Name: AbiSkill4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14752,12 +15051,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vitallityScore: 0
-  abillityScore: 0
+  abillityScore: 80
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
-  unlockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: d5d90507d877e924ab6afa8016b1528a, type: 3}
 --- !u!1 &1397882099
 GameObject:
   m_ObjectHideFlags: 0
@@ -15119,7 +15418,7 @@ GameObject:
   - component: {fileID: 1465315125}
   - component: {fileID: 1465315127}
   m_Layer: 0
-  m_Name: SingleSkill5
+  m_Name: ChaSkill5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15197,10 +15496,10 @@ MonoBehaviour:
   vitallityScore: 0
   abillityScore: 0
   agillityScore: 0
-  charimsaScore: 0
+  charimsaScore: 100
   strengthScore: 0
-  lockedSprite: {fileID: 0}
-  unlockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: d5d90507d877e924ab6afa8016b1528a, type: 3}
 --- !u!1 &1478375922
 GameObject:
   m_ObjectHideFlags: 0
@@ -15294,7 +15593,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &1488589426
 GameObject:
@@ -15331,6 +15630,7 @@ RectTransform:
   - {fileID: 497425738}
   - {fileID: 1343298745}
   - {fileID: 971491289}
+  - {fileID: 886210008}
   m_Father: {fileID: 1845042598}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15807,7 +16107,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &1588038095
 GameObject:
@@ -15979,6 +16279,7 @@ GameObject:
   - component: {fileID: 1625718844}
   - component: {fileID: 1625718843}
   - component: {fileID: 1625718842}
+  - component: {fileID: 1625718845}
   m_Layer: 0
   m_Name: TripplePassiveButton
   m_TagString: Untagged
@@ -16049,7 +16350,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1625718843}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1625718845}
+        m_TargetAssemblyTypeName: UiSzeneController, Assembly-CSharp
+        m_MethodName: ChangeToTripple
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1625718843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16088,6 +16401,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1625718840}
   m_CullTransparentMesh: 1
+--- !u!114 &1625718845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625718840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7f6e990055a6964b9fa65804e4a57c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  szeneKlass: {fileID: 1979911360}
+  szene8PassiveBackground: {fileID: 515840003}
+  szeneSinglePassive: {fileID: 1824476874}
+  szeneDuoPassive: {fileID: 1398013787}
+  szeneTripplePassive: {fileID: 222257735}
+  szenePentaPassive: {fileID: 1740012577}
 --- !u!1 &1639423643
 GameObject:
   m_ObjectHideFlags: 0
@@ -16458,7 +16789,7 @@ GameObject:
   - component: {fileID: 1687556820}
   - component: {fileID: 1687556822}
   m_Layer: 0
-  m_Name: SingleSkill2
+  m_Name: ChaSkill2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16536,10 +16867,10 @@ MonoBehaviour:
   vitallityScore: 0
   abillityScore: 0
   agillityScore: 0
-  charimsaScore: 0
+  charimsaScore: 40
   strengthScore: 0
-  lockedSprite: {fileID: 0}
-  unlockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: d5d90507d877e924ab6afa8016b1528a, type: 3}
 --- !u!1 &1703267254
 GameObject:
   m_ObjectHideFlags: 0
@@ -16708,7 +17039,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &1732970846
 GameObject:
@@ -16722,6 +17053,7 @@ GameObject:
   - component: {fileID: 1732970850}
   - component: {fileID: 1732970849}
   - component: {fileID: 1732970848}
+  - component: {fileID: 1732970851}
   m_Layer: 0
   m_Name: SinglePassiveButton
   m_TagString: Untagged
@@ -16792,7 +17124,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1732970849}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1732970851}
+        m_TargetAssemblyTypeName: UiSzeneController, Assembly-CSharp
+        m_MethodName: ChangeToSingle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1732970849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16831,6 +17175,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1732970846}
   m_CullTransparentMesh: 1
+--- !u!114 &1732970851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732970846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7f6e990055a6964b9fa65804e4a57c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  szeneKlass: {fileID: 1979911360}
+  szene8PassiveBackground: {fileID: 515840003}
+  szeneSinglePassive: {fileID: 1824476874}
+  szeneDuoPassive: {fileID: 1398013787}
+  szeneTripplePassive: {fileID: 222257735}
+  szenePentaPassive: {fileID: 1740012577}
 --- !u!1 &1740012577
 GameObject:
   m_ObjectHideFlags: 0
@@ -16965,7 +17327,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &1767349448
 GameObject:
@@ -17059,7 +17421,7 @@ GameObject:
   - component: {fileID: 1771480572}
   - component: {fileID: 1771480574}
   m_Layer: 0
-  m_Name: SingleSkill4
+  m_Name: AgiSkill4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17136,11 +17498,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vitallityScore: 0
   abillityScore: 0
-  agillityScore: 0
+  agillityScore: 80
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
-  unlockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: d5d90507d877e924ab6afa8016b1528a, type: 3}
 --- !u!1 &1772528542
 GameObject:
   m_ObjectHideFlags: 0
@@ -17398,7 +17760,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &1782469285
 GameObject:
@@ -17572,7 +17934,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &1798122851
 GameObject:
@@ -17587,7 +17949,7 @@ GameObject:
   - component: {fileID: 1798122853}
   - component: {fileID: 1798122855}
   m_Layer: 0
-  m_Name: SingleSkill3
+  m_Name: AbiSkill3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17663,12 +18025,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vitallityScore: 0
-  abillityScore: 0
+  abillityScore: 60
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
-  unlockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: d5d90507d877e924ab6afa8016b1528a, type: 3}
 --- !u!1 &1803266328
 GameObject:
   m_ObjectHideFlags: 0
@@ -17837,7 +18199,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &1809808426
 GameObject:
@@ -18086,6 +18448,7 @@ GameObject:
   - component: {fileID: 1847373323}
   - component: {fileID: 1847373322}
   - component: {fileID: 1847373321}
+  - component: {fileID: 1847373324}
   m_Layer: 0
   m_Name: DuoPassiveButton
   m_TagString: Untagged
@@ -18156,7 +18519,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1847373322}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1847373324}
+        m_TargetAssemblyTypeName: UiSzeneController, Assembly-CSharp
+        m_MethodName: ChangeToDuo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1847373322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18195,6 +18570,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1847373319}
   m_CullTransparentMesh: 1
+--- !u!114 &1847373324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847373319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7f6e990055a6964b9fa65804e4a57c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  szeneKlass: {fileID: 1979911360}
+  szene8PassiveBackground: {fileID: 515840003}
+  szeneSinglePassive: {fileID: 1824476874}
+  szeneDuoPassive: {fileID: 1398013787}
+  szeneTripplePassive: {fileID: 222257735}
+  szenePentaPassive: {fileID: 1740012577}
 --- !u!1 &1874043924
 GameObject:
   m_ObjectHideFlags: 0
@@ -18288,7 +18681,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &1890863969
 GameObject:
@@ -18539,7 +18932,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &1951124118
 GameObject:
@@ -18554,7 +18947,7 @@ GameObject:
   - component: {fileID: 1951124120}
   - component: {fileID: 1951124122}
   m_Layer: 0
-  m_Name: SingleSkill2
+  m_Name: AbiSkill2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18630,12 +19023,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vitallityScore: 0
-  abillityScore: 0
+  abillityScore: 40
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
-  unlockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: d5d90507d877e924ab6afa8016b1528a, type: 3}
 --- !u!1 &1952260824
 GameObject:
   m_ObjectHideFlags: 0
@@ -18967,10 +19360,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 2560, y: 1440}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -19171,7 +19564,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &1990030609
 GameObject:
@@ -19186,7 +19579,7 @@ GameObject:
   - component: {fileID: 1990030611}
   - component: {fileID: 1990030613}
   m_Layer: 0
-  m_Name: SingleSkill4
+  m_Name: StrSkill4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19265,9 +19658,9 @@ MonoBehaviour:
   abillityScore: 0
   agillityScore: 0
   charimsaScore: 0
-  strengthScore: 0
-  lockedSprite: {fileID: 0}
-  unlockedSprite: {fileID: 0}
+  strengthScore: 80
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: d5d90507d877e924ab6afa8016b1528a, type: 3}
 --- !u!1 &1992325474
 GameObject:
   m_ObjectHideFlags: 0
@@ -19361,7 +19754,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &2009621099
 GameObject:
@@ -19376,7 +19769,7 @@ GameObject:
   - component: {fileID: 2009621101}
   - component: {fileID: 2009621103}
   m_Layer: 0
-  m_Name: SingleSkill1
+  m_Name: StrSkill1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19455,9 +19848,9 @@ MonoBehaviour:
   abillityScore: 0
   agillityScore: 0
   charimsaScore: 0
-  strengthScore: 0
-  lockedSprite: {fileID: 0}
-  unlockedSprite: {fileID: 0}
+  strengthScore: 20
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: d5d90507d877e924ab6afa8016b1528a, type: 3}
 --- !u!1 &2022146393
 GameObject:
   m_ObjectHideFlags: 0
@@ -19642,6 +20035,7 @@ RectTransform:
   - {fileID: 1847373320}
   - {fileID: 1625718841}
   - {fileID: 527467909}
+  - {fileID: 780322553}
   m_Father: {fileID: 515840004}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19876,7 +20270,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &2070372693
 GameObject:
@@ -20123,7 +20517,7 @@ MonoBehaviour:
   agillityScore: 0
   charimsaScore: 0
   strengthScore: 0
-  lockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
 --- !u!1 &2077058395
 GameObject:
@@ -20217,7 +20611,7 @@ GameObject:
   - component: {fileID: 2082955553}
   - component: {fileID: 2082955555}
   m_Layer: 0
-  m_Name: SingleSkill3
+  m_Name: StrSkill3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20296,9 +20690,9 @@ MonoBehaviour:
   abillityScore: 0
   agillityScore: 0
   charimsaScore: 0
-  strengthScore: 0
-  lockedSprite: {fileID: 0}
-  unlockedSprite: {fileID: 0}
+  strengthScore: 60
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: d5d90507d877e924ab6afa8016b1528a, type: 3}
 --- !u!1 &2088706484
 GameObject:
   m_ObjectHideFlags: 0
@@ -20585,81 +20979,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2110498810}
   m_CullTransparentMesh: 1
---- !u!1 &2114637828
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2114637829}
-  - component: {fileID: 2114637831}
-  - component: {fileID: 2114637830}
-  m_Layer: 0
-  m_Name: RadarChartPlaceHolder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &2114637829
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2114637828}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 515840004}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 895.96313, y: 274.2008}
-  m_SizeDelta: {x: -1864.3457, y: -674.4808}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2114637830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2114637828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.24991095, g: 0.51479745, b: 0.764151, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 17b1cd325622596409dbbc12e10dcfba, type: 3}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &2114637831
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2114637828}
-  m_CullTransparentMesh: 1
 --- !u!1 &2127146202
 GameObject:
   m_ObjectHideFlags: 0
@@ -20673,7 +20992,7 @@ GameObject:
   - component: {fileID: 2127146204}
   - component: {fileID: 2127146206}
   m_Layer: 0
-  m_Name: SingleSkill1
+  m_Name: ChaSkill1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20751,10 +21070,10 @@ MonoBehaviour:
   vitallityScore: 0
   abillityScore: 0
   agillityScore: 0
-  charimsaScore: 0
+  charimsaScore: 20
   strengthScore: 0
-  lockedSprite: {fileID: 0}
-  unlockedSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: d5d90507d877e924ab6afa8016b1528a, type: 3}
 --- !u!1 &2134892488
 GameObject:
   m_ObjectHideFlags: 0

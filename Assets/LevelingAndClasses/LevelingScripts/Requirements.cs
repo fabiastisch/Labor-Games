@@ -22,15 +22,20 @@ public class Requirements : MonoBehaviour
     private void Start()
     {
         buttonholder = transform.GetComponent<Button>();
+        if (locked)
+        {
+            transform.GetComponent<Image>().sprite = lockedSprite;
+        }
     }
 
     public void UnlockButton()
     {
         if (locked == false) return;
         Debug.Log("Unlocked Button Requirements: Vitallity: " + vitallityScore + " Abillity: " + abillityScore +
-                                                      " Agillity: " + agillityScore + "Charisma: " + charimsaScore + "Strength: " + strengthScore);
-        buttonholder.enabled = true;
-        transform.GetComponent<SpriteRenderer>().sprite = unlockedSprite;
+                  " Agillity: " + agillityScore + "Charisma: " + charimsaScore + "Strength: " + strengthScore);
+        transform.GetComponent<Image>().sprite = unlockedSprite;
+        
+       // buttonholder.enabled = true;
         locked = false;
         
 
@@ -42,8 +47,8 @@ public class Requirements : MonoBehaviour
         if (locked) return;
         Debug.Log("Unlocked Button Requirements: Vitallity: " + vitallityScore + " Abillity: " + abillityScore +
                                              " Agillity: " + agillityScore + "Charisma: " + charimsaScore + "Strength: " + strengthScore);
-        buttonholder.enabled = false;
-        transform.GetComponent<SpriteRenderer>().sprite = lockedSprite;
+        transform.GetComponent<Image>().sprite = lockedSprite;
+       // buttonholder.enabled = false;
         locked = true;
         
     }

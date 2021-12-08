@@ -16,20 +16,11 @@ public class StatisticValue : MonoBehaviour
     public Button charismaButton = GameObject.Find("charismaButton").GetComponent<Button>();
     public Button strengthButton = GameObject.Find("strengthButton").GetComponent<Button>();
     */
-    [Range(0,100)]public int vitallity = 10;
-    [Range(0,100)]public int agillity = 10;
-    [Range(0,100)]public int abillity = 20;
-    [Range(0,100)]public int charisma = 30;
-    [Range(0,100)]public int strength = 20;
     
     public Statistics stats;
     private void Start()
     {
-        stats.SetStatisticAmount(Statistics.Type.Vitallity, vitallity);
-        stats.SetStatisticAmount(Statistics.Type.Agillity, agillity);
-        stats.SetStatisticAmount(Statistics.Type.Abillity, abillity);
-        stats.SetStatisticAmount(Statistics.Type.Charisma, charisma);
-        stats.SetStatisticAmount(Statistics.Type.Strength, strength);
+        stats = Statistics.Instance;
         uiStatsRadarChart.SetStatistic(stats);
     }
    public void IncreaseStat(string name){
