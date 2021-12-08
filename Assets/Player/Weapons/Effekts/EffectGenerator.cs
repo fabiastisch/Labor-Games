@@ -31,7 +31,7 @@ namespace Effects
             float numberOfEffects = GetNumberOfEffects(percent, odds);
             //Return null if the weapon has no effect
             if (numberOfEffects == 0) return null;
-            return GetChooseEffects(numberOfEffects,damageType,rarity);
+            return GetChoosenEffects(numberOfEffects,damageType,rarity);
         }
 
         private float[] GetOddsByRarity(WeaponRarity weaponRarity)
@@ -72,9 +72,9 @@ namespace Effects
             }
         }
         
-        private EffectBonusStats GetChooseEffects(float numberOfEffects, DamageType damageType, WeaponRarity weaponRarity)
+        private EffectBonusStats GetChoosenEffects(float numberOfEffects, DamageType damageType, WeaponRarity weaponRarity)
         {
-            float[] basicEffectsOdds = { 51, 49 };
+            float[] basicEffectsOdds = { 50, 50 };
             float[] RareEffectsOdds = { 75, 25 };
             float percent = UnityEngine.Random.Range(1, 100);
 
@@ -98,10 +98,10 @@ namespace Effects
                         if (percent >= basicEffectsOdds[0]) return new EffectBonusStats(baseStat, 0f, null);
                         return new EffectBonusStats(1f, 0f, null);
                     case 2:
-                        if (percent <= basicEffectsOdds[1]) return new EffectBonusStats(baseStat, rareStat, null);
+                        if (percent >= basicEffectsOdds[0]) return new EffectBonusStats(baseStat, rareStat, null);
                         percent = UnityEngine.Random.Range(1, 100);
-                        if (percent >= 75) return new EffectBonusStats(baseStat, rareStat, null);
-                        return new EffectBonusStats(baseStat, rareStat, null/*effects[rollSpecialEffect]*/);
+                        if (percent >= RareEffectsOdds[1]) return new EffectBonusStats(baseStat, rareStat, null);
+                        return new EffectBonusStats(0f, rareStat, null/*effects[rollSpecialEffect]*/);
                     default:
                         return new EffectBonusStats(baseStat, rareStat, null/*effects[rollSpecialEffect]*/);
                 }
