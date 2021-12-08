@@ -1,13 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using EquipableWeapon;
-using Combat;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using Combat;
+using EquipableWeapon;
+using Utils;
 
 namespace Effects
 {
-
     public class EffectGenerator
     {
         private Dictionary<string, Effect[]> effects;
@@ -22,16 +21,15 @@ namespace Effects
         //Dictionary: 1. DamageType , 2. base Penetration %, 3. base Bonus Stat %, 4. Effects/Skills
         public Dictionary<DamageType, Tuple<float, float, Effect[]>> effectPool;
 
-        public EffectBonusStats GenerateEffect(WeaponRarity rarity, DamageType damageType) {
-
+        public EffectBonusStats GenerateEffect(WeaponRarity rarity, DamageType damageType)
+        {
             FillPool();
             float[] odds = GetOddsByRarity(rarity);
-            float percent = UnityEngine.Random.Range(1,100);
             //Roll how many effects
-            float numberOfEffects = GetNumberOfEffects(percent, odds);
+            int numberOfEffects = GetNumberOfEffects(odds);
             //Return null if the weapon has no effect
             if (numberOfEffects == 0) return null;
-            return GetChoosenEffects(numberOfEffects,damageType,rarity);
+            return GetChoosenEffects(numberOfEffects, damageType, rarity);
         }
 
         private float[] GetOddsByRarity(WeaponRarity weaponRarity)
@@ -39,79 +37,112 @@ namespace Effects
             switch (weaponRarity)
             {
                 case WeaponRarity.Bad:
-                    return new float[] { 45, 0, 0 };
+                    return new float[] { 0.45f, 0, 0 };
                 case WeaponRarity.Uncommon:
-                    return new float[] { 80, 20, 10 };
+                    return new float[] { 0.80f, 0.20f, 0.10f };
                 case WeaponRarity.Mystic:
-                    return new float[] { 90, 30, 20 };
+                    return new float[] { 0.90f, 0.30f, 0.20f };
                 case WeaponRarity.Legendary:
-                    return new float[] { 100, 50, 30 };
+                    return new float[] { 1f, 0.50f, 0.30f };
                 default:
                     //Common rarity
-                    return new float[] { 60, 10, 1 };
-            }
-        }  
-
-        private float GetNumberOfEffects(float rolledNumber, float[] odds)
-        {
-            if (rolledNumber <= odds[2])
-            {
-                return 3;
-            } 
-            else if(rolledNumber <= odds[1])
-            {
-                return 2;
-            }
-            else if (rolledNumber <= odds[0])  
-            {
-                return 1;
-            }
-            else
-            {
-                return 0;
+                    return new float[] { 0.60f, 0.10f, 0.01f };
             }
         }
-        
-        private EffectBonusStats GetChoosenEffects(float numberOfEffects, DamageType damageType, WeaponRarity weaponRarity)
-        {
-            float[] basicEffectsOdds = { 50, 50 };
-            float[] RareEffectsOdds = { 75, 25 };
-            float percent = UnityEngine.Random.Range(1, 100);
 
-            float baseStat;
-            float rareStat;
+        private int GetNumberOfEffects(float[] odds)
+        {
+            for (var i = odds.Length - 1; i >= 0; i--)
+            {
+                if (Util.GetChanceBool(odds[i]))
+                {
+                    return i + 1;
+                }
+            }
+
+            return 0;
+        }
+
+        private EffectBonusStats GetChoosenEffects(int numberOfEffects, DamageType damageType, WeaponRarity weaponRarity)
+        {
+            if (numberOfEffects <= 0)
+            {
+                return null;
+            }
+
+            // Odds for Special Effects with 1 and 2 Effects
+            float[] specialEffectOdds = { 0.2f, 0.5f };
+            // Odds for Rare Effects with 1 and 2 Effects
+            float[] rareEffectsOdds = { 0.25f, 0.75f };
+
+
             Effect[] effects;
 
-            if (effectPool.TryGetValue(damageType, out Tuple<float,float,Effect[]> value))
+            if (effectPool.TryGetValue(damageType, out Tuple<float, float, Effect[]> value))
             {
-                baseStat = value.Item1;
-                rareStat = value.Item2;
+                float baseStat = value.Item1;
+                float rareStat = value.Item2;
                 effects = value.Item3;
 
                 //TODO: Filter WeaponEffects to rarity
-                //effects = FilterEffectsByRarity(effects, weaponRarity);
-                int rollSpecialEffect = UnityEngine.Random.Range(0, effects.Length-1);
+                effects = FilterEffectsByRarity(effects, weaponRarity);
+                int specialEffectIndex = Util.GetRandomInt(effects.Length - 1);
+
 
                 switch (numberOfEffects)
                 {
                     case 1:
-                        if (percent >= basicEffectsOdds[0]) return new EffectBonusStats(baseStat, 0f, null);
-                        return new EffectBonusStats(1f, 0f, null);
+                        if (Util.GetChanceBool(specialEffectOdds[0]))
+                        {
+                            return new EffectBonusStats(0f, 0f, effects[specialEffectIndex]);
+                        }
+
+                        if (Util.GetChanceBool(rareEffectsOdds[0]))
+                        {
+                            return new EffectBonusStats(0f, rareStat, null);
+                        }
+
+                        return new EffectBonusStats(baseStat, 0f, null);
                     case 2:
-                        if (percent >= basicEffectsOdds[0]) return new EffectBonusStats(baseStat, rareStat, null);
-                        percent = UnityEngine.Random.Range(1, 100);
-                        if (percent >= RareEffectsOdds[1]) return new EffectBonusStats(baseStat, rareStat, null);
-                        return new EffectBonusStats(0f, rareStat, null/*effects[rollSpecialEffect]*/);
+                        EffectBonusStats bonusStats = new EffectBonusStats();
+
+                        if (Util.GetChanceBool(specialEffectOdds[1]))
+                        {
+                            bonusStats.effect = effects[specialEffectIndex];
+                            if (Util.GetChanceBool(rareEffectsOdds[1]))
+                            {
+                                bonusStats.rareStat = rareStat;
+                                return bonusStats;
+                            }
+
+                            bonusStats.penetration = baseStat;
+                            return bonusStats;
+                        }
+
+                        if (Util.GetChanceBool(rareEffectsOdds[1]))
+                        {
+                            bonusStats.rareStat = rareStat;
+                            bonusStats.penetration = baseStat;
+                            return bonusStats;
+                        }
+
+                        return new EffectBonusStats(baseStat, 0f, null);
+
+                    case 3:
+                        return new EffectBonusStats(baseStat, rareStat, effects[specialEffectIndex]);
+
                     default:
-                        return new EffectBonusStats(baseStat, rareStat, null/*effects[rollSpecialEffect]*/);
+                        return new EffectBonusStats(baseStat, rareStat, null /*effects[rollSpecialEffect]*/);
                 }
             }
+
             return null;
         }
 
-        //Grober Ansatz, wird wahrscheinlich umgeschrieben --> keine prüfung auf die Arraygröße sondern string Keys?
-        private Effect[] FilterEffectsByRarity (Effect[] allEffects, WeaponRarity weaponRarity)
+        //Grober Ansatz, wird wahrscheinlich umgeschrieben --> keine prÃ¼fung auf die ArraygrÃ¶ÃŸe sondern string Keys?
+        private Effect[] FilterEffectsByRarity(Effect[] allEffects, WeaponRarity weaponRarity)
         {
+            return allEffects.ToList().FindAll(effect => effect.weaponRarity <= weaponRarity).ToArray();
             int fromPosition = 0, toPosition;
             switch (weaponRarity)
             {
@@ -136,10 +167,11 @@ namespace Effects
 
             Effect[] sortedEffects = new Effect[toPosition];
 
-            for (int i = fromPosition; i <= toPosition; i++ )
+            for (int i = fromPosition; i <= toPosition; i++)
             {
-                sortedEffects[i]  = allEffects[i];
+                sortedEffects[i] = allEffects[i];
             }
+
             return sortedEffects;
         }
 
@@ -148,17 +180,16 @@ namespace Effects
             effects = effectHolder.GetEffectDictionary();
             Dictionary<DamageType, Tuple<float, float, Effect[]>> pool = new Dictionary<DamageType, Tuple<float, float, Effect[]>>
             {
-                {DamageType.Physical, new Tuple<float, float, Effect[]>(2f,3f, effects["physical"])},
-                {DamageType.Magical,new Tuple<float, float, Effect[]>(2f,3f,effects["magical"])},
-                {DamageType.Fire,new Tuple<float, float, Effect[]>(2f,3f,effects["fire"])},
-                {DamageType.Lightning,new Tuple<float, float, Effect[]>(2f,3f,effects["lightning"])},
-                {DamageType.Poison,new Tuple<float, float, Effect[]>(2f,3f,effects["poison"])},
-                {DamageType.Frost,new Tuple<float, float, Effect[]>(2f,3f,effects["frost"])},
-                {DamageType.Shadow,new Tuple<float, float, Effect[]>(2f,3f,effects["shadow"])}
+                { DamageType.Physical, new Tuple<float, float, Effect[]>(2f, 3f, effects["physical"]) },
+                { DamageType.Magical, new Tuple<float, float, Effect[]>(2f, 3f, effects["magical"]) },
+                { DamageType.Fire, new Tuple<float, float, Effect[]>(2f, 3f, effects["fire"]) },
+                { DamageType.Lightning, new Tuple<float, float, Effect[]>(2f, 3f, effects["lightning"]) },
+                { DamageType.Poison, new Tuple<float, float, Effect[]>(2f, 3f, effects["poison"]) },
+                { DamageType.Frost, new Tuple<float, float, Effect[]>(2f, 3f, effects["frost"]) },
+                { DamageType.Shadow, new Tuple<float, float, Effect[]>(2f, 3f, effects["shadow"]) }
             };
 
             effectPool = pool;
         }
     }
 }
-
