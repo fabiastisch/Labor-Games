@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 3002192472317755500}
   - component: {fileID: 4767383151519524485}
   - component: {fileID: 7063302911480858804}
+  - component: {fileID: 6725189024815236020}
   - component: {fileID: 8991355072829359856}
   - component: {fileID: 4072221478263634563}
   m_Layer: 8
@@ -132,10 +133,27 @@ MonoBehaviour:
   baseRange: 2
   baseAttackcooldown: 0.8
   baseAOERange: 1.5
-  weaponEffekt: {fileID: 0}
   weaponRarity: 5
   damageType: 0
+  effect: {fileID: 0}
+  penetration: 0
+  bonusStat: 0
+  shouldGenerateEffect: 1
+  effectPool: {fileID: 11400000, guid: 56f65b34b03d4f04783d18fb4995e17a, type: 2}
   drawGizmos: 0
+--- !u!114 &6725189024815236020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791199111217048331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ac377f79399f7a45850f0dd86b7438f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 7063302911480858804}
 --- !u!95 &8991355072829359856
 Animator:
   serializedVersion: 3

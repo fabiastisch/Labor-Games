@@ -149,14 +149,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 182703460}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09fa1341d5177174680ce8cc0c23039c, type: 3}
+  m_Script: {fileID: 11500000, guid: 64f15fd69148bfa41a9f8b0188917a5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   uiStatsRadarChart: {fileID: 571591491}
-  vitallity: 78
-  agillity: 0
-  abillity: 60
-  charisma: 0
+  vitallity: 10
+  agillity: 10
+  abillity: 20
+  charisma: 30
   strength: 20
   stats: {fileID: 630292404}
 --- !u!4 &182703462

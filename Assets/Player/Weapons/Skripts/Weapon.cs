@@ -1,5 +1,6 @@
 using UnityEngine;
 using Combat;
+using Effects;
 
 namespace EquipableWeapon
 {
@@ -19,22 +20,57 @@ namespace EquipableWeapon
         public float baseAttackcooldown;
         public float baseAOERange;
 
-        [Header("Bonustats")] public Effekts.Effekt weaponEffekt;
-        public WeaponRarity weaponRarity;
+        [Header("Rarity & DamageType")] public WeaponRarity weaponRarity;
         public DamageType damageType;
+
+
+        [Header("Effect & EffectStats")] public Effect effect;
+        public float penetration;
+        public float bonusStat;
+        private EffectBonusStats weaponEffects;
+
+        public bool shouldGenerateEffect = true;
+        public EffectHolder effectPool;
 
         [Header("Debug")] [SerializeField] protected bool drawGizmos = false;
 
         private SpriteRenderer spriteRenderer;
+        private EffectGenerator effectGenerator;
 
 
         public void Start()
         {
+            effectGenerator = new EffectGenerator(effectPool);
+            //TODO Generate weaponrarity and dmgtype
+
             spriteRenderer = GetComponent<SpriteRenderer>();
             baseAOERange *= ((float) weaponRarity / 2);
             baseAttackcooldown /= ((float) weaponRarity / 2);
             baseDamage *= ((float) weaponRarity / 2);
             ChangeSpriteColor(weaponRarity);
+
+            penetration *= ((float) weaponRarity / 2);
+            bonusStat *= ((float) weaponRarity / 2);
+            GenerateEffect();
+        }
+
+        private void GenerateEffect()
+        {
+            if (!shouldGenerateEffect) return;
+            weaponEffects = effectGenerator.GenerateEffect(weaponRarity, damageType);
+            if (weaponEffects == null)
+            {
+                //Debug.LogError("Generated WeaponEffects equals null");
+                return;
+            }
+
+            if (weaponEffects.penetration != 0) penetration = weaponEffects.penetration;
+            if (weaponEffects.rareStat != 0) bonusStat = weaponEffects.rareStat;
+
+            if (weaponEffects.effect != null)
+            {
+                effect = weaponEffects.effect;
+            }
         }
 
         private void ChangeSpriteColor(WeaponRarity rarity)
