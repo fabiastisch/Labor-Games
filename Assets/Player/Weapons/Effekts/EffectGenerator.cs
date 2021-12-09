@@ -65,15 +65,11 @@ namespace Effects
 
         private EffectBonusStats GetChoosenEffects(int numberOfEffects, DamageType damageType, WeaponRarity weaponRarity)
         {
-            if (numberOfEffects <= 0)
-            {
-                return null;
-            }
 
             // Odds for Special Effects with 1 and 2 Effects
-            float[] specialEffectOdds = { 0.2f, 0.5f };
+            float[] specialEffectOdds = { 0.25f, 0.75f };
             // Odds for Rare Effects with 1 and 2 Effects
-            float[] rareEffectsOdds = { 0.25f, 0.75f };
+            float[] rareEffectsOdds = { 0.5f, 0.5f };
 
 
             Effect[] effects;
@@ -84,19 +80,14 @@ namespace Effects
                 float rareStat = value.Item2;
                 effects = value.Item3;
 
-                //TODO: Filter WeaponEffects to rarity
-                effects = FilterEffectsByRarity(effects, weaponRarity);
-                int specialEffectIndex = Util.GetRandomInt(effects.Length - 1);
+               //TODO: Filter WeaponEffects to rarity
+               //effects = FilterEffectsByRarity(effects, weaponRarity);
+               //int specialEffectIndex = Util.GetRandomInt(effects.Length - 1);
 
 
                 switch (numberOfEffects)
                 {
                     case 1:
-                        if (Util.GetChanceBool(specialEffectOdds[0]))
-                        {
-                            return new EffectBonusStats(0f, 0f, effects[specialEffectIndex]);
-                        }
-
                         if (Util.GetChanceBool(rareEffectsOdds[0]))
                         {
                             return new EffectBonusStats(0f, rareStat, null);
@@ -104,32 +95,21 @@ namespace Effects
 
                         return new EffectBonusStats(baseStat, 0f, null);
                     case 2:
-                        EffectBonusStats bonusStats = new EffectBonusStats();
+                       // EffectBonusStats bonusStats = new EffectBonusStats();
 
-                        if (Util.GetChanceBool(specialEffectOdds[1]))
+                        if (Util.GetChanceBool(rareEffectsOdds[0]))
                         {
-                            bonusStats.effect = effects[specialEffectIndex];
+                          //  bonusStats.rareStat = rareStat;
                             if (Util.GetChanceBool(rareEffectsOdds[1]))
                             {
-                                bonusStats.rareStat = rareStat;
-                                return bonusStats;
+                              //  bonusStats.effect = effects[specialEffectIndex];
+                                return new EffectBonusStats(0f, rareStat, null/*effects[rollSpecialEffect]*/); ;
                             }
-
-                            bonusStats.penetration = baseStat;
-                            return bonusStats;
                         }
-
-                        if (Util.GetChanceBool(rareEffectsOdds[1]))
-                        {
-                            bonusStats.rareStat = rareStat;
-                            bonusStats.penetration = baseStat;
-                            return bonusStats;
-                        }
-
-                        return new EffectBonusStats(baseStat, 0f, null);
+                        return new EffectBonusStats(baseStat, rareStat, null);
 
                     case 3:
-                        return new EffectBonusStats(baseStat, rareStat, effects[specialEffectIndex]);
+                        return new EffectBonusStats(baseStat, rareStat, null /*effects[rollSpecialEffect]*/);
 
                     default:
                         return new EffectBonusStats(baseStat, rareStat, null /*effects[rollSpecialEffect]*/);
@@ -143,36 +123,7 @@ namespace Effects
         private Effect[] FilterEffectsByRarity(Effect[] allEffects, WeaponRarity weaponRarity)
         {
             return allEffects.ToList().FindAll(effect => effect.weaponRarity <= weaponRarity).ToArray();
-            int fromPosition = 0, toPosition;
-            switch (weaponRarity)
-            {
-                case WeaponRarity.Bad:
-                    toPosition = 0;
-                    break;
-                case WeaponRarity.Uncommon:
-                    toPosition = 2;
-                    break;
-                case WeaponRarity.Mystic:
-                    toPosition = 3;
-                    break;
-                case WeaponRarity.Legendary:
-                    fromPosition = 3;
-                    toPosition = 4;
-                    break;
-                default:
-                    //Common rarity
-                    toPosition = 1;
-                    break;
-            }
 
-            Effect[] sortedEffects = new Effect[toPosition];
-
-            for (int i = fromPosition; i <= toPosition; i++)
-            {
-                sortedEffects[i] = allEffects[i];
-            }
-
-            return sortedEffects;
         }
 
         private void FillPool()

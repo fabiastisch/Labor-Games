@@ -66,11 +66,14 @@ namespace EquipableWeapon
                 return;
             }
 
-            effect = weaponEffects.effect;
             if (weaponEffects.penetration != 0) penetration = weaponEffects.penetration;
             if (weaponEffects.rareStat != 0) bonusStat = weaponEffects.rareStat;
 
-            effectDescription = effect.effectDescription;
+            if (weaponEffects.effect != null)
+            {
+                effect = weaponEffects.effect;
+                effectDescription = effect.effectDescription;
+            }
         }
 
         private void ChangeSpriteColor(WeaponRarity rarity)
