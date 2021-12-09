@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Effects{
 
-    [CreateAssetMenu(fileName = "New Effects", menuName = "Weapon Effect")]
+    [CreateAssetMenu(fileName = "New Effects", menuName = "WeaponEffects/EffectPool")]
     //This class contains all Weapon Effects
     public class EffectHolder : ScriptableObject
     {

@@ -29,7 +29,6 @@ namespace EquipableWeapon
         public float bonusStat;
         private EffectBonusStats weaponEffects;
 
-        private string effectDescription;
         public bool shouldGenerateEffect = true;
         public EffectHolder effectPool;
 
@@ -52,7 +51,6 @@ namespace EquipableWeapon
 
             penetration *= ((float) weaponRarity / 2);
             bonusStat *= ((float) weaponRarity / 2);
-
             GenerateEffect();
         }
 
@@ -72,7 +70,6 @@ namespace EquipableWeapon
             if (weaponEffects.effect != null)
             {
                 effect = weaponEffects.effect;
-                effectDescription = effect.effectDescription;
             }
         }
 
