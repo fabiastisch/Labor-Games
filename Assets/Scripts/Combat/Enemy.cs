@@ -13,6 +13,7 @@ namespace Combat {
         protected float attackDamage = 10f;
 
         protected override void Die() {
+            // TODO: Drop Loot and Exp
             Destroy(gameObject);
         }
     }
