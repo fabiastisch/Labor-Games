@@ -1,71 +1,65 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Combat;
+using Managers.Enemies;
 using UnityEngine;
 using Utils;
 using Random = UnityEngine.Random;
 
-namespace Dungeon.DungeonGeneration
-{
-    public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator
-    {
+namespace Dungeon.DungeonGeneration {
+    public class RoomFirstDungeonGenerator : SimpleRandomWalkDungeonGenerator {
         private RoomFirstDungeonGeneratorSo parameters;
 
         public RoomFirstDungeonGenerator(RoomFirstDungeonGeneratorSo parameter, DungeonGenerator generator) : base(
-            parameter, generator)
-        {
+            parameter, generator) {
             this.parameters = parameter;
         }
 
-        public override void RunProceduralGeneration()
-        {
+        public override void RunProceduralGeneration() {
             CreateRooms();
         }
 
-        private void CreateRooms()
-        {
+        private void CreateRooms() {
             var roomsList = ProceduralGenerationAlgorithms.BinarySpacePartitioning(new BoundsInt(
-                    (Vector3Int) parameters.startPosition,
+                    (Vector3Int)parameters.startPosition,
                     new Vector3Int(parameters.dungeonWidth, parameters.dungeonHeight, 0)), parameters.minRoomWidth,
                 parameters.minRoomHeight);
             HashSet<Vector2Int> floor;
 
 
             var last = roomsList.Last();
-            if (generator.currentPortal)
-            {
+            if (generator.currentPortal) {
                 generator.currentPortal.transform.position = last.center;
             }
-            else
-            {
+            else {
                 //_portal = Instantiate(portal, last.center, Quaternion.identity, gameObject.transform);
                 generator.currentPortal = generator.portal;
                 generator.currentPortal.transform.position = last.center;
             }
 
             var first = roomsList.First();
-            if (generator.currentSpawn)
-            {
+            if (generator.currentSpawn) {
                 generator.currentSpawn.transform.position = first.center;
             }
-            else
-            {
+            else {
                 //_spawn = Instantiate(spawn, first.center, Quaternion.identity, gameObject.transform);
                 generator.currentSpawn = generator.spawn;
                 generator.currentSpawn.transform.position = first.center;
             }
 
-            CreateTrapRooms(roomsList);
+            // should be index 1 to (last-1)
+            var roomsWithoutStartAndPortal = roomsList.GetRange(1, roomsList.Count - 2);
+            var trapRooms = CreateTrapRooms(roomsWithoutStartAndPortal);
+            SpawnEnemies(roomsWithoutStartAndPortal.FindAll(i => !trapRooms.Contains(i)));
 
             HashSet<Vector2Int> bonusRoom = CreateBonusRoom(roomsList);
 
 
-            if (parameters.randomWalkRooms)
-            {
+            if (parameters.randomWalkRooms) {
                 floor = CreateRoomsRandomly(roomsList);
             }
-            else
-            {
+            else {
                 floor = CreateSimpleRooms(roomsList, parameters.dungeonOffset);
             }
 
@@ -81,8 +75,7 @@ namespace Dungeon.DungeonGeneration
             WallGenerator.CreateWalls(floor, generator.bonusRoomTileMapVis);
         }
 
-        private HashSet<Vector2Int> CreateBonusRoom(List<BoundsInt> roomsList)
-        {
+        private HashSet<Vector2Int> CreateBonusRoom(List<BoundsInt> roomsList) {
             int countOfBonusRoom = Util.GetChance(parameters.bonusRoomChance);
             if (countOfBonusRoom == 0) return null;
 
@@ -96,84 +89,74 @@ namespace Dungeon.DungeonGeneration
             Vector2Int pos = Vector2Int.zero;
             Vector2Int closestRoom = Vector2Int.zero;
             var dir = parameters.direction;
-            if (parameters.direction == Dir.Random)
-            {
+            if (parameters.direction == Dir.Random) {
                 var array = Enum.GetValues(typeof(Dir));
-                dir = (Dir) array.GetValue(Random.Range(0, array.Length - 1));
+                dir = (Dir)array.GetValue(Random.Range(0, array.Length - 1));
             }
 
-            switch (dir)
-            {
+            switch (dir) {
                 case Dir.LEFT:
                     roomsList.Sort((one, two) => one.xMin.CompareTo(two.xMin));
                     int xMin = roomsList[0].xMin;
-                    for (int i = 1; i < roomsList.Count; i++)
-                    {
-                        if (roomsList[i].xMin < xMin + parameters.minRoomWidth)
-                        {
+                    for (int i = 1; i < roomsList.Count; i++) {
+                        if (roomsList[i].xMin < xMin + parameters.minRoomWidth) {
                             counter++;
                         }
                     }
 
 
                     //index = Random.Range(0, counter + 1);
-                    closestRoom = new Vector2Int((int) roomsList[index].center.x, (int) roomsList[index].center.y);
+                    closestRoom = new Vector2Int((int)roomsList[index].center.x, (int)roomsList[index].center.y);
                     pos = new Vector2Int(
                         roomsList[index].xMin - (parameters.bonusRoomOffset + parameters.bonusRoomWidth),
-                        (int) roomsList[index].y);
+                        (int)roomsList[index].y);
 
                     break;
                 case Dir.RIGHT:
                     roomsList.Sort((one, two) => two.xMax.CompareTo(one.xMax));
                     int xMax = roomsList[0].xMax;
-                    for (int i = 1; i < roomsList.Count; i++)
-                    {
-                        if (roomsList[i].xMax > xMax - parameters.minRoomWidth)
-                        {
+                    for (int i = 1; i < roomsList.Count; i++) {
+                        if (roomsList[i].xMax > xMax - parameters.minRoomWidth) {
                             counter++;
                         }
                     }
 
                     //index = Random.Range(0, counter + 1);
-                    closestRoom = new Vector2Int((int) roomsList[index].center.x, (int) roomsList[index].center.y);
+                    closestRoom = new Vector2Int((int)roomsList[index].center.x, (int)roomsList[index].center.y);
 
                     pos = new Vector2Int(roomsList[index].xMax + (parameters.bonusRoomOffset),
-                        (int) roomsList[index].yMin);
+                        (int)roomsList[index].yMin);
 
 
                     break;
                 case Dir.DOWN:
                     roomsList.Sort((one, two) => one.yMin.CompareTo(two.yMin));
                     int yMin = roomsList[0].xMax;
-                    for (int i = 1; i < roomsList.Count; i++)
-                    {
-                        if (roomsList[i].xMax < yMin + parameters.minRoomHeight)
-                        {
+                    for (int i = 1; i < roomsList.Count; i++) {
+                        if (roomsList[i].xMax < yMin + parameters.minRoomHeight) {
                             counter++;
                         }
                     }
 
                     //index = Random.Range(0, counter + 1);
-                    closestRoom = new Vector2Int((int) roomsList[index].center.x, (int) roomsList[index].center.y);
+                    closestRoom = new Vector2Int((int)roomsList[index].center.x, (int)roomsList[index].center.y);
 
-                    pos = new Vector2Int((int) roomsList[index].center.x - parameters.bonusRoomWidth / 2,
+                    pos = new Vector2Int((int)roomsList[index].center.x - parameters.bonusRoomWidth / 2,
                         roomsList[index].yMin - (parameters.bonusRoomOffset + parameters.bonusRoomHeight));
 
                     break;
                 case Dir.UP:
                     roomsList.Sort((one, two) => two.yMax.CompareTo(one.yMax));
                     int yMax = roomsList[0].xMax;
-                    for (int i = 1; i < roomsList.Count; i++)
-                    {
-                        if (roomsList[i].xMax > yMax - parameters.minRoomHeight)
-                        {
+                    for (int i = 1; i < roomsList.Count; i++) {
+                        if (roomsList[i].xMax > yMax - parameters.minRoomHeight) {
                             counter++;
                         }
                     }
 
                     //index = Random.Range(0, counter + 1);
-                    closestRoom = new Vector2Int((int) roomsList[index].center.x, (int) roomsList[index].center.y);
-                    pos = new Vector2Int((int) roomsList[index].center.x - parameters.bonusRoomWidth / 2,
+                    closestRoom = new Vector2Int((int)roomsList[index].center.x, (int)roomsList[index].center.y);
+                    pos = new Vector2Int((int)roomsList[index].center.x - parameters.bonusRoomWidth / 2,
                         roomsList[index].yMax + (parameters.bonusRoomOffset));
 
                     break;
@@ -182,7 +165,7 @@ namespace Dungeon.DungeonGeneration
             var bonusRoom = new BoundsInt(new Vector3Int(pos.x, pos.y, 0),
                 new Vector3Int(parameters.bonusRoomWidth, parameters.bonusRoomHeight, 0));
 
-            var bonusRoomPositions = CreateSimpleRooms(new List<BoundsInt> {bonusRoom});
+            var bonusRoomPositions = CreateSimpleRooms(new List<BoundsInt> { bonusRoom });
 
             var bonusRoomCorridor =
                 CreateCorridor(closestRoom,
@@ -195,42 +178,38 @@ namespace Dungeon.DungeonGeneration
             return bonusRoomPositions;
         }
 
-        private void CreateTrapRooms(List<BoundsInt> roomList)
-        {
+        private List<BoundsInt> CreateTrapRooms(List<BoundsInt> roomList) {
             int countOfTrapRooms = Util.GetChance(parameters.trapRoomChance);
-            if (countOfTrapRooms < 1) return;
+            List<BoundsInt> trapRooms = new List<BoundsInt>();
+            if (countOfTrapRooms < 1) return trapRooms;
             HashSet<int> usedIndexes = new HashSet<int>();
-            for (int i = 0; i < countOfTrapRooms; i++)
-            {
+            for (int i = 0; i < countOfTrapRooms; i++) {
                 int index = 0;
-                do
-                {
+                do {
                     index = Random.Range(1, roomList.Count);
                 } while (usedIndexes.Contains(index));
 
                 usedIndexes.Add(index);
                 var room = roomList[index];
                 generator.Instantiate(generator.trapRoom, room.center);
-
+                trapRooms.Add(room);
                 //generator.traps.Add(Instantiate(generator.trapRoom, room.center, Quaternion.identity, generator.gameObject.transform));
             }
+
+            return trapRooms;
         }
 
-        private HashSet<Vector2Int> CreateRoomsRandomly(List<BoundsInt> roomsList)
-        {
+        private HashSet<Vector2Int> CreateRoomsRandomly(List<BoundsInt> roomsList) {
             HashSet<Vector2Int> floor = new HashSet<Vector2Int>();
-            foreach (var roomBounds in roomsList)
-            {
+            foreach (var roomBounds in roomsList) {
                 var roomCenter = new Vector2Int(Mathf.RoundToInt(roomBounds.center.x),
                     Mathf.RoundToInt(roomBounds.center.y));
                 var roomFloor = RunRandomWalk(roomCenter);
-                foreach (var position in roomFloor)
-                {
+                foreach (var position in roomFloor) {
                     if (position.x >= (roomBounds.xMin + parameters.dungeonOffset) &&
                         position.x <= (roomBounds.xMax - parameters.dungeonOffset) &&
                         position.y >= (roomBounds.yMin - parameters.dungeonOffset) &&
-                        position.y <= (roomBounds.yMax - parameters.dungeonOffset))
-                    {
+                        position.y <= (roomBounds.yMax - parameters.dungeonOffset)) {
                         floor.Add(position);
                     }
                 }
@@ -239,20 +218,17 @@ namespace Dungeon.DungeonGeneration
             return floor;
         }
 
-        private HashSet<Vector2Int> ConnectRooms(List<BoundsInt> roomsList)
-        {
+        private HashSet<Vector2Int> ConnectRooms(List<BoundsInt> roomsList) {
             List<Vector2Int> roomCenters = new List<Vector2Int>();
-            foreach (var room in roomsList)
-            {
-                roomCenters.Add((Vector2Int) Vector3Int.RoundToInt(room.center));
+            foreach (var room in roomsList) {
+                roomCenters.Add((Vector2Int)Vector3Int.RoundToInt(room.center));
             }
 
             HashSet<Vector2Int> corridors = new HashSet<Vector2Int>();
             var currentRoomCenter = roomCenters[Random.Range(0, roomCenters.Count)];
             roomCenters.Remove(currentRoomCenter);
 
-            while (roomCenters.Count > 0)
-            {
+            while (roomCenters.Count > 0) {
                 Vector2Int closest = FindClosestPointTo(currentRoomCenter, roomCenters);
                 roomCenters.Remove(closest);
                 HashSet<Vector2Int> newCorridor = CreateCorridor(currentRoomCenter, closest);
@@ -263,15 +239,12 @@ namespace Dungeon.DungeonGeneration
             return corridors;
         }
 
-        private Vector2Int FindClosestPointTo(Vector2Int currentRoomCenter, List<Vector2Int> roomCenters)
-        {
+        private Vector2Int FindClosestPointTo(Vector2Int currentRoomCenter, List<Vector2Int> roomCenters) {
             Vector2Int closest = Vector2Int.zero;
             float length = float.MaxValue;
-            foreach (var position in roomCenters)
-            {
+            foreach (var position in roomCenters) {
                 float currentDist = Vector2.Distance(position, currentRoomCenter);
-                if (currentDist < length)
-                {
+                if (currentDist < length) {
                     length = currentDist;
                     closest = position;
                 }
@@ -280,8 +253,7 @@ namespace Dungeon.DungeonGeneration
             return closest;
         }
 
-        private HashSet<Vector2Int> CreateCorridor(Vector2Int currentRoomCenter, Vector2Int destination)
-        {
+        private HashSet<Vector2Int> CreateCorridor(Vector2Int currentRoomCenter, Vector2Int destination) {
             HashSet<Vector2Int> corridor = new HashSet<Vector2Int>();
             var position = currentRoomCenter;
 
@@ -289,27 +261,22 @@ namespace Dungeon.DungeonGeneration
             for (int i =
                     -(parameters.corridorWidth % 2 == 0 ? parameters.corridorWidth : parameters.corridorWidth + 1) / 2;
                 i < parameters.corridorWidth / 2;
-                i++)
-            {
+                i++) {
                 corridor.Add(position + Vector2Int.right * i);
             }
 
             for (int i =
                     -(parameters.corridorWidth % 2 == 0 ? parameters.corridorWidth : parameters.corridorWidth + 1) / 2;
                 i < parameters.corridorWidth / 2;
-                i++)
-            {
+                i++) {
                 corridor.Add(position + Vector2Int.down * i);
             }
 
-            while (position.y != destination.y)
-            {
-                if (destination.y > position.y)
-                {
+            while (position.y != destination.y) {
+                if (destination.y > position.y) {
                     position += Vector2Int.up;
                 }
-                else if (destination.y < position.y)
-                {
+                else if (destination.y < position.y) {
                     position += Vector2Int.down;
                 }
 
@@ -317,8 +284,7 @@ namespace Dungeon.DungeonGeneration
                         ? parameters.corridorWidth
                         : parameters.corridorWidth + 1) / 2;
                     i < parameters.corridorWidth / 2;
-                    i++)
-                {
+                    i++) {
                     corridor.Add(position + Vector2Int.right * i);
                 }
             }
@@ -326,19 +292,15 @@ namespace Dungeon.DungeonGeneration
             for (int i =
                     -(parameters.corridorWidth % 2 == 0 ? parameters.corridorWidth : parameters.corridorWidth + 1) / 2;
                 i < parameters.corridorWidth / 2;
-                i++)
-            {
+                i++) {
                 corridor.Add(position + Vector2Int.down * i);
             }
 
-            while (position.x != destination.x)
-            {
-                if (destination.x > position.x)
-                {
+            while (position.x != destination.x) {
+                if (destination.x > position.x) {
                     position += Vector2Int.right;
                 }
-                else if (destination.x < position.x)
-                {
+                else if (destination.x < position.x) {
                     position += Vector2Int.left;
                 }
 
@@ -346,8 +308,7 @@ namespace Dungeon.DungeonGeneration
                         ? parameters.corridorWidth
                         : parameters.corridorWidth + 1) / 2;
                     i < parameters.corridorWidth / 2;
-                    i++)
-                {
+                    i++) {
                     corridor.Add(position + Vector2Int.down * i);
                 }
             }
@@ -355,25 +316,21 @@ namespace Dungeon.DungeonGeneration
             return corridor;
         }
 
-        private void CreateCorridorTraps(HashSet<Vector2Int> corridor, HashSet<Vector2Int> floorsWithCorridor)
-        {
+        private void CreateCorridorTraps(HashSet<Vector2Int> corridor, HashSet<Vector2Int> floorsWithCorridor) {
             // TODO: Fix Corridor Traps -- Directions and add trap prefab 
             int countOfCorridorTraps = Util.GetChance(parameters.corridorTrapChance);
             if (countOfCorridorTraps == 0) return;
 
             List<Wall> wallPositions = new List<Wall>();
             // loop through each corridor position
-            foreach (var position in corridor)
-            {
-                for (int i = 0; i < Direction2D.cardinalDirectionList.Count; i++)
-                {
+            foreach (var position in corridor) {
+                for (int i = 0; i < Direction2D.cardinalDirectionList.Count; i++) {
                     var neighbourPosition = position + Direction2D.cardinalDirectionList[i];
                     // check if the neighbour is at floor
-                    if (floorsWithCorridor.Contains(neighbourPosition) == false)
-                    {
+                    if (floorsWithCorridor.Contains(neighbourPosition) == false) {
                         // if its not, then its a wall
                         wallPositions.Add(new Wall(position,
-                            (Direction) Enum.GetValues(typeof(Direction)).GetValue(i)));
+                            (Direction)Enum.GetValues(typeof(Direction)).GetValue(i)));
                     }
                 }
             }
@@ -381,14 +338,12 @@ namespace Dungeon.DungeonGeneration
             var selectedCorridorWalls =
                 wallPositions.FindAll(x => x.facingTowards == parameters.corridorTrapSpawnDirection);
             if (parameters.corridorTrapSpawnDirection == Direction.UP ||
-                parameters.corridorTrapSpawnDirection == Direction.DOWN)
-            {
+                parameters.corridorTrapSpawnDirection == Direction.DOWN) {
                 // Reverse sorting, first x, then y
                 selectedCorridorWalls.Sort((first, second) => first.position.x.CompareTo(second.position.x));
                 selectedCorridorWalls = new List<Wall>(selectedCorridorWalls.OrderBy(wall => wall.position.y));
             }
-            else
-            {
+            else {
                 // Sort first by y then by x. make sure that the Second sort is stalbe
                 selectedCorridorWalls.Sort((first, second) => first.position.y.CompareTo(second.position.y));
                 // Order By is Stable Sort
@@ -399,8 +354,7 @@ namespace Dungeon.DungeonGeneration
 
 
             if (parameters.corridorTrapSpawnDirection == Direction.UP ||
-                parameters.corridorTrapSpawnDirection == Direction.DOWN)
-            {
+                parameters.corridorTrapSpawnDirection == Direction.DOWN) {
                 //var findAll = selectedCorridorPositions.FindAll(x => x.position.y == start.position.y);
                 //var findAll = selectedCorridorPositions;
                 /*foreach (var wall in findAll)
@@ -411,13 +365,11 @@ namespace Dungeon.DungeonGeneration
                 float corridorTrapChance = parameters.corridorTrapChance;
                 int corridorTrapsCount = parameters.corridorTrapsCount;
 
-                for (var i = 0; i < selectedCorridorWalls.Count; i++)
-                {
+                for (var i = 0; i < selectedCorridorWalls.Count; i++) {
                     var wall = selectedCorridorWalls[i];
                     var countOffset = 0;
 
-                    do
-                    {
+                    do {
                         countOffset++;
                     } while ((i + countOffset < selectedCorridorWalls.Count) &&
                              wall.position.x == selectedCorridorWalls[i + countOffset].position.x - countOffset
@@ -426,23 +378,19 @@ namespace Dungeon.DungeonGeneration
                     //Debug.Log(i + " | " + countOffset + " size: " + findAll.Count);
 
                     int max = countOffset;
-                    if (corridorTrapsCount == 0)
-                    {
+                    if (corridorTrapsCount == 0) {
                         max = 1;
                     }
-                    else
-                    {
+                    else {
                         max = countOffset - corridorTrapsCount + 1;
                     }
 
-                    for (int j = Random.Range(0, max), k = 0; j < countOffset; j++, k++)
-                    {
+                    for (int j = Random.Range(0, max), k = 0; j < countOffset; j++, k++) {
                         if (k >= corridorTrapsCount) break;
                         //Debug.Log(findAll[i + j] + " " + i + " | " + j + " size: " + findAll.Count);
                         var position = new Vector3(selectedCorridorWalls[i + j].position.x,
                             selectedCorridorWalls[i + j].position.y);
-                        if (parameters.corridorTrapSpawnDirection == Direction.UP)
-                        {
+                        if (parameters.corridorTrapSpawnDirection == Direction.UP) {
                             position.y += 1;
                             GameObject o = generator.Instantiate(generator.dungeonTraps.fireFlameThrower, position);
                             //TODO write Sorting Orders down, so no one gets confused
@@ -459,8 +407,7 @@ namespace Dungeon.DungeonGeneration
                     i += (countOffset - 1);
                 }
             }
-            else
-            {
+            else {
                 // Left or Right Traps
 
                 //var findAll = selectedCorridorPositions.FindAll(x => x.position.x == start.position.x);
@@ -473,13 +420,11 @@ namespace Dungeon.DungeonGeneration
                 int corridorTrapsCount = parameters.corridorTrapsCount;
 
 
-                for (var i = 0; i < selectedCorridorWalls.Count; i++)
-                {
+                for (var i = 0; i < selectedCorridorWalls.Count; i++) {
                     var wall = selectedCorridorWalls[i];
                     var countOffset = 0;
 
-                    do
-                    {
+                    do {
                         countOffset++;
                     } while ((i + countOffset < selectedCorridorWalls.Count) &&
                              wall.position.y == selectedCorridorWalls[i + countOffset].position.y - countOffset
@@ -487,32 +432,27 @@ namespace Dungeon.DungeonGeneration
 
                     //Debug.Log(i + " | " + countOffset + " size: " + findAll.Count);
 
-                    
+
                     int max = countOffset;
-                    if (corridorTrapsCount == 0)
-                    {
+                    if (corridorTrapsCount == 0) {
                         max = 1;
                     }
-                    else
-                    {
+                    else {
                         max = countOffset - corridorTrapsCount + 1;
                     }
 
-                    for (int j = Random.Range(0, max), k = 0; j < countOffset; j++, k++)
-                    {
+                    for (int j = Random.Range(0, max), k = 0; j < countOffset; j++, k++) {
                         if (k >= corridorTrapsCount) break;
-                        
+
                         //Debug.Log(findAll[i + j] + " " + i + " | " + j + " size: " + findAll.Count);
                         var position = new Vector3(selectedCorridorWalls[i + j].position.x,
                             selectedCorridorWalls[i + j].position.y);
-                        if (parameters.corridorTrapSpawnDirection == Direction.LEFT)
-                        {
+                        if (parameters.corridorTrapSpawnDirection == Direction.LEFT) {
                             generator.Instantiate(generator.dungeonTraps.fireFlameThrower,
                                 position + Vector3.right * 1 / 4,
                                 Quaternion.Euler(0, 0, 90));
                         }
-                        else
-                        {
+                        else {
                             generator.Instantiate(generator.dungeonTraps.fireFlameThrower,
                                 position + Vector3.right * 3 / 4 + Vector3.up,
                                 Quaternion.Euler(0, 0, -90));
@@ -524,16 +464,12 @@ namespace Dungeon.DungeonGeneration
             }
         }
 
-        private HashSet<Vector2Int> CreateSimpleRooms(List<BoundsInt> roomsList, int offset = 0)
-        {
+        private HashSet<Vector2Int> CreateSimpleRooms(List<BoundsInt> roomsList, int offset = 0) {
             HashSet<Vector2Int> floor = new HashSet<Vector2Int>();
-            foreach (var room in roomsList)
-            {
-                for (int col = offset; col < room.size.x - offset; col++)
-                {
-                    for (int row = offset; row < room.size.y - offset; row++)
-                    {
-                        Vector2Int position = (Vector2Int) room.min + new Vector2Int(col, row);
+            foreach (var room in roomsList) {
+                for (int col = offset; col < room.size.x - offset; col++) {
+                    for (int row = offset; row < room.size.y - offset; row++) {
+                        Vector2Int position = (Vector2Int)room.min + new Vector2Int(col, row);
                         floor.Add(position);
                     }
                 }
@@ -541,10 +477,30 @@ namespace Dungeon.DungeonGeneration
 
             return floor;
         }
+
+        private void SpawnEnemies(List<BoundsInt> rooms) {
+            var enemiesCount = parameters.enemiesCount;
+            enemiesCount = 400;
+
+            var roomsCount = rooms.Count;
+            rooms.Sort((first, sec) => (int)(sec.size - first.size).magnitude);
+            Enemy prefab = EnemyManager.Instance.GETEnemy("bat");
+            foreach (var room in rooms)
+            {
+                for (int i = 0; i < enemiesCount/roomsCount ; i++) {
+                    generator.Instantiate(prefab.gameObject, Util.GetRandomPosition(room));
+                }
+            }
+            
+
+            foreach (var room in rooms) {
+            }
+
+            //TODO: implement
+        }
     }
 
-    public enum Dir
-    {
+    public enum Dir {
         UP,
         DOWN,
         LEFT,

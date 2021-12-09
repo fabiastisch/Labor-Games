@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 namespace Utils
 {
@@ -30,6 +30,16 @@ namespace Utils
             return Random.Range(0f, 1f) < chanceOfSuccess;
         }
 
+        public static int GetRandomInt(int min, int max)
+        {
+            return Random.Range(min, max + 1);
+        }
+
+        public static float GetRandomFloat(float min, float max)
+        {
+            return Random.Range(min, max);
+        }
+
         public static int GetRandomInt(int max)
         {
             return Random.Range(0, max + 1);
@@ -42,6 +52,16 @@ namespace Utils
             int angle = Mathf.RoundToInt(n);
 
             return angle;
+        }
+
+        public static Vector2 GetRandomPosition(BoundsInt boundsInt)
+        {
+            return GetRandomPosition(boundsInt.xMin + 2, boundsInt.xMax - 2, boundsInt.yMin + 2, boundsInt.yMax - 2);
+        }
+
+        public static Vector2 GetRandomPosition(int xMin, int xMax, int yMin, int yMax)
+        {
+            return new Vector2(GetRandomFloat(xMin, xMax), GetRandomFloat(yMin, yMax));
         }
     }
 }
