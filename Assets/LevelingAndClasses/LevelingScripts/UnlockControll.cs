@@ -3,16 +3,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UnlockControll: MonoBehaviour
 {
     
     [Header("List of Classes")] [SerializeField]
     private List<GameObject> levelingSkillList = new List<GameObject>();
+    
 
     [SerializeField] PassiveTestPlayer player;
    // private Requirements requirement;
 
+   private ListOf8Passives listofPassives;
+   
+   void Start()
+   {
+       listofPassives = ListOf8Passives.Instance;
+       CheckListForUnlocking();
+       SetButtonFunction();
+   }
+   
     [SerializeField]
     private Statistics statistics;
     public void CheckListForUnlocking()
@@ -66,4 +77,32 @@ public class UnlockControll: MonoBehaviour
         requirements.UnlockButton();
     }
     
+    private void ListFullLock()
+    {
+        foreach (var skillListEntry in levelingSkillList)
+        {
+            skillListEntry.GetComponent<Requirements>().ListFull();
+        }
+    }
+    
+    private void ListFullUnLock()
+    {
+        foreach (var skillListEntry in levelingSkillList)
+        {
+            skillListEntry.GetComponent<Requirements>().ListHasSpace();
+        }
+    }
+
+    private void SetButtonFunction()
+    {
+        Debug.Log("Add Functions to Buttons");
+        foreach (var skillListEntry in levelingSkillList)
+        {
+            skillListEntry.GetComponent<Button>().onClick.AddListener(() => listofPassives.AddItemToList(skillListEntry) );
+        }
+    }
+
+
+
+
 }

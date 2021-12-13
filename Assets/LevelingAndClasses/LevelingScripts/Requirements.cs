@@ -18,6 +18,9 @@ public class Requirements : MonoBehaviour
     private Button buttonholder;
 
     private bool locked = true;
+    
+    [SerializeField]
+    private bool listFullBool = false;
 
     private void Start()
     {
@@ -51,6 +54,24 @@ public class Requirements : MonoBehaviour
        // buttonholder.enabled = false;
         locked = true;
         
+    }
+
+    //Getting Locked
+    public bool GetLockState()
+    {
+        return locked;
+    }
+    
+    public void ListFull()
+    {
+        //Entry will be disabled and Color will change
+        listFullBool = true;
+    }
+    
+    public void ListHasSpace()
+    {
+        //Entry will be enabled and Color will be Normal
+        listFullBool = false;
     }
 
 
