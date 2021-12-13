@@ -23,10 +23,7 @@ public class Requirements : MonoBehaviour
 
     private void Start()
     {
-        if (locked)
-        {
-            transform.GetComponent<Image>().sprite = lockedSprite;
-        }
+        StateChange();
     }
     
 
@@ -75,14 +72,24 @@ public class Requirements : MonoBehaviour
     public void StateChange()
     {
         if (locked)
+        {
             transform.GetComponent<Image>().sprite = lockedSprite;
+            transform.GetComponent<Button>().enabled = false;
+        }
         else
+        {
             transform.GetComponent<Image>().sprite = unlockedSprite;
+            transform.GetComponent<Button>().enabled = true;
+        }
 
         if(listFullBool)
             transform.GetComponent<Button>().enabled = false;
         else
+        {
+            if (locked) return;
             transform.GetComponent<Button>().enabled = true;
+        }
+          
     }
 
 
