@@ -11,6 +11,8 @@ public class UnlockControll: MonoBehaviour
     [Header("List of Classes")] [SerializeField]
     private List<GameObject> levelingSkillList = new List<GameObject>();
     
+    public static UnlockControll Instance { get; private set; }
+    
 
     [SerializeField] PassiveTestPlayer player;
    // private Requirements requirement;
@@ -23,8 +25,13 @@ public class UnlockControll: MonoBehaviour
        CheckListForUnlocking();
        SetButtonFunction();
    }
-   
-    [SerializeField]
+
+   private void Awake()
+   {
+       Instance = this;
+   }
+
+   [SerializeField]
     private Statistics statistics;
     public void CheckListForUnlocking()
     {
@@ -77,7 +84,7 @@ public class UnlockControll: MonoBehaviour
         requirements.UnlockButton();
     }
     
-    private void ListFullLock()
+    public void ListFullLock()
     {
         foreach (var skillListEntry in levelingSkillList)
         {
@@ -85,7 +92,7 @@ public class UnlockControll: MonoBehaviour
         }
     }
     
-    private void ListFullUnLock()
+    public void ListFullUnLock()
     {
         foreach (var skillListEntry in levelingSkillList)
         {

@@ -24,6 +24,11 @@ public class ListOf8Passives : MonoBehaviour
         Instance = this;
     }
 
+    private void Start()
+    {
+        unlockControll = UnlockControll.Instance;
+    }
+
     public void AddItemToList(GameObject listEntry)
     {
         
@@ -35,6 +40,9 @@ public class ListOf8Passives : MonoBehaviour
         {
             passiveList.Add(listEntry);
         }
+        if (passiveList.Count > 7)
+            unlockControll.ListFullLock();
+        
         FillSlotsWithList();
     }
 
@@ -43,6 +51,10 @@ public class ListOf8Passives : MonoBehaviour
         if(passiveList.Contains(listEntryToRemove))
             passiveList.Remove(listEntryToRemove);
         FillSlotsWithList();
+        if (passiveList.Count < 8)
+        {
+           unlockControll.ListFullUnLock();
+        }
     }
 
     public void ReadList()
