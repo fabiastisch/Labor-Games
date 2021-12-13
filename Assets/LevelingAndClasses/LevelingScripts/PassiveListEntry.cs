@@ -26,6 +26,7 @@ public class PassiveListEntry : MonoBehaviour
    public void SetPassiveSlotted(GameObject toSlot)
    {
       passiveSlotted = toSlot;
+      passiveSlottedSprite = toSlot.GetComponent<Requirements>().unlockedSprite;
       Change();
       transform.GetComponent<Button>().enabled = true;
    }
@@ -55,10 +56,12 @@ public class PassiveListEntry : MonoBehaviour
    {
       if (passiveSlotted != null)
       {
-         transform.GetComponent<UnityEngine.UI.Image>().sprite = passiveSlottedSprite;
+         transform.GetChild(0).GetComponent<UnityEngine.UI.Image>().sprite = passiveSlottedSprite;
+         transform.GetComponent<Button>().enabled = true;
          return;
       }
-      transform.GetComponent<UnityEngine.UI.Image>().sprite = nopassiveSlotted;
+      transform.GetChild(0).GetComponent<UnityEngine.UI.Image>().sprite = nopassiveSlotted;
+      transform.GetComponent<Button>().enabled = false;
    }
       
 }

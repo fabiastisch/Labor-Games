@@ -73,12 +73,12 @@ public class Requirements : MonoBehaviour
     {
         if (locked)
         {
-            transform.GetComponent<Image>().sprite = lockedSprite;
+            transform.GetChild(0).GetComponent<Image>().sprite = lockedSprite;
             transform.GetComponent<Button>().enabled = false;
         }
         else
         {
-            transform.GetComponent<Image>().sprite = unlockedSprite;
+            transform.GetChild(0).GetComponent<Image>().sprite = unlockedSprite;
             transform.GetComponent<Button>().enabled = true;
         }
 
