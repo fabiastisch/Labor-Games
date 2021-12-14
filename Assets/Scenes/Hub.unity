@@ -3516,3 +3516,64 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 499e1302f307acd42a4422d21d7660d1, type: 3}
+--- !u!1001 &8253102296134192939
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8253102295668944864, guid: af3935a46c49bf8418f1f1c0165cb4f2, type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253102295668944865, guid: af3935a46c49bf8418f1f1c0165cb4f2, type: 3}
+      propertyPath: m_Name
+      value: Torch_Left_Dungeon_Tileset_91
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253102295668944871, guid: af3935a46c49bf8418f1f1c0165cb4f2, type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253102295668944871, guid: af3935a46c49bf8418f1f1c0165cb4f2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.427906
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253102295668944871, guid: af3935a46c49bf8418f1f1c0165cb4f2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.4982018
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253102295668944871, guid: af3935a46c49bf8418f1f1c0165cb4f2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253102295668944871, guid: af3935a46c49bf8418f1f1c0165cb4f2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253102295668944871, guid: af3935a46c49bf8418f1f1c0165cb4f2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253102295668944871, guid: af3935a46c49bf8418f1f1c0165cb4f2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253102295668944871, guid: af3935a46c49bf8418f1f1c0165cb4f2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253102295668944871, guid: af3935a46c49bf8418f1f1c0165cb4f2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253102295668944871, guid: af3935a46c49bf8418f1f1c0165cb4f2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253102295668944871, guid: af3935a46c49bf8418f1f1c0165cb4f2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: af3935a46c49bf8418f1f1c0165cb4f2, type: 3}

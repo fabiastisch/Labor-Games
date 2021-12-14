@@ -19,7 +19,7 @@ namespace Managers.Enemies {
                 Debug.Log("Add \"" + enemy.enemyName + "\" to Dic");
                 _enemies.Add(enemy.enemyName, enemy);
             }
-            
+            Physics2D.IgnoreLayerCollision(6, 7);
         }
 
         public Enemy GETEnemy(string name) {

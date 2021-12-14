@@ -63,6 +63,8 @@ namespace Dungeon.Scripts
             wallDiagonalCornerUpRight,
             wallDiagonalCornerUpLeft;
 
+        public GameObject torchLeft;
+
         public void GoNext()
         {
             // Go to next enum value and back to first.
