@@ -144,7 +144,7 @@ namespace Dungeon.DungeonGeneration
             0b10010101
         };
 
-        public static HashSet<int> wallBottmEightDirections = new HashSet<int>
+        public static HashSet<int> wallBottomEightDirections = new HashSet<int>
         {
             0b01000001
         };

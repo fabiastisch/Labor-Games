@@ -18,14 +18,13 @@ namespace Combat
 
         public float detectionDelay = 0.3f;
 
-        public LayerMask detectorLayerMask;
+        public LayerMask detectorLayerMask = 128;
 
-        [Header("LeaveDistance Parameters")] [SerializeField]
-        private float leaveDistanceSize = 7f;
+        [Header("LeaveDistance Parameters")]
+        public float leaveDistanceSize = 7f;
 
         [SerializeField] private bool enableLeaveDistance = true;
         [SerializeField] private Color leaveGizmosColor = Color.gray;
-        
 
         [Header("Gizmo Parameters")] public Color gizmoIdleColor = Color.green;
         public Color gizmoDetectedColor = Color.red;
@@ -107,12 +106,11 @@ namespace Combat
                     Gizmos.color = leaveGizmosColor;
                     Gizmos.DrawSphere(transform.position, leaveDistanceSize);
                 }
+
                 Gizmos.color = PlayerDetected ? gizmoDetectedColor : gizmoIdleColor;
                 //Gizmos.DrawCube((Vector2) detectorOrigin.position + detectorOriginOffset, detectorSize);
 
                 Gizmos.DrawSphere(transform.position, detectorSize);
-
-                
             }
         }
     }

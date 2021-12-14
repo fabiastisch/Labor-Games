@@ -27,6 +27,8 @@ namespace Dungeon.DungeonGeneration
         [Range(0, 2)] public float corridorTrapChance;
         public int corridorTrapsCount = 3;
 
+        [Header("Enemies")] public int enemiesCount = 50;
+
         protected override void OnValidate()
         {
             generatorType = DungeonGeneratorType.RoomFirst;

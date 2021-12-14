@@ -26,14 +26,14 @@ namespace Combat
 
         private void FixedUpdate()
         {
-            Debug.Log("Fixed: " + _playerDetector.PlayerDetected);
+            //Debug.Log("Fixed: " + _playerDetector.PlayerDetected);
 
             if (_playerDetector.PlayerDetected && !IsAtTarget) Move();
         }
 
         protected void Move()
         {
-            Debug.Log("Move");
+            //Debug.Log("Move");
             var directionToTarget = _playerDetector.DirectionToTarget;
             ChangeSpriteDirection(directionToTarget.x);
             float step = movementSpeed * Time.deltaTime;

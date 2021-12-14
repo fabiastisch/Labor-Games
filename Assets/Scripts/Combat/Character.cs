@@ -63,8 +63,13 @@ namespace Combat
             if (_currentHealth == 0)
             {
                 Debug.Log(gameObject.name + " died...");
-                //Die();
+                Die();
             }
+        }
+
+        protected virtual void Die()
+        {
+            
         }
 
         public virtual void Heal(float amountHp)

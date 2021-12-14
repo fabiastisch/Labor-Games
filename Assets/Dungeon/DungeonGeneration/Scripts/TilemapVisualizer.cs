@@ -120,11 +120,61 @@ namespace Dungeon.DungeonGeneration
             {
                 tile = tiles.wallFull;
             }
-            else if (WallTypesHelper.wallBottmEightDirections.Contains(typeAsInt))
+            else if (WallTypesHelper.wallBottomEightDirections.Contains(typeAsInt))
             {
                 tile = tiles.wallBottom;
             }
 
+            if (tile != null)
+                PaintSingleTile(wallTileMap, tile, position);
+        }
+
+        public void DrawWall(Vector2Int position, DungeonWallTypes? type)
+        {
+            TileBase tile = null;
+
+            switch (type)
+            {
+                case DungeonWallTypes.wallBottom:
+                    tile = tiles.wallBottom;
+                    break;
+                case DungeonWallTypes.wallFull:
+                    tile = tiles.wallFull;
+                    break;
+                case DungeonWallTypes.wallTop:
+                    tile = tiles.wallTop;
+                    break;
+                case DungeonWallTypes.wallSideLeft:
+                    tile = tiles.wallSideLeft;
+                    break;
+                case DungeonWallTypes.wallSideRight:
+                    tile = tiles.wallSideRight;
+                    break;
+                case DungeonWallTypes.wallBottomEightDirections:
+                    tile = tiles.wallBottom;
+                    break;
+                case DungeonWallTypes.wallFullEightDirections:
+                    tile = tiles.wallFull;
+                    break;
+                case DungeonWallTypes.wallDiagonalCornerDownLeft:
+                    tile = tiles.wallDiagonalCornerDownLeft;
+                    break;
+                case DungeonWallTypes.wallDiagonalCornerDownRight:
+                    tile = tiles.wallDiagonalCornerDownRight;
+                    break;
+                case DungeonWallTypes.wallDiagonalCornerUpLeft:
+                    tile = tiles.wallDiagonalCornerUpLeft;
+                    break;
+                case DungeonWallTypes.wallDiagonalCornerUpRight:
+                    tile = tiles.wallDiagonalCornerUpRight;
+                    break;
+                case DungeonWallTypes.wallInnerCornerDownLeft:
+                    tile = tiles.wallInnerCornerDownLeft;
+                    break;
+                case DungeonWallTypes.wallInnerCornerDownRight:
+                    tile = tiles.wallInnerCornerDownRight;
+                    break;
+            }
             if (tile != null)
                 PaintSingleTile(wallTileMap, tile, position);
         }

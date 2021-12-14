@@ -58,3 +58,4 @@ MonoBehaviour:
   wallDiagonalCornerDownLeft: {fileID: 11400000, guid: 7c0addb670c32a6428213e1640b143e5, type: 2}
   wallDiagonalCornerUpRight: {fileID: 11400000, guid: 6dc71003db8adcb40abf0df1c6a4c3e4, type: 2}
   wallDiagonalCornerUpLeft: {fileID: 11400000, guid: f8fcf11b467bb4f41aae00544e44f5c5, type: 2}
+  torchLeft: {fileID: 8253102295668944865, guid: af3935a46c49bf8418f1f1c0165cb4f2, type: 3}
