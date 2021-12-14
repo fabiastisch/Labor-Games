@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RoundBossRoom
   m_EditorClassIdentifier: 
   generatorType: 1
-  startPosition: {x: 0, y: 0}
+  startPosition: {x: 0, y: -20}
   floorColor: {r: 0, g: 0, b: 0, a: 0}
   wallColor: {r: 0, g: 0, b: 0, a: 0}
   overrideDefaultColor: 0

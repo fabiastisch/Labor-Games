@@ -20,8 +20,8 @@ namespace Combat
 
         public LayerMask detectorLayerMask = 128;
 
-        [Header("LeaveDistance Parameters")] [SerializeField]
-        private float leaveDistanceSize = 7f;
+        [Header("LeaveDistance Parameters")]
+        public float leaveDistanceSize = 7f;
 
         [SerializeField] private bool enableLeaveDistance = true;
         [SerializeField] private Color leaveGizmosColor = Color.gray;
