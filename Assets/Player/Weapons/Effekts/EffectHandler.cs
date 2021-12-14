@@ -59,10 +59,8 @@ namespace Effects
                 switch (state)
                 {
                     case EffectState.ready:
-                        Debug.Log(buttonPressed);
                         if (buttonPressed)
                         {
-                            Debug.Log(hasWeaponAnEffect);
                             effect.Activate(player);
                             buttonPressed = false;
                             state = EffectState.active;
