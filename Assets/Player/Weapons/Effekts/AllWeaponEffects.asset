@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56cba343d3917dc4293e2a33760f6302, type: 3}
   m_Name: AllWeaponEffects
   m_EditorClassIdentifier: 
-  fireEffects: []
-  frostEffects: []
+  fireEffects:
+  - {fileID: 11400000, guid: afecf640794e94d44b93cc5cbcee116e, type: 2}
+  frostEffects:
+  - {fileID: 11400000, guid: e13e71baa75b08c4f951f7811cd48c18, type: 2}
   lightningEffects: []
-  shadowEffects: []
+  shadowEffects:
+  - {fileID: 11400000, guid: f18ebf6c1dc4de64693118fe4a0afcb9, type: 2}
   poisonEffects: []
   physicalEffects: []
   magicalEffects: []

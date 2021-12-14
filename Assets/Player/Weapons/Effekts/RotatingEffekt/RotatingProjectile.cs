@@ -9,31 +9,27 @@ namespace Effects
     public class RotatingProjectile : Effect
     {
         //The weapon where to cast from
-        private GameObject weapon;
-        public GameObject sphereToRotate;
         private GameObject sphere;
         private float time = 0f;
+        [Header("Object to rotate")] public SpriteRenderer spriteRenderer;
+        public GameObject sphereToRotate;
 
         Vector2 rotationCenter;
-        public float speed = 5;
+        [Header("Rotationvalues")] public float speed = 5;
         public float radius = 2;
         private bool isSpawnt = false;
 
-        private void Awake()
-        {
-            isSpawnt = false;
-        }
-
-        public override void Activate(GameObject EquipedWeapon) {
-            weapon = EquipedWeapon;
+        public override void Activate(GameObject player) {
+            RecolorSphere(spriteRenderer, elementTyp);
             time += Time.deltaTime * speed;
             if (!isSpawnt)
             {
-                sphere = Instantiate(sphereToRotate, new Vector3(weapon.transform.position.x, weapon.transform.position.y, 0), Quaternion.identity);
+                sphere = Instantiate(sphereToRotate, new Vector3(player.transform.position.x, player.transform.position.y, 0), Quaternion.identity);
                 isSpawnt = true;
             }
+            
 
-            rotationCenter = weapon.transform.position;
+            rotationCenter = player.transform.position;
             float posX = rotationCenter.x + Mathf.Cos(time) * radius;
             float posY = rotationCenter.y + Mathf.Sin(time) * radius;
 
@@ -51,6 +47,34 @@ namespace Effects
         {
             isSpawnt = false;
             Destroy(sphere.gameObject);
+        }
+
+        private void RecolorSphere(SpriteRenderer sphereSprite, DamageType type)
+        {
+            switch (type)
+            {
+                case DamageType.Fire:
+                    sphereSprite.color = Color.red;
+                    return;
+                case DamageType.Frost:
+                    sphereSprite.color = Color.cyan;
+                    return;
+                case DamageType.Lightning:
+                    sphereSprite.color = Color.yellow;
+                    return;
+                case DamageType.Physical:
+                    sphereSprite.color = Color.gray;
+                    return;
+                case DamageType.Poison:
+                    sphereSprite.color = Color.green;
+                    return;
+                case DamageType.Magical:
+                    sphereSprite.color = Color.blue;
+                    return;
+                case DamageType.Shadow:
+                    sphereSprite.color = Color.black;
+                    return;
+            }
         }
     }
 }

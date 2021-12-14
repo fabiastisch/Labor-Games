@@ -6,20 +6,23 @@ namespace Effects
 {
     public class Effect : ScriptableObject
     {
-        public string effectName;
-        public float activeTime;
-        public float cooldown;
+
+        [Header("Effect identifiers")] public string effectName;
         public Combat.DamageType elementTyp;
-        public string effectDescription;
         public EquipableWeapon.WeaponRarity weaponRarity;
         public EffectTyp EffectTyp;
+        public string effectDescription;
+
+        [Header("Effectstats")]
+        public float activeTime;
+        public float cooldown;
         public float baseDamage;
 
         private float penetration;
         private float bonusStat;
 
         //The weapon where to cast from
-        public virtual void Activate(GameObject weapon) { }
+        public virtual void Activate(GameObject player) { }
         public virtual void Deactivate() { }
 
         public virtual void Passiv() { }

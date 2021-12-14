@@ -294,9 +294,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6725189024815236020, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2083309628}
+    - target: {fileID: 7063302911480858804, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
+      propertyPath: effect
+      value: 
+      objectReference: {fileID: 11400000, guid: 93dc0d19ec4b7304098508b2cfc1f951, type: 2}
+    - target: {fileID: 7063302911480858804, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
+      propertyPath: damageType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7063302911480858804, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
       propertyPath: weaponRarity
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7063302911480858804, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
+      propertyPath: shouldGenerateEffect
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
@@ -421,9 +437,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6725189024815236020, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2083309628}
+    - target: {fileID: 7063302911480858804, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
+      propertyPath: effect
+      value: 
+      objectReference: {fileID: 11400000, guid: afecf640794e94d44b93cc5cbcee116e, type: 2}
+    - target: {fileID: 7063302911480858804, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
+      propertyPath: damageType
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7063302911480858804, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
       propertyPath: weaponRarity
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7063302911480858804, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
+      propertyPath: shouldGenerateEffect
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
@@ -2926,6 +2958,22 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -6.666667
       objectReference: {fileID: 0}
+    - target: {fileID: 7610018542070514180, guid: 5b200b5938c353445998557fb82e7309, type: 3}
+      propertyPath: effect
+      value: 
+      objectReference: {fileID: 11400000, guid: b36f80e32ad709b42a1bcbbdaf9225f0, type: 2}
+    - target: {fileID: 7610018542070514180, guid: 5b200b5938c353445998557fb82e7309, type: 3}
+      propertyPath: bonusStat
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7610018542070514180, guid: 5b200b5938c353445998557fb82e7309, type: 3}
+      propertyPath: penetration
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7610018542070514180, guid: 5b200b5938c353445998557fb82e7309, type: 3}
+      propertyPath: shouldGenerateEffect
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8548802804282458401, guid: 5b200b5938c353445998557fb82e7309, type: 3}
       propertyPath: m_Name
       value: Player
@@ -3036,9 +3084,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6725189024815236020, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2083309628}
+    - target: {fileID: 7063302911480858804, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
+      propertyPath: effect
+      value: 
+      objectReference: {fileID: 11400000, guid: f18ebf6c1dc4de64693118fe4a0afcb9, type: 2}
+    - target: {fileID: 7063302911480858804, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
+      propertyPath: damageType
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7063302911480858804, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
       propertyPath: weaponRarity
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7063302911480858804, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
+      propertyPath: shouldGenerateEffect
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
@@ -3116,9 +3180,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6725189024815236020, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2083309628}
+    - target: {fileID: 7063302911480858804, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
+      propertyPath: effect
+      value: 
+      objectReference: {fileID: 11400000, guid: b60e7cd3f88cf1e43b8063eef3d149e2, type: 2}
+    - target: {fileID: 7063302911480858804, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
+      propertyPath: damageType
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7063302911480858804, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
       propertyPath: weaponRarity
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7063302911480858804, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
+      propertyPath: shouldGenerateEffect
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
@@ -3175,6 +3255,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3002192472317755500, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6725189024815236020, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2083309628}
+    - target: {fileID: 7063302911480858804, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
+      propertyPath: effect
+      value: 
+      objectReference: {fileID: 11400000, guid: d977a02aac4133b49a28bd427a81bde2, type: 2}
+    - target: {fileID: 7063302911480858804, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
+      propertyPath: damageType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7063302911480858804, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
+      propertyPath: shouldGenerateEffect
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

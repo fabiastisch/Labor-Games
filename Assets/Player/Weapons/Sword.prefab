@@ -153,7 +153,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac377f79399f7a45850f0dd86b7438f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 7063302911480858804}
+  player: {fileID: 8548802804282458401, guid: 5b200b5938c353445998557fb82e7309, type: 3}
+  fireAction:
+    m_Name: Fire
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: fbb53f97-1776-45f9-adf5-00ac0bec47a0
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
 --- !u!95 &8991355072829359856
 Animator:
   serializedVersion: 3

@@ -793,7 +793,19 @@ MonoBehaviour:
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_DeviceRegainedEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -987,9 +999,9 @@ MonoBehaviour:
     m_ActionName: Menu/Menu[/Keyboard/escape]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6254788297512749316}
-        m_TargetAssemblyTypeName: Effects.EffectHandler, Assembly-CSharp
-        m_MethodName: ActivatePassiv
+      - m_Target: {fileID: 245163729418225517}
+        m_TargetAssemblyTypeName: Player.PlayerHand, Assembly-CSharp
+        m_MethodName: ActivateSkill
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1077,6 +1089,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6725189024815236020, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 8548802804282458401}
+    - target: {fileID: 6725189024815236020, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
+      propertyPath: fireAction.m_Id
+      value: 97ad602f-e59e-45c9-9b38-029fcc0ba0a8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6725189024815236020, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
+      propertyPath: fireAction.m_Name
+      value: Fire
+      objectReference: {fileID: 0}
     - target: {fileID: 7063302911480858804, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
       propertyPath: effect
       value: 
@@ -1099,17 +1123,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
---- !u!114 &6254788297512749316 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6725189024815236020, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
-  m_PrefabInstance: {fileID: 835931307731274416}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ac377f79399f7a45850f0dd86b7438f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &2463536332101208796 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3002192472317755500, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}

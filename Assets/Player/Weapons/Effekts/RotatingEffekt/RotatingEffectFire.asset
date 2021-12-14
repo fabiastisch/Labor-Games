@@ -10,17 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c063963945d096f4a9a08a7985f6eeba, type: 3}
-  m_Name: RotatingEffect
+  m_Name: RotatingEffectFire
   m_EditorClassIdentifier: 
   effectName: RotatingFireball
-  activeTime: 10
-  cooldown: 5
   elementTyp: 5
-  effectDescription: Fireball surronding the Player which deals dmg to the enemys
-    hit
   weaponRarity: 2
   EffectTyp: 1
+  effectDescription: Fireball surronding the Player which deals dmg to the enemys
+    hit
+  activeTime: 10
+  cooldown: 5
   baseDamage: 1
+  spriteRenderer: {fileID: 2076028926428915652, guid: 7323623438576524eb9f9b694b5df73c, type: 3}
   sphereToRotate: {fileID: 7489526933493164664, guid: 7323623438576524eb9f9b694b5df73c, type: 3}
-  speed: 1
+  speed: 5
   radius: 2

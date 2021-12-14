@@ -12,9 +12,16 @@ namespace Effects
         onActivate,
         passiv,
     }
+    public enum EffectState
+    {
+        ready,
+        active,
+        onRefreshing
+    };
 
     public class EffectHandler : MonoBehaviour
     {
+        public GameObject player;
         private EquipableWeapon.Weapon weapon;
         private Effect effect;
         private float cooldown;
@@ -23,14 +30,7 @@ namespace Effects
         bool buttonPressed = false;
         bool isWeaponEqquiped = false;
 
-        private enum EffectState
-        {
-            ready,
-            active,
-            onRefreshing
-        };
-
-        EffectState state = EffectState.ready;
+        public EffectState state = EffectState.ready;
 
         private bool hasWeaponAnEffect = false;
         // Start is called before the first frame update
@@ -47,26 +47,23 @@ namespace Effects
         // Update is called once per frame
         void Update()
         {
-            // EqiupedItem Layer = 9
-            if (weapon.gameObject.layer == 9)
-            {
-                isWeaponEqquiped = true;
-            }
-            else
-            {
-                isWeaponEqquiped = false;
-            }
-            
-            if (!hasWeaponAnEffect || !isWeaponEqquiped) return;
+
+            isWeaponEqquiped = weapon.gameObject.layer == 9 ? true : false;
+            if (!hasWeaponAnEffect || !isWeaponEqquiped)return;
+
+ 
             //If it is an effect which you can activate on buttonpress
             if (effect.EffectTyp == EffectTyp.onActivate)
             {
+                
                 switch (state)
                 {
                     case EffectState.ready:
+                        Debug.Log(buttonPressed);
                         if (buttonPressed)
                         {
-                            effect.Activate(weapon.gameObject);
+                            Debug.Log(hasWeaponAnEffect);
+                            effect.Activate(player);
                             buttonPressed = false;
                             state = EffectState.active;
                             activeTime = effect.activeTime;
@@ -75,7 +72,7 @@ namespace Effects
                     case EffectState.active:
                         if (activeTime > 0)
                         {
-                            effect.Activate(weapon.gameObject);
+                            effect.Activate(player);
                             activeTime -= Time.deltaTime;
                         }
                         else
