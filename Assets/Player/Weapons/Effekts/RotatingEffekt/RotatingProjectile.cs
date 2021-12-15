@@ -20,19 +20,19 @@ namespace Effects
         private bool isSpawnt = false;
 
         public override void Activate(GameObject player) {
+
             RecolorSphere(spriteRenderer, elementTyp);
             time += Time.deltaTime * speed;
+
             if (!isSpawnt)
             {
                 sphere = Instantiate(sphereToRotate, new Vector3(player.transform.position.x, player.transform.position.y, 0), Quaternion.identity);
                 isSpawnt = true;
             }
-            
 
             rotationCenter = player.transform.position;
             float posX = rotationCenter.x + Mathf.Cos(time) * radius;
             float posY = rotationCenter.y + Mathf.Sin(time) * radius;
-
             sphere.transform.position = new Vector2(posX, posY);
 
             //Enemy Layer == 6
@@ -48,7 +48,6 @@ namespace Effects
             isSpawnt = false;
             Destroy(sphere.gameObject);
         }
-
         private void RecolorSphere(SpriteRenderer sphereSprite, DamageType type)
         {
             switch (type)

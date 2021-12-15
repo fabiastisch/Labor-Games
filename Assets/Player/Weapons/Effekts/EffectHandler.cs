@@ -31,9 +31,8 @@ namespace Effects
         bool isWeaponEqquiped = false;
 
         public EffectState state = EffectState.ready;
-
         private bool hasWeaponAnEffect = false;
-        // Start is called before the first frame update
+
         void Start()
         {
             weapon = GetComponent<EquipableWeapon.Weapon>();
@@ -44,55 +43,81 @@ namespace Effects
             }
         }
 
-        // Update is called once per frame
         void Update()
         {
-
             isWeaponEqquiped = weapon.gameObject.layer == 9 ? true : false;
-            if (!hasWeaponAnEffect || !isWeaponEqquiped)return;
+            if (!hasWeaponAnEffect || !isWeaponEqquiped) return;
 
- 
-            //If it is an effect which you can activate on buttonpress
+            //If effect activates on buttonpress
             if (effect.EffectTyp == EffectTyp.onActivate)
             {
-                
-                switch (state)
-                {
-                    case EffectState.ready:
-                        if (buttonPressed)
-                        {
-                            effect.Activate(player);
-                            buttonPressed = false;
-                            state = EffectState.active;
-                            activeTime = effect.activeTime;
-                        }
-                        break;
-                    case EffectState.active:
-                        if (activeTime > 0)
-                        {
-                            effect.Activate(player);
-                            activeTime -= Time.deltaTime;
-                        }
-                        else
-                        {
-                            state = EffectState.onRefreshing;
-                            cooldown = effect.cooldown;
-                        }
-                        break;
-                    case EffectState.onRefreshing:
-                        if (cooldown > 0)
-                        {
-                            effect.Deactivate();
-                            cooldown -= Time.deltaTime;
-                        }
-                        else
-                        {
-                            state = EffectState.ready;
-                        }
-                        return;
-                }
+                ActivateSkill();
+                return;
+            }
+
+            //If effect activates on basicattacks
+            if (effect.EffectTyp == EffectTyp.onHit)
+            {
+                OnHitEffect();
+                return;
+            }
+
+            //If effect activates in a spezific time
+            if (effect.EffectTyp == EffectTyp.passiv)
+            {
+                PassivEffect();
+                return;
             }
         }
+
+        #region Skillmethods
+        private void OnHitEffect() { }
+
+        private void PassivEffect() { }
+
+        private void ActivateSkill()
+        {
+            switch (state)
+            {
+                case EffectState.ready:
+
+                    if (buttonPressed)
+                    {
+                        effect.Activate(player);
+                        buttonPressed = false;
+                        state = EffectState.active;
+                        activeTime = effect.activeTime;
+                    }
+                    return;
+
+                case EffectState.active:
+
+                    if (activeTime > 0)
+                    {
+                        effect.Activate(player);
+                        activeTime -= Time.deltaTime;
+                    }
+                    else
+                    {
+                        state = EffectState.onRefreshing;
+                        cooldown = effect.cooldown;
+                    }
+                    return;
+
+                case EffectState.onRefreshing:
+                    if (cooldown > 0)
+                    {
+                        effect.Deactivate();
+                        cooldown -= Time.deltaTime;
+                    }
+                    else
+                    {
+                        state = EffectState.ready;
+                    }
+                    return;
+            }
+        }
+        #endregion
         public void ActivatePassiv(InputAction.CallbackContext context)
         {
             if (!context.performed || state != EffectState.ready) return;

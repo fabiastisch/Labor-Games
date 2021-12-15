@@ -65,12 +65,10 @@ namespace Effects
 
         private EffectBonusStats GetChoosenEffects(int numberOfEffects, DamageType damageType, WeaponRarity weaponRarity)
         {
-
             // Odds for Special Effects with 1 and 2 Effects
             float[] specialEffectOdds = { 0.25f, 0.75f };
             // Odds for Rare Effects with 1 and 2 Effects
             float[] rareEffectsOdds = { 0.5f, 0.5f };
-
 
             Effect[] effects;
 
@@ -83,7 +81,6 @@ namespace Effects
                //TODO: Filter WeaponEffects to rarity
                //effects = FilterEffectsByRarity(effects, weaponRarity);
                //int specialEffectIndex = Util.GetRandomInt(effects.Length - 1);
-
 
                 switch (numberOfEffects)
                 {
