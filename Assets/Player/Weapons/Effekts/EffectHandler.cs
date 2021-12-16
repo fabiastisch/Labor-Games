@@ -36,15 +36,16 @@ namespace Effects
         void Start()
         {
             weapon = GetComponent<EquipableWeapon.Weapon>();
+        }
+
+        void Update()
+        {
             if (weapon.effect != null)
             {
                 effect = weapon.effect;
                 hasWeaponAnEffect = true;
             }
-        }
 
-        void Update()
-        {
             isWeaponEqquiped = weapon.gameObject.layer == 9 ? true : false;
             if (!hasWeaponAnEffect || !isWeaponEqquiped) return;
 

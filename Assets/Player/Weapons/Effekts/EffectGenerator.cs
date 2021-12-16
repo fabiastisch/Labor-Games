@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Combat;
 using EquipableWeapon;
+using UnityEngine;
 using Utils;
 
 namespace Effects
@@ -11,6 +12,26 @@ namespace Effects
     {
         private Dictionary<string, Effect[]> effects;
         private EffectHolder effectHolder;
+
+        private DamageType[] dmgTypePool = 
+            {
+                DamageType.Fire,
+                DamageType.Frost,
+                DamageType.Lightning,
+                DamageType.Magical,
+                DamageType.Physical,
+                DamageType.Poison, 
+                DamageType.Shadow 
+            };
+
+        private WeaponRarity[] weaponRaritiesPool =
+            {
+                WeaponRarity.Legendary,
+                WeaponRarity.Mystic,
+                WeaponRarity.Uncommon,
+                WeaponRarity.Bad,
+                WeaponRarity.Common,
+            };
 
         public EffectGenerator(EffectHolder effectHolder)
         {
@@ -30,6 +51,27 @@ namespace Effects
             //Return null if the weapon has no effect
             if (numberOfEffects == 0) return null;
             return GetChoosenEffects(numberOfEffects, damageType, rarity);
+        }
+
+        public (DamageType,WeaponRarity) GetRandomeDmgtypeAndRarity()
+        {
+            int randomNumber = Util.GetRandomInt(0, dmgTypePool.Length - 1);
+            DamageType dmgTyp = dmgTypePool[randomNumber];
+
+            float[] weaponRarityChance = { 0.02f, 0.08f, 0.20f, 0.25f, 0.45f };
+
+            int positionInArray = 4;
+            for (int i = 0; i < weaponRarityChance.Length; i++)
+            {
+                if (Util.GetChanceBool(weaponRarityChance[i]))
+                {
+                    positionInArray = i;
+                    break;
+                }
+            }
+
+            WeaponRarity rarityTyp = weaponRaritiesPool[positionInArray];
+            return (dmgTyp, rarityTyp);
         }
 
         private float[] GetOddsByRarity(WeaponRarity weaponRarity)
@@ -78,9 +120,8 @@ namespace Effects
                 float rareStat = value.Item2;
                 effects = value.Item3;
 
-               //TODO: Filter WeaponEffects to rarity
-               //effects = FilterEffectsByRarity(effects, weaponRarity);
-               //int specialEffectIndex = Util.GetRandomInt(effects.Length - 1);
+                effects = FilterEffectsByRarity(effects, weaponRarity);
+                int specialEffectIndex = Util.GetRandomInt(effects.Length - 1);
 
                 switch (numberOfEffects)
                 {
@@ -92,35 +133,31 @@ namespace Effects
 
                         return new EffectBonusStats(baseStat, 0f, null);
                     case 2:
-                       // EffectBonusStats bonusStats = new EffectBonusStats();
+
 
                         if (Util.GetChanceBool(rareEffectsOdds[0]))
                         {
-                          //  bonusStats.rareStat = rareStat;
                             if (Util.GetChanceBool(rareEffectsOdds[1]))
                             {
-                              //  bonusStats.effect = effects[specialEffectIndex];
-                                return new EffectBonusStats(0f, rareStat, null/*effects[rollSpecialEffect]*/); ;
+                                return new EffectBonusStats(0f, rareStat, effects[specialEffectIndex]); ;
                             }
                         }
                         return new EffectBonusStats(baseStat, rareStat, null);
 
                     case 3:
-                        return new EffectBonusStats(baseStat, rareStat, null /*effects[rollSpecialEffect]*/);
+                        return new EffectBonusStats(baseStat, rareStat, effects[specialEffectIndex]);
 
                     default:
-                        return new EffectBonusStats(baseStat, rareStat, null /*effects[rollSpecialEffect]*/);
+                        return new EffectBonusStats(baseStat, rareStat, effects[specialEffectIndex]);
                 }
             }
 
             return null;
         }
 
-        //Grober Ansatz, wird wahrscheinlich umgeschrieben --> keine prüfung auf die Arraygröße sondern string Keys?
         private Effect[] FilterEffectsByRarity(Effect[] allEffects, WeaponRarity weaponRarity)
         {
             return allEffects.ToList().FindAll(effect => effect.weaponRarity <= weaponRarity).ToArray();
-
         }
 
         private void FillPool()

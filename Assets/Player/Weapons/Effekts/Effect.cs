@@ -24,9 +24,7 @@ namespace Effects
         //The weapon where to cast from
         public virtual void Activate(GameObject player) { }
         public virtual void Deactivate() { }
-
         public virtual void Passiv() { }
-
         public virtual void ActivateOnHit() { }
     }
 }

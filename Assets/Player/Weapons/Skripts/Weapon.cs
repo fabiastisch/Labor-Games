@@ -22,9 +22,10 @@ namespace EquipableWeapon
 
         [Header("Rarity & DamageType")] public WeaponRarity weaponRarity;
         public DamageType damageType;
+        public bool shouldGenerateRarityDMGTyp = true;
 
 
-        [Header("Effect & EffectStats")] public Effect effect;
+        [Header("Effect & EffectStats")] public Effect? effect;
         public float penetration;
         public float bonusStat;
         private EffectBonusStats weaponEffects;
@@ -36,12 +37,13 @@ namespace EquipableWeapon
 
         private SpriteRenderer spriteRenderer;
         private EffectGenerator effectGenerator;
-
-
         public void Start()
         {
             effectGenerator = new EffectGenerator(effectPool);
-            //TODO Generate weaponrarity and dmgtype
+            if (shouldGenerateRarityDMGTyp)
+            {
+                (damageType, weaponRarity) = effectGenerator.GetRandomeDmgtypeAndRarity();
+            }
 
             spriteRenderer = GetComponent<SpriteRenderer>();
             baseAOERange *= ((float) weaponRarity / 2);
@@ -56,11 +58,12 @@ namespace EquipableWeapon
 
         private void GenerateEffect()
         {
-            if (!shouldGenerateEffect) return;
+            if (!shouldGenerateEffect)return;
+
+            effect = null;
             weaponEffects = effectGenerator.GenerateEffect(weaponRarity, damageType);
             if (weaponEffects == null)
             {
-                //Debug.LogError("Generated WeaponEffects equals null");
                 return;
             }
 
@@ -70,6 +73,7 @@ namespace EquipableWeapon
             if (weaponEffects.effect != null)
             {
                 effect = weaponEffects.effect;
+                Debug.Log(effect.name);
             }
         }
 
