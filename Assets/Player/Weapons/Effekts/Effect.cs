@@ -18,9 +18,6 @@ namespace Weapons.Effects
         public float cooldown;
         public float baseDamage;
 
-        private float penetration;
-        private float bonusStat;
-
         //The weapon where to cast from
         public virtual void Activate(GameObject player) { }
         public virtual void Deactivate() { }
