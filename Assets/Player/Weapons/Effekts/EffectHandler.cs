@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine;
 
-namespace Effects
+namespace Weapons.Effects
 {
 
     public enum EffectTyp
@@ -89,7 +89,7 @@ namespace Effects
                         state = EffectState.active;
                         activeTime = effect.activeTime;
                     }
-                    return;
+                    break;
 
                 case EffectState.active:
 
@@ -103,7 +103,7 @@ namespace Effects
                         state = EffectState.onRefreshing;
                         cooldown = effect.cooldown;
                     }
-                    return;
+                    break;
 
                 case EffectState.onRefreshing:
                     if (cooldown > 0)
@@ -115,7 +115,7 @@ namespace Effects
                     {
                         state = EffectState.ready;
                     }
-                    return;
+                    break;
             }
         }
         #endregion

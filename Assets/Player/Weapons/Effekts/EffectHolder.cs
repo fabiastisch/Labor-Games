@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace Effects{
+namespace Weapons.Effects
+{
 
     [CreateAssetMenu(fileName = "New Effects", menuName = "WeaponEffects/EffectPool")]
     //This class contains all Weapon Effects

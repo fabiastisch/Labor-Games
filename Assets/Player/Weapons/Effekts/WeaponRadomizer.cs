@@ -6,9 +6,9 @@ using EquipableWeapon;
 using UnityEngine;
 using Utils;
 
-namespace Effects
+namespace Weapons.Effects
 {
-    public class EffectGenerator
+    public class WeaponRadomizer
     {
         private Dictionary<string, Effect[]> effects;
         private EffectHolder effectHolder;
@@ -33,7 +33,7 @@ namespace Effects
                 WeaponRarity.Common,
             };
 
-        public EffectGenerator(EffectHolder effectHolder)
+        public WeaponRadomizer(EffectHolder effectHolder)
         {
             this.effectHolder = effectHolder;
         }

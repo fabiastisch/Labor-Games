@@ -1,6 +1,6 @@
 using UnityEngine;
 using Combat;
-using Effects;
+using Weapons.Effects;
 
 namespace EquipableWeapon
 {
@@ -36,10 +36,10 @@ namespace EquipableWeapon
         [Header("Debug")] [SerializeField] protected bool drawGizmos = false;
 
         private SpriteRenderer spriteRenderer;
-        private EffectGenerator effectGenerator;
+        private WeaponRadomizer effectGenerator;
         public void Start()
         {
-            effectGenerator = new EffectGenerator(effectPool);
+            effectGenerator = new WeaponRadomizer(effectPool);
             if (shouldGenerateRarityDMGTyp)
             {
                 (damageType, weaponRarity) = effectGenerator.GetRandomeDmgtypeAndRarity();

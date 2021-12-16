@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace Effects {
+namespace Weapons.Effects
+{
     //This class is used to give alle available effects with one return to the weapon class by the EffectGenerator
     public class EffectBonusStats {
         public float penetration { get; set; }

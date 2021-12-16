@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Effects
+namespace Weapons.Effects
 {
     [CreateAssetMenu (fileName= "RotatingEffect", menuName = "WeaponEffects/RotatingProjectile")]
     public class RotatingProjectile : Effect
@@ -17,18 +17,16 @@ namespace Effects
         Vector2 rotationCenter;
         [Header("Rotationvalues")] public float speed = 5;
         public float radius = 2;
-        private bool isSpawnt = false;
 
         public override void Activate(GameObject player) {
 
             RecolorSphere(spriteRenderer, elementTyp);
             time += Time.deltaTime * speed;
 
-            if (!isSpawnt)
+            if (!sphere)
             {
                 sphere = Instantiate(sphereToRotate, new Vector3(player.transform.position.x, player.transform.position.y, 0), Quaternion.identity);
-                isSpawnt = true;
-            }
+;           }
 
             rotationCenter = player.transform.position;
             float posX = rotationCenter.x + Mathf.Cos(time) * radius;
@@ -45,7 +43,6 @@ namespace Effects
         }
         public override void Deactivate()
         {
-            isSpawnt = false;
             Destroy(sphere.gameObject);
         }
         private void RecolorSphere(SpriteRenderer sphereSprite, DamageType type)

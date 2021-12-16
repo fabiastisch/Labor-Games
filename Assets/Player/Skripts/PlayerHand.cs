@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using EquipableWeapon;
-using Effects;
+using Weapons.Effects;
 
 namespace Player
 {
@@ -23,7 +23,7 @@ namespace Player
     {
         private SpriteRenderer childSprite;
         private Vector3 startPos;
-        private Effects.EffectHandler effectHandler;
+        private Weapons.Effects.EffectHandler effectHandler;
         private Weapon weapon;
 
         public EquipableWeapon.Weapon currentWeapon

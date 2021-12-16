@@ -2982,7 +2982,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7610018542070514180, guid: 5b200b5938c353445998557fb82e7309, type: 3}
       propertyPath: shouldGenerateEffect
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7610018542070514180, guid: 5b200b5938c353445998557fb82e7309, type: 3}
       propertyPath: shouldGenerateRarityDMGTyp
