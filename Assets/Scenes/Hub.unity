@@ -173,7 +173,7 @@ MonoBehaviour:
   playSprite: {fileID: 45184575}
   rb: {fileID: 0}
   movementSpeed: 4
-  maxHealth: 100
+  maxHealth: 1e+17
   enemyName: 
 --- !u!212 &45184575
 SpriteRenderer:
@@ -313,6 +313,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7063302911480858804, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
       propertyPath: shouldGenerateEffect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7063302911480858804, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
+      propertyPath: shouldGenerateRarityDMGTyp
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -456,6 +460,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7063302911480858804, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
       propertyPath: shouldGenerateEffect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7063302911480858804, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
+      propertyPath: shouldGenerateRarityDMGTyp
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2927,7 +2935,7 @@ MonoBehaviour:
   playSprite: {fileID: 1109686317}
   rb: {fileID: 0}
   movementSpeed: 4
-  maxHealth: 100
+  maxHealth: 1e+17
   enemyName: 
 --- !u!70 &1109686320
 CapsuleCollider2D:
@@ -3122,6 +3130,10 @@ PrefabInstance:
       propertyPath: shouldGenerateEffect
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7063302911480858804, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
+      propertyPath: shouldGenerateRarityDMGTyp
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
 --- !u!1 &1541557270 stripped
@@ -3218,6 +3230,10 @@ PrefabInstance:
       propertyPath: shouldGenerateEffect
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7063302911480858804, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
+      propertyPath: shouldGenerateRarityDMGTyp
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
 --- !u!1001 &1891671288
@@ -3289,6 +3305,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7063302911480858804, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
       propertyPath: shouldGenerateEffect
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7063302911480858804, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
+      propertyPath: shouldGenerateRarityDMGTyp
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
