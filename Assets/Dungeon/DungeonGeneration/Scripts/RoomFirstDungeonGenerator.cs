@@ -594,7 +594,7 @@ namespace Dungeon.DungeonGeneration
 
             var roomsCount = rooms.Count;
             rooms.Sort((first, sec) => (int) (sec.size - first.size).magnitude);
-            Enemy prefab = EnemyManager.Instance.GETEnemy("bat");
+            Enemy prefab = EnemyManager.Instance.GetEnemy("bat");
             foreach (var room in rooms)
             {
                 for (int i = 0; i < enemiesCount / roomsCount; i++)

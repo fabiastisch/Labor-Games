@@ -6,9 +6,8 @@ using UnityEngine;
 namespace Managers.Enemies {
     public class EnemyManager: MonoBehaviour {
         public static EnemyManager Instance { get; private set; } 
-
-
-        private Dictionary<string, Enemy> _enemies = new Dictionary<string, Enemy>();
+        
+        private readonly Dictionary<string, Enemy> _enemies = new Dictionary<string, Enemy>();
         private void Awake() {
             Instance = this;
             
@@ -22,7 +21,7 @@ namespace Managers.Enemies {
             Physics2D.IgnoreLayerCollision(6, 7);
         }
 
-        public Enemy GETEnemy(string name) {
+        public Enemy GetEnemy(string name) {
             if (_enemies.TryGetValue(name, out var foundedEnemy)) {
                 return foundedEnemy;
             }

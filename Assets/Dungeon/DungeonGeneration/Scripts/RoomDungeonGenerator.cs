@@ -50,7 +50,7 @@ namespace Dungeon.DungeonGeneration
         }
         private void SpawnEnemies()
         {
-            Enemy prefab = EnemyManager.Instance.GETEnemy("bat");
+            Enemy prefab = EnemyManager.Instance.GetEnemy("bat");
             var roomHeight = (parameters.radius > 3 ? parameters.radius : parameters.height);
             var position = parameters.startPosition + (roomHeight/2 * Vector2.up + Vector2.down );
             
