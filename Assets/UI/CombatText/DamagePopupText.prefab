@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: -7117123089690275999}
   - component: {fileID: 4861711879921826869}
   - component: {fileID: 6159983806605226720}
-  - component: {fileID: 695301166}
   m_Layer: 5
   m_Name: DamagePopupText
   m_TagString: Untagged
@@ -51,8 +50,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cba2bdb9ce6f453ebefebac5def0d476, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalFontSize: 12
-  criticalFontSize: 16
+  normalFontSize: 8
+  criticalFontSize: 12
   criticalOutlineColor: {r: 1, g: 0.5813668, b: 0, a: 1}
   physicalDamageColor: {r: 0.3679245, g: 0.3679245, b: 0.3679245, a: 1}
   magicDamageColor: {r: 0, g: 0.025779247, b: 1, a: 1}
@@ -190,7 +189,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 62.479507, z: 177.16385, w: 0}
+  m_margin: {x: 0, y: 63.4612, z: 195.08887, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -199,11 +198,3 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
---- !u!33 &695301166
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7859283372679525662}
-  m_Mesh: {fileID: 0}
