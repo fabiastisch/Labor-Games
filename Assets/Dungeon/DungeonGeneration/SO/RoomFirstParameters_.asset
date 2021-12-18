@@ -33,5 +33,7 @@ MonoBehaviour:
   bonusRoomWidth: 10
   bonusRoomHeight: 10
   bonusRoomOffset: 5
-  corridorTrapSpawnDirection: 2
+  corridorTrapSpawnDirection: 0
   corridorTrapChance: 2
+  corridorTrapsCount: 3
+  enemiesCount: 50
