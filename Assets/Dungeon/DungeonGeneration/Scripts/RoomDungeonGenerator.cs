@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using Combat;
+using Managers.Enemies;
 using UnityEngine;
 
 namespace Dungeon.DungeonGeneration
@@ -31,18 +33,32 @@ namespace Dungeon.DungeonGeneration
             {
                 generator.currentPortal = generator.portal;
             }
-
-            generator.currentPortal.transform.position = Vector2.one;
+            
+            generator.currentPortal.transform.position = parameters.startPosition + ((parameters.radius > 3 ? parameters.radius : parameters.height)) * Vector2.up + Vector2.down;
 
             if (!generator.currentSpawn)
             {
                 generator.currentSpawn = generator.spawn;
             }
 
-            generator.currentSpawn.transform.position = Vector2.zero;
+            generator.currentSpawn.transform.position = ((Vector2) parameters.startPosition);
 
             generator.tilemapVisualizer.PaintFloorTiles(floors);
             WallGenerator.CreateWalls(floors, generator.tilemapVisualizer);
+
+            //SpawnEnemies();
+        }
+        private void SpawnEnemies()
+        {
+            Enemy prefab = EnemyManager.Instance.GetEnemy("bat");
+            var roomHeight = (parameters.radius > 3 ? parameters.radius : parameters.height);
+            var position = parameters.startPosition + (roomHeight/2 * Vector2.up + Vector2.down );
+            
+            GameObject obj = generator.Instantiate(prefab.gameObject, position);
+            obj.transform.localScale = Vector3.one * 10f;
+            var ai = obj.GetComponent<AIPlayerDetector>();
+            ai.detectorSize *= 2.5f;
+            ai.leaveDistanceSize *= 2.5f;
         }
 
         private HashSet<Vector2Int> CreateRoundRoom()
@@ -52,7 +68,7 @@ namespace Dungeon.DungeonGeneration
             {
                 for (int j = (int) -parameters.radius; j <= parameters.radius; j++)
                 {
-                    var position = new Vector2Int(i, j);
+                    var position = new Vector2Int(i, j) + parameters.startPosition;
                     if (Vector2.Distance(position, parameters.startPosition) <= parameters.radius)
                     {
                         floor.Add(position);

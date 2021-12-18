@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: c063963945d096f4a9a08a7985f6eeba
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Player: {fileID: 8548802804282458401, guid: 5b200b5938c353445998557fb82e7309, type: 3}
+  - sphereToRotate: {fileID: 8209288714250420049, guid: 10439126509198540ab4fc15eeb0c1b0, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

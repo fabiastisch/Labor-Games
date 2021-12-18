@@ -1,6 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Combat;
+using Dungeon.Scripts;
+using Managers.Enemies;
 using UnityEngine;
 using Utils;
 using Random = UnityEngine.Random;
@@ -55,7 +58,10 @@ namespace Dungeon.DungeonGeneration
                 generator.currentSpawn.transform.position = first.center;
             }
 
-            CreateTrapRooms(roomsList);
+            // should be index 1 to (last-1)
+            var roomsWithoutStartAndPortal = roomsList.GetRange(1, roomsList.Count - 2);
+            var trapRooms = CreateTrapRooms(roomsWithoutStartAndPortal);
+            SpawnEnemies(roomsWithoutStartAndPortal.FindAll(i => !trapRooms.Contains(i)));
 
             HashSet<Vector2Int> bonusRoom = CreateBonusRoom(roomsList);
 
@@ -78,7 +84,43 @@ namespace Dungeon.DungeonGeneration
 
             if (bonusRoom != null) floor.UnionWith(bonusRoom);
 
-            WallGenerator.CreateWalls(floor, generator.bonusRoomTileMapVis);
+            List<DungeonWall> dungeonWalls = WallGenerator.CreateWalls(floor, generator.bonusRoomTileMapVis);
+            CreateTorches(dungeonWalls);
+        }
+        private void CreateTorches(List<DungeonWall> dungeonWalls)
+        {
+            var leftWalls = dungeonWalls.FindAll(x => x.type == DungeonWallTypes.wallSideLeft);
+            // presort
+            leftWalls.Sort((first, second) => first._vector2Int.y.CompareTo(second._vector2Int.y));
+            // stableSort
+            var orderedLeftWalls = leftWalls.OrderBy(wall => wall._vector2Int.x);
+
+            var index = 0;
+            int torchInterval = 4;
+            foreach (var dungeonWall in orderedLeftWalls)
+            {
+                index++;
+                if (index % torchInterval != 0) continue;
+
+                //dungeonWall._vector2Int
+                Vector3 position = (Vector3) ((Vector2) dungeonWall._vector2Int + Vector2Int.right) + Vector3.back;
+                generator.Instantiate(GlobalDungeonState.Instance.torchLeft, position);
+            }
+            var rightWalls = dungeonWalls.FindAll(x => x.type == DungeonWallTypes.wallSideRight);
+            rightWalls.Sort((first, second) => first._vector2Int.y.CompareTo(second._vector2Int.y));
+            var orderedRightWalls = rightWalls.OrderBy(wall => wall._vector2Int.x);
+
+            index = 0;
+            foreach (var dungeonWall in orderedRightWalls)
+            {
+                index++;
+                if (index % torchInterval != 0) continue;
+
+                //dungeonWall._vector2Int
+                Vector3 position = (Vector3) ((Vector2) dungeonWall._vector2Int) + Vector3.back;
+                generator.Instantiate(GlobalDungeonState.Instance.torchLeft, position, Quaternion.Euler(0, 180, 0));
+            }
+
         }
 
         private HashSet<Vector2Int> CreateBonusRoom(List<BoundsInt> roomsList)
@@ -182,7 +224,7 @@ namespace Dungeon.DungeonGeneration
             var bonusRoom = new BoundsInt(new Vector3Int(pos.x, pos.y, 0),
                 new Vector3Int(parameters.bonusRoomWidth, parameters.bonusRoomHeight, 0));
 
-            var bonusRoomPositions = CreateSimpleRooms(new List<BoundsInt> {bonusRoom});
+            var bonusRoomPositions = CreateSimpleRooms(new List<BoundsInt> { bonusRoom });
 
             var bonusRoomCorridor =
                 CreateCorridor(closestRoom,
@@ -195,10 +237,11 @@ namespace Dungeon.DungeonGeneration
             return bonusRoomPositions;
         }
 
-        private void CreateTrapRooms(List<BoundsInt> roomList)
+        private List<BoundsInt> CreateTrapRooms(List<BoundsInt> roomList)
         {
             int countOfTrapRooms = Util.GetChance(parameters.trapRoomChance);
-            if (countOfTrapRooms < 1) return;
+            List<BoundsInt> trapRooms = new List<BoundsInt>();
+            if (countOfTrapRooms < 1) return trapRooms;
             HashSet<int> usedIndexes = new HashSet<int>();
             for (int i = 0; i < countOfTrapRooms; i++)
             {
@@ -211,9 +254,11 @@ namespace Dungeon.DungeonGeneration
                 usedIndexes.Add(index);
                 var room = roomList[index];
                 generator.Instantiate(generator.trapRoom, room.center);
-
+                trapRooms.Add(room);
                 //generator.traps.Add(Instantiate(generator.trapRoom, room.center, Quaternion.identity, generator.gameObject.transform));
             }
+
+            return trapRooms;
         }
 
         private HashSet<Vector2Int> CreateRoomsRandomly(List<BoundsInt> roomsList)
@@ -287,17 +332,17 @@ namespace Dungeon.DungeonGeneration
 
 
             for (int i =
-                    -(parameters.corridorWidth % 2 == 0 ? parameters.corridorWidth : parameters.corridorWidth + 1) / 2;
-                i < parameters.corridorWidth / 2;
-                i++)
+                     -(parameters.corridorWidth % 2 == 0 ? parameters.corridorWidth : parameters.corridorWidth + 1) / 2;
+                 i < parameters.corridorWidth / 2;
+                 i++)
             {
                 corridor.Add(position + Vector2Int.right * i);
             }
 
             for (int i =
-                    -(parameters.corridorWidth % 2 == 0 ? parameters.corridorWidth : parameters.corridorWidth + 1) / 2;
-                i < parameters.corridorWidth / 2;
-                i++)
+                     -(parameters.corridorWidth % 2 == 0 ? parameters.corridorWidth : parameters.corridorWidth + 1) / 2;
+                 i < parameters.corridorWidth / 2;
+                 i++)
             {
                 corridor.Add(position + Vector2Int.down * i);
             }
@@ -314,19 +359,19 @@ namespace Dungeon.DungeonGeneration
                 }
 
                 for (int i = -(parameters.corridorWidth % 2 == 0
-                        ? parameters.corridorWidth
-                        : parameters.corridorWidth + 1) / 2;
-                    i < parameters.corridorWidth / 2;
-                    i++)
+                         ? parameters.corridorWidth
+                         : parameters.corridorWidth + 1) / 2;
+                     i < parameters.corridorWidth / 2;
+                     i++)
                 {
                     corridor.Add(position + Vector2Int.right * i);
                 }
             }
 
             for (int i =
-                    -(parameters.corridorWidth % 2 == 0 ? parameters.corridorWidth : parameters.corridorWidth + 1) / 2;
-                i < parameters.corridorWidth / 2;
-                i++)
+                     -(parameters.corridorWidth % 2 == 0 ? parameters.corridorWidth : parameters.corridorWidth + 1) / 2;
+                 i < parameters.corridorWidth / 2;
+                 i++)
             {
                 corridor.Add(position + Vector2Int.down * i);
             }
@@ -343,10 +388,10 @@ namespace Dungeon.DungeonGeneration
                 }
 
                 for (int i = -(parameters.corridorWidth % 2 == 0
-                        ? parameters.corridorWidth
-                        : parameters.corridorWidth + 1) / 2;
-                    i < parameters.corridorWidth / 2;
-                    i++)
+                         ? parameters.corridorWidth
+                         : parameters.corridorWidth + 1) / 2;
+                     i < parameters.corridorWidth / 2;
+                     i++)
                 {
                     corridor.Add(position + Vector2Int.down * i);
                 }
@@ -421,7 +466,7 @@ namespace Dungeon.DungeonGeneration
                         countOffset++;
                     } while ((i + countOffset < selectedCorridorWalls.Count) &&
                              wall.position.x == selectedCorridorWalls[i + countOffset].position.x - countOffset
-                    );
+                            );
 
                     //Debug.Log(i + " | " + countOffset + " size: " + findAll.Count);
 
@@ -483,11 +528,11 @@ namespace Dungeon.DungeonGeneration
                         countOffset++;
                     } while ((i + countOffset < selectedCorridorWalls.Count) &&
                              wall.position.y == selectedCorridorWalls[i + countOffset].position.y - countOffset
-                    );
+                            );
 
                     //Debug.Log(i + " | " + countOffset + " size: " + findAll.Count);
 
-                    
+
                     int max = countOffset;
                     if (corridorTrapsCount == 0)
                     {
@@ -501,7 +546,7 @@ namespace Dungeon.DungeonGeneration
                     for (int j = Random.Range(0, max), k = 0; j < countOffset; j++, k++)
                     {
                         if (k >= corridorTrapsCount) break;
-                        
+
                         //Debug.Log(findAll[i + j] + " " + i + " | " + j + " size: " + findAll.Count);
                         var position = new Vector3(selectedCorridorWalls[i + j].position.x,
                             selectedCorridorWalls[i + j].position.y);
@@ -540,6 +585,30 @@ namespace Dungeon.DungeonGeneration
             }
 
             return floor;
+        }
+
+        private void SpawnEnemies(List<BoundsInt> rooms)
+        {
+            var enemiesCount = parameters.enemiesCount;
+            enemiesCount = 400;
+
+            var roomsCount = rooms.Count;
+            rooms.Sort((first, sec) => (int) (sec.size - first.size).magnitude);
+            Enemy prefab = EnemyManager.Instance.GetEnemy("bat");
+            foreach (var room in rooms)
+            {
+                for (int i = 0; i < enemiesCount / roomsCount; i++)
+                {
+                    generator.Instantiate(prefab.gameObject, Util.GetRandomPosition(room));
+                }
+            }
+
+
+            foreach (var room in rooms)
+            {
+            }
+
+            //TODO: implement
         }
     }
 

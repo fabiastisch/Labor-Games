@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56cba343d3917dc4293e2a33760f6302, type: 3}
+  m_Name: AllWeaponEffects
+  m_EditorClassIdentifier: 
+  fireEffects:
+  - {fileID: 11400000, guid: afecf640794e94d44b93cc5cbcee116e, type: 2}
+  frostEffects:
+  - {fileID: 11400000, guid: e13e71baa75b08c4f951f7811cd48c18, type: 2}
+  lightningEffects:
+  - {fileID: 11400000, guid: b60e7cd3f88cf1e43b8063eef3d149e2, type: 2}
+  shadowEffects:
+  - {fileID: 11400000, guid: f18ebf6c1dc4de64693118fe4a0afcb9, type: 2}
+  poisonEffects:
+  - {fileID: 11400000, guid: d977a02aac4133b49a28bd427a81bde2, type: 2}
+  physicalEffects:
+  - {fileID: 11400000, guid: b36f80e32ad709b42a1bcbbdaf9225f0, type: 2}
+  magicalEffects:
+  - {fileID: 11400000, guid: 93dc0d19ec4b7304098508b2cfc1f951, type: 2}

@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using EquipableWeapon;
+using Weapons.Effects;
 
 namespace Player
 {
@@ -20,6 +23,8 @@ namespace Player
     {
         private SpriteRenderer childSprite;
         private Vector3 startPos;
+        private Weapons.Effects.EffectHandler effectHandler;
+        private Weapon weapon;
 
         public EquipableWeapon.Weapon currentWeapon
         {
@@ -33,6 +38,8 @@ namespace Player
             startPos = transform.localPosition;
             childSprite = GetComponentInChildren<SpriteRenderer>();
             childSprite.gameObject.layer = 9;
+            weapon = GetComponentInChildren<Weapon>();
+            effectHandler = weapon.GetComponent<EffectHandler>();
         }
 
         // Update is called once per frame
@@ -56,6 +63,14 @@ namespace Player
             childSprite = weaponToEquip.GetComponent<SpriteRenderer>();
             weaponToEquip.transform.parent = transform;
             weaponToEquip.transform.localPosition = Vector3.zero;
+
+            Weapon equippedWeaponweapon = currentWeapon.GetComponent<Weapon>();
+            if (weapon.effect != null)
+            {
+                equippedWeaponweapon.effect.Deactivate();
+                equippedWeaponweapon.GetComponent<EffectHandler>().state = EffectState.ready;
+                effectHandler = weaponToEquip.GetComponent<EffectHandler>();
+            }
         }
 
         public void RotateHand(Rotations rotations)
@@ -110,6 +125,11 @@ namespace Player
                 childSprite.transform.eulerAngles = Vector3.forward * -20;
                 transform.localPosition = startPos + new Vector3(0.1f, 0, 0);
             }
+        }
+
+        public void ActivateSkill(InputAction.CallbackContext context)
+        {
+            effectHandler.ActivatePassiv(context);
         }
     }
 }

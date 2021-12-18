@@ -12,7 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 820cf5cc5a3841578f865ef0a95c9d4f, type: 3}
   m_Name: DefaultTiles
   m_EditorClassIdentifier: 
-  floorTile: {fileID: 11400000, guid: 4762b98230e97674eb854887f5c17905, type: 2}
+  floorTile: {fileID: 11400000, guid: 45ff44e43b6aa3c4dbc18d8ed7a112af, type: 2}
+  floorTiles:
+  - {fileID: 11400000, guid: d534dcee14cf1874e97983eee1d2c51c, type: 2}
+  - {fileID: 11400000, guid: 13cccb98d2f9667418f80208b4969303, type: 2}
+  - {fileID: 11400000, guid: d09da82d204d6714ea3dc271d3d34d1b, type: 2}
+  - {fileID: 11400000, guid: a614dbc16b5387a4b880a37557af5b8f, type: 2}
+  - {fileID: 11400000, guid: 2d7b1d57bcb2fe54d8d077de93231e2b, type: 2}
+  - {fileID: 11400000, guid: c5b3d40fd02b94749af83ce519a8a149, type: 2}
+  - {fileID: 11400000, guid: 4f915e1179afb544e82006bb31f63bdb, type: 2}
+  - {fileID: 11400000, guid: 6f18a35c30b1e8d479698e179914f053, type: 2}
+  - {fileID: 11400000, guid: f2f8f21ea518b844fa5f724e91b3423c, type: 2}
+  - {fileID: 11400000, guid: 0d21134960fc35c42b56bf69ba18fbdb, type: 2}
+  - {fileID: 11400000, guid: db508db4dcd53d343af7b7dea562f704, type: 2}
+  - {fileID: 11400000, guid: d404dc8a5215c644b9fb854d71720bb4, type: 2}
   wallTop: {fileID: 11400000, guid: fd8fabd1d13022644a0d2275933a9562, type: 2}
   wallSideRight: {fileID: 11400000, guid: b0e17d034bca1ed41aa20f3b31602ec6, type: 2}
   wallSideLeft: {fileID: 11400000, guid: 7bfa4262b5c349f44bd87046edb92fbb, type: 2}
