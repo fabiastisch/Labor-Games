@@ -69,7 +69,7 @@ public class Requirements : MonoBehaviour
         StateChange();
     }
 
-    public void StateChange()
+    private void StateChange()
     {
         if (locked)
         {
