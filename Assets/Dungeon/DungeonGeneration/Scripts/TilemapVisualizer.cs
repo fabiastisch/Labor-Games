@@ -33,7 +33,14 @@ namespace Dungeon.DungeonGeneration
         public void PaintFloorTiles(IEnumerable<Vector2Int> floorPositions)
         {
             if (!tilesSet) SetTiles();
-            PaintTiles(floorPositions, floorTilemap, tiles.floorTile);
+            PaintTiles(floorPositions, floorTilemap, tiles.floorTiles);
+        }
+        private void PaintTiles(IEnumerable<Vector2Int> positions, Tilemap tilemap, List<TileBase> tiles)
+        {
+            foreach (var position in positions)
+            {
+                PaintSingleTile(tilemap, tiles[Utils.Util.GetRandomInt(tiles.Count - 1)], position);
+            }
         }
 
         private void PaintTiles(IEnumerable<Vector2Int> positions, Tilemap tilemap, TileBase tile)

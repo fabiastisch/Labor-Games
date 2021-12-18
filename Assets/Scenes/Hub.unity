@@ -2747,6 +2747,10 @@ PrefabInstance:
       propertyPath: m_Tiles.Array.data[544].second.m_TileColorIndex
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4913192055357900835, guid: 3f085b9a3c85f8044812a47d0e426cae, type: 3}
+      propertyPath: parameterSo
+      value: 
+      objectReference: {fileID: 11400000, guid: fe306a9a361d1134fb658f7cffc7cedc, type: 2}
     - target: {fileID: 6127114413560597844, guid: 3f085b9a3c85f8044812a47d0e426cae, type: 3}
       propertyPath: m_LocalPosition.z
       value: -9.69

@@ -22,91 +22,91 @@ TextureImporter:
     second: Dungeon_Tileset_sw_5
   - first:
       213: 3372652333670880955
-    second: Dungeon_Tileset_sw_6
+    second: ClearGround_Dungeon_Tileset_sw_6
   - first:
       213: 9125980842646335107
-    second: Dungeon_Tileset_sw_7
+    second: ClearGround_Dungeon_Tileset_sw_7
   - first:
       213: 6377935131805174512
-    second: Dungeon_Tileset_sw_8
+    second: ClearGround_Dungeon_Tileset_sw_8
   - first:
       213: 8746682461507146612
-    second: Dungeon_Tileset_sw_9
+    second: ClearGround_Dungeon_Tileset_sw_9
   - first:
       213: 4573898877644634256
     second: Dungeon_Tileset_sw_10
   - first:
       213: -5684180477233874646
-    second: Dungeon_Tileset_sw_11
+    second: Ground_Dungeon_Tileset_sw_11
   - first:
       213: -6930058136678013250
-    second: Dungeon_Tileset_sw_12
+    second: Ground_Dungeon_Tileset_sw_12
   - first:
       213: 6385151271038174220
-    second: Dungeon_Tileset_sw_13
+    second: Ground_Dungeon_Tileset_sw_13
   - first:
       213: 6939862695100692740
-    second: Dungeon_Tileset_sw_14
+    second: Ground_Dungeon_Tileset_sw_14
   - first:
       213: -8236504544589209591
     second: Dungeon_Tileset_sw_15
   - first:
       213: 5390454670614829697
-    second: Dungeon_Tileset_sw_16
+    second: ClearGround_Dungeon_Tileset_sw_16
   - first:
       213: -4431677638534538541
-    second: Dungeon_Tileset_sw_17
+    second: ClearGround_Dungeon_Tileset_sw_17
   - first:
       213: -450864627935527432
-    second: Dungeon_Tileset_sw_18
+    second: ClearGround_Dungeon_Tileset_sw_18
   - first:
       213: 113878769205250535
-    second: Dungeon_Tileset_sw_19
+    second: ClearGround_Dungeon_Tileset_sw_19
   - first:
       213: -5581314445873797365
     second: Dungeon_Tileset_sw_20
   - first:
       213: -4117013389701461212
-    second: Dungeon_Tileset_sw_21
+    second: Ground_Dungeon_Tileset_sw_21
   - first:
       213: 6698949161006340433
-    second: Dungeon_Tileset_sw_22
+    second: Ground_Dungeon_Tileset_sw_22
   - first:
       213: 2597173568553581723
     second: Dungeon_Tileset_sw_23
   - first:
       213: 1276194348647460650
-    second: Dungeon_Tileset_sw_24
+    second: Ground_Dungeon_Tileset_sw_24
   - first:
       213: -6793129437333874639
     second: Dungeon_Tileset_sw_25
   - first:
       213: -3143037339198851429
-    second: Dungeon_Tileset_sw_26
+    second: ClearGround_Dungeon_Tileset_sw_26
   - first:
       213: 6774332365292493778
-    second: Dungeon_Tileset_sw_27
+    second: ClearGround_Dungeon_Tileset_sw_27
   - first:
       213: 7741932409482272858
-    second: Dungeon_Tileset_sw_28
+    second: ClearGround_Dungeon_Tileset_sw_28
   - first:
       213: 4075508649748318628
-    second: Dungeon_Tileset_sw_29
+    second: ClearGround_Dungeon_Tileset_sw_29
   - first:
       213: 259190884977833037
     second: Dungeon_Tileset_sw_30
   - first:
       213: 2601599784530855410
-    second: Dungeon_Tileset_sw_31
+    second: Ground_Dungeon_Tileset_sw_31
   - first:
       213: 6137417674778397535
-    second: Dungeon_Tileset_sw_32
+    second: Ground_Dungeon_Tileset_sw_32
   - first:
       213: -5778966869380172309
-    second: Dungeon_Tileset_sw_33
+    second: Ground_Dungeon_Tileset_sw_33
   - first:
       213: 4028160660353277972
-    second: Dungeon_Tileset_sw_34
+    second: Ground_Dungeon_Tileset_sw_34
   - first:
       213: -8293360228394785731
     second: Dungeon_Tileset_sw_35
@@ -526,7 +526,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_sw_6
+      name: ClearGround_Dungeon_Tileset_sw_6
       rect:
         serializedVersion: 2
         x: 96
@@ -547,7 +547,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_sw_7
+      name: ClearGround_Dungeon_Tileset_sw_7
       rect:
         serializedVersion: 2
         x: 112
@@ -568,7 +568,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_sw_8
+      name: ClearGround_Dungeon_Tileset_sw_8
       rect:
         serializedVersion: 2
         x: 128
@@ -589,7 +589,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_sw_9
+      name: ClearGround_Dungeon_Tileset_sw_9
       rect:
         serializedVersion: 2
         x: 144
@@ -631,7 +631,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_sw_11
+      name: Ground_Dungeon_Tileset_sw_11
       rect:
         serializedVersion: 2
         x: 16
@@ -652,7 +652,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_sw_12
+      name: Ground_Dungeon_Tileset_sw_12
       rect:
         serializedVersion: 2
         x: 32
@@ -673,7 +673,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_sw_13
+      name: Ground_Dungeon_Tileset_sw_13
       rect:
         serializedVersion: 2
         x: 48
@@ -694,7 +694,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_sw_14
+      name: Ground_Dungeon_Tileset_sw_14
       rect:
         serializedVersion: 2
         x: 64
@@ -736,7 +736,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_sw_16
+      name: ClearGround_Dungeon_Tileset_sw_16
       rect:
         serializedVersion: 2
         x: 96
@@ -757,7 +757,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_sw_17
+      name: ClearGround_Dungeon_Tileset_sw_17
       rect:
         serializedVersion: 2
         x: 112
@@ -778,7 +778,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_sw_18
+      name: ClearGround_Dungeon_Tileset_sw_18
       rect:
         serializedVersion: 2
         x: 128
@@ -799,7 +799,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_sw_19
+      name: ClearGround_Dungeon_Tileset_sw_19
       rect:
         serializedVersion: 2
         x: 144
@@ -841,7 +841,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_sw_21
+      name: Ground_Dungeon_Tileset_sw_21
       rect:
         serializedVersion: 2
         x: 16
@@ -862,7 +862,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_sw_22
+      name: Ground_Dungeon_Tileset_sw_22
       rect:
         serializedVersion: 2
         x: 32
@@ -904,7 +904,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_sw_24
+      name: Ground_Dungeon_Tileset_sw_24
       rect:
         serializedVersion: 2
         x: 64
@@ -946,7 +946,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_sw_26
+      name: ClearGround_Dungeon_Tileset_sw_26
       rect:
         serializedVersion: 2
         x: 96
@@ -967,7 +967,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_sw_27
+      name: ClearGround_Dungeon_Tileset_sw_27
       rect:
         serializedVersion: 2
         x: 112
@@ -988,7 +988,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_sw_28
+      name: ClearGround_Dungeon_Tileset_sw_28
       rect:
         serializedVersion: 2
         x: 128
@@ -1009,7 +1009,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_sw_29
+      name: ClearGround_Dungeon_Tileset_sw_29
       rect:
         serializedVersion: 2
         x: 144
@@ -1051,7 +1051,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_sw_31
+      name: Ground_Dungeon_Tileset_sw_31
       rect:
         serializedVersion: 2
         x: 16
@@ -1072,7 +1072,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_sw_32
+      name: Ground_Dungeon_Tileset_sw_32
       rect:
         serializedVersion: 2
         x: 32
@@ -1093,7 +1093,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_sw_33
+      name: Ground_Dungeon_Tileset_sw_33
       rect:
         serializedVersion: 2
         x: 48
@@ -1114,7 +1114,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_sw_34
+      name: Ground_Dungeon_Tileset_sw_34
       rect:
         serializedVersion: 2
         x: 64

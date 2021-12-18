@@ -8,7 +8,6 @@ namespace Dungeon.Scripts
     public class GlobalDungeonState : MonoBehaviour
     {
         #region SingletonPattern
-
         private static GlobalDungeonState instance;
 
         public static GlobalDungeonState Instance
@@ -40,7 +39,6 @@ namespace Dungeon.Scripts
 
             DontDestroyOnLoad(gameObject);
         }
-
         #endregion
 
         public DungeonState nextRoomState = DungeonState.Level1;

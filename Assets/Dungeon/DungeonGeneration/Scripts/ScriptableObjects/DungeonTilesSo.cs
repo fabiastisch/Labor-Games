@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Tilemaps;
 
 namespace Dungeon.DungeonGeneration
@@ -7,9 +8,12 @@ namespace Dungeon.DungeonGeneration
     public class DungeonTilesSo : ScriptableObject
     {
         [Header("Tiles")] public TileBase floorTile;
+        public List<TileBase> floorTiles = new List<TileBase>();
 
+        [Header("Walls")]
         public TileBase
-            wallTop,
+            wallTop;
+        public TileBase
             wallSideRight,
             wallSideLeft,
             wallBottom,
