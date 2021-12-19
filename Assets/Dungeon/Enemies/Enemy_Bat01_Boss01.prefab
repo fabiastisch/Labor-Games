@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1654179283421339839}
   - component: {fileID: 1654179283421339834}
   m_Layer: 6
-  m_Name: Bat01
+  m_Name: Enemy_Bat01_Boss01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 1654179283421339814}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.576431, y: -4.1402893, z: 0}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -166,13 +166,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectorOrigin: {fileID: 1654179283421339835}
-  detectorSize: 5
+  detectorSize: 9
   detectorOriginOffset: {x: 0, y: 0}
   detectionDelay: 0.3
   detectorLayerMask:
     serializedVersion: 2
     m_Bits: 128
-  leaveDistanceSize: 7
+  leaveDistanceSize: 15
   enableLeaveDistance: 1
   leaveGizmosColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   gizmoIdleColor: {r: 0, g: 1, b: 0, a: 1}
@@ -198,9 +198,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playSprite: {fileID: 1654179283421339832}
   rb: {fileID: 1654179283421339836}
-  movementSpeed: 4
-  maxHealth: 60
+  movementSpeed: 6
+  maxHealth: 500
   enemyName: bat
-  attackRange: 1.7
+  attackRange: 2
   gizmosColor: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 0.56078434}
   showGizmos: 0

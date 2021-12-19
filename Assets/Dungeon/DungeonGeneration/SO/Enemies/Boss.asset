@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb9512adc56f4517a3c3a10d38e9a370, type: 3}
   m_Name: Boss
   m_EditorClassIdentifier: 
-  enemies:
-  - {fileID: 1654179283421339814, guid: 4d94f6c031e26d8498d644868d62d325, type: 3}
-  EnemyCount: 1
+  config:
+  - enemy: {fileID: 1654179283421339814, guid: 4d94f6c031e26d8498d644868d62d325, type: 3}
+    count: 1
+  randomAdditive: 0
+  randomAdditiveCount: 0

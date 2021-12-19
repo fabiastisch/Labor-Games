@@ -136,8 +136,16 @@ namespace Dungeon.DungeonGeneration
 
         public void SpawnEnemies(List<BoundsInt> rooms)
         {
-
-            var enemiesCount = parameterSo.enemiesSo.EnemyCount;
+            foreach (EnemyConfig enemyConfig in parameterSo.enemiesSo.config)
+            {
+                for (int i = 0; i < enemyConfig.count; i++)
+                {
+                    Instantiate(enemyConfig.enemy, Util.GetRandomPosition(rooms.GetRandomValue()));
+                }
+            }
+            
+            if (!parameterSo.enemiesSo.randomAdditive) return;
+            var enemiesCount = parameterSo.enemiesSo.randomAdditiveCount;
 
             var roomsCount = rooms.Count;
             rooms.Sort((first, sec) => (int) (sec.size - first.size).magnitude);
@@ -146,7 +154,7 @@ namespace Dungeon.DungeonGeneration
             {
                 for (int i = 0; i < enemiesCount / roomsCount; i++)
                 {
-                    GameObject prefab = parameterSo.enemiesSo.enemies.GetRandomValue();
+                    GameObject prefab = parameterSo.enemiesSo.config.GetRandomValue().enemy;
                     Instantiate(prefab, Util.GetRandomPosition(room));
                 }
             }
@@ -154,13 +162,23 @@ namespace Dungeon.DungeonGeneration
         }
         public void SpawnEnemies(HashSet<Vector2Int> floors)
         {
-            var enemiesCount = parameterSo.enemiesSo.EnemyCount;
-
             BoundsInt bounds = tilemapVisualizer.floorTilemap.cellBounds;
+
+            foreach (EnemyConfig enemyConfig in parameterSo.enemiesSo.config)
+            {
+                for (int i = 0; i < enemyConfig.count; i++)
+                {
+                    Instantiate(enemyConfig.enemy, Util.GetRandomPosition(bounds));
+                }
+            }
+
+            if (!parameterSo.enemiesSo.randomAdditive) return;
+
+            var enemiesCount = parameterSo.enemiesSo.randomAdditiveCount;
+
             for (int i = 0; i < enemiesCount; i++)
             {
-                GameObject prefab = parameterSo.enemiesSo.enemies.GetRandomValue();
-
+                GameObject prefab = parameterSo.enemiesSo.config.GetRandomValue().enemy;
                 Instantiate(prefab, Util.GetRandomPosition(bounds));
             }
 

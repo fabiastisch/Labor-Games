@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb9512adc56f4517a3c3a10d38e9a370, type: 3}
   m_Name: DungeonEnemies_
   m_EditorClassIdentifier: 
-  enemies:
-  - {fileID: 1654179283421339814, guid: 56f82214e2950ff41a21268e0cf2a7cb, type: 3}
-  EnemyCount: 350
+  config:
+  - enemy: {fileID: 1654179283421339814, guid: 56f82214e2950ff41a21268e0cf2a7cb, type: 3}
+    count: 400
+  randomAdditive: 0
+  randomAdditiveCount: 0
