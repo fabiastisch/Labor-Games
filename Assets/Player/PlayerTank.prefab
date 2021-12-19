@@ -298,6 +298,36 @@ MonoBehaviour:
   m_MaximumFOV: 60
   m_MinimumOrthoSize: 1
   m_MaximumOrthoSize: 5000
+--- !u!1 &3512949956012300630
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6446089330388621714}
+  m_Layer: 7
+  m_Name: Foot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6446089330388621714
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3512949956012300630}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.629, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8548802804282458402}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4375053588489319196
 GameObject:
   m_ObjectHideFlags: 0
@@ -720,6 +750,7 @@ Transform:
   - {fileID: 6374955990562811098}
   - {fileID: 134442834402359862}
   - {fileID: 3310894729452558360}
+  - {fileID: 6446089330388621714}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1072,9 +1103,9 @@ MonoBehaviour:
     m_ActionName: Menu/Menu[/Keyboard/escape]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 245163729418225517}
-        m_TargetAssemblyTypeName: Player.PlayerHand, Assembly-CSharp
-        m_MethodName: ActivateSkill
+      - m_Target: {fileID: 8548802804282458405}
+        m_TargetAssemblyTypeName: Player.PlayerTank, Assembly-CSharp
+        m_MethodName: ActivateWeaponSkill
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

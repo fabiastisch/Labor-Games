@@ -1,3 +1,5 @@
+using System;
+using Combat;
 using UI.Scripts;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -8,6 +10,7 @@ namespace Player
 {
     public abstract class PlayerBase : Combat.Character, ISaveable
     {
+        #region ClassVars
         [SerializeField] [Range(-180, 180)] private int tmpMouseAngle;
         [SerializeField] private bool overrideMouseAngle = false;
 
@@ -49,7 +52,6 @@ namespace Player
         private Collider2D[] interactColliders;
 
         #region PlayerState
-
         private State state;
 
         //State which the player is currently in
@@ -58,14 +60,26 @@ namespace Player
             Normal,
             Dodging
         }
-
         #endregion
 
         #region Interactable Stuff
-
         private Interactable activeInteractable = null;
+        #endregion
+        
+        public event Action<Enemy, DamageType, float, bool> OnPlayerTakeDamage;
+        
+        /**
+         * true: Player Moves
+         * false: Player doesn't move
+         */
+        public event Action<bool> OnPlayerMoves;
+
+        public event Action OnPlayerMakeACrit;
+
+        public void InvokeOnPlayerMakeACrit () => OnPlayerMakeACrit?.Invoke();
 
         #endregion
+
 
         private void Awake()
         {
@@ -124,6 +138,7 @@ namespace Player
         //Movement
         private void Move()
         {
+            OnPlayerMoves?.Invoke(!movement.Equals(Vector2.zero));
             //rb.velocity = movement * movementSpeed;
             rb.MovePosition((Vector2) transform.position + movement.normalized * (movementSpeed * Time.fixedDeltaTime));
         }
@@ -220,14 +235,12 @@ namespace Player
         }
 
         #region Spellcast
-
         public abstract void CastAbillity1();
         public abstract void CastAbillity2();
         public abstract void CastAbillity3();
         public abstract void CastAbillity4();
         public abstract void CastAbillity5();
         public abstract void CastPrimaryAttack();
-
         #endregion
 
         //Swaps the sprite to the mouse direction.
@@ -286,6 +299,19 @@ namespace Player
             }
         }
 
+        #region PlayerCombat
+
+        public override bool TakeDamage(float amountHp, Combat.Character enemy, DamageType damageType, bool isCrit)
+        {
+            bool die = base.TakeDamage(amountHp, enemy, damageType, isCrit);
+            OnPlayerTakeDamage?.Invoke(enemy as Enemy, damageType, amountHp, isCrit);
+            return die;
+        }
+        #endregion
+
+
+
+        #region Saveable
         public object CaptureState()
         {
             return new PlayerData(this);
@@ -295,6 +321,7 @@ namespace Player
         {
             transform.position = ((PlayerData) state).position;
         }
+        #endregion
     }
 
     [System.Serializable]

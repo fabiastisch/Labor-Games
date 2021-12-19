@@ -1,4 +1,5 @@
 using Combat;
+using Player;
 using UnityEngine;
 
 namespace EquipableWeapon
@@ -21,7 +22,7 @@ namespace EquipableWeapon
             //weaponEffeckt.DoEffekt();
         }
 
-        public override void Attack(CombatStats combatStats)
+        public override void Attack(CombatStats combatStats, PlayerBase player)
         {
             if (attackCD < Time.time)
             {
@@ -33,7 +34,7 @@ namespace EquipableWeapon
                 Collider2D[] colliders = Physics2D.OverlapCircleAll(impactPos, baseRange, enemyLayerMask);
                 foreach (Collider2D enemyCollider in colliders)
                 {
-                    enemyCollider.GetComponent<Enemy>()?.TakeDamage(baseDamage, damageType);
+                    enemyCollider.GetComponent<Enemy>()?.TakeDamage(baseDamage, player, damageType);
                 }
             }
         }

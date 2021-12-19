@@ -127,9 +127,9 @@ namespace Player
             }
         }
 
-        public void ActivateSkill(InputAction.CallbackContext context)
+        public void ActivateSkill(InputAction.CallbackContext context, PlayerBase playerBase)
         {
-            effectHandler.ActivatePassiv(context);
+            effectHandler.ActivatePassiv(context, playerBase);
         }
     }
 }

@@ -1,5 +1,7 @@
-﻿using UI.CombatText;
+﻿using System;
+using UI.CombatText;
 using UnityEngine;
+using Utils;
 
 namespace Combat
 {
@@ -12,6 +14,9 @@ namespace Combat
 
         [SerializeField] private float maxHealth = 100f;
         protected float _currentHealth;
+
+        public static event Action<Character> OnEntityDies;
+
 
         protected void Reset()
         {
@@ -54,7 +59,21 @@ namespace Combat
             }
         }
 
-        public virtual void TakeDamage(float amountHp, DamageType damageType = DamageType.Magical, bool isCrit = false)
+        /**
+         * Returns true if the entity dies
+         */
+        public virtual bool TakeDamage(float amountHp, Character enemy, DamageType damageType, bool isCrit = false)
+        {
+            if (enemy && enemy.Equals(Util.GetLocalPlayer()))// Check if the Attacker is the Player
+            {
+                Util.GetLocalPlayer().InvokeOnPlayerMakeACrit();
+            }
+            bool dies = TakeDamage(amountHp, damageType, isCrit);
+            if (dies) OnEntityDies?.Invoke(enemy);
+            return dies;
+        }
+        
+        private bool TakeDamage(float amountHp, DamageType damageType = DamageType.Magical, bool isCrit = false)
         {
             _currentHealth -= amountHp;
             _currentHealth = _currentHealth < 0 ? 0 : _currentHealth;
@@ -64,12 +83,13 @@ namespace Combat
             {
                 Debug.Log(gameObject.name + " died...");
                 Die();
+                return true;
             }
+            return false;
         }
 
         protected virtual void Die()
         {
-            
         }
 
         public virtual void Heal(float amountHp)

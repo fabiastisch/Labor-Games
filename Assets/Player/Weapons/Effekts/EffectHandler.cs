@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using Player;
 using UnityEngine.InputSystem;
 using UnityEngine;
 
@@ -21,7 +20,6 @@ namespace Weapons.Effects
 
     public class EffectHandler : MonoBehaviour
     {
-        public GameObject player;
         private EquipableWeapon.Weapon weapon;
         private Effect effect;
         private float cooldown;
@@ -32,7 +30,8 @@ namespace Weapons.Effects
 
         public EffectState state = EffectState.ready;
         private bool hasWeaponAnEffect = false;
-
+        private PlayerBase player;
+        
         void Start()
         {
             weapon = GetComponent<EquipableWeapon.Weapon>();
@@ -119,8 +118,9 @@ namespace Weapons.Effects
             }
         }
         #endregion
-        public void ActivatePassiv(InputAction.CallbackContext context)
+        public void ActivatePassiv(InputAction.CallbackContext context, PlayerBase playerBase)
         {
+            this.player = playerBase;
             if (!context.performed || state != EffectState.ready) return;
             buttonPressed = true;
         }
