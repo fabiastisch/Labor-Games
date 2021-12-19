@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using LevelingAndClasses.ClassFolder;
 using UnityEngine;
-using UnityEngine.UI;
 
 [CreateAssetMenuAttribute(menuName = "ScriptableObject/LevelPassive")]
 public class LevelPassive : ScriptableObject
@@ -10,6 +6,9 @@ public class LevelPassive : ScriptableObject
     //Basic Class for Passives
     public new string name;
     public LevelPassiveType levelPassiveType;
+
+    public LevelPassiveCondition.LevelPassiveConditionType conditionType =
+        LevelPassiveCondition.LevelPassiveConditionType.None;
 
     public enum LevelPassiveType
     {
@@ -19,9 +18,14 @@ public class LevelPassive : ScriptableObject
     }
     
     public float cooldownMaxTime;
+
+    public bool hasActiveTime;
     public float activeMaxTime;
+    
     public string description;
     public float repeatingMaxTime;
+
+    public float conditionTime;
     public PassiveSlot.PassiveState passiveState;
 
 
@@ -33,13 +37,11 @@ public class LevelPassive : ScriptableObject
     //The Effect that Happen if the Abillity/Passive ends
     public virtual void BeginCooldown(GameObject parent)
     {
-      
     }
     
     //The Effect that Happen if it gets Removed
     public virtual void Removed(GameObject parent)
     {
-      
     }
     
     

@@ -1,10 +1,20 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using Combat;
+using Player;
 using UnityEngine;
+using Utils;
 
 public class LevelPassiveCondition : MonoBehaviour
 {
+    
+    public enum LevelPassiveConditionType
+    {
+        DidCrit,
+        Movement,
+        KilledEnemy,
+        RecievedDmg,
+        None
+    }
+    
     private LevelPassiveConditionType conditionType;
 
     private float conditionDurationTimer;
@@ -15,21 +25,62 @@ public class LevelPassiveCondition : MonoBehaviour
     private bool triggered = false;
     
     private LevelPassiveListChecker _levelPassiveListChecker;
+    private PlayerBase _playerBase;
 
 
     private void Start()
     {
+        _playerBase = Util.GetLocalPlayer();
         _levelPassiveListChecker = gameObject.GetComponent<LevelPassiveListChecker>();
+        Util.GetLocalPlayer().OnPlayerMoves += OnOnPlayerMoves;
+        Util.GetLocalPlayer().OnPlayerMakeACrit += OnOnPlayerMakeACrit;
+        Util.GetLocalPlayer().OnPlayerTakeDamage += OnOnPlayerTakeDamage;
+        Combat.Character.OnEntityDies += CharacterOnOnEntityDies;
     }
-    
-    
-    public enum LevelPassiveConditionType
+
+    private void OnOnPlayerTakeDamage(Enemy arg1, DamageType arg2, float arg3, bool arg4)
     {
-        DidCrit,
-        Movement,
-        KilledEnemy,
-        RecievedDmg,
-        None
+        if (conditionType == LevelPassiveConditionType.RecievedDmg)
+        {
+            _levelPassiveListChecker.ConditionActivation();
+        }
+    }
+
+    //I have to Check if comabt Char was Player
+    private void CharacterOnOnEntityDies(Combat.Character obj)
+    {
+        if (conditionType == LevelPassiveConditionType.KilledEnemy)
+        {
+            if (obj.Equals(_playerBase))
+            {
+                _levelPassiveListChecker.ConditionActivation();
+            }
+        }
+    }
+
+    private void OnOnPlayerMakeACrit()
+    {
+        if (conditionType == LevelPassiveConditionType.DidCrit)
+        {
+            _levelPassiveListChecker.ConditionActivation();
+        }
+    }
+
+    //true move
+    //false doesnt MOOOOOVE
+    private void OnOnPlayerMoves(bool moves)
+    {
+        if (conditionType == LevelPassiveConditionType.Movement)
+        {
+            if (moves)
+            {
+                TimeConditionActivated();
+            }
+            else
+            {
+                TimeConditionReset();
+            }
+        }
     }
 
     private void TimeConditionActivated()
@@ -54,7 +105,7 @@ public class LevelPassiveCondition : MonoBehaviour
                 //after Time is over do something and restart Timer
                 if (conditionDurationTimer <= 0f)
                 {
-                    _levelPassiveListChecker.TimeActivation();
+                    _levelPassiveListChecker.ConditionActivation();
                     ResetConditionTime();
                 }
             }
@@ -66,7 +117,7 @@ public class LevelPassiveCondition : MonoBehaviour
         conditionDurationTimer = conditionMaxTime;
     }
 
-    public void SetCondition(LevelPassiveConditionType type)
+    public void SetConditionType(LevelPassiveConditionType type)
     {
 
         if (type == LevelPassiveConditionType.Movement)
@@ -90,14 +141,7 @@ public class LevelPassiveCondition : MonoBehaviour
             conditionDuration = false;
         }
     }
-
-    private void ActivateConditionDuration()
-    {
-        conditionDuration = true;
-    }
     
-    
-
     public void NoCondition()
     {
         conditionType = LevelPassiveConditionType.None;
@@ -109,4 +153,10 @@ public class LevelPassiveCondition : MonoBehaviour
         conditionDurationTimer = conDurationTimer;
         conditionMaxTime = conMaxTime;
     }
+    
+    
+    
+    
+    
+    
 }

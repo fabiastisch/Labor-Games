@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelPassiveTime : MonoBehaviour
@@ -61,11 +59,17 @@ public class LevelPassiveTime : MonoBehaviour
         timer = amount;
     }
 
+    /**
+     * Percentage between 0 and 1
+     */
     public void RemovePrecentageFromTimer(float percentageAmount)
     {
         timer -= timer * percentageAmount;
     }
     
+    /**
+     * Percentage between 0 and 1
+     */
     public void AddPrecentageToTimer(float percentageAmount)
     {
         timer += timer * percentageAmount;

@@ -20,6 +20,8 @@ public class Requirements : MonoBehaviour
     
     [SerializeField]
     private bool listFullBool = false;
+    
+    public LevelPassive levelPassive;
 
     private void Start()
     {
