@@ -28,7 +28,9 @@ public class ListOf8Passives : MonoBehaviour
     {
         unlockControll = UnlockControll.Instance;
     }
-
+    
+    
+    //Todo Add Function to give Skill an Player
     public void AddItemToList(GameObject listEntry)
     {
         
@@ -104,4 +106,6 @@ public class ListOf8Passives : MonoBehaviour
             passiveSlots2[count].GetComponent<PassiveListEntry>().RemoveSlotWithOutList();
         }
     }
+    
+    
 }
