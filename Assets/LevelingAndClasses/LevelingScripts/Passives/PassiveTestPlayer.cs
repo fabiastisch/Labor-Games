@@ -42,6 +42,12 @@ public class PassiveTestPlayer : MonoBehaviour
     {
         Instance = this;
     }
+
+    void Start()
+    {
+        statistics = Statistics.Instance;
+    }
+    
     public void GetStats()
     {
         Debug.Log("Strength" + " = " +strength );

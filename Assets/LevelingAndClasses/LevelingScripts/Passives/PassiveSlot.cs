@@ -116,7 +116,7 @@ public class PassiveSlot : MonoBehaviour
 
     private void Repeater()
     {
-        passive.Activation(gameObject);
+       // passive.Activation(gameObject);
     }
 
     public void SetEquip(bool equiped = true)

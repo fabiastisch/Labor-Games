@@ -14,25 +14,29 @@ public class Requirements : MonoBehaviour
 
     public Sprite lockedSprite;
     public Sprite unlockedSprite;
-
-    private Button buttonholder;
+    
 
     private bool locked = true;
+    
+    [SerializeField]
+    private bool listFullBool = false;
+    
+    public LevelPassive levelPassive;
 
     private void Start()
     {
-        buttonholder = transform.GetComponent<Button>();
+        StateChange();
     }
+    
 
     public void UnlockButton()
     {
         if (locked == false) return;
         Debug.Log("Unlocked Button Requirements: Vitallity: " + vitallityScore + " Abillity: " + abillityScore +
-                                                      " Agillity: " + agillityScore + "Charisma: " + charimsaScore + "Strength: " + strengthScore);
-        buttonholder.enabled = true;
-        transform.GetComponent<SpriteRenderer>().sprite = unlockedSprite;
+                  " Agillity: " + agillityScore + "Charisma: " + charimsaScore + "Strength: " + strengthScore);
         locked = false;
-        
+        StateChange();
+
 
 
     }
@@ -42,10 +46,52 @@ public class Requirements : MonoBehaviour
         if (locked) return;
         Debug.Log("Unlocked Button Requirements: Vitallity: " + vitallityScore + " Abillity: " + abillityScore +
                                              " Agillity: " + agillityScore + "Charisma: " + charimsaScore + "Strength: " + strengthScore);
-        buttonholder.enabled = false;
-        transform.GetComponent<SpriteRenderer>().sprite = lockedSprite;
         locked = true;
-        
+        StateChange();
+
+    }
+
+    //Getting Locked
+    public bool GetLockState()
+    {
+        return locked;
+    }
+    
+    public void ListFull()
+    {
+        //Entry will be disabled and Color will change
+        listFullBool = true;
+        StateChange();
+    }
+    
+    public void ListHasSpace()
+    {
+        //Entry will be enabled and Color will be Normal
+        listFullBool = false;
+        StateChange();
+    }
+
+    private void StateChange()
+    {
+        if (locked)
+        {
+            transform.GetChild(0).GetComponent<Image>().sprite = lockedSprite;
+            transform.GetComponent<Button>().enabled = false;
+        }
+        else
+        {
+            transform.GetChild(0).GetComponent<Image>().sprite = unlockedSprite;
+            transform.GetComponent<Button>().enabled = true;
+        }
+
+        if(listFullBool)
+            transform.GetComponent<Button>().enabled = false;
+        else
+        {
+            if (locked) return;
+            transform.GetComponent<Button>().enabled = true;
+        }
+          
     }
 
 
