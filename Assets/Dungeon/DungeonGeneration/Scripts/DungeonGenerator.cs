@@ -1,7 +1,5 @@
 using System.Collections.Generic;
-using Combat;
 using Dungeon.Scripts;
-using Managers.Enemies;
 using UnityEngine;
 using Utils;
 
@@ -30,6 +28,12 @@ namespace Dungeon.DungeonGeneration
 
 
         private AbstractDungeonGenerator _generator;
+
+        private void Start()
+        {
+            // Ignore Player and Enemy layer collision
+            Physics2D.IgnoreLayerCollision(6, 7);
+        }
 
         private void RunProceduralGeneration()
         {
@@ -128,33 +132,37 @@ namespace Dungeon.DungeonGeneration
 
             return so;
         }
-        
-        
+
+
         public void SpawnEnemies(List<BoundsInt> rooms)
         {
-            
+
             var enemiesCount = parameterSo.enemiesSo.EnemyCount;
 
             var roomsCount = rooms.Count;
             rooms.Sort((first, sec) => (int) (sec.size - first.size).magnitude);
             //Enemy prefab = EnemyManager.Instance.GetEnemy("bat");
-            GameObject prefab = parameterSo.enemiesSo.enemies[0];
             foreach (var room in rooms)
             {
                 for (int i = 0; i < enemiesCount / roomsCount; i++)
                 {
-                    Instantiate(prefab.gameObject, Util.GetRandomPosition(room));
+                    GameObject prefab = parameterSo.enemiesSo.enemies.GetRandomValue();
+                    Instantiate(prefab, Util.GetRandomPosition(room));
                 }
             }
 
         }
         public void SpawnEnemies(HashSet<Vector2Int> floors)
         {
+            var enemiesCount = parameterSo.enemiesSo.EnemyCount;
+
             BoundsInt bounds = tilemapVisualizer.floorTilemap.cellBounds;
-            GameObject prefab = parameterSo.enemiesSo.enemies[0];
-            var pos = bounds.center;
-            pos.y = (bounds.yMax - pos.y) / 2;
-            GameObject obj = Instantiate(prefab,  pos);
+            for (int i = 0; i < enemiesCount; i++)
+            {
+                GameObject prefab = parameterSo.enemiesSo.enemies.GetRandomValue();
+
+                Instantiate(prefab, Util.GetRandomPosition(bounds));
+            }
 
         }
     }

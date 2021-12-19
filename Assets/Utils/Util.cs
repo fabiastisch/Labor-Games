@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using Player;
 using UnityEngine;
 
@@ -58,6 +60,15 @@ namespace Utils
         public static Vector2 GetRandomPosition(BoundsInt boundsInt)
         {
             return GetRandomPosition(boundsInt.xMin + 2, boundsInt.xMax - 2, boundsInt.yMin + 2, boundsInt.yMax - 2);
+        }
+
+        public static T GetRandomValue<T>(this IList<T> list)
+        {
+            return list[GetRandomInt(list.Count - 1)];
+        }
+        public static T GetRandomValue<T>(this T[] array)
+        {
+            return array[GetRandomInt(array.Length - 1)];
         }
 
         public static Vector2 GetRandomPosition(int xMin, int xMax, int yMin, int yMax)
