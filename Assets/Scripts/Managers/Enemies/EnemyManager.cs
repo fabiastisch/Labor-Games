@@ -4,6 +4,9 @@ using Combat;
 using UnityEngine;
 
 namespace Managers.Enemies {
+    /**
+     * NOT IN USAGE
+     */
     public class EnemyManager: MonoBehaviour {
         public static EnemyManager Instance { get; private set; } 
         

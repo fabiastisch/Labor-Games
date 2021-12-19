@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d277ef15a394da490545e35b3955520, type: 3}
   m_Name: RoundBossRoom
   m_EditorClassIdentifier: 
+  enemiesSo: {fileID: 11400000, guid: b0c65d0b97ef27343aeb663b37c7718a, type: 2}
   generatorType: 1
   startPosition: {x: 0, y: 0}
   floorColor: {r: 0.3018868, g: 0.1495194, b: 0.2870044, a: 1}

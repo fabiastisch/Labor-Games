@@ -46,6 +46,7 @@ namespace Dungeon.DungeonGeneration
             generator.tilemapVisualizer.PaintFloorTiles(floors);
             WallGenerator.CreateWalls(floors, generator.tilemapVisualizer);
 
+            generator.SpawnEnemies(floors);
             //SpawnEnemies();
         }
         private void SpawnEnemies()

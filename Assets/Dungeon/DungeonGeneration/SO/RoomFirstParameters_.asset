@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b613f4337f6140a7937238a22d85bb18, type: 3}
   m_Name: RoomFirstParameters_
   m_EditorClassIdentifier: 
+  enemiesSo: {fileID: 11400000, guid: 555c15f019f5d4c439d5b36730ebaa08, type: 2}
   generatorType: 2
   startPosition: {x: 0, y: 0}
   floorColor: {r: 0.6745098, g: 1, b: 0.9585728, a: 1}

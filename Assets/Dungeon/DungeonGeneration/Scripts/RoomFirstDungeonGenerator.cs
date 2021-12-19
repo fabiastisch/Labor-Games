@@ -61,7 +61,7 @@ namespace Dungeon.DungeonGeneration
             // should be index 1 to (last-1)
             var roomsWithoutStartAndPortal = roomsList.GetRange(1, roomsList.Count - 2);
             var trapRooms = CreateTrapRooms(roomsWithoutStartAndPortal);
-            SpawnEnemies(roomsWithoutStartAndPortal.FindAll(i => !trapRooms.Contains(i)));
+            generator.SpawnEnemies(roomsWithoutStartAndPortal.FindAll(i => !trapRooms.Contains(i)));
 
             HashSet<Vector2Int> bonusRoom = CreateBonusRoom(roomsList);
 
@@ -586,30 +586,7 @@ namespace Dungeon.DungeonGeneration
 
             return floor;
         }
-
-        private void SpawnEnemies(List<BoundsInt> rooms)
-        {
-            var enemiesCount = parameters.enemiesCount;
-            enemiesCount = 400;
-
-            var roomsCount = rooms.Count;
-            rooms.Sort((first, sec) => (int) (sec.size - first.size).magnitude);
-            Enemy prefab = EnemyManager.Instance.GetEnemy("bat");
-            foreach (var room in rooms)
-            {
-                for (int i = 0; i < enemiesCount / roomsCount; i++)
-                {
-                    generator.Instantiate(prefab.gameObject, Util.GetRandomPosition(room));
-                }
-            }
-
-
-            foreach (var room in rooms)
-            {
-            }
-
-            //TODO: implement
-        }
+        
     }
 
     public enum Dir

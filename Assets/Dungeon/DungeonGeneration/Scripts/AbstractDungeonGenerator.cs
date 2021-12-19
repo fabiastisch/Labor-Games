@@ -1,4 +1,9 @@
-﻿namespace Dungeon.DungeonGeneration
+﻿using System.Collections.Generic;
+using Combat;
+using Managers.Enemies;
+using UnityEngine;
+using Utils;
+namespace Dungeon.DungeonGeneration
 {
     public abstract class AbstractDungeonGenerator
     {

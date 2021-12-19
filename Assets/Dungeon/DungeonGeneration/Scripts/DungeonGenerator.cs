@@ -1,6 +1,9 @@
 using System.Collections.Generic;
+using Combat;
 using Dungeon.Scripts;
+using Managers.Enemies;
 using UnityEngine;
+using Utils;
 
 namespace Dungeon.DungeonGeneration
 {
@@ -124,6 +127,35 @@ namespace Dungeon.DungeonGeneration
             var so = ScriptableObject.CreateInstance<AbstractDungeonLevel>();
 
             return so;
+        }
+        
+        
+        public void SpawnEnemies(List<BoundsInt> rooms)
+        {
+            
+            var enemiesCount = parameterSo.enemiesSo.EnemyCount;
+
+            var roomsCount = rooms.Count;
+            rooms.Sort((first, sec) => (int) (sec.size - first.size).magnitude);
+            //Enemy prefab = EnemyManager.Instance.GetEnemy("bat");
+            GameObject prefab = parameterSo.enemiesSo.enemies[0];
+            foreach (var room in rooms)
+            {
+                for (int i = 0; i < enemiesCount / roomsCount; i++)
+                {
+                    Instantiate(prefab.gameObject, Util.GetRandomPosition(room));
+                }
+            }
+
+        }
+        public void SpawnEnemies(HashSet<Vector2Int> floors)
+        {
+            BoundsInt bounds = tilemapVisualizer.floorTilemap.cellBounds;
+            GameObject prefab = parameterSo.enemiesSo.enemies[0];
+            var pos = bounds.center;
+            pos.y = (bounds.yMax - pos.y) / 2;
+            GameObject obj = Instantiate(prefab,  pos);
+
         }
     }
 
