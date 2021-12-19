@@ -1,6 +1,7 @@
 using Combat;
 using System.Collections;
 using System.Collections.Generic;
+using Player;
 using UnityEngine;
 
 namespace Weapons.Effects
@@ -18,14 +19,15 @@ namespace Weapons.Effects
         [Header("Rotationvalues")] public float speed = 5;
         public float radius = 2;
 
-        public override void Activate(GameObject player) {
+        public override void Activate(PlayerBase player) {
 
             RecolorSphere(spriteRenderer, elementTyp);
             time += Time.deltaTime * speed;
 
             if (!sphere)
             {
-                sphere = Instantiate(sphereToRotate, new Vector3(player.transform.position.x, player.transform.position.y, 0), Quaternion.identity);
+                var playerPosition = player.transform.position;
+                sphere = Instantiate(sphereToRotate, new Vector3(playerPosition.x, playerPosition.y, 0), Quaternion.identity);
 ;           }
 
             rotationCenter = player.transform.position;
@@ -38,7 +40,7 @@ namespace Weapons.Effects
             Collider2D[] colliders = Physics2D.OverlapCircleAll(sphere.transform.position, sphere.transform.localScale.x, enemyLayerMask);
             foreach (Collider2D enemyCollider in colliders)
             {
-                enemyCollider.GetComponent<Enemy>()?.TakeDamage(baseDamage, elementTyp);
+                enemyCollider.GetComponent<Enemy>()?.TakeDamage(baseDamage, player, elementTyp);
             }
         }
         public override void Deactivate()

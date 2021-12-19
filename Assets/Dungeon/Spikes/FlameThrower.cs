@@ -33,7 +33,7 @@ public class FlameThrower : MonoBehaviour
         foreach (Collider2D col in playersInTrap)
         {
             //DamagePopup.Create(col.transform.position, damage);
-            col.GetComponent<PlayerBase>().TakeDamage(damage, damageType, isCrit);
+            col.GetComponent<PlayerBase>().TakeDamage(damage,null, damageType, isCrit);
         }
     }
 

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Player;
 using UnityEngine;
 
 namespace Weapons.Effects
@@ -19,7 +20,7 @@ namespace Weapons.Effects
         public float baseDamage;
 
         //The weapon where to cast from
-        public virtual void Activate(GameObject player) { }
+        public virtual void Activate(PlayerBase player) { }
         public virtual void Deactivate() { }
         public virtual void Passiv() { }
         public virtual void ActivateOnHit() { }

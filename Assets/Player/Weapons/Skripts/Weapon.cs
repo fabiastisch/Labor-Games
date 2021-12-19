@@ -1,5 +1,6 @@
 using UnityEngine;
 using Combat;
+using Player;
 using Weapons.Effects;
 
 namespace EquipableWeapon
@@ -101,6 +102,6 @@ namespace EquipableWeapon
             }
         }
 
-        public abstract void Attack(CombatStats combatStats);
+        public abstract void Attack(CombatStats combatStats, PlayerBase player);
     }
 }

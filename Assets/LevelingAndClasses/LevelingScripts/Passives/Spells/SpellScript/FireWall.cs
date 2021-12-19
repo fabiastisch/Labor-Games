@@ -1,9 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Combat;
-using UnityEditor.PackageManager;
 using UnityEngine;
+using Utils;
 
 public class FireWall : MonoBehaviour
 {
@@ -27,7 +24,7 @@ public class FireWall : MonoBehaviour
         //Here to do in our Case Dmg
         if (other.gameObject.layer == 6)
         {
-            other.GetComponent<Enemy>()?.TakeDamage(baseDamage, damageType);
+            other.GetComponent<Enemy>()?.TakeDamage(baseDamage, Util.GetLocalPlayer(), damageType);
             Debug.Log("Hit something with FireWall");
         }
         

@@ -1,3 +1,4 @@
+using Player;
 using UnityEngine;
 
 namespace Utils
@@ -62,6 +63,14 @@ namespace Utils
         public static Vector2 GetRandomPosition(int xMin, int xMax, int yMin, int yMax)
         {
             return new Vector2(GetRandomFloat(xMin, xMax), GetRandomFloat(yMin, yMax));
+        }
+
+        public static PlayerBase GetLocalPlayer()
+        {
+            if (Camera.main != null)
+                return Camera.main.transform.parent.GetComponent<PlayerBase>();
+            Debug.LogError("Could not find local Player");
+            return null;
         }
     }
 }

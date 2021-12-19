@@ -45,7 +45,7 @@ namespace Dungeon.Spikes
             foreach (Collider2D col in playersInTrap)
             {
                 //DamagePopup.Create(col.transform.position, damage);
-                col.GetComponent<PlayerBase>().TakeDamage(damage, damageType, isCrit);
+                col.GetComponent<Combat.Character>().TakeDamage(damage,null, damageType, isCrit);
             }
         }
 
