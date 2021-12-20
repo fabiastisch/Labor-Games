@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -15,6 +16,15 @@ namespace Dungeon.DungeonGeneration
         private void Awake()
         {
             SetTiles();
+        }
+
+        private void Start()
+        {
+            float val = 20 / 255f;
+            Color32 c = new Color(val,val,val);
+            
+            if (Camera.main != null)
+                Camera.main.backgroundColor = c.Multiply(wallTileMap.color);
         }
 
         private void SetTiles()
