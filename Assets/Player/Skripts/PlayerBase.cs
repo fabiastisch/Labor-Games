@@ -173,7 +173,6 @@ namespace Player
             if (isInteractableFound)
             {
                 GameObject interactableObject = interactColliders[0].gameObject;
-                Debug.Log(interactableObject.tag);
                 if (interactableObject.CompareTag("Weapon"))
                 {
                     hand.ChangeWeapon(interactableObject);
