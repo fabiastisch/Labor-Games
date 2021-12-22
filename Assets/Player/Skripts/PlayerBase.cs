@@ -200,6 +200,7 @@ namespace Player
                 if (newActiveInteractable)
                 {
                     newActiveInteractable.SetInteractable(true);
+                    if(activeInteractable)activeInteractable.SetInteractable(false);
                     activeInteractable = newActiveInteractable;
                 }
 

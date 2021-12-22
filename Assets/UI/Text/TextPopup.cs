@@ -29,6 +29,7 @@ namespace UI.Text
         private void Setup(string text)
         {
             textMesh.SetText(text);
+            textMesh.fontSize = 9f;
         }
 
         public TextMeshPro GetTextMesh()
