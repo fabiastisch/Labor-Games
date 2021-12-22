@@ -2,6 +2,7 @@ using UnityEngine;
 using Combat;
 using Player;
 using Weapons.Effects;
+using UnityEngine.InputSystem;
 
 namespace EquipableWeapon
 {
@@ -17,9 +18,6 @@ namespace EquipableWeapon
     public abstract class Weapon : MonoBehaviour
     {
         [Header("Basestats")] public float baseDamage;
-        public float baseRange;
-        public float baseAttackcooldown;
-        public float baseAOERange;
 
         [Header("Rarity & DamageType")] public WeaponRarity weaponRarity;
         public DamageType damageType;
@@ -47,10 +45,8 @@ namespace EquipableWeapon
             }
 
             spriteRenderer = GetComponent<SpriteRenderer>();
-            baseAOERange *= ((float) weaponRarity / 2);
-            baseAttackcooldown /= ((float) weaponRarity / 2);
             baseDamage *= ((float) weaponRarity / 2);
-            ChangeSpriteColor(weaponRarity);
+            ChangeSpriteColor(spriteRenderer, weaponRarity);
 
             penetration *= ((float) weaponRarity / 2);
             bonusStat *= ((float) weaponRarity / 2);
@@ -78,30 +74,30 @@ namespace EquipableWeapon
             }
         }
 
-        private void ChangeSpriteColor(WeaponRarity rarity)
+        public void ChangeSpriteColor(SpriteRenderer sprite, WeaponRarity rarity)
         {
             if (rarity == WeaponRarity.Common)
             {
-                spriteRenderer.color = Color.white;
+                sprite.color = Color.white;
             }
             else if (rarity == WeaponRarity.Bad)
             {
-                spriteRenderer.color = new Color(0.93f, 0.56f, 0.4f);
+                sprite.color = new Color(0.93f, 0.56f, 0.4f);
             }
             else if (rarity == WeaponRarity.Uncommon)
             {
-                spriteRenderer.color = new Color(0.34f, 0.88f, 0.93f);
+                sprite.color = new Color(0.34f, 0.88f, 0.93f);
             }
             else if (rarity == WeaponRarity.Mystic)
             {
-                spriteRenderer.color = new Color(0.92f, 0.92f, 0.35f);
+                sprite.color = new Color(0.92f, 0.92f, 0.35f);
             }
             else if (rarity == WeaponRarity.Legendary)
             {
-                spriteRenderer.color = new Color(0.78f, 0.92f, 0.34f);
+                sprite.color = new Color(0.78f, 0.92f, 0.34f);
             }
         }
 
-        public abstract void Attack(CombatStats combatStats, PlayerBase player);
+        public abstract void Attack(InputAction.CallbackContext context, CombatStats combatStats, PlayerBase player);
     }
 }

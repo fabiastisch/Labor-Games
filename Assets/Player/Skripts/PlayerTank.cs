@@ -7,10 +7,7 @@ namespace Player
 {
     public class PlayerTank : PlayerBase
     {
-
-        //
         private CombatStats combatStats = new CombatStats();
-
 
         protected override void Start()
         {
@@ -55,14 +52,14 @@ namespace Player
             Debug.Log("Fireball");
         }
 
-        public override void CastPrimaryAttack()
+        public override void CastPrimaryAttack(InputAction.CallbackContext context)
         {
-            base.hand.currentWeapon.Attack(combatStats, this);
+            hand.currentWeapon.Attack(context,combatStats, this);
         }
 
         public void ActivateWeaponSkill(InputAction.CallbackContext context)
         {
-            base.hand.ActivateSkill(context, this);
+            hand.ActivateSkill(context, this);
         }
         #endregion
     }

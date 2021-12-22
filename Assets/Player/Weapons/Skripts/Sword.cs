@@ -1,28 +1,29 @@
 using Combat;
 using Player;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace EquipableWeapon
 {
     public class Sword : Weapon
     {
+        [Header("Sword-Stats")]
         private Animator animator;
         private float attackCD;
+        public float baseAOERange;
+        public float baseRange;
+        public float baseAttackcooldown;
 
         // Start is called before the first frame update
         void Start()
         {
             base.Start();
+            baseAOERange *= ((float)weaponRarity / 2);
+            baseAttackcooldown /= ((float)weaponRarity / 2);
             animator = GetComponent<Animator>();
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-            //weaponEffeckt.DoEffekt();
-        }
-
-        public override void Attack(CombatStats combatStats, PlayerBase player)
+        public override void Attack(InputAction.CallbackContext context,CombatStats combatStats, PlayerBase player)
         {
             if (attackCD < Time.time)
             {

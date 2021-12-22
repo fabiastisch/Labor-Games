@@ -240,7 +240,7 @@ namespace Player
         public abstract void CastAbillity3();
         public abstract void CastAbillity4();
         public abstract void CastAbillity5();
-        public abstract void CastPrimaryAttack();
+        public abstract void CastPrimaryAttack(InputAction.CallbackContext context);
         #endregion
 
         //Swaps the sprite to the mouse direction.
