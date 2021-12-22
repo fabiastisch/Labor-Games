@@ -10,7 +10,7 @@ public class LevelPassiveListChecker : MonoBehaviour
         //Adds TimeFunction
         //private TimeModul timeModul = null;
         
-        public bool used;
+        public bool used = false;
         public bool timeactivated;
         private bool _isLevelPassiveNotNull;
 
@@ -82,7 +82,7 @@ public class LevelPassiveListChecker : MonoBehaviour
         }
         
         //Add Passive
-        public void addLevelPassive(LevelPassive lp)
+        public void AddLevelPassive(LevelPassive lp)
         {
             timeactivated = false;
             levelPassive = lp;

@@ -30,11 +30,11 @@ public class LevelPassiveCondition : MonoBehaviour
 
     private void Start()
     {
-        _playerBase = Util.GetLocalPlayer();
+       // _playerBase = Util.GetLocalPlayer();
         _levelPassiveListChecker = gameObject.GetComponent<LevelPassiveListChecker>();
-        Util.GetLocalPlayer().OnPlayerMoves += OnOnPlayerMoves;
-        Util.GetLocalPlayer().OnPlayerMakeACrit += OnOnPlayerMakeACrit;
-        Util.GetLocalPlayer().OnPlayerTakeDamage += OnOnPlayerTakeDamage;
+        // Util.GetLocalPlayer().OnPlayerMoves += OnOnPlayerMoves;
+        // Util.GetLocalPlayer().OnPlayerMakeACrit += OnOnPlayerMakeACrit;
+        // Util.GetLocalPlayer().OnPlayerTakeDamage += OnOnPlayerTakeDamage;
         Combat.Character.OnEntityDies += CharacterOnOnEntityDies;
     }
 

@@ -124,7 +124,7 @@ public class ListOf8Passives : MonoBehaviour
         {
             if(passiveList.Any())
                 if(passiveList.Count > counter)
-                    levelPassiveCollection[counter].GetComponent<LevelPassiveListChecker>().levelPassive = passiveList[counter].GetComponent<Requirements>().levelPassive;
+                    levelPassiveCollection[counter].GetComponent<LevelPassiveListChecker>().AddLevelPassive(passiveList[counter].GetComponent<Requirements>().levelPassive);
         }
     }
     
@@ -140,7 +140,7 @@ public class ListOf8Passives : MonoBehaviour
     private void AddSinglePassiveToCollection(int count)
     {
         Debug.Log("Add slot Count: " + count);
-        levelPassiveCollection[count].GetComponent<LevelPassiveListChecker>().levelPassive = passiveList[count].GetComponent<Requirements>().levelPassive;
+        levelPassiveCollection[count].GetComponent<LevelPassiveListChecker>().AddLevelPassive(passiveList[count].GetComponent<Requirements>().levelPassive);
     }
     
     

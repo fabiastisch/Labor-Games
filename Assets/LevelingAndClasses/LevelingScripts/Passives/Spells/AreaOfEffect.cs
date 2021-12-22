@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace LevelingAndClasses.LevelingScripts.Passives.Spells
 {
-    [CreateAssetMenu(fileName = "AreaOfEffect", menuName = "Abillitys/Flamewall")]
+    [CreateAssetMenu(menuName = "Abillitys/Flamewall")]
     public class AreaOfEffect : Passive
 
     {
