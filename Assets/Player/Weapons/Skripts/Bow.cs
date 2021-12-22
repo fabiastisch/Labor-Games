@@ -12,21 +12,29 @@ namespace EquipableWeapon
     {
         [Header("Bow-Stats")]
         public GameObject arrow;
-        private float timer;
         public float maxSpeed;
 
+        public Sprite minLoadSprite;
+        public Sprite midLoadSprite;
+        public Sprite maxLoadeSprite;
+        private Sprite defaultSprite;
 
+        private float timer;
         private float currentDamage;
         private float currentSpeed;
-
         private bool isheldDown = false;
 
+        private SpriteRenderer bowRenderer;
         private SpriteRenderer arrowRenderer;
 
         void Start()
         {
             base.Start();
+
             arrowRenderer = arrow.GetComponent<SpriteRenderer>();
+            bowRenderer = GetComponent<SpriteRenderer>();
+            defaultSprite = bowRenderer.sprite;
+
             currentDamage = 0;
             currentSpeed = 0;
         }
@@ -48,21 +56,27 @@ namespace EquipableWeapon
             if (context.canceled && currentSpeed != 0)
             {
                 isheldDown = false;
-                //PlayAnimation
+
                 ChangeSpriteColor(arrowRenderer, weaponRarity);
                 GameObject newArrow = Instantiate(arrow, gameObject.transform.position, Quaternion.identity);
                 ArrowHeandler arrowHeandler = newArrow.GetComponent<ArrowHeandler>();
                 arrowHeandler.setArrowStats(currentSpeed, currentDamage, true, damageType, player);
+
                 currentDamage = 0;
                 currentSpeed = 0;
+
+                bowRenderer.sprite = defaultSprite;
             }
         }
 
         private void ButtonHeldDown()
         {
             timer += Time.deltaTime;
-            Debug.Log(currentDamage);
-            if (currentDamage >= baseDamage) return;
+            if (currentDamage >= baseDamage)
+            {
+                bowRenderer.sprite = maxLoadeSprite;
+                return;
+            }
 
             if (timer > 0.5)
             {
@@ -70,6 +84,15 @@ namespace EquipableWeapon
                 currentSpeed += maxSpeed / 4;
                 timer = 0;
             }
+            if(currentDamage >= baseDamage / 2)
+            {
+                bowRenderer.sprite = midLoadSprite;
+            }
+            else
+            {
+                bowRenderer.sprite = minLoadSprite;
+            }
+            
         }
     }
 }

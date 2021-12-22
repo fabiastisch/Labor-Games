@@ -18,8 +18,6 @@ namespace EquipableWeapon
     public abstract class Weapon : MonoBehaviour
     {
         [Header("Basestats")] public float baseDamage;
-        public float baseRange;
-        public float baseAttackcooldown;
 
         [Header("Rarity & DamageType")] public WeaponRarity weaponRarity;
         public DamageType damageType;
@@ -47,7 +45,6 @@ namespace EquipableWeapon
             }
 
             spriteRenderer = GetComponent<SpriteRenderer>();
-            baseAttackcooldown /= ((float) weaponRarity / 2);
             baseDamage *= ((float) weaponRarity / 2);
             ChangeSpriteColor(spriteRenderer, weaponRarity);
 

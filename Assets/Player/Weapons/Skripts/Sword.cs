@@ -11,12 +11,15 @@ namespace EquipableWeapon
         private Animator animator;
         private float attackCD;
         public float baseAOERange;
+        public float baseRange;
+        public float baseAttackcooldown;
 
         // Start is called before the first frame update
         void Start()
         {
             base.Start();
             baseAOERange *= ((float)weaponRarity / 2);
+            baseAttackcooldown /= ((float)weaponRarity / 2);
             animator = GetComponent<Animator>();
         }
 

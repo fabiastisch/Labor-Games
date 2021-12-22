@@ -297,11 +297,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7595927288687190734, guid: e43a1714d0fe77b4799db3d454b05b69, type: 3}
       propertyPath: maxSpeed
-      value: 20
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7595927288687190734, guid: e43a1714d0fe77b4799db3d454b05b69, type: 3}
+      propertyPath: baseRange
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7595927288687190734, guid: e43a1714d0fe77b4799db3d454b05b69, type: 3}
+      propertyPath: baseDamage
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7595927288687190734, guid: e43a1714d0fe77b4799db3d454b05b69, type: 3}
       propertyPath: weaponRarity
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7595927288687190734, guid: e43a1714d0fe77b4799db3d454b05b69, type: 3}
+      propertyPath: baseAttackcooldown
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7595927288687190734, guid: e43a1714d0fe77b4799db3d454b05b69, type: 3}
       propertyPath: shouldGenerateRarityDMGTyp

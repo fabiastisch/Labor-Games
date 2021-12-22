@@ -25,15 +25,7 @@ namespace EquipableWeapon
         private void FixedUpdate()
         {
             if (!isFlying) return;
-            timer += Time.deltaTime;
-
-            if (speed > 0 && timer > 1)
-            {
-                speed--;
-                timer = 0;
-            }
             rb.MovePosition((Vector2)transform.position + mouseDirection * speed * Time.fixedDeltaTime);
-            if (speed <= 0) Destroy(gameObject);
         }
 
         void Update()
@@ -49,7 +41,7 @@ namespace EquipableWeapon
                 if (enemy.GetComponent<Enemy>() != null)
                 {
                     enemy.TakeDamage(damage, player, damageType);
-                    Destroy(gameObject);
+                    DestroyArrow();
                 }
             }
         }
@@ -65,12 +57,18 @@ namespace EquipableWeapon
             mouseDirection = (player.GetComponent<MouseTrack>().GetMouseWorldPositon() - (Vector2)player.transform.position).normalized;
 
             RotateArrow();
+            Invoke("DestroyArrow", 3);
         }
 
         private void RotateArrow()
         {
             float degrees = (float)Util.GetAngleFromVector(mouseDirection);
             transform.eulerAngles = Vector3.forward * degrees;
+        }
+
+        private void DestroyArrow()
+        {
+            Destroy(gameObject);
         }
 
     }

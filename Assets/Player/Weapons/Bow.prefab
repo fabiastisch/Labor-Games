@@ -98,8 +98,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseDamage: 11
-  baseRange: 11
-  baseAttackcooldown: 11
   weaponRarity: 0
   damageType: 0
   shouldGenerateRarityDMGTyp: 1
@@ -111,6 +109,9 @@ MonoBehaviour:
   drawGizmos: 1
   arrow: {fileID: 1321754941736516386, guid: 983e3cee83d529543ab69bf7dcd1f75c, type: 3}
   maxSpeed: 11
+  minLoadSprite: {fileID: -6757734339149847748, guid: c03593c3c609c7f4694ad6ae484a2c0c, type: 3}
+  midLoadSprite: {fileID: 3833158943999370113, guid: c03593c3c609c7f4694ad6ae484a2c0c, type: 3}
+  maxLoadeSprite: {fileID: -600483233366457979, guid: c03593c3c609c7f4694ad6ae484a2c0c, type: 3}
 --- !u!95 &6534187960975289656
 Animator:
   serializedVersion: 3
