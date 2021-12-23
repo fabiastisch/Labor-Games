@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Aura : MonoBehaviour
 {
-    public Rigidbody2D rb;
     public int baseDamage = 20;
     public int activeTime = 5;
 

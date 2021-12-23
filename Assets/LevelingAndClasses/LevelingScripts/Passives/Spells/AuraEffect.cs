@@ -29,12 +29,5 @@ public class AuraEffect : Passive
         projectile.transform.parent = parent.transform;
         collection.Add(projectile);
     }
-
-    // public override void Removed(GameObject parent)
-    // {
-    //     foreach (var item in collection)
-    //     {
-    //         item.GetComponent<MagicAoeExplosion>().DestroyMe();
-    //     }
-    // }
+    
 }
