@@ -15,6 +15,7 @@ namespace Combat
 
         private AIPlayerDetector _playerDetector;
 
+        private float _attackTimer = 0f;
 
         protected override bool IsAtTarget => _playerDetector.DirectionToTarget.magnitude < attackRange;
 
@@ -22,13 +23,29 @@ namespace Combat
         {
             base.Start();
             _playerDetector = GetComponent<AIPlayerDetector>();
+            _attackTimer = 1 / attackSpeed;
         }
 
+        private void Update()
+        {
+            if (_playerDetector.PlayerDetected && IsAtTarget) Attack();
+        }
         private void FixedUpdate()
         {
             //Debug.Log("Fixed: " + _playerDetector.PlayerDetected);
 
             if (_playerDetector.PlayerDetected && !IsAtTarget) Move();
+        }
+        private void Attack()
+        {
+            if (_attackTimer >= 0f)
+            {
+                _attackTimer -= Time.deltaTime;
+                return;
+            }
+
+            _attackTimer = 1 / attackSpeed;
+            _playerDetector.Target.GetComponent<Character>().TakeDamage(attackDamage, this, DamageType.Physical, false);
         }
 
         protected void Move()
