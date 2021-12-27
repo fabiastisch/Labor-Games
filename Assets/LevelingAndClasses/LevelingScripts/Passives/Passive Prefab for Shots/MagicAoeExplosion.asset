@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26ccdb73a6bc46247b0ce2847af2af96, type: 3}
   m_Name: MagicAoeExplosion
   m_EditorClassIdentifier: 
-  name: 
+  name: MagicAoeExplosion
   cooldown: 0
   activeTime: 0
-  description: 
+  description: Will be Triggered on Impact Point after Aoe Effect
   allTheTimeActive: 0
   repeatingSeconds: 0
   firstActivationForRepeat: 0
@@ -23,6 +23,6 @@ MonoBehaviour:
   skillsAndPassivesType: 1
   passiveImage: {fileID: 0}
   color: {r: 0, g: 0, b: 0, a: 0}
-  magicProjectile: {fileID: 0}
+  magicProjectile: {fileID: 5909130477710847181, guid: 5bf5302b6357bc94ca59e21a80082a2b, type: 3}
   maxXDistance: 10
   maxYDistance: 10

@@ -3,14 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenuAttribute(menuName = "Abillitys/Fireball")]
-public class MagicShot : Passive
+[CreateAssetMenuAttribute(menuName = "ScriptableObject/Spell/Fireball")]
+public class MagicShot : Spell
 
 {
     // public float flyDuration;
     // public float speed;
-    [SerializeField] private GameObject magicProjectile;
-    
     //I cant Drag a Scene Object into here so i need to initialize it in the script
     private Transform firePoint = null;
     
@@ -29,11 +27,6 @@ public class MagicShot : Passive
         else 
             firePoint = null;
         FireBall();
-    }
-
-    public override void BeginCooldown(GameObject parent)
-    {
-        base.BeginCooldown(parent);
     }
 
     void FireBall()

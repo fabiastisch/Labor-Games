@@ -2,14 +2,12 @@ using UnityEngine;
 
 namespace LevelingAndClasses.LevelingScripts.Passives.Spells
 {
-    [CreateAssetMenu(menuName = "Abillitys/Flamewall")]
-    public class AreaOfEffect : Passive
+    [CreateAssetMenu(menuName = "ScriptableObject/Spell/Flamewall")]
+    public class AreaOfEffect : Spell
 
     {
         // public float flyDuration;
         // public float speed;
-        [SerializeField] private GameObject magicProjectile;
-    
         //I cant Drag a Scene Object into here so i need to initialize it in the script
         private Vector3 initializePos;
 
@@ -32,11 +30,6 @@ namespace LevelingAndClasses.LevelingScripts.Passives.Spells
             else
                 Debug.Log("Failed Area of Effect, cause of Range");
 
-        }
-
-        public override void BeginCooldown(GameObject parent)
-        {
-            base.BeginCooldown(parent);
         }
 
         void AreaAttack()

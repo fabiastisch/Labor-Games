@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Abillitys/AuraEffect")]
-public class AuraEffect : Passive
+[CreateAssetMenu(menuName = "ScriptableObject/Spell/AuraEffect")]
+public class AuraEffect : Spell
 {
-    [SerializeField] private GameObject magicProjectile;
     [SerializeField] private Vector3 playerPosition;
 
     private List<GameObject> collection;

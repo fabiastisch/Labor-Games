@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Combat;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using Utils;
 
@@ -30,15 +31,18 @@ public class FireWall : MonoBehaviour
      */
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("Fire hitted");
         //Here to do in our Case Dmg
-        if(!enemyList.Contains(other))
-            enemyList.Add(other);
-        
-        if (other.gameObject.layer == 6)
+        if (!enemyList.Contains(other))
         {
-            other.GetComponent<Enemy>()?.TakeDamage(baseDamage, Util.GetLocalPlayer(), damageType);
+            enemyList.Add(other);
+
+            if (other.gameObject.layer == 6)
+            {
+                other.GetComponent<Enemy>()?.TakeDamage(baseDamage, Util.GetLocalPlayer(), damageType);
+            }
         }
-        
+
 
         //TODO if we want impactEffects we can use this
         //Instantiate(impactEffect, transform.position, transform.rotation);

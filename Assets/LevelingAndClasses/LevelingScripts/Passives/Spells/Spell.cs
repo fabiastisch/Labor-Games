@@ -6,7 +6,7 @@ using UnityEngine;
 public class Spell : ScriptableObject
 { 
     //Basic Class for Spell
-    [SerializeField] private GameObject magicProjectile;
+    [SerializeField] public GameObject magicProjectile;
   
     public new string name;
     public SpellType spellType;

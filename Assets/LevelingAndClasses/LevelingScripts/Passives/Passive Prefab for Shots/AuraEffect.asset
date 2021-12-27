@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40d10f9eae37e8346abe4b6ed868687b, type: 3}
   m_Name: AuraEffect
   m_EditorClassIdentifier: 
-  name: 
+  name: AuraEffect
   cooldown: 0
-  activeTime: 0
+  activeTime: 5
   description: 
   allTheTimeActive: 0
   repeatingSeconds: 0
@@ -23,5 +23,5 @@ MonoBehaviour:
   skillsAndPassivesType: 1
   passiveImage: {fileID: 0}
   color: {r: 0, g: 0, b: 0, a: 0}
-  magicProjectile: {fileID: 0}
-  playerPosition: {x: 0, y: 0, z: 0}
+  magicProjectile: {fileID: 5909130477710847181, guid: 5bf5302b6357bc94ca59e21a80082a2b, type: 3}
+  playerPosition: {x: 52.84208, y: 46.421432, z: 0}
