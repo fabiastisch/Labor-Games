@@ -201,6 +201,8 @@ MonoBehaviour:
   movementSpeed: 4
   maxHealth: 60
   enemyName: bat
+  attackSpeed: 1
+  attackDamage: 2
   attackRange: 1.7
   gizmosColor: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 0.56078434}
   showGizmos: 0

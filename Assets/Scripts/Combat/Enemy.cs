@@ -9,8 +9,8 @@ namespace Combat {
 
         protected virtual bool IsAtTarget { get; set; }
         protected float canAttack;
-        protected float attackSpeed = 1f;
-        protected float attackDamage = 10f;
+        [SerializeField] protected float attackSpeed = 1f;
+        [SerializeField] protected float attackDamage = 10f;
 
         protected override void Die() {
             base.Die();

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Player
 {
@@ -41,7 +42,7 @@ namespace Player
             throw new System.NotImplementedException();
         }
 
-        public override void CastPrimaryAttack()
+        public override void CastPrimaryAttack(InputAction.CallbackContext context)
         {
             throw new System.NotImplementedException();
         }
