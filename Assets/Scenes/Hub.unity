@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 45184575}
   - component: {fileID: 45184574}
   - component: {fileID: 45184573}
+  - component: {fileID: 45184577}
   m_Layer: 6
   m_Name: Dummy
   m_TagString: Vulnerable
@@ -242,6 +243,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &45184577
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45184572}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1001 &227099960
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30206,6 +30228,7 @@ GameObject:
   - component: {fileID: 1109686317}
   - component: {fileID: 1109686319}
   - component: {fileID: 1109686320}
+  - component: {fileID: 1109686321}
   m_Layer: 6
   m_Name: DummyBlue
   m_TagString: Vulnerable
@@ -30313,6 +30336,27 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0021448135, y: -0.16515484}
   m_Size: {x: 0.6696903, y: 0.6696903}
   m_Direction: 0
+--- !u!50 &1109686321
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109686316}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1001 &1285035557
 PrefabInstance:
   m_ObjectHideFlags: 0
