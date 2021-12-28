@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40d10f9eae37e8346abe4b6ed868687b, type: 3}
+  m_Name: Aura
+  m_EditorClassIdentifier: 
+  magicProjectile: {fileID: 5909130477710847181, guid: 5bf5302b6357bc94ca59e21a80082a2b, type: 3}
+  name: Aura
+  spellType: 0
+  cooldownMax: 4
+  activeTimeMax: 4
+  playerPosition: {x: 6.2730236, y: 1.2275721, z: 0}

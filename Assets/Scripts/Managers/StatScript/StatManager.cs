@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Compilation;
 using UnityEngine;
 
 public class StatManager : MonoBehaviour
@@ -36,6 +37,7 @@ public class StatManager : MonoBehaviour
     //Adds Resource of a Type with a Amount
     public void AddStat(StatTypeSO statType, float amount)
     {
+        //Debug.Log(statType.nameString + ": " + statAmountDictionary[statType]);
         statAmountDictionary[statType] += amount;
     }
     
@@ -53,5 +55,14 @@ public class StatManager : MonoBehaviour
     public void DivideStat(StatTypeSO statType, float amount)
     {
         statAmountDictionary[statType] /= amount;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            StatTypeListSO list = Resources.Load<StatTypeListSO>(typeof(StatTypeListSO).Name);
+            TestLogStatAmountDictionary();
+        }
     }
 }
