@@ -11,6 +11,7 @@ public class UiSzeneController : MonoBehaviour
     [SerializeField] private GameObject szeneDuoPassive;
     [SerializeField] private GameObject szeneTripplePassive;
     [SerializeField] private GameObject szenePentaPassive;
+    [SerializeField] private GameObject UI;
 
     public void ChangeToSingle()
     {
@@ -53,6 +54,28 @@ public class UiSzeneController : MonoBehaviour
     
     public void ChangeToClass()
     {
+        szeneKlass.SetActive(true);
+        szene8PassiveBackground.SetActive(false);
+        szeneSinglePassive.SetActive(false);
+        szeneDuoPassive.SetActive(false);
+        szeneTripplePassive.SetActive(false);
+        szenePentaPassive.SetActive(false);
+    }
+    
+    public void Escape()
+    {
+        UI.SetActive(false);
+        szeneKlass.SetActive(true);
+        szene8PassiveBackground.SetActive(false);
+        szeneSinglePassive.SetActive(false);
+        szeneDuoPassive.SetActive(false);
+        szeneTripplePassive.SetActive(false);
+        szenePentaPassive.SetActive(false);
+    }
+    
+    public void OpenUI()
+    {
+        UI.SetActive(true);
         szeneKlass.SetActive(true);
         szene8PassiveBackground.SetActive(false);
         szeneSinglePassive.SetActive(false);

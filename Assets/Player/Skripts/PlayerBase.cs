@@ -19,6 +19,8 @@ namespace Player
         //[SerializeField] private SpriteRenderer playSprite;
         //[SerializeField] private Rigidbody2D rb;
         [SerializeField] private GameObject menu;
+        [SerializeField] private GameObject skills;
+        [SerializeField] private UI_RadarChart chart;
         [SerializeField] private Texture2D cursor;
         [SerializeField] private Sprite[] eightWaysSprites;
         [SerializeField] protected PlayerHand hand;
@@ -48,6 +50,7 @@ namespace Player
         private float maxStamina;
         private Vector2 currentDodgeDirection = Vector2.zero;
         private bool isMenuOpen = false;
+        private bool isSkillOpen = false;
         private bool isInteractableFound = false;
         private Collider2D[] interactColliders;
 
@@ -122,9 +125,10 @@ namespace Player
             }
 
             isMenuOpen = menu.gameObject.activeSelf;
+            isSkillOpen = skills.gameObject.activeSelf;
 
             if (playerInput.actions["Dodge"].triggered && stamina >= dodgeCost && state == State.Normal &&
-                !isMenuOpen)
+                !isMenuOpen && !isSkillOpen)
             {
                 stamina -= dodgeCost;
                 dodgeSpeed = dodgeSpeedMax;
@@ -234,6 +238,25 @@ namespace Player
                 Time.timeScale = 1;
             }
         }
+        
+        public void OpenSkills(InputAction.CallbackContext context)
+        {
+            if (!context.performed) return;
+            isSkillOpen = skills.gameObject.activeSelf;
+            if (!isSkillOpen)
+            {
+                playerInput.SwitchCurrentActionMap("SkillMenu");
+                skills.SetActive(true);
+                chart.UpdateRadarChart();
+                Time.timeScale = 0;
+            }
+            else
+            {
+                playerInput.SwitchCurrentActionMap("Player");
+                skills.SetActive(false);
+                Time.timeScale = 1;
+            }
+        }
 
         #region Spellcast
         public abstract void CastAbillity1();
@@ -248,6 +271,7 @@ namespace Player
         private void ChangeSpriteDirection()
         {
             if (isMenuOpen) return;
+            if (isSkillOpen) return;
             int mouseAngle = Util.GetAngleFromVector(MousePosition);
             if (overrideMouseAngle) mouseAngle = tmpMouseAngle;
             if (mouseAngle >= -112 && mouseAngle <= -68)
