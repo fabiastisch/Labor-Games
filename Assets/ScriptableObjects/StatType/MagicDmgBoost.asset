@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 277166df00fb0e845a80616262d01c1f, type: 3}
   m_Name: MagicDmgBoost
   m_EditorClassIdentifier: 
-  nameString: 
+  nameString: Magic Dmg Boost Percentage
   hasBoolValue: 0
   boolValue: 0
