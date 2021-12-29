@@ -97,5 +97,28 @@ namespace Combat
             _currentHealth += amountHp;
             _currentHealth = _currentHealth > maxHealth ? maxHealth : _currentHealth;
         }
+
+        public float GetMaxHealth()
+        {
+            return maxHealth;
+        }
+
+        public float GetActualHealth()
+        {
+            return _currentHealth;
+        }
+
+        /**
+         * Percentage in values between 0 and 1
+         */
+        public float GetPercentageHpSmall()
+        {
+            return _currentHealth / maxHealth;
+        }
+
+        public int GetPercentageHpHigh()
+        {
+            return (int) (_currentHealth / maxHealth * 100f);
+        }
     }
 }
