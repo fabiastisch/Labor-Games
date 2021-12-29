@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26ccdb73a6bc46247b0ce2847af2af96, type: 3}
-  m_Name: FlameWall
+  m_Name: AreaOfEffect Flamewall
   m_EditorClassIdentifier: 
   magicProjectile: {fileID: 6870120338883167224, guid: f0c2426ddba76ce43834ede03c1210f3, type: 3}
   name: Aoe FlameWall
