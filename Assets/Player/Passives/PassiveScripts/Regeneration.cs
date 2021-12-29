@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenuAttribute(fileName = "Regeneration", menuName = "Passives/ShieldAfterSeconds")]
+[CreateAssetMenuAttribute(menuName = "Passives/ShieldAfterSeconds")]
 public class Regeneration : Passive
 {
     public float healthperTime = 3;

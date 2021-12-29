@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Combat;
 using UnityEngine;
 using Utils;
@@ -83,13 +84,37 @@ public class FireWall : MonoBehaviour
      */
     private void DoDmg()
     {
-        foreach (var other in enemyList)
+        if (!enemyList.Any())
         {
-            if (other.gameObject.layer == 6)
-            {
-                other.GetComponent<Enemy>()?.TakeDamage(baseDamage, Util.GetLocalPlayer(), damageType);
-                Debug.Log("Hit something with FireWall");
-            }
+            return;
         }
+
+        for (int counter = enemyList.Count - 1; counter >= 0; counter--)
+        {
+            if (enemyList[counter] != null)
+            {
+                GameObject enemy = enemyList[counter].gameObject;
+                if (enemy.layer == 6)
+                { 
+                    enemy.GetComponent<Enemy>()?.TakeDamage(baseDamage, Util.GetLocalPlayer(), damageType);
+                    Debug.Log("Hit something with FireWall");
+                } 
+            }
+            
+        }
+        
+        //Throws error so i comment it out
+        
+        // foreach (var other in enemyList)
+        // {
+        //     if (other != null)
+        //     {
+        //         if (other.gameObject.layer == 6)
+        //         {
+        //             other.GetComponent<Enemy>()?.TakeDamage(baseDamage, Util.GetLocalPlayer(), damageType);
+        //             Debug.Log("Hit something with FireWall");
+        //         }
+        //     }
+        // }
     }
 }
