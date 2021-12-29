@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "ScriptableObject/Manager/StatType")]
@@ -27,7 +24,7 @@ public class StatTypeSO : ScriptableObject
             boolValue = true;
         }
     }
-    
+
     public void BoolIsFalse()
     {
         if (hasBoolValue == true)
