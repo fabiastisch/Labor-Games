@@ -2,19 +2,20 @@
 using System.Linq;
 using Combat;
 using UnityEngine;
-using Utils;
 
 
-public class AuraKnockback : MonoBehaviour
+public class ElectricAura : MonoBehaviour
 {
     public DamageType damageType = DamageType.Physical;
     private List<Collider2D> enemyList = new List<Collider2D>();
-    public float force = 0.02f;
-    
+    public GameObject thunderAoe;
+
+    private List<GameObject> thunderList = new List<GameObject>();
+
     [SerializeField] 
-    private float timer = 0.25f;
+    private float timer = 1f;
     [SerializeField]
-    private float timerMax = 0.25f;
+    private float timerMax = 1f;
 
     /**
      * If Something Enters hitbox it gets dmg
@@ -27,7 +28,7 @@ public class AuraKnockback : MonoBehaviour
 
             if (other.gameObject.layer == 6)
             {
-                Knockback(other);
+                ThunderTrigger(other);
             }
         }
     }
@@ -39,22 +40,20 @@ public class AuraKnockback : MonoBehaviour
         //after Time is over do something and restart Timer
         if (timer <= 0f)
         {
-            KnockBackList();
+            ThunderTriggerAll();
             timer += timerMax;
         }
         
     }
     
 
-    private void Knockback(Collider2D other)
+    private void ThunderTrigger(Collider2D other)
     {
         if (other.gameObject.layer == 6)
         {
-            Debug.LogWarning("Hit The Bat With the FUCKING Head");
-            Vector2 direction =
-                (other.gameObject.transform.position - Util.GetLocalPlayer().gameObject.transform.position)
-                .normalized;
-            other.gameObject.GetComponent<Rigidbody2D>().AddForce(direction * force, ForceMode2D.Impulse);
+            Debug.LogWarning("Bzzt");
+            GameObject thunderObject = Instantiate(thunderAoe, other.transform.position, Quaternion.identity);
+            thunderList.Add(thunderObject);
         }
     }
     
@@ -64,7 +63,7 @@ public class AuraKnockback : MonoBehaviour
             enemyList.Remove(other);
     }
 
-    private void KnockBackList()
+    private void ThunderTriggerAll()
     {
         if (!enemyList.Any())
         {
@@ -78,11 +77,9 @@ public class AuraKnockback : MonoBehaviour
                 GameObject other = enemyList[counter].gameObject;
                 if (other.gameObject.layer == 6)
                 {
-                    Debug.LogWarning("Hit The Bat With the FUCKING Head");
-                    Vector2 direction =
-                        (other.transform.position - Util.GetLocalPlayer().gameObject.transform.position)
-                        .normalized;
-                    other.GetComponent<Rigidbody2D>().AddForce(direction * force, ForceMode2D.Impulse);
+                    Debug.LogWarning("Bzzt");
+                    GameObject thunderObject = Instantiate(thunderAoe, other.transform.position, Quaternion.identity);
+                    thunderList.Add(thunderObject);
                 }
             }
         }
