@@ -2,7 +2,7 @@
 using Combat;
 using UnityEngine;
 
-public class TouchDebuffAura : MonoBehaviour
+public class RunAwayAura : MonoBehaviour
 {
     public DamageType damageType = DamageType.Magical;
     private List<Collider2D> enemyList = new List<Collider2D>();
@@ -17,7 +17,7 @@ public class TouchDebuffAura : MonoBehaviour
 
             if (other.gameObject.layer == 6)
             {
-               // other.gameObject.GetComponent<Enemy>().giveDebuff(debuffType);
+                // other.gameObject.GetComponent<Enemy>().giveDebuff(debuffType);
             }
         }
     }

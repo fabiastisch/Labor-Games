@@ -2,7 +2,7 @@
 using Combat;
 using UnityEngine;
 
-public class TouchDebuffAura : MonoBehaviour
+public class SlowEnemyAndProjectileAura : MonoBehaviour
 {
     public DamageType damageType = DamageType.Magical;
     private List<Collider2D> enemyList = new List<Collider2D>();
@@ -15,9 +15,10 @@ public class TouchDebuffAura : MonoBehaviour
         {
             enemyList.Add(other);
 
+            //Todo add ProjectileSpeed
             if (other.gameObject.layer == 6)
             {
-               // other.gameObject.GetComponent<Enemy>().giveDebuff(debuffType);
+                // other.gameObject.GetComponent<Enemy>().giveDebuff(debuffType);
             }
         }
     }

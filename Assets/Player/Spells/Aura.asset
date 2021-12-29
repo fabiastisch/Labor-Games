@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40d10f9eae37e8346abe4b6ed868687b, type: 3}
   m_Name: Aura
   m_EditorClassIdentifier: 
-  magicProjectile: {fileID: 4016959316711036498, guid: ebe16f2a1669a1e43921ab8ebe6cadac, type: 3}
+  magicProjectile: {fileID: 3675502819717752046, guid: cdafcce877ac9e448a23fe0f2585625e, type: 3}
   name: Aura
   spellType: 0
   cooldownMax: 4
   activeTimeMax: 4
-  playerPosition: {x: 7.4298, y: 37.12136, z: 0}
+  playerPosition: {x: 0, y: 1.79, z: 0}
