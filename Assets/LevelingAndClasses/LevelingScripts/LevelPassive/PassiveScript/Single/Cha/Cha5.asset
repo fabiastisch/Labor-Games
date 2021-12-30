@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8626f2f7531db04fae625335c4c6e00, type: 3}
   m_Name: Cha5
   m_EditorClassIdentifier: 
-  name: 
+  name: StopEnemyFromAttackField
   levelPassiveType: 0
   conditionType: 6
   cooldownMaxTime: 0
   hasActiveTime: 0
   activeMaxTime: 0
-  description: 
+  description: Field that does CharismaDmg and Stop Enemys to Attack
   repeatingMaxTime: 0
   conditionTime: 0
   passiveState: 0
-  aura: {fileID: 0}
+  aura: {fileID: 2291267823435926762, guid: 0c75dcda56d6a45438f684548ec54975, type: 3}

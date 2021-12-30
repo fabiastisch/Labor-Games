@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85c235378d520c046923187d10450f87, type: 3}
   m_Name: Cha2
   m_EditorClassIdentifier: 
-  name: 
+  name: Stealth
   levelPassiveType: 0
   conditionType: 6
   cooldownMaxTime: 0
   hasActiveTime: 0
   activeMaxTime: 0
-  description: 
+  description: Enemys Ignore you for 3 Seconds after Seen
   repeatingMaxTime: 0
   conditionTime: 0
   passiveState: 0

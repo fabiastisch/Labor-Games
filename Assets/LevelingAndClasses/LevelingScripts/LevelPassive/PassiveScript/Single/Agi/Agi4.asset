@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deca9d9ed90ebff48a139e403b631120, type: 3}
   m_Name: Agi4
   m_EditorClassIdentifier: 
-  name: 
+  name: TrapAndSlowImmunity
   levelPassiveType: 0
   conditionType: 6
   cooldownMaxTime: 0
   hasActiveTime: 0
   activeMaxTime: 0
-  description: 
+  description: Immunity to Traps and Slows
   repeatingMaxTime: 0
   conditionTime: 0
   passiveState: 0
