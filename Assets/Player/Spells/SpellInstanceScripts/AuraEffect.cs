@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using Utils;
 
 [CreateAssetMenu(menuName = "ScriptableObject/Spell/AuraEffect")]
 public class AuraEffect : Spell
@@ -15,7 +16,7 @@ public class AuraEffect : Spell
 
     public override void Activation(GameObject parent)
     {
-        playerPosition = parent.transform.position;
+        playerPosition = Util.GetLocalPlayer().transform.position;
         AreaAttack(parent);
       
 
@@ -25,7 +26,7 @@ public class AuraEffect : Spell
     {
         Debug.Log("Cast AreaAttack");
         GameObject projectile = Instantiate(magicProjectile, playerPosition, Quaternion.identity);
-        projectile.transform.parent = parent.transform;
+        projectile.transform.parent = Util.GetLocalPlayer().transform;
         collection.Add(projectile);
     }
     

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02139f1d378a56644a73fa19d10f5550, type: 3}
   m_Name: Abi2
   m_EditorClassIdentifier: 
-  name: 
-  levelPassiveType: 0
-  conditionType: 6
+  name: Aoe after a Spell hits
+  levelPassiveType: 2
+  conditionType: 4
   cooldownMaxTime: 0
   hasActiveTime: 0
   activeMaxTime: 0
@@ -22,4 +22,5 @@ MonoBehaviour:
   repeatingMaxTime: 0
   conditionTime: 0
   passiveState: 0
-  magicProjectile: {fileID: 0}
+  magicProjectile: {fileID: 5909130477710847181, guid: 5bf5302b6357bc94ca59e21a80082a2b, type: 3}
+  chance: 0.1

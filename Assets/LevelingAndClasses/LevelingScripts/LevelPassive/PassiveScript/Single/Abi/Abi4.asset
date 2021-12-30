@@ -9,16 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e61e7161b713144e9fe1b8b26949b81, type: 3}
-  m_Name: Str5
+  m_Script: {fileID: 11500000, guid: d9510b0836df909429fd546413485df1, type: 3}
+  m_Name: Abi4
   m_EditorClassIdentifier: 
-  name: DoubleAttackBool
-  levelPassiveType: 0
-  conditionType: 4
+  name: ReduceCooldownOnCast
+  levelPassiveType: 2
+  conditionType: 5
   cooldownMaxTime: 0
   hasActiveTime: 0
   activeMaxTime: 0
-  description: Sets the Double Attack Bool
+  description: Reduces the Cooldown when casted
   repeatingMaxTime: 0
   conditionTime: 0
   passiveState: 0
+  percentage: 0.1

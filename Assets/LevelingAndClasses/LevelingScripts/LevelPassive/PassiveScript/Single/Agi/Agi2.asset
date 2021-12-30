@@ -9,16 +9,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e61e7161b713144e9fe1b8b26949b81, type: 3}
-  m_Name: Str5
+  m_Script: {fileID: 11500000, guid: f3d129c9c2eb25a4ead2c7b859e303ec, type: 3}
+  m_Name: Agi2
   m_EditorClassIdentifier: 
-  name: DoubleAttackBool
+  name: BounceAura
   levelPassiveType: 0
-  conditionType: 4
+  conditionType: 6
   cooldownMaxTime: 0
   hasActiveTime: 0
   activeMaxTime: 0
-  description: Sets the Double Attack Bool
+  description: KnockBack if you hit Enemy
   repeatingMaxTime: 0
   conditionTime: 0
   passiveState: 0
+  playerPosition: {x: 0, y: 0, z: 0}
+  aura: {fileID: 4959949652758050427, guid: 3df923cabb3a8b247831134bc99a5acd, type: 3}

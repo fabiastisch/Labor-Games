@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e86321014e0c45a4bbaeede20367fb22, type: 3}
   m_Name: Str4
   m_EditorClassIdentifier: 
-  name: 
+  name: FullLifeCritBool
   levelPassiveType: 0
   conditionType: 4
   cooldownMaxTime: 0
   hasActiveTime: 0
   activeMaxTime: 0
-  description: 
+  description: Set the bool to make the Fulllife Check
   repeatingMaxTime: 0
   conditionTime: 0
   passiveState: 0

@@ -1,4 +1,5 @@
 using UnityEngine;
+using Utils;
 
 namespace LevelingAndClasses.LevelingScripts.Passives.Spells
 {
@@ -18,12 +19,12 @@ namespace LevelingAndClasses.LevelingScripts.Passives.Spells
 
         public override void Activation(GameObject parent)
         {
-            initializePos = parent.transform.GetComponent<MouseTrack>().GetMouseWorldPositon();
+            initializePos = Util.GetLocalPlayer().transform.GetComponent<MouseTrack>().GetMouseWorldPositon();
 
-            if (parent.transform.position.x - initializePos.x >= -maxXDistance &&
-                parent.transform.position.x - initializePos.x <= maxXDistance &&
-                parent.transform.position.y - initializePos.y >= -maxYDistance &&
-                parent.transform.position.y - initializePos.y <= maxYDistance)
+            if (Util.GetLocalPlayer().transform.position.x - initializePos.x >= -maxXDistance &&
+                Util.GetLocalPlayer().transform.position.x - initializePos.x <= maxXDistance &&
+                Util.GetLocalPlayer().transform.position.y - initializePos.y >= -maxYDistance &&
+                Util.GetLocalPlayer().transform.position.y - initializePos.y <= maxYDistance)
             {
                 AreaAttack();
             }

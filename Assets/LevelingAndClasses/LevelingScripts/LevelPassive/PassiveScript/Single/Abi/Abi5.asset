@@ -9,16 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e61e7161b713144e9fe1b8b26949b81, type: 3}
-  m_Name: Str5
+  m_Script: {fileID: 11500000, guid: 3246ee5250217ad40a7dd09d273e10c8, type: 3}
+  m_Name: Abi5
   m_EditorClassIdentifier: 
-  name: DoubleAttackBool
+  name: DoubleMagicDmgBool
   levelPassiveType: 0
-  conditionType: 4
+  conditionType: 6
   cooldownMaxTime: 0
   hasActiveTime: 0
   activeMaxTime: 0
-  description: Sets the Double Attack Bool
+  description: Double Dmg On Spells
   repeatingMaxTime: 0
   conditionTime: 0
   passiveState: 0

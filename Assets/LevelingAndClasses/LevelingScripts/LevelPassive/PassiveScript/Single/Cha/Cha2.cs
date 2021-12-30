@@ -1,18 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Cha2 : MonoBehaviour
+[CreateAssetMenuAttribute( menuName = "LevelPassive/Single/Cha/StealthBool")]
+public class Cha2 : LevelPassive
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void Activation(GameObject parent)
     {
-        
+        StatManager.Instance.SetBool(15); //StealthBool
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void BeginCooldown(GameObject parent)
     {
-        
+        StatManager.Instance.RemoveBool(15);
+    }
+
+    public override void Removed(GameObject parent)
+    {
+        StatManager.Instance.RemoveBool(15);
     }
 }
