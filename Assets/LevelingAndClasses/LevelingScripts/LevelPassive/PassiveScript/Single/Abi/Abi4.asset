@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9510b0836df909429fd546413485df1, type: 3}
+  m_Name: Abi4
+  m_EditorClassIdentifier: 
+  name: ReduceCooldownOnCast
+  levelPassiveType: 2
+  conditionType: 5
+  cooldownMaxTime: 0
+  hasActiveTime: 0
+  activeMaxTime: 0
+  description: Reduces the Cooldown when casted
+  repeatingMaxTime: 0
+  conditionTime: 0
+  passiveState: 0
+  percentage: 0.1

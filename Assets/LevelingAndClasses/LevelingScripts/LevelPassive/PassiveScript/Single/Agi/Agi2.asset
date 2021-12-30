@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d129c9c2eb25a4ead2c7b859e303ec, type: 3}
+  m_Name: Agi2
+  m_EditorClassIdentifier: 
+  name: BounceAura
+  levelPassiveType: 0
+  conditionType: 6
+  cooldownMaxTime: 0
+  hasActiveTime: 0
+  activeMaxTime: 0
+  description: KnockBack if you hit Enemy
+  repeatingMaxTime: 0
+  conditionTime: 0
+  passiveState: 0
+  playerPosition: {x: 0, y: 0, z: 0}
+  aura: {fileID: 4959949652758050427, guid: 3df923cabb3a8b247831134bc99a5acd, type: 3}

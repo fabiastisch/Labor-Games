@@ -1,18 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Agi4 : MonoBehaviour
+[CreateAssetMenuAttribute( menuName = "LevelPassive/Single/Agi/TrapAndSlowImmunity")]
+public class Agi4 : LevelPassive
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void Activation(GameObject parent)
     {
-        
+        StatManager.Instance.SetBool(16); //TrapImmunity
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void BeginCooldown(GameObject parent)
     {
-        
+        StatManager.Instance.RemoveBool(16);
+    }
+
+    public override void Removed(GameObject parent)
+    {
+        StatManager.Instance.RemoveBool(16);
     }
 }

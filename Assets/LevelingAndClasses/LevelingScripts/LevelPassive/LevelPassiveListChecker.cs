@@ -149,12 +149,19 @@ public class LevelPassiveListChecker : MonoBehaviour
         }
         
         //For Condition Activation
-        public void ConditionActivation()
+        public void ConditionActivation(GameObject obj)
         {
-            levelPassive.Activation(gameObject);
-            if (hasActiveTime)
+            if (levelPassive.conditionType == LevelPassiveCondition.LevelPassiveConditionType.HitSpell)
             {
-                activTimeActivated = true;
+                levelPassive.Activation(obj);
+            }
+            else
+            {
+                levelPassive.Activation(gameObject);
+                if (hasActiveTime)
+                {
+                    activTimeActivated = true;
+                }
             }
         }
     

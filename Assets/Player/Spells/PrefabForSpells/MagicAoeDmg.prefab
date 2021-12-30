@@ -112,7 +112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 456736fa58daca94790b61ed6a2e6917, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
   baseDamage: 20
+  factor: 0.2
   activeTime: 1
+  statType: {fileID: 11400000, guid: a348a7c3b39f2874fae2c36a9831c9a6, type: 2}
   damageType: 1

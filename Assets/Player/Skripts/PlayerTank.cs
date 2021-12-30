@@ -1,6 +1,7 @@
 using UnityEngine;
 using Combat;
 using UnityEngine.InputSystem;
+using Utils;
 
 
 namespace Player
@@ -29,26 +30,32 @@ namespace Player
         #region Spellcast
         public override void CastAbillity1()
         {
+            //SpellSlot -> hast du nen Spell ? Return true; false
+            Util.GetLocalPlayer().InvokeOnPlayerCastSpell();
             Debug.Log("Erruption");
         }
 
         public override void CastAbillity2()
         {
+            Util.GetLocalPlayer().InvokeOnPlayerCastSpell();
             Debug.Log("Ignite");
         }
 
         public override void CastAbillity3()
         {
+            Util.GetLocalPlayer().InvokeOnPlayerCastSpell();
             Debug.Log("Thunder");
         }
 
         public override void CastAbillity4()
         {
+            Util.GetLocalPlayer().InvokeOnPlayerCastSpell();
             Debug.Log("Iceball");
         }
 
         public override void CastAbillity5()
         {
+            Util.GetLocalPlayer().InvokeOnPlayerCastSpell();
             Debug.Log("Fireball");
         }
 

@@ -78,8 +78,15 @@ namespace Player
         public event Action<bool> OnPlayerMoves;
 
         public event Action OnPlayerMakeACrit;
+        
+        public event Action<GameObject>  OnPlayerHitSpell;
+        
+        public event Action OnPlayerCastSpell;
 
         public void InvokeOnPlayerMakeACrit () => OnPlayerMakeACrit?.Invoke();
+        public void InvokeOnPlayerHitSpell (GameObject hitObject) => OnPlayerHitSpell?.Invoke(hitObject);
+        
+        public void InvokeOnPlayerCastSpell () => OnPlayerCastSpell?.Invoke();
 
         #endregion
 
