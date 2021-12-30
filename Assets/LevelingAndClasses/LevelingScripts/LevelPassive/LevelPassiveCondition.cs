@@ -12,6 +12,8 @@ public class LevelPassiveCondition : MonoBehaviour
         Movement,
         KilledEnemy,
         RecievedDmg,
+        HitSpell,
+        CastSpell,
         None
     }
     
@@ -30,19 +32,38 @@ public class LevelPassiveCondition : MonoBehaviour
 
     private void Start()
     {
-       // _playerBase = Util.GetLocalPlayer();
+        _playerBase = Util.GetLocalPlayer();
         _levelPassiveListChecker = gameObject.GetComponent<LevelPassiveListChecker>();
         // Util.GetLocalPlayer().OnPlayerMoves += OnOnPlayerMoves;
         // Util.GetLocalPlayer().OnPlayerMakeACrit += OnOnPlayerMakeACrit;
         // Util.GetLocalPlayer().OnPlayerTakeDamage += OnOnPlayerTakeDamage;
+        // Util.GetLocalPlayer().OnPlayerCastSpell += OnOnPlayerCastSpell;
+        Util.GetLocalPlayer().OnPlayerHitSpell += OnOnPlayerHitSpell;
         Combat.Character.OnEntityDies += CharacterOnOnEntityDies;
+    }
+
+    private void OnOnPlayerHitSpell(GameObject obj)
+    {
+        if (conditionType == LevelPassiveConditionType.HitSpell)
+        {
+            _levelPassiveListChecker.ConditionActivation(obj);
+        }
+    }
+
+
+    private void OnOnPlayerCastSpell()
+    {
+        if (conditionType == LevelPassiveConditionType.CastSpell)
+        {
+            _levelPassiveListChecker.ConditionActivation(null);
+        }
     }
 
     private void OnOnPlayerTakeDamage(Enemy arg1, DamageType arg2, float arg3, bool arg4)
     {
         if (conditionType == LevelPassiveConditionType.RecievedDmg)
         {
-            _levelPassiveListChecker.ConditionActivation();
+            _levelPassiveListChecker.ConditionActivation(null);
         }
     }
 
@@ -53,7 +74,7 @@ public class LevelPassiveCondition : MonoBehaviour
         {
             if (obj.Equals(_playerBase))
             {
-                _levelPassiveListChecker.ConditionActivation();
+                _levelPassiveListChecker.ConditionActivation(null);
             }
         }
     }
@@ -62,7 +83,7 @@ public class LevelPassiveCondition : MonoBehaviour
     {
         if (conditionType == LevelPassiveConditionType.DidCrit)
         {
-            _levelPassiveListChecker.ConditionActivation();
+            _levelPassiveListChecker.ConditionActivation(null);
         }
     }
 
@@ -105,7 +126,7 @@ public class LevelPassiveCondition : MonoBehaviour
                 //after Time is over do something and restart Timer
                 if (conditionDurationTimer <= 0f)
                 {
-                    _levelPassiveListChecker.ConditionActivation();
+                    _levelPassiveListChecker.ConditionActivation(null);
                     ResetConditionTime();
                 }
             }
@@ -138,6 +159,16 @@ public class LevelPassiveCondition : MonoBehaviour
         else if (type == LevelPassiveConditionType.RecievedDmg)
         {
             conditionType = LevelPassiveConditionType.RecievedDmg;
+            conditionDuration = false;
+        }
+        else if (type == LevelPassiveConditionType.HitSpell)
+        {
+            conditionType = LevelPassiveConditionType.HitSpell;
+            conditionDuration = false;
+        }
+        else if (type == LevelPassiveConditionType.CastSpell)
+        {
+            conditionType = LevelPassiveConditionType.CastSpell;
             conditionDuration = false;
         }
     }

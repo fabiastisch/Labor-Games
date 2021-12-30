@@ -5,8 +5,11 @@ using Utils;
 
 public class MagicAoeExplosion : MonoBehaviour
 {
-    public int baseDamage = 40;
+    public float baseDamage = 40;
+    public float factor = 0.2f;
     public int activeTime = 1;
+
+    [SerializeField] private StatTypeSO statType;
 
     private List<Collider2D> enemyInAoeList = new List<Collider2D>();
 
@@ -15,7 +18,8 @@ public class MagicAoeExplosion : MonoBehaviour
     
     void Start()
     {
-        Invoke("DestroyAfterTime", activeTime ); 
+        Invoke("DestroyAfterTime", activeTime );
+        baseDamage = StatManager.Instance.GetStat(statType) * factor;
     }
     
     

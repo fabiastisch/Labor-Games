@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Compilation;
@@ -9,6 +10,8 @@ public class StatManager : MonoBehaviour
     
     private Dictionary<StatTypeSO, float> statAmountDictionary;
 
+    public StatTypeListSO statTypeList;
+
     //Initialisations without external dependancy on Awake / with external dependancy on Start
     private void Awake()
     {
@@ -16,7 +19,7 @@ public class StatManager : MonoBehaviour
         //holds Type and Value of Resource
         statAmountDictionary = new Dictionary<StatTypeSO, float>();
 
-        StatTypeListSO statTypeList = Resources.Load<StatTypeListSO>(typeof(StatTypeListSO).Name);
+        statTypeList = Resources.Load<StatTypeListSO>(typeof(StatTypeListSO).Name);
 
         //each resource starts with Amount 0;
         foreach (StatTypeSO statType in statTypeList.list)
@@ -63,6 +66,42 @@ public class StatManager : MonoBehaviour
         {
             StatTypeListSO list = Resources.Load<StatTypeListSO>(typeof(StatTypeListSO).Name);
             TestLogStatAmountDictionary();
+        }
+    }
+
+    public float GetStat(StatTypeSO statType)
+    {
+        return statAmountDictionary[statType];
+    }
+
+    public bool GetBool(int numberOfStatType)
+    {
+        StatTypeSO statTyp = statTypeList.list[numberOfStatType];
+        if (statTyp.hasBoolValue)
+        {
+            return statTyp.boolValue;
+        }
+
+        return false;
+    }
+
+    public void SetBool(int numberOfStatType)
+    {
+        StatTypeSO statTyp = statTypeList.list[numberOfStatType];
+
+        if (statTyp.hasBoolValue)
+        {
+            statTyp.boolValue = true;
+        }
+    }
+    
+    public void RemoveBool(int numberOfStatType)
+    {
+        StatTypeSO statTyp = statTypeList.list[numberOfStatType];
+
+        if (statTyp.hasBoolValue)
+        {
+            statTyp.boolValue = false;
         }
     }
 }
