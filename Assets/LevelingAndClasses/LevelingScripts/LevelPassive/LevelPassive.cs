@@ -10,12 +10,17 @@ public class LevelPassive : ScriptableObject
     public LevelPassiveCondition.LevelPassiveConditionType conditionType =
         LevelPassiveCondition.LevelPassiveConditionType.None;
 
+    public SkillsAndPassivesType typeForUI = SkillsAndPassivesType.None;
+
     public enum LevelPassiveType
     {
        SingleTime,
        Repeat,
        Condition
     }
+
+    //if needed for Passive
+    public Sprite classPassiveIcon;
     
     public float cooldownMaxTime;
 

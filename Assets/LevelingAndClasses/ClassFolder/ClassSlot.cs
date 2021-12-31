@@ -8,6 +8,18 @@ namespace LevelingAndClasses.ClassFolder
     {
         [SerializeField]
         private SkillsAndPassivesType _type = SkillsAndPassivesType.ClassActive;
+        [SerializeField]
+        private GameObject image;
+
+        public ClassEnum.Classes classSlotted = ClassEnum.Classes.None;
+        
+        //Only if it is passive
+        [SerializeField]
+        private Passive passive;
+        
+        //Only if it is Active
+        [SerializeField]
+        private Spell spell;
 
         // Not used
         public event EventHandler<OnItemDroppedEventArgs> OnItemDropped;

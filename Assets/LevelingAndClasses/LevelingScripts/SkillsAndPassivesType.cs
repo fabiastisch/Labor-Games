@@ -8,4 +8,5 @@ public enum SkillsAndPassivesType
         ClassActive,
         HiddenActive,
         HiddenPassive,
+        None
 }
