@@ -32,6 +32,7 @@ public class LevelPassive : ScriptableObject
 
     public float conditionTime;
     public PassiveSlot.PassiveState passiveState;
+    public Sprite passiveImage;
 
 
     //Effect that happens if Activated
