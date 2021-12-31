@@ -51,7 +51,7 @@ namespace LevelingAndClasses.ClassFolder
             Debug.Log("Dropped item" + e.skillsAndPassives);
             if(e.skillsAndPassives == SkillsAndPassivesType.ClassActive)
             {
-                e.returnData.pointerDrag.GetComponent<DragDrop>().droppedOnSlot = true;
+                //e.returnData.pointerDrag.GetComponent<DragDrop>().droppedOnSlot = true;
                 e.returnData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = classAbillity1.GetComponent<RectTransform>().anchoredPosition;
            
             }
@@ -62,7 +62,7 @@ namespace LevelingAndClasses.ClassFolder
             Debug.Log("Dropped item" + e.skillsAndPassives.GetType());
             if(e.skillsAndPassives == SkillsAndPassivesType.ClassActive)
             {
-                e.returnData.pointerDrag.GetComponent<DragDrop>().droppedOnSlot = true;
+                //e.returnData.pointerDrag.GetComponent<DragDrop>().droppedOnSlot = true;
                 e.returnData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = classAbillity2.GetComponent<RectTransform>().anchoredPosition;
            
             }

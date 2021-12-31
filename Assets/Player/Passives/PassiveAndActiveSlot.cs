@@ -61,19 +61,19 @@ public class PassiveAndActiveSlot : MonoBehaviour
         ChangeClassType(className);
     }
 
-    public void IsRestricted()
-    {
-        disabledThroughClassRestriction = true;
-    }
-    
-    public void NotRestricted()
-    {
-        disabledThroughClassRestriction = false;
-    }
-
-    public bool GetRestricted()
-    {
-        return disabledThroughClassRestriction;
-    }
+    // public void IsRestricted()
+    // {
+    //     disabledThroughClassRestriction = true;
+    // }
+    //
+    // public void NotRestricted()
+    // {
+    //     disabledThroughClassRestriction = false;
+    // }
+    //
+    // public bool GetRestricted()
+    // {
+    //     return disabledThroughClassRestriction;
+    // }
     
 }

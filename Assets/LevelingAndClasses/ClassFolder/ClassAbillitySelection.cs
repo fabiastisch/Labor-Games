@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using LevelingAndClasses.ClassFolder;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
@@ -44,9 +46,24 @@ public class ClassAbillitySelection : MonoBehaviour
     [SerializeField] private GameObject classPassive5;
     [SerializeField] private GameObject classPassive6;
 
+    private List<GameObject> classAbillityList = new List<GameObject>();
+    private List<GameObject> classPassiveList = new List<GameObject>();
     private void Start()
     {
         UpdateClassSelection();
+        
+        classAbillityList.Add(classAbillity1);
+        classAbillityList.Add(classAbillity2);
+        classAbillityList.Add(classAbillity3);
+        classAbillityList.Add(classAbillity4);
+        classAbillityList.Add(classAbillity5);
+        
+        classPassiveList.Add(classPassive1);
+        classPassiveList.Add(classPassive2);
+        classPassiveList.Add(classPassive3);
+        classPassiveList.Add(classPassive4);
+        classPassiveList.Add(classPassive5);
+        classPassiveList.Add(classPassive6);
     }
 
     public void LeftButton()
@@ -73,6 +90,32 @@ public class ClassAbillitySelection : MonoBehaviour
     private void UpdateClassSelection()
     {
         ClassAbillitySelectionObject newClass = classList[selectedClassIndex];
+
+        if (PassiveAndSkillChecker.Instance.CheckIfClassIsRestricted(newClass.classType))
+        {
+            foreach (var abillity in classAbillityList)
+            {
+                abillity.GetComponent<DragDrop>().setRestricted();
+            }
+            
+            foreach (var passive in classPassiveList)
+            {
+                passive.GetComponent<DragDrop>().setRestricted();
+            }
+        }
+        
+        else if (!PassiveAndSkillChecker.Instance.CheckIfClassIsRestricted(newClass.classType))
+        {
+            foreach (var abillity in classAbillityList)
+            {
+                abillity.GetComponent<DragDrop>().notRestricted();
+            }
+            
+            foreach (var passive in classPassiveList)
+            {
+                passive.GetComponent<DragDrop>().notRestricted();
+            }
+        }
 
         classAbillity1.GetComponent<PassiveAndActiveSlot>()
             .ChangeParameter(newClass.classType, newClass.classAbillity1, null);

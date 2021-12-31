@@ -10,6 +10,8 @@ public class LevelPassive : ScriptableObject
     public LevelPassiveCondition.LevelPassiveConditionType conditionType =
         LevelPassiveCondition.LevelPassiveConditionType.None;
 
+    public ClassEnum.Classes classType = ClassEnum.Classes.None;
+
     public SkillsAndPassivesType typeForUI = SkillsAndPassivesType.None;
 
     public enum LevelPassiveType
