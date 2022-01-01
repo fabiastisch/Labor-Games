@@ -65,6 +65,7 @@ public class ClassSlot : MonoBehaviour, IDropHandler
                     spell = dragObject.GetComponent<PassiveAndActiveSlot>().spell;
                     classSlotted = spell.classType;
                     transform.GetChild(0).GetComponent<Image>().sprite = spell.abitllityIcon;
+                    transform.GetChild(0).GetComponent<Image>().enabled = true;
                 }
             }
 
@@ -82,6 +83,7 @@ public class ClassSlot : MonoBehaviour, IDropHandler
                     passive = dragObject.GetComponent<PassiveAndActiveSlot>().passive;
                     classSlotted = passive.classType;
                     transform.GetChild(0).GetComponent<Image>().sprite = passive.classPassiveIcon;
+                    transform.GetChild(0).GetComponent<Image>().enabled = true;
                 }
             }
         }
