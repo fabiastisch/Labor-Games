@@ -776,6 +776,7 @@ MonoBehaviour:
   _type: 1
   image: {fileID: 0}
   classSlotted: 3
+  number: 1
   passive: {fileID: 0}
   spell: {fileID: 0}
 --- !u!114 &58880404
@@ -1783,6 +1784,7 @@ GameObject:
   - component: {fileID: 129146669}
   - component: {fileID: 129146668}
   - component: {fileID: 129146667}
+  - component: {fileID: 129146672}
   m_Layer: 0
   m_Name: Passive
   m_TagString: Untagged
@@ -1816,7 +1818,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 129146665}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3021bf5bc09913a4c877056846527019, type: 3}
   m_Name: 
@@ -1849,8 +1851,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 1979911364}
-  droppedOnSlot: 0
-  classSlot: {fileID: 0}
 --- !u!114 &129146670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1889,6 +1889,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 129146665}
   m_CullTransparentMesh: 1
+--- !u!114 &129146672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129146665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c41eebff00e49e99ddf5d4eae7b21db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  passive: {fileID: 0}
+  spell: {fileID: 0}
+  sprite: {fileID: 0}
+  classType: 3
+  type: 4
 --- !u!1 &136702007
 GameObject:
   m_ObjectHideFlags: 0
@@ -2075,6 +2092,7 @@ GameObject:
   - component: {fileID: 140530813}
   - component: {fileID: 140530812}
   - component: {fileID: 140530816}
+  - component: {fileID: 140530817}
   m_Layer: 0
   m_Name: Passive
   m_TagString: Untagged
@@ -2126,8 +2144,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 1979911364}
-  droppedOnSlot: 0
-  classSlot: {fileID: 0}
 --- !u!114 &140530814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2173,7 +2189,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 140530810}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3021bf5bc09913a4c877056846527019, type: 3}
   m_Name: 
@@ -2181,6 +2197,23 @@ MonoBehaviour:
   passive: {fileID: 11400000, guid: d3a982c9cdf3f1741a2fd42e4492fa3e, type: 2}
   equiped: 0
   key: 0
+--- !u!114 &140530817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 140530810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c41eebff00e49e99ddf5d4eae7b21db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  passive: {fileID: 0}
+  spell: {fileID: 0}
+  sprite: {fileID: 0}
+  classType: 3
+  type: 4
 --- !u!1 &143579669
 GameObject:
   m_ObjectHideFlags: 0
@@ -2722,6 +2755,7 @@ MonoBehaviour:
   _type: 0
   image: {fileID: 0}
   classSlotted: 3
+  number: 3
   passive: {fileID: 0}
   spell: {fileID: 0}
 --- !u!1 &175197542
@@ -2947,6 +2981,7 @@ GameObject:
   - component: {fileID: 192887751}
   - component: {fileID: 192887753}
   - component: {fileID: 192887752}
+  - component: {fileID: 192887754}
   m_Layer: 0
   m_Name: ClassHiddenPassiveSlot3
   m_TagString: Untagged
@@ -3012,6 +3047,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 192887750}
   m_CullTransparentMesh: 1
+--- !u!114 &192887754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192887750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee5be61ee37d2304ca87d72d7cdf6ae2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _type: 3
+  image: {fileID: 0}
+  classSlotted: 3
+  number: 6
+  passive: {fileID: 0}
+  spell: {fileID: 0}
 --- !u!1 &204158037
 GameObject:
   m_ObjectHideFlags: 0
@@ -3801,7 +3854,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &258652876
 Transform:
   m_ObjectHideFlags: 0
@@ -4555,7 +4608,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.061320715, g: 0.2729205, b: 0.3679245, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5003,6 +5056,7 @@ MonoBehaviour:
   _type: 0
   image: {fileID: 0}
   classSlotted: 3
+  number: 0
   passive: {fileID: 0}
   spell: {fileID: 0}
 --- !u!1 &383887216
@@ -5689,6 +5743,7 @@ GameObject:
   - component: {fileID: 421422179}
   - component: {fileID: 421422178}
   - component: {fileID: 421422177}
+  - component: {fileID: 421422182}
   m_Layer: 0
   m_Name: Abillity
   m_TagString: Untagged
@@ -5722,7 +5777,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 421422175}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3021bf5bc09913a4c877056846527019, type: 3}
   m_Name: 
@@ -5755,8 +5810,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 1979911364}
-  droppedOnSlot: 0
-  classSlot: {fileID: 0}
 --- !u!114 &421422180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5795,6 +5848,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 421422175}
   m_CullTransparentMesh: 1
+--- !u!114 &421422182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421422175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c41eebff00e49e99ddf5d4eae7b21db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  passive: {fileID: 0}
+  spell: {fileID: 0}
+  sprite: {fileID: 0}
+  classType: 3
+  type: 4
 --- !u!1 &426699646
 GameObject:
   m_ObjectHideFlags: 0
@@ -5806,7 +5876,6 @@ GameObject:
   - component: {fileID: 426699647}
   - component: {fileID: 426699650}
   - component: {fileID: 426699649}
-  - component: {fileID: 426699648}
   m_Layer: 0
   m_Name: ClassAbillity5
   m_TagString: Untagged
@@ -5834,23 +5903,6 @@ RectTransform:
   m_AnchoredPosition: {x: -1012, y: -97}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &426699648
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 426699646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee5be61ee37d2304ca87d72d7cdf6ae2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _type: 1
-  image: {fileID: 0}
-  classSlotted: 3
-  passive: {fileID: 0}
-  spell: {fileID: 0}
 --- !u!114 &426699649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7102,7 +7154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.061320715, g: 0.2729205, b: 0.3679245, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -9282,7 +9334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.061320715, g: 0.2729205, b: 0.3679245, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -9483,6 +9535,7 @@ GameObject:
   - component: {fileID: 660112850}
   - component: {fileID: 660112849}
   - component: {fileID: 660112848}
+  - component: {fileID: 660112853}
   m_Layer: 0
   m_Name: Passive
   m_TagString: Untagged
@@ -9516,7 +9569,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 660112846}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3021bf5bc09913a4c877056846527019, type: 3}
   m_Name: 
@@ -9549,8 +9602,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 1979911364}
-  droppedOnSlot: 0
-  classSlot: {fileID: 0}
 --- !u!114 &660112851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9589,6 +9640,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 660112846}
   m_CullTransparentMesh: 1
+--- !u!114 &660112853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660112846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c41eebff00e49e99ddf5d4eae7b21db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  passive: {fileID: 0}
+  spell: {fileID: 0}
+  sprite: {fileID: 0}
+  classType: 3
+  type: 4
 --- !u!1 &662433973
 GameObject:
   m_ObjectHideFlags: 0
@@ -9988,6 +10056,7 @@ GameObject:
   - component: {fileID: 686023718}
   - component: {fileID: 686023717}
   - component: {fileID: 686023716}
+  - component: {fileID: 686023721}
   m_Layer: 0
   m_Name: Passive
   m_TagString: Untagged
@@ -10021,7 +10090,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 686023714}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3021bf5bc09913a4c877056846527019, type: 3}
   m_Name: 
@@ -10054,8 +10123,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 1979911364}
-  droppedOnSlot: 0
-  classSlot: {fileID: 0}
 --- !u!114 &686023719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10094,6 +10161,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 686023714}
   m_CullTransparentMesh: 1
+--- !u!114 &686023721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686023714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c41eebff00e49e99ddf5d4eae7b21db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  passive: {fileID: 0}
+  spell: {fileID: 0}
+  sprite: {fileID: 0}
+  classType: 3
+  type: 4
 --- !u!1 &686725645
 GameObject:
   m_ObjectHideFlags: 0
@@ -10183,6 +10267,7 @@ GameObject:
   - component: {fileID: 693798285}
   - component: {fileID: 693798284}
   - component: {fileID: 693798283}
+  - component: {fileID: 693798288}
   m_Layer: 0
   m_Name: Passive
   m_TagString: Untagged
@@ -10216,7 +10301,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 693798281}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3021bf5bc09913a4c877056846527019, type: 3}
   m_Name: 
@@ -10249,8 +10334,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 1979911364}
-  droppedOnSlot: 0
-  classSlot: {fileID: 0}
 --- !u!114 &693798286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10289,6 +10372,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 693798281}
   m_CullTransparentMesh: 1
+--- !u!114 &693798288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693798281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c41eebff00e49e99ddf5d4eae7b21db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  passive: {fileID: 0}
+  spell: {fileID: 0}
+  sprite: {fileID: 0}
+  classType: 3
+  type: 4
 --- !u!1 &703053879
 GameObject:
   m_ObjectHideFlags: 0
@@ -42213,9 +42313,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee5be61ee37d2304ca87d72d7cdf6ae2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 1
+  _type: 2
   image: {fileID: 0}
   classSlotted: 3
+  number: 4
   passive: {fileID: 0}
   spell: {fileID: 0}
 --- !u!114 &852017500
@@ -43730,6 +43831,7 @@ GameObject:
   - component: {fileID: 959821674}
   - component: {fileID: 959821673}
   - component: {fileID: 959821672}
+  - component: {fileID: 959821677}
   m_Layer: 0
   m_Name: Abillity
   m_TagString: Untagged
@@ -43763,7 +43865,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 959821670}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3021bf5bc09913a4c877056846527019, type: 3}
   m_Name: 
@@ -43796,8 +43898,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 1979911364}
-  droppedOnSlot: 0
-  classSlot: {fileID: 0}
 --- !u!114 &959821675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43836,6 +43936,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 959821670}
   m_CullTransparentMesh: 1
+--- !u!114 &959821677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 959821670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c41eebff00e49e99ddf5d4eae7b21db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  passive: {fileID: 0}
+  spell: {fileID: 0}
+  sprite: {fileID: 0}
+  classType: 3
+  type: 4
 --- !u!1 &961036452
 GameObject:
   m_ObjectHideFlags: 0
@@ -44002,6 +44119,7 @@ GameObject:
   - component: {fileID: 969628449}
   - component: {fileID: 969628448}
   - component: {fileID: 969628452}
+  - component: {fileID: 969628453}
   m_Layer: 0
   m_Name: Abillity
   m_TagString: Untagged
@@ -44053,8 +44171,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 1979911364}
-  droppedOnSlot: 0
-  classSlot: {fileID: 0}
 --- !u!114 &969628450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44100,7 +44216,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 969628446}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3021bf5bc09913a4c877056846527019, type: 3}
   m_Name: 
@@ -44108,6 +44224,23 @@ MonoBehaviour:
   passive: {fileID: 11400000, guid: 07e5f05b186c7d349ac615805cdfddf0, type: 2}
   equiped: 0
   key: 0
+--- !u!114 &969628453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969628446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c41eebff00e49e99ddf5d4eae7b21db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  passive: {fileID: 0}
+  spell: {fileID: 0}
+  sprite: {fileID: 0}
+  classType: 3
+  type: 4
 --- !u!1 &971491288
 GameObject:
   m_ObjectHideFlags: 0
@@ -44234,6 +44367,7 @@ GameObject:
   - component: {fileID: 987239953}
   - component: {fileID: 987239956}
   - component: {fileID: 987239957}
+  - component: {fileID: 987239958}
   m_Layer: 0
   m_Name: Abillity
   m_TagString: Untagged
@@ -44273,8 +44407,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 1979911364}
-  droppedOnSlot: 0
-  classSlot: {fileID: 0}
 --- !u!114 &987239954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44332,7 +44464,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 987239951}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3021bf5bc09913a4c877056846527019, type: 3}
   m_Name: 
@@ -44340,6 +44472,23 @@ MonoBehaviour:
   passive: {fileID: 11400000, guid: eea2f4ea001306c46b0d49dd7fdb6c6e, type: 2}
   equiped: 0
   key: 0
+--- !u!114 &987239958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987239951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c41eebff00e49e99ddf5d4eae7b21db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  passive: {fileID: 0}
+  spell: {fileID: 0}
+  sprite: {fileID: 0}
+  classType: 3
+  type: 4
 --- !u!1 &993766086
 GameObject:
   m_ObjectHideFlags: 0
@@ -44638,6 +44787,7 @@ GameObject:
   - component: {fileID: 1000549275}
   - component: {fileID: 1000549277}
   - component: {fileID: 1000549276}
+  - component: {fileID: 1000549278}
   m_Layer: 0
   m_Name: ClassHiddenPassiveSlot1
   m_TagString: Untagged
@@ -44703,6 +44853,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000549274}
   m_CullTransparentMesh: 1
+--- !u!114 &1000549278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000549274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee5be61ee37d2304ca87d72d7cdf6ae2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _type: 3
+  image: {fileID: 0}
+  classSlotted: 3
+  number: 4
+  passive: {fileID: 0}
+  spell: {fileID: 0}
 --- !u!1 &1010686734
 GameObject:
   m_ObjectHideFlags: 0
@@ -45142,6 +45310,7 @@ MonoBehaviour:
   _type: 1
   image: {fileID: 0}
   classSlotted: 3
+  number: 3
   passive: {fileID: 0}
   spell: {fileID: 0}
 --- !u!114 &1028434603
@@ -45892,7 +46061,6 @@ GameObject:
   - component: {fileID: 1120563994}
   - component: {fileID: 1120563997}
   - component: {fileID: 1120563996}
-  - component: {fileID: 1120563995}
   m_Layer: 0
   m_Name: ClassAbillity2
   m_TagString: Untagged
@@ -45920,23 +46088,6 @@ RectTransform:
   m_AnchoredPosition: {x: -1012, y: 250}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1120563995
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1120563993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee5be61ee37d2304ca87d72d7cdf6ae2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _type: 1
-  image: {fileID: 0}
-  classSlotted: 3
-  passive: {fileID: 0}
-  spell: {fileID: 0}
 --- !u!114 &1120563996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48646,7 +48797,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.061320715, g: 0.2729205, b: 0.3679245, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -48763,6 +48914,7 @@ MonoBehaviour:
   _type: 0
   image: {fileID: 0}
   classSlotted: 3
+  number: 1
   passive: {fileID: 0}
   spell: {fileID: 0}
 --- !u!1 &1317485395
@@ -48955,6 +49107,7 @@ GameObject:
   - component: {fileID: 1323071642}
   - component: {fileID: 1323071641}
   - component: {fileID: 1323071640}
+  - component: {fileID: 1323071645}
   m_Layer: 0
   m_Name: Abillity
   m_TagString: Untagged
@@ -48988,7 +49141,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1323071638}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3021bf5bc09913a4c877056846527019, type: 3}
   m_Name: 
@@ -49021,8 +49174,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 1979911364}
-  droppedOnSlot: 0
-  classSlot: {fileID: 0}
 --- !u!114 &1323071643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49061,6 +49212,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1323071638}
   m_CullTransparentMesh: 1
+--- !u!114 &1323071645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323071638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c41eebff00e49e99ddf5d4eae7b21db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  passive: {fileID: 0}
+  spell: {fileID: 0}
+  sprite: {fileID: 0}
+  classType: 3
+  type: 4
 --- !u!1 &1326698803
 GameObject:
   m_ObjectHideFlags: 0
@@ -49367,6 +49535,7 @@ GameObject:
   - component: {fileID: 1346334877}
   - component: {fileID: 1346334876}
   - component: {fileID: 1346334880}
+  - component: {fileID: 1346334881}
   m_Layer: 0
   m_Name: Passive
   m_TagString: Untagged
@@ -49418,8 +49587,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 1979911364}
-  droppedOnSlot: 0
-  classSlot: {fileID: 0}
 --- !u!114 &1346334878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49465,7 +49632,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1346334874}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3021bf5bc09913a4c877056846527019, type: 3}
   m_Name: 
@@ -49473,6 +49640,23 @@ MonoBehaviour:
   passive: {fileID: 11400000, guid: d3a982c9cdf3f1741a2fd42e4492fa3e, type: 2}
   equiped: 0
   key: 0
+--- !u!114 &1346334881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346334874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c41eebff00e49e99ddf5d4eae7b21db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  passive: {fileID: 0}
+  spell: {fileID: 0}
+  sprite: {fileID: 0}
+  classType: 3
+  type: 4
 --- !u!1 &1348134703
 GameObject:
   m_ObjectHideFlags: 0
@@ -49886,9 +50070,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee5be61ee37d2304ca87d72d7cdf6ae2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 1
+  _type: 2
   image: {fileID: 0}
   classSlotted: 3
+  number: 5
   passive: {fileID: 0}
   spell: {fileID: 0}
 --- !u!114 &1364603375
@@ -51333,6 +51518,7 @@ MonoBehaviour:
   _type: 1
   image: {fileID: 0}
   classSlotted: 3
+  number: 2
   passive: {fileID: 0}
   spell: {fileID: 0}
 --- !u!114 &1498582892
@@ -51459,7 +51645,6 @@ GameObject:
   - component: {fileID: 1513018083}
   - component: {fileID: 1513018086}
   - component: {fileID: 1513018085}
-  - component: {fileID: 1513018084}
   m_Layer: 0
   m_Name: ClassAbillity3
   m_TagString: Untagged
@@ -51487,23 +51672,6 @@ RectTransform:
   m_AnchoredPosition: {x: -1012, y: 134}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1513018084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1513018082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee5be61ee37d2304ca87d72d7cdf6ae2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _type: 1
-  image: {fileID: 0}
-  classSlotted: 3
-  passive: {fileID: 0}
-  spell: {fileID: 0}
 --- !u!114 &1513018085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52808,6 +52976,7 @@ GameObject:
   - component: {fileID: 1639423644}
   - component: {fileID: 1639423646}
   - component: {fileID: 1639423645}
+  - component: {fileID: 1639423647}
   m_Layer: 0
   m_Name: ClassHiddenPassiveSlot2
   m_TagString: Untagged
@@ -52873,6 +53042,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1639423643}
   m_CullTransparentMesh: 1
+--- !u!114 &1639423647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639423643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee5be61ee37d2304ca87d72d7cdf6ae2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _type: 3
+  image: {fileID: 0}
+  classSlotted: 3
+  number: 5
+  passive: {fileID: 0}
+  spell: {fileID: 0}
 --- !u!1 &1645371852
 GameObject:
   m_ObjectHideFlags: 0
@@ -53003,6 +53190,7 @@ MonoBehaviour:
   _type: 0
   image: {fileID: 0}
   classSlotted: 3
+  number: 2
   passive: {fileID: 0}
   spell: {fileID: 0}
 --- !u!1001 &1660327131
@@ -53813,7 +54001,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.061320715, g: 0.2729205, b: 0.3679245, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -54486,7 +54674,6 @@ GameObject:
   - component: {fileID: 1772528543}
   - component: {fileID: 1772528546}
   - component: {fileID: 1772528545}
-  - component: {fileID: 1772528544}
   m_Layer: 0
   m_Name: ClassAbillity4
   m_TagString: Untagged
@@ -54514,23 +54701,6 @@ RectTransform:
   m_AnchoredPosition: {x: -1012, y: 19}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1772528544
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1772528542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee5be61ee37d2304ca87d72d7cdf6ae2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _type: 1
-  image: {fileID: 0}
-  classSlotted: 3
-  passive: {fileID: 0}
-  spell: {fileID: 0}
 --- !u!114 &1772528545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56032,7 +56202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.061320715, g: 0.2729205, b: 0.3679245, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -56067,6 +56237,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1845042598}
   - component: {fileID: 1845042599}
+  - component: {fileID: 1845042600}
   m_Layer: 0
   m_Name: ClassRaster
   m_TagString: Untagged
@@ -56110,32 +56281,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   classList:
-  - className: Warrior
+  - className: Fighter
     classType: 2
-    classAbillity1: {fileID: 0}
-    classAbillity2: {fileID: 0}
-    classAbillity3: {fileID: 0}
-    classAbillity4: {fileID: 0}
-    classAbillity5: {fileID: 0}
-    classPassive1: {fileID: 0}
-    classPassive2: {fileID: 0}
-    classPassive3: {fileID: 0}
-    classPassive4: {fileID: 0}
-    classPassive5: {fileID: 0}
-    classPassive6: {fileID: 0}
+    classAbillity1: {fileID: 11400000, guid: 154fe2ad9b5d28e4c8c46cd9f9c21f68, type: 2}
+    classAbillity2: {fileID: 11400000, guid: 154fe2ad9b5d28e4c8c46cd9f9c21f68, type: 2}
+    classAbillity3: {fileID: 11400000, guid: 154fe2ad9b5d28e4c8c46cd9f9c21f68, type: 2}
+    classAbillity4: {fileID: 11400000, guid: 154fe2ad9b5d28e4c8c46cd9f9c21f68, type: 2}
+    classAbillity5: {fileID: 11400000, guid: 154fe2ad9b5d28e4c8c46cd9f9c21f68, type: 2}
+    classPassive1: {fileID: 11400000, guid: 1277c0a44792e594f9f741ba154f1332, type: 2}
+    classPassive2: {fileID: 11400000, guid: 1277c0a44792e594f9f741ba154f1332, type: 2}
+    classPassive3: {fileID: 11400000, guid: 1277c0a44792e594f9f741ba154f1332, type: 2}
+    classPassive4: {fileID: 11400000, guid: 1277c0a44792e594f9f741ba154f1332, type: 2}
+    classPassive5: {fileID: 11400000, guid: 1277c0a44792e594f9f741ba154f1332, type: 2}
+    classPassive6: {fileID: 11400000, guid: 1277c0a44792e594f9f741ba154f1332, type: 2}
   - className: Mage
     classType: 1
-    classAbillity1: {fileID: 0}
-    classAbillity2: {fileID: 0}
-    classAbillity3: {fileID: 0}
-    classAbillity4: {fileID: 0}
-    classAbillity5: {fileID: 0}
-    classPassive1: {fileID: 0}
-    classPassive2: {fileID: 0}
-    classPassive3: {fileID: 0}
-    classPassive4: {fileID: 0}
-    classPassive5: {fileID: 0}
-    classPassive6: {fileID: 0}
+    classAbillity1: {fileID: 11400000, guid: 41849a272d3cd4347b6fcb11a8ee04ad, type: 2}
+    classAbillity2: {fileID: 11400000, guid: 41849a272d3cd4347b6fcb11a8ee04ad, type: 2}
+    classAbillity3: {fileID: 11400000, guid: 41849a272d3cd4347b6fcb11a8ee04ad, type: 2}
+    classAbillity4: {fileID: 11400000, guid: 41849a272d3cd4347b6fcb11a8ee04ad, type: 2}
+    classAbillity5: {fileID: 11400000, guid: 41849a272d3cd4347b6fcb11a8ee04ad, type: 2}
+    classPassive1: {fileID: 11400000, guid: c2c0e4992be6f7b438af76f0445f389c, type: 2}
+    classPassive2: {fileID: 11400000, guid: c2c0e4992be6f7b438af76f0445f389c, type: 2}
+    classPassive3: {fileID: 11400000, guid: c2c0e4992be6f7b438af76f0445f389c, type: 2}
+    classPassive4: {fileID: 11400000, guid: c2c0e4992be6f7b438af76f0445f389c, type: 2}
+    classPassive5: {fileID: 11400000, guid: c2c0e4992be6f7b438af76f0445f389c, type: 2}
+    classPassive6: {fileID: 11400000, guid: c2c0e4992be6f7b438af76f0445f389c, type: 2}
   - className: Tank
     classType: 0
     classAbillity1: {fileID: 0}
@@ -56172,6 +56343,37 @@ MonoBehaviour:
   classPassive4: {fileID: 129146665}
   classPassive5: {fileID: 693798281}
   classPassive6: {fileID: 686023714}
+--- !u!114 &1845042600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845042597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56625a5899494f5b9398123b4d57d393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spellList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  passiveList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  classTypeList: 0300000003000000
+  nameObjectList:
+  - {fileID: 1103312243}
+  - {fileID: 1891568269}
 --- !u!1 &1847373319
 GameObject:
   m_ObjectHideFlags: 0
@@ -57363,7 +57565,6 @@ GameObject:
   - component: {fileID: 1977715958}
   - component: {fileID: 1977715961}
   - component: {fileID: 1977715960}
-  - component: {fileID: 1977715959}
   m_Layer: 0
   m_Name: ClassAbillity1
   m_TagString: Untagged
@@ -57391,23 +57592,6 @@ RectTransform:
   m_AnchoredPosition: {x: -1012, y: 365}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1977715959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1977715957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee5be61ee37d2304ca87d72d7cdf6ae2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _type: 1
-  image: {fileID: 0}
-  classSlotted: 3
-  passive: {fileID: 0}
-  spell: {fileID: 0}
 --- !u!114 &1977715960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58024,7 +58208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.061320715, g: 0.2729205, b: 0.3679245, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -59726,7 +59910,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.061320715, g: 0.2729205, b: 0.3679245, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -60639,6 +60823,7 @@ MonoBehaviour:
   _type: 1
   image: {fileID: 0}
   classSlotted: 3
+  number: 0
   passive: {fileID: 0}
   spell: {fileID: 0}
 --- !u!114 &2146795064

@@ -13,7 +13,7 @@ public class PassiveAndSkillChecker : MonoBehaviour
 
     [Header("ClassType")] [SerializeField]
     private List<ClassEnum.Classes> classTypeList = new List<ClassEnum.Classes>();
-    
+
     [Header("NameObjects")] [SerializeField]
     private List<GameObject> nameObjectList = new List<GameObject>();
 
@@ -33,10 +33,11 @@ public class PassiveAndSkillChecker : MonoBehaviour
         {
             return;
         }
+
         spellList[number] = itemToAdd.spell;
         UpdateForTypesInLists();
     }
-    
+
     /**
      * Adds Item to number Position, left is 0 and last is 6 (6 would be Hidden Passive)
      */
@@ -46,10 +47,11 @@ public class PassiveAndSkillChecker : MonoBehaviour
         {
             return;
         }
+
         passiveList[number] = itemToAdd.passive;
         UpdateForTypesInLists();
     }
-    
+
     public bool CheckSpellListForDublicate(PassiveAndActiveSlot itemToAdd)
     {
         foreach (var item in spellList)
@@ -62,9 +64,10 @@ public class PassiveAndSkillChecker : MonoBehaviour
                 }
             }
         }
+
         return false;
     }
-    
+
     public bool CheckPassiveListForDublicate(PassiveAndActiveSlot itemToAdd)
     {
         foreach (var item in passiveList)
@@ -77,15 +80,16 @@ public class PassiveAndSkillChecker : MonoBehaviour
                 }
             }
         }
+
         return false;
     }
-    
+
     public void RemovePassive(int number)
     {
         passiveList[number] = null;
         UpdateForTypesInLists();
     }
-    
+
     public void RemoveActive(int number)
     {
         spellList[number] = null;
@@ -101,7 +105,7 @@ public class PassiveAndSkillChecker : MonoBehaviour
                 classTypeList[0] = type;
                 nameObjectList[0].GetComponent<Text>().text = type.ToString();
             }
-            
+
             else if (classTypeList[1] == ClassEnum.Classes.None)
             {
                 classTypeList[1] = type;
@@ -109,7 +113,7 @@ public class PassiveAndSkillChecker : MonoBehaviour
             }
         }
     }
-    
+
 
     public bool CheckForTypeInList(ClassEnum.Classes type)
     {
@@ -119,7 +123,7 @@ public class PassiveAndSkillChecker : MonoBehaviour
             {
                 return true;
             }
-            
+
             else if (classTypeList[1] == ClassEnum.Classes.None || classTypeList[1] == type)
             {
                 return true;
@@ -139,7 +143,7 @@ public class PassiveAndSkillChecker : MonoBehaviour
             {
                 classTypeList[0] = ClassEnum.Classes.None;
             }
-            
+
             else if (classTypeList[1] == type)
             {
                 classTypeList[0] = ClassEnum.Classes.None;
@@ -169,7 +173,7 @@ public class PassiveAndSkillChecker : MonoBehaviour
                 }
             }
         }
-        
+
         foreach (var passive in passiveList)
         {
             if (passive != null)
@@ -187,6 +191,7 @@ public class PassiveAndSkillChecker : MonoBehaviour
                 }
             }
         }
+
         classTypeList[0] = class1;
         nameObjectList[0].GetComponent<Text>().text = class1.ToString();
         classTypeList[1] = class2;
@@ -202,14 +207,12 @@ public class PassiveAndSkillChecker : MonoBehaviour
         //Wenn Type noch frei ist false;
         if (classTypeList[0] == ClassEnum.Classes.None || classTypeList[1] == ClassEnum.Classes.None)
             return false;
-        
+
         //Wenn der Type  Vorhanden ist false;
-        if(classTypeList[0] == type || classTypeList[1] == type)
+        if (classTypeList[0] == type || classTypeList[1] == type)
             return false;
-        
+
         //Wenn nicht Frei und nicht Vorhanden
         return true;
     }
-    
 }
-

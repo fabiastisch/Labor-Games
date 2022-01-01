@@ -45,7 +45,7 @@ public class ClassSlot : MonoBehaviour, IDropHandler
         skillsAndPassives = eventData.pointerDrag.GetComponent<PassiveAndActiveSlot>().type;
         classSlotted = eventData.pointerDrag.GetComponent<PassiveAndActiveSlot>().classType;
 
-        GameObject dragObject = eventData.pointerDrag;
+        GameObject dragObject = eventData.pointerDrag.gameObject;
 
 
         Debug.Log(skillsAndPassives);
@@ -55,8 +55,8 @@ public class ClassSlot : MonoBehaviour, IDropHandler
             if (skillsAndPassives == SkillsAndPassivesType.ClassActive ||
                 skillsAndPassives == SkillsAndPassivesType.HiddenActive)
             {
-                if (PassiveAndSkillChecker.Instance.CheckForTypeInList(classSlotted) ! &
-                    PassiveAndSkillChecker.Instance.CheckSpellListForDublicate(
+                if (PassiveAndSkillChecker.Instance.CheckForTypeInList(classSlotted) &&
+                    !PassiveAndSkillChecker.Instance.CheckSpellListForDublicate(
                         dragObject.GetComponent<PassiveAndActiveSlot>()))
                 {
                     PassiveAndSkillChecker.Instance.AddActiveToList(number,
@@ -71,15 +71,17 @@ public class ClassSlot : MonoBehaviour, IDropHandler
             else if (skillsAndPassives == SkillsAndPassivesType.ClassPassive ||
                      skillsAndPassives == SkillsAndPassivesType.HiddenPassive)
             {
-                if (PassiveAndSkillChecker.Instance.CheckForTypeInList(classSlotted) ! &
-                    PassiveAndSkillChecker.Instance.CheckPassiveListForDublicate(
+                if (PassiveAndSkillChecker.Instance.CheckForTypeInList(classSlotted) &&
+                    !PassiveAndSkillChecker.Instance.CheckPassiveListForDublicate(
                         dragObject.GetComponent<PassiveAndActiveSlot>()))
                 {
                     PassiveAndSkillChecker.Instance.AddPassiveToList(number,
                         dragObject.GetComponent<PassiveAndActiveSlot>());
+                    if (passive != null)
+                        passive.Removed(gameObject);
                     passive = dragObject.GetComponent<PassiveAndActiveSlot>().passive;
                     classSlotted = passive.classType;
-                    transform.GetChild(0).GetComponent<Image>().sprite = passive.passiveImage;
+                    transform.GetChild(0).GetComponent<Image>().sprite = passive.classPassiveIcon;
                 }
             }
         }
@@ -95,6 +97,7 @@ public class ClassSlot : MonoBehaviour, IDropHandler
         }
         else if (passive != null)
         {
+            passive.Removed(gameObject);
             PassiveAndSkillChecker.Instance.RemovePassive(number);
         }
         

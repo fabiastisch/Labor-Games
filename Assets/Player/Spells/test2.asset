@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26ccdb73a6bc46247b0ce2847af2af96, type: 3}
-  m_Name: pfFlameWall
+  m_Name: test2
   m_EditorClassIdentifier: 
-  magicProjectile: {fileID: 6870120338883167224, guid: f0c2426ddba76ce43834ede03c1210f3, type: 3}
-  name: FireWall
-  spellType: 1
+  magicProjectile: {fileID: 0}
+  name: 
+  spellType: 0
   cooldownMax: 0
   activeTimeMax: 0
-  classType: 2
+  classType: 1
   typeForUI: 1
-  abitllityIcon: {fileID: 9205571517384939816, guid: 5c39983d06e4e9240a98d1efebefd41d, type: 3}
+  abitllityIcon: {fileID: -8828886737162667788, guid: c03593c3c609c7f4694ad6ae484a2c0c, type: 3}
   maxXDistance: 10
   maxYDistance: 10
