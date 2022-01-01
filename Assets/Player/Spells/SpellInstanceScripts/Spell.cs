@@ -15,6 +15,12 @@ public class Spell : ScriptableObject
     public float activeTimeMax;
     
     private List<GameObject> projectileList;
+
+    public ClassEnum.Classes classType = ClassEnum.Classes.None;
+
+    public SkillsAndPassivesType typeForUI = SkillsAndPassivesType.None;
+
+    public Sprite abitllityIcon;
     
     
 

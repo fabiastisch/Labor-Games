@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Timeline.Actions;
 using UnityEngine;
-
+//todo remove if all empty
 public class PassiveSlot : MonoBehaviour
 {
     public Passive passive;
