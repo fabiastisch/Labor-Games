@@ -16,6 +16,9 @@ public class PassiveAndSkillChecker : MonoBehaviour
 
     [Header("NameObjects")] [SerializeField]
     private List<GameObject> nameObjectList = new List<GameObject>();
+    
+    [Header("SpellCasterObjects")] [SerializeField]
+    private List<SpellCaster> spellCasterList = new List<SpellCaster>();
 
     public static PassiveAndSkillChecker Instance { get; private set; }
 
@@ -35,6 +38,7 @@ public class PassiveAndSkillChecker : MonoBehaviour
         }
 
         spellList[number] = itemToAdd.spell;
+        spellCasterList[number].AddSpell(itemToAdd.spell);
         UpdateForTypesInLists();
     }
 
@@ -93,6 +97,7 @@ public class PassiveAndSkillChecker : MonoBehaviour
     public void RemoveActive(int number)
     {
         spellList[number] = null;
+        spellCasterList[number].RemoveSpell();
         UpdateForTypesInLists();
     }
 
@@ -213,6 +218,16 @@ public class PassiveAndSkillChecker : MonoBehaviour
             return false;
 
         //Wenn nicht Frei und nicht Vorhanden
+        return true;
+    }
+
+    public bool ActivateSpellInSlot(int number)
+    {
+        if (!spellCasterList.Any()||spellCasterList[number].spell == null)
+        {
+            return false;
+        }
+        spellCasterList[number].KeyActivated();
         return true;
     }
 }
