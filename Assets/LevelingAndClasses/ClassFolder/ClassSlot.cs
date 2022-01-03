@@ -65,6 +65,7 @@ public class ClassSlot : MonoBehaviour, IDropHandler
                     spell = dragObject.GetComponent<PassiveAndActiveSlot>().spell;
                     classSlotted = spell.classType;
                     transform.GetChild(0).GetComponent<Image>().sprite = spell.abitllityIcon;
+                    transform.GetChild(0).GetComponent<Image>().enabled = true;
                 }
             }
 
@@ -82,12 +83,15 @@ public class ClassSlot : MonoBehaviour, IDropHandler
                     passive = dragObject.GetComponent<PassiveAndActiveSlot>().passive;
                     classSlotted = passive.classType;
                     transform.GetChild(0).GetComponent<Image>().sprite = passive.classPassiveIcon;
+                    transform.GetChild(0).GetComponent<Image>().enabled = true;
                 }
             }
         }
 
         //OnItemDropped?.Invoke(this, new OnItemDroppedEventArgs {skillsAndPassives = skillsAndPassives, returnData = eventData} );
     }
+    
+    //used from Buttons to Reset the Classslot
 
     public void ResetSlot()
     {
@@ -105,5 +109,6 @@ public class ClassSlot : MonoBehaviour, IDropHandler
         passive = null;
         classSlotted = ClassEnum.Classes.None;
         transform.GetChild(0).GetComponent<Image>().sprite = defaultSprite;
+        transform.GetChild(0).GetComponent<Image>().enabled = false;
     }
 }
