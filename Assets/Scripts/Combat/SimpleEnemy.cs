@@ -52,7 +52,8 @@ namespace Combat
                     if (attackSpeed <= canAttack)
                     {
                         // TODO: implement health reduction
-                        target.gameObject.GetComponent<PlayerBase>().UpdateHealth(-attackDamage);
+                        target.gameObject.GetComponent<PlayerBase>().TakeDamage(attackDamage, this, DamageType.Physical, false);
+                        //target.gameObject.GetComponent<PlayerBase>().UpdateHealth(-attackDamage);
                         
                         canAttack = 0f;
                     }

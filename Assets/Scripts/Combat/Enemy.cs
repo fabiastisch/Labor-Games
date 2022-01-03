@@ -1,9 +1,12 @@
-﻿using UnityEngine;
+﻿using Player;
+using UnityEngine;
 
-namespace Combat {
-    public abstract class Enemy : Character {
+namespace Combat
+{
+    public abstract class Enemy : Character
+    {
         protected Transform target;
-        
+
         [Header("Enemy")]
         public string enemyName;
 
@@ -12,10 +15,23 @@ namespace Combat {
         [SerializeField] protected float attackSpeed = 1f;
         [SerializeField] protected float attackDamage = 10f;
 
-        protected override void Die() {
-            base.Die();
+        [SerializeField] protected int experience = 50;
+
+        protected override void Die(Character enemy)
+        {
+            base.Die(enemy);
+            DropExperience(enemy);
             // TODO: Drop Loot and Exp
             Destroy(gameObject);
+        }
+        private void DropExperience(Character player)
+        {
+            PlayerLevelManager playerLevelManager = player.GetComponent<PlayerLevelManager>();
+            if (playerLevelManager)
+            {
+                playerLevelManager.AddExp(experience);
+            }
+
         }
     }
 }

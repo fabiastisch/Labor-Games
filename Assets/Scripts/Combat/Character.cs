@@ -73,7 +73,11 @@ namespace Combat
                 Util.GetLocalPlayer().InvokeOnPlayerMakeACrit();
             }
             bool dies = TakeDamage(amountHp, damageType, isCrit);
-            if (dies) OnEntityDies?.Invoke(enemy);
+            if (dies)
+            {
+                OnEntityDies?.Invoke(enemy);
+                Die(enemy);
+            }
             return dies;
         }
         
@@ -86,13 +90,12 @@ namespace Combat
             if (_currentHealth == 0)
             {
                 Debug.Log(gameObject.name + " died...");
-                Die();
                 return true;
             }
             return false;
         }
 
-        protected virtual void Die()
+        protected virtual void Die(Character enemy)
         {
         }
 

@@ -1,15 +1,14 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 
 public class ResourceManager : MonoBehaviour
 {
-
     public static ResourceManager Instance { get; private set; } 
     
     private Dictionary<ResourceTypeSO, float> resourceAmountDictionary;
-
+    public event Action<ResourceTypeSO, float> OnResourceChanged;
     //Initialisations without external dependancy on Awake / with external dependancy on Start
     private void Awake()
     {
@@ -39,11 +38,13 @@ public class ResourceManager : MonoBehaviour
     public void AddResource(ResourceTypeSO resourceType, float amount)
     {
         resourceAmountDictionary[resourceType] += amount;
+        OnResourceChanged?.Invoke(resourceType, resourceAmountDictionary[resourceType]);
     }
-    
+
     //Adds Resource of a Type with a Amount
     public void RemoveResource(ResourceTypeSO resourceType, float amount)
     {
         resourceAmountDictionary[resourceType] -= amount;
+        OnResourceChanged?.Invoke(resourceType, resourceAmountDictionary[resourceType]);
     }
 }
