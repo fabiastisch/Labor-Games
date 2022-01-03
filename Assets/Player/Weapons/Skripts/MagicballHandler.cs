@@ -96,12 +96,12 @@ namespace EquipableWeapon
 
         private void SpawnAOE(Vector3 position)
         {
-            //TODO: Placing aoe-object to given radius
             GameObject placeableObject = Instantiate(aoeObject, position, Quaternion.identity);
             FireWall firewall = placeableObject.GetComponent<FireWall>();
             firewall.damageType = damageType;
             firewall.baseDamage = (int)aoeDamage;
             firewall.activeTime = (int)aoeTime;
+            firewall.transform.localScale = new Vector3(aoeRange,aoeRange, transform.position.z);
         }
     }
 }

@@ -121,7 +121,7 @@ namespace Weapons.Effects
         public void ActivatePassiv(InputAction.CallbackContext context, PlayerBase playerBase)
         {
             this.player = playerBase;
-            if (!context.performed || state != EffectState.ready) return;
+            if (!context.performed || state != EffectState.ready || weapon.effect == null) return;
             buttonPressed = true;
         }
     }
