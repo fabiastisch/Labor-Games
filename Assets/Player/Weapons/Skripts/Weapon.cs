@@ -23,7 +23,6 @@ namespace EquipableWeapon
         public DamageType damageType;
         public bool shouldGenerateRarityDMGTyp = true;
 
-
         [Header("Effect & EffectStats")] public Effect? effect;
         public float penetration;
         public float bonusStat;
@@ -70,7 +69,6 @@ namespace EquipableWeapon
             if (weaponEffects.effect != null)
             {
                 effect = weaponEffects.effect;
-                Debug.Log(effect.name);
             }
         }
 

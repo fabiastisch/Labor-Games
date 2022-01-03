@@ -16,7 +16,6 @@ namespace EquipableWeapon
         private Vector2 mouseDirection;
         private bool isFlying = false;
         private Rigidbody2D rb;
-        private float timer;
 
         private void Start()
         {

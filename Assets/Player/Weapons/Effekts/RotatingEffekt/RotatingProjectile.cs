@@ -21,7 +21,7 @@ namespace Weapons.Effects
 
         public override void Activate(PlayerBase player) {
 
-            RecolorSphere(spriteRenderer, elementTyp);
+            Utils.ElementColoring.RecolorSpriteByDamagetyp(spriteRenderer, elementTyp);
             time += Time.deltaTime * speed;
 
             if (!sphere)
@@ -46,33 +46,6 @@ namespace Weapons.Effects
         public override void Deactivate()
         {
             Destroy(sphere.gameObject);
-        }
-        private void RecolorSphere(SpriteRenderer sphereSprite, DamageType type)
-        {
-            switch (type)
-            {
-                case DamageType.Fire:
-                    sphereSprite.color = Color.red;
-                    return;
-                case DamageType.Frost:
-                    sphereSprite.color = Color.cyan;
-                    return;
-                case DamageType.Lightning:
-                    sphereSprite.color = Color.yellow;
-                    return;
-                case DamageType.Physical:
-                    sphereSprite.color = Color.gray;
-                    return;
-                case DamageType.Poison:
-                    sphereSprite.color = Color.green;
-                    return;
-                case DamageType.Magical:
-                    sphereSprite.color = Color.blue;
-                    return;
-                case DamageType.Shadow:
-                    sphereSprite.color = Color.black;
-                    return;
-            }
         }
     }
 }

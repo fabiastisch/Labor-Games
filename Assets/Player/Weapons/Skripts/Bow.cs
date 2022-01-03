@@ -11,7 +11,7 @@ namespace EquipableWeapon
     public class Bow : Weapon
     {
         [Header("Bow-Stats")]
-        public GameObject arrow;
+        [SerializeField] private GameObject arrow;
         public float maxSpeed;
 
         public Sprite minLoadSprite;
