@@ -14,23 +14,16 @@ public class UI_RadarChart : MonoBehaviour
   [SerializeField] private Texture2D radarTexture2D;
   public Statistics statistics;
   private CanvasRenderer radarMeshCanvasRenderer;
-
-  private void Awake()
-  {
-    radarMeshCanvasRenderer = transform.Find("radarMesh").GetComponent<CanvasRenderer>();
-  }
-
+  
   public void SetStatistic(Statistics statistics)
   {
     this.statistics = statistics;
     statistics.OnStatisticChange += Statistics_OnStatisticChange;
-    UpdateStatsVisual();
-    UpdateStatsText();
+    UpdateRadarChart();
   }
   private void Statistics_OnStatisticChange(object sender, System.EventArgs e)
   {
-    UpdateStatsVisual();
-    UpdateStatsText();
+    UpdateRadarChart();
   }
 
   private void UpdateStatsVisual()
@@ -113,5 +106,12 @@ public class UI_RadarChart : MonoBehaviour
     
     parent.Find("LevelStr").Find("Value").GetComponent<Text>().text =
       "" + statistics.GetValue(Statistics.Type.Strength);
+  }
+
+  public void UpdateRadarChart()
+  {
+    radarMeshCanvasRenderer = transform.Find("radarMesh").GetComponent<CanvasRenderer>();
+    UpdateStatsVisual();
+    UpdateStatsText();
   }
 }

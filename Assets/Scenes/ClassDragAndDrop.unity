@@ -437,6 +437,7 @@ GameObject:
   - component: {fileID: 55835808}
   - component: {fileID: 55835807}
   - component: {fileID: 55835806}
+  - component: {fileID: 55835809}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -509,6 +510,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &55835809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55835805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &57144479
 GameObject:
   m_ObjectHideFlags: 0
@@ -1073,6 +1106,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 21300000, guid: 37fea579f7ad11048a0271e708664d5b, type: 3}
   listFullBool: 0
+  levelPassive: {fileID: 11400000, guid: efa451800e8be7c46889310a46fad256, type: 2}
 --- !u!114 &102527431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1227,6 +1261,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 21300000, guid: 4e822aef56927c04da2502b7392cd5b5, type: 3}
   listFullBool: 0
+  levelPassive: {fileID: 11400000, guid: 2cc46850e86885749a6342fa9d004b54, type: 2}
 --- !u!114 &104185964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1379,6 +1414,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &108032406
 GameObject:
   m_ObjectHideFlags: 0
@@ -1541,6 +1577,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &123009556
 GameObject:
   m_ObjectHideFlags: 0
@@ -1637,6 +1674,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &129146665
 GameObject:
   m_ObjectHideFlags: 0
@@ -1853,6 +1891,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &137264322
 GameObject:
   m_ObjectHideFlags: 0
@@ -2144,6 +2183,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &145756359
 GameObject:
   m_ObjectHideFlags: 0
@@ -2361,6 +2401,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 21300000, guid: 323f6420ae38257499ba31722e263b12, type: 3}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!114 &159589820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2680,6 +2721,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &190218327
 GameObject:
   m_ObjectHideFlags: 0
@@ -2926,6 +2968,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &219996055
 GameObject:
   m_ObjectHideFlags: 0
@@ -3103,6 +3146,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 21300000, guid: ff7c43c356f0ce4428118c73448f2a76, type: 3}
   listFullBool: 0
+  levelPassive: {fileID: 11400000, guid: 381c10dfc15f1d24f8ee68a5f8ac9695, type: 2}
 --- !u!114 &221990182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3302,6 +3346,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 21300000, guid: 772cb1db66d532b45bba4a67468be20a, type: 3}
   listFullBool: 0
+  levelPassive: {fileID: 11400000, guid: 7a6b57b4c8f35c842ac3e6d2606121d1, type: 2}
 --- !u!114 &224533848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3456,6 +3501,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 21300000, guid: 87f743b0680f4194eb32eeb5552daac2, type: 3}
   listFullBool: 0
+  levelPassive: {fileID: 11400000, guid: e619cc8f720378d478f7b9aa2c38df62, type: 2}
 --- !u!114 &240927906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3640,6 +3686,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &279637145
 GameObject:
   m_ObjectHideFlags: 0
@@ -3650,9 +3697,6 @@ GameObject:
   m_Component:
   - component: {fileID: 279637148}
   - component: {fileID: 279637147}
-  - component: {fileID: 279637146}
-  - component: {fileID: 279637149}
-  - component: {fileID: 279637150}
   - component: {fileID: 279637151}
   m_Layer: 0
   m_Name: TestingObject2
@@ -3661,21 +3705,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &279637146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 279637145}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3021bf5bc09913a4c877056846527019, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  passive: {fileID: 11400000, guid: 0e0209ea37faed54ca5116ed6e9e0fc1, type: 2}
-  equiped: 0
-  key: 0
 --- !u!114 &279637147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3683,7 +3712,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 279637145}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c63aaca88316e84fbbd85ce0ae41d7a, type: 3}
   m_Name: 
@@ -3722,36 +3751,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &279637149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 279637145}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3021bf5bc09913a4c877056846527019, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  passive: {fileID: 11400000, guid: 6dc33c43a83360440a3f97c0fdad8d1d, type: 2}
-  equiped: 0
-  key: 0
---- !u!114 &279637150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 279637145}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3021bf5bc09913a4c877056846527019, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  passive: {fileID: 11400000, guid: 1d07d42c6928c854881936f535ea62ad, type: 2}
-  equiped: 0
-  key: 0
 --- !u!114 &279637151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4120,6 +4119,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &375573500
 GameObject:
   m_ObjectHideFlags: 0
@@ -4218,6 +4218,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 21300000, guid: 414198cdb5c00a44e8d95c7c3f81408a, type: 3}
   listFullBool: 0
+  levelPassive: {fileID: 11400000, guid: bf82ac46bd93d52409b23599bd6b4004, type: 2}
 --- !u!114 &375573505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4459,6 +4460,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &385377058
 GameObject:
   m_ObjectHideFlags: 0
@@ -4555,6 +4557,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &385657594
 GameObject:
   m_ObjectHideFlags: 0
@@ -4726,6 +4729,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &398679218
 GameObject:
   m_ObjectHideFlags: 0
@@ -5641,6 +5645,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &459156266
 GameObject:
   m_ObjectHideFlags: 0
@@ -5966,6 +5971,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &477863091
 GameObject:
   m_ObjectHideFlags: 0
@@ -6684,6 +6690,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &515645332
 GameObject:
   m_ObjectHideFlags: 0
@@ -6928,6 +6935,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &527467908
 GameObject:
   m_ObjectHideFlags: 0
@@ -7820,6 +7828,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &567809897
 GameObject:
   m_ObjectHideFlags: 0
@@ -8952,6 +8961,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 21300000, guid: c06b52e768643924dabb4e6863d9ed1d, type: 3}
   listFullBool: 0
+  levelPassive: {fileID: 11400000, guid: 1677c6f065998c546986b61baffb1731, type: 2}
 --- !u!114 &683996931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9767,6 +9777,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &736428922
 GameObject:
   m_ObjectHideFlags: 0
@@ -9938,6 +9949,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &751456012
 GameObject:
   m_ObjectHideFlags: 0
@@ -10111,6 +10123,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 21300000, guid: 53cff99639470ba4999ae595287143a0, type: 3}
   listFullBool: 0
+  levelPassive: {fileID: 11400000, guid: 93e4f4f3f69dc634b9ec3670e2e97392, type: 2}
 --- !u!114 &751592217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10458,6 +10471,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &767818034
 GameObject:
   m_ObjectHideFlags: 0
@@ -10781,6 +10795,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &782275038
 GameObject:
   m_ObjectHideFlags: 0
@@ -10877,6 +10892,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &785945327
 GameObject:
   m_ObjectHideFlags: 0
@@ -11186,6 +11202,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 21300000, guid: e07501ca509b13441a8eb6f17069b489, type: 3}
   listFullBool: 0
+  levelPassive: {fileID: 11400000, guid: 1277c0a44792e594f9f741ba154f1332, type: 2}
 --- !u!114 &805198240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11528,6 +11545,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &838395626
 GameObject:
   m_ObjectHideFlags: 0
@@ -12075,6 +12093,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &883415985
 GameObject:
   m_ObjectHideFlags: 0
@@ -12171,6 +12190,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &886210007
 GameObject:
   m_ObjectHideFlags: 0
@@ -12421,6 +12441,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 21300000, guid: 0f5560b96b400c44cab2dabc291db056, type: 3}
   listFullBool: 0
+  levelPassive: {fileID: 11400000, guid: c2c0e4992be6f7b438af76f0445f389c, type: 2}
 --- !u!114 &915836974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12573,6 +12594,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &927476007
 GameObject:
   m_ObjectHideFlags: 0
@@ -12901,6 +12923,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &942806851
 GameObject:
   m_ObjectHideFlags: 0
@@ -13149,6 +13172,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &959821670
 GameObject:
   m_ObjectHideFlags: 0
@@ -14002,6 +14026,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &1000549274
 GameObject:
   m_ObjectHideFlags: 0
@@ -14175,6 +14200,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 21300000, guid: a0995c5e982236145a9e4a6f3828d039, type: 3}
   listFullBool: 0
+  levelPassive: {fileID: 11400000, guid: 9f0cd0ca3166f864783060b822e0b92e, type: 2}
 --- !u!114 &1010686739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14327,6 +14353,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &1024045078
 GameObject:
   m_ObjectHideFlags: 0
@@ -14801,6 +14828,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &1078532149
 GameObject:
   m_ObjectHideFlags: 0
@@ -15703,6 +15731,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 21300000, guid: f1512b405a4bad940a4a961e681dae24, type: 3}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!114 &1153071290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16007,6 +16036,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 21300000, guid: 989d4f2f28dacfb41919bcfa07fe5e46, type: 3}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!114 &1180101982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16240,6 +16270,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 21300000, guid: 4c99c54c968f93a46b125fdd415c4970, type: 3}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!114 &1183906524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16624,6 +16655,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &1227599751
 GameObject:
   m_ObjectHideFlags: 0
@@ -16795,6 +16827,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &1268775188
 GameObject:
   m_ObjectHideFlags: 0
@@ -17079,6 +17112,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &1287314730
 GameObject:
   m_ObjectHideFlags: 0
@@ -17254,6 +17288,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &1297460809
 GameObject:
   m_ObjectHideFlags: 0
@@ -17635,6 +17670,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &1323071638
 GameObject:
   m_ObjectHideFlags: 0
@@ -18008,6 +18044,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &1343298744
 GameObject:
   m_ObjectHideFlags: 0
@@ -18446,6 +18483,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &1360349731
 GameObject:
   m_ObjectHideFlags: 0
@@ -18791,6 +18829,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 21300000, guid: b34b29e8b927f264f8203529539ff50d, type: 3}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!114 &1375283397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19594,6 +19633,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 21300000, guid: b65d241d691f91e45ba2994020812ee8, type: 3}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!114 &1465315128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19746,6 +19786,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &1488589426
 GameObject:
   m_ObjectHideFlags: 0
@@ -20682,6 +20723,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &1569063621
 GameObject:
   m_ObjectHideFlags: 0
@@ -21349,6 +21391,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 0
+--- !u!1 &1662476822
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1662476824}
+  - component: {fileID: 1662476823}
+  m_Layer: 0
+  m_Name: StatManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1662476823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662476822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f28892fe4ef08bd468a1611221568aa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1662476824
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662476822}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1321.1587, y: 1197.6847, z: -2162.833}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1671306054
 GameObject:
   m_ObjectHideFlags: 0
@@ -21678,6 +21763,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 21300000, guid: 638a1848215a4f046a8ae9afdd25a580, type: 3}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!114 &1687556823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21905,6 +21991,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &1710896284
 GameObject:
   m_ObjectHideFlags: 0
@@ -22269,6 +22356,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &1760969935
 GameObject:
   m_ObjectHideFlags: 0
@@ -22521,6 +22609,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 21300000, guid: 66916cc85249ad54da8c3c8d936c7e36, type: 3}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!114 &1771480575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22762,6 +22851,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &1779907053
 GameObject:
   m_ObjectHideFlags: 0
@@ -23016,6 +23106,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &1798122851
 GameObject:
   m_ObjectHideFlags: 0
@@ -23114,6 +23205,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 21300000, guid: f78b0faf31ba4fe47ba26c94e6f55c00, type: 3}
   listFullBool: 0
+  levelPassive: {fileID: 11400000, guid: dc76d643faf2fd746aa8feffd5cddc3e, type: 2}
 --- !u!114 &1798122856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23645,6 +23737,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &1805182996
 GameObject:
   m_ObjectHideFlags: 0
@@ -24513,6 +24606,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &1890863969
 GameObject:
   m_ObjectHideFlags: 0
@@ -24765,6 +24859,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &1926686225
 GameObject:
   m_ObjectHideFlags: 0
@@ -24939,6 +25034,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 21300000, guid: 93078ff18a06bf747a7e22049b702fb3, type: 3}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!114 &1951124123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25533,6 +25629,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &1990030609
 GameObject:
   m_ObjectHideFlags: 0
@@ -25631,6 +25728,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 21300000, guid: c7061a2eaa258ba43a0c7e793b06af88, type: 3}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!114 &1990030614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25783,6 +25881,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &2009621099
 GameObject:
   m_ObjectHideFlags: 0
@@ -25881,6 +25980,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 21300000, guid: a9f04f2f65ed34f45ac6889dfdbd6096, type: 3}
   listFullBool: 0
+  levelPassive: {fileID: 11400000, guid: ec82b072a5fade2418932f5b3055939b, type: 2}
 --- !u!114 &2009621104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26510,6 +26610,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &2070372693
 GameObject:
   m_ObjectHideFlags: 0
@@ -26758,6 +26859,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 0}
   listFullBool: 0
+  levelPassive: {fileID: 0}
 --- !u!1 &2077058395
 GameObject:
   m_ObjectHideFlags: 0
@@ -26935,6 +27037,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 21300000, guid: 210b90445cb52c844839e9ee3cda1b75, type: 3}
   listFullBool: 0
+  levelPassive: {fileID: 11400000, guid: 69c91d2a11bf5d5438f3ff28327b7164, type: 2}
 --- !u!114 &2082955556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27529,6 +27632,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 21300000, guid: e11745bac411efc48ae5d249a22551d9, type: 3}
   listFullBool: 0
+  levelPassive: {fileID: 11400000, guid: 15530a03d267f16408f50f0e187ba0b9, type: 2}
 --- !u!114 &2127146207
 MonoBehaviour:
   m_ObjectHideFlags: 0

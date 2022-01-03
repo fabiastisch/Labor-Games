@@ -10,7 +10,7 @@ public class LevelPassiveListChecker : MonoBehaviour
         //Adds TimeFunction
         //private TimeModul timeModul = null;
         
-        public bool used;
+        public bool used = false;
         public bool timeactivated;
         private bool _isLevelPassiveNotNull;
 
@@ -82,7 +82,7 @@ public class LevelPassiveListChecker : MonoBehaviour
         }
         
         //Add Passive
-        public void addLevelPassive(LevelPassive lp)
+        public void AddLevelPassive(LevelPassive lp)
         {
             timeactivated = false;
             levelPassive = lp;
@@ -149,12 +149,19 @@ public class LevelPassiveListChecker : MonoBehaviour
         }
         
         //For Condition Activation
-        public void ConditionActivation()
+        public void ConditionActivation(GameObject obj)
         {
-            levelPassive.Activation(gameObject);
-            if (hasActiveTime)
+            if (levelPassive.conditionType == LevelPassiveCondition.LevelPassiveConditionType.HitSpell)
             {
-                activTimeActivated = true;
+                levelPassive.Activation(obj);
+            }
+            else
+            {
+                levelPassive.Activation(gameObject);
+                if (hasActiveTime)
+                {
+                    activTimeActivated = true;
+                }
             }
         }
     

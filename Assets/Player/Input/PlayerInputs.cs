@@ -130,6 +130,14 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""SkillMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""e962a603-dc79-40d4-80ea-8747301162b1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -319,6 +327,17 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""action"": ""ActivateWeaponSkill"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a5ba80f1-4775-418e-8e36-4348a51e1530"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SkillMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -348,6 +367,33 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""SkillMenu"",
+            ""id"": ""330b4f21-2a75-4517-9f86-1efd805afbf2"",
+            ""actions"": [
+                {
+                    ""name"": ""SkillMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""cc8d5816-1157-42a7-93b1-895b989f1113"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""4b06755e-61f4-43a5-b967-8fb61b45e55c"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SkillMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -367,9 +413,13 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
         m_Player_Map = m_Player.FindAction("Map", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_ActivateWeaponSkill = m_Player.FindAction("ActivateWeaponSkill", throwIfNotFound: true);
+        m_Player_SkillMenu = m_Player.FindAction("SkillMenu", throwIfNotFound: true);
         // Menu
         m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
         m_Menu_Menu = m_Menu.FindAction("Menu", throwIfNotFound: true);
+        // SkillMenu
+        m_SkillMenu = asset.FindActionMap("SkillMenu", throwIfNotFound: true);
+        m_SkillMenu_SkillMenu = m_SkillMenu.FindAction("SkillMenu", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -442,6 +492,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Map;
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_ActivateWeaponSkill;
+    private readonly InputAction m_Player_SkillMenu;
     public struct PlayerActions
     {
         private @PlayerInputs m_Wrapper;
@@ -459,6 +510,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
         public InputAction @Map => m_Wrapper.m_Player_Map;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @ActivateWeaponSkill => m_Wrapper.m_Player_ActivateWeaponSkill;
+        public InputAction @SkillMenu => m_Wrapper.m_Player_SkillMenu;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -507,6 +559,9 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                 @ActivateWeaponSkill.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnActivateWeaponSkill;
                 @ActivateWeaponSkill.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnActivateWeaponSkill;
                 @ActivateWeaponSkill.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnActivateWeaponSkill;
+                @SkillMenu.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSkillMenu;
+                @SkillMenu.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSkillMenu;
+                @SkillMenu.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSkillMenu;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -550,6 +605,9 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                 @ActivateWeaponSkill.started += instance.OnActivateWeaponSkill;
                 @ActivateWeaponSkill.performed += instance.OnActivateWeaponSkill;
                 @ActivateWeaponSkill.canceled += instance.OnActivateWeaponSkill;
+                @SkillMenu.started += instance.OnSkillMenu;
+                @SkillMenu.performed += instance.OnSkillMenu;
+                @SkillMenu.canceled += instance.OnSkillMenu;
             }
         }
     }
@@ -587,6 +645,39 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
         }
     }
     public MenuActions @Menu => new MenuActions(this);
+
+    // SkillMenu
+    private readonly InputActionMap m_SkillMenu;
+    private ISkillMenuActions m_SkillMenuActionsCallbackInterface;
+    private readonly InputAction m_SkillMenu_SkillMenu;
+    public struct SkillMenuActions
+    {
+        private @PlayerInputs m_Wrapper;
+        public SkillMenuActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
+        public InputAction @SkillMenu => m_Wrapper.m_SkillMenu_SkillMenu;
+        public InputActionMap Get() { return m_Wrapper.m_SkillMenu; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(SkillMenuActions set) { return set.Get(); }
+        public void SetCallbacks(ISkillMenuActions instance)
+        {
+            if (m_Wrapper.m_SkillMenuActionsCallbackInterface != null)
+            {
+                @SkillMenu.started -= m_Wrapper.m_SkillMenuActionsCallbackInterface.OnSkillMenu;
+                @SkillMenu.performed -= m_Wrapper.m_SkillMenuActionsCallbackInterface.OnSkillMenu;
+                @SkillMenu.canceled -= m_Wrapper.m_SkillMenuActionsCallbackInterface.OnSkillMenu;
+            }
+            m_Wrapper.m_SkillMenuActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @SkillMenu.started += instance.OnSkillMenu;
+                @SkillMenu.performed += instance.OnSkillMenu;
+                @SkillMenu.canceled += instance.OnSkillMenu;
+            }
+        }
+    }
+    public SkillMenuActions @SkillMenu => new SkillMenuActions(this);
     public interface IPlayerActions
     {
         void OnMove(InputAction.CallbackContext context);
@@ -602,9 +693,14 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
         void OnMap(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnActivateWeaponSkill(InputAction.CallbackContext context);
+        void OnSkillMenu(InputAction.CallbackContext context);
     }
     public interface IMenuActions
     {
         void OnMenu(InputAction.CallbackContext context);
+    }
+    public interface ISkillMenuActions
+    {
+        void OnSkillMenu(InputAction.CallbackContext context);
     }
 }

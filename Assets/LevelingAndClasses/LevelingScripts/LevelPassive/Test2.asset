@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6672be9aec3c3bf46b020254b9466fd6, type: 3}
   m_Name: Test2
   m_EditorClassIdentifier: 
-  name: 
+  name: sfsfsfsf
   levelPassiveType: 0
   conditionType: 4
+  classType: 1
+  typeForUI: 0
+  classPassiveIcon: {fileID: 21300000, guid: 7893bed2ae7b34d47aae2f0391c84f3a, type: 3}
   cooldownMaxTime: 0
   hasActiveTime: 0
   activeMaxTime: 0
@@ -22,3 +25,4 @@ MonoBehaviour:
   repeatingMaxTime: 0
   conditionTime: 0
   passiveState: 0
+  passiveImage: {fileID: 0}

@@ -47,7 +47,7 @@ namespace EquipableWeapon
 
         public override void Attack(InputAction.CallbackContext context, CombatStats combatStats, PlayerBase player)
         {
-            //Timer erhöhen
+            //Timer erhÃ¶hen
             if (context.performed)
             {
                 isheldDown = true;

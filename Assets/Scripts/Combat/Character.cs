@@ -64,12 +64,20 @@ namespace Combat
          */
         public virtual bool TakeDamage(float amountHp, Character enemy, DamageType damageType, bool isCrit = false)
         {
+            //Todo Check if it was a Abillity and not Something else
+            if(Util.GetLocalPlayer().Equals(enemy))
+                Util.GetLocalPlayer().InvokeOnPlayerHitSpell(this.gameObject);
+            
             if (enemy && enemy.Equals(Util.GetLocalPlayer()))// Check if the Attacker is the Player
             {
                 Util.GetLocalPlayer().InvokeOnPlayerMakeACrit();
             }
             bool dies = TakeDamage(amountHp, damageType, isCrit);
-            if (dies) OnEntityDies?.Invoke(enemy);
+            if (dies)
+            {
+                OnEntityDies?.Invoke(enemy);
+                Die(enemy);
+            }
             return dies;
         }
         
@@ -82,13 +90,12 @@ namespace Combat
             if (_currentHealth == 0)
             {
                 Debug.Log(gameObject.name + " died...");
-                Die();
                 return true;
             }
             return false;
         }
 
-        protected virtual void Die()
+        protected virtual void Die(Character enemy)
         {
         }
 
@@ -96,6 +103,29 @@ namespace Combat
         {
             _currentHealth += amountHp;
             _currentHealth = _currentHealth > maxHealth ? maxHealth : _currentHealth;
+        }
+
+        public float GetMaxHealth()
+        {
+            return maxHealth;
+        }
+
+        public float GetActualHealth()
+        {
+            return _currentHealth;
+        }
+
+        /**
+         * Percentage in values between 0 and 1
+         */
+        public float GetPercentageHpSmall()
+        {
+            return _currentHealth / maxHealth;
+        }
+
+        public int GetPercentageHpHigh()
+        {
+            return (int) (_currentHealth / maxHealth * 100f);
         }
     }
 }
