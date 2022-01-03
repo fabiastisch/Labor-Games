@@ -90,6 +90,8 @@ public class ClassSlot : MonoBehaviour, IDropHandler
 
         //OnItemDropped?.Invoke(this, new OnItemDroppedEventArgs {skillsAndPassives = skillsAndPassives, returnData = eventData} );
     }
+    
+    //used from Buttons to Reset the Classslot
 
     public void ResetSlot()
     {
@@ -107,5 +109,6 @@ public class ClassSlot : MonoBehaviour, IDropHandler
         passive = null;
         classSlotted = ClassEnum.Classes.None;
         transform.GetChild(0).GetComponent<Image>().sprite = defaultSprite;
+        transform.GetChild(0).GetComponent<Image>().enabled = false;
     }
 }
