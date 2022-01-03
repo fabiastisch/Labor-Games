@@ -11,14 +11,14 @@ namespace EquipableWeapon
     {
 
         [SerializeField] private GameObject magicball;
-        private MagicballHandler magicballHandler;
 
         [Header("Wand-Stats")] public float aoeRange;
         public float aoeDamage;
+        public float aoeTime;
         public float magicballSpeed;
 
         private SpriteRenderer ballRenderer;
-        private bool canFireAgain = true;
+        public bool canFireAgain = true;
 
         // Start is called before the first frame update
         void Start()
@@ -26,14 +26,8 @@ namespace EquipableWeapon
             base.Start();
             aoeRange *= ((float)weaponRarity / 2);
             aoeDamage *= ((float)weaponRarity / 2);
+            aoeTime *= ((float)weaponRarity / 2);
             ballRenderer = magicball.GetComponent<SpriteRenderer>();
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
         }
 
         public override void Attack(InputAction.CallbackContext context, CombatStats combatStats, PlayerBase player)
@@ -43,7 +37,9 @@ namespace EquipableWeapon
                 if (!canFireAgain) return;
 
                 Utils.ElementColoring.RecolorSpriteByDamagetyp(ballRenderer, damageType);
-
+                GameObject ball = Instantiate(magicball, transform.position, Quaternion.identity);
+                MagicballHandler magicballHandler = ball.GetComponent<MagicballHandler>();
+                magicballHandler.SetBallsStats(this, magicballSpeed, baseDamage, aoeDamage, aoeRange, aoeTime, damageType, player);
                 canFireAgain = false;
             }
         }

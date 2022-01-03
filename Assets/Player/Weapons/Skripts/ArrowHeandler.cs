@@ -36,6 +36,7 @@ namespace EquipableWeapon
             Collider2D[] colliders = Physics2D.OverlapCircleAll(impactPos, 0.5f, enemyLayerMask);
             foreach (Collider2D enemyCollider in colliders)
             {
+                //TODO: Should Only hit an Enemy once and gou through all enemys (piercing)
                 Enemy enemy = enemyCollider.GetComponent<Enemy>();
                 if (enemy.GetComponent<Enemy>() != null)
                 {

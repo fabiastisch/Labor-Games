@@ -109,7 +109,9 @@ MonoBehaviour:
   magicball: {fileID: 6173260976763133665, guid: c1c055f75828ce24f8c744630eb2172e, type: 3}
   aoeRange: 1
   aoeDamage: 2
-  magicballSpeed: 35
+  aoeTime: 2
+  magicballSpeed: 10
+  canFireAgain: 1
 --- !u!61 &6419309137240017833
 BoxCollider2D:
   m_ObjectHideFlags: 0
