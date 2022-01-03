@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using Utils.SaveSystem;
 namespace Player
 {
-    public class PlayerLevelManager : MonoBehaviour
+    public class PlayerLevelManager : MonoBehaviour, ISaveable
     {
         #region SingletonPattern
         private static PlayerLevelManager instance;
@@ -43,9 +45,14 @@ namespace Player
 
         [SerializeField] private LevelSlider _levelSlider;
 
+        public event Action OnLevelChanged;
+        public event Action OnExperiencedChanged;
+
         private void Start()
         {
-            UpdateStuff();
+            UpdateLevelSlider();
+            OnLevelChanged += () => _levelSlider.SetLevel(currentLevel);
+            OnExperiencedChanged += () => _levelSlider.SetValue(GetExperienceNormalized());
         }
 
         public void AddExp(int amount)
@@ -53,15 +60,16 @@ namespace Player
             if (IsMaxLevel()) return;
 
             experience += amount;
-            while (experience >= GetExpToNextLevel(currentLevel))
+            while (!IsMaxLevel() && experience >= GetExpToNextLevel(currentLevel))
             {
                 experience -= GetExpToNextLevel(currentLevel);
                 currentLevel++;
+                OnLevelChanged?.Invoke();
             }
-            UpdateStuff();
+            OnExperiencedChanged?.Invoke();
         }
 
-        private void UpdateStuff()
+        private void UpdateLevelSlider()
         {
             _levelSlider.SetLevel(currentLevel);
             _levelSlider.SetValue(GetExperienceNormalized());
@@ -69,7 +77,7 @@ namespace Player
 
         public int GetExpToNextLevel(int level)
         {
-            return baseExpToNextLevel * level*level;
+            return baseExpToNextLevel * level * level;
         }
 
         public float GetExperienceNormalized()
@@ -82,5 +90,30 @@ namespace Player
             return maxLevel == currentLevel;
         }
 
+        #region Saveable
+        public object CaptureState()
+        {
+            return new PlayerLevelData(experience, currentLevel);
+        }
+        public void RestoreState(object state)
+        {
+            PlayerLevelData data = (PlayerLevelData) state;
+            experience = data.experience;
+            currentLevel = data.level;
+            UpdateLevelSlider();
+        }
+        #endregion
+    }
+
+    [System.Serializable]
+    public class PlayerLevelData
+    {
+        public int experience;
+        public int level;
+        public PlayerLevelData(int experience, int level)
+        {
+            this.experience = experience;
+            this.level = level;
+        }
     }
 }
