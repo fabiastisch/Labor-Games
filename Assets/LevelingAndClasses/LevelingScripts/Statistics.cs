@@ -53,7 +53,7 @@ public class Statistics: MonoBehaviour
     
     public void SetStatisticAmount(Type statType, int staticValue)
     {
-        Debug.Log("SetStatisticAmount stat : " + statType + " and Value : " + staticValue);
+        //Debug.Log("SetStatisticAmount stat : " + statType + " and Value : " + staticValue);
        GetOneStat(statType).SetStatisticAmount(staticValue);
        if (OnStatisticChange != null) OnStatisticChange(this, EventArgs.Empty);
     }
@@ -65,7 +65,7 @@ public class Statistics: MonoBehaviour
             return false;
         }
         SetStatisticAmount(statType, GetValue(statType) +1 );
-        Debug.Log("Increased : " + statType);
+        //Debug.Log("Increased : " + statType);
         unlockControll.CheckListForUnlocking();
         return true;
     }
