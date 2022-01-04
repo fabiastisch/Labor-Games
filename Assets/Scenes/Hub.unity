@@ -46693,11 +46693,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unlockControll: {fileID: 279637151}
-  strengthStatAmount: 62
-  vitallityStatAmount: 76
-  charismaStatAmount: 88
-  abillityStatAmount: 47
-  agillityStatAmount: 48
+  strengthStatAmount: 1
+  vitallityStatAmount: 1
+  charismaStatAmount: 1
+  abillityStatAmount: 1
+  agillityStatAmount: 1
 --- !u!4 &1130479712
 Transform:
   m_ObjectHideFlags: 0
@@ -46725,6 +46725,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiStatsRadarChart: {fileID: 800311255}
+  uiLevelCounter: {fileID: 582754597}
   stats: {fileID: 1130479711}
 --- !u!1 &1132194959
 GameObject:
