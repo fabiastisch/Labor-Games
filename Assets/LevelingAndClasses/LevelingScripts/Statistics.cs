@@ -8,15 +8,15 @@ public class Statistics: MonoBehaviour
     public static Statistics Instance { get; private set; } 
     
     public event EventHandler OnStatisticChange;
-    public static int STAT_MIN = 0;
+    public static int STAT_MIN = 1;
     public static int STAT_MAX = 100;
     [SerializeField] private UnlockControll unlockControll;
 
-    [SerializeField] [Range(0,100)]private int strengthStatAmount;
-    [SerializeField] [Range(0,100)]private int vitallityStatAmount;
-    [SerializeField] [Range(0,100)]private int charismaStatAmount;
-    [SerializeField] [Range(0,100)]private int abillityStatAmount;
-    [SerializeField] [Range(0,100)]private int agillityStatAmount;
+    [SerializeField] [Range(1,100)]private int strengthStatAmount;
+    [SerializeField] [Range(1,100)]private int vitallityStatAmount;
+    [SerializeField] [Range(1,100)]private int charismaStatAmount;
+    [SerializeField] [Range(1,100)]private int abillityStatAmount;
+    [SerializeField] [Range(1,100)]private int agillityStatAmount;
     public enum Type
     {
         Strength,
@@ -58,17 +58,27 @@ public class Statistics: MonoBehaviour
        if (OnStatisticChange != null) OnStatisticChange(this, EventArgs.Empty);
     }
 
-    public void IncreaseStatAmount(Type statType)
+    public bool IncreaseStatAmount(Type statType)
     {
+        if (GetValue(statType) == 100)
+        {
+            return false;
+        }
         SetStatisticAmount(statType, GetValue(statType) +1 );
         Debug.Log("Increased : " + statType);
         unlockControll.CheckListForUnlocking();
+        return true;
     }
         
-    public void DecreaseStatAmount(Type statType)
+    public bool DecreaseStatAmount(Type statType)
     {
+        if (GetValue(statType) == 1)
+        {
+            return false;
+        }
         SetStatisticAmount(statType, GetValue(statType) -1 );
         unlockControll.CheckListForUnlocking();
+        return true;
     }
         
     public int GetValue(Type statType)
