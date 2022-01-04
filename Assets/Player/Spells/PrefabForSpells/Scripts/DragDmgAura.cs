@@ -49,7 +49,7 @@ public class DragDmgAura : MonoBehaviour
     {
         if (other.gameObject.layer == 6)
         {
-            Debug.LogWarning("Hit The Bat With the FUCKING Head");
+            //Debug.LogWarning("Hit The Bat With the FUCKING Head");
             DoDmg(other.gameObject);
             Vector2 direction =
                 (other.gameObject.transform.position - Util.GetLocalPlayer().gameObject.transform.position)
@@ -78,7 +78,7 @@ public class DragDmgAura : MonoBehaviour
                 GameObject other = enemyList[counter].gameObject;
                 if (other.gameObject.layer == 6)
                 {
-                    Debug.LogWarning("Hit The Bat With the FUCKING Head");
+                   // Debug.LogWarning("Hit The Bat With the FUCKING Head");
                     Vector2 direction =
                         (other.transform.position - Util.GetLocalPlayer().gameObject.transform.position)
                         .normalized;
@@ -94,7 +94,7 @@ public class DragDmgAura : MonoBehaviour
         if (enemy.layer == 6)
         {
             enemy.GetComponent<Enemy>()?.TakeDamage(baseDamage, Util.GetLocalPlayer(), damageType);
-            Debug.Log("Hit something with FireWall");
+            //Debug.Log("Hit something with FireWall");
 
         }
 

@@ -32,8 +32,8 @@ public class Requirements : MonoBehaviour
     public void UnlockButton()
     {
         if (locked == false) return;
-        Debug.Log("Unlocked Button Requirements: Vitallity: " + vitallityScore + " Abillity: " + abillityScore +
-                  " Agillity: " + agillityScore + "Charisma: " + charimsaScore + "Strength: " + strengthScore);
+        //Debug.Log("Unlocked Button Requirements: Vitallity: " + vitallityScore + " Abillity: " + abillityScore +
+        //          " Agillity: " + agillityScore + "Charisma: " + charimsaScore + "Strength: " + strengthScore);
         locked = false;
         StateChange();
 
@@ -44,8 +44,8 @@ public class Requirements : MonoBehaviour
     public void LockButton()
     {
         if (locked) return;
-        Debug.Log("Unlocked Button Requirements: Vitallity: " + vitallityScore + " Abillity: " + abillityScore +
-                                             " Agillity: " + agillityScore + "Charisma: " + charimsaScore + "Strength: " + strengthScore);
+        //Debug.Log("Unlocked Button Requirements: Vitallity: " + vitallityScore + " Abillity: " + abillityScore +
+        //                                     " Agillity: " + agillityScore + "Charisma: " + charimsaScore + "Strength: " + strengthScore);
         locked = true;
         StateChange();
 

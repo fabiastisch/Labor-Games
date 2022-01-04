@@ -31,7 +31,7 @@ namespace LevelingAndClasses.ClassFolder
         {
             if (!restricted)
             {
-                Debug.Log("OnBeginDrag");
+                //Debug.Log("OnBeginDrag");
                 canvasGroup.alpha = .6f;
                 canvasGroup.blocksRaycasts = false;
             }
@@ -39,7 +39,7 @@ namespace LevelingAndClasses.ClassFolder
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            Debug.Log("PointerDown");
+            //Debug.Log("PointerDown");
         }
 
         public void OnDrag(PointerEventData eventData)
@@ -54,7 +54,7 @@ namespace LevelingAndClasses.ClassFolder
         {
             if (!restricted)
             {
-                Debug.Log("OnEndDrag");
+                //Debug.Log("OnEndDrag");
                 canvasGroup.alpha = 1f;
                 canvasGroup.blocksRaycasts = true;
                 transform.position = defaultPos;

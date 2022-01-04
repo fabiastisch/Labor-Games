@@ -82,7 +82,7 @@ public class Vit3 : LevelPassive
     
     public override void Removed(GameObject parent)
     {
-        Debug.Log("Statname : " + nameof(statname) + "statTypeList : " + statTypeList + " Statmanager :" + StatManager.Instance );
+        //Debug.Log("Statname : " + nameof(statname) + "statTypeList : " + statTypeList + " Statmanager :" + StatManager.Instance );
         switch (statname)
         {
             case Statname.vitallity:
