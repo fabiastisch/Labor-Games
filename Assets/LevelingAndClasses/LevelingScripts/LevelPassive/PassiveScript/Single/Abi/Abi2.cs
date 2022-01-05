@@ -19,7 +19,7 @@ public class Abi2 : LevelPassive
     
     void AreaAttack(GameObject parent)
     {
-        Debug.Log("Cast AreaAttack");
+        //Debug.Log("Cast AreaAttack");
         if(Util.GetChanceBool(chance))
         Instantiate(magicProjectile, parent.transform.position, Quaternion.identity);
     }

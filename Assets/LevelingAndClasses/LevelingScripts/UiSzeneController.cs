@@ -12,6 +12,7 @@ public class UiSzeneController : MonoBehaviour
     [SerializeField] private GameObject szeneTripplePassive;
     [SerializeField] private GameObject szenePentaPassive;
     [SerializeField] private GameObject UI;
+    [SerializeField] private GameObject szeneStats;
 
     public void ChangeToSingle()
     {
@@ -21,6 +22,7 @@ public class UiSzeneController : MonoBehaviour
         szeneDuoPassive.SetActive(false);
         szeneTripplePassive.SetActive(false);
         szenePentaPassive.SetActive(false);
+        szeneStats.SetActive(false);
     }
     
     public void ChangeToDuo()
@@ -31,6 +33,7 @@ public class UiSzeneController : MonoBehaviour
         szeneDuoPassive.SetActive(true);
         szeneTripplePassive.SetActive(false);
         szenePentaPassive.SetActive(false);
+        szeneStats.SetActive(false);
     }
     public void ChangeToTripple()
     {
@@ -40,6 +43,7 @@ public class UiSzeneController : MonoBehaviour
         szeneDuoPassive.SetActive(false);
         szeneTripplePassive.SetActive(true);
         szenePentaPassive.SetActive(false);
+        szeneStats.SetActive(false);
     }
     
     public void ChangeToPenta()
@@ -50,6 +54,7 @@ public class UiSzeneController : MonoBehaviour
         szeneDuoPassive.SetActive(false);
         szeneTripplePassive.SetActive(false);
         szenePentaPassive.SetActive(true);
+        szeneStats.SetActive(false);
     }
     
     public void ChangeToClass()
@@ -60,6 +65,19 @@ public class UiSzeneController : MonoBehaviour
         szeneDuoPassive.SetActive(false);
         szeneTripplePassive.SetActive(false);
         szenePentaPassive.SetActive(false);
+        szeneStats.SetActive(false);
+    }
+    
+    public void ChangeToStats()
+    {
+        szeneStats.SetActive(true);
+        szeneKlass.SetActive(false);
+        szene8PassiveBackground.SetActive(false);
+        szeneSinglePassive.SetActive(false);
+        szeneDuoPassive.SetActive(false);
+        szeneTripplePassive.SetActive(false);
+        szenePentaPassive.SetActive(false);
+        ActualStatsThatGetUsed.Instance.StatChanged();
     }
     
     public void Escape()

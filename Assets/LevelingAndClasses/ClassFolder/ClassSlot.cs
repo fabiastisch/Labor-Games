@@ -39,7 +39,7 @@ public class ClassSlot : MonoBehaviour, IDropHandler
 
     public void OnDrop(PointerEventData eventData)
     {
-        Debug.Log("On Drop + " + eventData.pointerDrag.gameObject + " | " + gameObject.name);
+        //Debug.Log("On Drop + " + eventData.pointerDrag.gameObject + " | " + gameObject.name);
 
 
         skillsAndPassives = eventData.pointerDrag.GetComponent<PassiveAndActiveSlot>().type;
@@ -48,7 +48,7 @@ public class ClassSlot : MonoBehaviour, IDropHandler
         GameObject dragObject = eventData.pointerDrag.gameObject;
 
 
-        Debug.Log(skillsAndPassives);
+        //Debug.Log(skillsAndPassives);
 
         if (skillsAndPassives == _type)
         {

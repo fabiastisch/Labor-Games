@@ -35,7 +35,7 @@ namespace LevelingAndClasses.LevelingScripts.Passives.Spells
 
         void AreaAttack()
         {
-            Debug.Log("Cast AreaAttack");
+            //Debug.Log("Cast AreaAttack");
             Instantiate(magicProjectile, initializePos, Quaternion.identity);
         }
     }

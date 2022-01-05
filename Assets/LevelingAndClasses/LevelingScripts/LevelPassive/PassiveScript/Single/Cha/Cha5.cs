@@ -29,7 +29,7 @@ public class Cha5 : LevelPassive
     
     void Aura()
     {
-        Debug.Log("Cast AreaAttack");
+        //Debug.Log("Cast AreaAttack");
         GameObject auraProjektil = Instantiate(aura, Util.GetLocalPlayer().transform.position, Quaternion.identity);
         Debug.Log(auraProjektil);
         auraProjektil.transform.parent = Util.GetLocalPlayer().transform;

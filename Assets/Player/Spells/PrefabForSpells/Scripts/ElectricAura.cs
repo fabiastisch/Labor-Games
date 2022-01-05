@@ -51,7 +51,7 @@ public class ElectricAura : MonoBehaviour
     {
         if (other.gameObject.layer == 6)
         {
-            Debug.LogWarning("Bzzt");
+            //Debug.LogWarning("Bzzt");
             GameObject thunderObject = Instantiate(thunderAoe, other.transform.position, Quaternion.identity);
             thunderList.Add(thunderObject);
         }
@@ -77,7 +77,7 @@ public class ElectricAura : MonoBehaviour
                 GameObject other = enemyList[counter].gameObject;
                 if (other.gameObject.layer == 6)
                 {
-                    Debug.LogWarning("Bzzt");
+                    //Debug.LogWarning("Bzzt");
                     GameObject thunderObject = Instantiate(thunderAoe, other.transform.position, Quaternion.identity);
                     thunderList.Add(thunderObject);
                 }

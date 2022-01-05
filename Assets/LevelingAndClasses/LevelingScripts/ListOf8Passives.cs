@@ -77,7 +77,7 @@ public class ListOf8Passives : MonoBehaviour
 
     public void FillSlotsWithList()
     {
-        Debug.Log("FillSlotsWithList");
+        //Debug.Log("FillSlotsWithList");
         int count = 0;
         
         if (!passiveList.Any())

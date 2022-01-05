@@ -35,7 +35,7 @@ public class UnlockControll: MonoBehaviour
     private Statistics statistics;
     public void CheckListForUnlocking()
     {
-        Debug.Log("CheckListForUnlocking");
+        //Debug.Log("CheckListForUnlocking");
         foreach (var skillListEntry in levelingSkillList)
         {
             Requirements requirement = skillListEntry.GetComponent<Requirements>();
@@ -48,7 +48,7 @@ public class UnlockControll: MonoBehaviour
 
     private void CheckUnlocking(Requirements requirements)
     {
-        Debug.Log("Accessed Unlock");
+        //Debug.Log("Accessed Unlock");
         if (requirements.vitallityScore > statistics.GetValue(Statistics.Type.Vitallity))
         {
             //Debug.Log("Vitallity needed: " + requirements.vitallityScore + " But is: "   + player.statistics.GetValue(Statistics.Type.Vitallity));
@@ -79,7 +79,7 @@ public class UnlockControll: MonoBehaviour
             requirements.LockButton();
             return;
         }
-        Debug.Log("Accessed and Unlocked");
+        //Debug.Log("Accessed and Unlocked");
         
         requirements.UnlockButton();
     }
@@ -102,7 +102,7 @@ public class UnlockControll: MonoBehaviour
 
     private void SetButtonFunction()
     {
-        Debug.Log("Add Functions to Buttons");
+        //Debug.Log("Add Functions to Buttons");
         foreach (var skillListEntry in levelingSkillList)
         {
             skillListEntry.GetComponent<Button>().onClick.AddListener(() => listofPassives.AddItemToList(skillListEntry) );

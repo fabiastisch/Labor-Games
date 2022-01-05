@@ -24,7 +24,7 @@ public class AuraEffect : Spell
 
     void AreaAttack(GameObject parent)
     {
-        Debug.Log("Cast AreaAttack");
+        //Debug.Log("Cast AreaAttack");
         GameObject projectile = Instantiate(magicProjectile, playerPosition, Quaternion.identity);
         projectile.transform.parent = Util.GetLocalPlayer().transform;
         collection.Add(projectile);
