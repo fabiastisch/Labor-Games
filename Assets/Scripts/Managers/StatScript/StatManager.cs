@@ -11,6 +11,10 @@ public class StatManager : MonoBehaviour
     private Dictionary<StatTypeSO, float> statAmountDictionary;
 
     public StatTypeListSO statTypeList;
+    
+    public event Action StatChanged;
+    
+    public void InvokeOnStatChanged () => StatChanged?.Invoke();
 
     //Initialisations without external dependancy on Awake / with external dependancy on Start
     private void Awake()
@@ -42,22 +46,26 @@ public class StatManager : MonoBehaviour
     {
         //Debug.Log(statType.nameString + ": " + statAmountDictionary[statType]);
         statAmountDictionary[statType] += amount;
+        InvokeOnStatChanged();
     }
     
     //Adds Resource of a Type with a Amount
     public void RemoveStat(StatTypeSO statType, float amount)
     {
         statAmountDictionary[statType] -= amount;
+        InvokeOnStatChanged();
     }
 
     public void MultiplyStat(StatTypeSO statType, float amount)
     {
         statAmountDictionary[statType] *= amount;
+        InvokeOnStatChanged();
     }
     
     public void DivideStat(StatTypeSO statType, float amount)
     {
         statAmountDictionary[statType] /= amount;
+        InvokeOnStatChanged();
     }
 
     private void Update()
@@ -104,4 +112,6 @@ public class StatManager : MonoBehaviour
             statTyp.boolValue = false;
         }
     }
+    
+    
 }

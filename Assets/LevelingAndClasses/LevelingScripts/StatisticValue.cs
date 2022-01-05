@@ -51,30 +51,35 @@ public class StatisticValue : MonoBehaviour
             case "vitallity":
                 if (stats.IncreaseStatAmount(Statistics.Type.Vitallity))
                 {
+                    StatConverterStatistic.Instance.VitallityScale();
                     UsedPoint();
                 }
                 break;
             case "agillity":
                 if (stats.IncreaseStatAmount(Statistics.Type.Agillity))
                 {
+                    StatConverterStatistic.Instance.AgillityScale();
                     UsedPoint();
                 }
                 break;
             case "abillity":
                 if (stats.IncreaseStatAmount(Statistics.Type.Abillity))
                 {
+                    StatConverterStatistic.Instance.AbillityScale();
                     UsedPoint();
                 }
                 break;
             case "charisma":
                 if (stats.IncreaseStatAmount(Statistics.Type.Charisma))
                 {
+                    StatConverterStatistic.Instance.CharismaScale();
                     UsedPoint();
                 }
                 break;
             case "strength":
                 if (stats.IncreaseStatAmount(Statistics.Type.Strength))
                 {
+                    StatConverterStatistic.Instance.StrengthScale();
                     UsedPoint();
                 }
                 break;

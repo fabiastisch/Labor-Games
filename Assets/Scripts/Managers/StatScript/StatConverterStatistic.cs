@@ -6,11 +6,13 @@ using UnityEngine;
 public class StatConverterStatistic : MonoBehaviour
 {
 
+   public static StatConverterStatistic Instance { get; private set; } 
    //This Class converts the Level Up to Actually Values in the Dictionary -> We can add here other Values
    private StatTypeListSO statTypeList;
 
    private void Awake()
-   { 
+   {
+      Instance = this;
       statTypeList = Resources.Load<StatTypeListSO>(typeof(StatTypeListSO).Name);
    }
 
