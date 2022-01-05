@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Combat
@@ -17,6 +18,8 @@ namespace Combat
 
         private float _attackTimer = 0f;
 
+        private Animator _animator;
+
         protected override bool IsAtTarget => _playerDetector.DirectionToTarget.magnitude < attackRange;
 
         protected override void Start()
@@ -24,6 +27,7 @@ namespace Combat
             base.Start();
             _playerDetector = GetComponent<AIPlayerDetector>();
             _attackTimer = 1 / attackSpeed;
+            _animator = GetComponent<Animator>();
         }
 
         private void Update()
@@ -46,6 +50,14 @@ namespace Combat
 
             _attackTimer = 1 / attackSpeed;
             _playerDetector.Target.GetComponent<Character>().TakeDamage(attackDamage, this, DamageType.Physical, false);
+            _animator.Play("Attack");
+        }
+        // The delay coroutine
+        IEnumerator DelayedAnimation()
+        {
+            _animator.Play("Death");
+            yield return new WaitForSeconds(0.5f);
+            Destroy(gameObject);
         }
 
         protected void Move()
@@ -65,6 +77,11 @@ namespace Combat
                 Gizmos.color = gizmosColor;
                 Gizmos.DrawSphere(transform.position, attackRange);
             }
+        }
+        protected override void Die(Character enemy)
+        {
+            base.Die(enemy);
+            StartCoroutine(DelayedAnimation());
         }
     }
 }
