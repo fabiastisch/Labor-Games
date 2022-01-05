@@ -22,7 +22,7 @@ namespace Combat
             base.Die(enemy);
             DropExperience(enemy);
             // TODO: Drop Loot and Exp
-            Destroy(gameObject);
+            
         }
         private void DropExperience(Character player)
         {
