@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class ActualStatsThatGetUsed : MonoBehaviour
 {
     public static ActualStatsThatGetUsed Instance { get; private set; }
-    
+
     public float actualAttack,
         actualAbillityPower,
         actualAttackspeed,
@@ -23,10 +23,11 @@ public class ActualStatsThatGetUsed : MonoBehaviour
         actualOmniVamp,
         actualCooldownReduction;
 
+
     [Header("ValueField")] [SerializeField]
     private List<GameObject> listOfName;
 
-    private Dictionary<String, float> statList = new Dictionary<string, float>();
+    private Dictionary<String, VariableReference> statList = new Dictionary<string, VariableReference>();
 
     public void CalculateAttack()
     {
@@ -57,12 +58,12 @@ public class ActualStatsThatGetUsed : MonoBehaviour
     {
         actualSpellVamp = CalculateActualMicroStat(12);
     }
-    
+
     public void CalculateOmniVamp()
     {
         actualOmniVamp = CalculateActualMicroStat(11);
     }
-    
+
     public void CalculateLifeSteal()
     {
         actualLifesteal = CalculateActualMicroStat(7);
@@ -87,6 +88,7 @@ public class ActualStatsThatGetUsed : MonoBehaviour
     {
         actualStunChance = CalculateActualMicroStat(10);
     }
+
 
     public void CalculateCrit()
     {
@@ -117,24 +119,66 @@ public class ActualStatsThatGetUsed : MonoBehaviour
     {
         actualCritDmgMultiplyer = CalculateActualMicroStat(21);
     }
-    
+
     private void Awake()
     {
         Instance = this;
-        statList.Add("MaxHP :", actualHP );
-        statList.Add("Attack :", actualAttack );
-        statList.Add("AbillityPower :", actualAbillityPower );
-        statList.Add("Attackspeed :", actualAttackspeed );
-        statList.Add("Movementspeed :", actualMovementspeed );
-        statList.Add("Lifesteal :", actualLifesteal );
-        statList.Add("OmniVamp :", actualOmniVamp );
-        statList.Add("SpellVamp :", actualSpellVamp );
-        statList.Add("StunChance :", actualStunChance );
-        statList.Add("CharmChance :", actualCharmChance );
-        statList.Add("CooldownReduction :", actualCooldownReduction );
-        statList.Add("CritChance :", actualCritChance );
-        statList.Add("CritMultiplyer :", actualCritDmgMultiplyer );
-        statList.Add("EvadeChance :", actualEvadeChance );
+        statList.Add("MaxHP :", new VariableReference(
+            () => actualHP, // getter
+            val => { actualHP = (float) val; } // setter
+        ));
+        statList.Add("Attack :", new VariableReference(
+            () => actualAttack, // getter
+            val => { actualAttack = (float) val; } // setter
+        ));
+        statList.Add("AbillityPower :", new VariableReference(
+            () => actualAbillityPower, // getter
+            val => { actualAbillityPower = (float) val; } // setter
+        ));
+        statList.Add("Attackspeed :", new VariableReference(
+            () => actualAttackspeed, // getter
+            val => { actualAttackspeed = (float) val; } // setter
+        ));
+        statList.Add("Movementspeed :", new VariableReference(
+            () => actualMovementspeed, // getter
+            val => { actualMovementspeed = (float) val; } // setter
+        ));
+        statList.Add("Lifesteal :", new VariableReference(
+            () => actualLifesteal, // getter
+            val => { actualLifesteal = (float) val; } // setter
+        ));
+        statList.Add("OmniVamp :", new VariableReference(
+            () => actualOmniVamp, // getter
+            val => { actualOmniVamp = (float) val; } // setter
+        ));
+        statList.Add("SpellVamp :", new VariableReference(
+            () => actualSpellVamp, // getter
+            val => { actualSpellVamp = (float) val; } // setter
+        ));
+        statList.Add("StunChance :", new VariableReference(
+            () => actualStunChance, // getter
+            val => { actualStunChance = (float) val; } // setter
+        ));
+        statList.Add("CharmChance :", new VariableReference(
+            () => actualCharmChance, // getter
+            val => { actualCharmChance = (float) val; } // setter
+        ));
+        statList.Add("CooldownReduction :", new VariableReference(
+            () => actualCooldownReduction, // getter
+            val => { actualCooldownReduction = (float) val; } // setter
+        ));
+        statList.Add("CritChance :", new VariableReference(
+            () => actualCritChance, // getter
+            val => { actualCritChance = (float) val; } // setter
+        ));
+        statList.Add("CritMultiplyer :", new VariableReference(
+            () => actualCritDmgMultiplyer, // getter
+            val => { actualCritDmgMultiplyer = (float) val; } // setter
+        ));
+        statList.Add("EvadeChance :", new VariableReference(
+            () => actualEvadeChance, // getter
+            val => { actualEvadeChance = (float) val; } // setter
+        ));
     }
 
     private void Start()
@@ -160,7 +204,6 @@ public class ActualStatsThatGetUsed : MonoBehaviour
         CalculateCrit();
         CalculateCritMultiPlyer();
         SetNameAndValue();
-
     }
 
     public void SetNameAndValue()
@@ -172,9 +215,9 @@ public class ActualStatsThatGetUsed : MonoBehaviour
         foreach (var pair in statList)
         {
             names.Add(pair.Key);
-            values.Add(pair.Value);
+            values.Add((float) pair.Value.Get());
         }
-        
+
         foreach (var uiObject in listOfName)
         {
             Text name = uiObject.transform.GetChild(0).GetComponent<Text>();
@@ -190,12 +233,10 @@ public class ActualStatsThatGetUsed : MonoBehaviour
             {
                 uiObject.SetActive(false);
             }
+
             counter += 1;
         }
     }
-
-
-
 
 
     private float CalculateActualBigStat(int NumberOfBaseStat, int NumberOfBonusStat, int MultiplyerBonus)
@@ -212,16 +253,28 @@ public class ActualStatsThatGetUsed : MonoBehaviour
             return basePower + bonus;
         }
     }
-    
+
     private float CalculateActualSmallStat(int NumberOfBaseStat, int NumberOfBonusStat)
     {
         float basePower = StatManager.Instance.GetStat(StatManager.Instance.statTypeList.list[NumberOfBaseStat]);
         float bonus = StatManager.Instance.GetStat(StatManager.Instance.statTypeList.list[NumberOfBonusStat]);
         return basePower + bonus;
     }
-    
+
     private float CalculateActualMicroStat(int NumberOfBaseStat)
     {
-        return  StatManager.Instance.GetStat(StatManager.Instance.statTypeList.list[NumberOfBaseStat]);
+        return StatManager.Instance.GetStat(StatManager.Instance.statTypeList.list[NumberOfBaseStat]);
+    }
+}
+
+sealed class VariableReference
+{
+    public Func<object> Get { get; private set; }
+    public Action<object> Set { get; private set; }
+
+    public VariableReference(Func<object> getter, Action<object> setter)
+    {
+        Get = getter;
+        Set = setter;
     }
 }
