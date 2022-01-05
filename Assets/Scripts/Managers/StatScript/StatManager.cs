@@ -1,20 +1,19 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Compilation;
 using UnityEngine;
 
 public class StatManager : MonoBehaviour
 {
-    public static StatManager Instance { get; private set; } 
-    
+    public static StatManager Instance { get; private set; }
+
     private Dictionary<StatTypeSO, float> statAmountDictionary;
+    public Dictionary<StatType, StatTypeSO> statDic;
 
     public StatTypeListSO statTypeList;
-    
+
     public event Action StatChanged;
-    
-    public void InvokeOnStatChanged () => StatChanged?.Invoke();
+
+    public void InvokeOnStatChanged() => StatChanged?.Invoke();
 
     //Initialisations without external dependancy on Awake / with external dependancy on Start
     private void Awake()
@@ -29,6 +28,19 @@ public class StatManager : MonoBehaviour
         foreach (StatTypeSO statType in statTypeList.list)
         {
             statAmountDictionary[statType] = 0;
+        }
+
+        List<string> en = new List<string>(Enum.GetNames(typeof(StatType)));
+        en.Sort();
+
+        statDic = new Dictionary<StatType, StatTypeSO>();
+        foreach (StatTypeSO statTypeSo in statTypeList.list)
+        {
+            int index = en.BinarySearch(statTypeSo.nameString);
+            //Debug.Log(index + " | " + statTypeSo.nameString);
+            StatType statType = (StatType) Enum.GetValues(typeof(StatType)).GetValue(index);
+            //Debug.Log(statType);
+            statDic.Add(statType, statTypeSo);
         }
     }
 
@@ -48,7 +60,7 @@ public class StatManager : MonoBehaviour
         statAmountDictionary[statType] += amount;
         InvokeOnStatChanged();
     }
-    
+
     //Adds Resource of a Type with a Amount
     public void RemoveStat(StatTypeSO statType, float amount)
     {
@@ -61,7 +73,7 @@ public class StatManager : MonoBehaviour
         statAmountDictionary[statType] *= amount;
         InvokeOnStatChanged();
     }
-    
+
     public void DivideStat(StatTypeSO statType, float amount)
     {
         statAmountDictionary[statType] /= amount;
@@ -102,7 +114,7 @@ public class StatManager : MonoBehaviour
             statTyp.boolValue = true;
         }
     }
-    
+
     public void RemoveBool(int numberOfStatType)
     {
         StatTypeSO statTyp = statTypeList.list[numberOfStatType];
@@ -112,6 +124,6 @@ public class StatManager : MonoBehaviour
             statTyp.boolValue = false;
         }
     }
-    
-    
+
+
 }

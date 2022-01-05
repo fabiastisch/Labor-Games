@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: AbillityScaling
   m_EditorClassIdentifier: 
   nameString: AbillityScaling
+  hasBoolValue: 0
+  boolValue: 0

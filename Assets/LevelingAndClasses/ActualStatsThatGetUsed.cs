@@ -90,8 +90,9 @@ public class ActualStatsThatGetUsed : MonoBehaviour
 
     public void CalculateCrit()
     {
-        float crit = StatManager.Instance.GetStat(StatManager.Instance.statTypeList.list[5]);
-        float critMultiplyer = StatManager.Instance.GetStat(StatManager.Instance.statTypeList.list[20]);
+        StatManager statManager = StatManager.Instance;
+        float crit = statManager.GetStat(statManager.statDic[StatType.CriticalChance]);
+        float critMultiplyer = statManager.GetStat(statManager.statDic[StatType.CritChanceMultiplyer]);
         if (critMultiplyer == 0)
         {
             if (crit > 100)
