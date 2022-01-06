@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 namespace Combat
@@ -7,18 +7,18 @@ namespace Combat
     public class SomeEnemy : Enemy
     {
         [Header("Attack Range")] [SerializeField]
-        private float attackRange = 3f;
+        protected float attackRange = 3f;
 
         [Header("Gizmos Attack Range")] [SerializeField]
-        private Color gizmosColor;
+        protected Color gizmosColor;
 
-        [SerializeField] private bool showGizmos;
+        [SerializeField] protected bool showGizmos;
 
-        private AIPlayerDetector _playerDetector;
+        protected AIPlayerDetector _playerDetector;
 
-        private float _attackTimer = 0f;
+        protected float _attackTimer = 0f;
 
-        private Animator _animator;
+        protected bool _isDead = false;
 
         protected override bool IsAtTarget => _playerDetector.DirectionToTarget.magnitude < attackRange;
 
@@ -27,40 +27,31 @@ namespace Combat
             base.Start();
             _playerDetector = GetComponent<AIPlayerDetector>();
             _attackTimer = 1 / attackSpeed;
-            _animator = GetComponent<Animator>();
         }
 
         private void Update()
         {
+            if (_isDead) return;
             if (_playerDetector.PlayerDetected && IsAtTarget) Attack();
         }
-        private void FixedUpdate()
+        protected virtual void FixedUpdate()
         {
             //Debug.Log("Fixed: " + _playerDetector.PlayerDetected);
-
+            if (_isDead) return;
             if (_playerDetector.PlayerDetected && !IsAtTarget) Move();
         }
-        private void Attack()
+        protected virtual void Attack()
         {
             if (_attackTimer >= 0f)
             {
                 _attackTimer -= Time.deltaTime;
                 return;
             }
-
             _attackTimer = 1 / attackSpeed;
             _playerDetector.Target.GetComponent<Character>().TakeDamage(attackDamage, this, DamageType.Physical, false);
-            _animator.Play("Attack");
-        }
-        // The delay coroutine
-        IEnumerator DelayedAnimation()
-        {
-            _animator.Play("Death");
-            yield return new WaitForSeconds(0.5f);
-            Destroy(gameObject);
         }
 
-        protected void Move()
+        protected virtual void Move()
         {
             //Debug.Log("Move");
             var directionToTarget = _playerDetector.DirectionToTarget;
@@ -80,8 +71,9 @@ namespace Combat
         }
         protected override void Die(Character enemy)
         {
+            _isDead = true;
             base.Die(enemy);
-            StartCoroutine(DelayedAnimation());
+            if (!GetType().IsSubclassOf(typeof(SomeEnemy))) Destroy(gameObject);
         }
     }
 }

@@ -61886,6 +61886,44 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1811971423}
   m_CullTransparentMesh: 1
+--- !u!1 &1822301402 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 528358440739031065, guid: 0b7f8edcd59654e458ec6ba0f4165487, type: 3}
+  m_PrefabInstance: {fileID: 528358440220910764}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1822301403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1822301402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 836484880f4f4ede9ffb250ba2816573, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playSprite: {fileID: 1822301408}
+  rb: {fileID: 1822301404}
+  movementSpeed: 4
+  maxHealth: 100
+  enemyName: Slime
+  attackSpeed: 1
+  attackDamage: 10
+  experience: 50
+  attackRange: 2
+  gizmosColor: {r: 0, g: 0, b: 0, a: 0}
+  showGizmos: 0
+--- !u!50 &1822301404 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 528358440739031061, guid: 0b7f8edcd59654e458ec6ba0f4165487, type: 3}
+  m_PrefabInstance: {fileID: 528358440220910764}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1822301408 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 528358440739031067, guid: 0b7f8edcd59654e458ec6ba0f4165487, type: 3}
+  m_PrefabInstance: {fileID: 528358440220910764}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1824476874
 GameObject:
   m_ObjectHideFlags: 0
@@ -67851,7 +67889,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 528358440739031067, guid: 0b7f8edcd59654e458ec6ba0f4165487, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2906739621586402471, guid: 2de99298b55170145a7755ef4953d6c5, type: 3}
+    m_RemovedComponents:
+    - {fileID: 528358440739031063, guid: 0b7f8edcd59654e458ec6ba0f4165487, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0b7f8edcd59654e458ec6ba0f4165487, type: 3}
 --- !u!1001 &1654179284050384841
 PrefabInstance:

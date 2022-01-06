@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 528358440739031066}
   - component: {fileID: 528358440739031067}
   - component: {fileID: 528358440739031060}
-  - component: {fileID: 528358440739031063}
+  - component: {fileID: 1822301403}
   - component: {fileID: 528358440739031062}
   - component: {fileID: 528358440739031061}
   - component: {fileID: 528358440739031056}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: -1854780491
   m_SortingLayer: 3
   m_SortingOrder: 2
-  m_Sprite: {fileID: -1237537587033232362, guid: 2de99298b55170145a7755ef4953d6c5, type: 3}
+  m_Sprite: {fileID: -2906739621586402471, guid: 2de99298b55170145a7755ef4953d6c5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -106,7 +106,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &528358440739031063
+--- !u!114 &1822301403
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,18 +115,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 528358440739031065}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b90002936c49418cb07cae97d5410638, type: 3}
+  m_Script: {fileID: 11500000, guid: 836484880f4f4ede9ffb250ba2816573, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playSprite: {fileID: 528358440739031067}
   rb: {fileID: 528358440739031061}
   movementSpeed: 4
-  maxHealth: 50
+  maxHealth: 100
   enemyName: Slime
   attackSpeed: 1
   attackDamage: 10
   experience: 50
-  attackRange: 3
+  attackRange: 2
   gizmosColor: {r: 0, g: 0, b: 0, a: 0}
   showGizmos: 0
 --- !u!114 &528358440739031062
