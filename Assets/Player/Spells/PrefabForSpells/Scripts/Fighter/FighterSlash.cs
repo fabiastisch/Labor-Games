@@ -42,9 +42,15 @@ public class FighterSlash : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.layer == 6)
+        
+        if (!enemyList.Contains(other))
         {
-            other.GetComponent<Enemy>()?.TakeDamage(baseDamage, Util.GetLocalPlayer(), damageType);
+            enemyList.Add(other);
+
+            if (other.gameObject.layer == 6)
+            {
+                other.GetComponent<Enemy>()?.TakeDamage(baseDamage, Util.GetLocalPlayer(), damageType);
+            }
         }
     }
     

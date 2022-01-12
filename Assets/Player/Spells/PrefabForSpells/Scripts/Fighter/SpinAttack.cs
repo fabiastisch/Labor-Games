@@ -9,16 +9,16 @@ public class SpinAttack : MonoBehaviour
     public DamageType damageType = DamageType.Physical;
     private List<Collider2D> enemyList = new List<Collider2D>();
 
-    private float baseDamage = 50;
+    private float baseDamage = 5;
 
     [SerializeField] private float factor;
 
     private float strength;
     
     [SerializeField] 
-    private float timer = 3f;
+    private float timer = 0.25f;
     [SerializeField]
-    private float timerMax = 3f;
+    private float timerMax = 0.25f;
     
     private void Update()
     {
@@ -83,5 +83,9 @@ public class SpinAttack : MonoBehaviour
     private void BaseDmgToStrength()
     {
         baseDamage = strength * factor;
+        if (baseDamage < 5)
+        {
+            baseDamage = 5;
+        }
     }
 }
