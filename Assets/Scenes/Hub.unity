@@ -62245,9 +62245,9 @@ MonoBehaviour:
   classList:
   - className: Fighter
     classType: 2
-    classAbillity1: {fileID: 11400000, guid: 154fe2ad9b5d28e4c8c46cd9f9c21f68, type: 2}
-    classAbillity2: {fileID: 11400000, guid: 154fe2ad9b5d28e4c8c46cd9f9c21f68, type: 2}
-    classAbillity3: {fileID: 11400000, guid: 154fe2ad9b5d28e4c8c46cd9f9c21f68, type: 2}
+    classAbillity1: {fileID: 11400000, guid: a2a886b7dc6632941bd84745d715a850, type: 2}
+    classAbillity2: {fileID: 11400000, guid: 9cb2607a69d662a459261383ca3bc303, type: 2}
+    classAbillity3: {fileID: 11400000, guid: bee1aac5ce9384b43a7faf779be6ca7d, type: 2}
     classAbillity4: {fileID: 11400000, guid: 154fe2ad9b5d28e4c8c46cd9f9c21f68, type: 2}
     classAbillity5: {fileID: 11400000, guid: 154fe2ad9b5d28e4c8c46cd9f9c21f68, type: 2}
     classPassive1: {fileID: 11400000, guid: 1277c0a44792e594f9f741ba154f1332, type: 2}
