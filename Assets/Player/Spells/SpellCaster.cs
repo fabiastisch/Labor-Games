@@ -50,7 +50,7 @@ public class SpellCaster : MonoBehaviour
                             case Spell.SpellType.Projectile:
                                 //Destroys usually itself
                                 spell.Activation(gameObject);
-                                state = PassiveSlot.PassiveState.cooldown;
+                                state = PassiveSlot.PassiveState.active;
                                 KeyDeactivate();
                                 break;
 
