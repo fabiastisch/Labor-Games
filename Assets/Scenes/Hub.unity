@@ -68148,6 +68148,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e19a0c9ec68ef844399742d41ec06612, type: 3}
+--- !u!1001 &5832298304328027375
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 547771887846601436, guid: dcd81cdee50145a47823931a095a6699, type: 3}
+      propertyPath: m_RootOrder
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 547771887846601436, guid: dcd81cdee50145a47823931a095a6699, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 547771887846601436, guid: dcd81cdee50145a47823931a095a6699, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 547771887846601436, guid: dcd81cdee50145a47823931a095a6699, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 547771887846601436, guid: dcd81cdee50145a47823931a095a6699, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 547771887846601436, guid: dcd81cdee50145a47823931a095a6699, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 547771887846601436, guid: dcd81cdee50145a47823931a095a6699, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 547771887846601436, guid: dcd81cdee50145a47823931a095a6699, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 547771887846601436, guid: dcd81cdee50145a47823931a095a6699, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 547771887846601436, guid: dcd81cdee50145a47823931a095a6699, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 547771887846601436, guid: dcd81cdee50145a47823931a095a6699, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 547771887846800748, guid: dcd81cdee50145a47823931a095a6699, type: 3}
+      propertyPath: m_Name
+      value: GroundAfterPact
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dcd81cdee50145a47823931a095a6699, type: 3}
 --- !u!1001 &7403842611666969049
 PrefabInstance:
   m_ObjectHideFlags: 0
