@@ -2,52 +2,18 @@
 using Combat;
 using UnityEngine;
 
-public class AuraHpForEachEnemy : MonoBehaviour
+public class AuraHpForEachEnemy : AuraBase
 {
-    public DamageType damageType = DamageType.Magical;
     private List<Collider2D> enemyList = new List<Collider2D>();
     //private DebuffType debuffType
 
     [SerializeField] private float maxReduction = 20f;
     [SerializeField] private float reductionPerEnemy = 0.4f;
     [SerializeField] private float hpPerEnemy = 2f;
-    
-    [SerializeField] 
-    private float timer = 1;
-    [SerializeField]
-    private float timerMax = 1;
-    
-    private void Update()
+
+    public override void TimeOption()
     {
-        //use time do Subtract things
-        timer -= Time.deltaTime;
-        //after Time is over do something and restart Timer
-        if (timer <= 0f)
-        {
-            HigherHpAndReduction();
-            timer += timerMax;
-        }
-        
-    }
-    
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.layer == 6)
-        {
-            if (!enemyList.Contains(other))
-            {
-                enemyList.Add(other);
-            }
-        }
-    }
-    
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.gameObject.layer == 6)
-        {
-            if (enemyList.Contains(other))
-                enemyList.Remove(other);
-        }
+        HigherHpAndReduction();
     }
 
     private void HigherHpAndReduction()
