@@ -4,49 +4,12 @@ using Combat;
 using UnityEngine;
 
 
-public class ElectricAura : MonoBehaviour
+public class ElectricAura : AuraBase
 {
-    public DamageType damageType = DamageType.Physical;
     private List<Collider2D> enemyList = new List<Collider2D>();
     public GameObject thunderAoe;
-
     private List<GameObject> thunderList = new List<GameObject>();
-
-    [SerializeField] 
-    private float timer = 1f;
-    [SerializeField]
-    private float timerMax = 1f;
-
-    /**
-     * If Something Enters hitbox it gets dmg
-     */
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (!enemyList.Contains(other))
-        {
-            enemyList.Add(other);
-
-            if (other.gameObject.layer == 6)
-            {
-                ThunderTrigger(other);
-            }
-        }
-    }
     
-    private void Update()
-    {
-        //use time do Subtract things
-        timer -= Time.deltaTime;
-        //after Time is over do something and restart Timer
-        if (timer <= 0f)
-        {
-            ThunderTriggerAll();
-            timer += timerMax;
-        }
-        
-    }
-    
-
     private void ThunderTrigger(Collider2D other)
     {
         if (other.gameObject.layer == 6)
@@ -56,11 +19,19 @@ public class ElectricAura : MonoBehaviour
             thunderList.Add(thunderObject);
         }
     }
-    
-    private void OnTriggerExit2D(Collider2D other)
+
+    public override void TimeOption( List<Collider2D> list)
     {
-        if(enemyList.Contains(other))
-            enemyList.Remove(other);
+        enemyList = list;
+        ThunderTriggerAll();
+    }
+
+    public override void EnterOption(Collider2D other)
+    {
+        if (other.gameObject.layer == 6)
+        {
+            ThunderTrigger(other);
+        }
     }
 
     private void ThunderTriggerAll()
@@ -84,5 +55,6 @@ public class ElectricAura : MonoBehaviour
             }
         }
     }
+    
 
 }

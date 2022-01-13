@@ -4,49 +4,22 @@ using Combat;
 using UnityEngine;
 using Utils;
 
-public class SuperManAura : MonoBehaviour
+public class SuperManAura : AuraBase
 {
-    public DamageType damageType = DamageType.Magical;
-    private List<Collider2D> enemyList = new List<Collider2D>();
 
     [SerializeField] private float maxHpFactor = 0.05f;
-
-
-    [SerializeField] private float timer = 2f;
-    [SerializeField] private float timerMax = 2f;
-
-    private void Update()
+    
+    public override void TimeOption( List<Collider2D> enemyList)
     {
-        //todo add Charisma Referenz
-
-        //use time do Subtract things
-        timer -= Time.deltaTime;
-        //after Time is over do something and restart Timer
-        if (timer <= 0f)
-        {
-            KnockBackList();
-            timer += timerMax;
-        }
+        DmgAll(enemyList);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public override void EnterOption(Collider2D other)
     {
-        if (!enemyList.Contains(other))
-        {
-            enemyList.Add(other);
-            DoDmg(other.gameObject);
-        }
+       DoDmg(other.gameObject);
     }
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (enemyList.Contains(other))
-        {
-            enemyList.Remove(other);
-        }
-    }
-
-    private void KnockBackList()
+    private void DmgAll(List<Collider2D> enemyList)
     {
         if (!enemyList.Any())
         {
@@ -63,7 +36,7 @@ public class SuperManAura : MonoBehaviour
         }
     }
 
-    private void DoDmg(GameObject other)
+    public override void DoDmg(GameObject other)
     {
         if (other.layer == 6)
         {

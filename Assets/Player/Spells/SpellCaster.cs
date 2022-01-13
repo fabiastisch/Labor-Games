@@ -59,6 +59,12 @@ public class SpellCaster : MonoBehaviour
                                 state = PassiveSlot.PassiveState.active;
                                 KeyDeactivate();
                                 break;
+                            
+                            case Spell.SpellType.Buff:
+                                spell.Activation(gameObject);
+                                state = PassiveSlot.PassiveState.active;
+                                KeyDeactivate();
+                                break;
                         }
                     }
                     break;

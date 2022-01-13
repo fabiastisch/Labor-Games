@@ -2219,7 +2219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.70294994, g: 1, b: 0.57254905, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2511,7 +2511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.572327, b: 0.572327, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7180,7 +7180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.3774231, b: 0.13836467, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -12144,7 +12144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9716981, g: 0.8403049, b: 0.8403049, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -12730,7 +12730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9440905, g: 0.7421383, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -12925,7 +12925,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.57796365, g: 0.8598032, b: 0.9622642, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -46925,7 +46925,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.47466475, g: 0.52383417, b: 0.754717, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -47197,7 +47197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9279151, g: 0.05345905, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -49518,7 +49518,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8784314, g: 0.6, b: 0.21176471, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -49813,11 +49813,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unlockControll: {fileID: 279637151}
-  strengthStatAmount: 1
-  vitallityStatAmount: 1
-  charismaStatAmount: 1
-  abillityStatAmount: 1
-  agillityStatAmount: 1
+  strengthStatAmount: 80
+  vitallityStatAmount: 84
+  charismaStatAmount: 100
+  abillityStatAmount: 82
+  agillityStatAmount: 72
 --- !u!4 &1130479712
 Transform:
   m_ObjectHideFlags: 0
@@ -52916,7 +52916,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6399817, g: 0.9150943, b: 0.55826503, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -53405,7 +53405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9339623, g: 0.90180355, b: 0.73718405, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -62248,8 +62248,8 @@ MonoBehaviour:
     classAbillity1: {fileID: 11400000, guid: a2a886b7dc6632941bd84745d715a850, type: 2}
     classAbillity2: {fileID: 11400000, guid: 9cb2607a69d662a459261383ca3bc303, type: 2}
     classAbillity3: {fileID: 11400000, guid: bee1aac5ce9384b43a7faf779be6ca7d, type: 2}
-    classAbillity4: {fileID: 11400000, guid: 154fe2ad9b5d28e4c8c46cd9f9c21f68, type: 2}
-    classAbillity5: {fileID: 11400000, guid: 154fe2ad9b5d28e4c8c46cd9f9c21f68, type: 2}
+    classAbillity4: {fileID: 11400000, guid: a18d968415d3c204bb6affebf978e697, type: 2}
+    classAbillity5: {fileID: 11400000, guid: 76b2d596b0f007c4082452ce4caf2333, type: 2}
     classPassive1: {fileID: 11400000, guid: 1277c0a44792e594f9f741ba154f1332, type: 2}
     classPassive2: {fileID: 11400000, guid: 1277c0a44792e594f9f741ba154f1332, type: 2}
     classPassive3: {fileID: 11400000, guid: 1277c0a44792e594f9f741ba154f1332, type: 2}
@@ -62258,11 +62258,11 @@ MonoBehaviour:
     classPassive6: {fileID: 11400000, guid: 1277c0a44792e594f9f741ba154f1332, type: 2}
   - className: Mage
     classType: 1
-    classAbillity1: {fileID: 11400000, guid: 41849a272d3cd4347b6fcb11a8ee04ad, type: 2}
-    classAbillity2: {fileID: 11400000, guid: 41849a272d3cd4347b6fcb11a8ee04ad, type: 2}
-    classAbillity3: {fileID: 11400000, guid: 41849a272d3cd4347b6fcb11a8ee04ad, type: 2}
-    classAbillity4: {fileID: 11400000, guid: 41849a272d3cd4347b6fcb11a8ee04ad, type: 2}
-    classAbillity5: {fileID: 11400000, guid: 41849a272d3cd4347b6fcb11a8ee04ad, type: 2}
+    classAbillity1: {fileID: 11400000, guid: 256c3a86de21a1b4c9c9dd5098987235, type: 2}
+    classAbillity2: {fileID: 11400000, guid: fca84cce0e61bd5478ecaab6049a7e37, type: 2}
+    classAbillity3: {fileID: 11400000, guid: 6f3c855d23af06447a2d5caa06548c82, type: 2}
+    classAbillity4: {fileID: 11400000, guid: 2fb963daca77bec489d578d7a5090831, type: 2}
+    classAbillity5: {fileID: 11400000, guid: 54548b7b2bf7a6741a0de7d3ad40bfd0, type: 2}
     classPassive1: {fileID: 11400000, guid: c2c0e4992be6f7b438af76f0445f389c, type: 2}
     classPassive2: {fileID: 11400000, guid: c2c0e4992be6f7b438af76f0445f389c, type: 2}
     classPassive3: {fileID: 11400000, guid: c2c0e4992be6f7b438af76f0445f389c, type: 2}
@@ -64113,7 +64113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8784314, g: 0.6, b: 0.21176471, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

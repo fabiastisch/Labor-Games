@@ -112,8 +112,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da7c6cc618e34a5698d9f2febb0cbb8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
+  baseDamage: 0
+  factor: 0
+  scaleValue: 0
+  startTime: 0.3
+  resetTime: 0.3
   damageType: 1
   maxHpFactor: 0.02
   underMaxHpFactor: 50
-  timer: 0.4
-  timerMax: 0.4
