@@ -6,13 +6,12 @@ using Utils;
 
 public class AuraAndMovement : AuraBase
 {
-    private List<Collider2D> enemyList = new List<Collider2D>();
     [SerializeField] private float force;
     [SerializeField] private bool push;
     [SerializeField] private bool dmg;
     
 
-    public override void TimeOption()
+    public override void TimeOption(List<Collider2D> enemyList)
     {
         if (!enemyList.Any())
         {
@@ -43,8 +42,7 @@ public class AuraAndMovement : AuraBase
     
     public override void EnterOption(Collider2D other)
     {
-        if (other.gameObject.layer == 6)
-        {
+      
             if (other.gameObject.layer == 6)
             {
                 Vector2 direction =
@@ -59,5 +57,4 @@ public class AuraAndMovement : AuraBase
                     DoDmg(other.gameObject);
             }
         }
-    }
 }

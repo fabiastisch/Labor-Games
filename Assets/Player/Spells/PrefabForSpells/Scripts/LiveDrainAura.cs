@@ -6,13 +6,11 @@ using Utils;
 
 public class LiveDrainAura : AuraBase
 {
-    private List<Collider2D> enemyList = new List<Collider2D>();
-
     [SerializeField] private float maxHpFactor = 0.02f;
     [SerializeField] private float underMaxHpFactor = 50f;
     
 
-    public override void TimeOption()
+    public override void TimeOption( List<Collider2D> enemyList)
     {
         if (!enemyList.Any())
         {

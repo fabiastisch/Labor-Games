@@ -20,8 +20,9 @@ public class ElectricAura : AuraBase
         }
     }
 
-    public override void TimeOption()
+    public override void TimeOption( List<Collider2D> list)
     {
+        enemyList = list;
         ThunderTriggerAll();
     }
 

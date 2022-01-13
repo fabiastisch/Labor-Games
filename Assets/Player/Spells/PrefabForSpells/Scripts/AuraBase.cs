@@ -26,7 +26,7 @@ public class AuraBase : MonoBehaviour
         startTime -= Time.deltaTime;
         if (startTime <= 0f)
         {
-            TimeOption();
+            TimeOption(enemyList);
             startTime += resetTime;
         }
     }
@@ -62,7 +62,7 @@ public class AuraBase : MonoBehaviour
     public virtual void OnTriggerEnter2D(Collider2D other)
     {
         if (enemyList.Contains(other)) return;
-        enemyList.Add(other);
+            enemyList.Add(other);
         EnterOption(other);
     }
 
@@ -73,7 +73,7 @@ public class AuraBase : MonoBehaviour
         ExitOption(other);
     }
 
-    public virtual void TimeOption()
+    public virtual void TimeOption( List<Collider2D> enemyList)
     {
         DoDmgToAll();
     }

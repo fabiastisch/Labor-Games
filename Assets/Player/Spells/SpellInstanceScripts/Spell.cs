@@ -29,7 +29,8 @@ public class Spell : ScriptableObject
         Aura,
         Aoe,
         Projectile,
-        OnEnemy
+        OnEnemy,
+        Buff
     }
     
     /**

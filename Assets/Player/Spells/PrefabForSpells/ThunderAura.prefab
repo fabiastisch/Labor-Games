@@ -112,7 +112,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44a6a7fdf70c45329a41091f56c090d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
+  baseDamage: 0
+  factor: 0
+  scaleValue: 0
+  startTime: 0.5
+  resetTime: 0.5
   damageType: 3
   thunderAoe: {fileID: 8899940783837769618, guid: 54c044e434de34d4d92d4c29c3800e9a, type: 3}
-  timer: 1
-  timerMax: 1

@@ -6,13 +6,12 @@ using Utils;
 
 public class SuperManAura : AuraBase
 {
-    private List<Collider2D> enemyList = new List<Collider2D>();
 
     [SerializeField] private float maxHpFactor = 0.05f;
     
-    public override void TimeOption()
+    public override void TimeOption( List<Collider2D> enemyList)
     {
-        DmgAll();
+        DmgAll(enemyList);
     }
 
     public override void EnterOption(Collider2D other)
@@ -20,7 +19,7 @@ public class SuperManAura : AuraBase
        DoDmg(other.gameObject);
     }
 
-    private void DmgAll()
+    private void DmgAll(List<Collider2D> enemyList)
     {
         if (!enemyList.Any())
         {

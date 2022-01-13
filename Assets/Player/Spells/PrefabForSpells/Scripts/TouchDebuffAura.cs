@@ -7,7 +7,7 @@ public class TouchDebuffAura : AuraBase
     //private DebuffType debuffType
     
     
-    public override void TimeOption()
+    public override void TimeOption( List<Collider2D> enemyList)
     {
     }
 
