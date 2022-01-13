@@ -106,7 +106,7 @@ namespace Player
             }
             else
             {
-                //ChangeStaffDirection
+                ChanceStaffDirection(rotations);
             }
             
         }
@@ -117,7 +117,6 @@ namespace Player
         }
 
         #region Weapon-Rotations
-        //I'am sorry xD
         private void ChangeSwordRotation(Rotations rotations)
         {
             childSprite.sortingOrder = 5;
@@ -214,6 +213,59 @@ namespace Player
             else if (rotations == Rotations.Right)
             {
                 childSprite.transform.eulerAngles = Vector3.forward * 0;
+                transform.localPosition = startPos + new Vector3(0.3f, 0, 0);
+            }
+            else if (rotations == Rotations.DownRight)
+            {
+                childSprite.transform.eulerAngles = Vector3.forward * -20;
+                transform.localPosition = startPos + new Vector3(0.1f, 0, 0);
+            }
+        }
+
+        private void ChanceStaffDirection(Rotations rotations)
+        {
+            childSprite.sortingOrder = 5;
+            if (rotations == Rotations.Down)
+            {
+                childSprite.flipY = true;
+                childSprite.transform.eulerAngles = Vector3.forward * -45;
+                transform.localPosition = startPos + new Vector3(0.1f, 0, 0);
+            }
+            else if (rotations == Rotations.DownLeft)
+            {
+                childSprite.flipY = true;
+                childSprite.sortingOrder = 1;
+                childSprite.transform.eulerAngles = Vector3.forward * -135;
+                transform.localPosition = startPos + new Vector3(0.2f, 0, 0);
+            }
+            else if (rotations == Rotations.Left)
+            {
+                childSprite.flipY = true;
+                childSprite.sortingOrder = 1;
+                childSprite.transform.eulerAngles = Vector3.forward * 220;
+                transform.localPosition = startPos + new Vector3(0.4f, 0, 0);
+            }
+            else if (rotations == Rotations.UpLeft)
+            {
+                childSprite.sortingOrder = 1;
+                childSprite.transform.eulerAngles = Vector3.forward * 135f;
+                transform.localPosition = startPos + new Vector3(0.4f, 0, 0);
+            }
+            else if (rotations == Rotations.Up)
+            {
+                childSprite.sortingOrder = 1;
+                childSprite.transform.eulerAngles = Vector3.forward * 30;
+                transform.localPosition = startPos + new Vector3(0.8f, 0, 0);
+            }
+            else if (rotations == Rotations.UpRight)
+            {
+                childSprite.sortingOrder = 1;
+                childSprite.transform.eulerAngles = Vector3.forward * -30;
+                transform.localPosition = startPos + new Vector3(0.6f, 0, 0);
+            }
+            else if (rotations == Rotations.Right)
+            {
+                childSprite.transform.eulerAngles = Vector3.forward * -45;
                 transform.localPosition = startPos + new Vector3(0.3f, 0, 0);
             }
             else if (rotations == Rotations.DownRight)
