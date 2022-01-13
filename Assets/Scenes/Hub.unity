@@ -62258,11 +62258,11 @@ MonoBehaviour:
     classPassive6: {fileID: 11400000, guid: 1277c0a44792e594f9f741ba154f1332, type: 2}
   - className: Mage
     classType: 1
-    classAbillity1: {fileID: 11400000, guid: 41849a272d3cd4347b6fcb11a8ee04ad, type: 2}
-    classAbillity2: {fileID: 11400000, guid: 41849a272d3cd4347b6fcb11a8ee04ad, type: 2}
-    classAbillity3: {fileID: 11400000, guid: 41849a272d3cd4347b6fcb11a8ee04ad, type: 2}
-    classAbillity4: {fileID: 11400000, guid: 41849a272d3cd4347b6fcb11a8ee04ad, type: 2}
-    classAbillity5: {fileID: 11400000, guid: 41849a272d3cd4347b6fcb11a8ee04ad, type: 2}
+    classAbillity1: {fileID: 11400000, guid: 256c3a86de21a1b4c9c9dd5098987235, type: 2}
+    classAbillity2: {fileID: 11400000, guid: fca84cce0e61bd5478ecaab6049a7e37, type: 2}
+    classAbillity3: {fileID: 11400000, guid: 6f3c855d23af06447a2d5caa06548c82, type: 2}
+    classAbillity4: {fileID: 11400000, guid: 2fb963daca77bec489d578d7a5090831, type: 2}
+    classAbillity5: {fileID: 11400000, guid: 54548b7b2bf7a6741a0de7d3ad40bfd0, type: 2}
     classPassive1: {fileID: 11400000, guid: c2c0e4992be6f7b438af76f0445f389c, type: 2}
     classPassive2: {fileID: 11400000, guid: c2c0e4992be6f7b438af76f0445f389c, type: 2}
     classPassive3: {fileID: 11400000, guid: c2c0e4992be6f7b438af76f0445f389c, type: 2}

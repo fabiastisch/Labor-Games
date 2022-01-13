@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d5f72c9b8b34cfea29d6b1d76988374, type: 3}
+  m_Name: FlameField
+  m_EditorClassIdentifier: 
+  magicProjectile: {fileID: 593054333158375459, guid: afda33becb305a447a27657dbe05641e, type: 3}
+  name: FlameField
+  spellType: 1
+  cooldownMax: 20
+  activeTimeMax: 10
+  classType: 1
+  typeForUI: 1
+  abitllityIcon: {fileID: 21300000, guid: 08b9bab3fe84b454b9f6293612cd43b3, type: 3}
+  maxXDistance: 10
+  maxYDistance: 10

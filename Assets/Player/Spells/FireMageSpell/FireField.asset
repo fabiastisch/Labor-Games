@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d5f72c9b8b34cfea29d6b1d76988374, type: 3}
+  m_Name: FireField
+  m_EditorClassIdentifier: 
+  magicProjectile: {fileID: 894457831151101509, guid: 2f1673d90f938f24f86ab3110935e30b, type: 3}
+  name: FireField
+  spellType: 1
+  cooldownMax: 10
+  activeTimeMax: 5
+  classType: 1
+  typeForUI: 1
+  abitllityIcon: {fileID: 21300000, guid: 92c946eb910f754418cc63890381e18c, type: 3}
+  maxXDistance: 10
+  maxYDistance: 10
