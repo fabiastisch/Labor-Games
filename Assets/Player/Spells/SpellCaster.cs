@@ -168,6 +168,7 @@ public class SpellCaster : MonoBehaviour
 
     public void RemoveSpell()
     {
+        spell.Removed(null);
         spell = null;
         spellIsNotNull = false;
         activeTimer = 0;
@@ -176,6 +177,7 @@ public class SpellCaster : MonoBehaviour
         cooldownMaxTime = 0;
 
         state = PassiveSlot.PassiveState.ready;
+        
     }
 
     public void KeyActivated()
