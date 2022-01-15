@@ -1013,7 +1013,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 1
   image: {fileID: 0}
-  classSlotted: 3
+  classSlotted: 6
   number: 1
   passive: {fileID: 0}
   spell: {fileID: 0}
@@ -2728,8 +2728,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 324, y: 401}
-  m_SizeDelta: {x: 250, y: 100}
+  m_AnchoredPosition: {x: 355, y: 401}
+  m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &151313467
 MonoBehaviour:
@@ -8613,8 +8613,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 58, y: 401}
-  m_SizeDelta: {x: 250, y: 100}
+  m_AnchoredPosition: {x: 45, y: 401}
+  m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &477863093
 MonoBehaviour:
@@ -48507,7 +48507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 1
   image: {fileID: 0}
-  classSlotted: 3
+  classSlotted: 6
   number: 3
   passive: {fileID: 0}
   spell: {fileID: 0}
@@ -49166,7 +49166,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Mage
+  m_Text: None
 --- !u!222 &1103312246
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -55807,7 +55807,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 1
   image: {fileID: 0}
-  classSlotted: 3
+  classSlotted: 6
   number: 2
   passive: {fileID: 0}
   spell: {fileID: 0}
@@ -62248,7 +62248,7 @@ MonoBehaviour:
     classAbillity1: {fileID: 11400000, guid: a2a886b7dc6632941bd84745d715a850, type: 2}
     classAbillity2: {fileID: 11400000, guid: 9cb2607a69d662a459261383ca3bc303, type: 2}
     classAbillity3: {fileID: 11400000, guid: bee1aac5ce9384b43a7faf779be6ca7d, type: 2}
-    classAbillity4: {fileID: 11400000, guid: a18d968415d3c204bb6affebf978e697, type: 2}
+    classAbillity4: {fileID: 11400000, guid: 6f8b69793eeb2264994513e670b0da4d, type: 2}
     classAbillity5: {fileID: 11400000, guid: 76b2d596b0f007c4082452ce4caf2333, type: 2}
     classPassive1: {fileID: 11400000, guid: 1277c0a44792e594f9f741ba154f1332, type: 2}
     classPassive2: {fileID: 11400000, guid: 1277c0a44792e594f9f741ba154f1332, type: 2}
@@ -62256,7 +62256,7 @@ MonoBehaviour:
     classPassive4: {fileID: 11400000, guid: 1277c0a44792e594f9f741ba154f1332, type: 2}
     classPassive5: {fileID: 11400000, guid: 1277c0a44792e594f9f741ba154f1332, type: 2}
     classPassive6: {fileID: 11400000, guid: 1277c0a44792e594f9f741ba154f1332, type: 2}
-  - className: Mage
+  - className: Fire Mage
     classType: 1
     classAbillity1: {fileID: 11400000, guid: 256c3a86de21a1b4c9c9dd5098987235, type: 2}
     classAbillity2: {fileID: 11400000, guid: fca84cce0e61bd5478ecaab6049a7e37, type: 2}
@@ -62271,11 +62271,50 @@ MonoBehaviour:
     classPassive6: {fileID: 11400000, guid: c2c0e4992be6f7b438af76f0445f389c, type: 2}
   - className: Tank
     classType: 0
-    classAbillity1: {fileID: 0}
-    classAbillity2: {fileID: 0}
-    classAbillity3: {fileID: 0}
-    classAbillity4: {fileID: 0}
-    classAbillity5: {fileID: 0}
+    classAbillity1: {fileID: 11400000, guid: d13cdac6ab1ab1844ad4b115ea6381ed, type: 2}
+    classAbillity2: {fileID: 11400000, guid: 7e5e772fafae03c41954a988100b626e, type: 2}
+    classAbillity3: {fileID: 11400000, guid: 0f5f74e08e836a844bad761712a925a9, type: 2}
+    classAbillity4: {fileID: 11400000, guid: 3ebaa44b53c3ea14f89ecc9504781b52, type: 2}
+    classAbillity5: {fileID: 11400000, guid: 283b8800445e6944c8206994f546811b, type: 2}
+    classPassive1: {fileID: 0}
+    classPassive2: {fileID: 0}
+    classPassive3: {fileID: 0}
+    classPassive4: {fileID: 0}
+    classPassive5: {fileID: 0}
+    classPassive6: {fileID: 0}
+  - className: Shadow Mage
+    classType: 4
+    classAbillity1: {fileID: 11400000, guid: a620a494f5d06a84fa9680715dc065ba, type: 2}
+    classAbillity2: {fileID: 11400000, guid: d39c77d9691c20a4aa36675b58081e05, type: 2}
+    classAbillity3: {fileID: 11400000, guid: 115b4d1066862084aab26db520eb696d, type: 2}
+    classAbillity4: {fileID: 11400000, guid: 5d67fac0f5fa49e498b44cd75287cc9c, type: 2}
+    classAbillity5: {fileID: 11400000, guid: aa059d63c6a780c4ab0b5534243754c2, type: 2}
+    classPassive1: {fileID: 0}
+    classPassive2: {fileID: 0}
+    classPassive3: {fileID: 0}
+    classPassive4: {fileID: 0}
+    classPassive5: {fileID: 0}
+    classPassive6: {fileID: 0}
+  - className: Ice Sorcerer
+    classType: 3
+    classAbillity1: {fileID: 11400000, guid: 3f0c8db90b946004ca4de524b2c5b825, type: 2}
+    classAbillity2: {fileID: 11400000, guid: 58dc892f0f0bc8c48aebd32ee91b2712, type: 2}
+    classAbillity3: {fileID: 11400000, guid: e11459433ac769b45baeb2f5fc894b26, type: 2}
+    classAbillity4: {fileID: 11400000, guid: 32c6d9200dcea1d49b83dc94831e051b, type: 2}
+    classAbillity5: {fileID: 11400000, guid: da98bdf21df4f4346988a497c282372d, type: 2}
+    classPassive1: {fileID: 0}
+    classPassive2: {fileID: 0}
+    classPassive3: {fileID: 0}
+    classPassive4: {fileID: 0}
+    classPassive5: {fileID: 0}
+    classPassive6: {fileID: 0}
+  - className: Shaman
+    classType: 5
+    classAbillity1: {fileID: 11400000, guid: 74f6cdbddb63c3440b7e55e524a153b4, type: 2}
+    classAbillity2: {fileID: 11400000, guid: 6d62cd3504d1fe240b8d0996e6463709, type: 2}
+    classAbillity3: {fileID: 11400000, guid: 6f53fdc6d3a05fe4d9cf1c886e0d81dc, type: 2}
+    classAbillity4: {fileID: 11400000, guid: 28b3bef872269bd45bd43203d80d2f68, type: 2}
+    classAbillity5: {fileID: 11400000, guid: 0494c346b47370843b4f70091d98471e, type: 2}
     classPassive1: {fileID: 0}
     classPassive2: {fileID: 0}
     classPassive3: {fileID: 0}
@@ -67736,7 +67775,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 1
   image: {fileID: 0}
-  classSlotted: 3
+  classSlotted: 6
   number: 0
   passive: {fileID: 0}
   spell: {fileID: 0}
