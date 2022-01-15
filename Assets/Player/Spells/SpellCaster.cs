@@ -16,11 +16,11 @@ public class SpellCaster : MonoBehaviour
     private float cooldownMaxTime;
 
     private bool spellIsNotNull = false;
-    
+
     private bool spelltrigger = false;
 
     #region Events
-    public event Action OnSpellChanged; 
+    public event Action OnSpellChanged;
     #endregion
 
 
@@ -64,7 +64,7 @@ public class SpellCaster : MonoBehaviour
                                 state = PassiveSlot.PassiveState.active;
                                 KeyDeactivate();
                                 break;
-                            
+
                             case Spell.SpellType.Buff:
                                 spell.Activation(gameObject);
                                 state = PassiveSlot.PassiveState.active;
@@ -193,5 +193,19 @@ public class SpellCaster : MonoBehaviour
     private void KeyDeactivate()
     {
         spelltrigger = false;
+    }
+
+    public float getCooldown()
+    {
+        return cooldownTimer;
+    }
+    public float getMaxCooldown()
+    {
+        return cooldownMaxTime;
+    }
+
+    public PassiveSlot.PassiveState GetState()
+    {
+        return state;
     }
 }

@@ -57,4 +57,8 @@ public class UISpells : MonoBehaviour
         }
 
     }
+    public void AddWeaponSpells()
+    {
+        
+    }
 }
