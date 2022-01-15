@@ -66,6 +66,7 @@ public class ClassSlot : MonoBehaviour, IDropHandler
                     classSlotted = spell.classType;
                     transform.GetChild(0).GetComponent<Image>().sprite = spell.abitllityIcon;
                     transform.GetChild(0).GetComponent<Image>().enabled = true;
+                    //UISpells.Instance.SetSpell();
                 }
             }
 
