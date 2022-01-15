@@ -48,4 +48,22 @@ public class AbillityCastOnPlayer : Spell
         }
     }
     
+    public override void Removed(GameObject parent)
+    {
+        if (!collection.Any())
+        {
+            return;
+        }
+
+        for (int counter = collection.Count - 1; counter >= 0; counter--)
+        {
+            if (collection[counter] != null)
+            {
+                GameObject other = collection[counter].gameObject;
+                
+                Destroy(other.gameObject);
+            }
+        }
+    }
+    
 }

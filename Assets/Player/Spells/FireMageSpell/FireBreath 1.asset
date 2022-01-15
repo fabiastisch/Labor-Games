@@ -16,8 +16,8 @@ MonoBehaviour:
   name: Firebreath
   spellType: 1
   cooldownMax: 2
-  activeTimeMax: 2
+  activeTimeMax: 1.2
   classType: 1
   typeForUI: 1
   abitllityIcon: {fileID: 21300000, guid: 1c90ae03693377f4a9b5f42b7313ec9f, type: 3}
-  playerPosition: {x: 1.9607353, y: 3.1243224, z: 0}
+  playerPosition: {x: 2.9368198, y: 4.6986294, z: 0}

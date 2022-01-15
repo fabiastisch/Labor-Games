@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d1caeb8e5ac476ca236d01c9f962a60, type: 3}
+  m_Name: Absorption
+  m_EditorClassIdentifier: 
+  magicProjectile: {fileID: 1157724242768620148, guid: 2651d5b83a3256e408f258f336ad0613, type: 3}
+  name: 
+  spellType: 4
+  cooldownMax: 1
+  activeTimeMax: 3
+  classType: 4
+  typeForUI: 1
+  abitllityIcon: {fileID: 21300000, guid: 44c24dad40b7f8c438b86371e0f751c2, type: 3}
+  playerPosition: {x: 4.3571615, y: -3.0976944, z: 0}
+  buffList:
+  - typeToBuff: 12
+    valueOfBuff: 20
+  - typeToBuff: 0
+    valueOfBuff: 10
