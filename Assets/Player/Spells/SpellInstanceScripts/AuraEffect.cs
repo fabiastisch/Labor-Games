@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 using Utils;
@@ -28,6 +29,24 @@ public class AuraEffect : Spell
         GameObject projectile = Instantiate(magicProjectile, playerPosition, Quaternion.identity);
         projectile.transform.parent = Util.GetLocalPlayer().transform;
         collection.Add(projectile);
+    }
+    
+    public override void Removed(GameObject parent)
+    {
+        if (!collection.Any())
+        {
+            return;
+        }
+
+        for (int counter = collection.Count - 1; counter >= 0; counter--)
+        {
+            if (collection[counter] != null)
+            {
+                GameObject other = collection[counter].gameObject;
+                
+                Destroy(other.gameObject);
+            }
+        }
     }
     
 }
