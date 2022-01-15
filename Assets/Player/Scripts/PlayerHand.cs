@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,7 +24,7 @@ namespace Player
     {
         private SpriteRenderer childSprite;
         private Vector3 startPos;
-        private Weapons.Effects.EffectHandler effectHandler;
+        public EffectHandler effectHandler;
         private Weapon weapon;
 
         private bool isSword = true;
@@ -31,6 +32,8 @@ namespace Player
 
         private const string PLAYERLAYER = "Player";
         private const string DEFAULTLAYER = "Default";
+
+        public event Action OnWeaponChanged;
 
 
         public EquipableWeapon.Weapon currentWeapon
@@ -76,7 +79,8 @@ namespace Player
             Weapon equippedWeaponweapon = currentWeapon.GetComponent<Weapon>();
             if (weapon.effect != null)
             {
-                equippedWeaponweapon.effect.Deactivate();
+                if (equippedWeaponweapon.effect != null)
+                    equippedWeaponweapon.effect.Deactivate();
                 equippedWeaponweapon.GetComponent<EffectHandler>().state = EffectState.ready;
                 effectHandler = weaponToEquip.GetComponent<EffectHandler>();
             }
@@ -85,9 +89,11 @@ namespace Player
                 isSword = true;
             }
 
-            isSword = weaponToEquip.GetComponent<Sword>() != null? true : false;
+            isSword = weaponToEquip.GetComponent<Sword>() != null ? true : false;
             if (isSword) return;
             isBow = weaponToEquip.GetComponent<Bow>() != null ? true : false;
+            
+            OnWeaponChanged?.Invoke();
         }
 
         public void RotateHand(Rotations rotations)
@@ -100,7 +106,7 @@ namespace Player
             {
                 ChangeSwordRotation(rotations);
             }
-            else if(isBow)
+            else if (isBow)
             {
                 ChanceBowDirection(rotations);
             }
@@ -108,7 +114,7 @@ namespace Player
             {
                 ChanceStaffDirection(rotations);
             }
-            
+
         }
 
         public void ActivateSkill(InputAction.CallbackContext context, PlayerBase playerBase)

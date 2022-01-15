@@ -23,7 +23,7 @@ namespace Player
         [SerializeField] private UI_RadarChart chart;
         [SerializeField] private Texture2D cursor;
         [SerializeField] private Sprite[] eightWaysSprites;
-        [SerializeField] protected PlayerHand hand;
+        [SerializeField] public PlayerHand hand;
         [SerializeField] private LayerMask interactableLayer;
 
         private PlayerInput playerInput;
