@@ -1,7 +1,10 @@
 ﻿public enum ClassTypes
 {
        Tank,
-       Mage,
-       Warrior,
+       FireMage,
+       Fighter,
+       IceSorcerer,
+       ShadowMage,
+       Shaman,
        None
 }

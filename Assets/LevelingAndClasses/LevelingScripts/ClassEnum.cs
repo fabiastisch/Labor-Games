@@ -7,8 +7,11 @@ public class ClassEnum : MonoBehaviour
    public enum Classes
    {
       Tank,
-      Mage,
+      FireMage,
       Fighter,
-      None,
+      IceSorcerer,
+      ShadowMage,
+      Shaman,
+      None
    }
 }

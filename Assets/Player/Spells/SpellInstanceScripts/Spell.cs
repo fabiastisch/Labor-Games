@@ -48,6 +48,13 @@ public class Spell : ScriptableObject
     }
     
     /**
+     * Remove the effect or destroy it
+     */
+    public virtual void Removed(GameObject parent)
+    {
+    }
+    
+    /**
      * Reset if the Cooldown has a Negative Effect
      */
     public virtual void Reset(GameObject parent)

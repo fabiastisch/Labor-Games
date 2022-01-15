@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Utils;
 
@@ -15,6 +17,8 @@ namespace LevelingAndClasses.LevelingScripts.Passives.Spells
         [SerializeField] private int maxXDistance = 10;
         [SerializeField] private int maxYDistance = 10;
         // [SerializeField] private Animation CastAnimation;
+        
+        private List<GameObject> collection;
     
 
         public override void Activation(GameObject parent)
@@ -36,7 +40,28 @@ namespace LevelingAndClasses.LevelingScripts.Passives.Spells
         void AreaAttack()
         {
             //Debug.Log("Cast AreaAttack");
-            Instantiate(magicProjectile, initializePos, Quaternion.identity);
+            GameObject aoe = Instantiate(magicProjectile, initializePos, Quaternion.identity);
+            collection.Add(aoe);
+        }
+        
+        public override void Removed(GameObject parent)
+        {
+            if (!collection.Any())
+            {
+                return;
+            }
+
+            for (int counter = collection.Count - 1; counter >= 0; counter--)
+            {
+                if (collection[counter] != null)
+                {
+                    GameObject other = collection[counter].gameObject;
+                
+                    Destroy(other.gameObject);
+                }
+            }
         }
     }
+    
+    
 }

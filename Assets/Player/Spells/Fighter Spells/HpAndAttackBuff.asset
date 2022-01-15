@@ -9,15 +9,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57c21ab9ff074940a0e6a797b35b5e35, type: 3}
-  m_Name: Buffing
+  m_Script: {fileID: 11500000, guid: 3d1caeb8e5ac476ca236d01c9f962a60, type: 3}
+  m_Name: HpAndAttackBuff
   m_EditorClassIdentifier: 
   magicProjectile: {fileID: 2139714306241786474, guid: 7d096c691f53d6e498ecfc7bce60ab44, type: 3}
-  name: Attackbuff
+  name: HPAndAttackBuff
   spellType: 4
-  cooldownMax: 30
-  activeTimeMax: 20
+  cooldownMax: 20
+  activeTimeMax: 10
   classType: 2
   typeForUI: 1
-  abitllityIcon: {fileID: 21300000, guid: 1638fc6b0e6099741bd4b12df13dd5bc, type: 3}
-  playerPosition: {x: 0, y: 1.79, z: 0}
+  abitllityIcon: {fileID: 21300000, guid: c7c8dfa8af3c6074ca5a6944659fda1d, type: 3}
+  playerPosition: {x: 0, y: 0, z: 0}
+  buffList:
+  - typeToBuff: 1
+    valueOfBuff: 40
+  - typeToBuff: 25
+    valueOfBuff: 50

@@ -174,6 +174,7 @@ public class SpellCaster : MonoBehaviour
 
     public void RemoveSpell()
     {
+        spell.Removed(null);
         spell = null;
         spellIsNotNull = false;
         activeTimer = 0;

@@ -25,6 +25,8 @@ public class PassiveAndSkillChecker : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        classTypeList[0] = ClassEnum.Classes.None;
+        classTypeList[1] = ClassEnum.Classes.None;
     }
 
     /**
