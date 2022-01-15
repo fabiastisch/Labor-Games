@@ -43,7 +43,7 @@ namespace Player
         public int experience = 0;
         public int baseExpToNextLevel;
 
-        [SerializeField] private LevelSlider _levelSlider;
+        [SerializeField] private TextSlider textSlider;
 
         public event Action<int> OnLevelChanged;
         public event Action<int> OnExperiencedChanged;
@@ -51,8 +51,8 @@ namespace Player
         private void Start()
         {
             UpdateLevelSlider();
-            OnLevelChanged += (level) => _levelSlider.SetLevel(level);
-            OnExperiencedChanged += (exp) => _levelSlider.SetValue(GetExperienceNormalized());
+            OnLevelChanged += (level) => textSlider.SetText(level.ToString());
+            OnExperiencedChanged += (exp) => textSlider.SetValue(GetExperienceNormalized());
         }
 
         public void AddExp(int amount)
@@ -71,8 +71,8 @@ namespace Player
 
         private void UpdateLevelSlider()
         {
-            _levelSlider.SetLevel(currentLevel);
-            _levelSlider.SetValue(GetExperienceNormalized());
+            textSlider.SetText(currentLevel.ToString());
+            textSlider.SetValue(GetExperienceNormalized());
         }
 
         public int GetExpToNextLevel(int level)

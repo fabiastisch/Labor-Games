@@ -16,6 +16,9 @@ namespace Combat
         protected float _currentHealth;
 
         public static event Action<Character> OnEntityDies;
+        public event Action<Character> OnDeath;
+        public event Action<float> OnHealthChanged;
+
 
 
         protected void Reset()
@@ -65,10 +68,10 @@ namespace Combat
         public virtual bool TakeDamage(float amountHp, Character enemy, DamageType damageType, bool isCrit = false)
         {
             //Todo Check if it was a Abillity and not Something else
-            if(Util.GetLocalPlayer().Equals(enemy))
+            if (Util.GetLocalPlayer().Equals(enemy))
                 Util.GetLocalPlayer().InvokeOnPlayerHitSpell(this.gameObject);
-            
-            if (enemy && enemy.Equals(Util.GetLocalPlayer()))// Check if the Attacker is the Player
+
+            if (enemy && enemy.Equals(Util.GetLocalPlayer())) // Check if the Attacker is the Player
             {
                 Util.GetLocalPlayer().InvokeOnPlayerMakeACrit();
             }
@@ -76,17 +79,19 @@ namespace Combat
             if (dies)
             {
                 OnEntityDies?.Invoke(enemy);
+                OnDeath?.Invoke(enemy);
                 Die(enemy);
             }
             return dies;
         }
-        
+
         private bool TakeDamage(float amountHp, DamageType damageType = DamageType.Magical, bool isCrit = false)
         {
             _currentHealth -= amountHp;
             _currentHealth = _currentHealth < 0 ? 0 : _currentHealth;
 
             DamagePopup.Create(transform.position, amountHp, damageType, isCrit);
+            OnHealthChanged?.Invoke(_currentHealth);
             if (_currentHealth == 0)
             {
                 Debug.Log(gameObject.name + " died...");
@@ -103,6 +108,7 @@ namespace Combat
         {
             _currentHealth += amountHp;
             _currentHealth = _currentHealth > maxHealth ? maxHealth : _currentHealth;
+            OnHealthChanged?.Invoke(_currentHealth);
         }
 
         public float GetMaxHealth()
