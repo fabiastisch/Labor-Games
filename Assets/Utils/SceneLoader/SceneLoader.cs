@@ -45,7 +45,7 @@ namespace Utils.SceneLoader
 
         public static event Action onReady;
         [SerializeField] private GameObject loadingScreen;
-        [SerializeField] private Slider slider;
+        [SerializeField] private UnityEngine.UI.Slider slider;
         private bool isLoading = false;
         [SerializeField] private Text Text;
         private string loadingText = "Loading";

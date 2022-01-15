@@ -17,7 +17,7 @@ namespace Combat
 
         public static event Action<Character> OnEntityDies;
         public event Action<Character> OnDeath;
-        public event Action<float> OnHealthChanged;
+        public event Action OnHealthChanged;
 
 
 
@@ -30,6 +30,7 @@ namespace Combat
         protected virtual void Start()
         {
             _currentHealth = maxHealth;
+            OnHealthChanged?.Invoke();
         }
 
         //protected abstract void Attack();
@@ -91,7 +92,7 @@ namespace Combat
             _currentHealth = _currentHealth < 0 ? 0 : _currentHealth;
 
             DamagePopup.Create(transform.position, amountHp, damageType, isCrit);
-            OnHealthChanged?.Invoke(_currentHealth);
+            OnHealthChanged?.Invoke();
             if (_currentHealth == 0)
             {
                 Debug.Log(gameObject.name + " died...");
@@ -108,7 +109,7 @@ namespace Combat
         {
             _currentHealth += amountHp;
             _currentHealth = _currentHealth > maxHealth ? maxHealth : _currentHealth;
-            OnHealthChanged?.Invoke(_currentHealth);
+            OnHealthChanged?.Invoke();
         }
 
         public float GetMaxHealth()

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SpellHoldChecker : MonoBehaviour
@@ -12,6 +13,10 @@ public class SpellHoldChecker : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+    }
+    private void Start()
+    {
+        UISpells.Instance.AddSpellListAbilities(spellList);
     }
 
     public void AddSpell(GameObject spellObject)

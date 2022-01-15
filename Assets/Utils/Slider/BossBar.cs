@@ -38,8 +38,8 @@ public class BossBar : TextSlider
         SetValue(1f);
         ChangeActive(false);
     }
-    private void EnemyOnOnHealthChanged(float currentHealth)
+    private void EnemyOnOnHealthChanged()
     {
-        SetValue(currentHealth / currentEnemy.GetMaxHealth());
+        SetValue(currentEnemy.GetPercentageHpSmall());
     }
 }

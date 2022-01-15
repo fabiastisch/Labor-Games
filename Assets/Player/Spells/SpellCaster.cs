@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -17,6 +18,10 @@ public class SpellCaster : MonoBehaviour
     private bool spellIsNotNull = false;
     
     private bool spelltrigger = false;
+
+    #region Events
+    public event Action OnSpellChanged; 
+    #endregion
 
 
     private void Start()
@@ -164,6 +169,7 @@ public class SpellCaster : MonoBehaviour
         cooldownTimer = spell.cooldownMax;
         cooldownMaxTime = spell.cooldownMax;
         state = PassiveSlot.PassiveState.ready;
+        OnSpellChanged?.Invoke();
     }
 
     public void RemoveSpell()
@@ -177,7 +183,7 @@ public class SpellCaster : MonoBehaviour
         cooldownMaxTime = 0;
 
         state = PassiveSlot.PassiveState.ready;
-        
+        OnSpellChanged?.Invoke();
     }
 
     public void KeyActivated()
