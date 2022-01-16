@@ -63412,7 +63412,7 @@ MonoBehaviour:
     classAbillity2: {fileID: 11400000, guid: 7e5e772fafae03c41954a988100b626e, type: 2}
     classAbillity3: {fileID: 11400000, guid: 0f5f74e08e836a844bad761712a925a9, type: 2}
     classAbillity4: {fileID: 11400000, guid: 3ebaa44b53c3ea14f89ecc9504781b52, type: 2}
-    classAbillity5: {fileID: 11400000, guid: 283b8800445e6944c8206994f546811b, type: 2}
+    classAbillity5: {fileID: 11400000, guid: 2d608782808908c4bad849b98e729b26, type: 2}
     classPassive1: {fileID: 0}
     classPassive2: {fileID: 0}
     classPassive3: {fileID: 0}

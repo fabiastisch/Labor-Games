@@ -23,7 +23,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 536790135018073305}
-  m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
+  m_LocalRotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -35,7 +35,7 @@ Transform:
   - {fileID: 180343597472613548}
   m_Father: {fileID: 5956199646695764147}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
+  m_LocalEulerAnglesHint: {x: 90, y: 90, z: 90}
 --- !u!1 &4131540056267609930
 GameObject:
   m_ObjectHideFlags: 0
@@ -46,6 +46,8 @@ GameObject:
   m_Component:
   - component: {fileID: 180343597472613548}
   - component: {fileID: 3323607959374754157}
+  - component: {fileID: 4614629026028546236}
+  - component: {fileID: 5255712066602548361}
   m_Layer: 0
   m_Name: BodyAndScript
   m_TagString: Untagged
@@ -83,6 +85,40 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.14
+--- !u!114 &4614629026028546236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4131540056267609930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 465c6451d57f0304ba5b8fcd6930f365, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  baseDamage: 10
+  factor: 0.1
+  scaleValue: 0
+  startTime: 0.4
+  resetTime: 0.4
+  valueFactor: 13
+  damageType: 6
+--- !u!114 &5255712066602548361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4131540056267609930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3982c86c0bd04855b2403a6fe6a4289d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 423295979774085586}
+  speed: 5
 --- !u!1 &5956199646695818115
 GameObject:
   m_ObjectHideFlags: 0
@@ -9634,6 +9670,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5956199646695764147}
+  - component: {fileID: 423295979774085586}
   m_Layer: 0
   m_Name: ShadowBall
   m_TagString: Untagged
@@ -9656,6 +9693,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &423295979774085586
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5956199646695981581}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &5956199646695996343
 GameObject:
   m_ObjectHideFlags: 0

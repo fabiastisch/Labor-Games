@@ -38,13 +38,9 @@ public class MagicAoeExplosion : MonoBehaviour
         }
     }
     
-    void DestroyAfterTime()
+    public void DestroyAfterTime()
     {
         Destroy(gameObject);
     }
-
-    public void DestroyMe()
-    {
-        Destroy(gameObject); 
-    }
+    
 }

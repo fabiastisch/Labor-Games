@@ -8,14 +8,17 @@ using Utils;
 public class AuraBase : MonoBehaviour
 {
     [SerializeField] private float damage;
-    [SerializeField] private float baseDamage;
-    [SerializeField] private float factor;
-    [SerializeField] private float scaleValue;
+    [SerializeField] public float baseDamage;
+    [SerializeField] private float factor = 0;
+    [SerializeField] private float scaleValue = 0;
 
     private List<Collider2D> enemyList = new List<Collider2D>();
 
     [SerializeField] private float startTime;
     [SerializeField] private float resetTime;
+    
+    [SerializeField]
+    private ActualStatsThatGetUsed.ActualValues valueFactor = ActualStatsThatGetUsed.ActualValues.actualAbillityPower;
     
     public DamageType damageType = DamageType.Magical;
     
@@ -81,6 +84,7 @@ public class AuraBase : MonoBehaviour
     
     public virtual void BaseDmgFromValueAndFactor()
     {
+        //scaleValue = ActualStatsThatGetUsed.Instance.ReturnValue( (int)valueFactor);
         damage = scaleValue * factor;
         if (damage < baseDamage)
         {

@@ -77,6 +77,8 @@ public class SpellCaster : MonoBehaviour
                 case PassiveSlot.PassiveState.active:
                     //Active Time
                     activeTimer -= Time.deltaTime;
+                    cooldownTimer -= Time.deltaTime;
+                    //->activate the Cooldown while activetime
                     //after Time is over do something and restart Timer
                     if (activeTimer <= 0f)
                     {

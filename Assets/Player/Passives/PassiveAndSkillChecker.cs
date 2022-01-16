@@ -225,7 +225,7 @@ public class PassiveAndSkillChecker : MonoBehaviour
 
     public bool ActivateSpellInSlot(int number)
     {
-        if (!spellCasterList.Any()||spellCasterList[number].spell == null)
+        if (!spellCasterList.Any()||spellCasterList[number].spell.Equals(null))
         {
             return false;
         }
