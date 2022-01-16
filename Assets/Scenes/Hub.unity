@@ -680,6 +680,7 @@ GameObject:
   - component: {fileID: 45184574}
   - component: {fileID: 45184573}
   - component: {fileID: 45184577}
+  - component: {fileID: 45184578}
   m_Layer: 6
   m_Name: Dummy
   m_TagString: Vulnerable
@@ -809,6 +810,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 3
+--- !u!114 &45184578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45184572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4228d97e6767534284943a94e8d9a42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  list: {fileID: 0}
 --- !u!1 &54178310
 GameObject:
   m_ObjectHideFlags: 0
@@ -52783,6 +52797,10 @@ PrefabInstance:
       propertyPath: textSlider
       value: 
       objectReference: {fileID: 1690690890}
+    - target: {fileID: 7610018542070514180, guid: 5b200b5938c353445998557fb82e7309, type: 3}
+      propertyPath: debuff
+      value: 
+      objectReference: {fileID: 11400000, guid: c79e5eaa76848424fa341a9120824b26, type: 2}
     - target: {fileID: 8548802804282458401, guid: 5b200b5938c353445998557fb82e7309, type: 3}
       propertyPath: m_Name
       value: Player
