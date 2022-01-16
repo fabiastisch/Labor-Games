@@ -9664,6 +9664,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5456238106603759545}
   - component: {fileID: 7410881122827708305}
+  - component: {fileID: 4820855518867189249}
   m_Layer: 0
   m_Name: BodyAndScript
   m_TagString: Untagged
@@ -9713,3 +9714,23 @@ PolygonCollider2D:
     - - {x: 0.02, y: 0.01}
       - {x: -0.71, y: 0.38}
       - {x: -0.67, y: -0.14}
+--- !u!114 &4820855518867189249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9145019786628151693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 465c6451d57f0304ba5b8fcd6930f365, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  baseDamage: 12
+  factor: 0.3
+  scaleValue: 0
+  startTime: 0.4
+  resetTime: 0.4
+  valueFactor: 13
+  damageType: 3

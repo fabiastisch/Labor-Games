@@ -57354,6 +57354,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3491794229930661666}
   - component: {fileID: 3491794229923132264}
+  - component: {fileID: 5605463658914889862}
+  - component: {fileID: 7269314646034985624}
   m_Layer: 0
   m_Name: IceOrb
   m_TagString: Untagged
@@ -57395,6 +57397,41 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!50 &5605463658914889862
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3491794229930475490}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &7269314646034985624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3491794229930475490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3982c86c0bd04855b2403a6fe6a4289d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 5605463658914889862}
+  speed: 3
 --- !u!1 &3491794229930476148
 GameObject:
   m_ObjectHideFlags: 0
@@ -76345,6 +76382,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3583225048832183122}
   - component: {fileID: 9116825588879777968}
+  - component: {fileID: 5513184556217713842}
   m_Layer: 0
   m_Name: BodyAndScript
   m_TagString: Untagged
@@ -76382,6 +76420,26 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &5513184556217713842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4037975473100263544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 465c6451d57f0304ba5b8fcd6930f365, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  baseDamage: 5
+  factor: 0.05
+  scaleValue: 0
+  startTime: 0.2
+  resetTime: 0.2
+  valueFactor: 13
+  damageType: 4
 --- !u!1 &6498714948695871626
 GameObject:
   m_ObjectHideFlags: 0
@@ -76392,6 +76450,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4449656202573172035}
   - component: {fileID: 2070573224453592121}
+  - component: {fileID: 2067212295488204992}
   m_Layer: 0
   m_Name: BodyAndScript
   m_TagString: Untagged
@@ -76429,3 +76488,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.56
+--- !u!114 &2067212295488204992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6498714948695871626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 465c6451d57f0304ba5b8fcd6930f365, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  baseDamage: 5
+  factor: 0.05
+  scaleValue: 0
+  startTime: 0.2
+  resetTime: 0.2
+  valueFactor: 13
+  damageType: 4

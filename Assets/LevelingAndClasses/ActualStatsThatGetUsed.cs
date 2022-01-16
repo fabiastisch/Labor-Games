@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
@@ -23,6 +24,23 @@ public class ActualStatsThatGetUsed : MonoBehaviour
         actualOmniVamp,
         actualCooldownReduction;
 
+    public enum ActualValues
+    {
+        actualAttack,
+        actualAttackspeed,
+        actualCharmChance,
+        actualCritChance,
+        actualCritDmgMultiplyer,
+        actualEvadeChance,
+        actualLifesteal,
+        acutalSpellVamp,
+        actualMovementspeed,
+        actualHp,
+        actualStunChance,
+        actualOmniVamp,
+        actualCooldownReduction,
+        actualAbillityPower,
+    }
 
     [Header("ValueField")] [SerializeField]
     private List<GameObject> listOfName;
@@ -264,6 +282,44 @@ public class ActualStatsThatGetUsed : MonoBehaviour
     private float CalculateActualMicroStat(int NumberOfBaseStat)
     {
         return StatManager.Instance.GetStat(StatManager.Instance.statTypeList.list[NumberOfBaseStat]);
+    }
+
+    public float ReturnValue(int valueName)
+    {
+        switch (valueName)
+        {
+            case 0:
+                return actualAttack;
+            case 1:
+                return actualAttackspeed;
+            case 2:
+                return actualCharmChance;
+            case 3:
+                return actualCritChance;
+            case 4:
+                return actualCritDmgMultiplyer;
+            case 5:
+                return actualEvadeChance;
+            case 6:
+                return actualLifesteal;
+            case 7:
+                return actualSpellVamp;
+            case 8:
+                return actualMovementspeed;
+            case 9:
+                return actualHP;
+            case 10:
+                return actualStunChance;
+            case 11:
+                return actualOmniVamp;
+            case 12:
+                return actualCooldownReduction;
+            case 13:
+                return actualAbillityPower;
+            
+        }
+
+        return 0f;
     }
 }
 
