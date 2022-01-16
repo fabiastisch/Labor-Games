@@ -333,7 +333,7 @@ namespace Player
 
         #region PlayerCombat
 
-        public override bool TakeDamage(float amountHp, Combat.Character enemy, DamageType damageType, bool isCrit)
+        public override bool TakeDamage(float amountHp, Combat.Character enemy, DamageType damageType, bool isCrit, bool isSpell = false)
         {
             bool die = base.TakeDamage(amountHp, enemy, damageType, isCrit);
             OnPlayerTakeDamage?.Invoke(enemy as Enemy, damageType, amountHp, isCrit);

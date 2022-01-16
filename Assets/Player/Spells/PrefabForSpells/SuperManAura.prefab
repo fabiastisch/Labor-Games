@@ -112,7 +112,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0762b1775a740bb9e778f95cd20ca21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
+  baseDamage: 0
+  factor: 0
+  scaleValue: 0
+  startTime: 0
+  resetTime: 0
+  isSpell: 0
+  valueFactor: 13
   damageType: 0
   maxHpFactor: 0.05
-  timer: 2
-  timerMax: 2

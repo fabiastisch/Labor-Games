@@ -12,6 +12,8 @@ public class MagicAoeExplosion : MonoBehaviour
     [SerializeField] private StatTypeSO statType;
 
     private List<Collider2D> enemyInAoeList = new List<Collider2D>();
+    
+    [SerializeField] private bool isSpell = false;
 
     public DamageType damageType = DamageType.Magical;
     //public GameObject impactEffect;
@@ -34,7 +36,7 @@ public class MagicAoeExplosion : MonoBehaviour
         
         if (other.gameObject.layer == 6)
         {
-            other.GetComponent<Enemy>()?.TakeDamage(baseDamage, Util.GetLocalPlayer(), damageType);
+            other.GetComponent<Enemy>()?.TakeDamage(baseDamage, Util.GetLocalPlayer(), damageType , false , isSpell);
         }
     }
     

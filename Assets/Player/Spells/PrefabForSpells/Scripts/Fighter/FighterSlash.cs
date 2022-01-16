@@ -49,7 +49,7 @@ public class FighterSlash : MonoBehaviour
 
             if (other.gameObject.layer == 6)
             {
-                other.GetComponent<Enemy>()?.TakeDamage(baseDamage, Util.GetLocalPlayer(), damageType);
+                other.GetComponent<Enemy>()?.TakeDamage(baseDamage, Util.GetLocalPlayer(), damageType, true);
             }
         }
     }

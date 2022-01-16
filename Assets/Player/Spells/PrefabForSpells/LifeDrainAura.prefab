@@ -118,6 +118,9 @@ MonoBehaviour:
   scaleValue: 0
   startTime: 0.3
   resetTime: 0.3
+  isSpell: 0
+  valueFactor: 13
   damageType: 1
   maxHpFactor: 0.02
   underMaxHpFactor: 50
+  MaxHpDmg: 0

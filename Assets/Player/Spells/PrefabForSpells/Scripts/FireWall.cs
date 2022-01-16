@@ -16,6 +16,8 @@ public class FireWall : MonoBehaviour
     [SerializeField]
     private float timerMax = 1;
     
+    [SerializeField] private bool isSpell = true;
+    
     public DamageType damageType = DamageType.Magical;
     //public GameObject impactEffect;
     
