@@ -13,7 +13,8 @@ namespace Weapons.Effects
         public EquipableWeapon.WeaponRarity weaponRarity;
         public EffectTyp EffectTyp;
         public string effectDescription;
-
+        public Sprite uiImage;
+        
         [Header("Effectstats")]
         public float activeTime;
         public float cooldown;

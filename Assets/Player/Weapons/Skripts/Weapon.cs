@@ -35,6 +35,11 @@ namespace EquipableWeapon
 
         private SpriteRenderer spriteRenderer;
         private WeaponRadomizer effectGenerator;
+
+        public bool isOnCooldown = false;
+        public float currentCooldown = 0f;
+        public float maxCooldown = 1f;
+        
         public void Start()
         {
             effectGenerator = new WeaponRadomizer(effectPool);

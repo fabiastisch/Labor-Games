@@ -22,7 +22,7 @@ namespace Weapons.Effects
     {
         private EquipableWeapon.Weapon weapon;
         private Effect effect;
-        private float cooldown;
+        public float cooldown;
         private float activeTime;
 
         bool buttonPressed = false;
