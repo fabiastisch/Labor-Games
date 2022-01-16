@@ -16,6 +16,8 @@ public class AuraBase : MonoBehaviour
 
     [SerializeField] private float startTime;
     [SerializeField] private float resetTime;
+
+    [SerializeField] public bool isSpell = true;
     
     [SerializeField]
     private ActualStatsThatGetUsed.ActualValues valueFactor = ActualStatsThatGetUsed.ActualValues.actualAbillityPower;
@@ -38,7 +40,7 @@ public class AuraBase : MonoBehaviour
     {
         if (enemy.layer == 6)
         {
-            enemy.GetComponent<Enemy>()?.TakeDamage(damage, Util.GetLocalPlayer(), damageType);
+            enemy.GetComponent<Enemy>()?.TakeDamage(damage, Util.GetLocalPlayer(), damageType, isSpell);
         }
     }
     
@@ -56,7 +58,7 @@ public class AuraBase : MonoBehaviour
                 GameObject enemy = enemyList[counter].gameObject;
                 if (enemy.layer == 6)
                 {
-                    enemy.GetComponent<Enemy>()?.TakeDamage(damage, Util.GetLocalPlayer(), damageType);
+                    enemy.GetComponent<Enemy>()?.TakeDamage(damage, Util.GetLocalPlayer(), damageType , isSpell);
                 }
             }
         }

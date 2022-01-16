@@ -52551,10 +52551,11 @@ MonoBehaviour:
   scaleValue: 0
   startTime: 0.25
   resetTime: 0.25
+  isSpell: 1
   valueFactor: 13
   damageType: 6
-  force: 5
-  push: 0
+  force: 2
+  push: 1
   dmg: 1
 --- !u!1 &8148988444969503289
 GameObject:

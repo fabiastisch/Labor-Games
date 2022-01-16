@@ -66,11 +66,11 @@ namespace Combat
         /**
          * Returns true if the entity dies
          */
-        public virtual bool TakeDamage(float amountHp, Character enemy, DamageType damageType, bool isCrit = false)
+        public virtual bool TakeDamage(float amountHp, Character enemy, DamageType damageType, bool isSpell = false, bool isCrit = false)
         {
-            //Todo Check if it was a Abillity and not Something else
-            if (Util.GetLocalPlayer().Equals(enemy))
-                Util.GetLocalPlayer().InvokeOnPlayerHitSpell(this.gameObject);
+            if(isSpell)
+                if (Util.GetLocalPlayer().Equals(enemy))
+                    Util.GetLocalPlayer().InvokeOnPlayerHitSpell(this.gameObject);
 
             if (enemy && enemy.Equals(Util.GetLocalPlayer())) // Check if the Attacker is the Player
             {

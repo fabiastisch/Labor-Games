@@ -118,5 +118,7 @@ MonoBehaviour:
   scaleValue: 0
   startTime: 0.5
   resetTime: 0.5
+  isSpell: 0
+  valueFactor: 13
   damageType: 3
   thunderAoe: {fileID: 8899940783837769618, guid: 54c044e434de34d4d92d4c29c3800e9a, type: 3}

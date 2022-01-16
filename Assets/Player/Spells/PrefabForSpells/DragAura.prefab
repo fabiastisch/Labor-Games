@@ -118,6 +118,8 @@ MonoBehaviour:
   scaleValue: 0
   startTime: 0
   resetTime: 0
+  isSpell: 0
+  valueFactor: 13
   damageType: 1
   force: 3
   push: 0

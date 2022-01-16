@@ -45,7 +45,7 @@ public class Stabbing : MonoBehaviour
 
             if (other.gameObject.layer == 6)
             {
-                other.GetComponent<Enemy>()?.TakeDamage(baseDamage, Util.GetLocalPlayer(), damageType);
+                other.GetComponent<Enemy>()?.TakeDamage(baseDamage, Util.GetLocalPlayer(), damageType, true);
             }
         }
     }
@@ -64,7 +64,7 @@ public class Stabbing : MonoBehaviour
                 GameObject other = enemyList[counter].gameObject;
                 if (other.gameObject.layer == 6)
                 {
-                    other.GetComponent<Enemy>()?.TakeDamage(baseDamage, Util.GetLocalPlayer(), damageType);
+                    other.GetComponent<Enemy>()?.TakeDamage(baseDamage, Util.GetLocalPlayer(), damageType, true);
                 }
             }
         }

@@ -64,7 +64,7 @@ public class GroundSmash : MonoBehaviour
                 GameObject enemy = enemyList[counter].gameObject;
                 if (enemy.layer == 6)
                 {
-                    enemy.GetComponent<Enemy>()?.TakeDamage(baseDamage, Util.GetLocalPlayer(), damageType);
+                    enemy.GetComponent<Enemy>()?.TakeDamage(baseDamage, Util.GetLocalPlayer(), damageType, true);
                 }
             }
 

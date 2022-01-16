@@ -19,6 +19,8 @@ public class Projectil : MonoBehaviour
     
     [SerializeField] private float startTime;
     [SerializeField] private float resetTime;
+    
+    [SerializeField] public bool isSpell = true;
 
     [SerializeField] private DamageType damageType = DamageType.Magical;
 
@@ -55,7 +57,7 @@ public class Projectil : MonoBehaviour
     {
         if (other.gameObject.layer == 6)
         {
-            other.GetComponent<Enemy>()?.TakeDamage(baseDamage,Util.GetLocalPlayer() ,damageType);
+            other.GetComponent<Enemy>()?.TakeDamage(baseDamage,Util.GetLocalPlayer() ,damageType, isSpell);
         }
         EnterOption(other);
     }
@@ -65,7 +67,7 @@ public class Projectil : MonoBehaviour
         //Here to do in our Case Dmg
         if (other.gameObject.layer == 6)
         {
-            other.GetComponent<Enemy>()?.TakeDamage(baseDamage,Util.GetLocalPlayer() ,damageType);
+            other.GetComponent<Enemy>()?.TakeDamage(baseDamage,Util.GetLocalPlayer() ,damageType, isSpell);
         }
         ExitOption(other);
     }
