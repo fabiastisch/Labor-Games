@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine;
+using Utils.SaveSystem;
 
 public class InGameMenu : CasualButtons
 {
@@ -24,5 +25,10 @@ public class InGameMenu : CasualButtons
         playerInput.SwitchCurrentActionMap("Player");
         parentMenu.SetActive(false);
         Time.timeScale = 1;
+    }
+
+    public void SaveGame()
+    {
+        SaveAndLoadManager.Instance.Save();
     }
 }
