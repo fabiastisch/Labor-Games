@@ -1,6 +1,7 @@
 using System;
 using Combat;
 using UI.Scripts;
+using UI.Scripts.UISpells;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Utils;
@@ -116,6 +117,11 @@ namespace Player
             OnDashCooldownUpdated?.Invoke(_dashCooldownTimer, dashCooldownMax, currentDashUsesLeft, maxDashUses);
             dashSpeedMax = dashSpeed;
             Cursor.SetCursor(cursor, Vector2.zero, CursorMode.ForceSoftware);
+            playerInput.onControlsChanged += input =>
+            {
+                UISpells uiSpells = UISpells.Instance;
+                if (uiSpells) uiSpells.UpdateBindingDisplayText();
+            };
         }
 
         protected virtual void FixedUpdate()

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using UI.Scripts.UISpells;
 using UnityEngine;
 
 public class SpellHoldChecker : MonoBehaviour

@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using Player;
+using TMPro;
 using UnityEngine;
 using Utils;
 namespace UI.Scripts.UISpells
@@ -12,7 +13,9 @@ namespace UI.Scripts.UISpells
         protected override void Start()
         {
             base.Start();
-            Util.GetLocalPlayer().OnDashCooldownUpdated += OnDashCooldownUpdated;
+            PlayerBase player = Util.GetLocalPlayer();
+            player.OnDashCooldownUpdated += OnDashCooldownUpdated;
+            
             UpdateSprite(_sprite);
         }
         private void OnDashCooldownUpdated(float cooldownTimer, float maxCooldown, int currentUsesLeft, int maxUsesLeft)
@@ -29,7 +32,7 @@ namespace UI.Scripts.UISpells
             {
                 _leftUsesText.text = "";
             }
-            
+
         }
     }
 }

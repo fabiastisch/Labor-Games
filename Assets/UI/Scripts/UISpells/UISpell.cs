@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 namespace UI.Scripts.UISpells
@@ -10,10 +11,23 @@ namespace UI.Scripts.UISpells
         [SerializeField] protected Image _cooldownImage;
         [SerializeField] protected TMP_Text _coolDownText;
 
+        [SerializeField] protected TMP_Text _bindingDisplayText;
+        [SerializeField] protected InputActionReference _inputActionReference;
         protected virtual void Start()
         {
             SimpleUnlink();
             HideCooldown();
+            UpdateBindingDisplayText();
+        }
+
+        public void UpdateBindingDisplayText()
+        {
+            if (!_inputActionReference)
+            {
+                _bindingDisplayText.text = "";
+                return;
+            }
+            _bindingDisplayText.text = _inputActionReference.action.GetBindingDisplayString(0);
         }
 
         protected void UpdateSprite(Sprite sprite)
