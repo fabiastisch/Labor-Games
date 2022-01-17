@@ -51013,6 +51013,7 @@ GameObject:
   - component: {fileID: 1130479712}
   - component: {fileID: 1130479711}
   - component: {fileID: 1130479713}
+  - component: {fileID: 1130479714}
   m_Layer: 0
   m_Name: Statistic
   m_TagString: Untagged
@@ -51067,6 +51068,19 @@ MonoBehaviour:
   uiStatsRadarChart: {fileID: 800311255}
   uiLevelCounter: {fileID: 582754597}
   stats: {fileID: 1130479711}
+--- !u!114 &1130479714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130479710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8288b665cf4246b5ab5f1b4c5271305c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: dcef8979-f65c-4dd6-896b-1c3647187244
 --- !u!1 &1132194959
 GameObject:
   m_ObjectHideFlags: 0
