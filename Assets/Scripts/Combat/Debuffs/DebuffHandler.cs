@@ -24,6 +24,8 @@ namespace Combat
 
         private float timer = 0;
 
+        private bool debuffedOnce = false;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -33,10 +35,15 @@ namespace Combat
         // Update is called once per frame
         void Update()
         {
-            if (character.GetDebuff() == null) return;
+            if (character.GetDebuff() == null)
+            {
+                debuffedOnce = false;
+                return;
+            }
             debuff = character.GetDebuff();
             timer += Time.deltaTime;
             
+            //dmg per Second
             if (debuff.debufftype == DebuffTypes.DamageDebuff)
             {  
                 if (timer >= 1)
@@ -44,6 +51,18 @@ namespace Combat
                     debuff.MakeDamage(character);
                     timer = 0;
                 }
+                return;
+            }
+
+            //Debuffing once
+            if(debuff.debufftype == DebuffTypes.StatsDebuff)
+            {
+                if (!debuffedOnce)
+                {
+                    debuff.ChangeStats(character);
+                    debuffedOnce = true;
+                }
+                return;
             }
 
         }

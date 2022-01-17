@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BurnDebuff
   m_EditorClassIdentifier: 
   nameString: Burning
-  durationTime: 5
+  durationTime: 10
   debufftype: 0
   damagePerSecond: 1
   damageType: 5

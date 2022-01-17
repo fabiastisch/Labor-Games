@@ -9,7 +9,7 @@ public class DebuffTypeSO : ScriptableObject
 
     public Combat.DebuffTypes debufftype;
     public virtual void MakeDamage(Combat.Character character) { }
-    public virtual void DebuffAction() { }
-    public virtual void ChangeStats() { }
-    public virtual void RemoveDebuff() { }
+    public virtual void DebuffAction(Combat.Character character) { }
+    public virtual void ChangeStats(Combat.Character character) { }
+    public virtual void RemoveDebuff(Combat.Character character) { }
 }

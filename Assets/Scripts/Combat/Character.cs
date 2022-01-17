@@ -127,6 +127,11 @@ namespace Combat
 
         private void RemoveDebuff()
         {
+            if(currentDebuff.debufftype == DebuffTypes.StatsDebuff)
+            {
+                StatsDebuff statdebuff = (StatsDebuff)currentDebuff;
+                statdebuff.Debuff();
+            }
             SetDebuff(null);
         }
 
