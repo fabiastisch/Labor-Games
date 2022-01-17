@@ -37,8 +37,7 @@ namespace EquipableWeapon
                 foreach (Collider2D enemyCollider in colliders)
                 {
                     enemyCollider.GetComponent<Enemy>()?.TakeDamage(baseDamage, player, damageType);
-                    if(debuff != null)
-                    enemyCollider.GetComponent<Enemy>()?.SetDebuff(debuff);
+                    if(debuff != null) enemyCollider.GetComponent<Enemy>()?.SetDebuff(debuff);
                 }
             }
         }

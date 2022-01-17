@@ -8,8 +8,22 @@ public class HpBurning : DebuffTypeSO
 {
     public float damagePerSecond;
     public DamageType damageType;
-    public override void MakeDamage(Combat.Character character)
+    private float timer = 0;
+
+    public override void UpdateDebuff(Combat.Character character)
     {
-        character.TakeDamage(damagePerSecond, character, damageType);
+        base.UpdateDebuff(character);
+        timer += Time.deltaTime;
+        if (timer >= 1)
+        {
+            character.TakeDamage(damagePerSecond, character, damageType);
+            timer = 0;
+        }
     }
+
+    public override void RemoveThisDebuff(Combat.Character character)
+    {
+        character.RemoveDebuff(this);
+    }
+
 }

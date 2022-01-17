@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Combat;
 
 [CreateAssetMenu(menuName = "ScriptableObject/Manager/DebuffType/StatsDebuff")]
 public class StatsDebuff : DebuffTypeSO
@@ -10,17 +11,40 @@ public class StatsDebuff : DebuffTypeSO
     public bool shouldUseFlattValue;
     public float flatValue;
 
+    private Enemy enemy;
+    private float reductionValue;
+
+    public enum DebuffEnemyTyp
+    {
+        Snare,
+        Stun,
+        NoAttack,
+        Slow,
+        AttackspeedSlow,
+    }
+
+
     //TODO: Needs to work on enemys
+    /*
     public override void ChangeStats(Combat.Character character)
     {
-        if (shouldUseFlattValue)
-        {
+        var myCharacter = character as Player.PlayerBase;
 
-            StatManager.Instance.RemoveStat(statType, flatValue);
+        if(myCharacter != null)
+        {
+            if (shouldUseFlattValue)
+            {
+                StatManager.Instance.RemoveStat(statType, flatValue);
+            }
+            else
+            {
+                StatManager.Instance.DivideStat(statType, prozentage);
+            }
         }
         else
         {
-            StatManager.Instance.DivideStat(statType, prozentage);
+            enemy = (Enemy)character;
+            //reductionValue = shouldUseFlattValue == true ? flatValue : prozentage;
         }
        
     }
@@ -36,5 +60,5 @@ public class StatsDebuff : DebuffTypeSO
             StatManager.Instance.MultiplyStat(statType, prozentage);
         }
 
-    }
+    }*/
 }

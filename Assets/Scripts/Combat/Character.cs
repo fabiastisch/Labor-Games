@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UI.CombatText;
 using UnityEngine;
 using Utils;
@@ -19,9 +20,19 @@ namespace Combat
         public event Action<Character> OnDeath;
         public event Action OnHealthChanged;
 
-        private DebuffTypeSO currentDebuff;
+        public List<DebuffTypeSO> currentDebuffList = new List<DebuffTypeSO> { };
 
-
+        //Updateing Method
+        public void Update()
+        {
+            if(currentDebuffList.Count > 0)
+            {
+                foreach (DebuffTypeSO debuff in currentDebuffList)
+                {
+                    debuff.UpdateDebuff(this);
+                }
+            }
+        }
 
         protected void Reset()
         {
@@ -114,31 +125,20 @@ namespace Combat
             OnHealthChanged?.Invoke();
         }
 
-        //TODO: MultipleDebuffs on one entity
+
         public void SetDebuff(DebuffTypeSO debuff)
         {
-            currentDebuff = debuff;
-            if (currentDebuff == null) return;
-
-            //Refresh timer if already debufft
-            if (IsInvoking("RemoveDebuff")) CancelInvoke();
-            Invoke("RemoveDebuff", debuff.durationTime);
+            debuff.currentlyApplied = true;
+            if (currentDebuffList.Contains(debuff)) return;
+            currentDebuffList.Add(debuff);
         }
 
-        private void RemoveDebuff()
+        public void RemoveDebuff(DebuffTypeSO debuff)
         {
-            if(currentDebuff.debufftype == DebuffTypes.StatsDebuff)
-            {
-                StatsDebuff statdebuff = (StatsDebuff)currentDebuff;
-                statdebuff.Debuff();
-            }
-            SetDebuff(null);
+            if (!currentDebuffList.Contains(debuff)) return;
+            currentDebuffList.Remove(debuff);
         }
 
-        public DebuffTypeSO GetDebuff()
-        {
-            return currentDebuff;
-        }
 
         public float GetMaxHealth()
         {

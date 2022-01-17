@@ -31,6 +31,7 @@ namespace Combat
 
         private void Update()
         {
+            base.Update();
             if (_isDead) return;
             if (_playerDetector.PlayerDetected && IsAtTarget) Attack();
         }
