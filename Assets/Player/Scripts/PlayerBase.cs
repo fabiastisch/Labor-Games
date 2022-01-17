@@ -41,14 +41,26 @@ namespace Player
             }
         }
 
-        //Dodging, stamina used as Cost
-        [Header("Dodging")] [SerializeField] private float stamina = 100f;
-        [SerializeField] private float staminaReg = 10f;
-        [SerializeField] private float dodgeCost = 44f;
-        [SerializeField] private float dodgeSpeed = 30f;
-        private float dodgeSpeedMax;
+        #region Dash
+        //Dash, stamina used as Cost
+        [Header("Dash")]
+        [SerializeField] private float dashSpeed = 30f;
+        private float dashSpeedMax;
         private float maxStamina;
-        private Vector2 currentDodgeDirection = Vector2.zero;
+        [SerializeField] private int maxDashUses = 2;
+        private int currentDashUsesLeft;
+        [SerializeField] private float dashCooldownMax = 3f;
+        private float _dashCooldownTimer;
+
+        private Vector2 currentDashDirection = Vector2.zero;
+        /**
+         * 1: _dashCooldownTimer
+         * 2: dashCooldownMax
+         * 3: currentDashUsesLeft
+         * 4: maxDashUses
+         */
+        public event Action<float, float, int, int> OnDashCooldownUpdated;
+        #endregion
         private bool isMenuOpen = false;
         private bool isSkillOpen = false;
         private bool isInteractableFound = false;
@@ -68,9 +80,9 @@ namespace Player
         #region Interactable Stuff
         private Interactable activeInteractable = null;
         #endregion
-        
+
         public event Action<Enemy, DamageType, float, bool> OnPlayerTakeDamage;
-        
+
         /**
          * true: Player Moves
          * false: Player doesn't move
@@ -78,16 +90,15 @@ namespace Player
         public event Action<bool> OnPlayerMoves;
 
         public event Action OnPlayerMakeACrit;
-        
-        public event Action<GameObject>  OnPlayerHitSpell;
-        
+
+        public event Action<GameObject> OnPlayerHitSpell;
+
         public event Action OnPlayerCastSpell;
 
-        public void InvokeOnPlayerMakeACrit () => OnPlayerMakeACrit?.Invoke();
-        public void InvokeOnPlayerHitSpell (GameObject hitObject) => OnPlayerHitSpell?.Invoke(hitObject);
-        
-        public void InvokeOnPlayerCastSpell () => OnPlayerCastSpell?.Invoke();
+        public void InvokeOnPlayerMakeACrit() => OnPlayerMakeACrit?.Invoke();
+        public void InvokeOnPlayerHitSpell(GameObject hitObject) => OnPlayerHitSpell?.Invoke(hitObject);
 
+        public void InvokeOnPlayerCastSpell() => OnPlayerCastSpell?.Invoke();
         #endregion
 
 
@@ -100,8 +111,10 @@ namespace Player
         {
             base.Start();
             state = State.Normal;
-            maxStamina = stamina;
-            dodgeSpeedMax = dodgeSpeed;
+            _dashCooldownTimer = dashCooldownMax;
+            currentDashUsesLeft = maxDashUses;
+            OnDashCooldownUpdated?.Invoke(_dashCooldownTimer, dashCooldownMax, currentDashUsesLeft, maxDashUses);
+            dashSpeedMax = dashSpeed;
             Cursor.SetCursor(cursor, Vector2.zero, CursorMode.ForceSoftware);
         }
 
@@ -126,22 +139,42 @@ namespace Player
 
             ChangeSpriteDirection();
 
-            if (stamina < maxStamina)
+            if (currentDashUsesLeft < maxDashUses)
             {
-                stamina += staminaReg * Time.deltaTime;
+                _dashCooldownTimer -= Time.deltaTime;
+                if (_dashCooldownTimer <= 0f)
+                {
+                    if (currentDashUsesLeft == maxDashUses - 1)
+                    {
+                        _dashCooldownTimer = dashCooldownMax;
+                    }
+                    else _dashCooldownTimer = dashCooldownMax + _dashCooldownTimer;
+
+                    currentDashUsesLeft++;
+                }
+                OnDashCooldownUpdated?.Invoke(_dashCooldownTimer, dashCooldownMax, currentDashUsesLeft, maxDashUses);
             }
+
 
             isMenuOpen = menu.gameObject.activeSelf;
             isSkillOpen = skills.gameObject.activeSelf;
 
-            if (playerInput.actions["Dodge"].triggered && stamina >= dodgeCost && state == State.Normal &&
-                !isMenuOpen && !isSkillOpen)
+
+
+            if (state == State.Normal && !isMenuOpen && !isSkillOpen)
             {
-                stamina -= dodgeCost;
-                dodgeSpeed = dodgeSpeedMax;
-                currentDodgeDirection = MousePosition;
-                state = State.Dodging;
+                if (playerInput.actions["Dodge"].triggered && currentDashUsesLeft >= 1)
+                {
+                    currentDashUsesLeft--;
+                    dashSpeed = dashSpeedMax;
+                    currentDashDirection = MousePosition;
+                    state = State.Dodging;
+                    OnDashCooldownUpdated?.Invoke(_dashCooldownTimer, dashCooldownMax, currentDashUsesLeft, maxDashUses);
+                }
+
             }
+
+
 
             isInteractableFound = DetectInteractableObjekt();
         }
@@ -156,17 +189,17 @@ namespace Player
 
         private void PerformDodgeStep()
         {
-            dodgeSpeed -= 1.7f;
-            if (dodgeSpeed <= 0)
+            dashSpeed -= 1.7f;
+            if (dashSpeed <= 0)
             {
-                currentDodgeDirection = Vector2.zero;
+                currentDashDirection = Vector2.zero;
                 state = State.Normal;
                 return;
                 //rb.velocity = Vector2.zero;
             }
 
             //rb.velocity = currentDodgeDirection * dodgeSpeed;
-            rb.MovePosition((Vector2) transform.position + currentDodgeDirection * dodgeSpeed * Time.fixedDeltaTime);
+            rb.MovePosition((Vector2) transform.position + currentDashDirection * dashSpeed * Time.fixedDeltaTime);
         }
 
         //UI
@@ -211,7 +244,7 @@ namespace Player
                 if (newActiveInteractable)
                 {
                     newActiveInteractable.SetInteractable(true);
-                    if(activeInteractable)activeInteractable.SetInteractable(false);
+                    if (activeInteractable) activeInteractable.SetInteractable(false);
                     activeInteractable = newActiveInteractable;
                 }
 
@@ -245,7 +278,7 @@ namespace Player
                 Time.timeScale = 1;
             }
         }
-        
+
         public void OpenSkills(InputAction.CallbackContext context)
         {
             if (!context.performed) return;
@@ -332,7 +365,6 @@ namespace Player
         }
 
         #region PlayerCombat
-
         public override bool TakeDamage(float amountHp, Combat.Character enemy, DamageType damageType, bool isCrit, bool isSpell = false)
         {
             bool die = base.TakeDamage(amountHp, enemy, damageType, isCrit);

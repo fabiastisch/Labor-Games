@@ -6,7 +6,7 @@ namespace UI.Scripts.UISpells
     {
         private SpellCaster linkedSpellCaster;
 
-        
+
         public void LinkSpell(SpellCaster spellCaster)
         {
             linkedSpellCaster = spellCaster;
@@ -16,8 +16,7 @@ namespace UI.Scripts.UISpells
         {
             if (linkedSpellCaster && linkedSpellCaster.spell)
             {
-                _image.sprite = linkedSpellCaster.spell.abitllityIcon;
-                _image.color = Color.white;
+                UpdateSprite(linkedSpellCaster.spell.abitllityIcon);
             }
             else
             {

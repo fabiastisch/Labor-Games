@@ -1,148 +1,46 @@
-using EquipableWeapon;
-using Player;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using Weapons.Effects;
 
-public class UISpell : MonoBehaviour
+namespace UI.Scripts.UISpells
 {
-    [SerializeField] private Image _image;
-    [SerializeField] private Image _cooldownImage;
-    [SerializeField] private TMP_Text _coolDownText;
-
-    private SpellCaster linkedSpellCaster;
-    private PlayerHand _playerHand;
-    private bool _isLinkedEffect = false;
-
-    private void Start()
+    public class UISpell : MonoBehaviour
     {
-        SimpleUnlink();
-        HideCooldown();
-    }
+        [SerializeField] protected Image _image;
+        [SerializeField] protected Image _cooldownImage;
+        [SerializeField] protected TMP_Text _coolDownText;
 
-    private void SimpleUnlink()
-    {
-        _image.sprite = null;
-        _image.color = new Color(1, 1, 1, 0f);
-    }
-
-    #region ClassSpell
-    public void LinkSpell(SpellCaster spellCaster)
-    {
-        linkedSpellCaster = spellCaster;
-        spellCaster.OnSpellChanged += SpellCasterOnOnSpellChanged;
-    }
-    private void SpellCasterOnOnSpellChanged()
-    {
-        if (linkedSpellCaster && linkedSpellCaster.spell)
-        {
-            _image.sprite = linkedSpellCaster.spell.abitllityIcon;
-            _image.color = Color.white;
-        }
-        else
+        protected virtual void Start()
         {
             SimpleUnlink();
+            HideCooldown();
         }
 
-    }
-    #endregion
-
-    #region Weapon
-    public void LinkWeapon(PlayerHand playerHand)
-    {
-        _playerHand = playerHand;
-        _playerHand.OnWeaponChanged += PlayerHandOnOnWeaponChanged;
-        PlayerHandOnOnWeaponChanged();
-    }
-    private void PlayerHandOnOnWeaponChanged()
-    {
-        Weapon weapon = _playerHand.currentWeapon;
-        _image.sprite = weapon.GetComponent<SpriteRenderer>().sprite;
-        _image.color = Color.white;
-
-
-    }
-    public void LinkWeaponEffect(PlayerHand playerHand)
-    {
-        _isLinkedEffect = true;
-        _playerHand = playerHand;
-        _playerHand.OnWeaponChanged += PlayerHandOnOnWeaponChangedEffect;
-        PlayerHandOnOnWeaponChangedEffect();
-    }
-    private void PlayerHandOnOnWeaponChangedEffect()
-    {
-
-        if (_playerHand.currentWeapon.effect)
+        protected void UpdateSprite(Sprite sprite)
         {
-            if (!_playerHand.currentWeapon.effect.uiImage)
+            if (sprite)
             {
-                Debug.Log("Weapon Effect Sprite is missing: " + _playerHand.currentWeapon.effect.name);
+                _image.sprite = sprite;
+                _image.color = Color.white;
             }
-            _image.sprite = _playerHand.currentWeapon.effect.uiImage;
-            _image.color = Color.white;
+            else SimpleUnlink();
         }
-        else SimpleUnlink();
-    }
-    #endregion
-    private void Update()
-    {
-        #region ClassSpell
-        if (linkedSpellCaster && linkedSpellCaster.spell)
+
+        protected void SimpleUnlink()
         {
-            if (linkedSpellCaster.GetState() == PassiveSlot.PassiveState.cooldown)
-            {
-                float current = linkedSpellCaster.getCooldown();
-                float max = linkedSpellCaster.getMaxCooldown();
-                UpdateCooldown(Mathf.CeilToInt(current), current / max);
-            }
-            else
-            {
-                HideCooldown();
-            }
+            _image.sprite = null;
+            _image.color = new Color(1, 1, 1, 0f);
         }
-        #endregion
-        #region Weapon
-        if (_playerHand)
-        { 
-            if (_isLinkedEffect)
-            {
-                // TODO: Error on Swapping Weapon when effect is active
-                if (_playerHand.currentWeapon)
-                {
-                    if (_playerHand.currentWeapon.effect)
-                    {
-                        if (_playerHand.effectHandler.state == EffectState.onRefreshing)
-                        {
-                            float current = _playerHand.effectHandler.cooldown;
-                            float max = _playerHand.currentWeapon.effect.cooldown;
-                            UpdateCooldown(Mathf.CeilToInt(current), current / max);
-                        }
-                    }
-                }
-            }
-            else
-            {
-                Weapon weapon = _playerHand.currentWeapon;
-                if (weapon.isOnCooldown)
-                {
-                    UpdateCooldown(Mathf.CeilToInt(weapon.currentCooldown), weapon.currentCooldown / weapon.maxCooldown);
-                }
-            }
 
-            //todo normal weapon
-
+        protected void HideCooldown()
+        {
+            UpdateCooldown(0, 0f);
         }
-        #endregion
-    }
-    private void HideCooldown()
-    {
-        UpdateCooldown(0, 0f);
-    }
 
-    public void UpdateCooldown(int seconds, float percentage)
-    {
-        _coolDownText.text = seconds > 0 ? seconds.ToString() : "";
-        _cooldownImage.fillAmount = percentage;
+        protected void UpdateCooldown(int seconds, float percentage)
+        {
+            _coolDownText.text = seconds > 0 ? seconds.ToString() : "";
+            _cooldownImage.fillAmount = percentage;
+        }
     }
 }

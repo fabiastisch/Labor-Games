@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Player;
+using UI.Scripts.UISpells;
 using UnityEngine;
 using Utils;
-using Weapons.Effects;
 
 public class UISpells : MonoBehaviour
 {
@@ -42,16 +42,17 @@ public class UISpells : MonoBehaviour
 
     private List<SpellCaster> spellCasters = new List<SpellCaster>();
 
-    [SerializeField] private List<UISpell> Abilities;
-    [SerializeField] private List<UISpell> weaponAbilities;
+    [SerializeField] private List<ClassAbilitySpell> Abilities;
+    [SerializeField] private WeaponPrimarySpell weaponPrimary;
+    [SerializeField] private WeaponEffectSpell weaponEffect;
 
     private PlayerHand _playerHand;
     private void Start()
     {
         _playerHand = Util.GetLocalPlayer().hand;
 
-        weaponAbilities[0].LinkWeapon(_playerHand);
-        weaponAbilities[1].LinkWeaponEffect(_playerHand);
+        weaponPrimary.LinkWeapon(_playerHand);
+        weaponEffect.LinkWeaponEffect(_playerHand);
 
     }
     public void AddSpellListAbilities(List<GameObject> spellList)
