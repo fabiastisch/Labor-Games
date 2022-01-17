@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UI.CombatText;
 using UnityEngine;
 using Utils;
@@ -19,6 +20,25 @@ namespace Combat
         public event Action<Character> OnDeath;
         public event Action OnHealthChanged;
 
+        #region HealthRegeneration
+        public float healthRegeneration = 1f;
+        private bool isRegenHealth = false;
+        private float healthRegenRate = 1f;
+        #endregion
+
+        public Shields shields = new Shields();
+
+        public event Action OnInvulnerableChanges;
+        private bool _invulnerable = false;
+        public bool Invulnerable
+        {
+            get => _invulnerable;
+            set
+            {
+                _invulnerable = value;
+                OnInvulnerableChanges?.Invoke();
+            }
+        }
 
 
         protected void Reset()
@@ -68,7 +88,7 @@ namespace Combat
          */
         public virtual bool TakeDamage(float amountHp, Character enemy, DamageType damageType, bool isSpell = false, bool isCrit = false)
         {
-            if(isSpell)
+            if (isSpell)
                 if (Util.GetLocalPlayer().Equals(enemy))
                     Util.GetLocalPlayer().InvokeOnPlayerHitSpell(this.gameObject);
 
@@ -88,6 +108,11 @@ namespace Combat
 
         private bool TakeDamage(float amountHp, DamageType damageType = DamageType.Magical, bool isCrit = false)
         {
+            // check Invulnerable
+            if (Invulnerable) return false;
+            // Take Damage on Shield
+            amountHp = shields.TakeDamage(amountHp);
+            // Reduce actual Health
             _currentHealth -= amountHp;
             _currentHealth = _currentHealth < 0 ? 0 : _currentHealth;
 
@@ -133,6 +158,34 @@ namespace Combat
         public int GetPercentageHpHigh()
         {
             return (int) (_currentHealth / maxHealth * 100f);
+        }
+
+        public void AddShield(Shield shield)
+        {
+            shields.Add(shield);
+        }
+        public bool HasShield()
+        {
+            return shields.HasShield();
+        }
+
+        private IEnumerator RegainHealth()
+        {
+            isRegenHealth = true;
+            while (_currentHealth < maxHealth)
+            {
+                Heal(healthRegeneration);
+                yield return new WaitForSeconds(healthRegenRate);
+            }
+            isRegenHealth = false;
+        }
+
+        protected virtual void Update()
+        {
+            if (_currentHealth < maxHealth && !isRegenHealth)
+            {
+                StartCoroutine(RegainHealth());
+            }
         }
     }
 }

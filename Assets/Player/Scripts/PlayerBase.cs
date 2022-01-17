@@ -137,8 +137,9 @@ namespace Player
             }
         }
 
-        protected virtual void Update()
+        protected override void Update()
         {
+            base.Update();
             Vector2 moveInput = playerInput.actions["Move"].ReadValue<Vector2>();
             movement.x = moveInput.x;
             movement.y = moveInput.y;
