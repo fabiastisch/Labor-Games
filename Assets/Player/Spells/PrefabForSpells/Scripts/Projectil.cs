@@ -5,6 +5,8 @@ using Utils;
 
 public class Projectil : MonoBehaviour
 {
+    [SerializeField] public GameObject self;
+    
     [SerializeField] private float speed = 20f;
     [SerializeField] private Rigidbody2D rb;
     
@@ -74,7 +76,12 @@ public class Projectil : MonoBehaviour
 
     public virtual void DestroyAfterTime()
     {
-        Destroy(gameObject);
+        Destroy(self);
+    }
+    
+    public virtual void DestroyOption()
+    {
+        Destroy(self);
     }
     
     public virtual void BaseDmgFromValueAndFactor()
@@ -93,12 +100,12 @@ public class Projectil : MonoBehaviour
     
     public virtual void EnterOption(Collider2D other)
     {
-        DestroyAfterTime();
+        DestroyOption();
     }
     
     public virtual void ExitOption(Collider2D other)
     {
-        DestroyAfterTime();
+        DestroyOption();
     }
     
     

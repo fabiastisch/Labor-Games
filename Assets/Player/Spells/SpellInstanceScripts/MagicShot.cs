@@ -7,6 +7,7 @@ using Utils;
 public class MagicShot : Spell
 {
     private List<GameObject> collection;
+    
     // public float flyDuration;
     // public float speed;
     //I cant Drag a Scene Object into here so i need to initialize it in the script
