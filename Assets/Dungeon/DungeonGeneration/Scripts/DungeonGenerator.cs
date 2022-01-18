@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Dungeon.Scripts;
 using UnityEngine;
@@ -7,6 +8,38 @@ namespace Dungeon.DungeonGeneration
 {
     public class DungeonGenerator : MonoBehaviour
     {
+        #region SingletonPattern
+        private static DungeonGenerator instance;
+
+        public static DungeonGenerator Instance
+        {
+            get
+            {
+                if (!instance)
+                {
+                    throw new Exception("DungeonGenerator Instance does not Exist");
+                }
+
+                return instance;
+            }
+        }
+
+        private void Awake()
+        {
+            if (instance == null)
+            {
+                instance = this;
+            }
+            else if (instance != this)
+            {
+                Debug.LogWarning("Instance already exist.");
+                Destroy(gameObject);
+            }
+
+            Awake2();
+        }
+        #endregion
+
         public GameObject spawn;
         public GameObject portal;
         public TilemapVisualizer tilemapVisualizer;
@@ -65,7 +98,7 @@ namespace Dungeon.DungeonGeneration
             else Debug.LogError("Generator is null, type: " + parameterSo.generatorType);
         }
 
-        private void Awake()
+        private void Awake2()
         {
             if (generateOnPlay)
             {
@@ -143,7 +176,7 @@ namespace Dungeon.DungeonGeneration
                     Instantiate(enemyConfig.enemy, Util.GetRandomPosition(rooms.GetRandomValue()));
                 }
             }
-            
+
             if (!parameterSo.enemiesSo.randomAdditive) return;
             var enemiesCount = parameterSo.enemiesSo.randomAdditiveCount;
 

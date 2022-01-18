@@ -1,7 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using Combat;
+using Dungeon;
+using Dungeon.DungeonGeneration;
 using UnityEngine;
+using Utils.SceneLoader;
 
 public class Boss : MonoBehaviour
 {
@@ -11,6 +12,11 @@ public class Boss : MonoBehaviour
     {
         _enemy = GetComponent<Enemy>();
         PlayerUICanvas.Instance.bossBar.LinkToBoss(_enemy);
+        _enemy.OnDeath += OnBossDeath;
+    }
+    private void OnBossDeath(Combat.Character obj)
+    {
+        DungeonGenerator.Instance.portal.GetComponent<Portal>().nextScene = "Hub";
     }
 
     // Update is called once per frame
