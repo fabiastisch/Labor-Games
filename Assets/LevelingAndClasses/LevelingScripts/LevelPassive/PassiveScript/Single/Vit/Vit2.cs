@@ -12,6 +12,7 @@ public class Vit2 : LevelPassive
 
     [SerializeField] private Shield shield;
     [SerializeField] private float factor = 0.15f;
+    [SerializeField] private float baseValue = 5f;
 
 
     public override void Activation(GameObject parent)
@@ -23,7 +24,13 @@ public class Vit2 : LevelPassive
             // not working, shield is 0
             //shield = new Shield(ActualStatsThatGetUsed.Instance.actualHP * factor);
 
-            shield = new Shield(5);
+            if (ActualStatsThatGetUsed.Instance.actualHP == 0)
+            {
+                shield = new Shield(baseValue);
+            }
+            else
+                shield = new Shield(ActualStatsThatGetUsed.Instance.actualHP * factor);
+            
             player.AddShield(shield);
         }
         else

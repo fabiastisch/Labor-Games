@@ -292,6 +292,7 @@ namespace Player
             isSkillOpen = skills.gameObject.activeSelf;
             if (!isSkillOpen)
             {
+                ActualStatsThatGetUsed.Instance.StatChanged();
                 playerInput.SwitchCurrentActionMap("SkillMenu");
                 skills.SetActive(true);
                 chart.UpdateRadarChart();

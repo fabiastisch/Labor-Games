@@ -9575,7 +9575,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 5155901246784218215}
-  speed: 15
+  speed: 12
 --- !u!1 &6870675635127965266
 GameObject:
   m_ObjectHideFlags: 0
@@ -9587,6 +9587,7 @@ GameObject:
   - component: {fileID: 6870675635128221242}
   - component: {fileID: 6870675635124816232}
   - component: {fileID: 6870675635125843852}
+  - component: {fileID: 7414093296744592046}
   m_Layer: 0
   m_Name: ChiBang001
   m_TagString: Untagged
@@ -9657,6 +9658,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7414093296744592046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6870675635127965266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0495b7f6f8d190345839acb87b97f834, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 0.25
+  timermax: 0.04
+  angle: 12
 --- !u!1 &8833588171934459562
 GameObject:
   m_ObjectHideFlags: 0

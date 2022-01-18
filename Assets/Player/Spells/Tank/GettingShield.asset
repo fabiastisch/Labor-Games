@@ -15,10 +15,11 @@ MonoBehaviour:
   magicProjectile: {fileID: 4360647740445468058, guid: 6670978deed755e46a15fc469cec399a, type: 3}
   name: 
   spellType: 1
-  cooldownMax: 4
-  activeTimeMax: 2
+  cooldownMax: 30
+  activeTimeMax: 15
   classType: 0
   typeForUI: 1
   abitllityIcon: {fileID: 21300000, guid: e5e04e80a89e31946bc8a7cfe3c432e3, type: 3}
-  playerPosition: {x: 0, y: 8.846802, z: 0}
+  playerPosition: {x: 0, y: 1.79, z: 0}
+  destroy: 0
   noRotation: 1

@@ -18,17 +18,21 @@ namespace Player.Spells.PrefabForSpells.Scripts
 
         public override void EnterOption(Collider2D other)
         {
-            GameObject projectile = Instantiate(hitAnimation,  other.transform.position, this.transform.rotation);
-            hitCollection.Add(projectile);
-            Invoke("DestroyAfterTime", destroyHitAfterTime );
+            if (other.gameObject.layer == 6)
+            {
+                GameObject projectile = Instantiate(hitAnimation, other.transform.position, this.transform.rotation);
+                hitCollection.Add(projectile);
+                Invoke("DestroyAfter", destroyHitAfterTime);
+                Destroy(self);
+            }
         }
 
         public override void ExitOption(Collider2D other)
         {
-            base.ExitOption(other);
+            
         }
 
-        public void DestroyAfterTime()
+        public void DestroyAfter()
         {
             if (!hitCollection.Any())
             {

@@ -12,7 +12,7 @@ public class SelfDestroy : MonoBehaviour
         timeToDestroy -= Time.deltaTime;
         if (timeToDestroy <= 0)
         {
-            Destroy(this);
+            Destroy(this.gameObject);
         }
     }
 }

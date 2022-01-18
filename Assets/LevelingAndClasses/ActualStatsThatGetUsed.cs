@@ -201,6 +201,12 @@ public class ActualStatsThatGetUsed : MonoBehaviour
 
     private void Start()
     {
+        StatManager.Instance.StatChanged += InstanceOnStatChanged;
+        StatChanged();
+    }
+
+    private void InstanceOnStatChanged()
+    {
         StatChanged();
     }
 

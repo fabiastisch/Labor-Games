@@ -9,6 +9,7 @@ public class AuraEffectSelfDestroyAfterActiveTime : Spell
     [SerializeField] private Vector3 playerPosition;
 
     private List<GameObject> collection;
+    [SerializeField] private bool destroy = true;
     
     // [SerializeField] private Animation CastAnimation;
     
@@ -57,8 +58,8 @@ public class AuraEffectSelfDestroyAfterActiveTime : Spell
             if (collection[counter] != null)
             {
                 GameObject other = collection[counter].gameObject;
-                
-                Destroy(other.gameObject);
+                if(destroy)
+                    Destroy(other.gameObject);
             }
         }
     }
