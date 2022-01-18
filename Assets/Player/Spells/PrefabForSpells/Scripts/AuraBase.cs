@@ -7,18 +7,23 @@ using Utils;
 
 public class AuraBase : MonoBehaviour
 {
-    [SerializeField] private float damage;
+    [SerializeField] private GameObject self;
+    
+    [SerializeField] public float damage;
     [SerializeField] public float baseDamage;
-    [SerializeField] private float factor = 0;
-    [SerializeField] private float scaleValue = 0;
+    [SerializeField] public float factor = 0;
+    [SerializeField] public float scaleValue = 0;
 
-    private List<Collider2D> enemyList = new List<Collider2D>();
+    public List<Collider2D> enemyList = new List<Collider2D>();
 
     [SerializeField] private float startTime;
     [SerializeField] private float resetTime;
 
     [SerializeField] public bool isSpell = true;
-    
+
+    [SerializeField] private bool selfDestroyBool = false;
+    [SerializeField] private float selfDestroyTimer = 10f;
+
     [SerializeField]
     private ActualStatsThatGetUsed.ActualValues valueFactor = ActualStatsThatGetUsed.ActualValues.actualAbillityPower;
     
@@ -33,6 +38,16 @@ public class AuraBase : MonoBehaviour
         {
             TimeOption(enemyList);
             startTime += resetTime;
+        }
+
+        if (selfDestroyBool)
+        {
+            selfDestroyTimer -= Time.deltaTime;
+            if (selfDestroyTimer <= 0f)
+            {
+                BeforeDestroy();
+                Destroy(self);
+            }
         }
     }
     
@@ -100,5 +115,10 @@ public class AuraBase : MonoBehaviour
     
     public virtual void ExitOption(Collider2D other)
     {
+    }
+
+    public virtual void BeforeDestroy()
+    {
+        
     }
 }

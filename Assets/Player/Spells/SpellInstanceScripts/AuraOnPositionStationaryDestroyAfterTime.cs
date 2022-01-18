@@ -19,6 +19,7 @@ using Utils;
         // [SerializeField] private Animation CastAnimation;
     
         private List<GameObject> collection;
+        [SerializeField] private bool destroy = true;
         public override void Activation(GameObject parent)
         {
             initializePos = Util.GetLocalPlayer().transform.position;
@@ -46,8 +47,8 @@ using Utils;
                 if (collection[counter] != null)
                 {
                     GameObject other = collection[counter].gameObject;
-                
-                    Destroy(other.gameObject);
+                    if(destroy)
+                        Destroy(other.gameObject);
                 }
             }
         }

@@ -97,12 +97,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af88b1f0b35a44b990e51df02b490c2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  self: {fileID: 7988514523116895897}
   damage: 0
   baseDamage: 0
   factor: 0
   scaleValue: 0
   startTime: 0
   resetTime: 0
+  isSpell: 1
+  selfDestroyBool: 1
+  selfDestroyTimer: 4
   valueFactor: 13
   damageType: 3
   buffList:

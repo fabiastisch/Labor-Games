@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Player.Spells.PrefabForSpells.Scripts;
 using UnityEngine;
 using Utils;
 
@@ -11,6 +12,7 @@ using Utils;
         // public float speed;
         //I cant Drag a Scene Object into here so i need to initialize it in the script
         private Vector3 initializePos;
+        [SerializeField] private bool destroy = true;
 
         [SerializeField] private int maxXDistance = 10;
         [SerializeField] private int maxYDistance = 10;
@@ -52,8 +54,8 @@ using Utils;
                 if (collection[counter] != null)
                 {
                     GameObject other = collection[counter].gameObject;
-                
-                    Destroy(other.gameObject);
+                    if(destroy)
+                        Destroy(other.gameObject);
                 }
             }
         }

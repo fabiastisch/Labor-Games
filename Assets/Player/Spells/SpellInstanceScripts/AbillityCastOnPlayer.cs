@@ -10,6 +10,7 @@ public class AbillityCastOnPlayer : Spell
     [SerializeField] private Vector3 playerPosition;
 
     private List<GameObject> collection;
+    [SerializeField] private bool destroy = true;
 
     [SerializeField] private bool noRotation;
     
@@ -67,8 +68,8 @@ public class AbillityCastOnPlayer : Spell
             if (collection[counter] != null)
             {
                 GameObject other = collection[counter].gameObject;
-                
-                Destroy(other.gameObject);
+                if(destroy)
+                    Destroy(other.gameObject);
             }
         }
     }

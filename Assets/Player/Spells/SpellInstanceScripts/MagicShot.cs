@@ -7,6 +7,7 @@ using Utils;
 public class MagicShot : Spell
 {
     private List<GameObject> collection;
+    [SerializeField] private bool destroy = true;
     
     // public float flyDuration;
     // public float speed;
@@ -41,8 +42,8 @@ public class MagicShot : Spell
             if (collection[counter] != null)
             {
                 GameObject other = collection[counter].gameObject;
-                
-                Destroy(other.gameObject);
+                if(destroy)
+                    Destroy(other.gameObject);
             }
         }
     }
