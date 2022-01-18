@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections;
 using UI.CombatText;
 using UnityEngine;
@@ -20,6 +21,8 @@ namespace Combat
         public event Action<Character> OnDeath;
         public event Action OnHealthChanged;
 
+        public List<DebuffTypeSO> currentDebuffList = new List<DebuffTypeSO> { };
+
         #region HealthRegeneration
         public float healthRegeneration = 1f;
         private bool isRegenHealth = false;
@@ -40,6 +43,22 @@ namespace Combat
             }
         }
 
+        //Updating Method
+        protected virtual void Update()
+        {
+            if (_currentHealth < maxHealth && !isRegenHealth)
+            {
+                StartCoroutine(RegainHealth());
+            }
+
+            if (currentDebuffList.Count > 0)
+            {
+                foreach (DebuffTypeSO debuff in currentDebuffList)
+                {
+                    debuff.UpdateDebuff(this);
+                }
+            }
+        }
 
         protected void Reset()
         {
@@ -137,6 +156,21 @@ namespace Combat
             OnHealthChanged?.Invoke();
         }
 
+
+        public void SetDebuff(DebuffTypeSO debuff)
+        {
+            debuff.currentlyApplied = true;
+            if (currentDebuffList.Contains(debuff)) return;
+            currentDebuffList.Add(debuff);
+        }
+
+        public void RemoveDebuff(DebuffTypeSO debuff)
+        {
+            if (!currentDebuffList.Contains(debuff)) return;
+            currentDebuffList.Remove(debuff);
+        }
+
+
         public float GetMaxHealth()
         {
             return maxHealth;
@@ -181,12 +215,5 @@ namespace Combat
             isRegenHealth = false;
         }
 
-        protected virtual void Update()
-        {
-            if (_currentHealth < maxHealth && !isRegenHealth)
-            {
-                StartCoroutine(RegainHealth());
-            }
-        }
     }
 }
