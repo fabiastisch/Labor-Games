@@ -43,10 +43,15 @@ namespace Combat
             }
         }
 
-        //Updateing Method
-        public void Update()
+        //Updating Method
+        protected virtual void Update()
         {
-            if(currentDebuffList.Count > 0)
+            if (_currentHealth < maxHealth && !isRegenHealth)
+            {
+                StartCoroutine(RegainHealth());
+            }
+
+            if (currentDebuffList.Count > 0)
             {
                 foreach (DebuffTypeSO debuff in currentDebuffList)
                 {
@@ -209,12 +214,5 @@ namespace Combat
             isRegenHealth = false;
         }
 
-        protected virtual void Update()
-        {
-            if (_currentHealth < maxHealth && !isRegenHealth)
-            {
-                StartCoroutine(RegainHealth());
-            }
-        }
     }
 }
