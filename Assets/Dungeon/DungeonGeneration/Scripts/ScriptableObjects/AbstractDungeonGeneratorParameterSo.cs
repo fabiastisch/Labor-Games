@@ -15,5 +15,9 @@ namespace Dungeon.DungeonGeneration
         public Color wallColor;
         public bool overrideDefaultColor = false;
 
+        [Header("Spawn&Portal")] public Vector2 spawnPosition;
+        public bool useSpawn;
+        public Vector2 portalPosition;
+        public bool usePortal;
     }
 }

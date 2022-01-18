@@ -33,28 +33,12 @@ namespace Dungeon.DungeonGeneration
 
 
             var last = roomsList.Last();
-            if (generator.currentPortal)
-            {
-                generator.currentPortal.transform.position = last.center;
-            }
-            else
-            {
-                //_portal = Instantiate(portal, last.center, Quaternion.identity, gameObject.transform);
-                generator.currentPortal = generator.portal;
-                generator.currentPortal.transform.position = last.center;
-            }
+
+            generator.portal.transform.position = last.center;
 
             var first = roomsList.First();
-            if (generator.currentSpawn)
-            {
-                generator.currentSpawn.transform.position = first.center;
-            }
-            else
-            {
-                //_spawn = Instantiate(spawn, first.center, Quaternion.identity, gameObject.transform);
-                generator.currentSpawn = generator.spawn;
-                generator.currentSpawn.transform.position = first.center;
-            }
+
+            generator.spawn.transform.position = first.center;
 
             // should be index 1 to (last-1)
             var roomsWithoutStartAndPortal = roomsList.GetRange(1, roomsList.Count - 2);
@@ -102,7 +86,7 @@ namespace Dungeon.DungeonGeneration
 
                 //dungeonWall._vector2Int
                 Vector3 position = (Vector3) ((Vector2) dungeonWall._vector2Int + Vector2Int.right) + Vector3.back;
-                generator.Instantiate(GlobalDungeonState.Instance.torchLeft, position);
+                generator.Instantiate(GlobalDungeonState.instance.torchLeft, position);
             }
             var rightWalls = dungeonWalls.FindAll(x => x.type == DungeonWallTypes.wallSideRight);
             rightWalls.Sort((first, second) => first._vector2Int.y.CompareTo(second._vector2Int.y));
@@ -116,7 +100,7 @@ namespace Dungeon.DungeonGeneration
 
                 //dungeonWall._vector2Int
                 Vector3 position = (Vector3) ((Vector2) dungeonWall._vector2Int) + Vector3.back;
-                generator.Instantiate(GlobalDungeonState.Instance.torchLeft, position, Quaternion.Euler(0, 180, 0));
+                generator.Instantiate(GlobalDungeonState.instance.torchLeft, position, Quaternion.Euler(0, 180, 0));
             }
 
         }
@@ -584,7 +568,7 @@ namespace Dungeon.DungeonGeneration
 
             return floor;
         }
-        
+
     }
 
     public enum Dir

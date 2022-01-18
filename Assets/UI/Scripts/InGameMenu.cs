@@ -29,6 +29,6 @@ public class InGameMenu : CasualButtons
 
     public void SaveGame()
     {
-        SaveAndLoadManager.Instance.Save();
+        SaveAndLoadManager.instance.Save();
     }
 }

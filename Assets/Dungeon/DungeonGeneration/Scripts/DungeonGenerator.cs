@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Dungeon.Scripts;
 using UnityEngine;
@@ -5,7 +6,7 @@ using Utils;
 
 namespace Dungeon.DungeonGeneration
 {
-    public class DungeonGenerator : MonoBehaviour
+    public class DungeonGenerator : GenericSingleton<DungeonGenerator>
     {
         public GameObject spawn;
         public GameObject portal;
@@ -22,8 +23,6 @@ namespace Dungeon.DungeonGeneration
         [SerializeField] private bool clearDungeonOnGenerate = true;
         [SerializeField] private bool generateOnPlay = false;
 
-        [HideInInspector] public GameObject currentPortal;
-        [HideInInspector] public GameObject currentSpawn;
         public List<GameObject> traps = new List<GameObject>();
 
 
@@ -63,22 +62,10 @@ namespace Dungeon.DungeonGeneration
                 _generator.RunProceduralGeneration();
             }
             else Debug.LogError("Generator is null, type: " + parameterSo.generatorType);
-        }
 
-        private void Awake()
-        {
-            if (generateOnPlay)
+            if (parameterSo.useSpawn)
             {
-                var state = GlobalDungeonState.Instance;
-                if (state.nextRoomState == DungeonState.BossRoom)
-                {
-                    parameterSo = state.bossRoom;
-                }
-                else parameterSo = state.levelRoom;
-
-                state.GoNext();
-
-                GenerateDungeon();
+                
             }
         }
 
@@ -143,7 +130,7 @@ namespace Dungeon.DungeonGeneration
                     Instantiate(enemyConfig.enemy, Util.GetRandomPosition(rooms.GetRandomValue()));
                 }
             }
-            
+
             if (!parameterSo.enemiesSo.randomAdditive) return;
             var enemiesCount = parameterSo.enemiesSo.randomAdditiveCount;
 
@@ -182,6 +169,25 @@ namespace Dungeon.DungeonGeneration
                 Instantiate(prefab, Util.GetRandomPosition(bounds));
             }
 
+        }
+        protected override void InternalInit()
+        {
+            if (generateOnPlay)
+            {
+                var state = GlobalDungeonState.instance;
+                if (state.nextRoomState == DungeonState.BossRoom)
+                {
+                    parameterSo = state.GetBossRoom();
+                }
+                else parameterSo = state.GetLevelRoom();
+
+                state.GoNext();
+
+                GenerateDungeon();
+            }
+        }
+        protected override void InternalOnDestroy()
+        {
         }
     }
 

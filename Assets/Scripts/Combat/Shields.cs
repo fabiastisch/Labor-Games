@@ -23,6 +23,26 @@ namespace Combat
             return amount;
         }
 
+        public float GetMaximumValue()
+        {
+            float value = 0f;
+            foreach (var shield in _shields)
+            {
+                value += shield.MaximumValue;
+            }
+            return value;
+        }
+
+        public float GetValueSum()
+        {
+            float value = 0f;
+            foreach (var shield in _shields)
+            {
+                value += shield.isActive ? shield.shieldingValue : 0f;
+            }
+            return value;
+        }
+
         public bool HasShield()
         {
             foreach (Shield shield in _shields)

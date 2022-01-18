@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb9512adc56f4517a3c3a10d38e9a370, type: 3}
-  m_Name: DungeonEnemies_
+  m_Name: Boss 1
   m_EditorClassIdentifier: 
   config:
-  - enemy: {fileID: 1654179283421339814, guid: 56f82214e2950ff41a21268e0cf2a7cb, type: 3}
-    count: 200
-  - enemy: {fileID: 528358440739031065, guid: 0b7f8edcd59654e458ec6ba0f4165487, type: 3}
-    count: 200
+  - enemy: {fileID: 1654179283421339814, guid: 4d94f6c031e26d8498d644868d62d325, type: 3}
+    count: 0
+  - enemy: {fileID: 528358440739031065, guid: 51fe6a65a947a9f4a970357305446337, type: 3}
+    count: 0
   randomAdditive: 1
-  randomAdditiveCount: 3
+  randomAdditiveCount: 1

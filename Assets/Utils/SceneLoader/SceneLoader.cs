@@ -7,41 +7,14 @@ using UnityEngine.UI;
 
 namespace Utils.SceneLoader
 {
-    public class SceneLoader : MonoBehaviour
+    public class SceneLoader : GenericSingleton<SceneLoader>
     {
-        #region SingletonPattern
-
-        private static SceneLoader instance;
-
-        public static SceneLoader Instance
+        protected override void InternalInit()
         {
-            get
-            {
-                if (!instance)
-                {
-                    throw new Exception("SceneLoader Instance does not Exist");
-                }
-
-                return instance;
-            }
         }
-
-        private void Awake()
+        protected override void InternalOnDestroy()
         {
-            if (instance == null)
-            {
-                instance = this;
-            }
-            else if (instance != this)
-            {
-                Debug.LogWarning("Instance already exist.");
-                Destroy(gameObject);
-            }
-
-            DontDestroyOnLoad(gameObject);
         }
-
-        #endregion
 
         public static event Action onReady;
         [SerializeField] private GameObject loadingScreen;

@@ -17,7 +17,8 @@ public class SpellHoldChecker : MonoBehaviour
     }
     private void Start()
     {
-        UISpells.Instance.AddSpellListAbilities(spellList);
+        Debug.Log("SpellHoldChecker start");
+        PlayerUICanvas.instance.spells.AddSpellListAbilities(spellList);
     }
 
     public void AddSpell(GameObject spellObject)

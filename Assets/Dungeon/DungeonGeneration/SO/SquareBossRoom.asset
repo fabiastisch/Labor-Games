@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d277ef15a394da490545e35b3955520, type: 3}
+  m_Name: SquareBossRoom
+  m_EditorClassIdentifier: 
+  enemiesSo: {fileID: 11400000, guid: 0852f2f180b2b3e4da68ea817c57fd25, type: 2}
+  generatorType: 1
+  startPosition: {x: 0, y: 0}
+  floorColor: {r: 0.3018868, g: 0.1495194, b: 0.2870044, a: 1}
+  wallColor: {r: 0.09546493, g: 0, b: 0.4433962, a: 1}
+  overrideDefaultColor: 1
+  spawnPosition: {x: 0, y: 0}
+  useSpawn: 0
+  portalPosition: {x: 0, y: 0}
+  usePortal: 0
+  createRectangularRoom: 1
+  with: 25
+  height: 20
+  createRoundRoom: 0
+  radius: 18.78
