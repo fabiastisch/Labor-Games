@@ -13,14 +13,16 @@ public class StatsDebuffPlayer : DebuffTypeSO
 
     public DebuffStats[] debuffList;
     public bool shouldBeProzentage = false;
+    private bool effectAppliedBefore = false;
 
     public override void UpdateDebuff(Combat.Character character)
     {
         if (currentlyApplied)
         {
             //Removing and activating debuff if already applied 
-            if (character.GetDebuff(this) != null) RemoveThisDebuff(character);
+            if (effectAppliedBefore) ResetDebuff(character);
             ActivateDebuff(character);
+            
         }
         base.UpdateDebuff(character);
     }
@@ -45,14 +47,10 @@ public class StatsDebuffPlayer : DebuffTypeSO
                 }
             }
         }
-        //If it isnt the player do nothing
-        else
-        {
-            return;
-        }
+        effectAppliedBefore = true;
     }
 
-    public override void RemoveThisDebuff(Combat.Character character)
+    public void ResetDebuff(Combat.Character character)
     {
         var myCharacter = character as Player.PlayerBase;
         if (myCharacter != null)
@@ -71,13 +69,13 @@ public class StatsDebuffPlayer : DebuffTypeSO
                     StatManager.Instance.MultiplyStat(item.statType, item.value);
                 }
             }
-            character.RemoveDebuff(this);
         }
-        //If it isnt the player do nothing
-        else
-        {
-            return;
-        }
-         
+        effectAppliedBefore = false;
+    }
+
+    public override void RemoveThisDebuff(Combat.Character character)
+    {
+        ResetDebuff(character);
+        character.RemoveDebuff(this);
     }
 }

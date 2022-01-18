@@ -719,6 +719,8 @@ MonoBehaviour:
   rb: {fileID: 0}
   movementSpeed: 4
   maxHealth: 1e+17
+  currentDebuffList: []
+  healthRegeneration: 1
   enemyName: 
   attackSpeed: 1
   attackDamage: 10
@@ -50572,6 +50574,8 @@ MonoBehaviour:
   rb: {fileID: 0}
   movementSpeed: 4
   maxHealth: 1e+17
+  currentDebuffList: []
+  healthRegeneration: 1
   enemyName: 
   attackSpeed: 1
   attackDamage: 10
@@ -53377,6 +53381,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7610018542070514180, guid: 5b200b5938c353445998557fb82e7309, type: 3}
+      propertyPath: debuff
+      value: 
+      objectReference: {fileID: 11400000, guid: 9fb4f915f96f4554e863dd385b9b9908, type: 2}
     - target: {fileID: 8548802804282458401, guid: 5b200b5938c353445998557fb82e7309, type: 3}
       propertyPath: m_Name
       value: Player
@@ -64035,6 +64043,8 @@ MonoBehaviour:
   rb: {fileID: 1822301404}
   movementSpeed: 4
   maxHealth: 100
+  currentDebuffList: []
+  healthRegeneration: 1
   enemyName: Slime
   attackSpeed: 1
   attackDamage: 10
@@ -70375,6 +70385,10 @@ PrefabInstance:
     - target: {fileID: 1654179283421339835, guid: 56f82214e2950ff41a21268e0cf2a7cb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1654179283421339839, guid: 56f82214e2950ff41a21268e0cf2a7cb, type: 3}
+      propertyPath: detectorLayerMask.m_Bits
+      value: 128
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56f82214e2950ff41a21268e0cf2a7cb, type: 3}
