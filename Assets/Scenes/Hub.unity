@@ -719,8 +719,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   movementSpeed: 4
   maxHealth: 1e+17
+  currentDebuffList: []
   healthRegeneration: 1
   enemyName: 
+  isAbleToAttack: 1
   attackSpeed: 1
   attackDamage: 10
   experience: 50
@@ -50704,8 +50706,10 @@ MonoBehaviour:
   rb: {fileID: 0}
   movementSpeed: 4
   maxHealth: 1e+17
+  currentDebuffList: []
   healthRegeneration: 1
   enemyName: 
+  isAbleToAttack: 1
   attackSpeed: 1
   attackDamage: 10
   experience: 50
@@ -53608,6 +53612,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7610018542070514180, guid: 5b200b5938c353445998557fb82e7309, type: 3}
+      propertyPath: debuff
+      value: 
+      objectReference: {fileID: 11400000, guid: 9fb4f915f96f4554e863dd385b9b9908, type: 2}
     - target: {fileID: 8548802804282458401, guid: 5b200b5938c353445998557fb82e7309, type: 3}
       propertyPath: m_Name
       value: Player
@@ -64413,8 +64421,10 @@ MonoBehaviour:
   rb: {fileID: 1822301404}
   movementSpeed: 4
   maxHealth: 100
+  currentDebuffList: []
   healthRegeneration: 1
   enemyName: Slime
+  isAbleToAttack: 1
   attackSpeed: 1
   attackDamage: 10
   experience: 50
