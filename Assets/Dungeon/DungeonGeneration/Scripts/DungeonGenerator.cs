@@ -23,8 +23,6 @@ namespace Dungeon.DungeonGeneration
         [SerializeField] private bool clearDungeonOnGenerate = true;
         [SerializeField] private bool generateOnPlay = false;
 
-        [HideInInspector] public GameObject currentPortal;
-        [HideInInspector] public GameObject currentSpawn;
         public List<GameObject> traps = new List<GameObject>();
 
 
@@ -64,6 +62,11 @@ namespace Dungeon.DungeonGeneration
                 _generator.RunProceduralGeneration();
             }
             else Debug.LogError("Generator is null, type: " + parameterSo.generatorType);
+
+            if (parameterSo.useSpawn)
+            {
+                
+            }
         }
 
         public void ActivateBonusRoom(bool active = true)
@@ -174,9 +177,9 @@ namespace Dungeon.DungeonGeneration
                 var state = GlobalDungeonState.instance;
                 if (state.nextRoomState == DungeonState.BossRoom)
                 {
-                    parameterSo = state.bossRoom;
+                    parameterSo = state.GetBossRoom();
                 }
-                else parameterSo = state.levelRoom;
+                else parameterSo = state.GetLevelRoom();
 
                 state.GoNext();
 

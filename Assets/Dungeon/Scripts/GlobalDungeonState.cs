@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Dungeon.DungeonGeneration;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -11,8 +12,8 @@ namespace Dungeon.Scripts
 
         public DungeonState nextRoomState = DungeonState.Level1;
 
-        public AbstractDungeonGeneratorParameterSo levelRoom;
-        public AbstractDungeonGeneratorParameterSo bossRoom;
+        public List<AbstractDungeonGeneratorParameterSo> levelRooms;
+        public List<AbstractDungeonGeneratorParameterSo> bossRooms;
 
         [Header("Tiles")] public TileBase floorTile;
 
@@ -44,6 +45,16 @@ namespace Dungeon.Scripts
             {
                 GoNext();
             }
+        }
+
+        public AbstractDungeonGeneratorParameterSo GetBossRoom()
+        {
+            return bossRooms.GetRandomValue();
+        }
+
+        public AbstractDungeonGeneratorParameterSo GetLevelRoom()
+        {
+            return levelRooms.GetRandomValue();
         }
         protected override void InternalInit()
         {

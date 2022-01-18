@@ -71127,6 +71127,34 @@ PrefabInstance:
       propertyPath: _dontDestroyOnLoad
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7403842611888532809, guid: 499e1302f307acd42a4422d21d7660d1, type: 3}
+      propertyPath: bossRooms.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7403842611888532809, guid: 499e1302f307acd42a4422d21d7660d1, type: 3}
+      propertyPath: levelRooms.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7403842611888532809, guid: 499e1302f307acd42a4422d21d7660d1, type: 3}
+      propertyPath: bossRooms.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: fe306a9a361d1134fb658f7cffc7cedc, type: 2}
+    - target: {fileID: 7403842611888532809, guid: 499e1302f307acd42a4422d21d7660d1, type: 3}
+      propertyPath: bossRooms.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 802b530e3ad614449a2bbb639290e3d3, type: 2}
+    - target: {fileID: 7403842611888532809, guid: 499e1302f307acd42a4422d21d7660d1, type: 3}
+      propertyPath: levelRooms.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 064a170d9e02e504cbe4868ea5024953, type: 2}
+    - target: {fileID: 7403842611888532809, guid: 499e1302f307acd42a4422d21d7660d1, type: 3}
+      propertyPath: levelRooms.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 345977d3ca2427645acbe4b5bd7c23e3, type: 2}
+    - target: {fileID: 7403842611888532809, guid: 499e1302f307acd42a4422d21d7660d1, type: 3}
+      propertyPath: levelRooms.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7403842611888532822, guid: 499e1302f307acd42a4422d21d7660d1, type: 3}
       propertyPath: m_Name
       value: GlobalDungeonState

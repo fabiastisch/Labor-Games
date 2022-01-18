@@ -29,19 +29,20 @@ namespace Dungeon.DungeonGeneration
                 floors.UnionWith(CreateRoundRoom());
             }
 
-            if (!generator.currentPortal)
-            {
-                generator.currentPortal = generator.portal;
-            }
-            
-            generator.currentPortal.transform.position = parameters.startPosition + ((parameters.radius > 3 ? parameters.radius : parameters.height)) * Vector2.up + Vector2.down;
 
-            if (!generator.currentSpawn)
+
+            if (parameters.createRoundRoom)
             {
-                generator.currentSpawn = generator.spawn;
+                generator.portal.transform.position = parameters.startPosition + ((parameters.radius > 3 ? parameters.radius : parameters.height - 1)) * Vector2.up + Vector2.down;
+
+            }
+            else
+            {
+                generator.portal.transform.position = new Vector2(parameters.startPosition.x + parameters.with * .5f, parameters.startPosition.y + parameters.height - 1);
+
             }
 
-            generator.currentSpawn.transform.position = ((Vector2) parameters.startPosition);
+            generator.spawn.transform.position = ((Vector2) (parameters.createRoundRoom ? parameters.startPosition : (new Vector2(parameters.startPosition.x + parameters.with * .5f, parameters.startPosition.y + 1))));
 
             generator.tilemapVisualizer.PaintFloorTiles(floors);
             WallGenerator.CreateWalls(floors, generator.tilemapVisualizer);
@@ -53,8 +54,8 @@ namespace Dungeon.DungeonGeneration
         {
             Enemy prefab = EnemyManager.Instance.GetEnemy("bat");
             var roomHeight = (parameters.radius > 3 ? parameters.radius : parameters.height);
-            var position = parameters.startPosition + (roomHeight/2 * Vector2.up + Vector2.down );
-            
+            var position = parameters.startPosition + (roomHeight / 2 * Vector2.up + Vector2.down);
+
             GameObject obj = generator.Instantiate(prefab.gameObject, position);
             obj.transform.localScale = Vector3.one * 10f;
             var ai = obj.GetComponent<AIPlayerDetector>();

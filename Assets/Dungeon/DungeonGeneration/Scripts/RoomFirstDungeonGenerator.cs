@@ -33,28 +33,12 @@ namespace Dungeon.DungeonGeneration
 
 
             var last = roomsList.Last();
-            if (generator.currentPortal)
-            {
-                generator.currentPortal.transform.position = last.center;
-            }
-            else
-            {
-                //_portal = Instantiate(portal, last.center, Quaternion.identity, gameObject.transform);
-                generator.currentPortal = generator.portal;
-                generator.currentPortal.transform.position = last.center;
-            }
+
+            generator.portal.transform.position = last.center;
 
             var first = roomsList.First();
-            if (generator.currentSpawn)
-            {
-                generator.currentSpawn.transform.position = first.center;
-            }
-            else
-            {
-                //_spawn = Instantiate(spawn, first.center, Quaternion.identity, gameObject.transform);
-                generator.currentSpawn = generator.spawn;
-                generator.currentSpawn.transform.position = first.center;
-            }
+
+            generator.spawn.transform.position = first.center;
 
             // should be index 1 to (last-1)
             var roomsWithoutStartAndPortal = roomsList.GetRange(1, roomsList.Count - 2);
@@ -584,7 +568,7 @@ namespace Dungeon.DungeonGeneration
 
             return floor;
         }
-        
+
     }
 
     public enum Dir
