@@ -170,6 +170,12 @@ namespace Combat
             currentDebuffList.Remove(debuff);
         }
 
+        public DebuffTypeSO GetDebuff(DebuffTypeSO debuff)
+        {
+            if (!currentDebuffList.Contains(debuff)) return null;
+            return debuff;
+        }
+
 
         public float GetMaxHealth()
         {
