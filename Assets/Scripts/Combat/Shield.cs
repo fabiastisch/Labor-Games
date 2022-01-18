@@ -10,7 +10,21 @@ namespace Combat
             set
             {
                 _value = value;
+                if (_value > MaximumValue) _value = MaximumValue;
                 isActive = value > 0;
+                OnChanges?.Invoke();
+            }
+        }
+
+        private float _maximumValue;
+        public float MaximumValue
+        {
+            get => _maximumValue;
+            set
+            {
+                _maximumValue = value;
+                if (shieldingValue > _maximumValue) shieldingValue = _maximumValue;
+                isActive = shieldingValue > 0;
                 OnChanges?.Invoke();
             }
         }
@@ -19,6 +33,12 @@ namespace Combat
 
         public Shield(float value)
         {
+            MaximumValue = value;
+            shieldingValue = value;
+        }
+        public Shield(float value, float maximumValue)
+        {
+            MaximumValue = maximumValue;
             shieldingValue = value;
         }
         /**
