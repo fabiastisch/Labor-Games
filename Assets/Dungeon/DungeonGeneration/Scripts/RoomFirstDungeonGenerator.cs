@@ -102,7 +102,7 @@ namespace Dungeon.DungeonGeneration
 
                 //dungeonWall._vector2Int
                 Vector3 position = (Vector3) ((Vector2) dungeonWall._vector2Int + Vector2Int.right) + Vector3.back;
-                generator.Instantiate(GlobalDungeonState.Instance.torchLeft, position);
+                generator.Instantiate(GlobalDungeonState.instance.torchLeft, position);
             }
             var rightWalls = dungeonWalls.FindAll(x => x.type == DungeonWallTypes.wallSideRight);
             rightWalls.Sort((first, second) => first._vector2Int.y.CompareTo(second._vector2Int.y));
@@ -116,7 +116,7 @@ namespace Dungeon.DungeonGeneration
 
                 //dungeonWall._vector2Int
                 Vector3 position = (Vector3) ((Vector2) dungeonWall._vector2Int) + Vector3.back;
-                generator.Instantiate(GlobalDungeonState.Instance.torchLeft, position, Quaternion.Euler(0, 180, 0));
+                generator.Instantiate(GlobalDungeonState.instance.torchLeft, position, Quaternion.Euler(0, 180, 0));
             }
 
         }

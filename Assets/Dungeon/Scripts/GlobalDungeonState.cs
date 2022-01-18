@@ -2,44 +2,12 @@
 using Dungeon.DungeonGeneration;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using Utils;
 
 namespace Dungeon.Scripts
 {
-    public class GlobalDungeonState : MonoBehaviour
+    public class GlobalDungeonState : GenericSingleton<GlobalDungeonState>
     {
-        #region SingletonPattern
-        private static GlobalDungeonState instance;
-
-        public static GlobalDungeonState Instance
-        {
-            get
-            {
-
-                if (!instance)
-                {
-                    Debug.LogWarning("GlobalDungeonState Instance does not Exist!");
-                    //throw new Exception("GlobalDungeonState Instance does not Exist");
-                }
-
-                return instance;
-            }
-        }
-
-        private void Awake()
-        {
-            if (instance == null)
-            {
-                instance = this;
-            }
-            else if (instance != this)
-            {
-                Debug.LogWarning("Instance already exist.");
-                Destroy(gameObject);
-            }
-
-            DontDestroyOnLoad(gameObject);
-        }
-        #endregion
 
         public DungeonState nextRoomState = DungeonState.Level1;
 
@@ -76,6 +44,12 @@ namespace Dungeon.Scripts
             {
                 GoNext();
             }
+        }
+        protected override void InternalInit()
+        {
+        }
+        protected override void InternalOnDestroy()
+        {
         }
     }
 

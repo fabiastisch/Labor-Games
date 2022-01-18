@@ -5,38 +5,6 @@ namespace Player
 {
     public class PlayerLevelManager : MonoBehaviour, ISaveable
     {
-        #region SingletonPattern
-        private static PlayerLevelManager instance;
-
-        public static PlayerLevelManager Instance
-        {
-            get
-            {
-
-                if (!instance)
-                {
-                    Debug.LogWarning("ExperienceManager Instance does not Exist!");
-                }
-
-                return instance;
-            }
-        }
-
-        private void Awake()
-        {
-            if (instance == null)
-            {
-                instance = this;
-            }
-            else if (instance != this)
-            {
-                Debug.LogWarning("Instance already exist.");
-                Destroy(gameObject);
-            }
-
-            DontDestroyOnLoad(gameObject);
-        }
-        #endregion
 
         public int currentLevel = 1;
         public int maxLevel;

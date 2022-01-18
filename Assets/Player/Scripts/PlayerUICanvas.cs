@@ -1,40 +1,15 @@
-using System;
-using UnityEngine;
+using UI.Scripts.UISpells;
+using Utils;
 
-public class PlayerUICanvas : MonoBehaviour
+public class PlayerUICanvas : GenericSingleton<PlayerUICanvas>
 {
-    #region SingletonPattern
-    private static PlayerUICanvas instance;
-
-    public static PlayerUICanvas Instance
-    {
-        get
-        {
-            if (!instance)
-            {
-                throw new Exception("PlayerUICanvas Instance does not Exist");
-            }
-
-            return instance;
-        }
-    }
-
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else if (instance != this)
-        {
-            Debug.LogWarning("Instance already exist.");
-            Destroy(gameObject);
-        }
-
-        DontDestroyOnLoad(gameObject);
-    }
-    #endregion
-
     public BossBar bossBar;
-   
+    public UISpells spells;
+
+    protected override void InternalInit()
+    {
+    }
+    protected override void InternalOnDestroy()
+    {
+    }
 }

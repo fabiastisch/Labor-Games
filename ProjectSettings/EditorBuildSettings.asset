@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TempDungeon.unity
     guid: 60c1ad8e48951704181e0c4f138d3c4c
+  - enabled: 1
+    path: Assets/Scenes/HubWithoutPlayer.unity
+    guid: 265514927e0d87849b0cf7214b2c300d
   m_configObjects: {}

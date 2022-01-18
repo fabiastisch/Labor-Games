@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Player;
@@ -8,37 +7,6 @@ namespace UI.Scripts.UISpells
 {
     public class UISpells : MonoBehaviour
     {
-        #region SingletonPattern
-        private static UISpells instance;
-
-        public static UISpells Instance
-        {
-            get
-            {
-                if (!instance)
-                {
-                    throw new Exception("UISpells Instance does not Exist");
-                }
-
-                return instance;
-            }
-        }
-
-        private void Awake()
-        {
-            if (instance == null)
-            {
-                instance = this;
-            }
-            else if (instance != this)
-            {
-                Debug.LogWarning("Instance already exist.");
-                Destroy(gameObject);
-            }
-
-            //DontDestroyOnLoad(gameObject);
-        }
-        #endregion
 
         private List<SpellCaster> spellCasters = new List<SpellCaster>();
 

@@ -11,7 +11,7 @@ namespace Dungeon
         {
             if (!other.CompareTag("Player")) return;
             //Debug.Log("OnTrigger " + other.gameObject);
-            SceneLoader.Instance.LoadSceneWithPlayer(nextScene);
+            SceneLoader.instance.LoadSceneWithPlayer(nextScene);
         }
     }
 }

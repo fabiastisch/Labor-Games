@@ -7,41 +7,14 @@ using UnityEngine;
 
 namespace Utils.SaveSystem
 {
-    public class SaveAndLoadManager : MonoBehaviour
+    public class SaveAndLoadManager : GenericSingleton<SaveAndLoadManager>
     {
-        #region SingletonPattern
-
-        private static SaveAndLoadManager instance;
-
-        public static SaveAndLoadManager Instance
+        protected override void InternalInit()
         {
-            get
-            {
-                if (!instance)
-                {
-                    throw new Exception("SaveAndLoadManager Instance does not Exist");
-                }
-
-                return instance;
-            }
         }
-
-        private void Awake()
+        protected override void InternalOnDestroy()
         {
-            if (instance == null)
-            {
-                instance = this;
-            }
-            else if (instance != this)
-            {
-                Debug.LogWarning("Instance already exist.");
-                Destroy(gameObject);
-            }
-
-            DontDestroyOnLoad(gameObject);
         }
-
-        #endregion
 
         /**
          * TODO: Add multiple files for diff classes

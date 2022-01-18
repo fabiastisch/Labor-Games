@@ -6,6 +6,7 @@ using System.Globalization;
 using Player;
 using UnityEngine;
 using UnityEngine.UI;
+using Utils;
 
 public class StatisticValue : MonoBehaviour
 {
@@ -30,10 +31,10 @@ public class StatisticValue : MonoBehaviour
     {
         stats = Statistics.Instance;
         uiStatsRadarChart.SetStatistic(stats);
-        PlayerLevelManager.Instance.OnLevelChanged += InstanceOnOnLevelChanged;
+        Util.GetLocalPlayer().GetComponent<PlayerLevelManager>().OnLevelChanged += OnLevelChanged;
     }
 
-    private void InstanceOnOnLevelChanged(int obj)
+    private void OnLevelChanged(int obj)
     {
         level = obj;
         levelPoints += 1;

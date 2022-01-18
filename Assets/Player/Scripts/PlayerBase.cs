@@ -119,7 +119,7 @@ namespace Player
             Cursor.SetCursor(cursor, Vector2.zero, CursorMode.ForceSoftware);
             playerInput.onControlsChanged += input =>
             {
-                UISpells uiSpells = UISpells.Instance;
+                UISpells uiSpells = PlayerUICanvas.instance.spells;
                 if (uiSpells) uiSpells.UpdateBindingDisplayText();
             };
         }

@@ -6,40 +6,8 @@ using Utils;
 
 namespace Dungeon.DungeonGeneration
 {
-    public class DungeonGenerator : MonoBehaviour
+    public class DungeonGenerator : GenericSingleton<DungeonGenerator>
     {
-        #region SingletonPattern
-        private static DungeonGenerator instance;
-
-        public static DungeonGenerator Instance
-        {
-            get
-            {
-                if (!instance)
-                {
-                    throw new Exception("DungeonGenerator Instance does not Exist");
-                }
-
-                return instance;
-            }
-        }
-
-        private void Awake()
-        {
-            if (instance == null)
-            {
-                instance = this;
-            }
-            else if (instance != this)
-            {
-                Debug.LogWarning("Instance already exist.");
-                Destroy(gameObject);
-            }
-
-            Awake2();
-        }
-        #endregion
-
         public GameObject spawn;
         public GameObject portal;
         public TilemapVisualizer tilemapVisualizer;
@@ -96,23 +64,6 @@ namespace Dungeon.DungeonGeneration
                 _generator.RunProceduralGeneration();
             }
             else Debug.LogError("Generator is null, type: " + parameterSo.generatorType);
-        }
-
-        private void Awake2()
-        {
-            if (generateOnPlay)
-            {
-                var state = GlobalDungeonState.Instance;
-                if (state.nextRoomState == DungeonState.BossRoom)
-                {
-                    parameterSo = state.bossRoom;
-                }
-                else parameterSo = state.levelRoom;
-
-                state.GoNext();
-
-                GenerateDungeon();
-            }
         }
 
         public void ActivateBonusRoom(bool active = true)
@@ -215,6 +166,25 @@ namespace Dungeon.DungeonGeneration
                 Instantiate(prefab, Util.GetRandomPosition(bounds));
             }
 
+        }
+        protected override void InternalInit()
+        {
+            if (generateOnPlay)
+            {
+                var state = GlobalDungeonState.instance;
+                if (state.nextRoomState == DungeonState.BossRoom)
+                {
+                    parameterSo = state.bossRoom;
+                }
+                else parameterSo = state.levelRoom;
+
+                state.GoNext();
+
+                GenerateDungeon();
+            }
+        }
+        protected override void InternalOnDestroy()
+        {
         }
     }
 
