@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eeb0eab8b4a4f2f409ca7f14abcaf8dd, type: 3}
-  m_Name: New Casual Enemy Debuff
+  m_Name: StunEnemy
   m_EditorClassIdentifier: 
   nameString: Stun
   durationTime: 2

@@ -49,7 +49,7 @@ namespace Combat
                 return;
             }
             _attackTimer = 1 / attackSpeed;
-            _playerDetector.Target.GetComponent<Character>().TakeDamage(attackDamage, this, DamageType.Physical, false);
+            if(isAbleToAttack) _playerDetector.Target.GetComponent<Character>().TakeDamage(attackDamage, this, DamageType.Physical, false);
         }
 
         protected virtual void Move()

@@ -13,6 +13,7 @@ namespace Combat
 
         protected virtual bool IsAtTarget { get; set; }
         protected float canAttack;
+        public bool isAbleToAttack = true;
         [SerializeField] public float attackSpeed = 1f;
         [SerializeField] public float attackDamage = 10f;
 

@@ -39,6 +39,7 @@ public class CasualEnemyDebuff : DebuffTypeSO
             case EnemyDebuffs.Disarm:
                 tempValue = enemy.attackDamage;
                 enemy.attackDamage = 0;
+                enemy.isAbleToAttack = false;
                 break;
             case EnemyDebuffs.Slow:
                 tempValue = enemy.movementSpeed;
@@ -55,6 +56,7 @@ public class CasualEnemyDebuff : DebuffTypeSO
                 enemy.attackDamage = 0;
                 tempValue2 = enemy.movementSpeed;
                 enemy.movementSpeed = 0;
+                enemy.isAbleToAttack = false;
                 break;
             case EnemyDebuffs.Snare:
                 tempValue = enemy.movementSpeed;
@@ -70,6 +72,7 @@ public class CasualEnemyDebuff : DebuffTypeSO
         {
             case EnemyDebuffs.Disarm:
                 enemy.attackDamage = tempValue;
+                enemy.isAbleToAttack = true;
                 break;
             case EnemyDebuffs.Slow:
                 enemy.movementSpeed = tempValue;
@@ -81,6 +84,7 @@ public class CasualEnemyDebuff : DebuffTypeSO
             case EnemyDebuffs.Stun:
                 enemy.attackDamage = tempValue;
                 enemy.movementSpeed = tempValue2;
+                enemy.isAbleToAttack = true;
                 break;
             case EnemyDebuffs.Snare:
                 enemy.movementSpeed = tempValue;
