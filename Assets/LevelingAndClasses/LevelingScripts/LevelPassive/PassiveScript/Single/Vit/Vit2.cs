@@ -6,28 +6,30 @@ using Player;
 using UnityEngine;
 using Utils;
 
-[CreateAssetMenuAttribute( menuName = "LevelPassive/Single/Vit/Shielding")]
+[CreateAssetMenuAttribute(menuName = "LevelPassive/Single/Vit/Shielding")]
 public class Vit2 : LevelPassive
 {
 
     [SerializeField] private Shield shield;
     [SerializeField] private float factor = 0.15f;
 
-    
+
     public override void Activation(GameObject parent)
     {
         PlayerBase player = Util.GetLocalPlayer();
-        
+
         if (shield == null)
         {
-            shield = new Shield(ActualStatsThatGetUsed.Instance.actualHP * factor);
-        }
-        
-        if (player.shields.HasThisShield(shield))
-            shield.RefreshShield();
-            
-        else
+            // not working, shield is 0
+            //shield = new Shield(ActualStatsThatGetUsed.Instance.actualHP * factor);
+
+            shield = new Shield(5);
             player.AddShield(shield);
+        }
+        else
+        {
+            shield.RefreshShield();
+        }
 
     }
 
@@ -38,7 +40,7 @@ public class Vit2 : LevelPassive
 
     public override void Removed(GameObject parent)
     {
-        if(Util.GetLocalPlayer().shields.HasThisShield(shield))
+        if (Util.GetLocalPlayer().shields.HasThisShield(shield))
             Util.GetLocalPlayer().shields.Remove(shield);
     }
 }

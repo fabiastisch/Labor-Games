@@ -1,4 +1,5 @@
-﻿using Utils;
+﻿using UnityEngine;
+using Utils;
 namespace UI.Scripts
 {
     public class ShieldBar : TextSlider
@@ -15,9 +16,11 @@ namespace UI.Scripts
         {
             float max = _character.shields.GetMaximumValue();
             float curr = _character.shields.GetValueSum();
+            //Debug.Log("Shieldbar: New Shield Value: " + curr + " | total: " + max);
 
             SetText(curr.ToString());
-            SetValue(curr / max);
+            float percentage = curr / max;
+            SetValue(percentage);
         }
 
     }

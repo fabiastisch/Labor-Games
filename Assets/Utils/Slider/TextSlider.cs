@@ -9,7 +9,14 @@ public class TextSlider : MonoBehaviour
 
     public void SetValue(float value)
     {
-        _slider.value = value;
+        if (float.IsInfinity(value) || float.IsNaN(value))
+        {
+            _slider.value = 0;
+        }
+        else
+        {
+            _slider.value = value;
+        }
     }
 
     public void SetText(string text)

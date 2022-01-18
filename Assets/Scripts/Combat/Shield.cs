@@ -1,11 +1,11 @@
 ﻿using System;
+using UnityEngine;
 namespace Combat
 {
     public class Shield
     {
         private float _value;
 
-        private float wasValue;
         public float shieldingValue
         {
             get => _value;
@@ -35,6 +35,7 @@ namespace Combat
 
         public Shield(float value)
         {
+            //Debug.Log("Create shield: " + value);
             MaximumValue = value;
             shieldingValue = value;
         }
@@ -53,7 +54,7 @@ namespace Combat
             if (overkill <= 0)
             {
                 shieldingValue = 0;
-                return overkill;
+                return overkill * -1; // invert so the left damage is positiv
             }
             shieldingValue -= amount;
             return 0;
@@ -61,7 +62,7 @@ namespace Combat
 
         public void RefreshShield()
         {
-            _value = wasValue;
+            shieldingValue = MaximumValue;
         }
     }
 }
