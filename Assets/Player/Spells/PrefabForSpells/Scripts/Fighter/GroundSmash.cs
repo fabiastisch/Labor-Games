@@ -7,15 +7,18 @@ using Utils;
 
 public class GroundSmash : MonoBehaviour
 {
-    public float baseDamage = 20f;
     private List<Collider2D> enemyList = new List<Collider2D>();
 
     [SerializeField] private float timer = 1;
     [SerializeField] private float timerMax = 1;
 
-    [SerializeField] private float factor;
-
-    [SerializeField] private float strength;
+    [SerializeField] private float damage;
+    [SerializeField] public float baseDamage;
+    [SerializeField] private float factor = 0;
+    [SerializeField] private float scaleValue = 0;
+    
+    [SerializeField]
+    private ActualStatsThatGetUsed.ActualValues valueFactor = ActualStatsThatGetUsed.ActualValues.actualAttack;
     
     public DamageType damageType = DamageType.Physical;
     //public GameObject impactEffect;
@@ -44,6 +47,7 @@ public class GroundSmash : MonoBehaviour
         //after Time is over do something and restart Timer
         if (timer <= 0f)
         {
+            BaseDmgToStrength();
             DoDmg();
             timer += timerMax;
         }
@@ -73,10 +77,11 @@ public class GroundSmash : MonoBehaviour
     
     private void BaseDmgToStrength()
     {
-        baseDamage = strength * factor;
-        if (baseDamage < 70)
+        scaleValue = ActualStatsThatGetUsed.Instance.ReturnValue( (int)valueFactor);
+        damage = scaleValue * factor;
+        if (damage < baseDamage)
         {
-            baseDamage = 70;
+            damage = baseDamage;
         }
     }
 }

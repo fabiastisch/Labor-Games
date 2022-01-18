@@ -86,7 +86,7 @@ public class AuraBase : MonoBehaviour
     
     public virtual void BaseDmgFromValueAndFactor()
     {
-        //scaleValue = ActualStatsThatGetUsed.Instance.ReturnValue( (int)valueFactor);
+        scaleValue = ActualStatsThatGetUsed.Instance.ReturnValue( (int)valueFactor);
         damage = scaleValue * factor;
         if (damage < baseDamage)
         {

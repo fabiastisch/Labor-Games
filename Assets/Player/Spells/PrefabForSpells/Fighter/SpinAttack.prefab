@@ -103,7 +103,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageType: 0
+  damage: 0
+  baseDamage: 10
   factor: 0.2
+  scaleValue: 0
+  valueFactor: 0
   timer: 0.25
   timerMax: 0.25
 --- !u!1 &5908698925557686220

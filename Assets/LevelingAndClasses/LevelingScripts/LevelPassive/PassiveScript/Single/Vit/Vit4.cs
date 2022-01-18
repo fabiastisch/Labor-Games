@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Utils;
 
-public class Vit4 : MonoBehaviour
+[CreateAssetMenuAttribute( menuName = "LevelPassive/Single/Vit/Invincible")]
+public class Vit4 : LevelPassive
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public override void Activation(GameObject parent)
     {
-        
+        Util.GetLocalPlayer().Invulnerable = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void BeginCooldown(GameObject parent)
     {
-        
+        Util.GetLocalPlayer().Invulnerable = false;
+    }
+
+    public override void Removed(GameObject parent)
+    {
+        Util.GetLocalPlayer().Invulnerable = false;
     }
 }

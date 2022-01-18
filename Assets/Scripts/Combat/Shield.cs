@@ -4,12 +4,15 @@ namespace Combat
     public class Shield
     {
         private float _value;
+
+        private float wasValue;
         public float shieldingValue
         {
             get => _value;
             set
             {
                 _value = value;
+                wasValue = value;
                 isActive = value > 0;
                 OnChanges?.Invoke();
             }
@@ -35,6 +38,11 @@ namespace Combat
             }
             shieldingValue -= amount;
             return 0;
+        }
+
+        public void RefreshShield()
+        {
+            _value = wasValue;
         }
     }
 }

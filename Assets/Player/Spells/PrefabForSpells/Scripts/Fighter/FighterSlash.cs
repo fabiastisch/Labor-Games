@@ -10,9 +10,13 @@ public class FighterSlash : MonoBehaviour
     public DamageType damageType = DamageType.Physical;
     private List<Collider2D> enemyList = new List<Collider2D>();
 
-    private float baseDamage = 50;
-
-    [SerializeField] private float factor;
+    [SerializeField] private float damage;
+    [SerializeField] public float baseDamage;
+    [SerializeField] private float factor = 0;
+    [SerializeField] private float scaleValue = 0;
+    
+    [SerializeField]
+    private ActualStatsThatGetUsed.ActualValues valueFactor = ActualStatsThatGetUsed.ActualValues.actualAttack;
 
     private float strength;
     
@@ -29,7 +33,7 @@ public class FighterSlash : MonoBehaviour
     private void Update()
     {
         //todo add Charisma Referenz
-        
+        BaseDmgToStrength();
         //use time do Subtract things
         timer -= Time.deltaTime;
         //after Time is over do something and restart Timer
@@ -59,6 +63,11 @@ public class FighterSlash : MonoBehaviour
 
     private void BaseDmgToStrength()
     {
-        baseDamage = strength * factor;
+        scaleValue = ActualStatsThatGetUsed.Instance.ReturnValue( (int)valueFactor);
+        damage = scaleValue * factor;
+        if (damage < baseDamage)
+        {
+            damage = baseDamage;
+        }
     }
 }

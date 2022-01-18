@@ -184,10 +184,5 @@ public class LevelPassiveCondition : MonoBehaviour
         conditionDurationTimer = conDurationTimer;
         conditionMaxTime = conMaxTime;
     }
-    
-    
-    
-    
-    
-    
+
 }

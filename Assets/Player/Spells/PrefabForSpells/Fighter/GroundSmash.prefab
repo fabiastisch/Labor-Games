@@ -60,11 +60,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9613873a13cce0745b620c7a82c14c53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 20
   timer: 0.7
   timerMax: 2
-  factor: 0
-  strength: 0
+  damage: 0
+  baseDamage: 20
+  factor: 0.2
+  scaleValue: 0.2
+  valueFactor: 0
   damageType: 0
 --- !u!1 &5900768280150119332
 GameObject:

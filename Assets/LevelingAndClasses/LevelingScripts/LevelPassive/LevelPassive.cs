@@ -30,7 +30,6 @@ public class LevelPassive : ScriptableObject
     public float activeMaxTime;
     
     public string description;
-    public float repeatingMaxTime;
 
     public float conditionTime;
     public PassiveSlot.PassiveState passiveState;

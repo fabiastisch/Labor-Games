@@ -79,7 +79,7 @@ public class Projectil : MonoBehaviour
     
     public virtual void BaseDmgFromValueAndFactor()
     {
-        //scaleValue = ActualStatsThatGetUsed.Instance.ReturnValue((int) valueFactor);
+        scaleValue = ActualStatsThatGetUsed.Instance.ReturnValue((int) valueFactor);
         damage = scaleValue * factor;
         if (damage < baseDamage)
         {

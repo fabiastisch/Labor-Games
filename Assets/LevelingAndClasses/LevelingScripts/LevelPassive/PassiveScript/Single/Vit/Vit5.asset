@@ -9,20 +9,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6672be9aec3c3bf46b020254b9466fd6, type: 3}
-  m_Name: Test2
+  m_Script: {fileID: 11500000, guid: a8e79099a8599f44fb094d42d818f3f1, type: 3}
+  m_Name: Vit5
   m_EditorClassIdentifier: 
-  name: sfsfsfsf
+  name: Reflect
   levelPassiveType: 0
-  conditionType: 4
-  classType: 1
-  typeForUI: 0
-  classPassiveIcon: {fileID: 21300000, guid: 7893bed2ae7b34d47aae2f0391c84f3a, type: 3}
+  conditionType: 6
+  classType: 6
+  typeForUI: 4
+  classPassiveIcon: {fileID: 0}
   cooldownMaxTime: 0
   hasActiveTime: 0
   activeMaxTime: 0
-  description: 
-  repeatingMaxTime: 0
+  description: Reflect Dmg
   conditionTime: 0
   passiveState: 0
-  passiveImage: {fileID: 0}
+  passiveImage: {fileID: 21300000, guid: 6c505bab86fe4dc4fa140443c73451b8, type: 3}
+  reflectionPercentage: 0.25

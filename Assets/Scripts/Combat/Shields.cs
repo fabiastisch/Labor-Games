@@ -37,6 +37,10 @@ namespace Combat
 
         public void Add(Shield shield)
         {
+            if (HasThisShield(shield))
+            {
+                shield.RefreshShield();
+            }
             _shields.Add(shield);
             shield.OnChanges += ShieldOnOnChanges;
         }
@@ -46,6 +50,16 @@ namespace Combat
             _shields.Remove(shield);
             shield.OnChanges -= ShieldOnOnChanges;
         }
+        
+        public bool HasThisShield(Shield shield)
+        {
+            if (_shields.Contains(shield))
+            {
+                return true;
+            }
+            return false;
+        }
+        
         private void ShieldOnOnChanges()
         {
             OnShieldChanges?.Invoke();
