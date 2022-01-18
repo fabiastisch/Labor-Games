@@ -13,6 +13,7 @@ namespace EquipableWeapon
         public float baseAOERange;
         public float baseRange;
         public float baseAttackcooldown;
+        public DebuffTypeSO? debuff;
 
         // Start is called before the first frame update
         void Start()
@@ -36,6 +37,7 @@ namespace EquipableWeapon
                 foreach (Collider2D enemyCollider in colliders)
                 {
                     enemyCollider.GetComponent<Enemy>()?.TakeDamage(baseDamage, player, damageType);
+                    if(debuff != null) enemyCollider.GetComponent<Enemy>()?.SetDebuff(debuff);
                 }
             }
         }
