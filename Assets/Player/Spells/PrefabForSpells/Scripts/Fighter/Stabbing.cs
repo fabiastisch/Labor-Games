@@ -10,11 +10,13 @@ public class Stabbing : MonoBehaviour
     public DamageType damageType = DamageType.Physical;
     private List<Collider2D> enemyList = new List<Collider2D>();
 
-    private float baseDamage = 50;
-
-    [SerializeField] private float factor;
-
-    private float strength;
+    [SerializeField] private float damage;
+    [SerializeField] public float baseDamage;
+    [SerializeField] private float factor = 0;
+    [SerializeField] private float scaleValue = 0;
+    
+    [SerializeField]
+    private ActualStatsThatGetUsed.ActualValues valueFactor = ActualStatsThatGetUsed.ActualValues.actualAttack;
     
     [SerializeField] 
     private float timer = 0.35f;
@@ -30,6 +32,7 @@ public class Stabbing : MonoBehaviour
         //after Time is over do something and restart Timer
         if (timer <= 0f)
         {
+            BaseDmgToStrength();
             timer += timerMax;
             Dmg();
         }
@@ -84,11 +87,11 @@ public class Stabbing : MonoBehaviour
 
     private void BaseDmgToStrength()
     {
-        baseDamage = strength * factor;
-
-        if (baseDamage < 10)
+        scaleValue = ActualStatsThatGetUsed.Instance.ReturnValue( (int)valueFactor);
+        damage = scaleValue * factor;
+        if (damage < baseDamage)
         {
-            baseDamage = 10;
+            damage = baseDamage;
         }
     }
 }

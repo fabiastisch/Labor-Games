@@ -34,11 +34,13 @@ public class LevelPassiveTime : MonoBehaviour
         }
     }
 
+    //set the Time to the MaxTime
     public void TimeReset()
     {
         timer = timerMax;
     }
 
+    //Connects the Timer
     public void SetTimer()
     {
         timeFunctionConnected = true;

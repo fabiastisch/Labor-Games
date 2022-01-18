@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57f429fee19358f49b8f6b1b20eb4c4a, type: 3}
+  m_Name: Vit4
+  m_EditorClassIdentifier: 
+  name: 
+  levelPassiveType: 1
+  conditionType: 6
+  classType: 6
+  typeForUI: 4
+  classPassiveIcon: {fileID: 0}
+  cooldownMaxTime: 12
+  hasActiveTime: 1
+  activeMaxTime: 2
+  description: Gives ImunState every 12 Seconds for 2 seconds
+  repeatingMaxTime: 0
+  conditionTime: 0
+  passiveState: 0
+  passiveImage: {fileID: 21300000, guid: 0df8fff4d82dcf44bb5e6a8b2c141a75, type: 3}

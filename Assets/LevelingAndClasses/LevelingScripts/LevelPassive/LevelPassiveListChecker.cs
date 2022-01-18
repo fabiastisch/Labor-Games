@@ -1,3 +1,4 @@
+using Combat;
 using UnityEngine;
 public class LevelPassiveListChecker : MonoBehaviour
     {
@@ -59,11 +60,13 @@ public class LevelPassiveListChecker : MonoBehaviour
             {
                 if (activTimeActivated)
                 {
+                    //HowLong is the Effect Duration
                     //use time do Subtract things
                     activeTimer -= Time.deltaTime;
                     //after Time is over do something and restart Timer
                     if (activeTimer <= 0f)
                     {
+                        //After the Duration the Cooldown
                         levelPassive.BeginCooldown(gameObject);
                         activeTimer = activeMaxTime;
                         activTimeActivated = false;
@@ -158,11 +161,13 @@ public class LevelPassiveListChecker : MonoBehaviour
             else
             {
                 levelPassive.Activation(gameObject);
+                //If it has a ActiveTime activate it
                 if (hasActiveTime)
                 {
                     activTimeActivated = true;
                 }
             }
         }
+        
     
     }

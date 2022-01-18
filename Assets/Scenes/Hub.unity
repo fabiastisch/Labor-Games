@@ -4471,7 +4471,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 21300000, guid: 772cb1db66d532b45bba4a67468be20a, type: 3}
   listFullBool: 0
-  levelPassive: {fileID: 11400000, guid: 7a6b57b4c8f35c842ac3e6d2606121d1, type: 2}
+  levelPassive: {fileID: 11400000, guid: a262521374105924386555afbebbe2fb, type: 2}
 --- !u!114 &224533848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5109,7 +5109,7 @@ Transform:
   m_Children:
   - {fileID: 1979911361}
   - {fileID: 515840004}
-  - {fileID: 1613313488}
+  - {fileID: 1804553342}
   m_Father: {fileID: 1355730584}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6728,13 +6728,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   szeneKlass: {fileID: 1979911360}
-  szene8PassiveBackground: {fileID: 1613313487}
+  szene8PassiveBackground: {fileID: 515840003}
   szeneSinglePassive: {fileID: 1824476874}
   szeneDuoPassive: {fileID: 1398013787}
   szeneTripplePassive: {fileID: 222257735}
   szenePentaPassive: {fileID: 1740012577}
   UI: {fileID: 258652875}
-  szeneStats: {fileID: 1613313487}
+  szeneStats: {fileID: 1804553341}
 --- !u!114 &373304496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9366,7 +9366,7 @@ MonoBehaviour:
   szeneTripplePassive: {fileID: 222257735}
   szenePentaPassive: {fileID: 1740012577}
   UI: {fileID: 258652875}
-  szeneStats: {fileID: 1613313487}
+  szeneStats: {fileID: 1804553341}
 --- !u!114 &476180969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10972,7 +10972,7 @@ MonoBehaviour:
   szeneTripplePassive: {fileID: 222257735}
   szenePentaPassive: {fileID: 1740012577}
   UI: {fileID: 0}
-  szeneStats: {fileID: 1613313487}
+  szeneStats: {fileID: 1804553341}
 --- !u!1 &527848391
 GameObject:
   m_ObjectHideFlags: 0
@@ -45054,7 +45054,7 @@ MonoBehaviour:
   szeneTripplePassive: {fileID: 222257735}
   szenePentaPassive: {fileID: 1740012577}
   UI: {fileID: 0}
-  szeneStats: {fileID: 1613313487}
+  szeneStats: {fileID: 1804553341}
 --- !u!114 &780322555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45652,7 +45652,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 21300000, guid: e07501ca509b13441a8eb6f17069b489, type: 3}
   listFullBool: 0
-  levelPassive: {fileID: 11400000, guid: 1277c0a44792e594f9f741ba154f1332, type: 2}
+  levelPassive: {fileID: 11400000, guid: 27b8dec9d8a4be34fa98282462e2f621, type: 2}
 --- !u!114 &805198240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47098,7 +47098,7 @@ MonoBehaviour:
   szeneTripplePassive: {fileID: 222257735}
   szenePentaPassive: {fileID: 1740012577}
   UI: {fileID: 0}
-  szeneStats: {fileID: 1613313487}
+  szeneStats: {fileID: 1804553341}
 --- !u!114 &886210010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47416,7 +47416,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 21300000, guid: 0f5560b96b400c44cab2dabc291db056, type: 3}
   listFullBool: 0
-  levelPassive: {fileID: 11400000, guid: c2c0e4992be6f7b438af76f0445f389c, type: 2}
+  levelPassive: {fileID: 11400000, guid: 06354ed3d5e00f440992ceab6338d830, type: 2}
 --- !u!114 &915836974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51223,6 +51223,7 @@ GameObject:
   - component: {fileID: 1130479711}
   - component: {fileID: 1130479713}
   - component: {fileID: 1130479714}
+  - component: {fileID: 1130479715}
   m_Layer: 0
   m_Name: Statistic
   m_TagString: Untagged
@@ -51243,11 +51244,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unlockControll: {fileID: 279637151}
-  strengthStatAmount: 80
-  vitallityStatAmount: 84
-  charismaStatAmount: 100
-  abillityStatAmount: 82
-  agillityStatAmount: 72
+  strengthStatAmount: 3
+  vitallityStatAmount: 60
+  charismaStatAmount: 4
+  abillityStatAmount: 12
+  agillityStatAmount: 1
 --- !u!4 &1130479712
 Transform:
   m_ObjectHideFlags: 0
@@ -51290,6 +51291,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: dcef8979-f65c-4dd6-896b-1c3647187244
+--- !u!114 &1130479715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130479710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4efc1e72d4d5a49428035bb266adc22e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actualAttack: 0
+  actualAbillityPower: 0
+  actualAttackspeed: 0
+  actualCharmChance: 0
+  actualCritChance: 0
+  actualCritDmgMultiplyer: 0
+  actualEvadeChance: 0
+  actualLifesteal: 0
+  actualSpellVamp: 0
+  actualMovementspeed: 0
+  actualHP: 0
+  actualStunChance: 0
+  actualOmniVamp: 0
+  actualCooldownReduction: 0
+  listOfName:
+  - {fileID: 285701342}
+  - {fileID: 272962396}
+  - {fileID: 1232970196}
+  - {fileID: 527848391}
+  - {fileID: 228356840}
+  - {fileID: 1758523326}
+  - {fileID: 1006052041}
+  - {fileID: 13126859}
+  - {fileID: 836836913}
+  - {fileID: 1811971423}
+  - {fileID: 1340760201}
+  - {fileID: 2097164757}
+  - {fileID: 514250357}
+  - {fileID: 119809815}
+  - {fileID: 1580405769}
+  - {fileID: 209561838}
+  - {fileID: 305544522}
+  - {fileID: 540462989}
 --- !u!1 &1132194959
 GameObject:
   m_ObjectHideFlags: 0
@@ -52363,7 +52409,7 @@ MonoBehaviour:
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
   unlockedSprite: {fileID: 21300000, guid: 989d4f2f28dacfb41919bcfa07fe5e46, type: 3}
   listFullBool: 0
-  levelPassive: {fileID: 0}
+  levelPassive: {fileID: 11400000, guid: 83ca542631501b3439a00db8732bc99a, type: 2}
 --- !u!114 &1180101982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59560,7 +59606,7 @@ MonoBehaviour:
   szeneTripplePassive: {fileID: 222257735}
   szenePentaPassive: {fileID: 1740012577}
   UI: {fileID: 0}
-  szeneStats: {fileID: 1613313487}
+  szeneStats: {fileID: 1804553341}
 --- !u!114 &1597034868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59745,14 +59791,13 @@ GameObject:
   - component: {fileID: 1613313491}
   - component: {fileID: 1613313490}
   - component: {fileID: 1613313489}
-  - component: {fileID: 1613313492}
   m_Layer: 0
   m_Name: StatisticWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1613313488
 RectTransform:
   m_ObjectHideFlags: 0
@@ -59760,7 +59805,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1613313487}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
@@ -59770,8 +59815,8 @@ RectTransform:
   - {fileID: 270935944}
   - {fileID: 473219761}
   - {fileID: 1811939387}
-  m_Father: {fileID: 258652876}
-  m_RootOrder: 2
+  m_Father: {fileID: 1804553342}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -59839,51 +59884,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &1613313492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1613313487}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4efc1e72d4d5a49428035bb266adc22e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actualAttack: 0
-  actualAbillityPower: 0
-  actualAttackspeed: 0
-  actualCharmChance: 0
-  actualCritChance: 0
-  actualCritDmgMultiplyer: 0
-  actualEvadeChance: 0
-  actualLifesteal: 0
-  actualSpellVamp: 0
-  actualMovementspeed: 0
-  actualHP: 0
-  actualStunChance: 0
-  actualOmniVamp: 0
-  actualCooldownReduction: 0
-  listOfName:
-  - {fileID: 285701342}
-  - {fileID: 272962396}
-  - {fileID: 1232970196}
-  - {fileID: 527848391}
-  - {fileID: 228356840}
-  - {fileID: 1758523326}
-  - {fileID: 1006052041}
-  - {fileID: 13126859}
-  - {fileID: 836836913}
-  - {fileID: 1811971423}
-  - {fileID: 1340760201}
-  - {fileID: 2097164757}
-  - {fileID: 514250357}
-  - {fileID: 119809815}
-  - {fileID: 1580405769}
-  - {fileID: 209561838}
-  - {fileID: 305544522}
-  - {fileID: 540462989}
 --- !u!1 &1614394075
 GameObject:
   m_ObjectHideFlags: 0
@@ -60197,7 +60197,7 @@ MonoBehaviour:
   szeneTripplePassive: {fileID: 222257735}
   szenePentaPassive: {fileID: 1740012577}
   UI: {fileID: 0}
-  szeneStats: {fileID: 1613313487}
+  szeneStats: {fileID: 1804553341}
 --- !u!1 &1626673860
 GameObject:
   m_ObjectHideFlags: 0
@@ -62298,7 +62298,7 @@ MonoBehaviour:
   szeneTripplePassive: {fileID: 222257735}
   szenePentaPassive: {fileID: 1740012577}
   UI: {fileID: 0}
-  szeneStats: {fileID: 1613313487}
+  szeneStats: {fileID: 1804553341}
 --- !u!1 &1740012577
 GameObject:
   m_ObjectHideFlags: 0
@@ -63964,6 +63964,37 @@ MonoBehaviour:
   unlockedSprite: {fileID: 0}
   listFullBool: 0
   levelPassive: {fileID: 0}
+--- !u!1 &1804553341
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1804553342}
+  m_Layer: 0
+  m_Name: StatisticWindowHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1804553342
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804553341}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1613313488}
+  m_Father: {fileID: 258652876}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1805182996
 GameObject:
   m_ObjectHideFlags: 0
@@ -64726,12 +64757,12 @@ MonoBehaviour:
     classAbillity3: {fileID: 11400000, guid: bee1aac5ce9384b43a7faf779be6ca7d, type: 2}
     classAbillity4: {fileID: 11400000, guid: 6f8b69793eeb2264994513e670b0da4d, type: 2}
     classAbillity5: {fileID: 11400000, guid: 76b2d596b0f007c4082452ce4caf2333, type: 2}
-    classPassive1: {fileID: 11400000, guid: 1277c0a44792e594f9f741ba154f1332, type: 2}
-    classPassive2: {fileID: 11400000, guid: 1277c0a44792e594f9f741ba154f1332, type: 2}
-    classPassive3: {fileID: 11400000, guid: 1277c0a44792e594f9f741ba154f1332, type: 2}
-    classPassive4: {fileID: 11400000, guid: 1277c0a44792e594f9f741ba154f1332, type: 2}
-    classPassive5: {fileID: 11400000, guid: 1277c0a44792e594f9f741ba154f1332, type: 2}
-    classPassive6: {fileID: 11400000, guid: 1277c0a44792e594f9f741ba154f1332, type: 2}
+    classPassive1: {fileID: 0}
+    classPassive2: {fileID: 0}
+    classPassive3: {fileID: 0}
+    classPassive4: {fileID: 0}
+    classPassive5: {fileID: 0}
+    classPassive6: {fileID: 0}
   - className: Fire Mage
     classType: 1
     classAbillity1: {fileID: 11400000, guid: 256c3a86de21a1b4c9c9dd5098987235, type: 2}
@@ -64739,12 +64770,12 @@ MonoBehaviour:
     classAbillity3: {fileID: 11400000, guid: 6f3c855d23af06447a2d5caa06548c82, type: 2}
     classAbillity4: {fileID: 11400000, guid: 2fb963daca77bec489d578d7a5090831, type: 2}
     classAbillity5: {fileID: 11400000, guid: 54548b7b2bf7a6741a0de7d3ad40bfd0, type: 2}
-    classPassive1: {fileID: 11400000, guid: c2c0e4992be6f7b438af76f0445f389c, type: 2}
-    classPassive2: {fileID: 11400000, guid: c2c0e4992be6f7b438af76f0445f389c, type: 2}
-    classPassive3: {fileID: 11400000, guid: c2c0e4992be6f7b438af76f0445f389c, type: 2}
-    classPassive4: {fileID: 11400000, guid: c2c0e4992be6f7b438af76f0445f389c, type: 2}
-    classPassive5: {fileID: 11400000, guid: c2c0e4992be6f7b438af76f0445f389c, type: 2}
-    classPassive6: {fileID: 11400000, guid: c2c0e4992be6f7b438af76f0445f389c, type: 2}
+    classPassive1: {fileID: 0}
+    classPassive2: {fileID: 0}
+    classPassive3: {fileID: 0}
+    classPassive4: {fileID: 0}
+    classPassive5: {fileID: 0}
+    classPassive6: {fileID: 0}
   - className: Tank
     classType: 0
     classAbillity1: {fileID: 11400000, guid: d13cdac6ab1ab1844ad4b115ea6381ed, type: 2}
@@ -65092,7 +65123,7 @@ MonoBehaviour:
   szeneTripplePassive: {fileID: 222257735}
   szenePentaPassive: {fileID: 1740012577}
   UI: {fileID: 0}
-  szeneStats: {fileID: 1613313487}
+  szeneStats: {fileID: 1804553341}
 --- !u!1 &1852734303
 GameObject:
   m_ObjectHideFlags: 0
@@ -65915,7 +65946,7 @@ MonoBehaviour:
   szeneTripplePassive: {fileID: 222257735}
   szenePentaPassive: {fileID: 1740012577}
   UI: {fileID: 0}
-  szeneStats: {fileID: 1613313487}
+  szeneStats: {fileID: 1804553341}
 --- !u!114 &1919255085
 MonoBehaviour:
   m_ObjectHideFlags: 0

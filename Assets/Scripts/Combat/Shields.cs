@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine;
 namespace Combat
 {
     public class Shields
@@ -7,6 +8,15 @@ namespace Combat
         private readonly List<Shield> _shields = new List<Shield>();
         public event Action OnShieldChanges;
         public event Action OnTakingDamage;
+
+        public Shields()
+        {
+            OnShieldChanges += OnShieldChangesTest;
+        }
+        private void OnShieldChangesTest()
+        {
+            //Debug.Log("New Shield Value: " + this.GetValueSum() + " | total: " + GetMaximumValue());
+        }
 
         public float TakeDamage(float amount)
         {
@@ -57,7 +67,13 @@ namespace Combat
 
         public void Add(Shield shield)
         {
+            if (HasThisShield(shield))
+            {
+                shield.RefreshShield();
+                return;
+            }
             _shields.Add(shield);
+            OnShieldChanges?.Invoke();
             shield.OnChanges += ShieldOnOnChanges;
         }
 
@@ -66,6 +82,16 @@ namespace Combat
             _shields.Remove(shield);
             shield.OnChanges -= ShieldOnOnChanges;
         }
+
+        public bool HasThisShield(Shield shield)
+        {
+            if (_shields.Contains(shield))
+            {
+                return true;
+            }
+            return false;
+        }
+
         private void ShieldOnOnChanges()
         {
             OnShieldChanges?.Invoke();

@@ -162,6 +162,7 @@ namespace Combat
 
         public void AddShield(Shield shield)
         {
+            //Debug.Log("Add Shield: " + shield.shieldingValue);
             shields.Add(shield);
         }
         public bool HasShield()

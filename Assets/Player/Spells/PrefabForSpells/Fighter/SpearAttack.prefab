@@ -38997,8 +38997,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   baseDamage: 35
-  factor: 0
-  scaleValue: 0
+  factor: 0.3
+  scaleValue: 0.3
   startTime: 0.25
   resetTime: 0.25
+  isSpell: 1
+  valueFactor: 0
   damageType: 0
