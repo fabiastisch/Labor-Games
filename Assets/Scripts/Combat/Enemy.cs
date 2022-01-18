@@ -13,10 +13,11 @@ namespace Combat
 
         protected virtual bool IsAtTarget { get; set; }
         protected float canAttack;
-        [SerializeField] protected float attackSpeed = 1f;
-        [SerializeField] protected float attackDamage = 10f;
+        public bool isAbleToAttack = true;
+        [SerializeField] public float attackSpeed = 1f;
+        [SerializeField] public float attackDamage = 10f;
 
-        [SerializeField] protected int experience = 50;
+        [SerializeField] private int experience = 50;
 
         protected override void Die(Character enemy)
         {
