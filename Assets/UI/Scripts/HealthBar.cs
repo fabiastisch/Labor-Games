@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-namespace Utils.Slider
+﻿using Utils;
+namespace UI.Scripts
 {
     public class HealthBar : TextSlider
     {
@@ -9,6 +9,7 @@ namespace Utils.Slider
         {
             _character = Util.GetLocalPlayer();
             _character.OnHealthChanged += OnHealthChanged;
+            OnHealthChanged();
         }
 
         private void OnHealthChanged()

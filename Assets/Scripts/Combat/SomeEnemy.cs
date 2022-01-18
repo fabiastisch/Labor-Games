@@ -29,7 +29,7 @@ namespace Combat
             _attackTimer = 1 / attackSpeed;
         }
 
-        private void Update()
+        protected override void Update()
         {
             base.Update();
             if (_isDead) return;

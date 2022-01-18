@@ -1,0 +1,54 @@
+﻿using System;
+using System.Collections.Generic;
+namespace Combat
+{
+    public class Shields
+    {
+        private readonly List<Shield> _shields = new List<Shield>();
+        public event Action OnShieldChanges;
+        public event Action OnTakingDamage;
+
+        public float TakeDamage(float amount)
+        {
+            bool hadShield = HasShield();
+            for (var i = _shields.Count - 1; i >= 0; i--)
+            {
+                var shield = _shields[i];
+                if (shield.isActive)
+                {
+                    amount = shield.TakeDamage(amount);
+                }
+            }
+            if (hadShield) OnTakingDamage?.Invoke();
+            return amount;
+        }
+
+        public bool HasShield()
+        {
+            foreach (Shield shield in _shields)
+            {
+                if (shield.isActive)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public void Add(Shield shield)
+        {
+            _shields.Add(shield);
+            shield.OnChanges += ShieldOnOnChanges;
+        }
+
+        public void Remove(Shield shield)
+        {
+            _shields.Remove(shield);
+            shield.OnChanges -= ShieldOnOnChanges;
+        }
+        private void ShieldOnOnChanges()
+        {
+            OnShieldChanges?.Invoke();
+        }
+    }
+}

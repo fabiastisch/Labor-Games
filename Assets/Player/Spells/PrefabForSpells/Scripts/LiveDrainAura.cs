@@ -8,6 +8,8 @@ public class LiveDrainAura : AuraBase
 {
     [SerializeField] private float maxHpFactor = 0.02f;
     [SerializeField] private float underMaxHpFactor = 50f;
+
+    [SerializeField] private bool MaxHpDmg;
     
 
     public override void TimeOption( List<Collider2D> enemyList)
@@ -37,6 +39,7 @@ public class LiveDrainAura : AuraBase
     {
         if (other.layer == 6)
         {
+            if(MaxHpDmg)
             if ((float) other.GetComponent<Enemy>().GetPercentageHpHigh() < underMaxHpFactor)
             {
                 float MaxHpDmg = other.GetComponent<Enemy>().GetMaxHealth() * maxHpFactor;
@@ -44,6 +47,7 @@ public class LiveDrainAura : AuraBase
                 //todo heal player for this Amount
                 other.GetComponent<Enemy>()?.TakeDamage(MaxHpDmg, Util.GetLocalPlayer(), damageType);
             }
+            other.GetComponent<Enemy>()?.TakeDamage(baseDamage, Util.GetLocalPlayer(), damageType);
         }
     }
 }

@@ -16,7 +16,7 @@ MonoBehaviour:
   name: 
   spellType: 1
   cooldownMax: 1
-  activeTimeMax: 5
+  activeTimeMax: 4.1
   classType: 5
   typeForUI: 1
   abitllityIcon: {fileID: 21300000, guid: 720b615702158914a841ce3354566b07, type: 3}

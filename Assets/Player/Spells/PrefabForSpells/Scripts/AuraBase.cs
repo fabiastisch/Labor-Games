@@ -8,14 +8,19 @@ using Utils;
 public class AuraBase : MonoBehaviour
 {
     [SerializeField] private float damage;
-    [SerializeField] private float baseDamage;
-    [SerializeField] private float factor;
-    [SerializeField] private float scaleValue;
+    [SerializeField] public float baseDamage;
+    [SerializeField] private float factor = 0;
+    [SerializeField] private float scaleValue = 0;
 
     private List<Collider2D> enemyList = new List<Collider2D>();
 
     [SerializeField] private float startTime;
     [SerializeField] private float resetTime;
+
+    [SerializeField] public bool isSpell = true;
+    
+    [SerializeField]
+    private ActualStatsThatGetUsed.ActualValues valueFactor = ActualStatsThatGetUsed.ActualValues.actualAbillityPower;
     
     public DamageType damageType = DamageType.Magical;
     
@@ -35,7 +40,7 @@ public class AuraBase : MonoBehaviour
     {
         if (enemy.layer == 6)
         {
-            enemy.GetComponent<Enemy>()?.TakeDamage(damage, Util.GetLocalPlayer(), damageType);
+            enemy.GetComponent<Enemy>()?.TakeDamage(damage, Util.GetLocalPlayer(), damageType, isSpell);
         }
     }
     
@@ -53,7 +58,7 @@ public class AuraBase : MonoBehaviour
                 GameObject enemy = enemyList[counter].gameObject;
                 if (enemy.layer == 6)
                 {
-                    enemy.GetComponent<Enemy>()?.TakeDamage(damage, Util.GetLocalPlayer(), damageType);
+                    enemy.GetComponent<Enemy>()?.TakeDamage(damage, Util.GetLocalPlayer(), damageType , isSpell);
                 }
             }
         }
@@ -81,6 +86,7 @@ public class AuraBase : MonoBehaviour
     
     public virtual void BaseDmgFromValueAndFactor()
     {
+        //scaleValue = ActualStatsThatGetUsed.Instance.ReturnValue( (int)valueFactor);
         damage = scaleValue * factor;
         if (damage < baseDamage)
         {

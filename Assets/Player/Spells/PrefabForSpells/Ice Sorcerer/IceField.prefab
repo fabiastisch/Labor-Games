@@ -19350,6 +19350,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7400281675282891275}
   - component: {fileID: 1898669527894028876}
+  - component: {fileID: 5204529692624950291}
   m_Layer: 0
   m_Name: BodyAndScript
   m_TagString: Untagged
@@ -19387,3 +19388,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 4.83
+--- !u!114 &5204529692624950291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7652908454026041119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 465c6451d57f0304ba5b8fcd6930f365, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  baseDamage: 10
+  factor: 0.2
+  scaleValue: 1
+  startTime: 0.25
+  resetTime: 0.25
+  valueFactor: 13
+  damageType: 4

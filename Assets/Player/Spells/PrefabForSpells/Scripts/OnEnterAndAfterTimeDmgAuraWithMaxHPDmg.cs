@@ -4,7 +4,7 @@ using Combat;
 using UnityEngine;
 using Utils;
 
-public class SuperManAura : AuraBase
+public class OnEnterAndAfterTimeDmgAuraWithMaxHPDmg : AuraBase
 {
 
     [SerializeField] private float maxHpFactor = 0.05f;

@@ -112,9 +112,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b67ae5cae1041549583620ed548fca3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
+  baseDamage: 0
+  factor: 0
+  scaleValue: 0
+  startTime: 0
+  resetTime: 0
+  isSpell: 0
+  valueFactor: 13
   damageType: 1
   maxReduction: 20
   reductionPerEnemy: 0.4
   hpPerEnemy: 2
-  timer: 1
-  timerMax: 1

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Combat;
 using UnityEngine;
 using Utils;
 
@@ -9,6 +10,8 @@ public class AbillityCastOnPlayer : Spell
     [SerializeField] private Vector3 playerPosition;
 
     private List<GameObject> collection;
+
+    [SerializeField] private bool noRotation;
     
     // [SerializeField] private Animation CastAnimation;
     
@@ -25,7 +28,11 @@ public class AbillityCastOnPlayer : Spell
     {
         GameObject player = Util.GetLocalPlayer().gameObject;
         //Debug.Log("Cast AreaAttack");
-        GameObject projectile = Instantiate(magicProjectile, player.transform.position, player.GetComponent<MouseTrack>().GetRotationToMouse());
+        GameObject projectile;
+        if(!noRotation)
+             projectile = Instantiate(magicProjectile, player.transform.position, player.GetComponent<MouseTrack>().GetRotationToMouse());
+        else
+             projectile = Instantiate(magicProjectile, player.transform.position, Quaternion.identity);
         projectile.transform.parent = Util.GetLocalPlayer().transform;
         collection.Add(projectile);
     }
