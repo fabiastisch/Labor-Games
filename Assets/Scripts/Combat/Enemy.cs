@@ -1,4 +1,5 @@
 ﻿using System;
+using Dungeon.DungeonGeneration;
 using Player;
 using UnityEngine;
 
@@ -19,12 +20,20 @@ namespace Combat
 
         [SerializeField] private int experience = 50;
 
+        protected DamageType _damageType = DamageType.Physical;
+
+        protected override void Start()
+        {
+            base.Start();
+            _damageType = DungeonGenerator.instance._dungeonDamageTyp ?? DamageType.Physical;
+        }
+
         protected override void Die(Character enemy)
         {
             base.Die(enemy);
             DropExperience(enemy);
             // TODO: Drop Loot and Exp
-            
+
         }
         private void DropExperience(Character player)
         {

@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
+using Combat;
 using Dungeon.Scripts;
 using UnityEngine;
 using Utils;
+using Random = UnityEngine.Random;
 
 namespace Dungeon.DungeonGeneration
 {
@@ -25,8 +27,13 @@ namespace Dungeon.DungeonGeneration
 
         public List<GameObject> traps = new List<GameObject>();
 
+        [Header("Color")]
+        public bool overrideConfigColor = false;
+
 
         private AbstractDungeonGenerator _generator;
+
+        public DamageType? _dungeonDamageTyp = null;
 
         private void Start()
         {
@@ -65,7 +72,7 @@ namespace Dungeon.DungeonGeneration
 
             if (parameterSo.useSpawn)
             {
-                
+
             }
         }
 
@@ -79,9 +86,20 @@ namespace Dungeon.DungeonGeneration
         public void GenerateDungeon()
         {
             if (tilemapVisualizer && clearDungeonOnGenerate) ClearDungeon();
-            if (parameterSo.overrideDefaultColor) ChangeColor();
+            if (parameterSo.overrideDefaultColor && !overrideConfigColor) ChangeColor();
+            if (overrideConfigColor) RandomColors();
             ActivateBonusRoom(false);
             RunProceduralGeneration();
+        }
+        private void RandomColors()
+        {
+            var array = Enum.GetValues(typeof(DamageType));
+            DamageType type = (DamageType) array.GetValue(Random.Range(0, array.Length - 1));
+            Color primary = ElementColoring.GetColorByDamageTyp(type);
+            _dungeonDamageTyp = type;
+            Color secondary = Color.Lerp(primary, Color.white, 0.8f);
+            tilemapVisualizer.SetColor(secondary, primary);
+            bonusRoomTileMapVis.SetColor(secondary, primary);
         }
 
         public void ClearDungeon()

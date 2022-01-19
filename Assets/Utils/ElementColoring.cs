@@ -15,6 +15,36 @@ namespace Utils
         public static Color PoisonColor = Color.green;
         public static Color MagicalColor = Color.blue;
         public static Color ShadowColor = Color.black;
+
+        public static Color GetColorByDamageTyp(DamageType type)
+        {
+            Color color = FireColor;
+            switch (type)
+            {
+                case DamageType.Fire:
+                    color = FireColor;
+                    break;
+                case DamageType.Frost:
+                    color = FrostColor;
+                    break;
+                case DamageType.Lightning:
+                    color = LigthningColor;
+                    break;
+                case DamageType.Physical:
+                    color = PhysicalColor;
+                    break;
+                case DamageType.Poison:
+                    color = PoisonColor;
+                    break;
+                case DamageType.Magical:
+                    color = MagicalColor;
+                    break;
+                case DamageType.Shadow:
+                    color = ShadowColor;
+                    break;
+            }
+            return color;
+        }
         public static void RecolorSpriteByDamagetyp(SpriteRenderer sphereSprite, DamageType type)
         {
             switch (type)
