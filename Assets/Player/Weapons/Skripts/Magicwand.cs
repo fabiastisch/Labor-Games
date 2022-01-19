@@ -35,7 +35,7 @@ namespace EquipableWeapon
             if (context.performed)
             {
                 if (!canFireAgain) return;
-
+                Attacked();
                 Utils.ElementColoring.RecolorSpriteByDamagetyp(ballRenderer, damageType);
                 GameObject ball = Instantiate(magicball, transform.position, Quaternion.identity);
                 MagicballHandler magicballHandler = ball.GetComponent<MagicballHandler>();

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-[CreateAssetMenuAttribute(menuName = "ScriptableObject/Passive/KillPassiveAoe")]
-public class PassiveCreateAoeAfterKills : LevelPassive
+[CreateAssetMenuAttribute(menuName = "ScriptableObject/Passive/KillPassiveAoeOnKill")]
+public class PassiveCreateAoeAfterKillsOnKill : LevelPassive
 {
     [SerializeField] private float killsNeeded = 10;
     [SerializeField] private float actualKills = 0;

@@ -14367,6 +14367,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9138624200431912394}
   - component: {fileID: 7092684476662432497}
+  - component: {fileID: 3694558148714495830}
   m_Layer: 0
   m_Name: BodyAndScript
   m_TagString: Untagged
@@ -14404,6 +14405,32 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1
+--- !u!114 &3694558148714495830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6380268782813311158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0762b1775a740bb9e778f95cd20ca21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  self: {fileID: 266860366510176281}
+  damage: 0
+  baseDamage: 0
+  factor: 0
+  scaleValue: 0.02
+  enemyList: []
+  startTime: 0
+  resetTime: 0
+  isSpell: 1
+  selfDestroyBool: 0
+  selfDestroyTimer: 10
+  valueFactor: 13
+  damageType: 6
+  maxHpFactor: 0.03
 --- !u!1 &6520530505783689294
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Combat;
 using Player;
@@ -39,6 +40,8 @@ namespace EquipableWeapon
         public bool isOnCooldown = false;
         public float currentCooldown = 0f;
         public float maxCooldown = 1f;
+        
+        public event Action OnAttack;
         
         public void Start()
         {
@@ -102,5 +105,10 @@ namespace EquipableWeapon
         }
 
         public abstract void Attack(InputAction.CallbackContext context, CombatStats combatStats, PlayerBase player);
+
+        public virtual void Attacked()
+        {
+            OnAttack?.Invoke();
+        }
     }
 }

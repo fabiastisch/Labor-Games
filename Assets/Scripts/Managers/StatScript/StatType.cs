@@ -27,4 +27,5 @@ public enum StatType
 	AttackspeedBonus,
 	BonusHP,
 	HpMultiplyer,
+	DmgReduction,
 }

@@ -56,7 +56,7 @@ namespace EquipableWeapon
             if (context.canceled && currentSpeed != 0)
             {
                 isheldDown = false;
-
+                Attacked();
                 ChangeSpriteColor(arrowRenderer, weaponRarity);
                 GameObject newArrow = Instantiate(arrow, gameObject.transform.position, Quaternion.identity);
                 ArrowHeandler arrowHeandler = newArrow.GetComponent<ArrowHeandler>();

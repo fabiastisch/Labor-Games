@@ -28,6 +28,7 @@ namespace EquipableWeapon
         {
             if (attackCD < Time.time)
             {
+                Attacked();
                 attackCD = Time.time + baseAttackcooldown;
                 animator.Play("SwingSwordAnimation");
                 Vector3 impactPos = transform.GetChild(0).position;
