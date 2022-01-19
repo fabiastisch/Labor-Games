@@ -19,6 +19,9 @@ public class PassiveAndSkillChecker : MonoBehaviour
     
     [Header("SpellCasterObjects")] [SerializeField]
     private List<SpellCaster> spellCasterList = new List<SpellCaster>();
+    
+    [Header("PassiveHolder")] [SerializeField]
+    private List<LevelPassiveListChecker> levelPassiveListCheckerList = new List<LevelPassiveListChecker>();
 
     public static PassiveAndSkillChecker Instance { get; private set; }
 
@@ -55,6 +58,7 @@ public class PassiveAndSkillChecker : MonoBehaviour
         }
 
         passiveList[number] = itemToAdd.passive;
+        levelPassiveListCheckerList[number].AddLevelPassive(itemToAdd.passive);
         UpdateForTypesInLists();
     }
 
@@ -93,6 +97,7 @@ public class PassiveAndSkillChecker : MonoBehaviour
     public void RemovePassive(int number)
     {
         passiveList[number] = null;
+        levelPassiveListCheckerList[number].RemovePassive();
         UpdateForTypesInLists();
     }
 
