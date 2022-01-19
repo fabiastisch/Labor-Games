@@ -27,6 +27,7 @@ namespace EquipableWeapon
         private DamageType damageType;
         private MouseTrack mouseTrack;
 
+
         private bool isEnemyHit = false;
         void Start()
         {
@@ -49,6 +50,7 @@ namespace EquipableWeapon
                 if (enemy.GetComponent<Enemy>() != null)
                 {
                     enemy.TakeDamage(damage, player, damageType);
+                    if (magicWand.baseStat != null) enemy.SetDebuff(magicWand.baseStat);
                     enemyPosition = enemy.transform.position;
                     isEnemyHit = true;
                     DestroyBall();

@@ -10,7 +10,7 @@ namespace Weapons.Effects
 {
     public class WeaponRadomizer
     {
-        private Dictionary<string, Effect[]> effects;
+        private Dictionary<string, EffectDebuffHolder> effects;
         private EffectHolder effectHolder;
 
         private DamageType[] dmgTypePool = 
@@ -40,7 +40,7 @@ namespace Weapons.Effects
 
         //Map damagetypes to stats and effects
         //Dictionary: 1. DamageType , 2. base Penetration %, 3. base Bonus Stat %, 4. Effects/Skills
-        public Dictionary<DamageType, Tuple<float, float, Effect[]>> effectPool;
+        public Dictionary<DamageType, Tuple<DebuffTypeSO, float, Effect[]>> effectPool;
 
         public EffectBonusStats GenerateEffect(WeaponRarity rarity, DamageType damageType)
         {
@@ -114,9 +114,9 @@ namespace Weapons.Effects
 
             Effect[] effects;
 
-            if (effectPool.TryGetValue(damageType, out Tuple<float, float, Effect[]> value))
+            if (effectPool.TryGetValue(damageType, out Tuple<DebuffTypeSO, float, Effect[]> value))
             {
-                float baseStat = value.Item1;
+                DebuffTypeSO baseStat = value.Item1;
                 float rareStat = value.Item2;
                 effects = value.Item3;
 
@@ -128,18 +128,16 @@ namespace Weapons.Effects
                     case 1:
                         if (Util.GetChanceBool(rareEffectsOdds[0]))
                         {
-                            return new EffectBonusStats(0f, rareStat, null);
+                            return new EffectBonusStats(null, rareStat, null);
                         }
 
                         return new EffectBonusStats(baseStat, 0f, null);
                     case 2:
-
-
                         if (Util.GetChanceBool(rareEffectsOdds[0]))
                         {
                             if (Util.GetChanceBool(rareEffectsOdds[1]))
                             {
-                                return new EffectBonusStats(0f, rareStat, effects[specialEffectIndex]); ;
+                                return new EffectBonusStats(null, rareStat, effects[specialEffectIndex]); ;
                             }
                         }
                         return new EffectBonusStats(baseStat, rareStat, null);
@@ -163,15 +161,15 @@ namespace Weapons.Effects
         private void FillPool()
         {
             effects = effectHolder.GetEffectDictionary();
-            Dictionary<DamageType, Tuple<float, float, Effect[]>> pool = new Dictionary<DamageType, Tuple<float, float, Effect[]>>
+            Dictionary<DamageType, Tuple<DebuffTypeSO, float, Effect[]>> pool = new Dictionary<DamageType, Tuple<DebuffTypeSO, float, Effect[]>>
             {
-                { DamageType.Physical, new Tuple<float, float, Effect[]>(2f, 3f, effects["physical"]) },
-                { DamageType.Magical, new Tuple<float, float, Effect[]>(2f, 3f, effects["magical"]) },
-                { DamageType.Fire, new Tuple<float, float, Effect[]>(2f, 3f, effects["fire"]) },
-                { DamageType.Lightning, new Tuple<float, float, Effect[]>(2f, 3f, effects["lightning"]) },
-                { DamageType.Poison, new Tuple<float, float, Effect[]>(2f, 3f, effects["poison"]) },
-                { DamageType.Frost, new Tuple<float, float, Effect[]>(2f, 3f, effects["frost"]) },
-                { DamageType.Shadow, new Tuple<float, float, Effect[]>(2f, 3f, effects["shadow"]) }
+                { DamageType.Physical, new Tuple<DebuffTypeSO, float, Effect[]>(effects["physical"].debuff, 3f, effects["physical"].effects) },
+                { DamageType.Magical, new Tuple<DebuffTypeSO, float, Effect[]>(effects["magical"].debuff, 3f, effects["magical"].effects) },
+                { DamageType.Fire, new Tuple<DebuffTypeSO, float, Effect[]>(effects["fire"].debuff, 3f, effects["fire"].effects) },
+                { DamageType.Lightning, new Tuple<DebuffTypeSO, float, Effect[]>(effects["lightning"].debuff, 3f, effects["lightning"].effects) },
+                { DamageType.Poison, new Tuple<DebuffTypeSO, float, Effect[]>(effects["poison"].debuff, 3f, effects["poison"].effects) },
+                { DamageType.Frost, new Tuple<DebuffTypeSO, float, Effect[]>(effects["frost"].debuff, 3f, effects["frost"].effects) },
+                { DamageType.Shadow, new Tuple<DebuffTypeSO, float, Effect[]>(effects["shadow"].debuff, 3f, effects["shadow"].effects) }
             };
 
             effectPool = pool;

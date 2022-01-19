@@ -24,7 +24,7 @@ namespace EquipableWeapon
         public bool shouldGenerateRarityDMGTyp = true;
 
         [Header("Effect & EffectStats")] public Effect? effect;
-        public float penetration;
+        public DebuffTypeSO baseStat;
         public float bonusStat;
         private EffectBonusStats weaponEffects;
 
@@ -52,7 +52,13 @@ namespace EquipableWeapon
             baseDamage *= ((float) weaponRarity / 2);
             ChangeSpriteColor(spriteRenderer, weaponRarity);
 
-            penetration *= ((float) weaponRarity / 2);
+            if(baseStat != null)
+            {
+                baseStat.durationTime *= ((float)weaponRarity / 2);
+                var burneffeckt = baseStat as HpBurning;
+                if (burneffeckt != null) burneffeckt.damagePerSecond *= ((float)weaponRarity / 2);
+            }
+
             bonusStat *= ((float) weaponRarity / 2);
             GenerateEffect();
         }
@@ -68,13 +74,21 @@ namespace EquipableWeapon
                 return;
             }
 
-            if (weaponEffects.penetration != 0) penetration = weaponEffects.penetration;
+            if (weaponEffects.baseStat != null) baseStat = weaponEffects.baseStat;
             if (weaponEffects.rareStat != 0) bonusStat = weaponEffects.rareStat;
 
             if (weaponEffects.effect != null)
             {
                 effect = weaponEffects.effect;
             }
+
+            if (baseStat != null)
+            {
+                baseStat.durationTime *= ((float)weaponRarity / 2);
+                var burneffeckt = baseStat as HpBurning;
+                if (burneffeckt != null) burneffeckt.damagePerSecond *= ((float)weaponRarity / 2);
+            }
+
         }
 
         public void ChangeSpriteColor(SpriteRenderer sprite, WeaponRarity rarity)
@@ -102,5 +116,6 @@ namespace EquipableWeapon
         }
 
         public abstract void Attack(InputAction.CallbackContext context, CombatStats combatStats, PlayerBase player);
+
     }
 }

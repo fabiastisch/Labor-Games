@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,18 +11,20 @@ namespace Weapons.Effects
     //This class contains all Weapon Effects
     public class EffectHolder : ScriptableObject
     {
-        public Effect[] fireEffects;
-        public Effect[] frostEffects;
-        public Effect[] lightningEffects;
-        public Effect[] shadowEffects;
-        public Effect[] poisonEffects;
-        public Effect[] physicalEffects;
-        public Effect[] magicalEffects;
 
 
-        public Dictionary<string, Effect[]> GetEffectDictionary()
+        public EffectDebuffHolder fireEffects;
+        public EffectDebuffHolder frostEffects;
+        public EffectDebuffHolder lightningEffects;
+        public EffectDebuffHolder shadowEffects;
+        public EffectDebuffHolder poisonEffects;
+        public EffectDebuffHolder physicalEffects;
+        public EffectDebuffHolder magicalEffects;
+
+
+        public Dictionary<string, EffectDebuffHolder> GetEffectDictionary()
         {
-            Dictionary<string, Effect[]> allEfects = new Dictionary<string, Effect[]>
+            Dictionary<string, EffectDebuffHolder> allEfects = new Dictionary<string, EffectDebuffHolder>
             {
                 {"fire", fireEffects},
                 {"frost", frostEffects},
@@ -35,6 +38,13 @@ namespace Weapons.Effects
             return allEfects;
         }
 
+    }
+
+    [Serializable]
+    public struct EffectDebuffHolder
+    {
+        public Effect[] effects;
+        public DebuffTypeSO debuff;
     }
 }
 

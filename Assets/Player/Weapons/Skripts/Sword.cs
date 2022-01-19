@@ -2,7 +2,7 @@ using Combat;
 using Player;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using Weapons.Effects;
 namespace EquipableWeapon
 {
     public class Sword : Weapon
@@ -13,7 +13,6 @@ namespace EquipableWeapon
         public float baseAOERange;
         public float baseRange;
         public float baseAttackcooldown;
-        public DebuffTypeSO? debuff;
 
         // Start is called before the first frame update
         void Start()
@@ -36,8 +35,12 @@ namespace EquipableWeapon
                 Collider2D[] colliders = Physics2D.OverlapCircleAll(impactPos, baseRange, enemyLayerMask);
                 foreach (Collider2D enemyCollider in colliders)
                 {
-                    enemyCollider.GetComponent<Enemy>()?.TakeDamage(baseDamage, player, damageType);
-                    if(debuff != null) enemyCollider.GetComponent<Enemy>()?.SetDebuff(debuff);
+                    Enemy enemy = enemyCollider.GetComponent<Enemy>();
+                    if (enemy.GetComponent<Enemy>() != null)
+                    {
+                        enemy.TakeDamage(baseDamage, player, damageType);
+                        if (baseStat != null) enemy.SetDebuff(baseStat);
+                    }
                 }
             }
         }

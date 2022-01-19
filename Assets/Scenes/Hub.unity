@@ -54014,6 +54014,10 @@ PrefabInstance:
       propertyPath: debuff
       value: 
       objectReference: {fileID: 11400000, guid: 94cbecc94df26c64fb5a7e3e99f6f7de, type: 2}
+    - target: {fileID: 7610018542070514180, guid: 5b200b5938c353445998557fb82e7309, type: 3}
+      propertyPath: shouldGenerateEffect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8548802804282458401, guid: 5b200b5938c353445998557fb82e7309, type: 3}
       propertyPath: m_Name
       value: Player

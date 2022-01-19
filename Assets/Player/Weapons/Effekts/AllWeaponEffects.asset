@@ -13,16 +13,30 @@ MonoBehaviour:
   m_Name: AllWeaponEffects
   m_EditorClassIdentifier: 
   fireEffects:
-  - {fileID: 11400000, guid: afecf640794e94d44b93cc5cbcee116e, type: 2}
+    effects:
+    - {fileID: 11400000, guid: afecf640794e94d44b93cc5cbcee116e, type: 2}
+    debuff: {fileID: 11400000, guid: 8b9eaa847c1579543b25c6ea9552ca0f, type: 2}
   frostEffects:
-  - {fileID: 11400000, guid: e13e71baa75b08c4f951f7811cd48c18, type: 2}
+    effects:
+    - {fileID: 11400000, guid: e13e71baa75b08c4f951f7811cd48c18, type: 2}
+    debuff: {fileID: 11400000, guid: 2070f0fe637d63d4bb8b8abac318b991, type: 2}
   lightningEffects:
-  - {fileID: 11400000, guid: b60e7cd3f88cf1e43b8063eef3d149e2, type: 2}
+    effects:
+    - {fileID: 11400000, guid: b60e7cd3f88cf1e43b8063eef3d149e2, type: 2}
+    debuff: {fileID: 11400000, guid: 6642312bafb1eda48b104e047c620f4a, type: 2}
   shadowEffects:
-  - {fileID: 11400000, guid: f18ebf6c1dc4de64693118fe4a0afcb9, type: 2}
+    effects:
+    - {fileID: 11400000, guid: f18ebf6c1dc4de64693118fe4a0afcb9, type: 2}
+    debuff: {fileID: 11400000, guid: 1479c96a4b50e174ea1982f8b1a1c5bf, type: 2}
   poisonEffects:
-  - {fileID: 11400000, guid: d977a02aac4133b49a28bd427a81bde2, type: 2}
+    effects:
+    - {fileID: 11400000, guid: d977a02aac4133b49a28bd427a81bde2, type: 2}
+    debuff: {fileID: 11400000, guid: 8b5ed9d1d9c8bf34b9c758afb7147e5d, type: 2}
   physicalEffects:
-  - {fileID: 11400000, guid: b36f80e32ad709b42a1bcbbdaf9225f0, type: 2}
+    effects:
+    - {fileID: 11400000, guid: b36f80e32ad709b42a1bcbbdaf9225f0, type: 2}
+    debuff: {fileID: 11400000, guid: f4f054610e187cb4590d0ebc82b63b0e, type: 2}
   magicalEffects:
-  - {fileID: 11400000, guid: 93dc0d19ec4b7304098508b2cfc1f951, type: 2}
+    effects:
+    - {fileID: 11400000, guid: 93dc0d19ec4b7304098508b2cfc1f951, type: 2}
+    debuff: {fileID: 11400000, guid: 58b388bc29ab3524c9236302a77459af, type: 2}
