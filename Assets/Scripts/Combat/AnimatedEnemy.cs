@@ -5,9 +5,9 @@ namespace Combat
 {
     public class AnimatedEnemy : SomeEnemy
     {
-        protected  string _currentState;
-        protected  Animator _animator;
-        
+        protected string _currentState;
+        protected Animator _animator;
+
         protected override void Start()
         {
             base.Start();
@@ -20,7 +20,7 @@ namespace Combat
             _animator.Play(newStateName);
             _currentState = newStateName;
         }
-        
+
         public IEnumerator PlayAndWaitAnimation(string currentAnim, Action oncomplete)
         {
             ChangeAnimationState(currentAnim);
@@ -56,7 +56,12 @@ namespace Combat
         {
             base.Die(enemy);
             StartCoroutine(PlayAndWaitAnimation("Death", () => Destroy(gameObject)));
+            Invoke(nameof(DestroySelf), 0.6f);
 
+        }
+        private void DestroySelf()
+        {
+            Destroy(gameObject);
         }
     }
 }

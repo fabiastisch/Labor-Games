@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections;
+using System.Linq;
 using UI.CombatText;
 using UnityEngine;
 using Utils;
@@ -53,7 +54,8 @@ namespace Combat
 
             if (currentDebuffList.Count > 0)
             {
-                foreach (DebuffTypeSO debuff in currentDebuffList)
+
+                foreach (DebuffTypeSO debuff in currentDebuffList.ToList())
                 {
                     debuff.UpdateDebuff(this);
                 }
