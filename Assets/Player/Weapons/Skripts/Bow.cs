@@ -60,7 +60,7 @@ namespace EquipableWeapon
                 ChangeSpriteColor(arrowRenderer, weaponRarity);
                 GameObject newArrow = Instantiate(arrow, gameObject.transform.position, Quaternion.identity);
                 ArrowHeandler arrowHeandler = newArrow.GetComponent<ArrowHeandler>();
-                arrowHeandler.setArrowStats(currentSpeed, currentDamage, true, damageType, player);
+                arrowHeandler.setArrowStats(currentSpeed, currentDamage, true, damageType, player, this);
 
                 currentDamage = 0;
                 currentSpeed = 0;

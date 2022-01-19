@@ -24,7 +24,7 @@ namespace Weapons.Effects
         public virtual void Activate(PlayerBase player) { }
         public virtual void Deactivate() { }
         public virtual void Passiv() { }
-        public virtual void ActivateOnHit() { }
+        public virtual void ActivateOnHit(Combat.Character enemy) { }
     }
 }
 

@@ -55,13 +55,6 @@ namespace Weapons.Effects
                 return;
             }
 
-            //If effect activates on basicattacks
-            if (effect.EffectTyp == EffectTyp.onHit)
-            {
-                OnHitEffect();
-                return;
-            }
-
             //If effect activates in a spezific time
             if (effect.EffectTyp == EffectTyp.passiv)
             {

@@ -16,6 +16,7 @@ namespace EquipableWeapon
         private Vector2 mouseDirection;
         private bool isFlying = false;
         private Rigidbody2D rb;
+        private Bow bow;
 
         private void Start()
         {
@@ -41,17 +42,20 @@ namespace EquipableWeapon
                 if (enemy.GetComponent<Enemy>() != null)
                 {
                     enemy.TakeDamage(damage, player, damageType);
+                    if (bow.baseStat != null) enemy.SetDebuff(bow.baseStat);
                     DestroyArrow();
                 }
             }
         }
 
-        public void setArrowStats(float speed, float damage, bool shouldfly, DamageType damageType, PlayerBase player)
+        public void setArrowStats(float speed, float damage, bool shouldfly, DamageType damageType, PlayerBase player, Bow bow)
         {
             this.speed = speed;
             this.damage = damage;
             this.damageType = damageType;
             this.player = player;
+            this.bow = bow;
+
             isFlying = shouldfly;
 
             mouseDirection = (player.GetComponent<MouseTrack>().GetMouseWorldPositon() - (Vector2)player.transform.position).normalized;
