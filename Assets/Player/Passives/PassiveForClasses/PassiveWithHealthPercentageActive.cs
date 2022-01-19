@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Player.Spells.TargetAndBuff;
 using UnityEngine;
 using Utils;
@@ -13,6 +14,10 @@ namespace Player.Passives.PassiveForClasses
 
         [SerializeField] private float hpPercentage = 0.80f;
         [SerializeField] private bool isOverPercentage = true;
+        [SerializeField] private GameObject buffObject;
+        
+        private List<GameObject> collection = new List<GameObject>();
+        
 
         /**
          * should be in normalCase false
@@ -65,6 +70,8 @@ namespace Player.Passives.PassiveForClasses
                 StatManager.Instance.AddStat(StatManager.Instance.statTypeList.list[(int) VARIABLE.typeToBuff],
                     VARIABLE.valueOfBuff);
             }
+            GameObject aoe = Instantiate(buffObject, Util.GetLocalPlayer().transform.position, Quaternion.identity);
+            collection.Add(aoe);
 
             active = true;
         }
@@ -75,6 +82,20 @@ namespace Player.Passives.PassiveForClasses
             {
                 StatManager.Instance.RemoveStat(StatManager.Instance.statTypeList.list[(int) VARIABLE.typeToBuff],
                     VARIABLE.valueOfBuff);
+            }
+            
+            if (!collection.Any())
+            {
+                return;
+            }
+   
+            for (int counter = collection.Count - 1; counter >= 0; counter--)
+            {
+                if (collection[counter] != null)
+                {
+                    GameObject other = collection[counter].gameObject;
+                    Destroy(other.gameObject);
+                }
             }
 
             active = false;
