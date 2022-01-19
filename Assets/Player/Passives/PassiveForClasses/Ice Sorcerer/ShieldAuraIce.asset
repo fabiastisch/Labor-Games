@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65624d8fbde3440886f3546156375dbf, type: 3}
+  m_Name: ShieldAuraIce
+  m_EditorClassIdentifier: 
+  name: 
+  levelPassiveType: 2
+  conditionType: 1
+  classType: 3
+  typeForUI: 0
+  classPassiveIcon: {fileID: 21300000, guid: 42655327370bc854694c638fb77d22bb, type: 3}
+  cooldownMaxTime: 0
+  hasActiveTime: 0
+  activeMaxTime: 0
+  description: 
+  conditionStillStanding: 1
+  conditionTime: 5
+  passiveState: 0
+  passiveImage: {fileID: 0}
+  aoeObject: {fileID: 4073645279676791708, guid: 673d54bb5b7d3dc41918abcf8ecc4adf, type: 3}
+  hasImportantCooldown: 0
+  invincible: 0

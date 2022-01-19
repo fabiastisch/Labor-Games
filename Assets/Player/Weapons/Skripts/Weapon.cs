@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Combat;
 using Player;
@@ -40,7 +41,7 @@ namespace EquipableWeapon
         public bool isOnCooldown = false;
         public float currentCooldown = 0f;
         public float maxCooldown = 1f;
-        
+
         public void Start()
         {
             effectGenerator = new WeaponRadomizer(effectPool);
@@ -53,11 +54,11 @@ namespace EquipableWeapon
             baseDamage *= ((float) weaponRarity / 2);
             ChangeSpriteColor(spriteRenderer, weaponRarity);
 
-            if(baseStat != null)
+            if (baseStat != null)
             {
-                baseStat.durationTime *= ((float)weaponRarity / 2);
+                baseStat.durationTime *= ((float) weaponRarity / 2);
                 var burneffeckt = baseStat as HpBurning;
-                if (burneffeckt != null) burneffeckt.damagePerSecond *= ((float)weaponRarity / 2);
+                if (burneffeckt != null) burneffeckt.damagePerSecond *= ((float) weaponRarity / 2);
             }
 
             bonusStat *= ((float) weaponRarity / 2);
@@ -66,7 +67,7 @@ namespace EquipableWeapon
 
         private void GenerateEffect()
         {
-            if (!shouldGenerateEffect)return;
+            if (!shouldGenerateEffect) return;
 
             effect = null;
             weaponEffects = effectGenerator.GenerateEffect(weaponRarity, damageType);
@@ -85,11 +86,10 @@ namespace EquipableWeapon
 
             if (baseStat != null)
             {
-                baseStat.durationTime *= ((float)weaponRarity / 2);
+                baseStat.durationTime *= ((float) weaponRarity / 2);
                 var burneffeckt = baseStat as HpBurning;
-                if (burneffeckt != null) burneffeckt.damagePerSecond *= ((float)weaponRarity / 2);
+                if (burneffeckt != null) burneffeckt.damagePerSecond *= ((float) weaponRarity / 2);
             }
-
         }
 
         public void ChangeSpriteColor(SpriteRenderer sprite, WeaponRarity rarity)
@@ -117,6 +117,5 @@ namespace EquipableWeapon
         }
 
         public abstract void Attack(InputAction.CallbackContext context, CombatStats combatStats, PlayerBase player);
-
     }
 }

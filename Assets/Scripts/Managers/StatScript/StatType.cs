@@ -18,8 +18,8 @@ public enum StatType
 	Stealth,
 	TarpAndSlowImmunity,
 	CanSpellCrit,
-	MagicDmgBoostPercentage,
-	PhyDmgBoostPercentage,
+	MagicDmgBoost,
+	PhyDmgBoost,
 	CritChanceMultiplyer,
 	CritDmgMultiplyer,
 	FullLifeDmgPercentage,
@@ -27,4 +27,5 @@ public enum StatType
 	AttackspeedBonus,
 	BonusHP,
 	HpMultiplyer,
+	DmgReduction,
 }

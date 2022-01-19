@@ -95,7 +95,7 @@ public class LevelPassiveListChecker : MonoBehaviour
             //Set Conditions
             if (levelPassive.levelPassiveType == LevelPassive.LevelPassiveType.Condition && levelPassive.conditionType != LevelPassiveCondition.LevelPassiveConditionType.None)
             {
-                condition.SetConditions(levelPassive.conditionTime, levelPassive.conditionTime);
+                condition.SetConditions(levelPassive.conditionTime, levelPassive.conditionTime, levelPassive.conditionStillStanding);
                 condition.SetConditionType(levelPassive.conditionType);
             }
             else

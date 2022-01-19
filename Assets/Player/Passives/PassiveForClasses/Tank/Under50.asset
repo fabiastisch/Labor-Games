@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7a2f2521f42409ea7e3e139f87a0a5b, type: 3}
+  m_Name: Under50
+  m_EditorClassIdentifier: 
+  name: 
+  levelPassiveType: 2
+  conditionType: 7
+  classType: 0
+  typeForUI: 0
+  classPassiveIcon: {fileID: 21300000, guid: 7f3f16b3f2e330643bf5883ee18d013d, type: 3}
+  cooldownMaxTime: 0
+  hasActiveTime: 0
+  activeMaxTime: 0
+  description: 
+  conditionStillStanding: 0
+  conditionTime: 0
+  passiveState: 0
+  passiveImage: {fileID: 0}
+  buffList:
+  - typeToBuff: 19
+    valueOfBuff: 200
+    valueForFactorReferenz: 0
+    factor: 0
+  - typeToBuff: 24
+    valueOfBuff: 3
+    valueForFactorReferenz: 0
+    factor: 0
+  - typeToBuff: 5
+    valueOfBuff: 20
+    valueForFactorReferenz: 0
+    factor: 0
+  hpPercentage: 0.5
+  isOverPercentage: 0
+  buffObject: {fileID: 2497421202368434018, guid: 3f68ea02e223d1141b9c7a7f3ffc4c2d, type: 3}
+  active: 0

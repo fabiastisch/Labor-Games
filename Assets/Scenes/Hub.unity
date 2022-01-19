@@ -51551,11 +51551,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unlockControll: {fileID: 279637151}
-  strengthStatAmount: 3
-  vitallityStatAmount: 60
-  charismaStatAmount: 4
-  abillityStatAmount: 12
-  agillityStatAmount: 1
+  strengthStatAmount: 100
+  vitallityStatAmount: 100
+  charismaStatAmount: 99
+  abillityStatAmount: 97
+  agillityStatAmount: 98
 --- !u!4 &1130479712
 Transform:
   m_ObjectHideFlags: 0
@@ -51587,21 +51587,37 @@ MonoBehaviour:
   levelUp:
   - typeToBuff: 0
     valueOfBuff: 2
+    valueForFactorReferenz: 0
+    factor: 0.1
   - typeToBuff: 1
     valueOfBuff: 2
+    valueForFactorReferenz: 0
+    factor: 0.1
   - typeToBuff: 2
     valueOfBuff: 0.05
+    valueForFactorReferenz: 0
+    factor: 0.1
   - typeToBuff: 8
     valueOfBuff: 5
+    valueForFactorReferenz: 0
+    factor: 0.1
   startList:
   - typeToBuff: 0
     valueOfBuff: 10
+    valueForFactorReferenz: 0
+    factor: 0.1
   - typeToBuff: 1
     valueOfBuff: 10
+    valueForFactorReferenz: 0
+    factor: 0.1
   - typeToBuff: 2
     valueOfBuff: 1
+    valueForFactorReferenz: 0
+    factor: 0.1
   - typeToBuff: 8
     valueOfBuff: 100
+    valueForFactorReferenz: 0
+    factor: 0.1
   stats: {fileID: 1130479711}
 --- !u!114 &1130479714
 MonoBehaviour:
@@ -65433,12 +65449,12 @@ MonoBehaviour:
     classAbillity3: {fileID: 11400000, guid: bee1aac5ce9384b43a7faf779be6ca7d, type: 2}
     classAbillity4: {fileID: 11400000, guid: 6f8b69793eeb2264994513e670b0da4d, type: 2}
     classAbillity5: {fileID: 11400000, guid: 76b2d596b0f007c4082452ce4caf2333, type: 2}
-    classPassive1: {fileID: 0}
-    classPassive2: {fileID: 0}
-    classPassive3: {fileID: 0}
-    classPassive4: {fileID: 0}
-    classPassive5: {fileID: 0}
-    classPassive6: {fileID: 0}
+    classPassive1: {fileID: 11400000, guid: ee41913cd8584fe44b4b43b596bcfb8f, type: 2}
+    classPassive2: {fileID: 11400000, guid: 1775df82ffa167a43b69c8bfd0615de9, type: 2}
+    classPassive3: {fileID: 11400000, guid: 56f1c81ba48ffe94dbd57e5aff2525f8, type: 2}
+    classPassive4: {fileID: 11400000, guid: 56ab952fd8dfee7439ea726e171d5f2b, type: 2}
+    classPassive5: {fileID: 11400000, guid: ad2ec1e53ac48794c9f52d921315d4cc, type: 2}
+    classPassive6: {fileID: 11400000, guid: 78e4a9d63ff07a84a8ac72d7ea2b1d80, type: 2}
   - className: Fire Mage
     classType: 1
     classAbillity1: {fileID: 11400000, guid: 256c3a86de21a1b4c9c9dd5098987235, type: 2}
@@ -65449,9 +65465,9 @@ MonoBehaviour:
     classPassive1: {fileID: 0}
     classPassive2: {fileID: 0}
     classPassive3: {fileID: 0}
-    classPassive4: {fileID: 0}
-    classPassive5: {fileID: 0}
-    classPassive6: {fileID: 0}
+    classPassive4: {fileID: 11400000, guid: 7df7b695d4a19f34ca6539e5380a3df4, type: 2}
+    classPassive5: {fileID: 11400000, guid: f069b9854031b0b4e9538b10cb5fe8c3, type: 2}
+    classPassive6: {fileID: 11400000, guid: f14207f0a1aa1484096eed06d5265222, type: 2}
   - className: Tank
     classType: 0
     classAbillity1: {fileID: 11400000, guid: d13cdac6ab1ab1844ad4b115ea6381ed, type: 2}
@@ -65459,12 +65475,12 @@ MonoBehaviour:
     classAbillity3: {fileID: 11400000, guid: 0f5f74e08e836a844bad761712a925a9, type: 2}
     classAbillity4: {fileID: 11400000, guid: 3ebaa44b53c3ea14f89ecc9504781b52, type: 2}
     classAbillity5: {fileID: 11400000, guid: 2d608782808908c4bad849b98e729b26, type: 2}
-    classPassive1: {fileID: 0}
-    classPassive2: {fileID: 0}
-    classPassive3: {fileID: 0}
-    classPassive4: {fileID: 0}
-    classPassive5: {fileID: 0}
-    classPassive6: {fileID: 0}
+    classPassive1: {fileID: 11400000, guid: 3df34c004ad7e8f43848b67e910ce411, type: 2}
+    classPassive2: {fileID: 11400000, guid: 463b78470b21668478d188b50144ff51, type: 2}
+    classPassive3: {fileID: 11400000, guid: 82d99c13f4e25d747b94b26e64fbdf24, type: 2}
+    classPassive4: {fileID: 11400000, guid: a431e411b3215ba428accd995708bb90, type: 2}
+    classPassive5: {fileID: 11400000, guid: a778c138ecf34794681c9ff03b30daee, type: 2}
+    classPassive6: {fileID: 11400000, guid: 010cc91116cb55e41bb5d54f4de25870, type: 2}
   - className: Shadow Mage
     classType: 4
     classAbillity1: {fileID: 11400000, guid: a620a494f5d06a84fa9680715dc065ba, type: 2}
@@ -65472,11 +65488,11 @@ MonoBehaviour:
     classAbillity3: {fileID: 11400000, guid: 115b4d1066862084aab26db520eb696d, type: 2}
     classAbillity4: {fileID: 11400000, guid: 5d67fac0f5fa49e498b44cd75287cc9c, type: 2}
     classAbillity5: {fileID: 11400000, guid: aa059d63c6a780c4ab0b5534243754c2, type: 2}
-    classPassive1: {fileID: 0}
-    classPassive2: {fileID: 0}
-    classPassive3: {fileID: 0}
-    classPassive4: {fileID: 0}
-    classPassive5: {fileID: 0}
+    classPassive1: {fileID: 11400000, guid: fdd11cabae32c024e8a983f3c7184322, type: 2}
+    classPassive2: {fileID: 11400000, guid: cf27fd8976cd6d64fa014c7dc3e13652, type: 2}
+    classPassive3: {fileID: 11400000, guid: 3f13da00a80ea2f4eb1ccee81313f869, type: 2}
+    classPassive4: {fileID: 11400000, guid: 3e93ba4d1af784d4692d14265cf0bfbc, type: 2}
+    classPassive5: {fileID: 11400000, guid: aca8c3beeec8f794e956cea9f5b29dbd, type: 2}
     classPassive6: {fileID: 0}
   - className: Ice Sorcerer
     classType: 3
@@ -65485,12 +65501,12 @@ MonoBehaviour:
     classAbillity3: {fileID: 11400000, guid: e11459433ac769b45baeb2f5fc894b26, type: 2}
     classAbillity4: {fileID: 11400000, guid: 32c6d9200dcea1d49b83dc94831e051b, type: 2}
     classAbillity5: {fileID: 11400000, guid: da98bdf21df4f4346988a497c282372d, type: 2}
-    classPassive1: {fileID: 0}
+    classPassive1: {fileID: 11400000, guid: 43aa9b6bbbce9a14f9a8d885820195fc, type: 2}
     classPassive2: {fileID: 0}
     classPassive3: {fileID: 0}
-    classPassive4: {fileID: 0}
-    classPassive5: {fileID: 0}
-    classPassive6: {fileID: 0}
+    classPassive4: {fileID: 11400000, guid: 9b751d55400ddee47b169227ddeb97e6, type: 2}
+    classPassive5: {fileID: 11400000, guid: 2a44a8a547ae45948b62043a9fa42b32, type: 2}
+    classPassive6: {fileID: 11400000, guid: 392d706688ee03b48b68ada69e059bd4, type: 2}
   - className: Shaman
     classType: 5
     classAbillity1: {fileID: 11400000, guid: 74f6cdbddb63c3440b7e55e524a153b4, type: 2}
@@ -65498,12 +65514,12 @@ MonoBehaviour:
     classAbillity3: {fileID: 11400000, guid: 6f53fdc6d3a05fe4d9cf1c886e0d81dc, type: 2}
     classAbillity4: {fileID: 11400000, guid: 28b3bef872269bd45bd43203d80d2f68, type: 2}
     classAbillity5: {fileID: 11400000, guid: 0494c346b47370843b4f70091d98471e, type: 2}
-    classPassive1: {fileID: 0}
-    classPassive2: {fileID: 0}
-    classPassive3: {fileID: 0}
-    classPassive4: {fileID: 0}
-    classPassive5: {fileID: 0}
-    classPassive6: {fileID: 0}
+    classPassive1: {fileID: 11400000, guid: 3003ce9610b30274ba55546debbea4a8, type: 2}
+    classPassive2: {fileID: 11400000, guid: ca07d7b58f1cdf6468e22667ec8e39d9, type: 2}
+    classPassive3: {fileID: 11400000, guid: daf48c19535850e449e6133084da4f3d, type: 2}
+    classPassive4: {fileID: 11400000, guid: a6ecfb458374a004085d39ab604a991c, type: 2}
+    classPassive5: {fileID: 11400000, guid: ca6b2271646f871459ade7a7524a2253, type: 2}
+    classPassive6: {fileID: 11400000, guid: e43021cca27b8dc48be5e4cf96848916, type: 2}
   className: {fileID: 1952260826}
   classAbillitySlot1: {fileID: 1977715957}
   classAbillitySlot2: {fileID: 1120563993}
@@ -65565,7 +65581,14 @@ MonoBehaviour:
   - {fileID: 1852734305}
   - {fileID: 1445715285}
   - {fileID: 301324393}
-  levelPassiveListCheckerList: []
+  levelPassiveListCheckerList:
+  - {fileID: 1717917821}
+  - {fileID: 303423159}
+  - {fileID: 1637117105}
+  - {fileID: 2088294121}
+  - {fileID: 1263002232}
+  - {fileID: 292943445}
+  - {fileID: 1898800883}
 --- !u!1 &1847048988
 GameObject:
   m_ObjectHideFlags: 0

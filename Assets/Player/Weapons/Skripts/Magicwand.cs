@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Utils;
 
 namespace EquipableWeapon
 {
@@ -35,7 +36,7 @@ namespace EquipableWeapon
             if (context.performed)
             {
                 if (!canFireAgain) return;
-
+                Util.GetLocalPlayer().Attacked();
                 Utils.ElementColoring.RecolorSpriteByDamagetyp(ballRenderer, damageType);
                 GameObject ball = Instantiate(magicball, transform.position, Quaternion.identity);
                 MagicballHandler magicballHandler = ball.GetComponent<MagicballHandler>();

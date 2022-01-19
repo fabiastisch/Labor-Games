@@ -1,7 +1,4 @@
 using UnityEngine;
-
-
-[CreateAssetMenuAttribute(menuName = "ScriptableObject/Passive")]
 public class Passive : ScriptableObject
 {
    //Basic Class for Passives

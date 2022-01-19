@@ -102,7 +102,6 @@ public class ClassSlot : MonoBehaviour, IDropHandler
         }
         else if (passive != null)
         {
-            passive.Removed(gameObject);
             PassiveAndSkillChecker.Instance.RemovePassive(number);
         }
         

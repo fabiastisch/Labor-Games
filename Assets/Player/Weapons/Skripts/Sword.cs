@@ -2,6 +2,7 @@ using Combat;
 using Player;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Utils;
 using Weapons.Effects;
 namespace EquipableWeapon
 {
@@ -27,6 +28,7 @@ namespace EquipableWeapon
         {
             if (attackCD < Time.time)
             {
+                Util.GetLocalPlayer().Attacked();
                 attackCD = Time.time + baseAttackcooldown;
                 animator.Play("SwingSwordAnimation");
                 Vector3 impactPos = transform.GetChild(0).position;

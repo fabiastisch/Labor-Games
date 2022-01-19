@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 736cb37baf22432faff654ed42d23167, type: 3}
+  m_Name: KillGivesShield
+  m_EditorClassIdentifier: 
+  name: 
+  levelPassiveType: 2
+  conditionType: 2
+  classType: 2
+  typeForUI: 0
+  classPassiveIcon: {fileID: 21300000, guid: 1f9c2eeb30a92c04eb46fb8e7cedb47e, type: 3}
+  cooldownMaxTime: 0
+  hasActiveTime: 0
+  activeMaxTime: 0
+  description: 
+  conditionStillStanding: 0
+  conditionTime: 0
+  passiveState: 0
+  passiveImage: {fileID: 0}
+  maxShield: 250
+  baseShield: 5
+  maxHpFactor: 0.01

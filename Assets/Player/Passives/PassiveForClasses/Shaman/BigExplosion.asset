@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65624d8fbde3440886f3546156375dbf, type: 3}
+  m_Name: BigExplosion
+  m_EditorClassIdentifier: 
+  name: 
+  levelPassiveType: 2
+  conditionType: 1
+  classType: 5
+  typeForUI: 0
+  classPassiveIcon: {fileID: 21300000, guid: f87d8c7a0a2cdd64993d4a6981aad737, type: 3}
+  cooldownMaxTime: 0
+  hasActiveTime: 0
+  activeMaxTime: 0
+  description: 
+  conditionStillStanding: 1
+  conditionTime: 15
+  passiveState: 0
+  passiveImage: {fileID: 0}
+  aoeObject: {fileID: 6086473168010120232, guid: 52311408b95ddb34182f7539a166fbfa, type: 3}
+  hasImportantCooldown: 0
+  invincible: 0

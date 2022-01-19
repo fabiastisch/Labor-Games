@@ -4932,12 +4932,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 465c6451d57f0304ba5b8fcd6930f365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  self: {fileID: 0}
   damage: 0
   baseDamage: 35
   factor: 0.4
   scaleValue: 0
+  enemyList: []
   startTime: 3
   resetTime: 0.3
+  isSpell: 1
+  selfDestroyBool: 0
+  selfDestroyTimer: 10
   valueFactor: 13
   damageType: 5
 --- !u!1 &3754052025991340373
@@ -9733,12 +9738,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 465c6451d57f0304ba5b8fcd6930f365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  self: {fileID: 0}
   damage: 0
   baseDamage: 35
   factor: 0.4
   scaleValue: 0
+  enemyList: []
   startTime: 3
   resetTime: 0.3
+  isSpell: 1
+  selfDestroyBool: 0
+  selfDestroyTimer: 10
   valueFactor: 13
   damageType: 5
 --- !u!1 &3754052025991343341
@@ -9750,7 +9760,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3754052025991224329}
-  - component: {fileID: 663646859581557151}
   m_Layer: 0
   m_Name: 01
   m_TagString: Untagged
@@ -9774,26 +9783,6 @@ Transform:
   m_Father: {fileID: 2504922378856430644}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &663646859581557151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3754052025991343341}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 465c6451d57f0304ba5b8fcd6930f365, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 0
-  baseDamage: 35
-  factor: 0.4
-  scaleValue: 0
-  startTime: 3
-  resetTime: 0.3
-  valueFactor: 13
-  damageType: 5
 --- !u!1 &3754052025991343737
 GameObject:
   m_ObjectHideFlags: 0
@@ -14873,12 +14862,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 465c6451d57f0304ba5b8fcd6930f365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  self: {fileID: 0}
   damage: 0
   baseDamage: 35
   factor: 0.4
   scaleValue: 0
+  enemyList: []
   startTime: 3
   resetTime: 0.3
+  isSpell: 1
+  selfDestroyBool: 0
+  selfDestroyTimer: 10
   valueFactor: 13
   damageType: 5
 --- !u!1 &3754052025991504737
@@ -19830,12 +19824,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 465c6451d57f0304ba5b8fcd6930f365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  self: {fileID: 0}
   damage: 0
   baseDamage: 35
   factor: 0.4
   scaleValue: 0
+  enemyList: []
   startTime: 3
   resetTime: 0.3
+  isSpell: 1
+  selfDestroyBool: 0
+  selfDestroyTimer: 10
   valueFactor: 13
   damageType: 5
 --- !u!1 &3754052025991512335
@@ -24613,12 +24612,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 465c6451d57f0304ba5b8fcd6930f365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  self: {fileID: 0}
   damage: 0
   baseDamage: 35
   factor: 0.4
   scaleValue: 0
+  enemyList: []
   startTime: 3
   resetTime: 0.3
+  isSpell: 1
+  selfDestroyBool: 0
+  selfDestroyTimer: 10
   valueFactor: 13
   damageType: 5
 --- !u!1 &3754052025991516139
@@ -29414,12 +29418,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 465c6451d57f0304ba5b8fcd6930f365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  self: {fileID: 0}
   damage: 0
   baseDamage: 35
   factor: 0.4
   scaleValue: 0
+  enemyList: []
   startTime: 3
   resetTime: 0.3
+  isSpell: 1
+  selfDestroyBool: 0
+  selfDestroyTimer: 10
   valueFactor: 13
   damageType: 5
 --- !u!1 &3754052025991522231
@@ -29469,12 +29478,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 465c6451d57f0304ba5b8fcd6930f365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  self: {fileID: 0}
   damage: 0
   baseDamage: 35
   factor: 0.4
   scaleValue: 0
+  enemyList: []
   startTime: 3
   resetTime: 0.3
+  isSpell: 1
+  selfDestroyBool: 0
+  selfDestroyTimer: 10
   valueFactor: 13
   damageType: 5
 --- !u!1 &3754052025991534005
@@ -34426,12 +34440,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 465c6451d57f0304ba5b8fcd6930f365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  self: {fileID: 0}
   damage: 0
   baseDamage: 35
   factor: 0.4
   scaleValue: 0
+  enemyList: []
   startTime: 3
   resetTime: 0.3
+  isSpell: 1
+  selfDestroyBool: 0
+  selfDestroyTimer: 10
   valueFactor: 13
   damageType: 5
 --- !u!1 &3754052025991537465
@@ -39401,12 +39420,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 465c6451d57f0304ba5b8fcd6930f365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  self: {fileID: 0}
   damage: 0
   baseDamage: 35
   factor: 0.4
   scaleValue: 0
+  enemyList: []
   startTime: 3
   resetTime: 0.3
+  isSpell: 1
+  selfDestroyBool: 0
+  selfDestroyTimer: 10
   valueFactor: 13
   damageType: 5
 --- !u!1 &3754052025991557339
@@ -39473,12 +39497,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 465c6451d57f0304ba5b8fcd6930f365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  self: {fileID: 0}
   damage: 0
   baseDamage: 35
   factor: 0.4
   scaleValue: 0
+  enemyList: []
   startTime: 3
   resetTime: 0.3
+  isSpell: 1
+  selfDestroyBool: 0
+  selfDestroyTimer: 10
   valueFactor: 13
   damageType: 5
 --- !u!1 &8690573115902774878
@@ -39491,6 +39520,7 @@ GameObject:
   m_Component:
   - component: {fileID: 321442005979755336}
   - component: {fileID: 7010271231160569738}
+  - component: {fileID: 3473657410254532516}
   m_Layer: 0
   m_Name: BodyAndScript
   m_TagString: Untagged
@@ -39528,3 +39558,28 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 6.54
+--- !u!114 &3473657410254532516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8690573115902774878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 465c6451d57f0304ba5b8fcd6930f365, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  self: {fileID: 0}
+  damage: 0
+  baseDamage: 35
+  factor: 0.4
+  scaleValue: 0
+  enemyList: []
+  startTime: 3
+  resetTime: 0.3
+  isSpell: 1
+  selfDestroyBool: 0
+  selfDestroyTimer: 10
+  valueFactor: 13
+  damageType: 5
