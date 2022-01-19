@@ -20,7 +20,7 @@ namespace Combat
 
         protected bool _isDead = false;
 
-        protected override bool IsAtTarget => _playerDetector.DirectionToTarget.magnitude < attackRange;
+        protected override bool IsAtTarget => _playerDetector.DirectionToTarget?.magnitude < attackRange;
 
         protected override void Start()
         {
@@ -49,17 +49,20 @@ namespace Combat
                 return;
             }
             _attackTimer = 1 / attackSpeed;
-            if(isAbleToAttack) _playerDetector.Target.GetComponent<Character>().TakeDamage(attackDamage, this, DamageType.Physical, false);
+            if (isAbleToAttack) _playerDetector.Target.GetComponent<Character>().TakeDamage(attackDamage, this, DamageType.Physical, false);
         }
 
         protected virtual void Move()
         {
             //Debug.Log("Move");
             var directionToTarget = _playerDetector.DirectionToTarget;
-            ChangeSpriteDirection(directionToTarget.x);
-            float step = movementSpeed * Time.deltaTime;
-            transform.position =
-                Vector2.MoveTowards(transform.position, _playerDetector.Target.transform.position, step);
+            if (directionToTarget != null)
+            {
+                ChangeSpriteDirection(directionToTarget.Value.x);
+                float step = movementSpeed * Time.deltaTime;
+                transform.position =
+                    Vector2.MoveTowards(transform.position, _playerDetector.Target.transform.position, step);
+            }
         }
 
         private void OnDrawGizmos()
