@@ -37,8 +37,8 @@ namespace Utils.SceneLoader
         {
             if (!isLoading)
             {
-                StartCoroutine(LoadAsyncScene(sceneName, gObject));
                 isLoading = true;
+                StartCoroutine(LoadAsyncScene(sceneName, gObject));
             }
         }
 

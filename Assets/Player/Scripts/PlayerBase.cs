@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Combat;
 using UI.Scripts;
 using UI.Scripts.UISpells;
@@ -6,6 +7,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Utils;
 using Utils.SaveSystem;
+using Utils.SceneLoader;
 
 namespace Player
 {
@@ -67,6 +69,8 @@ namespace Player
         private bool isInteractableFound = false;
         private Collider2D[] interactColliders;
 
+        private bool isInDeathRecap = false;
+
         #region PlayerState
         private State state;
 
@@ -122,6 +126,21 @@ namespace Player
                 UISpells uiSpells = PlayerUICanvas.instance.spells;
                 if (uiSpells) uiSpells.UpdateBindingDisplayText();
             };
+            OnDeath += character =>
+            {
+                if (!isInDeathRecap) StartCoroutine(DeathRecap());
+            };
+            isInDeathRecap = false;
+        }
+        IEnumerator DeathRecap()
+        {
+            if (!isInDeathRecap)
+            {
+                isInDeathRecap = true;
+                PlayerUICanvas.instance.centeredText.SetText("You died.");
+                yield return new WaitForSeconds(1.5f);
+                SceneLoader.instance.LoadSceneWithPlayer("HubWithoutPlayer");
+            }
         }
 
         protected virtual void FixedUpdate()
