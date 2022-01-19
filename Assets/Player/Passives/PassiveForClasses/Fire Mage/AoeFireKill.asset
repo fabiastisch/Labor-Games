@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: AoeFireKill
   m_EditorClassIdentifier: 
   name: 
-  levelPassiveType: 0
-  conditionType: 9
-  classType: 6
-  typeForUI: 4
+  levelPassiveType: 2
+  conditionType: 2
+  classType: 1
+  typeForUI: 0
   classPassiveIcon: {fileID: 21300000, guid: 44d40807bcb053842a7a26716376638f, type: 3}
   cooldownMaxTime: 0
   hasActiveTime: 0
@@ -29,4 +29,3 @@ MonoBehaviour:
   killsNeeded: 15
   actualKills: 0
   aoeObject: {fileID: 8938023202228273478, guid: 9a625c20d70ed7b4fb2e500234b24598, type: 3}
-  collection: []
