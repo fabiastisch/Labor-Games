@@ -75,6 +75,7 @@ public class StatsDebuffPlayer : DebuffTypeSO
 
     public override void RemoveThisDebuff(Combat.Character character)
     {
+        if (character == null) return;
         ResetDebuff(character);
         character.RemoveDebuff(this);
     }

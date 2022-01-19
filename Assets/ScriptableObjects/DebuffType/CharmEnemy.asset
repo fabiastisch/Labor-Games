@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bb6a7e7fcb1f5c43bf5925d65ff013c, type: 3}
   m_Name: CharmEnemy
   m_EditorClassIdentifier: 
-  nameString: 
-  durationTime: 0
+  nameString: Charm
+  durationTime: 10
   currentlyApplied: 0

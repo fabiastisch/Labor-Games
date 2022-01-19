@@ -5,16 +5,14 @@ using Combat;
 
 [CreateAssetMenu(menuName = "ScriptableObject/Manager/DebuffType/CharmEnemy")]
 public class CharmEnemy : DebuffTypeSO
-{   /*
+{
     //Enemylayer 6
     private LayerMask enemyLayer;
     //Playerlayer 7
     private LayerMask playerLayer;
     //CharmedLayer 10
-    private LayerMask charmedLayer;
 
     private AIPlayerDetector aiDetector;
-    private LayerMask currentEnemyLayer;
 
     private bool effectAppliedBefore = false;
 
@@ -22,7 +20,6 @@ public class CharmEnemy : DebuffTypeSO
     {
         enemyLayer = LayerMask.GetMask("Enemy");
         playerLayer = LayerMask.GetMask("Player");
-        charmedLayer = LayerMask.GetMask("CharmedEnemy");
     }
 
     public override void UpdateDebuff(Combat.Character character)
@@ -41,22 +38,29 @@ public class CharmEnemy : DebuffTypeSO
         effectAppliedBefore = true;
         Enemy enemy = (Enemy)character;
         aiDetector = enemy.GetComponent<AIPlayerDetector>();
-        currentEnemyLayer = enemy.gameObject.layer;
-        currentEnemyLayer = charmedLayer;
-        aiDetector.detectorLayerMask = enemyLayer;
+        if(aiDetector != null)
+        {
+            enemy.gameObject.layer = LayerMask.NameToLayer("CharmedEnemy");
+            aiDetector.detectorLayerMask = enemyLayer;
+        }
+
     }
 
     public void ResetDebuff(Combat.Character character)
     {
-        currentEnemyLayer = enemyLayer;
-        aiDetector.detectorLayerMask = playerLayer;
-        effectAppliedBefore = false;
+        if(aiDetector != null)
+        {
+            Enemy enemy = (Enemy)character;
+            enemy.gameObject.layer = LayerMask.NameToLayer("Enemy");
+            aiDetector.detectorLayerMask = playerLayer;
+            effectAppliedBefore = false;
+        }
     }
 
     public override void RemoveThisDebuff(Combat.Character character)
     {
+        if (character == null) return;
         ResetDebuff(character);
         character.RemoveDebuff(this);
     }
-    */
 }
