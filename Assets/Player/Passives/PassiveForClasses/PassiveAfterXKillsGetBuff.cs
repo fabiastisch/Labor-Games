@@ -7,12 +7,14 @@ using Utils;
 namespace Player.Passives.PassiveForClasses
 {
     [CreateAssetMenu
-        (menuName = "ScriptableObject/Passive/GiveBuffAfterMoveConditionForXTime")]
-    public class PassiveBuffAfterNotMoving : LevelPassive
+        (menuName = "ScriptableObject/Passive/PassiveAfterXKillsGetBuff")]
+    public class PassiveAfterXKillsGetBuff : LevelPassive
     {
         [Header("List of Buffs")] [SerializeField]
         private List<BuffStat.BuffValue> buffList = new List<BuffStat.BuffValue>();
-
+        [SerializeField] private float attacksNeeded = 10;
+        [SerializeField] private float actualAttacks = 0;
+        
         private bool active = false;
         
         [SerializeField] private GameObject buffObject;
@@ -21,7 +23,11 @@ namespace Player.Passives.PassiveForClasses
 
         public override void Activation(GameObject parent)
         {
-            GiveBuff();
+            if (actualAttacks >= attacksNeeded)
+            {
+                actualAttacks = 0;
+                GiveBuff();
+            }
         }
 
 

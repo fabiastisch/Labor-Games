@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55855660f03244dfacaabf301eb65016, type: 3}
+  m_Name: IceOnBottom
+  m_EditorClassIdentifier: 
+  name: 
+  levelPassiveType: 2
+  conditionType: 8
+  classType: 3
+  typeForUI: 0
+  classPassiveIcon: {fileID: 21300000, guid: 419475979c12d624aa3e01e185b4739d, type: 3}
+  cooldownMaxTime: 0
+  hasActiveTime: 0
+  activeMaxTime: 0
+  description: 
+  conditionStillStanding: 0
+  conditionTime: 12
+  passiveState: 0
+  passiveImage: {fileID: 0}
+  aoeObject: {fileID: 1248544688970748768, guid: 0568632d32ab04444b8e242c51e86800, type: 3}
+  collection: []
