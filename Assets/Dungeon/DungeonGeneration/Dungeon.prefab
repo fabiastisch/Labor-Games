@@ -9148,6 +9148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3e6f91e44c25c247a6d43fe9f25ad64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _deactivateOnLoad: 0
+  _dontDestroyOnLoad: 0
   spawn: {fileID: 3356143981451601788}
   portal: {fileID: 8846697081365940790}
   tilemapVisualizer: {fileID: 561387266}
@@ -9158,9 +9160,8 @@ MonoBehaviour:
   dungeonTraps: {fileID: 11400000, guid: 6032bd87a82190d45b4b4bda899c2b17, type: 2}
   clearDungeonOnGenerate: 1
   generateOnPlay: 0
-  currentPortal: {fileID: 0}
-  currentSpawn: {fileID: 0}
   traps: []
+  overrideConfigColor: 1
 --- !u!1 &1579529767564740570
 GameObject:
   m_ObjectHideFlags: 0
@@ -26369,6 +26370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60c77a970b9c6f34ea4a6f978c60cc90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextScene: TempDungeon
 --- !u!70 &1922986583996022169
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

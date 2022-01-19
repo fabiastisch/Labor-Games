@@ -83,7 +83,7 @@ namespace Utils.SceneLoader
             if (myGameObject)
             {
                 SceneManager.MoveGameObjectToScene(myGameObject, SceneManager.GetSceneByName(scene));
-                myGameObject.transform.position = Spawn.Instance.transform.position;
+                myGameObject.transform.position = Spawn.instance.transform.position;
             }
 
             loadingScreen.SetActive(false);
