@@ -17,7 +17,7 @@ namespace Combat
         [SerializeField] public float maxHealth = 100f;
         protected float _currentHealth;
 
-        public static event Action<Character> OnEntityDies;
+        public static event Action<Character, GameObject> OnEntityDies;
         public event Action<Character> OnDeath;
         public event Action OnHealthChanged;
 
@@ -70,6 +70,16 @@ namespace Combat
         {
             _currentHealth = maxHealth;
             OnHealthChanged?.Invoke();
+            ActualStatsThatGetUsed.Instance.OnActualStatsChange += InstanceOnOnActualStatsChange;
+        }
+
+        private void InstanceOnOnActualStatsChange()
+        {
+            maxHealth = ActualStatsThatGetUsed.Instance.actualHP;
+            if (_currentHealth >= maxHealth)
+            {
+                _currentHealth = maxHealth;
+            }
         }
 
         //protected abstract void Attack();
@@ -118,7 +128,7 @@ namespace Combat
             bool dies = TakeDamage(amountHp, damageType, isCrit);
             if (dies)
             {
-                OnEntityDies?.Invoke(enemy);
+                OnEntityDies?.Invoke(enemy, gameObject);
                 OnDeath?.Invoke(enemy);
                 Die(enemy);
             }

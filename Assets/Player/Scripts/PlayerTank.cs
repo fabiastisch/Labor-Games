@@ -14,7 +14,7 @@ namespace Player
         protected override void Start()
         {
             base.Start();
-            Combat.Character.OnEntityDies += character => { Debug.Log("EntityDies: killer was: " + character); };
+            Combat.Character.OnEntityDies += (character, vector3) => { Debug.Log("EntityDies: killer was: " + character); };
             OnPlayerTakeDamage += (enemy, type, arg3, arg4) => { Debug.Log("PlayerTakes Damage"); };
             OnPlayerMoves += b => { /*Debug.Log(b ? "Player Moves" : "Player is not moving");*/ };
         }

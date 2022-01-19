@@ -30,8 +30,6 @@ public class ListOf8Passives : MonoBehaviour
         unlockControll = UnlockControll.Instance;
     }
     
-    
-    //Todo Add Function to give Skill an Player
     public void AddItemToList(GameObject listEntry)
     {
         int listEntryCount = 0 ;
