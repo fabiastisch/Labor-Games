@@ -51402,11 +51402,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unlockControll: {fileID: 279637151}
-  strengthStatAmount: 3
-  vitallityStatAmount: 60
-  charismaStatAmount: 4
-  abillityStatAmount: 12
-  agillityStatAmount: 1
+  strengthStatAmount: 100
+  vitallityStatAmount: 100
+  charismaStatAmount: 99
+  abillityStatAmount: 97
+  agillityStatAmount: 98
 --- !u!4 &1130479712
 Transform:
   m_ObjectHideFlags: 0
@@ -51438,21 +51438,37 @@ MonoBehaviour:
   levelUp:
   - typeToBuff: 0
     valueOfBuff: 2
+    valueForFactorReferenz: 0
+    factor: 0.1
   - typeToBuff: 1
     valueOfBuff: 2
+    valueForFactorReferenz: 0
+    factor: 0.1
   - typeToBuff: 2
     valueOfBuff: 0.05
+    valueForFactorReferenz: 0
+    factor: 0.1
   - typeToBuff: 8
     valueOfBuff: 5
+    valueForFactorReferenz: 0
+    factor: 0.1
   startList:
   - typeToBuff: 0
     valueOfBuff: 10
+    valueForFactorReferenz: 0
+    factor: 0.1
   - typeToBuff: 1
     valueOfBuff: 10
+    valueForFactorReferenz: 0
+    factor: 0.1
   - typeToBuff: 2
     valueOfBuff: 1
+    valueForFactorReferenz: 0
+    factor: 0.1
   - typeToBuff: 8
     valueOfBuff: 100
+    valueForFactorReferenz: 0
+    factor: 0.1
   stats: {fileID: 1130479711}
 --- !u!114 &1130479714
 MonoBehaviour:
@@ -65264,10 +65280,10 @@ MonoBehaviour:
     classAbillity3: {fileID: 11400000, guid: bee1aac5ce9384b43a7faf779be6ca7d, type: 2}
     classAbillity4: {fileID: 11400000, guid: 6f8b69793eeb2264994513e670b0da4d, type: 2}
     classAbillity5: {fileID: 11400000, guid: 76b2d596b0f007c4082452ce4caf2333, type: 2}
-    classPassive1: {fileID: 0}
-    classPassive2: {fileID: 0}
+    classPassive1: {fileID: 11400000, guid: ee41913cd8584fe44b4b43b596bcfb8f, type: 2}
+    classPassive2: {fileID: 11400000, guid: 1775df82ffa167a43b69c8bfd0615de9, type: 2}
     classPassive3: {fileID: 0}
-    classPassive4: {fileID: 0}
+    classPassive4: {fileID: 11400000, guid: 56ab952fd8dfee7439ea726e171d5f2b, type: 2}
     classPassive5: {fileID: 0}
     classPassive6: {fileID: 0}
   - className: Fire Mage
@@ -65396,7 +65412,14 @@ MonoBehaviour:
   - {fileID: 1852734305}
   - {fileID: 1445715285}
   - {fileID: 301324393}
-  levelPassiveListCheckerList: []
+  levelPassiveListCheckerList:
+  - {fileID: 1717917821}
+  - {fileID: 303423159}
+  - {fileID: 1637117105}
+  - {fileID: 2088294121}
+  - {fileID: 1263002232}
+  - {fileID: 292943445}
+  - {fileID: 1898800883}
 --- !u!1 &1847048988
 GameObject:
   m_ObjectHideFlags: 0

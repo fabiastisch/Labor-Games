@@ -9557,7 +9557,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 6200000, guid: 40b832477f2aea245bc6e3da34544ea4, type: 2}
+  m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -9785,8 +9785,8 @@ MonoBehaviour:
   factor: 0.3
   scaleValue: 0
   enemyList: []
-  startTime: 0.4
-  resetTime: 0.4
+  startTime: 0.2
+  resetTime: 0.2
   isSpell: 1
   selfDestroyBool: 0
   selfDestroyTimer: 10

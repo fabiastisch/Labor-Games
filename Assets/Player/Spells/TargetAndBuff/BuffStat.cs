@@ -30,6 +30,9 @@ namespace Player.Spells.TargetAndBuff
         {
             [SerializeField] public StatType typeToBuff;
             [SerializeField] public float valueOfBuff;
+
+            [SerializeField] public StatType valueForFactorReferenz;
+            [SerializeField] public float factor = 0.1f;
         }
     }
 
