@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Utils;
 
 
 namespace EquipableWeapon
@@ -56,7 +57,7 @@ namespace EquipableWeapon
             if (context.canceled && currentSpeed != 0)
             {
                 isheldDown = false;
-                Attacked();
+                Util.GetLocalPlayer().Attacked();
                 ChangeSpriteColor(arrowRenderer, weaponRarity);
                 GameObject newArrow = Instantiate(arrow, gameObject.transform.position, Quaternion.identity);
                 ArrowHeandler arrowHeandler = newArrow.GetComponent<ArrowHeandler>();

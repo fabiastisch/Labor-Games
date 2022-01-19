@@ -64,5 +64,15 @@ namespace Combat
         {
             shieldingValue = MaximumValue;
         }
+        
+        public float GetActualValue()
+        {
+            return shieldingValue;
+        }
+
+        public void AddShielding(float amount)
+        {
+            shieldingValue += amount;
+        }
     }
 }

@@ -95,6 +95,8 @@ namespace Player
         public event Action<bool> OnPlayerMoves;
 
         public event Action OnPlayerMakeACrit;
+        
+        public event Action OnNormalAttack;
 
         public event Action<GameObject> OnPlayerHitSpell;
 
@@ -106,7 +108,11 @@ namespace Player
         public void InvokeOnPlayerCastSpell() => OnPlayerCastSpell?.Invoke();
         #endregion
 
-
+        public void Attacked()
+        {
+            OnNormalAttack?.Invoke();
+        }
+        
         private void Awake()
         {
             playerInput = GetComponent<PlayerInput>();

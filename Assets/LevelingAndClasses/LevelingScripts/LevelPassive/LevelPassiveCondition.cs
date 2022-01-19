@@ -1,4 +1,5 @@
 using Combat;
+using EquipableWeapon;
 using Player;
 using UnityEngine;
 using Utils;
@@ -14,6 +15,8 @@ public class LevelPassiveCondition : MonoBehaviour
         RecievedDmg,
         HitSpell,
         CastSpell,
+        Attacked,
+        HealthChanged,
         None
     }
     
@@ -38,8 +41,26 @@ public class LevelPassiveCondition : MonoBehaviour
         // Util.GetLocalPlayer().OnPlayerMakeACrit += OnOnPlayerMakeACrit;
         // Util.GetLocalPlayer().OnPlayerTakeDamage += OnOnPlayerTakeDamage;
         // Util.GetLocalPlayer().OnPlayerCastSpell += OnOnPlayerCastSpell;
+        Util.GetLocalPlayer().OnHealthChanged += OnOnHealthChanged;
         Util.GetLocalPlayer().OnPlayerHitSpell += OnOnPlayerHitSpell;
+        Util.GetLocalPlayer().OnNormalAttack += OnOnNormalAttack;
         Combat.Character.OnEntityDies += CharacterOnOnEntityDies;
+    }
+
+    private void OnOnHealthChanged()
+    {
+        if (conditionType == LevelPassiveConditionType.HealthChanged)
+        {
+            _levelPassiveListChecker.ConditionActivation(null);
+        }
+    }
+
+    private void OnOnNormalAttack()
+    {
+        if (conditionType == LevelPassiveConditionType.Attacked)
+        {
+            _levelPassiveListChecker.ConditionActivation(null);
+        }
     }
 
     private void OnOnPlayerHitSpell(GameObject obj)
@@ -169,6 +190,16 @@ public class LevelPassiveCondition : MonoBehaviour
         else if (type == LevelPassiveConditionType.CastSpell)
         {
             conditionType = LevelPassiveConditionType.CastSpell;
+            conditionDuration = false;
+        }
+        else if (type == LevelPassiveConditionType.Attacked)
+        {
+            conditionType = LevelPassiveConditionType.Attacked;
+            conditionDuration = false;
+        }
+        else if (type == LevelPassiveConditionType.HealthChanged)
+        {
+            conditionType = LevelPassiveConditionType.HealthChanged;
             conditionDuration = false;
         }
     }
