@@ -51,6 +51,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6905060295235584968}
   - component: {fileID: 6723368515144750894}
+  - component: {fileID: 4365215557733164964}
   m_Layer: 0
   m_Name: BodyAndScript
   m_TagString: Untagged
@@ -88,6 +89,31 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 3.5
+--- !u!114 &4365215557733164964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6899261419525720127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cd28274d7bb488fa9b14cca6abd286d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  self: {fileID: 8886679675701779809}
+  damage: 0
+  baseDamage: 100
+  factor: 0.5
+  scaleValue: 0
+  enemyList: []
+  startTime: 0
+  resetTime: 0
+  isSpell: 1
+  selfDestroyBool: 0
+  selfDestroyTimer: 10
+  valueFactor: 13
+  damageType: 6
 --- !u!1 &8886679675701593171
 GameObject:
   m_ObjectHideFlags: 0
@@ -14691,7 +14717,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8886679675701966879}
-  - component: {fileID: 961120106772132859}
   m_Layer: 0
   m_Name: ShadowSpikes
   m_TagString: Untagged
@@ -14714,26 +14739,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &961120106772132859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8886679675701779809}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cd28274d7bb488fa9b14cca6abd286d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 0
-  baseDamage: 100
-  factor: 0.5
-  scaleValue: 0
-  startTime: 0
-  resetTime: 0
-  valueFactor: 13
-  damageType: 6
 --- !u!1 &8886679675701793741
 GameObject:
   m_ObjectHideFlags: 0

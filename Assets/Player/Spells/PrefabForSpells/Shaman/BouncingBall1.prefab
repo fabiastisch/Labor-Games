@@ -9557,7 +9557,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 40b832477f2aea245bc6e3da34544ea4, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -9748,7 +9748,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 9145019786628151693}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 40b832477f2aea245bc6e3da34544ea4, type: 2}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -9779,12 +9779,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 465c6451d57f0304ba5b8fcd6930f365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  self: {fileID: 0}
   damage: 0
   baseDamage: 12
   factor: 0.3
   scaleValue: 0
+  enemyList: []
   startTime: 0.4
   resetTime: 0.4
   isSpell: 1
+  selfDestroyBool: 0
+  selfDestroyTimer: 10
   valueFactor: 13
   damageType: 3

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Player.Spells.TargetAndBuff;
 using UnityEngine;
 
+[CreateAssetMenuAttribute(menuName = "ScriptableObject/Passive/GiveStat")]
 public class PassiveGivesStat : LevelPassive
 {
     [Header("List of Buffs")] [SerializeField]
