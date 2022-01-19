@@ -12,9 +12,9 @@ namespace Combat
         [SerializeField] protected SpriteRenderer playSprite;
         [SerializeField] protected Rigidbody2D rb;
 
-        [Header("Movement")] [SerializeField] protected float movementSpeed = 4f;
+        [Header("Movement")] [SerializeField] public float movementSpeed = 4f;
 
-        [SerializeField] private float maxHealth = 100f;
+        [SerializeField] public float maxHealth = 100f;
         protected float _currentHealth;
 
         public static event Action<Character, GameObject> OnEntityDies;
@@ -178,6 +178,12 @@ namespace Combat
         {
             if (!currentDebuffList.Contains(debuff)) return;
             currentDebuffList.Remove(debuff);
+        }
+
+        public DebuffTypeSO GetDebuff(DebuffTypeSO debuff)
+        {
+            if (!currentDebuffList.Contains(debuff)) return null;
+            return debuff;
         }
 
 

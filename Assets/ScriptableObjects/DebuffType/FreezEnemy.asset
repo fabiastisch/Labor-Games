@@ -9,7 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 469631c346714094b9f46239a5110eff, type: 3}
-  m_Name: Disarmed
+  m_Script: {fileID: 11500000, guid: eeb0eab8b4a4f2f409ca7f14abcaf8dd, type: 3}
+  m_Name: FreezEnemy
   m_EditorClassIdentifier: 
-  nameString: Disarmed
+  nameString: Freez
+  durationTime: 5
+  currentlyApplied: 0
+  debuff: 4
