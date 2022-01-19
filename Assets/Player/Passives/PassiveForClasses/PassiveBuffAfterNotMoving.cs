@@ -44,6 +44,7 @@ namespace Player.Passives.PassiveForClasses
                     VARIABLE.valueOfBuff);
             }
             GameObject aoe = Instantiate(buffObject, Util.GetLocalPlayer().transform.position, Quaternion.identity);
+            aoe.transform.parent = Util.GetLocalPlayer().transform;
             collection.Add(aoe);
 
             active = true;

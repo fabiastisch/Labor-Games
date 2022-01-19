@@ -26,7 +26,7 @@ MonoBehaviour:
   conditionTime: 0
   passiveState: 0
   passiveImage: {fileID: 0}
-  killsNeeded: 25
+  killsNeeded: 1
   actualKills: 0
   aoeObject: {fileID: 5228654253270140431, guid: 9829d61f56cb7574d8158db7d23a075e, type: 3}
   collection: []

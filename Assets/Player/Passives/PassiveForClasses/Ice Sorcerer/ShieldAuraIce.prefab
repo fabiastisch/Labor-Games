@@ -14347,7 +14347,7 @@ MonoBehaviour:
   resetTime: 0
   isSpell: 0
   selfDestroyBool: 1
-  selfDestroyTimer: 10
+  selfDestroyTimer: 5
   valueFactor: 13
   damageType: 4
 --- !u!1 &6939707851059041291

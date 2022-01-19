@@ -22,8 +22,8 @@ MonoBehaviour:
   hasActiveTime: 0
   activeMaxTime: 0
   description: 
-  conditionStillStanding: 0
-  conditionTime: 0
+  conditionStillStanding: 1
+  conditionTime: 5
   passiveState: 0
   passiveImage: {fileID: 0}
   aoeObject: {fileID: 4073645279676791708, guid: 673d54bb5b7d3dc41918abcf8ecc4adf, type: 3}
