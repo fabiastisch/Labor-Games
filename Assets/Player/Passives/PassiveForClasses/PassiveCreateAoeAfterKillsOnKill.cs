@@ -11,11 +11,12 @@ public class PassiveCreateAoeAfterKillsOnKill : LevelPassive
 
     [SerializeField] private GameObject aoeObject;
 
-    [SerializeField] private List<GameObject> collection = new List<GameObject>();
+    //[SerializeField] private List<GameObject> collection = new List<GameObject>();
     
     //Gets the dead player
     public override void Activation(GameObject parent)
     {
+        actualKills++;
         if (actualKills >= killsNeeded)
         {
             actualKills = 0;
@@ -28,26 +29,27 @@ public class PassiveCreateAoeAfterKillsOnKill : LevelPassive
         base.BeginCooldown(parent);
     }
 
-    public override void Removed(GameObject parent)
-    {
-        if (!collection.Any())
-        {
-            return;
-        }
-
-        for (int counter = collection.Count - 1; counter >= 0; counter--)
-        {
-            if (collection[counter] != null)
-            {
-                GameObject other = collection[counter].gameObject;
-                Destroy(other.gameObject);
-            }
-        }
-    }
+    // public override void Removed(GameObject parent)
+    // {
+    //     if (!collection.Any())
+    //     {
+    //         return;
+    //     }
+    //
+    //     for (int counter = collection.Count - 1; counter >= 0; counter--)
+    //     {
+    //         if (collection[counter] != null)
+    //         {
+    //             GameObject other = collection[counter].gameObject;
+    //             Destroy(other.gameObject);
+    //         }
+    //     }
+    //     collection.Clear();
+    // }
 
     private void SpawnObject(GameObject dead)
     {
         GameObject aoe = Instantiate(aoeObject, dead.transform.position, Quaternion.identity);
-        collection.Add(aoe);
+        //collection.Add(aoe);
     }
 }

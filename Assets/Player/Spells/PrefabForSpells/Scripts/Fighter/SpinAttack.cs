@@ -77,7 +77,7 @@ public class SpinAttack : MonoBehaviour
                 GameObject other = enemyList[counter].gameObject;
                 if (other.gameObject.layer == 6)
                 {
-                    other.GetComponent<Enemy>()?.TakeDamage(baseDamage, Util.GetLocalPlayer(), damageType, true);
+                    other.GetComponent<Enemy>()?.TakeDamage(damage, Util.GetLocalPlayer(), damageType, true);
                 }
             }
         }

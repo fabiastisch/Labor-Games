@@ -23,6 +23,7 @@ namespace Player.Passives.PassiveForClasses
 
         public override void Activation(GameObject parent)
         {
+            actualAttacks++;
             if (actualAttacks >= attacksNeeded)
             {
                 actualAttacks = 0;
