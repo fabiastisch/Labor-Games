@@ -54010,13 +54010,29 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2463536332101208796, guid: 5b200b5938c353445998557fb82e7309, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2463536332101208796, guid: 5b200b5938c353445998557fb82e7309, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2463536332101208796, guid: 5b200b5938c353445998557fb82e7309, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7610018542070514180, guid: 5b200b5938c353445998557fb82e7309, type: 3}
       propertyPath: debuff
       value: 
       objectReference: {fileID: 11400000, guid: 94cbecc94df26c64fb5a7e3e99f6f7de, type: 2}
     - target: {fileID: 7610018542070514180, guid: 5b200b5938c353445998557fb82e7309, type: 3}
+      propertyPath: defaultSprite
+      value: 
+      objectReference: {fileID: 223434980033588540, guid: 1910d24513c70904eaf689fca1759d8a, type: 3}
+    - target: {fileID: 7610018542070514180, guid: 5b200b5938c353445998557fb82e7309, type: 3}
       propertyPath: shouldGenerateEffect
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8548802804282458401, guid: 5b200b5938c353445998557fb82e7309, type: 3}
       propertyPath: m_Name
@@ -65836,10 +65852,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5808415723586280591, guid: 40a3f58f34d442c4a9231e98eee51aa4, type: 3}
-      propertyPath: magicballSpeed
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 6719326501985693412, guid: 40a3f58f34d442c4a9231e98eee51aa4, type: 3}
       propertyPath: m_Name
       value: Magicwand

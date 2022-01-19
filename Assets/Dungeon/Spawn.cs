@@ -1,11 +1,12 @@
+using System;
 using UnityEngine;
+using Utils;
 
 namespace Dungeon
 {
     public class Spawn : MonoBehaviour
     {
         #region SingletonPattern
-
         private static Spawn instance;
 
         public static Spawn Instance
@@ -30,8 +31,12 @@ namespace Dungeon
                 instance = this;
             }
         }
-
         #endregion
+
+        private void Start()
+        {
+            Util.GetLocalPlayer().transform.position = transform.position;
+        }
 
         private void OnDestroy()
         {

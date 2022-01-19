@@ -61,7 +61,7 @@ Transform:
   m_GameObject: {fileID: 1791199111217048331}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.7, y: 0.2, z: 10}
-  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3995595316410151712}
   m_Father: {fileID: 0}
@@ -130,16 +130,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84a9d61a6dd145d4faf8430614d5100a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultSprite: {fileID: 223434980033588540, guid: 1910d24513c70904eaf689fca1759d8a, type: 3}
   baseDamage: 10
   weaponRarity: 5
   damageType: 0
   shouldGenerateRarityDMGTyp: 1
   effect: {fileID: 0}
-  penetration: 0
+  baseStat: {fileID: 0}
   bonusStat: 0
   shouldGenerateEffect: 1
   effectPool: {fileID: 11400000, guid: 56f65b34b03d4f04783d18fb4995e17a, type: 2}
   drawGizmos: 0
+  isOnCooldown: 0
+  currentCooldown: 0
+  maxCooldown: 1
   baseAOERange: 1.5
   baseRange: 2
   baseAttackcooldown: 0.8
@@ -155,6 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac377f79399f7a45850f0dd86b7438f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldown: 0
   state: 0
 --- !u!95 &8991355072829359856
 Animator:
@@ -192,7 +197,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0.5}
-    oldSize: {x: 0.22, y: 0.1}
+    oldSize: {x: 1.375, y: 0.625}
     newSize: {x: 0.125, y: 0.125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

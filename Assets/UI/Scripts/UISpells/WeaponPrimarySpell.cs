@@ -19,7 +19,8 @@ namespace UI.Scripts.UISpells
         private void PlayerHandOnOnWeaponChanged()
         {
             Weapon weapon = _playerHand.currentWeapon;
-            UpdateSprite(weapon.GetComponent<SpriteRenderer>().sprite);
+            UpdateSprite(weapon.defaultSprite);
+            Debug.Log("UpdateSprite: " + weapon.defaultSprite);
         }
 
         private void Update()

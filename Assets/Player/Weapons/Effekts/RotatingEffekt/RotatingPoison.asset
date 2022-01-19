@@ -18,6 +18,7 @@ MonoBehaviour:
   EffectTyp: 1
   effectDescription: Poisenball surronding the Player which deals dmg to the enemys
     hit
+  uiImage: {fileID: 21300000, guid: 070bd7160a83c6b4bb6ae832076fdf77, type: 3}
   activeTime: 10
   cooldown: 5
   baseDamage: 1

@@ -17,6 +17,7 @@ namespace EquipableWeapon
 
     public abstract class Weapon : MonoBehaviour
     {
+        [Header("UI")] public Sprite defaultSprite;
         [Header("Basestats")] public float baseDamage;
 
         [Header("Rarity & DamageType")] public WeaponRarity weaponRarity;

@@ -50,6 +50,7 @@ namespace Player
             childSprite.gameObject.layer = 9;
             weapon = GetComponentInChildren<Weapon>();
             effectHandler = weapon.GetComponent<EffectHandler>();
+            OnWeaponChanged?.Invoke();
         }
 
         // Update is called once per frame
@@ -81,18 +82,17 @@ namespace Player
             {
                 if (equippedWeaponweapon.effect != null)
                     equippedWeaponweapon.effect.Deactivate();
-                equippedWeaponweapon.GetComponent<EffectHandler>().state = EffectState.ready;
+                if (equippedWeaponweapon.GetComponent<EffectHandler>())
+                {
+                    equippedWeaponweapon.GetComponent<EffectHandler>().state = EffectState.ready;
+
+                }
                 effectHandler = weaponToEquip.GetComponent<EffectHandler>();
             }
-            if (weaponToEquip.GetComponent<Sword>() != null)
-            {
-                isSword = true;
-            }
 
-            isSword = weaponToEquip.GetComponent<Sword>() != null ? true : false;
-            if (isSword) return;
             isBow = weaponToEquip.GetComponent<Bow>() != null ? true : false;
-            
+            isSword = weaponToEquip.GetComponent<Sword>() != null ? true : false;
+
             OnWeaponChanged?.Invoke();
         }
 
