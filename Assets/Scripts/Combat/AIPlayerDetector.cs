@@ -8,7 +8,7 @@ namespace Combat
     public class AIPlayerDetector : MonoBehaviour
     {
         public bool PlayerDetected { get; private set; }
-        public Vector2 DirectionToTarget => target.transform.position - detectorOrigin.position;
+        public Vector2? DirectionToTarget => target? target.transform.position - detectorOrigin.position: (Vector2?) null;
 
         [Header("OverlapSphere Parameters")] [SerializeField]
         private Transform detectorOrigin;
@@ -39,9 +39,31 @@ namespace Combat
             get => target;
             private set
             {
+                if (target)
+                {
+                    Character curr = target.GetComponent<Character>();
+                    if (curr)
+                    {
+                        curr.OnDeath -= OnTargetDeath;
+                    }
+                }
+
                 target = value;
                 PlayerDetected = target != null;
+
+                if (value)
+                {
+                    Character next = target.GetComponent<Character>();
+                    if (next)
+                    {
+                        next.OnDeath += OnTargetDeath;
+                    }
+                }
             }
+        }
+        private void OnTargetDeath(Character obj)
+        {
+            target = null;
         }
 
         private void Start()

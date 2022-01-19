@@ -91,11 +91,11 @@ public class CasualEnemyDebuff : DebuffTypeSO
                 break;
         }
         effectAppliedBefore = false;
-        Debug.Log("tmp1 " + tempValue + " tmp2 " + tempValue2);
     }
 
     public override void RemoveThisDebuff(Combat.Character character)
     {
+        if (character == null) return;
         ResetDebuff(character);
         character.RemoveDebuff(this);
     }
