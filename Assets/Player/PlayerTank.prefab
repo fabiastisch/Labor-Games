@@ -84,7 +84,7 @@ MonoBehaviour:
   m_Follow: {fileID: 8548802804282458402}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 8.079979
+    OrthographicSize: 7
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -503,6 +503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e8cb34fecebcf64e89c4e8c876fe969, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effectHandler: {fileID: 0}
 --- !u!1 &6194135914601324225
 GameObject:
   m_ObjectHideFlags: 0
@@ -942,6 +943,8 @@ MonoBehaviour:
   rb: {fileID: 8548802804282458404}
   movementSpeed: 11
   maxHealth: 100
+  currentDebuffList: []
+  healthRegeneration: 1
   tmpMouseAngle: 42
   overrideMouseAngle: 0
   cam: {fileID: 9112581534973777237}
@@ -962,10 +965,9 @@ MonoBehaviour:
   interactableLayer:
     serializedVersion: 2
     m_Bits: 256
-  stamina: 100
-  staminaReg: 10
-  dodgeCost: 44
-  dodgeSpeed: 30
+  dashSpeed: 30
+  maxDashUses: 2
+  dashCooldownMax: 3
 --- !u!70 &8368588488147939673
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
