@@ -24,6 +24,9 @@ public class LevelPassive : ScriptableObject
     //if needed for Passive
     public Sprite classPassiveIcon;
     
+    /**
+     * needed to reset Time
+     */
     public float cooldownMaxTime;
 
     public bool hasActiveTime;
@@ -31,6 +34,7 @@ public class LevelPassive : ScriptableObject
     
     public string description;
 
+    public bool conditionStillStanding = false;
     public float conditionTime;
     public PassiveSlot.PassiveState passiveState;
     public Sprite passiveImage;

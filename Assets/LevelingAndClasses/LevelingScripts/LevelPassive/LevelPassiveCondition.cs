@@ -17,17 +17,19 @@ public class LevelPassiveCondition : MonoBehaviour
         CastSpell,
         Attacked,
         HealthChanged,
+        Time,
         None
     }
     
     private LevelPassiveConditionType conditionType;
 
     private float conditionDurationTimer;
-
     private float conditionMaxTime;
 
     private bool conditionDuration = false;
     private bool triggered = false;
+
+    private bool needsToStandStill = false;
     
     private LevelPassiveListChecker _levelPassiveListChecker;
     private PlayerBase _playerBase;
@@ -37,7 +39,7 @@ public class LevelPassiveCondition : MonoBehaviour
     {
         _playerBase = Util.GetLocalPlayer();
         _levelPassiveListChecker = gameObject.GetComponent<LevelPassiveListChecker>();
-        // Util.GetLocalPlayer().OnPlayerMoves += OnOnPlayerMoves;
+        Util.GetLocalPlayer().OnPlayerMoves += OnOnPlayerMoves;
         // Util.GetLocalPlayer().OnPlayerMakeACrit += OnOnPlayerMakeACrit;
         // Util.GetLocalPlayer().OnPlayerTakeDamage += OnOnPlayerTakeDamage;
         // Util.GetLocalPlayer().OnPlayerCastSpell += OnOnPlayerCastSpell;
@@ -112,6 +114,10 @@ public class LevelPassiveCondition : MonoBehaviour
     //false doesnt MOOOOOVE
     private void OnOnPlayerMoves(bool moves)
     {
+        if (needsToStandStill)
+        {
+            moves = !moves;
+        }
         if (conditionType == LevelPassiveConditionType.Movement)
         {
             if (moves)
@@ -202,6 +208,11 @@ public class LevelPassiveCondition : MonoBehaviour
             conditionType = LevelPassiveConditionType.HealthChanged;
             conditionDuration = false;
         }
+        else if (type == LevelPassiveConditionType.Time)
+        {
+            conditionType = LevelPassiveConditionType.Time;
+            conditionDuration = true;
+        }
     }
     
     public void NoCondition()
@@ -210,10 +221,11 @@ public class LevelPassiveCondition : MonoBehaviour
         conditionDuration = false;
     }
 
-    public void SetConditions(float conMaxTime, float conDurationTimer)
+    public void SetConditions(float conMaxTime, float conDurationTimer, bool stayStill)
     {
         conditionDurationTimer = conDurationTimer;
         conditionMaxTime = conMaxTime;
+        needsToStandStill = stayStill;
     }
 
 }
