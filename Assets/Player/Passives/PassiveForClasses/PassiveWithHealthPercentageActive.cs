@@ -65,12 +65,14 @@ namespace Player.Passives.PassiveForClasses
 
         private void GiveBuff()
         {
+            if (active) return;
             foreach (var VARIABLE in buffList)
             {
                 StatManager.Instance.AddStat(StatManager.Instance.statTypeList.list[(int) VARIABLE.typeToBuff],
                     VARIABLE.valueOfBuff);
             }
             GameObject aoe = Instantiate(buffObject, Util.GetLocalPlayer().transform.position, Quaternion.identity);
+            aoe.transform.parent = Util.GetLocalPlayer().transform;
             collection.Add(aoe);
 
             active = true;
@@ -78,6 +80,7 @@ namespace Player.Passives.PassiveForClasses
         
         private void GiveDebuff()
         {
+            if (!active) return;
             foreach (var VARIABLE in buffList)
             {
                 StatManager.Instance.RemoveStat(StatManager.Instance.statTypeList.list[(int) VARIABLE.typeToBuff],
@@ -97,7 +100,7 @@ namespace Player.Passives.PassiveForClasses
                     Destroy(other.gameObject);
                 }
             }
-
+            collection.Clear();
             active = false;
         }
     }

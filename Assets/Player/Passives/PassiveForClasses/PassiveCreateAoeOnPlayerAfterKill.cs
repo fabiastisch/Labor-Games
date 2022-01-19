@@ -20,6 +20,7 @@ namespace Player.Passives.PassiveForClasses
        //Gets the dead player
        public override void Activation(GameObject parent)
        {
+           actualKills++;
            if (actualKills >= killsNeeded)
            {
                actualKills = 0;
@@ -47,6 +48,7 @@ namespace Player.Passives.PassiveForClasses
                    Destroy(other.gameObject);
                }
            }
+           collection.Clear();
        }
    
        private void SpawnObject(GameObject dead)

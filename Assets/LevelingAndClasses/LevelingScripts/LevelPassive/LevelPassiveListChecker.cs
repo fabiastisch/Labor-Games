@@ -160,7 +160,7 @@ public class LevelPassiveListChecker : MonoBehaviour
             }
             else
             {
-                levelPassive.Activation(gameObject);
+                levelPassive.Activation(obj);
                 //If it has a ActiveTime activate it
                 if (hasActiveTime)
                 {
