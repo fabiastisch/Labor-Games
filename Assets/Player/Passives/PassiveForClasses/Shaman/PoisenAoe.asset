@@ -29,4 +29,3 @@ MonoBehaviour:
   killsNeeded: 10
   actualKills: 0
   aoeObject: {fileID: 4557928713002528815, guid: 5d6384f156d251d4fba80d91516d367f, type: 3}
-  collection: []

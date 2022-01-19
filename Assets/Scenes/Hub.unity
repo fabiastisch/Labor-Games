@@ -1512,7 +1512,7 @@ MonoBehaviour:
   charimsaScore: 0
   strengthScore: 0
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
-  unlockedSprite: {fileID: 21300000, guid: 37fea579f7ad11048a0271e708664d5b, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: 272fa4d5be31552449bc726b7768f195, type: 3}
   listFullBool: 0
   levelPassive: {fileID: 11400000, guid: efa451800e8be7c46889310a46fad256, type: 2}
 --- !u!114 &102527431
@@ -1667,7 +1667,7 @@ MonoBehaviour:
   charimsaScore: 80
   strengthScore: 0
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
-  unlockedSprite: {fileID: 21300000, guid: 4e822aef56927c04da2502b7392cd5b5, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: 37bbe92bf9b8b3e4bb5eca31064bc845, type: 3}
   listFullBool: 0
   levelPassive: {fileID: 11400000, guid: 2cc46850e86885749a6342fa9d004b54, type: 2}
 --- !u!114 &104185964
@@ -2950,7 +2950,7 @@ MonoBehaviour:
   charimsaScore: 0
   strengthScore: 100
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
-  unlockedSprite: {fileID: 21300000, guid: 323f6420ae38257499ba31722e263b12, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: fb6bf53605c355648a5ab0bb5cfc65e6, type: 3}
   listFullBool: 0
   levelPassive: {fileID: 11400000, guid: 440c04cb66a864b4ab42a2f5092fe4e8, type: 2}
 --- !u!114 &159589820
@@ -4272,7 +4272,7 @@ MonoBehaviour:
   charimsaScore: 0
   strengthScore: 0
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
-  unlockedSprite: {fileID: 21300000, guid: ff7c43c356f0ce4428118c73448f2a76, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: d0f3d9c86a9c3ac4c9f0f08a545a8e18, type: 3}
   listFullBool: 0
   levelPassive: {fileID: 11400000, guid: 381c10dfc15f1d24f8ee68a5f8ac9695, type: 2}
 --- !u!114 &221990182
@@ -4472,7 +4472,7 @@ MonoBehaviour:
   charimsaScore: 0
   strengthScore: 0
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
-  unlockedSprite: {fileID: 21300000, guid: 772cb1db66d532b45bba4a67468be20a, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: 6a830d499fc8efc44912be35896d299b, type: 3}
   listFullBool: 0
   levelPassive: {fileID: 11400000, guid: a262521374105924386555afbebbe2fb, type: 2}
 --- !u!114 &224533848
@@ -4792,7 +4792,7 @@ MonoBehaviour:
   charimsaScore: 0
   strengthScore: 0
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
-  unlockedSprite: {fileID: 21300000, guid: 87f743b0680f4194eb32eeb5552daac2, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: 03472bc8bad74f3438681e8ae7dd0d57, type: 3}
   listFullBool: 0
   levelPassive: {fileID: 11400000, guid: e619cc8f720378d478f7b9aa2c38df62, type: 2}
 --- !u!114 &240927906
@@ -7080,7 +7080,7 @@ MonoBehaviour:
   charimsaScore: 0
   strengthScore: 40
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
-  unlockedSprite: {fileID: 21300000, guid: 414198cdb5c00a44e8d95c7c3f81408a, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: 7f007672ea7eece43a9e451c9142f4f3, type: 3}
   listFullBool: 0
   levelPassive: {fileID: 11400000, guid: bf82ac46bd93d52409b23599bd6b4004, type: 2}
 --- !u!114 &375573505
@@ -10911,10 +10911,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 2560, y: 1440}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -14149,7 +14149,7 @@ MonoBehaviour:
   charimsaScore: 60
   strengthScore: 0
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
-  unlockedSprite: {fileID: 21300000, guid: c06b52e768643924dabb4e6863d9ed1d, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: 5660e747a1ad6654c878d4a227032ec5, type: 3}
   listFullBool: 0
   levelPassive: {fileID: 11400000, guid: 1677c6f065998c546986b61baffb1731, type: 2}
 --- !u!114 &683996931
@@ -44871,7 +44871,7 @@ MonoBehaviour:
   charimsaScore: 0
   strengthScore: 0
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
-  unlockedSprite: {fileID: 21300000, guid: 53cff99639470ba4999ae595287143a0, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: a8632a769e992fe4883fe53fd4413741, type: 3}
   listFullBool: 0
   levelPassive: {fileID: 11400000, guid: 93e4f4f3f69dc634b9ec3670e2e97392, type: 2}
 --- !u!114 &751592217
@@ -45952,7 +45952,7 @@ MonoBehaviour:
   charimsaScore: 0
   strengthScore: 0
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
-  unlockedSprite: {fileID: 21300000, guid: e07501ca509b13441a8eb6f17069b489, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: b3d5e99a0be8e8741807cbb2cb3b94ff, type: 3}
   listFullBool: 0
   levelPassive: {fileID: 11400000, guid: 27b8dec9d8a4be34fa98282462e2f621, type: 2}
 --- !u!114 &805198240
@@ -47719,7 +47719,7 @@ MonoBehaviour:
   charimsaScore: 0
   strengthScore: 0
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
-  unlockedSprite: {fileID: 21300000, guid: 0f5560b96b400c44cab2dabc291db056, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: 5ec026e56680fdd4a858ae057512e3ff, type: 3}
   listFullBool: 0
   levelPassive: {fileID: 11400000, guid: 06354ed3d5e00f440992ceab6338d830, type: 2}
 --- !u!114 &915836974
@@ -49897,7 +49897,7 @@ MonoBehaviour:
   charimsaScore: 0
   strengthScore: 0
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
-  unlockedSprite: {fileID: 21300000, guid: a0995c5e982236145a9e4a6f3828d039, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: bc0a08715979fa0468febdacde257cc3, type: 3}
   listFullBool: 0
   levelPassive: {fileID: 11400000, guid: 9f0cd0ca3166f864783060b822e0b92e, type: 2}
 --- !u!114 &1010686739
@@ -52159,7 +52159,7 @@ MonoBehaviour:
   charimsaScore: 0
   strengthScore: 0
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
-  unlockedSprite: {fileID: 21300000, guid: f1512b405a4bad940a4a961e681dae24, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: aaafc7e3349c83b4cb9f24690cfd357b, type: 3}
   listFullBool: 0
   levelPassive: {fileID: 11400000, guid: b678a07f5bf31c9469189a77dfc72243, type: 2}
 --- !u!114 &1153071290
@@ -52749,7 +52749,7 @@ MonoBehaviour:
   charimsaScore: 0
   strengthScore: 0
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
-  unlockedSprite: {fileID: 21300000, guid: 989d4f2f28dacfb41919bcfa07fe5e46, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: 875f7313c53bd974f9d38bdcb7462572, type: 3}
   listFullBool: 0
   levelPassive: {fileID: 11400000, guid: 83ca542631501b3439a00db8732bc99a, type: 2}
 --- !u!114 &1180101982
@@ -52983,7 +52983,7 @@ MonoBehaviour:
   charimsaScore: 0
   strengthScore: 0
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
-  unlockedSprite: {fileID: 21300000, guid: 4c99c54c968f93a46b125fdd415c4970, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: 951e705b588aa004ca89a90d21ac301b, type: 3}
   listFullBool: 0
   levelPassive: {fileID: 11400000, guid: c0ea34e2cab1fc244baf122e1fced90b, type: 2}
 --- !u!114 &1183906524
@@ -56227,7 +56227,7 @@ MonoBehaviour:
   charimsaScore: 0
   strengthScore: 0
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
-  unlockedSprite: {fileID: 21300000, guid: b34b29e8b927f264f8203529539ff50d, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: df9a311f9c62a3a46893f3d4820e8be6, type: 3}
   listFullBool: 0
   levelPassive: {fileID: 11400000, guid: 31c38ae4a61345642adf343d814c6b56, type: 2}
 --- !u!114 &1375283397
@@ -57368,7 +57368,7 @@ MonoBehaviour:
   charimsaScore: 100
   strengthScore: 0
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
-  unlockedSprite: {fileID: 21300000, guid: b65d241d691f91e45ba2994020812ee8, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: 0c5c615eaab88e04f96344dbff4521bd, type: 3}
   listFullBool: 0
   levelPassive: {fileID: 11400000, guid: 8937311d031d6884a87e9aae03c59ad8, type: 2}
 --- !u!114 &1465315128
@@ -60300,10 +60300,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 2560, y: 1440}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -61862,7 +61862,7 @@ MonoBehaviour:
   charimsaScore: 40
   strengthScore: 0
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
-  unlockedSprite: {fileID: 21300000, guid: 638a1848215a4f046a8ae9afdd25a580, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: d6750ad199d7a5e49bc3b37df2f3b246, type: 3}
   listFullBool: 0
   levelPassive: {fileID: 11400000, guid: 4120108dd5b7246468988882b722a45d, type: 2}
 --- !u!114 &1687556823
@@ -63446,7 +63446,7 @@ MonoBehaviour:
   charimsaScore: 0
   strengthScore: 0
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
-  unlockedSprite: {fileID: 21300000, guid: 66916cc85249ad54da8c3c8d936c7e36, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: 94ce7a9e3a70af54684227fb42d32bf2, type: 3}
   listFullBool: 0
   levelPassive: {fileID: 11400000, guid: 812c1592dda8f3f4da1694ced4a9d2f1, type: 2}
 --- !u!114 &1771480575
@@ -64029,7 +64029,7 @@ MonoBehaviour:
   charimsaScore: 0
   strengthScore: 0
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
-  unlockedSprite: {fileID: 21300000, guid: f78b0faf31ba4fe47ba26c94e6f55c00, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: 6bf2ba650b327994382c6b66bd3b8f35, type: 3}
   listFullBool: 0
   levelPassive: {fileID: 11400000, guid: dc76d643faf2fd746aa8feffd5cddc3e, type: 2}
 --- !u!114 &1798122856
@@ -67044,7 +67044,7 @@ MonoBehaviour:
   charimsaScore: 0
   strengthScore: 0
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
-  unlockedSprite: {fileID: 21300000, guid: 93078ff18a06bf747a7e22049b702fb3, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: 015771a138b18034a829afdd8e983183, type: 3}
   listFullBool: 0
   levelPassive: {fileID: 11400000, guid: f9213c32f828a0943a8949173fa14e93, type: 2}
 --- !u!114 &1951124123
@@ -68356,7 +68356,7 @@ MonoBehaviour:
   charimsaScore: 0
   strengthScore: 80
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
-  unlockedSprite: {fileID: 21300000, guid: c7061a2eaa258ba43a0c7e793b06af88, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: 3861f781cd7393648af1e2588bdd561a, type: 3}
   listFullBool: 0
   levelPassive: {fileID: 11400000, guid: e0a7fd7c778320e498b83d3d4de3b6bc, type: 2}
 --- !u!114 &1990030614
@@ -68683,7 +68683,7 @@ MonoBehaviour:
   charimsaScore: 0
   strengthScore: 20
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
-  unlockedSprite: {fileID: 21300000, guid: a9f04f2f65ed34f45ac6889dfdbd6096, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: 5961c0828da34574a82ac84dd564d5f7, type: 3}
   listFullBool: 0
   levelPassive: {fileID: 11400000, guid: ec82b072a5fade2418932f5b3055939b, type: 2}
 --- !u!114 &2009621104
@@ -69823,7 +69823,7 @@ MonoBehaviour:
   charimsaScore: 0
   strengthScore: 60
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
-  unlockedSprite: {fileID: 21300000, guid: 210b90445cb52c844839e9ee3cda1b75, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: 2e4e7496e7b94fc40a7f9ddf0805d66e, type: 3}
   listFullBool: 0
   levelPassive: {fileID: 11400000, guid: 69c91d2a11bf5d5438f3ff28327b7164, type: 2}
 --- !u!114 &2082955556
@@ -70696,7 +70696,7 @@ MonoBehaviour:
   charimsaScore: 20
   strengthScore: 0
   lockedSprite: {fileID: 21300000, guid: 223625fbab1de3e42bc975c0d526c770, type: 3}
-  unlockedSprite: {fileID: 21300000, guid: e11745bac411efc48ae5d249a22551d9, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: e961b742dd4242a4eba69807eb638b30, type: 3}
   listFullBool: 0
   levelPassive: {fileID: 11400000, guid: 15530a03d267f16408f50f0e187ba0b9, type: 2}
 --- !u!114 &2127146207
