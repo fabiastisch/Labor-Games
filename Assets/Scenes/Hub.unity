@@ -719,6 +719,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   movementSpeed: 4
   maxHealth: 1e+17
+  currentDebuffList: []
   healthRegeneration: 1
   enemyName: 
   attackSpeed: 1
@@ -50704,6 +50705,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   movementSpeed: 4
   maxHealth: 1e+17
+  currentDebuffList: []
   healthRegeneration: 1
   enemyName: 
   attackSpeed: 1
@@ -51277,6 +51279,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiStatsRadarChart: {fileID: 800311255}
   uiLevelCounter: {fileID: 582754597}
+  levelUp:
+  - typeToBuff: 0
+    valueOfBuff: 2
+  - typeToBuff: 1
+    valueOfBuff: 2
+  - typeToBuff: 2
+    valueOfBuff: 0.05
+  - typeToBuff: 8
+    valueOfBuff: 5
+  startList:
+  - typeToBuff: 0
+    valueOfBuff: 10
+  - typeToBuff: 1
+    valueOfBuff: 10
+  - typeToBuff: 2
+    valueOfBuff: 1
+  - typeToBuff: 8
+    valueOfBuff: 100
   stats: {fileID: 1130479711}
 --- !u!114 &1130479714
 MonoBehaviour:
@@ -64413,6 +64433,7 @@ MonoBehaviour:
   rb: {fileID: 1822301404}
   movementSpeed: 4
   maxHealth: 100
+  currentDebuffList: []
   healthRegeneration: 1
   enemyName: Slime
   attackSpeed: 1

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using Player;
+using Player.Spells.TargetAndBuff;
 using UnityEngine;
 using UnityEngine.UI;
 using Utils;
@@ -21,6 +22,12 @@ public class StatisticValue : MonoBehaviour
     public Button strengthButton = GameObject.Find("strengthButton").GetComponent<Button>();
     */
 
+    [Header("List For LevelUp")] [SerializeField]
+    private List<BuffStat.BuffValue> levelUp = new List<BuffStat.BuffValue>();
+    
+    [Header("List For Start")] [SerializeField]
+    private List<BuffStat.BuffValue> startList = new List<BuffStat.BuffValue>();
+    
     public Statistics stats;
 
     private float levelPoints;
@@ -32,6 +39,7 @@ public class StatisticValue : MonoBehaviour
         stats = Statistics.Instance;
         uiStatsRadarChart.SetStatistic(stats);
         Util.GetLocalPlayer().GetComponent<PlayerLevelManager>().OnLevelChanged += OnLevelChanged;
+        StartStats();
     }
 
     private void OnLevelChanged(int obj)
@@ -39,6 +47,8 @@ public class StatisticValue : MonoBehaviour
         level = obj;
         levelPoints += 1;
         SetLevelPointText();
+        LevelUpPoint();
+
     }
     
 
@@ -116,5 +126,21 @@ public class StatisticValue : MonoBehaviour
     private void SetLevelPointText()
     {
         uiLevelCounter.text = levelPoints.ToString(CultureInfo.InvariantCulture);
+    }
+
+    private void LevelUpPoint()
+    {
+        foreach (var stat in levelUp)
+        {
+            StatManager.Instance.AddStat(StatManager.Instance.statTypeList.list[(int) stat.typeToBuff], stat.valueOfBuff);
+        }
+    }
+
+    private void StartStats()
+    {
+        foreach (var stat in startList)
+        {
+            StatManager.Instance.AddStat(StatManager.Instance.statTypeList.list[(int) stat.typeToBuff], stat.valueOfBuff);
+        }
     }
 }

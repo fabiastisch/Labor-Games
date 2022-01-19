@@ -41,6 +41,8 @@ public class ActualStatsThatGetUsed : MonoBehaviour
         actualCooldownReduction,
         actualAbillityPower,
     }
+    
+    public event Action OnActualStatsChange;
 
     [Header("ValueField")] [SerializeField]
     private List<GameObject> listOfName;
@@ -228,6 +230,7 @@ public class ActualStatsThatGetUsed : MonoBehaviour
         CalculateCrit();
         CalculateCritMultiPlyer();
         SetNameAndValue();
+        OnOnActualStatsChange();
     }
 
     public void SetNameAndValue()
@@ -326,6 +329,11 @@ public class ActualStatsThatGetUsed : MonoBehaviour
         }
 
         return 0f;
+    }
+
+    protected virtual void OnOnActualStatsChange()
+    {
+        OnActualStatsChange?.Invoke();
     }
 }
 

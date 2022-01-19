@@ -70,6 +70,16 @@ namespace Combat
         {
             _currentHealth = maxHealth;
             OnHealthChanged?.Invoke();
+            ActualStatsThatGetUsed.Instance.OnActualStatsChange += InstanceOnOnActualStatsChange;
+        }
+
+        private void InstanceOnOnActualStatsChange()
+        {
+            maxHealth = ActualStatsThatGetUsed.Instance.actualHP;
+            if (_currentHealth >= maxHealth)
+            {
+                _currentHealth = maxHealth;
+            }
         }
 
         //protected abstract void Attack();
