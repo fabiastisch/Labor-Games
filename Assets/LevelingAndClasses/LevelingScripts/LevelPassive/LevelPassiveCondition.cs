@@ -68,13 +68,13 @@ public class LevelPassiveCondition : MonoBehaviour
     }
 
     //I have to Check if comabt Char was Player
-    private void CharacterOnOnEntityDies(Combat.Character obj)
+    private void CharacterOnOnEntityDies(Combat.Character obj, GameObject dead)
     {
         if (conditionType == LevelPassiveConditionType.KilledEnemy)
         {
             if (obj.Equals(_playerBase))
             {
-                _levelPassiveListChecker.ConditionActivation(null);
+                _levelPassiveListChecker.ConditionActivation(dead);
             }
         }
     }
