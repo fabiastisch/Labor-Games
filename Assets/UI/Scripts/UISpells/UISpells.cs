@@ -20,8 +20,8 @@ namespace UI.Scripts.UISpells
         {
             _playerHand = Util.GetLocalPlayer().hand;
 
-            weaponPrimary.LinkWeapon(_playerHand);
             weaponEffect.LinkWeaponEffect(_playerHand);
+            weaponPrimary.LinkWeapon(_playerHand);
 
         }
         public void AddSpellListAbilities(List<GameObject> spellList)

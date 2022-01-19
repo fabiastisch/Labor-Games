@@ -18,7 +18,7 @@ namespace EquipableWeapon
         public Sprite minLoadSprite;
         public Sprite midLoadSprite;
         public Sprite maxLoadeSprite;
-        private Sprite defaultSprite;
+        private Sprite bowDefaultSprite;
 
         private float timer;
         private float currentDamage;
@@ -34,7 +34,7 @@ namespace EquipableWeapon
 
             arrowRenderer = arrow.GetComponent<SpriteRenderer>();
             bowRenderer = GetComponent<SpriteRenderer>();
-            defaultSprite = bowRenderer.sprite;
+            bowDefaultSprite = bowRenderer.sprite;
 
             currentDamage = 0;
             currentSpeed = 0;
@@ -66,7 +66,7 @@ namespace EquipableWeapon
                 currentDamage = 0;
                 currentSpeed = 0;
 
-                bowRenderer.sprite = defaultSprite;
+                bowRenderer.sprite = bowDefaultSprite;
             }
         }
 

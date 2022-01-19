@@ -4,7 +4,7 @@ using Weapons.Effects;
 
 namespace UI.Scripts.UISpells
 {
-    public class WeaponEffectSpell: UISpell
+    public class WeaponEffectSpell : UISpell
     {
         private PlayerHand _playerHand;
 
@@ -35,7 +35,7 @@ namespace UI.Scripts.UISpells
             {
                 if (_playerHand.currentWeapon.effect)
                 {
-                    if (_playerHand.effectHandler.state == EffectState.onRefreshing)
+                    if (_playerHand.effectHandler && _playerHand.effectHandler.state == EffectState.onRefreshing)
                     {
                         float current = _playerHand.effectHandler.cooldown;
                         float max = _playerHand.currentWeapon.effect.cooldown;

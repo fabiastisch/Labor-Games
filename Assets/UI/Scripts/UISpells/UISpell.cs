@@ -15,7 +15,7 @@ namespace UI.Scripts.UISpells
         [SerializeField] protected InputActionReference _inputActionReference;
         protected virtual void Start()
         {
-            SimpleUnlink();
+            //SimpleUnlink();
             HideCooldown();
             UpdateBindingDisplayText();
         }
@@ -34,6 +34,7 @@ namespace UI.Scripts.UISpells
         {
             if (sprite)
             {
+                Debug.Log("Update Sprite: " + sprite);
                 _image.sprite = sprite;
                 _image.color = Color.white;
             }

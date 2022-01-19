@@ -98,16 +98,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0dee0ab28fc5714aacdfc75b1724acf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultSprite: {fileID: 21300000, guid: 54e65ac6713401f4a925a64715e2ceff, type: 3}
   baseDamage: 50
   weaponRarity: 2
   damageType: 0
   shouldGenerateRarityDMGTyp: 1
   effect: {fileID: 0}
-  penetration: 0
+  baseStat: {fileID: 0}
   bonusStat: 0
   shouldGenerateEffect: 1
   effectPool: {fileID: 11400000, guid: 56f65b34b03d4f04783d18fb4995e17a, type: 2}
   drawGizmos: 0
+  isOnCooldown: 0
+  currentCooldown: 0
+  maxCooldown: 1
   arrow: {fileID: 1321754941736516386, guid: 983e3cee83d529543ab69bf7dcd1f75c, type: 3}
   maxSpeed: 35
   minLoadSprite: {fileID: -6757734339149847748, guid: c03593c3c609c7f4694ad6ae484a2c0c, type: 3}
