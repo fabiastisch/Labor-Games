@@ -54013,7 +54013,7 @@ PrefabInstance:
     - target: {fileID: 7610018542070514180, guid: 5b200b5938c353445998557fb82e7309, type: 3}
       propertyPath: debuff
       value: 
-      objectReference: {fileID: 11400000, guid: 9fb4f915f96f4554e863dd385b9b9908, type: 2}
+      objectReference: {fileID: 11400000, guid: 94cbecc94df26c64fb5a7e3e99f6f7de, type: 2}
     - target: {fileID: 8548802804282458401, guid: 5b200b5938c353445998557fb82e7309, type: 3}
       propertyPath: m_Name
       value: Player
@@ -71492,6 +71492,10 @@ PrefabInstance:
     - target: {fileID: 528358440739031065, guid: 0b7f8edcd59654e458ec6ba0f4165487, type: 3}
       propertyPath: m_Name
       value: Slime
+      objectReference: {fileID: 0}
+    - target: {fileID: 528358440739031065, guid: 0b7f8edcd59654e458ec6ba0f4165487, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 528358440739031066, guid: 0b7f8edcd59654e458ec6ba0f4165487, type: 3}
       propertyPath: m_RootOrder
