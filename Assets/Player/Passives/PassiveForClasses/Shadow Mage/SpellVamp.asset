@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6080f3ce50aa8724da50002eb3f84786, type: 3}
   m_Name: SpellVamp
   m_EditorClassIdentifier: 
-  name: 
+  name: SpellVamp
   levelPassiveType: 0
   conditionType: 6
-  classType: 6
-  typeForUI: 4
-  classPassiveIcon: {fileID: 0}
+  classType: 4
+  typeForUI: 0
+  classPassiveIcon: {fileID: 21300000, guid: 9586746ade90fd14492163e1b217d1ea, type: 3}
   cooldownMaxTime: 0
   hasActiveTime: 0
   activeMaxTime: 0
@@ -25,4 +25,8 @@ MonoBehaviour:
   conditionTime: 0
   passiveState: 0
   passiveImage: {fileID: 0}
-  buffList: []
+  buffList:
+  - typeToBuff: 12
+    valueOfBuff: 12
+    valueForFactorReferenz: 0
+    factor: 0
