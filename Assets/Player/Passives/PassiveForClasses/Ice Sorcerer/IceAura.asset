@@ -21,7 +21,7 @@ MonoBehaviour:
   cooldownMaxTime: 0
   hasActiveTime: 0
   activeMaxTime: 0
-  description: 
+  description: Ice Aura
   conditionStillStanding: 0
   conditionTime: 0
   passiveState: 0

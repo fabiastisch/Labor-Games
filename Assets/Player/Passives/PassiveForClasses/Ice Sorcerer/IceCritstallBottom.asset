@@ -21,7 +21,7 @@ MonoBehaviour:
   cooldownMaxTime: 0
   hasActiveTime: 0
   activeMaxTime: 0
-  description: 
+  description: Ability after some Kills
   conditionStillStanding: 0
   conditionTime: 0
   passiveState: 0
@@ -29,4 +29,3 @@ MonoBehaviour:
   killsNeeded: 25
   actualKills: 0
   aoeObject: {fileID: 5419518585786366279, guid: 6842ce67afa9b7640b9bc0749dea8ad2, type: 3}
-  collection: []
