@@ -58,7 +58,7 @@ namespace Utils
 
         public static Vector2 GetRandomPosition(BoundsInt boundsInt)
         {
-            return GetRandomPosition(boundsInt.xMin + 2, boundsInt.xMax - 2, boundsInt.yMin + 2, boundsInt.yMax - 2);
+            return GetRandomPosition(boundsInt.xMin + 3, boundsInt.xMax - 3, boundsInt.yMin + 3, boundsInt.yMax - 3);
         }
 
         public static T GetRandomValue<T>(this IList<T> list)

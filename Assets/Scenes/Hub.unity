@@ -59036,25 +59036,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
---- !u!1 &1541557270 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1791199111217048331, guid: 70351e0c5f09d4b408cd2f205cd2f659, type: 3}
-  m_PrefabInstance: {fileID: 1541557269}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1541557271
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1541557270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c3a2cef519a4e9789c138b682f24dab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: Interact
-  position: {x: 0.77, y: 0.96, z: 0}
 --- !u!1001 &1542320458
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -68747,6 +68728,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1995635712}
   m_CullTransparentMesh: 1
+--- !u!1 &1997545628 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6719326501985693412, guid: 40a3f58f34d442c4a9231e98eee51aa4, type: 3}
+  m_PrefabInstance: {fileID: 1859163923}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1997545629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997545628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c3a2cef519a4e9789c138b682f24dab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: Change Weapon
+  position: {x: 0, y: 0.78, z: 0}
 --- !u!1 &2009621099
 GameObject:
   m_ObjectHideFlags: 0
@@ -71877,6 +71877,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3408561798268474484, guid: c80d584bbcd81ab49bb4ce6f7c17eca2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3408561798268474484, guid: c80d584bbcd81ab49bb4ce6f7c17eca2, type: 3}
       propertyPath: m_SortingLayerID
       value: 340511735
       objectReference: {fileID: 0}
@@ -72204,6 +72208,10 @@ PrefabInstance:
       propertyPath: torchLeft
       value: 
       objectReference: {fileID: 6605341451907759927, guid: 63819485381df404c81e742182898e16, type: 3}
+    - target: {fileID: 7403842611888532809, guid: 499e1302f307acd42a4422d21d7660d1, type: 3}
+      propertyPath: nextRoomState
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7403842611888532809, guid: 499e1302f307acd42a4422d21d7660d1, type: 3}
       propertyPath: _dontDestroyOnLoad
       value: 1

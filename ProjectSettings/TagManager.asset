@@ -47,15 +47,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Player
-    uniqueID: 466650275
-    locked: 0
   - name: Trap
     uniqueID: 340511735
     locked: 0
-  - name: Enemy
-    uniqueID: 2440186805
-    locked: 0
   - name: Torch
     uniqueID: 3490068767
+    locked: 0
+  - name: Player
+    uniqueID: 466650275
+    locked: 0
+  - name: Enemy
+    uniqueID: 2440186805
     locked: 0
