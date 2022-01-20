@@ -27,6 +27,6 @@ MonoBehaviour:
   passiveState: 0
   passiveImage: {fileID: 0}
   attacksNeeded: 5
-  actualAttacks: 0
+  actualAttacks: 3
   aoeObject: {fileID: 7248005892298452997, guid: 4d72b36b3e2e46247b51ae5bed596242, type: 3}
   collection: []

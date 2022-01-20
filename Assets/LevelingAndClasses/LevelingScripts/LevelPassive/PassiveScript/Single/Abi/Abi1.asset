@@ -15,11 +15,15 @@ MonoBehaviour:
   name: CooldownReduction
   levelPassiveType: 0
   conditionType: 4
+  classType: 6
+  typeForUI: 4
+  classPassiveIcon: {fileID: 21300000, guid: 1f65780e289f5cd458bd84bd7cad4b52, type: 3}
   cooldownMaxTime: 0
   hasActiveTime: 0
   activeMaxTime: 0
   description: Higher CooldownReduction
-  repeatingMaxTime: 0
+  conditionStillStanding: 0
   conditionTime: 0
   passiveState: 0
+  passiveImage: {fileID: 21300000, guid: 1f65780e289f5cd458bd84bd7cad4b52, type: 3}
   cooldownreduction: 15

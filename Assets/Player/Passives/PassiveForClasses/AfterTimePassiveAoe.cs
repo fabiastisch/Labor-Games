@@ -33,6 +33,7 @@ namespace Player.Passives.PassiveForClasses
                     Destroy(other.gameObject);
                 }
             }
+            collection.Clear();
         }
         
         private void SpawnObject()
