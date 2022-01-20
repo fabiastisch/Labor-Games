@@ -32,7 +32,6 @@ public class FlashImage : MonoBehaviour
             StopCoroutine(_coroutine);
         }
         _coroutine = StartCoroutine(Flash(time, alpha));
-
     }
     IEnumerator Flash(float time, float alpha)
     {

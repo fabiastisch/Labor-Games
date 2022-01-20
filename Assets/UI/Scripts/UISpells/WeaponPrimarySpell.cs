@@ -2,6 +2,7 @@
 using EquipableWeapon;
 using Player;
 using UnityEngine;
+using Utils;
 
 namespace UI.Scripts.UISpells
 {
@@ -14,8 +15,13 @@ namespace UI.Scripts.UISpells
             _playerHand = playerHand;
             _playerHand.OnWeaponChanged += PlayerHandOnOnWeaponChanged;
             PlayerHandOnOnWeaponChanged();
+            Util.GetLocalPlayer().OnNormalAttack += OnOnNormalAttack;
         }
-
+        private void OnOnNormalAttack()
+        {
+            Flash();
+        }
+        
         private void PlayerHandOnOnWeaponChanged()
         {
             Weapon weapon = _playerHand.currentWeapon;

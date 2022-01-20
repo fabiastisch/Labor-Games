@@ -65,6 +65,7 @@ namespace Player
          * 4: maxDashUses
          */
         public event Action<float, float, int, int> OnDashCooldownUpdated;
+        public event Action OnDash;
         #endregion
         private bool isMenuOpen = false;
         private bool isSkillOpen = false;
@@ -203,6 +204,7 @@ namespace Player
                     dashSpeed = dashSpeedMax;
                     currentDashDirection = MousePosition;
                     state = State.Dodging;
+                    OnDash?.Invoke();
                     OnDashCooldownUpdated?.Invoke(_dashCooldownTimer, dashCooldownMax, currentDashUsesLeft, maxDashUses);
                 }
 

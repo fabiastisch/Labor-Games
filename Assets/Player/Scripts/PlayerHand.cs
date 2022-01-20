@@ -34,6 +34,7 @@ namespace Player
         private const string DEFAULTLAYER = "Default";
 
         public event Action OnWeaponChanged;
+        public event Action OnActivateSkill;
 
 
         public EquipableWeapon.Weapon currentWeapon
@@ -119,6 +120,7 @@ namespace Player
 
         public void ActivateSkill(InputAction.CallbackContext context, PlayerBase playerBase)
         {
+            OnActivateSkill?.Invoke();
             effectHandler.ActivatePassiv(context, playerBase);
         }
 

@@ -11,6 +11,11 @@ namespace UI.Scripts.UISpells
         {
             linkedSpellCaster = spellCaster;
             spellCaster.OnSpellChanged += SpellCasterOnOnSpellChanged;
+            spellCaster.OnSpellTrigger += SpellCasterOnOnSpellTrigger;
+        }
+        private void SpellCasterOnOnSpellTrigger()
+        {
+            Flash();
         }
         private void SpellCasterOnOnSpellChanged()
         {

@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -13,11 +14,17 @@ namespace UI.Scripts.UISpells
 
         [SerializeField] protected TMP_Text _bindingDisplayText;
         [SerializeField] protected InputActionReference _inputActionReference;
+        [SerializeField] protected FlashImage _flashImage;
         protected virtual void Start()
         {
             //SimpleUnlink();
             HideCooldown();
             UpdateBindingDisplayText();
+        }
+
+        protected void Flash()
+        {
+            _flashImage.StartFlash(0.2f, 0.7f);
         }
 
         public void UpdateBindingDisplayText()

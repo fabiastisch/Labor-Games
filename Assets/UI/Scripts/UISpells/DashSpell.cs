@@ -15,8 +15,14 @@ namespace UI.Scripts.UISpells
             base.Start();
             PlayerBase player = Util.GetLocalPlayer();
             player.OnDashCooldownUpdated += OnDashCooldownUpdated;
+            player.OnDash += PlayerOnOnDash;
+            
             
             UpdateSprite(_sprite);
+        }
+        private void PlayerOnOnDash()
+        {
+            Flash();
         }
         private void OnDashCooldownUpdated(float cooldownTimer, float maxCooldown, int currentUsesLeft, int maxUsesLeft)
         {

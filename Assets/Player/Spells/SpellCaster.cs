@@ -21,6 +21,7 @@ public class SpellCaster : MonoBehaviour
 
     #region Events
     public event Action OnSpellChanged;
+    public event Action OnSpellTrigger;
     #endregion
 
 
@@ -38,6 +39,7 @@ public class SpellCaster : MonoBehaviour
                 case PassiveSlot.PassiveState.ready:
                     if (spelltrigger)
                     {
+                        OnSpellTrigger?.Invoke();
                         switch (spell.spellType)
                         {
                             case Spell.SpellType.Aoe:

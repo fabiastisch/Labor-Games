@@ -12,7 +12,12 @@ namespace UI.Scripts.UISpells
         {
             _playerHand = playerHand;
             _playerHand.OnWeaponChanged += PlayerHandOnOnWeaponChangedEffect;
+            _playerHand.OnActivateSkill += PlayerHandOnOnActivateSkill;
             PlayerHandOnOnWeaponChangedEffect();
+        }
+        private void PlayerHandOnOnActivateSkill()
+        {
+            Flash();
         }
         private void PlayerHandOnOnWeaponChangedEffect()
         {
