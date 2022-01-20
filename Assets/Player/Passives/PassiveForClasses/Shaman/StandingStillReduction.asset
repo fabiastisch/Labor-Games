@@ -21,7 +21,7 @@ MonoBehaviour:
   cooldownMaxTime: 0
   hasActiveTime: 0
   activeMaxTime: 0
-  description: 
+  description: Aura after not Moving
   conditionStillStanding: 1
   conditionTime: 1
   passiveState: 0

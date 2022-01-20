@@ -21,7 +21,7 @@ MonoBehaviour:
   cooldownMaxTime: 0
   hasActiveTime: 0
   activeMaxTime: 20
-  description: 
+  description: Buff after some Kills
   conditionStillStanding: 0
   conditionTime: 0
   passiveState: 0

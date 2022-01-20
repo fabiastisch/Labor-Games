@@ -21,7 +21,7 @@ MonoBehaviour:
   cooldownMaxTime: 0
   hasActiveTime: 0
   activeMaxTime: 0
-  description: 
+  description: Big Explosion after not Moving
   conditionStillStanding: 1
   conditionTime: 15
   passiveState: 0

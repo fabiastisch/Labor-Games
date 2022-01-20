@@ -21,7 +21,7 @@ MonoBehaviour:
   cooldownMaxTime: 0
   hasActiveTime: 0
   activeMaxTime: 0
-  description: 
+  description: AOE Effect
   conditionStillStanding: 0
   conditionTime: 12
   passiveState: 0

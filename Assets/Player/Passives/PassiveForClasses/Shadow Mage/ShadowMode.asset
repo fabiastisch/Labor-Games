@@ -21,7 +21,7 @@ MonoBehaviour:
   cooldownMaxTime: 0
   hasActiveTime: 0
   activeMaxTime: 0
-  description: 
+  description: Buff after not Moving
   conditionStillStanding: 1
   conditionTime: 10
   passiveState: 0
