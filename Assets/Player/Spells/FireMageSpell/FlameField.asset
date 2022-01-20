@@ -15,10 +15,12 @@ MonoBehaviour:
   magicProjectile: {fileID: 593054333158375459, guid: afda33becb305a447a27657dbe05641e, type: 3}
   name: FlameField
   spellType: 1
+  description: Flame Field with Area of Effect Dmg
   cooldownMax: 20
   activeTimeMax: 10
   classType: 1
   typeForUI: 1
   abitllityIcon: {fileID: 21300000, guid: 08b9bab3fe84b454b9f6293612cd43b3, type: 3}
+  destroy: 1
   maxXDistance: 10
   maxYDistance: 10

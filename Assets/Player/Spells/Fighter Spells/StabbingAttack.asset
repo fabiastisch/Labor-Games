@@ -15,7 +15,7 @@ MonoBehaviour:
   magicProjectile: {fileID: 3232951777591412088, guid: eaf23498ab450de41b74fff91e29d421, type: 3}
   name: Stabbing Attack
   spellType: 2
-  description: Stabbing Attack
+  description: Stabbing Attack in front of you
   cooldownMax: 3
   activeTimeMax: 0.8
   classType: 2

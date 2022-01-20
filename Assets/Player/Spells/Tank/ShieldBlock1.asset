@@ -15,10 +15,12 @@ MonoBehaviour:
   magicProjectile: {fileID: 1484053595402512239, guid: 0a30867a25f1b6042a109345425ede5f, type: 3}
   name: 
   spellType: 1
+  description: Throw Projectiles Back
   cooldownMax: 1
   activeTimeMax: 2
   classType: 0
   typeForUI: 1
   abitllityIcon: {fileID: 21300000, guid: 945436e1ff3f09a4784331f2d1487efd, type: 3}
   playerPosition: {x: 0, y: 0, z: 0}
+  destroy: 1
   noRotation: 0
