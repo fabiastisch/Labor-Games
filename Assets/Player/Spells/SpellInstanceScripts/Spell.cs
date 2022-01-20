@@ -10,7 +10,9 @@ public class Spell : ScriptableObject
   
     public new string name;
     public SpellType spellType;
+    public string description;
 
+    
     public float cooldownMax;
     public float activeTimeMax;
     

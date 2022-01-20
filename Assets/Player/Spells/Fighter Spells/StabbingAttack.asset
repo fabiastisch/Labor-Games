@@ -15,9 +15,12 @@ MonoBehaviour:
   magicProjectile: {fileID: 3232951777591412088, guid: eaf23498ab450de41b74fff91e29d421, type: 3}
   name: Stabbing Attack
   spellType: 2
+  description: Stabbing Attack
   cooldownMax: 3
   activeTimeMax: 0.8
   classType: 2
   typeForUI: 1
   abitllityIcon: {fileID: 21300000, guid: 5865721334e29f84ba57dcf3311acebd, type: 3}
   playerPosition: {x: 0, y: 1.79, z: 0}
+  destroy: 1
+  noRotation: 0

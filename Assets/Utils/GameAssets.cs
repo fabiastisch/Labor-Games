@@ -18,7 +18,7 @@ namespace Utils
         public Transform damagePopupPrefab;
         public Transform textPopupPrefab;
         public Transform globalDungeonStatePrefab;
-
+        public Transform textUIPrefab;
 
         public Transform Instantiate(Transform t)
         {
