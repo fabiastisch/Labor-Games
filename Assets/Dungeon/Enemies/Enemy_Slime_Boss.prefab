@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 528358440739031062}
   - component: {fileID: 528358440739031061}
   - component: {fileID: 528358440739031056}
+  - component: {fileID: -5567317118805159381}
   m_Layer: 6
   m_Name: Enemy_Slime_Boss
   m_TagString: Untagged
@@ -122,8 +123,10 @@ MonoBehaviour:
   rb: {fileID: 528358440739031061}
   movementSpeed: 4
   maxHealth: 1000
+  currentDebuffList: []
   healthRegeneration: 1
   enemyName: Slime
+  isAbleToAttack: 1
   attackSpeed: 1
   attackDamage: 20
   experience: 500
@@ -208,3 +211,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 0.55}
   m_EdgeRadius: 0
+--- !u!114 &-5567317118805159381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528358440739031065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa82c1dda8baecb439b6433c94a1afd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
