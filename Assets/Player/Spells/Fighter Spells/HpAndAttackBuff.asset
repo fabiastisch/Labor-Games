@@ -15,7 +15,7 @@ MonoBehaviour:
   magicProjectile: {fileID: 2139714306241786474, guid: 7d096c691f53d6e498ecfc7bce60ab44, type: 3}
   name: HPAndAttackBuff
   spellType: 4
-  description: HP and AttackBuff
+  description: A Buff that gives you Attack and HP
   cooldownMax: 20
   activeTimeMax: 10
   classType: 2

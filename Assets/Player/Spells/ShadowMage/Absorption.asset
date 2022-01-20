@@ -15,6 +15,7 @@ MonoBehaviour:
   magicProjectile: {fileID: 1157724242768620148, guid: 2651d5b83a3256e408f258f336ad0613, type: 3}
   name: 
   spellType: 4
+  description: Gives a Spellvamp buff
   cooldownMax: 1
   activeTimeMax: 3
   classType: 4
@@ -24,5 +25,9 @@ MonoBehaviour:
   buffList:
   - typeToBuff: 12
     valueOfBuff: 20
+    valueForFactorReferenz: 0
+    factor: 0.1
   - typeToBuff: 0
     valueOfBuff: 10
+    valueForFactorReferenz: 0
+    factor: 0.1

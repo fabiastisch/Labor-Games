@@ -15,8 +15,10 @@ MonoBehaviour:
   magicProjectile: {fileID: 1503538613904344593, guid: 1e75d4f846763c24f812e3819b5ab496, type: 3}
   name: FireBall
   spellType: 2
+  description: A Small Fireball
   cooldownMax: 2
   activeTimeMax: 5
   classType: 1
   typeForUI: 1
   abitllityIcon: {fileID: 21300000, guid: bf1e8c88f94fe8b45b9fd0fb17855278, type: 3}
+  destroy: 1

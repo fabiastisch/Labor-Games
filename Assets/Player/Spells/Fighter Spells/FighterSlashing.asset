@@ -15,7 +15,7 @@ MonoBehaviour:
   magicProjectile: {fileID: 5549539575921688631, guid: a472e37014a62f541abe543ab76f7e61, type: 3}
   name: 'Slash '
   spellType: 2
-  description: Slash
+  description: Slash Attack before you
   cooldownMax: 3
   activeTimeMax: 0.4
   classType: 2
