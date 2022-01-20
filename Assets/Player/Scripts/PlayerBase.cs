@@ -29,6 +29,8 @@ namespace Player
         [SerializeField] public PlayerHand hand;
         [SerializeField] private LayerMask interactableLayer;
 
+        public Canvas playerCanvas;
+
         private PlayerInput playerInput;
 
 
@@ -95,7 +97,7 @@ namespace Player
         public event Action<bool> OnPlayerMoves;
 
         public event Action OnPlayerMakeACrit;
-        
+
         public event Action OnNormalAttack;
 
         public event Action<GameObject> OnPlayerHitSpell;
@@ -112,7 +114,7 @@ namespace Player
         {
             OnNormalAttack?.Invoke();
         }
-        
+
         private void Awake()
         {
             playerInput = GetComponent<PlayerInput>();

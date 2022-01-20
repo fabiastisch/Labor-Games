@@ -21,8 +21,10 @@ MonoBehaviour:
   cooldownMaxTime: 8
   hasActiveTime: 0
   activeMaxTime: 0
-  description: 
+  description: Shielding
+  conditionStillStanding: 0
   conditionTime: 0
   passiveState: 0
   passiveImage: {fileID: 21300000, guid: af1247f8f05ea2244bac6e668fbd8f47, type: 3}
   factor: 0.15
+  baseValue: 5

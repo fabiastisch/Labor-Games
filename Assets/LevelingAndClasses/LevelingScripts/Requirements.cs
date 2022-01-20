@@ -1,10 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UI.Text;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Requirements : MonoBehaviour
+public class Requirements : MonoBehaviourWithTextPopup
 {
     public int vitallityScore;
     public int abillityScore;
@@ -92,6 +94,18 @@ public class Requirements : MonoBehaviour
             transform.GetComponent<Button>().enabled = true;
         }
           
+    }
+    
+    public override void OnPointerEnter(PointerEventData eventData)
+    {
+        base.OnPointerEnter(eventData);
+
+        
+        if (levelPassive)
+        {
+            _textUI = TextUI.Create(transform.position, levelPassive.description);
+            return;
+        }
     }
 
 

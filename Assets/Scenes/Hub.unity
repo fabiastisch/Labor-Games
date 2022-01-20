@@ -54106,6 +54106,10 @@ PrefabInstance:
       propertyPath: skills
       value: 
       objectReference: {fileID: 258652875}
+    - target: {fileID: 8548802804282458405, guid: 5b200b5938c353445998557fb82e7309, type: 3}
+      propertyPath: playerCanvas
+      value: 
+      objectReference: {fileID: 1285035560}
     - target: {fileID: 9112581534973777237, guid: 5b200b5938c353445998557fb82e7309, type: 3}
       propertyPath: orthographic size
       value: 7
@@ -54128,6 +54132,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48550db52252f8d4ab17f6c8178359ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!223 &1285035560 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 4148917203517753949, guid: 5b200b5938c353445998557fb82e7309, type: 3}
+  m_PrefabInstance: {fileID: 1285035557}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1286204898
 GameObject:
   m_ObjectHideFlags: 0

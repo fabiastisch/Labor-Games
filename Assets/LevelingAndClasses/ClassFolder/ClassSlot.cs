@@ -1,9 +1,10 @@
 using System;
+using UI.Text;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Image = UnityEngine.UI.Image;
 
-public class ClassSlot : MonoBehaviour, IDropHandler
+public class ClassSlot : MonoBehaviourWithTextPopup, IDropHandler
 {
     [SerializeField] private SkillsAndPassivesType _type = SkillsAndPassivesType.ClassActive;
     [SerializeField] private GameObject image;
@@ -110,5 +111,22 @@ public class ClassSlot : MonoBehaviour, IDropHandler
         classSlotted = ClassEnum.Classes.None;
         transform.GetChild(0).GetComponent<Image>().sprite = defaultSprite;
         transform.GetChild(0).GetComponent<Image>().enabled = false;
+    }
+    
+    public override void OnPointerEnter(PointerEventData eventData)
+    {
+        base.OnPointerEnter(eventData);
+
+        if (passive)
+        {
+            _textUI = TextUI.Create(transform.position, passive.description);
+            return;
+        }
+        if (spell)
+        {
+            _textUI = TextUI.Create(transform.position, spell.description);
+            return;
+        }
+
     }
 }

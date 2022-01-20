@@ -13,6 +13,7 @@ public class TextUI : MonoBehaviour
         Transform textUI =
             Instantiate(GameAssets.Instance.textUIPrefab, position, Quaternion.identity);
         if (parent) textUI.SetParent(parent);
+        textUI.SetParent(Util.GetLocalPlayer().playerCanvas.transform);
 
         TextUI popup = textUI.GetComponent<TextUI>();
 
