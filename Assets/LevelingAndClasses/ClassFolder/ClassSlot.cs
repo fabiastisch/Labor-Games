@@ -2,9 +2,10 @@ using System;
 using UI.Text;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Utils.SaveSystem;
 using Image = UnityEngine.UI.Image;
 
-public class ClassSlot : MonoBehaviourWithTextPopup, IDropHandler
+public class ClassSlot : MonoBehaviourWithTextPopup, IDropHandler, ISaveable
 {
     [SerializeField] private SkillsAndPassivesType _type = SkillsAndPassivesType.ClassActive;
     [SerializeField] private GameObject image;
@@ -92,7 +93,7 @@ public class ClassSlot : MonoBehaviourWithTextPopup, IDropHandler
 
         //OnItemDropped?.Invoke(this, new OnItemDroppedEventArgs {skillsAndPassives = skillsAndPassives, returnData = eventData} );
     }
-    
+
     //used from Buttons to Reset the Classslot
 
     public void ResetSlot()
@@ -105,14 +106,14 @@ public class ClassSlot : MonoBehaviourWithTextPopup, IDropHandler
         {
             PassiveAndSkillChecker.Instance.RemovePassive(number);
         }
-        
+
         spell = null;
         passive = null;
         classSlotted = ClassEnum.Classes.None;
         transform.GetChild(0).GetComponent<Image>().sprite = defaultSprite;
         transform.GetChild(0).GetComponent<Image>().enabled = false;
     }
-    
+
     public override void OnPointerEnter(PointerEventData eventData)
     {
         base.OnPointerEnter(eventData);
@@ -126,6 +127,42 @@ public class ClassSlot : MonoBehaviourWithTextPopup, IDropHandler
         {
             _textUI = TextUI.Create(transform.position, spell.description);
             return;
+        }
+
+    }
+    public object CaptureState()
+    {
+        //Debug.Log("Capture");
+        //ClassSlotData data = new ClassSlotData(spell, passive, classSlotted);
+        //return data;
+        //TODO: fix to save ScriptableObject data
+        return null;
+    }
+    public void RestoreState(object state)
+    {
+        /*Debug.Log("Restore");
+        ClassSlotData data = (ClassSlotData) state;
+        spell = data.spell;
+        passive = data.passive;
+        classSlotted = data.classSlotted;
+        if (spell || passive)
+        {
+            transform.GetChild(0).GetComponent<Image>().sprite = spell ? spell.abitllityIcon : passive.classPassiveIcon;
+            transform.GetChild(0).GetComponent<Image>().enabled = true;
+        }*/
+    }
+    [System.Serializable]
+    public class ClassSlotData
+    {
+        public Spell spell;
+        public LevelPassive passive;
+        public ClassEnum.Classes classSlotted = ClassEnum.Classes.None;
+
+        public ClassSlotData(Spell spell, LevelPassive passive, ClassEnum.Classes classSlotted)
+        {
+            this.spell = spell;
+            this.passive = passive;
+            this.classSlotted = classSlotted;
         }
 
     }

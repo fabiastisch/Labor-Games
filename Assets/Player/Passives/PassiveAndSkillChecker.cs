@@ -2,8 +2,9 @@
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using Utils.SaveSystem;
 
-public class PassiveAndSkillChecker : MonoBehaviour
+public class PassiveAndSkillChecker : MonoBehaviour, ISaveable
 {
     [Header("SpellSlotted")] [SerializeField]
     private List<Spell> spellList = new List<Spell>();
@@ -16,10 +17,10 @@ public class PassiveAndSkillChecker : MonoBehaviour
 
     [Header("NameObjects")] [SerializeField]
     private List<GameObject> nameObjectList = new List<GameObject>();
-    
+
     [Header("SpellCasterObjects")] [SerializeField]
     private List<SpellCaster> spellCasterList = new List<SpellCaster>();
-    
+
     [Header("PassiveHolder")] [SerializeField]
     private List<LevelPassiveListChecker> levelPassiveListCheckerList = new List<LevelPassiveListChecker>();
 
@@ -230,11 +231,47 @@ public class PassiveAndSkillChecker : MonoBehaviour
 
     public bool ActivateSpellInSlot(int number)
     {
-        if (!spellCasterList.Any()||spellCasterList[number].spell.Equals(null))
+        if (!spellCasterList.Any() || spellCasterList[number].spell.Equals(null))
         {
             return false;
         }
         spellCasterList[number].KeyActivated();
         return true;
+    }
+    public object CaptureState()
+    {
+        /*PassiveAndSkillCheckerData data = new PassiveAndSkillCheckerData(spellList, passiveList, classTypeList, nameObjectList, spellCasterList, levelPassiveListCheckerList);
+        return data;*/
+        return null;
+    }
+    public void RestoreState(object state)
+    {
+        /*PassiveAndSkillCheckerData data = (PassiveAndSkillCheckerData) state;
+        spellList = data.spellList;
+        passiveList = data.passiveList;
+        classTypeList = data.classTypeList;
+        nameObjectList = data.nameObjectList;
+        spellCasterList = data.spellCasterList;
+        levelPassiveListCheckerList = data.levelPassiveListCheckerList;*/
+    }
+
+    [System.Serializable]
+    public class PassiveAndSkillCheckerData
+    {
+        public List<Spell> spellList;
+        public List<LevelPassive> passiveList;
+        public List<ClassEnum.Classes> classTypeList;
+        public List<GameObject> nameObjectList;
+        public List<SpellCaster> spellCasterList;
+        public List<LevelPassiveListChecker> levelPassiveListCheckerList;
+        public PassiveAndSkillCheckerData(List<Spell> spellList, List<LevelPassive> passiveList, List<ClassEnum.Classes> classTypeList, List<GameObject> nameObjectList, List<SpellCaster> spellCasterList, List<LevelPassiveListChecker> levelPassiveListCheckerList)
+        {
+            this.spellList = spellList;
+            this.passiveList = passiveList;
+            this.classTypeList = classTypeList;
+            this.nameObjectList = nameObjectList;
+            this.spellCasterList = spellCasterList;
+            this.levelPassiveListCheckerList = levelPassiveListCheckerList;
+        }
     }
 }

@@ -69,6 +69,8 @@ namespace Player
             experience = data.experience;
             currentLevel = data.level;
             UpdateLevelSlider();
+            OnLevelChanged?.Invoke(currentLevel);
+            OnExperiencedChanged?.Invoke(experience);
         }
         #endregion
     }

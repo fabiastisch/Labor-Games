@@ -975,6 +975,7 @@ GameObject:
   - component: {fileID: 58880404}
   - component: {fileID: 58880403}
   - component: {fileID: 58880406}
+  - component: {fileID: 58880407}
   m_Layer: 0
   m_Name: ClassAbillitySlot2
   m_TagString: Untagged
@@ -1114,6 +1115,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &58880407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58880401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8288b665cf4246b5ab5f1b4c5271305c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: bdb6d105-2008-4dff-bb4c-fd65201fb9a0
 --- !u!1 &95832858
 GameObject:
   m_ObjectHideFlags: 0
@@ -50226,6 +50240,7 @@ GameObject:
   - component: {fileID: 1028434603}
   - component: {fileID: 1028434602}
   - component: {fileID: 1028434605}
+  - component: {fileID: 1028434606}
   m_Layer: 0
   m_Name: ClassAbillitySlot4
   m_TagString: Untagged
@@ -50365,6 +50380,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1028434606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1028434600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8288b665cf4246b5ab5f1b4c5271305c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 4a001d21-3de2-4317-b068-4726d4b95d8f
 --- !u!1 &1036372893
 GameObject:
   m_ObjectHideFlags: 0
@@ -58124,6 +58152,7 @@ GameObject:
   - component: {fileID: 1498582892}
   - component: {fileID: 1498582891}
   - component: {fileID: 1498582894}
+  - component: {fileID: 1498582895}
   m_Layer: 0
   m_Name: ClassAbillitySlot3
   m_TagString: Untagged
@@ -58263,6 +58292,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1498582895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498582889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8288b665cf4246b5ab5f1b4c5271305c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 93f70f00-1ce3-467f-9d5f-3e56300d16f6
 --- !u!1 &1511041627
 GameObject:
   m_ObjectHideFlags: 0
@@ -65529,6 +65571,7 @@ GameObject:
   - component: {fileID: 1845042598}
   - component: {fileID: 1845042599}
   - component: {fileID: 1845042600}
+  - component: {fileID: 1845042601}
   m_Layer: 0
   m_Name: ClassRaster
   m_TagString: Untagged
@@ -65719,6 +65762,19 @@ MonoBehaviour:
   - {fileID: 1263002232}
   - {fileID: 292943445}
   - {fileID: 1898800883}
+--- !u!114 &1845042601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845042597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8288b665cf4246b5ab5f1b4c5271305c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 58fee656-f490-4431-83e3-7b8e637088a7
 --- !u!1 &1847048988
 GameObject:
   m_ObjectHideFlags: 0
@@ -71538,6 +71594,7 @@ GameObject:
   - component: {fileID: 2146795064}
   - component: {fileID: 2146795063}
   - component: {fileID: 2146795066}
+  - component: {fileID: 2146795067}
   m_Layer: 0
   m_Name: ClassAbillitySlot1
   m_TagString: Untagged
@@ -71677,6 +71734,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2146795067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146795061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8288b665cf4246b5ab5f1b4c5271305c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: da676347-c93d-42eb-877b-81ca676aada4
 --- !u!1001 &528358440220910764
 PrefabInstance:
   m_ObjectHideFlags: 0
