@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.EventSystems;
 namespace UI.Text
 {
@@ -16,6 +17,14 @@ namespace UI.Text
         public virtual void OnPointerExit(PointerEventData eventData)
         {
             onPointerEnter = false;
+            if (_textUI)
+            {
+                Destroy(_textUI.gameObject);
+            }
+        }
+
+        protected virtual void OnDisable()
+        {
             if (_textUI)
             {
                 Destroy(_textUI.gameObject);
