@@ -1,6 +1,17 @@
 # Labor-Games
 
 
+# Default Controlls
+
+- ESC - Open Menu (Mouse Controled)
+- WASD - Move (Forward, Left, Backward, Right)
+- Left Mouse Button - Attack
+- Right Mouse Button - Dash
+- Middle Mouse Button - Active equipped Weapon Effect
+- 1,2,3,4 - Active equipped Skills
+- I - Open Skill Menu (Mouse Controled)
+- T - Interact
+
 # Used Assets and Codeinspiration
 
 * [Cinemachine](https://unity.com/de/unity/features/editor/art-and-design/cinemachine)
