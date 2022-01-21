@@ -19,9 +19,9 @@
 
 * [Cinemachine](https://unity.com/de/unity/features/editor/art-and-design/cinemachine)
 * Input System - [Documentation](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.1/manual/index.html)
+* Shader Graph - [Documentation](https://docs.unity3d.com/Packages/com.unity.shadergraph@10.6/manual/index.html)
 * Universal RP - [Documentation](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@10.6/manual/index.html)
 * Visual Effect Graph - [Documentation](https://docs.unity3d.com/Packages/com.unity.visualeffectgraph@10.6/manual/index.html)
-
 
 ## 2D Stuff
 * 2D Animation - [Documentation](https://docs.unity3d.com/Packages/com.unity.2d.animation@5.0/manual/index.html)
