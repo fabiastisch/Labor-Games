@@ -17,7 +17,7 @@
 
 # Used Assets and Codeinspiration
 
-* [Cinemachine](https://unity.com/de/unity/features/editor/art-and-design/cinemachine)
+* [Cinemachine](https://unity.com/de/unity/features/editor/art-and-design/cinemachine) - [Documentation](https://docs.unity3d.com/Packages/com.unity.cinemachine@2.6/manual/index.html)
 * Input System - [Documentation](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.1/manual/index.html)
 * Shader Graph - [Documentation](https://docs.unity3d.com/Packages/com.unity.shadergraph@10.6/manual/index.html)
 * Universal RP - [Documentation](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@10.6/manual/index.html)
