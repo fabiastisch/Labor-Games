@@ -28,7 +28,7 @@ Grundgerüst, Codesnippets und Inspiration von [Sunny Valley Studio](https://www
 Bat Sprites von [Elthen](https://elthen.itch.io/bat-sprite-pack) 
 
 ### Weapons, Character and Slime
-Made by us
+Wurden von uns erstellt
 
 # Credits / Shoutout
 
