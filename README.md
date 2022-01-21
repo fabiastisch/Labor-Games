@@ -1,6 +1,9 @@
 # Labor-Games
 
 
+## Usage
+- Open "Hub" Scene and Play
+
 ## Default Controlls
 
 - ESC - Open Menu (Mouse Controled)
