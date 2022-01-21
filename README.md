@@ -1,7 +1,7 @@
 # Labor-Games
 
 
-# Default Controlls
+## Default Controlls
 
 - ESC - Open Menu (Mouse Controled)
 - WASD - Move (Forward, Left, Backward, Right)
