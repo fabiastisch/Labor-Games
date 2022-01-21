@@ -78,14 +78,6 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Inventory",
-                    "type": "Button",
-                    "id": "2aec3698-0a1d-45b2-8e21-c0c20e9e78b7",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
                     "name": "Map",
                     "type": "Button",
                     "id": "20c99742-9819-4860-9aca-0b3547219ac1",
@@ -243,7 +235,7 @@
                 {
                     "name": "",
                     "id": "56abb19b-d821-4f92-ad33-af9bfa0bd2b1",
-                    "path": "<Keyboard>/e",
+                    "path": "<Keyboard>/5",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -259,17 +251,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Menu",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "5b79b541-1da2-4901-b611-7216a084b252",
-                    "path": "<Keyboard>/i",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Inventory",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

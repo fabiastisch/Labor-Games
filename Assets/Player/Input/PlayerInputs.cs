@@ -100,14 +100,6 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Inventory"",
-                    ""type"": ""Button"",
-                    ""id"": ""2aec3698-0a1d-45b2-8e21-c0c20e9e78b7"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
                     ""name"": ""Map"",
                     ""type"": ""Button"",
                     ""id"": ""20c99742-9819-4860-9aca-0b3547219ac1"",
@@ -265,7 +257,7 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""56abb19b-d821-4f92-ad33-af9bfa0bd2b1"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""path"": ""<Keyboard>/5"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -281,17 +273,6 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Menu"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""5b79b541-1da2-4901-b611-7216a084b252"",
-                    ""path"": ""<Keyboard>/i"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Inventory"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -409,7 +390,6 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
         m_Player_Skill4 = m_Player.FindAction("Skill4", throwIfNotFound: true);
         m_Player_Skill5 = m_Player.FindAction("Skill5", throwIfNotFound: true);
         m_Player_Menu = m_Player.FindAction("Menu", throwIfNotFound: true);
-        m_Player_Inventory = m_Player.FindAction("Inventory", throwIfNotFound: true);
         m_Player_Map = m_Player.FindAction("Map", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_ActivateWeaponSkill = m_Player.FindAction("ActivateWeaponSkill", throwIfNotFound: true);
@@ -488,7 +468,6 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Skill4;
     private readonly InputAction m_Player_Skill5;
     private readonly InputAction m_Player_Menu;
-    private readonly InputAction m_Player_Inventory;
     private readonly InputAction m_Player_Map;
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_ActivateWeaponSkill;
@@ -506,7 +485,6 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
         public InputAction @Skill4 => m_Wrapper.m_Player_Skill4;
         public InputAction @Skill5 => m_Wrapper.m_Player_Skill5;
         public InputAction @Menu => m_Wrapper.m_Player_Menu;
-        public InputAction @Inventory => m_Wrapper.m_Player_Inventory;
         public InputAction @Map => m_Wrapper.m_Player_Map;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @ActivateWeaponSkill => m_Wrapper.m_Player_ActivateWeaponSkill;
@@ -547,9 +525,6 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                 @Menu.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMenu;
                 @Menu.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMenu;
                 @Menu.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMenu;
-                @Inventory.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInventory;
-                @Inventory.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInventory;
-                @Inventory.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInventory;
                 @Map.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMap;
                 @Map.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMap;
                 @Map.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMap;
@@ -593,9 +568,6 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                 @Menu.started += instance.OnMenu;
                 @Menu.performed += instance.OnMenu;
                 @Menu.canceled += instance.OnMenu;
-                @Inventory.started += instance.OnInventory;
-                @Inventory.performed += instance.OnInventory;
-                @Inventory.canceled += instance.OnInventory;
                 @Map.started += instance.OnMap;
                 @Map.performed += instance.OnMap;
                 @Map.canceled += instance.OnMap;
@@ -689,7 +661,6 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
         void OnSkill4(InputAction.CallbackContext context);
         void OnSkill5(InputAction.CallbackContext context);
         void OnMenu(InputAction.CallbackContext context);
-        void OnInventory(InputAction.CallbackContext context);
         void OnMap(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnActivateWeaponSkill(InputAction.CallbackContext context);
