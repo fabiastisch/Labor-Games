@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class mov : MonoBehaviour
+public class MoveRotation : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private float timer = 0.25f;
