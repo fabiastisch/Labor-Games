@@ -18,7 +18,7 @@ namespace UI.Scripts
             float curr = _character.shields.GetValueSum();
             //Debug.Log("Shieldbar: New Shield Value: " + curr + " | total: " + max);
 
-            SetText(curr.ToString());
+            SetText(((int)curr).ToString());
             float percentage = curr / max;
             SetValue(percentage);
         }

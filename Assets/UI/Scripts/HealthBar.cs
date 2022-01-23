@@ -14,7 +14,7 @@ namespace UI.Scripts
 
         private void OnHealthChanged()
         {
-            SetText(_character.GetActualHealth().ToString());
+            SetText(((int)_character.GetActualHealth()).ToString());
             SetValue(_character.GetPercentageHpSmall());
         }
 
