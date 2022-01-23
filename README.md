@@ -50,7 +50,13 @@ Bat Sprites von [Elthen](https://elthen.itch.io/bat-sprite-pack)
 
 ### Weapons, Character and Slime
 Wurden von uns erstellt
-Pixelart wurde erlernt auf [Documentation](https://www.gamedev.tv/) Pixel Art Fundamentals - 2D Game Art Bite Size Course
+Pixelart wurde erlernt auf [Documentation](https://www.gamedev.tv/) Pixel Art Fundamentals - 2D Game Art Bite Size Course (hat ca 14 Stunden gedauert das grobe zu Lernen)
+
+### Zeit Aufwand 
+* Skill System und Drag and Drop System zu implementieren hat etwas Zeit gekostet zudem, wie man mit den Passiven und Spells umgehen soll
+* Verschiedene Skills und Passiven haben auch immer neue Effekte und neue Ideen dazugebracht, welche erst mal geschrieben werden mussten
+* Es wurde des öfteren mal ein System neu überarbeitet, da man bemerkt hat, dass es nicht den nutzen hatte wie man wollte (Die Passiven Klasse wurde vollständig mit Levelpassive ersetzt)
+* Es musste desöfteren eine Klasse erweitert werden, damit neue Funktionen gegeben waren
 
 # Credits / Shoutout
 
