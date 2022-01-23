@@ -57,7 +57,7 @@ Pixelart wurde erlernt auf [Documentation](https://www.gamedev.tv/) Pixel Art Fu
 * Verschiedene Skills und Passiven haben auch immer neue Effekte und neue Ideen dazugebracht, welche erst mal geschrieben werden mussten
 * Es wurde des Öfteren mal ein System neu überarbeitet, da man bemerkt hat, dass es nicht den Nutzen hatte, wie man wollte (Die Passiven Klasse wurde vollständig mit Levelpassive ersetzt)
 * Es musste des Öfteren Klassen erweitert und umgeschrieben werden, damit neue Funktionen gegeben waren
-* Bei der Dungeon Generierung hat haben die Fackeln, sowie die Korridor-Fallen, als auch die Generierung der Enemies viel Zeit gekostet.
+* Bei der Dungeon Generierung haben die Fackeln, sowie die Korridor-Fallen, als auch die Generierung der Enemies viel Zeit gekostet.
 * Generell wurden viele kleinen Features umgesetzt, welche auch immer ein paar Studen gekostet haben (Damagepopup, Healthbar, Spell-UI, etc.)
 * Zeitlich intensiv war auch das Einarbeiten des neuen Inputsystems von Unity, da dieses sich sehr stark von dem alten System unterscheidet und Anfangs für viele Probleme gesorgt hatte.
 
