@@ -21,7 +21,8 @@ MonoBehaviour:
   cooldownMaxTime: 0
   hasActiveTime: 0
   activeMaxTime: 0
-  description: BuffsShit
+  description: Attackspeed Buff
+  conditionStillStanding: 0
   conditionTime: 0
   passiveState: 0
   passiveImage: {fileID: 0}
