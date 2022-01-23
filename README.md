@@ -42,6 +42,9 @@
 ## Dungeon
 Tileset von [Pixel_Poem](https://pixel-poem.itch.io/dungeon-assetpuck)
 
+### Dungeon Portal
+Effect von [Archanor VFX](https://assetstore.unity.com/packages/vfx/particles/action-rpg-fx-38222)
+
 ### Dungeon Generierung
 Grundgerüst, Codesnippets und Inspiration von [Sunny Valley Studio](https://www.youtube.com/SunnyValleyStudio) - [Dungeon Generierung Playlist](https://www.youtube.com/watch?v=-QOCX6SVFsk&list=PLcRSafycjWFenI87z7uZHFv6cUG2Tzu9v)
 
