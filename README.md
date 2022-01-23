@@ -59,7 +59,7 @@ Pixelart wurde erlernt auf [Documentation](https://www.gamedev.tv/) Pixel Art Fu
 * Es musste des Öfteren Klassen erweitert und umgeschrieben werden, damit neue Funktionen gegeben waren
 * Bei der Dungeon Generierung hat haben die Fackeln, sowie die Korridor-Fallen, als auch die Generierung der Enemies viel Zeit gekostet.
 * Generell wurden viele kleinen Features umgesetzt, welche auch immer ein paar Studen gekostet haben (Damagepopup, Healthbar, Spell-UI, etc.)
-* Zeitlich intensiv war auch das Einarbeiten des neuen Inputsystems von Unity, da dies sich sehr stark von dem alten System unterscheidet und Anfangs für viele Probleme gesorgt hat.
+* Zeitlich intensiv war auch das Einarbeiten des neuen Inputsystems von Unity, da dieses sich sehr stark von dem alten System unterscheidet und Anfangs für viele Probleme gesorgt hatte.
 
 # Credits / Shoutout
 
