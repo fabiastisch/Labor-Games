@@ -1,7 +1,7 @@
 # Labor-Games
 
 ## Videos
-[Abillity Showcase](https://youtu.be/n4SV9BCGHtU)
+[Ultra Short Abillity Showcase](https://youtu.be/n4SV9BCGHtU)
 
 [Gameplay from Presentation (high Speed)](https://www.youtube.com/watch?v=huE3ChqfQnc)
 
