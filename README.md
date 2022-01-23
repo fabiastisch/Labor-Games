@@ -3,6 +3,11 @@
 
 ## Usage
 - Open "Hub" Scene and Play
+- In the Skill Menu you can Drag and Drop Class Objects into Slots and remove them with a click on them
+- You can drag aswell a new Object over it to replace it
+- Build your own class out of 2 Serperate Classes with different Abillitys and Passives (There are 6 Classes in total)
+- If you kill Enemys you can get Level Points and spent them at the Skill Menu
+- With 20 Points or every next 20 Points you unlock a Level Passive, the Max Level of a Skill is 100 and you can aquire 120 Level in Total  
 
 ## Default Controlls
 
@@ -22,6 +27,8 @@
 * Shader Graph - [Documentation](https://docs.unity3d.com/Packages/com.unity.shadergraph@10.6/manual/index.html)
 * Universal RP - [Documentation](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@10.6/manual/index.html)
 * Visual Effect Graph - [Documentation](https://docs.unity3d.com/Packages/com.unity.visualeffectgraph@10.6/manual/index.html)
+* Two Packages from apptools.net but they removed the Assets in the Assetstore [Documentation](http://appstools.net/)
+* 2736 RPG Icons Pixel Art [Documentation](https://assetstore.unity.com/packages/2d/gui/icons/2736-rpg-icons-pixel-art-186427)
 
 ## 2D Stuff
 * 2D Animation - [Documentation](https://docs.unity3d.com/Packages/com.unity.2d.animation@5.0/manual/index.html)
@@ -43,6 +50,7 @@ Bat Sprites von [Elthen](https://elthen.itch.io/bat-sprite-pack)
 
 ### Weapons, Character and Slime
 Wurden von uns erstellt
+Pixelart wurde erlernt auf [Documentation](https://www.gamedev.tv/) Pixel Art Fundamentals - 2D Game Art Bite Size Course
 
 # Credits / Shoutout
 
